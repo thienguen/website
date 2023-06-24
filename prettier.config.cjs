@@ -2,7 +2,7 @@
 module.exports = {
   semi: false,
   tabWidth: 2,
-  printWidth: 100,
+  printWidth: 120,
   endOfLine: 'lf',
   singleQuote: true,
   trailingComma: 'es5',
@@ -10,10 +10,14 @@ module.exports = {
   quoteProps: 'consistent',
 
   importOrder: [
+    '// Frameworks',
     '^(react/(.*)$)|^(react$)',
     '^(next/(.*)$)|^(next$)',
+    '',
+    '// Libraries',
     '<THIRD_PARTY_MODULES>',
     '',
+    '// Src',
     '^types$',
     '^@/types/(.*)$',
     '^@/config/(.*)$',

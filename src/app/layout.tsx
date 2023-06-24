@@ -1,27 +1,39 @@
 import '@/styles/globals.css'
 
 // Framework
-import type { Metadata } from 'next'
 
 // Srr
-import { fontMono, fontSans } from '@/lib/font'
+import { fontMono } from '@/lib/font'
 import { cn } from '@/lib/util/util'
 import { ThemeProvider } from '@/components/ui/theme-provider'
 import { Toaster } from '@/components/ui/toaster'
+import Navbar from '@/components/navbar/Navbar'
 
-export const metadata: Metadata = {
-  title: {
-    default: "Thienguen's Website",
-    template: `%s - thienguen`,
-  },
+export const metadata = {
+  locale: 'en-US',
+  language: 'en-us',
+  theme: 'system',
+
+  headerTitle: 'blank_dreams',
   description: 'Isekai already',
+
+  creator: 'thienguen',
   authors: [
     {
       name: 'Thienguen',
       url: 'https://github.com/Thienguen',
+      email: 'nvktvanbo@gmail.com',
+      linkedin: 'https://www.linkedin.com/in/thien-nguyen-2a4a37234/',
+      siteRepo: 'https://github.com/Thienguen/Thien-Portfolio',
+      github: 'https://github.com/Thienguen',
     },
   ],
-  creator: 'thienguen',
+
+  title: {
+    default: "Thienguen's Website",
+    template: `%s - thienguen`,
+  },
+
   themeColor: [
     { media: '(prefers-color-scheme: light)', color: 'white' },
     { media: '(prefers-color-scheme: dark)', color: 'black' },
@@ -38,15 +50,12 @@ export default function RootLayout({ children }: RootLayoutProps) {
     <>
       <html lang="en" suppressHydrationWarning>
         <head />
-        <body
-          className={cn(
-            'min-h-screen bg-background font-sans antialiased',
-            fontSans.variable,
-            fontMono.variable
-          )}
-        >
+        <body className={cn('min-h-screen bg-background antialiased', fontMono.variable)}>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+            {/* TODO: Nav here */}
+            <Navbar />
             {children}
+            {/* TODO: Footer here */}
           </ThemeProvider>
           <Toaster />
         </body>
