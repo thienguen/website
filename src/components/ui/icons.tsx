@@ -137,6 +137,7 @@ export const Icons = {
       />
     </svg>
   ),
+
   gitHub: (props: LucideProps) => (
     <svg viewBox="0 0 438.549 438.549" {...props}>
       <path
@@ -145,6 +146,7 @@ export const Icons = {
       ></path>
     </svg>
   ),
+
   google: ({ ...props }: LucideProps) => (
     <svg
       aria-hidden="true"
@@ -162,6 +164,7 @@ export const Icons = {
       ></path>
     </svg>
   ),
+  
   facebook: ({ ...props }: LucideProps) => (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" {...props}>
       <path

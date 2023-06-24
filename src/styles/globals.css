@@ -83,6 +83,7 @@
   }
 }
 
+
 body {
 	margin: 0;
 	padding: 0;
@@ -92,6 +93,7 @@ body {
 
 	text-rendering: optimizeLegibility;
 	scroll-behavior: smooth;
+  
 
 	z-index: 0;
 	font-family: JetBrains Mono, monospace;
@@ -141,3 +143,10 @@ a {
 }
 
 
+
+
+[data-theme='dark'],
+[data-theme='dark'] body {
+  color: #fff;
+  background: #171923;
+}

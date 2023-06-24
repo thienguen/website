@@ -21,13 +21,14 @@ export const metadata = {
   creator: 'thienguen',
   name: 'Thienguen',
   url: 'https://github.com/Thienguen',
-  email: 'nvktvanbo@gmail.com',
   linkedin: 'https://www.linkedin.com/in/thien-nguyen-2a4a37234/',
-  siteRepo: 'https://github.com/Thienguen/Thien-Portfolio',
+  siteRepo: 'https://github.com/Thienguen/thien-porfolio',
   github: 'https://github.com/Thienguen',
+  instagram: 'https://www.instagram.com/thienguen_/',
+  discord: 'https://discordapp.com/users/481754320778428418',
 
   title: {
-    default: "Thienguen's Website",
+    default: "Thienguen's",
     template: `%s - thienguen`,
   },
 
@@ -35,7 +36,7 @@ export const metadata = {
     { media: '(prefers-color-scheme: light)', color: 'white' },
     { media: '(prefers-color-scheme: dark)', color: 'black' },
   ],
-  // add icons here soon
+  // add icons here soon???
 }
 
 interface RootLayoutProps {
@@ -46,14 +47,30 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <>
       <html lang="en" suppressHydrationWarning>
-        <head />
-        <body className={cn('min-h-screen bg-background antialiased', fontMono.variable)}>
-          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        <head>
+          {/* TODO: Back here and update href */}
+          <title>{metadata.creator}</title>
+          <meta content={metadata.creator} property="og:title" />
+          <meta content={metadata.description} name="description" />
+          <meta content={metadata.description} property="og:description" />
+          <meta content="???" property="og:url" />
+          <meta content={`???`} property="og:image" />
+        </head>
+
+        <body
+          className={cn(
+            'min-h-screen antialiased',
+            fontMono.variable,
+            'light:bg-gradient-to-b light:from-white light:to-gray-200',
+            'dark:bg-gradient-to-b dark:from-black dark:to-gray-800'
+          )}
+        >
+          <ThemeProvider attribute="class" defaultTheme="system" enableSystem themes={['light', 'dark']}>
             <Navbar />
             {children}
             <Footer />
+            <Toaster />
           </ThemeProvider>
-          <Toaster />
         </body>
       </html>
     </>
