@@ -118,6 +118,7 @@ a {
 	display: block;
 	position: absolute;
 	visibility: hidden;
+  background: #171923;
 
 	width: 0;
 	height: 2px;
@@ -138,3 +139,5 @@ a {
 	background: linear-gradient(transparent, transparent), linear-gradient(to right, #52c3ff, #2185d0);
 	
 }
+
+
