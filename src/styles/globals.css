@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -83,17 +87,7 @@
   }
 }
 
-.nav-link {
-  transition: all 0.3s ease-in-out;
-  opacity: 0;
-  transform: translateY(-20px);
-}
-
-.nav-link.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
+/* They dance, too much */
 @keyframes slide-in {
   0% {
     opacity: 0;
@@ -105,60 +99,69 @@
   }
 }
 
-
 body {
-	/* width: 100vw; */
-	/* height: 100vh; */
+  /* width: 100vw; */
+  /* height: 100vh; */
   margin: 0;
   padding: 0;
 
-	text-rendering: optimizeLegibility;
-	scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
 
-	z-index: 0;
-	font-family: JetBrains Mono, monospace;
+  z-index: 0;
+  font-family: JetBrains Mono, monospace;
 }
 
-
 a {
-	color: inherit;
-	text-decoration: none;
+  color: inherit;
+  text-decoration: none;
 }
 
 * {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 /* Custom css */
 .link-underline {
-	position: relative;
-	display: inline-block;
+  position: relative;
+  display: inline-block;
 }
 
 .link-underline::after {
-	content: '';
+  content: '';
 
-	display: block;
-	position: absolute;
-	visibility: hidden;
+  display: block;
+  position: absolute;
+  visibility: hidden;
   background: #171923;
 
-	width: 0;
-	height: 2px;
+  width: 0;
+  height: 2px;
 
-	right: 0; /* go to the right */
+  right: 0; /* go to the right */
 
-	transition: all 0.3s ease-in-out;
-	background: linear-gradient(transparent, transparent), linear-gradient(to right, #52c3ff, #2185d0);
+  transition: all 0.3s ease-in-out;
+  background: linear-gradient(transparent, transparent), linear-gradient(to right, #52c3ff, #2185d0);
 }
 
 .link-underline:hover::after {
-	visibility: visible;
+  visibility: visible;
 
-	width: 100%;
+  width: 100%;
 
-	left: 0; /* go to the left */
+  left: 0; /* go to the left */
 
-	background: linear-gradient(transparent, transparent), linear-gradient(to right, #52c3ff, #2185d0);
-	
+  background: linear-gradient(transparent, transparent), linear-gradient(to right, #52c3ff, #2185d0);
+}
+
+/* They group and ungroup wtf */
+.nav-link {
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+.nav-link.show {
+  opacity: 1;
+  transform: translateY(0);
 }
