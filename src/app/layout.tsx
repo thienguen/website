@@ -47,7 +47,12 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <>
       <html lang="en" suppressHydrationWarning>
-        <head>
+        <head
+          className={cn(
+            'bg-gradient-to-b from-slate-200 to-gray-200', // light
+            'dark:bg-gradient-to-b dark:from-black dark:to-gray-800' // dark
+          )}
+        >
           {/* TODO: Back here and update href */}
           <title>{metadata.creator}</title>
           <meta content={metadata.creator} property="og:title" />
@@ -59,18 +64,24 @@ export default function RootLayout({ children }: RootLayoutProps) {
 
         <body
           className={cn(
-            'min-h-screen antialiased',
-            fontMono.variable,
-            'light:bg-gradient-to-b light:from-white light:to-gray-200',
-            'dark:bg-gradient-to-b dark:from-black dark:to-gray-800'
+            'h-screen overflow-x-hidden antialiased',
+            fontMono.variable
+            // 'bg-gradient-to-b from-slate-200 to-gray-200', // light
+            // 'dark:bg-gradient-to-b dark:from-black dark:to-gray-800' // dark
           )}
         >
-          <ThemeProvider attribute="class" defaultTheme="system" enableSystem themes={['light', 'dark']}>
-            <Navbar />
-            {children}
-            <Footer />
-            <Toaster />
-          </ThemeProvider>
+          <div
+            className={cn(
+              'bg-gradient-to-b from-slate-200 to-gray-200', // light
+              'dark:bg-gradient-to-b dark:from-black dark:to-gray-800' // dark
+            )}
+          >
+            <ThemeProvider attribute="class" defaultTheme="system" enableSystem themes={['light', 'dark']}>
+              <Navbar />
+              <div className="grow">{children}</div>
+              <Footer />
+            </ThemeProvider>
+          </div>
         </body>
       </html>
     </>

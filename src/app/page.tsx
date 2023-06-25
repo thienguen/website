@@ -1,17 +1,18 @@
+import Image from 'next/image'
+
 import { cn } from '@/lib/util/util'
 
 export default function Home() {
   return (
     <>
       <div
-        className={cn(
-          'min-h-screen antialiased',
-          'light:bg-gradient-to-b light:from-white light:to-gray-200',
-          'dark:bg-gradient-to-b dark:from-black dark:to-gray-800'
-        )}
+        /* This use to control background theme, I really don't know how useThemes works so I gave up modify it */
+        className={cn('flex flex-col items-center justify-between p-24 antialiased')}
       >
-        <div className="flex flex-col items-center justify-center">
-          <div className="h-screen w-full ">
+        <div className="mx-auto flex max-w-screen-lg flex-col items-center justify-center px-4">
+          <div className="">
+            {' '}
+            {/* <-- This affect everythign, lmao */}
             <div>
               <div>
                 {/* Title */}
@@ -24,7 +25,19 @@ export default function Home() {
                   here. Trust me I am a programmer. C/C++, Java, Kotlin
                 </p>
 
+                {/* TODO: kbar will be here */}
                 <button></button>
+              </div>
+
+              {/* TODO: Profile image */}
+              <div>
+                <Image
+                  src="/images/monika.jpg"
+                  alt="Definitely not me!!"
+                  width={200}
+                  height={200}
+                  className="mx-auto rounded-2xl"
+                ></Image>
               </div>
             </div>
           </div>

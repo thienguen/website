@@ -9,7 +9,7 @@ import { ThemeToggle } from '@/components/footer/ThemeToggle'
 
 export default function Footer() {
   return (
-    <footer className="w-full border-t bg-background">
+    <footer className="border-t border-black bg-gray-200 shadow-md dark:border-white dark:bg-gray-800">
       <div className="container flex flex-col items-center justify-between space-y-1 py-5 md:h-16 md:flex-row md:py-0">
         <div className="flex items-center justify-center text-base text-muted-foreground">
           {/* The icon is here looking for it now */}

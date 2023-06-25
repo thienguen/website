@@ -83,21 +83,26 @@
   }
 }
 
-
 body {
-	margin: 0;
-	padding: 0;
-
-	width: 100vw;
-	height: 100vh;
+	/* width: 100vw; */
+	/* height: 100vh; */
+  margin: 0;
+  padding: 0;
 
 	text-rendering: optimizeLegibility;
 	scroll-behavior: smooth;
-  
 
 	z-index: 0;
 	font-family: JetBrains Mono, monospace;
 }
+
+
+body > div:first-child,
+div#__next,
+div#__next > div {
+  height: 100%;
+}
+
 
 a {
 	color: inherit;
@@ -140,13 +145,4 @@ a {
 
 	background: linear-gradient(transparent, transparent), linear-gradient(to right, #52c3ff, #2185d0);
 	
-}
-
-
-
-
-[data-theme='dark'],
-[data-theme='dark'] body {
-  color: #fff;
-  background: #171923;
 }

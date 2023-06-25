@@ -56,7 +56,7 @@ const Navbar = () => {
                   alt="Thien"
                   width={30}
                   height={40}
-                  className="rounded-full"
+                  className="mx-auto rounded-full"
                 />
               </Link>
             </div>
