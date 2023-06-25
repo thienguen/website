@@ -16,17 +16,17 @@ export default function Home() {
             <div className="mb-2 max-w-md space-y-3 py-5 text-gray-500">
               <p>A person who loves story-rich RPG-Maker games.</p>
               <p>Often time coding. Sometimes drawing.</p>
-              <p>And always learning. 💻</p>
+              <p>And always learning. ✥</p>
             </div>
             <Signature />
           </div>
+  
           {/* Center Bottom */}
+  
           {/* TODO: kbar will be here */}
 
           {/* Right */}
-          <div className="">
-            <Motion />
-          </div>
+          <Motion />
         </div>
       </main>
     </>

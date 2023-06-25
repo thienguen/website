@@ -7,7 +7,6 @@ import { HiOutlineMoon, HiOutlineSun } from 'react-icons/hi'
 
 // Src
 import { Button } from '@/components/ui/button'
-import { Icons } from '@/components/ui/icons'
 import { Tooltip } from '@/components/common/Tooltip'
 
 export function ThemeToggle() {
@@ -18,7 +17,7 @@ export function ThemeToggle() {
       <Button
         variant="ghost"
         size="sm"
-        className="w-9 px-0"
+        className="w-9 px-0 hover:bg-slate-50 dark:hover:bg-gray-500" // force hover
         onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
         rel="noreferrer"
       >

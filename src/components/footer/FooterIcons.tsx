@@ -4,7 +4,6 @@ import Link from 'next/link'
 import { Github, Twitter } from 'lucide-react'
 import { AiOutlineHeart, AiOutlineInstagram, AiOutlineLinkedin } from 'react-icons/ai'
 
-
 import { cn } from '@/lib/util/util'
 import { buttonVariants } from '@/components/ui/button'
 import { Tooltip } from '@/components/common/Tooltip'
@@ -35,7 +34,12 @@ export function FooterGithub() {
     <>
       <Tooltip text="GitHub">
         <Link href={metadata.github} target="_blank" rel="noreferrer">
-          <div className={cn(buttonVariants({ size: 'sm', variant: 'ghost' }), 'w-9 px-0')}>
+          <div
+            className={cn(
+              buttonVariants({ size: 'sm', variant: 'ghost' }),
+              'w-9 px-0 hover:bg-slate-50 dark:hover:bg-gray-500'
+            )}
+          >
             <Github className="h-6 w-5" />
             <span className="sr-only">GitHub</span>
           </div>
@@ -50,7 +54,12 @@ export function FooterInstagram() {
     <>
       <Tooltip text="Instagram">
         <Link href={metadata.instagram} target="_blank" rel="noreferrer">
-          <div className={cn(buttonVariants({ size: 'sm', variant: 'ghost' }), 'w-9 px-0')}>
+          <div
+            className={cn(
+              buttonVariants({ size: 'sm', variant: 'ghost' }),
+              'w-9 px-0 hover:bg-slate-50 dark:hover:bg-gray-500'
+            )}
+          >
             <AiOutlineInstagram className="h-6 w-5" />
             <span className="sr-only">Instagram</span>
           </div>
@@ -65,7 +74,12 @@ export function FooterLinkedin() {
     <>
       <Tooltip text="Linkedin">
         <Link href={metadata.linkedin} target="_blank" rel="noreferrer">
-          <div className={cn(buttonVariants({ size: 'sm', variant: 'ghost' }), 'w-9 px-0')}>
+          <div
+            className={cn(
+              buttonVariants({ size: 'sm', variant: 'ghost' }),
+              'w-9 px-0 hover:bg-slate-50 dark:hover:bg-gray-500'
+            )}
+          >
             <AiOutlineLinkedin className="h-6 w-5" />
             <span className="sr-only">Linkedin</span>
           </div>
@@ -80,7 +94,12 @@ export function FooterTwitter() {
     <>
       <Tooltip text="I don't use Twitter, mb">
         <Link href="/" rel="noreferrer">
-          <div className={cn(buttonVariants({ size: 'sm', variant: 'ghost' }), 'w-9 px-0')}>
+          <div
+            className={cn(
+              buttonVariants({ size: 'sm', variant: 'ghost' }),
+              'w-9 px-0 hover:bg-slate-50 dark:hover:bg-gray-500'
+            )}
+          >
             <Twitter className="h-6 w-5" />
             <span className="sr-only">Twitter</span>
           </div>
@@ -95,7 +114,12 @@ export function FooterProfile() {
     <>
       <Tooltip text="just monika">
         <Link aria-label="Home" href="/" rel="noreferrer" className="m-auto">
-          <div className={cn(buttonVariants({ size: 'sm', variant: 'ghost' }), 'w-9 px-0')}>
+          <div
+            className={cn(
+              buttonVariants({ size: 'sm', variant: 'ghost' }),
+              'w-9 px-0 hover:bg-slate-50 dark:hover:bg-gray-500'
+            )}
+          >
             <Image
               src="https://avatars.githubusercontent.com/u/94078395"
               alt="Thien"
