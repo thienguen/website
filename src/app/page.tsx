@@ -1,7 +1,5 @@
 import Image from 'next/image'
 
-import { cn } from '@/lib/util/util'
-
 export default function Home() {
   return (
     <>
@@ -9,7 +7,7 @@ export default function Home() {
         /* This use to control background theme, I really don't know how useThemes works so I gave up modify it */
         className="mx-auto max-w-[1235px] flex-1"
       >
-        <div className="flex w-full flex-col items-center justify-center px-5 pt-20 sm:pt-40 md:flex-row">
+        <div className="mt-20 flex w-full flex-col items-center justify-center px-5 sm:mt-40 md:flex-row">
           <div>
             {/* <-- This affect everythign, lmao */}
             <div>

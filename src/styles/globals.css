@@ -83,6 +83,29 @@
   }
 }
 
+.nav-link {
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+.nav-link.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes slide-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
 body {
 	/* width: 100vw; */
 	/* height: 100vh; */

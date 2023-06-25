@@ -8,8 +8,6 @@ import {
   FooterProfile,
 } from '@/components/footer/FooterIcons'
 import { ThemeToggle } from '@/components/footer/ThemeToggle'
-import Link from 'next/link'
-import Image from 'next/image'
 
 export default function Footer() {
   return (
