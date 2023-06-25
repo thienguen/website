@@ -12,6 +12,8 @@ import { useMediaQuery } from '@/hooks/useMediaQuery'
 
 import { NavbarLeft, NavbarRight, NavbarRightSmall } from './Navbar-left-right'
 
+
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [height, setHeight] = useState('0px')
@@ -22,11 +24,10 @@ const Navbar = () => {
 
   const navRef = useRef<HTMLDivElement>(null)
 
-  const expand = () => {
-    height === '0px' ? setHeight('15rem') : setHeight('0px')
-    setIsOpen((prev) => !prev)
-    setKey((prevKey) => prevKey + 1) // Increment key to force re-render
-  }
+  const expand = useCallback(() => {
+    setHeight((prevHeight) => (prevHeight === '0px' ? '15rem' : '0px'))
+    setIsOpen((prevIsOpen) => !prevIsOpen)
+  }, [])
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -44,7 +45,7 @@ const Navbar = () => {
     return () => {
       document.removeEventListener('mousedown', handleClickOutside)
     }
-  }, [isOpen])
+  }, [isOpen, expand])
 
   return (
     <>

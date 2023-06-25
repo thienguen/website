@@ -121,6 +121,16 @@ a {
   box-sizing: border-box;
 }
 
+/* f, f.. f- framer */
+circle,
+rect,
+line {
+  stroke-width: 10px;
+  stroke-linecap: round;
+  fill: transparent;
+}
+
+
 /* Custom css */
 .link-underline {
   position: relative;

@@ -1,8 +1,9 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-import { Github, Instagram, Linkedin, Twitter } from 'lucide-react'
-import { AiOutlineHeart } from 'react-icons/ai'
+import { Github, Twitter } from 'lucide-react'
+import { AiOutlineHeart, AiOutlineInstagram, AiOutlineLinkedin } from 'react-icons/ai'
+
 
 import { cn } from '@/lib/util/util'
 import { buttonVariants } from '@/components/ui/button'
@@ -50,7 +51,7 @@ export function FooterInstagram() {
       <Tooltip text="Instagram">
         <Link href={metadata.instagram} target="_blank" rel="noreferrer">
           <div className={cn(buttonVariants({ size: 'sm', variant: 'ghost' }), 'w-9 px-0')}>
-            <Instagram className="h-6 w-5" />
+            <AiOutlineInstagram className="h-6 w-5" />
             <span className="sr-only">Instagram</span>
           </div>
         </Link>
@@ -65,7 +66,7 @@ export function FooterLinkedin() {
       <Tooltip text="Linkedin">
         <Link href={metadata.linkedin} target="_blank" rel="noreferrer">
           <div className={cn(buttonVariants({ size: 'sm', variant: 'ghost' }), 'w-9 px-0')}>
-            <Linkedin className="h-6 w-5" />
+            <AiOutlineLinkedin className="h-6 w-5" />
             <span className="sr-only">Linkedin</span>
           </div>
         </Link>
@@ -93,7 +94,7 @@ export function FooterProfile() {
   return (
     <>
       <Tooltip text="just monika">
-        <Link aria-label="Home" href="/" rel="noreferrer" className='m-auto'>
+        <Link aria-label="Home" href="/" rel="noreferrer" className="m-auto">
           <div className={cn(buttonVariants({ size: 'sm', variant: 'ghost' }), 'w-9 px-0')}>
             <Image
               src="https://avatars.githubusercontent.com/u/94078395"

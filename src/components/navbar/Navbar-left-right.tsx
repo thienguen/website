@@ -2,6 +2,9 @@
 import type { ReactNode } from 'react'
 import Link from 'next/link'
 
+import { AiOutlineHome, AiOutlineMail } from 'react-icons/ai'
+import { GoProjectSymlink } from 'react-icons/go'
+import { IoPersonCircleOutline } from 'react-icons/io5'
 import Typewriter from 'typewriter-effect'
 
 import { cn } from '@/lib/util/util'
@@ -11,6 +14,14 @@ import { metadata } from '@/app/layout'
 interface NavbarRightProps {
   path_name: string
   isOpen: boolean
+}
+
+// mapping for each title to its icon
+const IconMapping: { [key: string]: JSX.Element } = {
+  '/home': <AiOutlineHome />,
+  '/about': <IoPersonCircleOutline />,
+  '/projects': <GoProjectSymlink />,
+  '/contact': <AiOutlineMail />,
 }
 
 export const NavbarLeft = ({ path_name }: { path_name: string }) => (
@@ -25,7 +36,7 @@ export const NavbarLeft = ({ path_name }: { path_name: string }) => (
 
 export const NavbarRight = () => (
   <div className="flex items-center space-x-4">
-    <div className="hidden space-x-4 text-sm sm:flex">
+    <div className="hidden text-sm sm:flex">
       {Navlinks.map((link) => (
         <Link
           key={link.title}
@@ -33,6 +44,7 @@ export const NavbarRight = () => (
           rel="noopener noreferrer"
           className="link-underline rounded text-gray-900 hover:bg-slate-50 dark:text-gray-100 dark:hover:bg-gray-700 sm:px-4 sm:py-2" // dark
         >
+          {IconMapping[link.title]} {/* this line will insert the icon for each link */}
           {link.title}
         </Link>
       ))}
