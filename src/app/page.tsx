@@ -27,6 +27,8 @@ export default function Home() {
 
           {/* Right */}
           <Motion />
+
+          
         </div>
       </main>
     </>
