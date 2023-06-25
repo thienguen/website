@@ -28,7 +28,7 @@ export const metadata = {
   discord: 'https://discordapp.com/users/481754320778428418',
 
   title: {
-    default: "Thienguen's",
+    default: "thienguen",
     template: `%s - thienguen`,
   },
 
@@ -64,24 +64,16 @@ export default function RootLayout({ children }: RootLayoutProps) {
 
         <body
           className={cn(
-            'h-screen overflow-x-hidden antialiased',
-            fontMono.variable
-            // 'bg-gradient-to-b from-slate-200 to-gray-200', // light
-            // 'dark:bg-gradient-to-b dark:from-black dark:to-gray-800' // dark
+            'flex min-h-[100vh] flex-col overflow-x-hidden antialiased',
+            'bg-gradient-to-b from-slate-200 to-gray-300', // light
+            'dark:bg-gradient-to-b dark:from-black dark:to-gray-800' // dark
           )}
         >
-          <div
-            className={cn(
-              'bg-gradient-to-b from-slate-200 to-gray-200', // light
-              'dark:bg-gradient-to-b dark:from-black dark:to-gray-800' // dark
-            )}
-          >
-            <ThemeProvider attribute="class" defaultTheme="system" enableSystem themes={['light', 'dark']}>
-              <Navbar />
-              <div className="grow">{children}</div>
-              <Footer />
-            </ThemeProvider>
-          </div>
+          <ThemeProvider attribute="class" defaultTheme="system" enableSystem themes={['light', 'dark']}>
+            <Navbar />
+            <div className="grow">{children}</div>
+            <Footer />
+          </ThemeProvider>
         </body>
       </html>
     </>

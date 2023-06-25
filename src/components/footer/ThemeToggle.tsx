@@ -13,20 +13,19 @@ export function ThemeToggle() {
   const { theme, setTheme } = useTheme()
 
   return (
-    <div>
-      <Tooltip text="Changing Theme">
-        <Button
-          variant="ghost"
-          size="sm"
-          className="w-9 px-0"
-          onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-        >
-          {/*  */}
-          <Icons.sun className="rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-          {/*  */}
-          <Icons.moon className="absolute rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-        </Button>
-      </Tooltip>
-    </div>
+    <Tooltip text="Changing Theme">
+      <Button
+        variant="ghost"
+        size="sm"
+        className="w-9 px-0"
+        onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+        rel='noreferrer'
+      >
+        {/*  */}
+        <Icons.sun className="rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+        {/*  */}
+        <Icons.moon className="absolute rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+      </Button>
+    </Tooltip>
   )
 }
