@@ -12,7 +12,7 @@ type LoaderProps = {
   loadingMessage?: string
 }
 
-const Loader = ({ children, inline, height = 48, width = 48, loadingMessage }: LoaderProps) => {
+const CustomLoader = ({ children, inline, height = 48, width = 48, loadingMessage }: LoaderProps) => {
   // custom loader svg
   const LOADER_SVG = (
     <svg
@@ -55,4 +55,4 @@ const Loader = ({ children, inline, height = 48, width = 48, loadingMessage }: L
   )
 }
 
-export default Loader
+export default CustomLoader
