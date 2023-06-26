@@ -12,7 +12,7 @@ export default function About() {
 
   return (
     <>
-      <div className=" mx-auto mt-10 grid max-w-[48rem] grid-cols-6 gap-6 px-6">
+      <div className="mx-auto mt-10 grid max-w-[48rem] grid-cols-6 gap-6 px-6">
         <QA
           question="about me?"
           answer="I started coding in 2021 and have been loving it ever since. I'm still fixing some bugs here and there during free time. Current interested in Three.js and 3D model."
