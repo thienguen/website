@@ -22,10 +22,10 @@ export default function DiscordStatus(props: DiscordStatusProps) {
     <>
       <Transition
         show={props.data != undefined}
-        enter="transform transition duration-[25ms] ease-in-out"
+        enter="transform transition duration-50 ease-in-out"
         enterFrom="opacity-0 scale-75 h-full"
         enterTo="opacity-100 scale-100 h-full"
-        leave="transform duration-200 transition ease-in-out"
+        leave="transform duration-50 transition ease-in-out"
         leaveFrom="opacity-100 scale-100 h-full"
         leaveTo="opacity-0 scale-75 h-full"
       >

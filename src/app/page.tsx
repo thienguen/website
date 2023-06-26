@@ -9,10 +9,15 @@ export default function Home() {
         <div className="mx-auto flex w-full max-w-screen-lg flex-col items-center justify-center px-5 sm:mt-36 sm:flex-row">
           {/* Left */}
           <div className="mr-0 flex flex-col justify-center sm:mr-10">
-            {/* HomeTitle */}
-            <HomeTitle />
+            <h2 className="shadow-effect text-center text-4xl font-bold text-slate-800 dark:text-slate-200 sm:text-4xl md:text-5xl lg:text-6xl">
+              {`Dreams`}
+            </h2>
             {/* Description */}
-            <HomeDescription />
+            <div className="mb-2 max-w-md space-y-3 py-5 text-center text-gray-500 dark:text-gray-500">
+              <p>A person who loves story-rich RPG-Maker games.</p>
+              <p>Often time coding. Sometimes drawing.</p>
+              <p>✥ And always learning. ✥</p>
+            </div>
             {/* Signature */}
             <Signature />
           </div>
@@ -28,25 +33,5 @@ export default function Home() {
         </div>
       </main>
     </>
-  )
-}
-
-/*  */
-export function HomeTitle() {
-  return (
-    <h2 className="shadow-effect text-center text-4xl font-bold text-slate-800 dark:text-slate-200 sm:text-4xl md:text-5xl lg:text-6xl">
-      {`Dreams`}
-    </h2>
-  )
-}
-
-/*  */
-export const HomeDescription = () => {
-  return (
-    <div className="mb-2 max-w-md space-y-3 py-5 text-center text-gray-500 dark:text-gray-500">
-      <p>A person who loves story-rich RPG-Maker games.</p>
-      <p>Often time coding. Sometimes drawing.</p>
-      <p>✥ And always learning. ✥</p>
-    </div>
   )
 }
