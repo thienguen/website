@@ -1,3 +1,5 @@
+'use client'
+
 // Framework
 import '@/styles/globals.css'
 
@@ -62,10 +64,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         </head>
 
         <body
-          className={cn(
-            'flex max-h-[100vh] min-h-[100vh] flex-col overflow-x-hidden antialiased',
-            fontMono.variable,
-          )}
+          className={cn('flex max-h-[100vh] min-h-[100vh] flex-col overflow-x-hidden antialiased', fontMono.variable)}
         >
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem themes={['light', 'dark']}>
             <div

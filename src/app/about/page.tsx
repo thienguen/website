@@ -24,7 +24,6 @@ export default function About() {
           <DiscordStatus status={status} data={data} />
         </div>
 
-
       </div>
     </>
   )
