@@ -7,7 +7,7 @@ import { motion } from 'framer-motion'
 const draw = {
   hidden: { pathLength: 0, opacity: 0 },
   visible: (i: number) => {
-    const delay = 1 + i * 0.2
+    const delay = 0.3 + i * 0.2
     return {
       pathLength: 1,
       opacity: 1,
@@ -19,7 +19,12 @@ const draw = {
   },
 }
 
+
+
+
+
 export default function Motion() {
+  
   const [key, setKey] = useState(0)
 
   const handleClick = () => {
@@ -34,9 +39,10 @@ export default function Motion() {
       initial="hidden"
       animate="visible"
       key={key}
+      whileFocus={{ scale: 1.1 }}
       onClick={handleClick}
     >
-      <motion.circle cx="100" cy="100" r="80" stroke="#ff0055" variants={draw} custom={1} />
+      <motion.circle cx="100" cy="100" r="80" stroke="#ff0055" variants={draw} custom={1}/>
 
       <motion.line x1="220" y1="30" x2="360" y2="170" stroke="#00cc88" variants={draw} custom={2} />
 
@@ -62,6 +68,8 @@ export default function Motion() {
     </motion.svg>
   )
 }
+
+
 
 // // Initialize SVG elements as list items
 // const initialItems = [

@@ -6,7 +6,7 @@ export default function Signature() {
   return (
     <>
       {/* Typewriter */}
-      <div className="text-center font-signature text-2xl">
+      <div className="text-center font-signature text-2xl text-slate-800 dark:text-gray-200">
         <Typewriter
           options={{
             strings: ['Thien Van Ky Nguyen'],

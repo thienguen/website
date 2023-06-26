@@ -67,7 +67,11 @@ module.exports = {
       },
     },
     fontFamily: {
-      signature: ['Sacramento', 'cursive'],
+      'signature': ['Sacramento', 'cursive'],
+      "jetbrains-mono": ["JetBrains Mono", "monospace"],
+      'metropolis': ['MetropolisRegular', 'sans-serif'], // copi 
+      'metropolis-bold': ['MetropolisBold', 'sans-serif'], // copi
+
     },
   },
   plugins: [require('tailwindcss-animate')],

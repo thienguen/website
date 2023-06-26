@@ -8,7 +8,6 @@ module.exports = {
   trailingComma: 'es5',
   bracketSpacing: true,
   quoteProps: 'consistent',
-
   importOrder: [
     '// Frameworks',
     '^(react/(.*)$)|^(react$)',

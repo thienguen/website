@@ -9,15 +9,12 @@ import { Twirl as Hamburger } from 'hamburger-react'
 
 /* Src */
 import { useMediaQuery } from '@/hooks/useMediaQuery'
-
-import { NavbarLeft, NavbarRight, NavbarRightSmall } from './Navbar-left-right'
-
-
+import { NavbarLeft, NavbarRight, NavbarRightSmall } from '@/components/navbar/Navbar-left-right'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [height, setHeight] = useState('0px')
-  const [key, setKey] = useState(0)
+  const [key, setKey] = useState(0) // useless
 
   const path_name = usePathname()
   const isBreakpoint = useMediaQuery('780px')
@@ -25,6 +22,7 @@ const Navbar = () => {
   const navRef = useRef<HTMLDivElement>(null)
 
   const expand = useCallback(() => {
+    /* Use functions setter */
     setHeight((prevHeight) => (prevHeight === '0px' ? '15rem' : '0px'))
     setIsOpen((prevIsOpen) => !prevIsOpen)
   }, [])

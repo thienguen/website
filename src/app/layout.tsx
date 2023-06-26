@@ -1,6 +1,5 @@
-import '@/styles/globals.css'
-
 // Framework
+import '@/styles/globals.css'
 
 // Srr
 import { fontMono } from '@/lib/font'
@@ -64,15 +63,21 @@ export default function RootLayout({ children }: RootLayoutProps) {
 
         <body
           className={cn(
-            'flex min-h-[100vh] flex-col overflow-x-hidden antialiased',
+            'flex max-h-[100vh] min-h-[100vh] flex-col overflow-x-hidden antialiased',
             fontMono.variable,
-            'bg-gradient-to-b from-slate-200 to-gray-300', // light
-            'dark:bg-gradient-to-b dark:from-black dark:to-gray-800' // dark
           )}
         >
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem themes={['light', 'dark']}>
-            <Navbar />
-            <div className="grow">{children}</div>
+            <div
+              className={cn(
+                'grow',
+                'bg-gradient-to-b from-slate-200 to-gray-300', // light
+                'dark:bg-gradient-to-b dark:from-black dark:to-gray-800' // dark
+              )}
+            >
+              <Navbar />
+              {children}
+            </div>
             <Footer />
             <Toaster />
           </ThemeProvider>
