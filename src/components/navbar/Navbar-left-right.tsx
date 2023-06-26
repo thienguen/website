@@ -2,6 +2,7 @@
 import type { ReactNode } from 'react'
 import Link from 'next/link'
 
+import { metadata } from '@/server/metadata'
 import { AiOutlineHome, AiOutlineMail } from 'react-icons/ai'
 import { GoProjectSymlink } from 'react-icons/go'
 import { IoPersonCircleOutline } from 'react-icons/io5'
@@ -9,7 +10,6 @@ import Typewriter from 'typewriter-effect'
 
 import { cn } from '@/lib/util/util'
 import Navlinks from '@/components/navbar/Navlinks'
-import { metadata } from '@/app/layout'
 
 interface NavbarRightProps {
   path_name: string

@@ -7,7 +7,7 @@ import { AiOutlineHeart, AiOutlineInstagram, AiOutlineLinkedin } from 'react-ico
 import { cn } from '@/lib/util/util'
 import { buttonVariants } from '@/components/ui/button'
 import { Tooltip } from '@/components/common/Tooltip'
-import { metadata } from '@/app/layout'
+import { metadata } from '@/server/metadata'
 
 export function FooterLove() {
   return (
