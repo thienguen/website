@@ -6,7 +6,8 @@ import { QA } from '@/components/ui/qa'
 import DiscordStatus from '@/components/me/DiscordStatus'
 
 export default function About() {
-  const data = useLanyardWS('481754320778428418')
+  const id: `${bigint}` | undefined = process.env.DISCORD_ID ? `${BigInt(process.env.DISCORD_ID)}` : undefined
+  const data = useLanyardWS(id ? [id] : [])
   const status = data?.discord_status ?? 'offline'
 
   return (
@@ -23,7 +24,6 @@ export default function About() {
         <div className="col-span-2 h-full">
           <DiscordStatus status={status} data={data} />
         </div>
-
       </div>
     </>
   )

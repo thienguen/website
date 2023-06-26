@@ -2,7 +2,6 @@
 
 import { Transition } from '@headlessui/react'
 import { IoLogoDiscord } from 'react-icons/io5'
-import { useLanyardWS } from 'use-lanyard'
 import type { Data } from 'use-lanyard'
 
 import { cn } from '@/lib/util/util'
@@ -13,10 +12,6 @@ interface DiscordStatusProps {
 }
 
 export default function DiscordStatus(props: DiscordStatusProps) {
-
-  const id: `${bigint}` | undefined = process.env.DISCORD_ID ? `${BigInt(process.env.DISCORD_ID)}` : undefined;
-  const data = useLanyardWS(id ? [id] : []);
-  const status = data?.discord_status ?? 'offline';
   
   return (
     <>
@@ -44,7 +39,7 @@ export default function DiscordStatus(props: DiscordStatusProps) {
             <p className="scale-[1.6]">
               <IoLogoDiscord className="mb-2 w-full justify-end" />
             </p>
-            <span>{status}</span>
+            <span>{props.status}</span>
           </div>
         </div>
       </Transition>
