@@ -9,6 +9,7 @@ import { cn } from '@/lib/util/util'
 interface DiscordStatusProps {
   status: string
   data: Data | undefined
+  cols?: string
 }
 
 export default function DiscordStatus(props: DiscordStatusProps) {
@@ -18,15 +19,16 @@ export default function DiscordStatus(props: DiscordStatusProps) {
       <Transition
         show={props.data != undefined}
         enter="transform transition duration-50 ease-in-out"
-        enterFrom="opacity-0 scale-75 h-full"
-        enterTo="opacity-100 scale-100 h-full"
+        enterFrom="opacity-0 scale-75"
+        enterTo="opacity-100 scale-100"
         leave="transform duration-50 transition ease-in-out"
-        leaveFrom="opacity-100 scale-100 h-full"
-        leaveTo="opacity-0 scale-75 h-full"
+        leaveFrom="opacity-100 scale-100"
+        leaveTo="opacity-0 scale-75"
+        className={props.cols ?? '' + 'h-full'}
       >
         <div
           className={cn(
-            'flex h-full w-full items-center justify-center rounded-2xl',
+            'flex min-h-[12rem] w-full items-center justify-center rounded-2xl',
             {
               online: 'bg-green-500 font-jetbrains-mono text-white',
               idle: 'bg-orange-400 font-jetbrains-mono text-white',

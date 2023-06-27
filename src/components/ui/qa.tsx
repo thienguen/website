@@ -18,24 +18,20 @@ export const QA = (props: QAProps) => {
     <Transition
       show={props.data != undefined}
       enter="transform transition duration-50 ease-in-out"
-      enterFrom="opacity-0 scale-75 h-full"
-      enterTo="opacity-100 scale-100 h-full"
+      enterFrom="opacity-0 scale-75"
+      enterTo="opacity-100 scale-100"
       leave="transform duration-50 transition ease-in-out"
-      leaveFrom="opacity-100 scale-100 h-full"
-      leaveTo="opacity-0 scale-75 h-full"
-      className={props.cols ?? ''}
+      leaveFrom="opacity-100 scale-100"
+      leaveTo="opacity-0 scale-75"
+      className={props.cols ?? '' + 'h-full'}
     >
-      <div
-        className={`min-h-[12rem] rounded-2xl border-2  bg-gradient-to-b from-slate-100 to-gray-300 font-jetbrains-mono dark:bg-gradient-to-b dark:from-slate-800 dark:to-gray-900`}
-      >
-        <div className="mt-10 flex h-full flex-col px-5">
-          <h1 className="justify-center text-[16px] font-medium file:font-bold">{props.question}</h1>
+      <div className={`text-text-color min-h-[12rem] rounded-lg bg-[#1a202c]`}>
+        <div className="flex h-full flex-col justify-center px-5 py-5">
+          <h1 className="text-[14px] font-bold sm:text-lg">{props.question}</h1>
           {props.customAnswer ? (
             props.customAnswer
           ) : (
-            <p className="mt-4 justify-center font-jetbrains-mono text-slate-500 sm:text-xs md:text-[14px]">
-              {props.answer}
-            </p>
+            <p className="text-text-darker mt-2 font-metropolis">{props.answer}</p>
           )}
         </div>
       </div>
