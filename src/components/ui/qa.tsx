@@ -8,6 +8,7 @@ interface QAProps {
   answer: string
 
   customAnswer?: React.ReactNode
+  height?: string
   cols?: string
 }
 
@@ -27,7 +28,7 @@ export const QA = (props: QAProps) => {
       leaveTo="opacity-0 scale-75"
       className={props.cols ?? ''}
     >
-      <div className={`min-h-[12rem] rounded-lg bg-[#1a202c]`}>
+      <div className={`${props.height ?? ''} rounded-lg bg-[#1a202c]`}>
         <div className="flex h-full flex-col justify-center p-5">
           <h1 className="text-[14px] font-bold sm:text-lg">{props.question}</h1>
           {props.customAnswer ? props.customAnswer : <p className="mt-2 font-metropolis">{props.answer}</p>}
