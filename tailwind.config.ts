@@ -12,6 +12,9 @@ module.exports = {
         '4xl': '2560px',
         '5xl': '3840px',
         '6xl': '4096px',
+        'tall': { 'raw': '(min-height: 800px)' },
+        'tall-2xl': { 'raw': '(min-height: 1000px) and (min-width: 1536px)' },
+        'tall-3xl': { 'raw': '(min-height: 1200px) and (min-width: 1920px)' },
       },
     },
     extend: {

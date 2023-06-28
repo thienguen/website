@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <>
       {/* Hero Kinda Section */}
-      <div className="mb-8 h-full min-h-[40px] w-full sm:mt-32">
+      <div className="mb-8 h-full min-h-[500px] w-full sm:mt-32">
         <div className="m-auto flex w-full max-w-screen-lg flex-col items-center justify-center px-5 sm:flex-row">
           {/* Left */}
           <div className="flex flex-col justify-center sm:mr-10">
