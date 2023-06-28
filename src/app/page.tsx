@@ -1,18 +1,16 @@
-import Image from 'next/image'
-
+import Profile from '@/components/ui/profile'
 import Signature from '@/components/ui/signature'
 import SkillIssues from '@/components/home/skill-issues'
-import Profile from '@/components/ui/profile'
 
 export default function Home() {
   /* Could have put stuff in here put anyway */
   return (
     <>
       {/* Hero Kinda Section */}
-      <div className="mb-8 h-full w-full sm:mt-32">
+      <div className="mb-8 h-full min-h-[40px] w-full sm:mt-32">
         <div className="m-auto flex w-full max-w-screen-lg flex-col items-center justify-center px-5 sm:flex-row">
           {/* Left */}
-          <div className="flex min-h-[250px] flex-col justify-center sm:mr-10">
+          <div className="flex flex-col justify-center sm:mr-10">
             <h2 className="shadow-effect text-center text-4xl font-bold text-slate-800 dark:text-slate-200 sm:text-4xl md:text-5xl lg:text-6xl">
               {`Thien Nguyen`}
             </h2>
@@ -30,10 +28,8 @@ export default function Home() {
           {/* Profile */}
           <Profile />
         </div>
+        <SkillIssues />
       </div>
-
-      <SkillIssues />
-
       {/* TODO: kbar will be here Ctrk+K */}
     </>
   )

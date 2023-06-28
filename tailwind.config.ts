@@ -7,7 +7,11 @@ module.exports = {
       center: true,
       padding: '2rem',
       screens: {
-        '2xl': '1400px',
+        '2xl': '1536px',
+        '3xl': '1920px',
+        '4xl': '2560px',
+        '5xl': '3840px',
+        '6xl': '4096px',
       },
     },
     extend: {

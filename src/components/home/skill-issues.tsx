@@ -6,28 +6,32 @@ import { TbBrandCpp, TbBrandKotlin, TbBrandTypescript } from 'react-icons/tb'
 import { VscTerminalBash } from 'react-icons/vsc'
 
 const SkillIssues = () => {
+  const icons = [
+    <BsGit />,
+    <FaNpm />,
+    <FaPython />,
+    <RiCss3Line />,
+    <RiHtml5Line />,
+    <RiJavascriptLine />,
+    <TbBrandCpp />,
+    <TbBrandKotlin />,
+    <TbBrandTypescript />,
+    <VscTerminalBash />,
+    <SiPrisma />,
+    <SiReact />,
+    <SiRedux />,
+    <SiTailwindcss />,
+  ]
+
   return (
     <>
       <div className="m-12">
-        {' '}
-        {/* Adjust the margin as per your requirement */}
-        <div className="flex flex-auto items-center justify-center space-x-4 text-4xl text-gray-700 dark:text-gray-500">
-          {' '}
-          {/* Adjust the spacing as per your requirement */}
-          <BsGit />
-          <FaNpm />
-          <FaPython />
-          <RiCss3Line />
-          <RiHtml5Line />
-          <RiJavascriptLine />
-          <TbBrandCpp />
-          <TbBrandKotlin />
-          <TbBrandTypescript />
-          <VscTerminalBash />
-          <SiPrisma />
-          <SiReact />
-          <SiRedux />
-          <SiTailwindcss />
+        <div className="flex flex-wrap items-center justify-center text-4xl">
+          {icons.map((icon, index) => (
+            <div key={index} className="m-2">
+              {icon}
+            </div>
+          ))}
         </div>
       </div>
     </>
