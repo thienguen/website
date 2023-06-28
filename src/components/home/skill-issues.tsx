@@ -8,8 +8,12 @@ import { VscTerminalBash } from 'react-icons/vsc'
 const SkillIssues = () => {
   return (
     <>
-      <div>
-        <div className="flex flex-auto items-center justify-center text-4xl text-gray-500 dark:text-gray-500">
+      <div className="m-8">
+        {' '}
+        {/* Adjust the margin as per your requirement */}
+        <div className="flex flex-auto items-center justify-center space-x-4 text-4xl text-gray-700 dark:text-gray-500">
+          {' '}
+          {/* Adjust the spacing as per your requirement */}
           <BsGit />
           <FaNpm />
           <FaPython />
