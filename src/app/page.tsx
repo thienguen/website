@@ -1,14 +1,16 @@
 import Motion from '@/components/ui/motion'
 import Signature from '@/components/ui/signature'
+import SkillIssues from '@/components/home/skill-issues'
 
 export default function Home() {
   /* Could have put stuff in here put anyway */
   return (
     <>
-      <div className="h-full w-full sm:mt-36 ">
+      {/* Hero Kinda Section */}
+      <div className="h-full w-full sm:mt-32">
         <div className="m-auto flex w-full max-w-screen-lg flex-col items-center justify-center px-5 sm:flex-row">
           {/* Left */}
-          <div className="mr-0 flex min-h-[300px] flex-col justify-center sm:mr-10">
+          <div className="mr-0 flex min-h-[250px] flex-col justify-center sm:mr-10">
             <h2 className="shadow-effect text-center text-4xl font-bold text-slate-800 dark:text-slate-200 sm:text-4xl md:text-5xl lg:text-6xl">
               {`Dreams`}
             </h2>
@@ -22,9 +24,7 @@ export default function Home() {
             <Signature />
           </div>
 
-          {/* Center Bottom */}
 
-          {/* TODO: kbar will be here Ctrk+K */}
 
           {/* Right */}
           <div className="space-x-4">
@@ -32,6 +32,13 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      <SkillIssues />
+
+
+      {/* TODO: kbar will be here Ctrk+K */}
+
+
     </>
   )
 }
