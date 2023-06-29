@@ -4,8 +4,8 @@ import {
   FooterInstagram,
   FooterLinkedin,
   FooterLove,
-  FooterTwitter,
   FooterProfile,
+  FooterTwitter,
 } from '@/components/footer/FooterIcons'
 import { ThemeToggle } from '@/components/footer/ThemeToggle'
 
@@ -18,7 +18,7 @@ export default function Footer() {
       )}
     >
       <footer className="border-t border-black bg-gray-200 shadow-md dark:border-white dark:bg-gray-800">
-        <div className="container flex flex-col items-center justify-between space-y-1 py-5 md:h-16 md:flex-row md:py-0">
+        <div className="container flex flex-col items-center justify-between space-y-1 py-5 sm:w-[530px] md:h-16 md:w-[800px] md:flex-row md:py-0 lg:w-[1076px] xl:w-[1076px]">
           <div className="flex items-center justify-center text-base text-muted-foreground">
             {/* The icon is here looking for it now */}
             <FooterLove />
@@ -34,7 +34,6 @@ export default function Footer() {
             <ThemeToggle />
 
             <FooterProfile />
-            
           </div>
         </div>
       </footer>
