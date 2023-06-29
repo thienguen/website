@@ -7,10 +7,11 @@ export const SkeletonCard = ({ isLoading }: { isLoading?: boolean }) => (
         isLoading,
     })}
   >
-    <div className="space-y-3">
-      <div className="h-14 rounded-lg bg-slate-200 dark:bg-gray-700" />
-      <div className="h-3 w-11/12 rounded-lg bg-slate-200 dark:bg-gray-700" />
-      <div className="h-3 w-8/12 rounded-lg bg-slate-200 dark:bg-gray-700" />
+    <div className="space-y-2 rounded-2xl bg-gray-900/80 p-4">
+      <div className="h-14 rounded-lg bg-gray-700" />
+      <div className="h-3 w-3/12 rounded-lg bg-cyan-500" />
+      <div className="h-3 w-11/12 rounded-lg bg-gray-700" />
+      <div className="h-3 w-8/12 rounded-lg bg-gray-700" />
     </div>
   </div>
 )

@@ -1,4 +1,4 @@
-export const metadata = {
+export const my_metadata = {
   locale: 'en-US',
   language: 'en-us',
   theme: 'system',

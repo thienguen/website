@@ -2,7 +2,7 @@
 import type { ReactNode } from 'react'
 import Link from 'next/link'
 
-import { metadata } from '@/server/metadata'
+import { my_metadata } from '@/server/metadata'
 import { AiOutlineHome, AiOutlineMail } from 'react-icons/ai'
 import { GoProjectSymlink } from 'react-icons/go'
 import { IoPersonCircleOutline } from 'react-icons/io5'
@@ -26,7 +26,7 @@ const IconMapping: { [key: string]: JSX.Element } = {
 
 export const NavbarLeft = ({ path_name }: { path_name: string }) => (
   <div className="mb-3 w-full md:mb-0 md:w-auto">
-    <Link href="/" aria-label={metadata.headerTitle}>
+    <Link href="/" aria-label={my_metadata.headerTitle}>
       <div className="flex items-start text-xl font-semibold dark:text-slate-200">
         {`~${path_name}`} <Typewriter options={{ strings: [], autoStart: true, loop: true }} />
       </div>

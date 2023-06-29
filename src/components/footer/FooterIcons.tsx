@@ -1,13 +1,13 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
+import { my_metadata } from '@/server/metadata'
 import { Github, Twitter } from 'lucide-react'
 import { AiOutlineHeart, AiOutlineInstagram, AiOutlineLinkedin } from 'react-icons/ai'
 
 import { cn } from '@/lib/util/util'
 import { buttonVariants } from '@/components/ui/button'
 import { Tooltip } from '@/components/common/Tooltip'
-import { metadata } from '@/server/metadata'
 
 export function FooterLove() {
   return (
@@ -17,7 +17,7 @@ export function FooterLove() {
       <span className="mx-2">by</span>
       <Tooltip text="find me here">
         <Link
-          href={metadata.discord}
+          href={my_metadata.discord}
           target="_blank"
           className="text-slate-600 underline transition-colors duration-200 ease-in-out hover:text-pink-500 dark:text-white dark:hover:text-pink-500"
         >
@@ -33,7 +33,7 @@ export function FooterGithub() {
   return (
     <>
       <Tooltip text="GitHub">
-        <Link href={metadata.github} target="_blank" rel="noreferrer">
+        <Link href={my_metadata.github} target="_blank" rel="noreferrer">
           <div
             className={cn(
               buttonVariants({ size: 'sm', variant: 'ghost' }),
@@ -53,7 +53,7 @@ export function FooterInstagram() {
   return (
     <>
       <Tooltip text="Instagram">
-        <Link href={metadata.instagram} target="_blank" rel="noreferrer">
+        <Link href={my_metadata.instagram} target="_blank" rel="noreferrer">
           <div
             className={cn(
               buttonVariants({ size: 'sm', variant: 'ghost' }),
@@ -73,7 +73,7 @@ export function FooterLinkedin() {
   return (
     <>
       <Tooltip text="Linkedin">
-        <Link href={metadata.linkedin} target="_blank" rel="noreferrer">
+        <Link href={my_metadata.linkedin} target="_blank" rel="noreferrer">
           <div
             className={cn(
               buttonVariants({ size: 'sm', variant: 'ghost' }),

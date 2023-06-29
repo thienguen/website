@@ -27,6 +27,8 @@ export default function About() {
           height='min-h-[12rem]'
         />
 
+
+
         {/* 1. */}
         <DiscordStatus cols="col-span-1" />
 

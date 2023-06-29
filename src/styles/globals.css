@@ -16,6 +16,10 @@
 @tailwind utilities;
 
 @layer base {
+  .text-edge-outline {
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
+  }
+
   :root {
     --background: 0 0% 100%;
     --foreground: 240 10% 3.9%;
@@ -185,6 +189,5 @@ line {
   text-shadow: 1px 1px #fff, 2px 2px #fff, 2px 2px #fff;
   color: #1a202c;
 }
-
 
 /* Skill-issues */
