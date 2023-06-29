@@ -12,7 +12,7 @@ const Profile = () => {
             alt="Definitely not me!!"
             width={275}
             height={275}
-            className="rounded-full border-2 border-slate-800 dark:border-slate-400"
+            className="animate-fade-in-2 rounded-full border-2 border-slate-800 dark:border-slate-400"
           />
         </div>
       </Tooltip>

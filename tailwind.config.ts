@@ -63,10 +63,11 @@ module.exports = {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
         /* AddedCho */
-        'fade-in': 'fade-in 3s ease-in-out forwards',
-        'title': 'title 3s ease-out forwards',
-        'fade-left': 'fade-left 3s ease-in-out forwards',
-        'fade-right': 'fade-right 3s ease-in-out forwards',
+        'fade-in': 'fade-in 1.5s ease-in-out forwards',
+        'fade-in-2': 'fade-in-2 2.25s ease-in-out forwards',
+        'title': 'title 2s ease-out forwards',
+        'fade-left': 'fade-left 4s ease-in-out forwards',
+        'fade-right': 'fade-right 4s ease-in-out forwards',
       },
       keyframes: {
         'accordion-down': {
@@ -78,6 +79,17 @@ module.exports = {
           to: { height: 0 },
         },
         'fade-in': {
+          '0%': {
+            opacity: '0%',
+          },
+          '75%': {
+            opacity: '0%',
+          },
+          '100%': {
+            opacity: '100%',
+          },
+        },
+        'fade-in-2': {
           '0%': {
             opacity: '0%',
           },

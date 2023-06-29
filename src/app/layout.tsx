@@ -3,8 +3,7 @@
 // Framework
 import '@/styles/globals.css'
 
-import { type Metadata } from 'next'
-import { my_metadata } from '@/server/metadata'
+import { metadata } from '@/server/metadata'
 
 // Srr
 import { fontMono } from '@/lib/font'
@@ -14,25 +13,6 @@ import { ThemeProvider } from '@/components/ui/theme-provider'
 import { Toaster } from '@/components/ui/toaster'
 import Footer from '@/components/footer/Footer'
 import Navbar from '@/components/navbar/Navbar'
-
-export const metadata: Metadata = {
-  title: {
-    default: 'Thienguen',
-    template: '%s | thienguen',
-  },
-  description: 'dissapointment',
-  openGraph: {
-    title: 'thienguen',
-    description: 'dissapointment',
-    url: 'https://thienguen',
-    siteName: 'thienguen',
-    locale: 'en-US',
-    type: 'website',
-  },
-  icons: {
-    shortcut: '/monika.png',
-  },
-}
 
 interface RootLayoutProps {
   children: React.ReactNode
@@ -51,10 +31,10 @@ export default function RootLayout({ children }: RootLayoutProps) {
           )}
         >
           {/* TODO: Back here and update href */}
-          <title>{my_metadata.creator}</title>
-          <meta content={my_metadata.creator} property="og:title" />
-          <meta content={my_metadata.description} name="description" />
-          <meta content={my_metadata.description} property="og:description" />
+          <title>{metadata.creator}</title>
+          <meta content={metadata.creator} property="og:title" />
+          <meta content={metadata.description} name="description" />
+          <meta content={metadata.description} property="og:description" />
           <meta content="???" property="og:url" />
           <meta content={`???`} property="og:image" />
         </head>
@@ -70,7 +50,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
                 'dark:bg-gradient-to-b dark:from-black dark:to-gray-900' // dark
               )}
             >
-              <Particles className="absolute inset-0 -z-10 animate-fade-in" quantity={200} />
+              <Particles className="absolute inset-0 -z-10" quantity={200} />
               <Navbar />
               {children}
             </div>
