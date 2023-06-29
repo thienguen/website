@@ -79,7 +79,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
               {children}
             </div>
             <Footer />
-            <Toaster /> 
+            <Toaster /> {/* useless */}
           </ThemeProvider>
         </body>
       </html>
