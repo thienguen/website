@@ -1,4 +1,3 @@
-import { cn } from '@/lib/util/util'
 import {
   FooterGithub,
   FooterInstagram,
@@ -33,7 +32,6 @@ export default function Footer() {
 
             {/* This thing is a pain 6-24-2023 */}
             <ThemeToggle />
-
             <FooterProfile />
           </div>
         </div>
