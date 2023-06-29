@@ -1,30 +1,31 @@
 import { QA } from '@/components/ui/qa'
 import DiscordStatus from '@/components/me/DiscordStatus'
+import Motion from '@/components/ui/motion'
 
 export default function About() {
   return (
     <>
-      <div className="mx-auto my-10 grid max-w-[46rem] grid-cols-6 gap-6 px-6">
+      <div className="mx-auto my-10 grid max-w-3xl grid-cols-6 gap-6 px-6">
         {/* About me. */}
         <QA
           question="about me?"
           answer="I started coding in 2021 and have been loving it ever since. I'm still fixing some bugs here and there during free time. Current interested in Three.js and 3D model."
           cols="col-span-4"
-          height='min-h-[12rem]'
+          height='min-h-[13rem]'
         />
 
         {/* Discord is tough 2. */}
         <DiscordStatus cols="col-span-2" />
 
         {/* 3. Timer. */}
-        <DiscordStatus cols="col-span-2" />
-        
+        <Motion />
+
         {/* What is this 4. */}
         <QA
           question="currently?"
           answer="I'm curretly an undergraduate student at UNLV, majoring in Computer Science. I'm also working as a software engineer intern at a local company."
           cols="col-span-4"
-          height='min-h-[12rem]'
+          height='min-h-[13rem]'
         />
 
 
@@ -37,7 +38,7 @@ export default function About() {
           question="about me?"
           answer="I started coding in 2021 and have been loving it ever since. I'm still fixing some bugs here and there during free time. Current interested in Three.js and 3D model."
           cols="col-span-5"
-          height='min-h-[12rem]'
+          height='min-h-[13rem]'
         />
 
 
