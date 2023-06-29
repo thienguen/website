@@ -4,6 +4,8 @@ import React, { useEffect, useRef } from 'react'
 
 import { useMousePosition } from '@/lib/util/mouse'
 
+/* BUGS: Cant sync light and dark theme */
+
 interface ParticlesProps {
   className?: string
   quantity?: number

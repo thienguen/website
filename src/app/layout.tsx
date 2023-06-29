@@ -48,11 +48,12 @@ export default function RootLayout({ children }: RootLayoutProps) {
                 'z-20 grow',
                 'bg-gradient-to-b from-slate-300 to-gray-300', // light
                 'dark:bg-gradient-to-b dark:from-black dark:to-gray-900' // dark
-              )}
+                )}
             >
-              <Particles className="absolute inset-0 -z-10" quantity={200} />
               <Navbar />
               {children}
+              <Particles className="absolute inset-0 -z-10" quantity={200} />
+              {/* BUGS: Can't grow to the footer, or when page is scroollable */}
             </div>
             <Footer />
             <Toaster /> {/* useless */}

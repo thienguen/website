@@ -37,7 +37,9 @@ export default function Home() {
         <div className="hidden h-px w-screen animate-fade-right bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0 md:block" />
       </div>
 
+
       {/* TODO: kbar will be here Ctrk+K */}
+      
     </>
   )
 }

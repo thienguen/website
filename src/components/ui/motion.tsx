@@ -27,7 +27,7 @@ export default function Motion() {
   }
 
   return (
-    <div className="col-span-2 flex  items-center justify-center rounded-2xl bg-[#f9f4f4] dark:bg-[#1a202c]">
+    <div className="p-2 col-span-2 flex items-center justify-center rounded-2xl bg-[#f9f4f4] dark:bg-[#1a202c]">
       <motion.svg
         width="208"
         height="192"

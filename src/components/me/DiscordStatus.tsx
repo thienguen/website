@@ -1,5 +1,6 @@
 'use client'
 
+import { Transition } from '@headlessui/react'
 import { IoLogoDiscord } from 'react-icons/io5'
 import { useLanyardWS } from 'use-lanyard'
 
@@ -15,23 +16,34 @@ export default function DiscordStatus(props: DiscordStatusProps) {
   const status = data?.discord_status ?? 'offline'
 
   return (
-    <div
-      className={cn(
-        `flex min-h-[13rem] w-full items-center justify-center rounded-2xl ${props.cols ?? ''}`,
-        {
-          online: 'bg-green-500 font-jetbrains-mono text-white',
-          idle: 'bg-orange-400 font-jetbrains-mono text-white',
-          dnd: 'bg-red-500 font-jetbrains-mono text-white',
-          offline: 'bg-[#5865F2] font-jetbrains-mono text-white',
-        }[status]
-      )}
+    <Transition
+      show={data != undefined}
+      enter="ease-out duration-200"
+      enterFrom="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-[0.98]"
+      enterTo="opacity-100 translate-y-0 sm:scale-100"
+      leave="ease-in duration-200"
+      leaveFrom="opacity-100 translate-y-0 sm:scale-100"
+      leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-[0.98]"
+      className={props.cols ?? ''}
     >
-      <div className="scale-[0.9] space-y-1 text-center sm:scale-[1.5]">
-        <p className="scale-[1.6]">
-          <IoLogoDiscord className="mb-2 w-full justify-end" />
-        </p>
-        <span>{status}</span>
+      <div
+        className={cn(
+          `flex min-h-[13rem] w-full items-center justify-center rounded-2xl ${props.cols ?? ''}`,
+          {
+            online: 'bg-green-500 font-jetbrains-mono text-white',
+            idle: 'bg-orange-400 font-jetbrains-mono text-white',
+            dnd: 'bg-red-500 font-jetbrains-mono text-white',
+            offline: 'bg-[#5865F2] font-jetbrains-mono text-white',
+          }[status]
+        )}
+      >
+        <div className="scale-[0.9] space-y-1 text-center sm:scale-[1.5]">
+          <p className="scale-[1.6]">
+            <IoLogoDiscord className="mb-2 w-full justify-end" />
+          </p>
+          <span>{status}</span>
+        </div>
       </div>
-    </div>
+    </Transition>
   )
 }

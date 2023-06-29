@@ -20,7 +20,7 @@ export const Tooltip: React.FC<TooltipProps> = ({ text, children }) => {
   }
 
   return (
-    <div className="relative inline-block">
+    <div className="relative inline-block z-20">
       <div onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
         {children}
       </div>
