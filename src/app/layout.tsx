@@ -1,44 +1,39 @@
+'use client'
+
 // Framework
 import '@/styles/globals.css'
+
+import { type Metadata } from 'next'
+
+import { my_metadata } from '@/server/metadata'
 
 // Srr
 import { fontMono } from '@/lib/font'
 import { cn } from '@/lib/util/util'
+import Particles from '@/components/ui/particles'
 import { ThemeProvider } from '@/components/ui/theme-provider'
 import { Toaster } from '@/components/ui/toaster'
 import Footer from '@/components/footer/Footer'
 import Navbar from '@/components/navbar/Navbar'
-import { my_metadata } from '@/server/metadata'
-import Particles from '@/components/ui/particles'
-import { type Metadata } from 'next'
 
 export const metadata: Metadata = {
-	title: {
-		default: "Thienguen",
-		template: "%s | thienguen",
-	},
-	description: "dissapointment",
-	openGraph: {
-		title: "thienguen",
-		description:
-			"dissapointment",
-		url: "https://thienguen",
-		siteName: "thienguen",
-		images: [
-			{
-				url: "https://thienguen/og.png",
-				width: 1920,
-				height: 1080,
-			},
-		],
-		locale: "en-US",
-		type: "website",
-	},
-	icons: {
-		shortcut: "/monika.png",
-	},
-};
-
+  title: {
+    default: 'Thienguen',
+    template: '%s | thienguen',
+  },
+  description: 'dissapointment',
+  openGraph: {
+    title: 'thienguen',
+    description: 'dissapointment',
+    url: 'https://thienguen',
+    siteName: 'thienguen',
+    locale: 'en-US',
+    type: 'website',
+  },
+  icons: {
+    shortcut: '/monika.png',
+  },
+}
 
 interface RootLayoutProps {
   children: React.ReactNode
@@ -50,7 +45,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <html lang="en" suppressHydrationWarning>
         <head
           className={cn(
-            'bg-gradient-to-b from-slate-300 to-gray-400', // light
+            // 'bg-gradient-to-b from-slate-200 to-gray-200', // light
+            // 'dark:bg-gradient-to-b dark:from-black dark:to-gray-800' // dark
+            'bg-gradient-to-b from-slate-300 to-gray-300', // light
             'dark:bg-gradient-to-b dark:from-black dark:to-gray-900' // dark
           )}
         >
@@ -69,12 +66,12 @@ export default function RootLayout({ children }: RootLayoutProps) {
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem themes={['light', 'dark']}>
             <div
               className={cn(
-                'grow',
-                'bg-gradient-to-b from-slate-300 to-gray-400', // light
+                'z-20 grow',
+                'bg-gradient-to-b from-slate-300 to-gray-300', // light
                 'dark:bg-gradient-to-b dark:from-black dark:to-gray-900' // dark
               )}
             >
-              <Particles className="absolute inset-0 -z-0 animate-fade-in" quantity={150} />
+              <Particles className="absolute inset-0 -z-10 animate-fade-in" quantity={200} />
               <Navbar />
               {children}
             </div>

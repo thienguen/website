@@ -1,6 +1,8 @@
 'use client'
 
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
+
+import { useTheme } from 'next-themes'
 
 import { useMousePosition } from '@/lib/util/mouse'
 
@@ -28,6 +30,10 @@ export default function Particles({
   const canvasSize = useRef<{ w: number; h: number }>({ w: 0, h: 0 })
   const dpr = typeof window !== 'undefined' ? window.devicePixelRatio : 1
 
+  const [shouldUpdate, setShouldUpdate] = useState(true)
+
+  const { theme } = useTheme()
+
   useEffect(() => {
     if (canvasRef.current) {
       context.current = canvasRef.current.getContext('2d')
@@ -46,8 +52,10 @@ export default function Particles({
   }, [mousePosition.x, mousePosition.y])
 
   useEffect(() => {
+    clearCanvas()
     initCanvas()
-  }, [refresh])
+    setShouldUpdate(true)
+  }, [refresh, theme])
 
   const initCanvas = () => {
     resizeCanvas()
@@ -125,13 +133,37 @@ export default function Particles({
       context.current.translate(translateX, translateY)
       context.current.beginPath()
       context.current.arc(x, y, size, 0, 2 * Math.PI)
-      context.current.fillStyle = `rgba(255, 255, 255, ${alpha})`
+      context.current.fillStyle = theme === 'dark' ? `rgba(255, 255, 255, ${alpha})` : `rgba(241, 8, 204, ${alpha})` // Deep blue
       context.current.fill()
       context.current.setTransform(dpr, 0, 0, dpr, 0, 0)
 
       if (!update) {
         circles.current.push(circle)
       }
+    }
+  }
+
+  // const drawCircle = (circle: Circle, update = false) => {
+  //   if (context.current) {
+  //     const { x, y, translateX, translateY, size, alpha } = circle
+  //     context.current.translate(translateX, translateY)
+  //     context.current.beginPath()
+  //     context.current.arc(x, y, size, 0, 2 * Math.PI)
+  //     context.current.fillStyle = `rgba(241, 8, 204, ${alpha})` // color changed to black
+  //     context.current.fill()
+  //     context.current.setTransform(dpr, 0, 0, dpr, 0, 0)
+
+  //     if (!update) {
+  //       circles.current.push(circle)
+  //     }
+  //   }
+  // }
+
+  const clearCanvas = () => {
+    if (context.current) {
+      context.current.clearRect(0, 0, canvasSize.current.w, canvasSize.current.h)
+      circles.current = []
+      setShouldUpdate(false)
     }
   }
 
@@ -189,8 +221,11 @@ export default function Particles({
         // remove the circle from the array
         circles.current.splice(i, 1)
         // create a new circle
-        const newCircle = circleParams()
-        drawCircle(newCircle)
+        // create a new circle only if shouldUpdate is true
+        if (shouldUpdate) {
+          const newCircle = circleParams()
+          drawCircle(newCircle)
+        }
         // update the circle position
       } else {
         drawCircle(
