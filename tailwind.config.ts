@@ -7,6 +7,7 @@ module.exports = {
       center: true,
       padding: '2rem',
       screens: {
+        'xl': '1380px',
         '2xl': '1536px',
         '3xl': '1920px',
         '4xl': '2560px',
@@ -15,6 +16,14 @@ module.exports = {
         'tall': { raw: '(min-height: 800px)' },
         'tall-2xl': { raw: '(min-height: 1000px) and (min-width: 1536px)' },
         'tall-3xl': { raw: '(min-height: 1200px) and (min-width: 1920px)' },
+        'xxsm': '380px',
+        'xsm': '460px',
+        'sxsm': '510px',
+        'sm': '640px',
+        'md': '768px',
+        'mmlg': '810px',
+        'mlg': '894px',
+        'lg': '1024px',
       },
     },
     extend: {

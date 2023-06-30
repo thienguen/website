@@ -8,15 +8,14 @@ export default function Home() {
     <>
       {/* Hero Kinda Section */}
 
-      <div className="mb-8 h-full min-h-[500px] w-full sm:mt-32">
+      <div className="3xl:mt-64 4xl:mt-72 mb-8 h-full w-full sm:mt-32 sm:min-h-[500px]">
         {/* Bar */}
         <div className="hidden h-px w-screen animate-fade-left bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0 md:block" />
-
         {/* ------------------------------------------------------------------------------------------------- */}
         <div className="m-auto flex w-full max-w-screen-lg flex-col items-center justify-center px-5 sm:flex-row">
           {/* Left side*/}
           <div className="flex flex-col justify-center sm:mr-10">
-            <h2 className="text-edge-outline animate-title cursor-default whitespace-nowrap text-center font-display text-4xl font-bold text-slate-800  dark:text-slate-200 sm:text-4xl md:text-5xl lg:text-6xl">
+            <h2 className="text-edge-outline animate-title cursor-default whitespace-nowrap text-center font-display text-4xl font-bold text-slate-800  dark:text-slate-200   lg:text-6xl">
               {`Thien Nguyen`}
             </h2>
             <div className="mb-2 max-w-md animate-fade-in-2 space-y-3 py-5 text-center text-gray-500 dark:text-gray-500">
@@ -30,16 +29,12 @@ export default function Home() {
           <Profile />
         </div>
         {/* ------------------------------------------------------------------------------------------------- */}
-
         <SkillIssues /> {/* useless */}
-
         {/* Bar */}
         <div className="hidden h-px w-screen animate-fade-right bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0 md:block" />
       </div>
 
-
       {/* TODO: kbar will be here Ctrk+K */}
-      
     </>
   )
 }

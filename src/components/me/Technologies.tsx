@@ -34,7 +34,7 @@ import { TbBrandJavascript } from 'react-icons/tb'
 export const Technologies = () => {
   return (
     <>
-      <div className="col-span-6 flex h-full min-h-[13rem] w-full flex-col items-center justify-center rounded-lg bg-[#f9f4f4] text-slate-900 dark:bg-[#1a202c] dark:text-slate-300 sm:col-span-3">
+      <div className="col-span-6 flex h-full min-h-[13rem] w-full flex-col items-center justify-center rounded-lg bg-[#fef8f8] text-slate-900 dark:bg-[#1a202c] dark:text-slate-300 sm:col-span-3">
         <div className="xxsm:grid-cols-8 xsm:grid-cols-9 grid h-full w-full grid-cols-7 grid-rows-4 gap-4 p-5 sm:grid-cols-6 sm:grid-rows-5 md:grid-cols-7 md:grid-rows-4">
           <SiTypescript size="28" />
           <SiNodedotjs size="28" />

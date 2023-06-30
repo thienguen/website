@@ -26,7 +26,7 @@ export default function About() {
         {/* What is this 4. */}
         <QA
           question="currently?"
-          answer="An undergraduate student at UNLV, majoring in Computer Science. I'm also working as a software engineer intern at a local company."
+          answer="I am an undergraduate student at UNLV, majoring in Computer Science. Aside working as a software engineer intern at a local company."
           cols="sm:col-span-4 col-span-3"
           height="min-h-[13rem]"
         />
@@ -38,7 +38,7 @@ export default function About() {
         {/* 2. */}
         <QA
           question="outside of coding"
-          answer="I am also fascinated with Mathematics and wish to make a career out of it someday. Things I love include: j̶a̶p̶a̶n̶, dark mode, coffee, and cats."
+          answer="I'm also fascinated with Mathematics and wish to make a career out of it someday. Things I love include: j̶a̶p̶a̶n̶, dark mode, coffee, and cats."
           cols="col-span-6 sm:col-span-3"
           height="min-h-[13rem]"
         />
