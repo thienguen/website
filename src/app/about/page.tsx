@@ -4,11 +4,10 @@ import DiscordStatus from '@/components/me/DiscordStatus'
 import { Technologies } from '@/components/me/Technologies'
 import { Timer } from '@/components/me/Timer'
 
-
 export default function About() {
   return (
     <>
-      <div className="min-h-screen mx-auto my-10 grid max-w-3xl grid-cols-6 gap-6 px-6 ">
+      <div className="mx-auto my-10 grid min-h-screen max-w-3xl grid-cols-6 gap-6 px-6 ">
         {/* About me. */}
         <QA
           question="about me?"
@@ -23,7 +22,7 @@ export default function About() {
         {/* 3. Timer. */}
         <Timer />
 
-        {/* What is this 4. */}
+        {/* I'm currently a bitch 4. */}
         <QA
           question="currently?"
           answer="I am an undergraduate student at UNLV, majoring in Computer Science. Aside working as a software engineer intern at a local company."
@@ -31,11 +30,10 @@ export default function About() {
           height="min-h-[13rem]"
         />
 
-        {/* 1. */}
-
+        {/* 5. Copi Copi */}
         <Technologies />
 
-        {/* 2. */}
+        {/* If I could stick an anime girl here, I FKING WOULD 6. */}
         <QA
           question="outside of coding"
           answer="I'm also fascinated with Mathematics and wish to make a career out of it someday. Things I love include: j̶a̶p̶a̶n̶, dark mode, coffee, and cats."
@@ -43,7 +41,7 @@ export default function About() {
           height="min-h-[13rem]"
         />
 
-        {/* 1. */}
+        {/* 7. Full Throttle 7. */}
         <QA
           question="RPG Maker Games??"
           answer="Words can't describe what a big fan I am of this subculture, which had its heyday in the early 2010s. I'm still actively playing these games and, hopefully, one day, I will create one myself. Here are a few of my personal favorites."
@@ -52,7 +50,9 @@ export default function About() {
         />
 
         {/* TODO: RPG GAMES LIST HERE */}
+        {/* 8. A TODO LIST THAT I THINK I NEED HELP THO IM STUPID */}
 
+        {/* 9. RECTANGLE, CIRCLE, TRIANGLE GO 9. */}
         <Motion />
         <Motion />
         <Motion />

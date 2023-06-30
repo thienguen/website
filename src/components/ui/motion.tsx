@@ -5,7 +5,6 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 
 const draw = {
-  
   /* When hidden, do this */
   hidden: { pathLength: 0, opacity: 0 },
 
@@ -31,7 +30,7 @@ export default function Motion() {
   }
 
   return (
-    <div className="col-span-2 flex items-center justify-center rounded-2xl bg-[#f9f4f4] p-2 dark:bg-[#1a202c]">
+    <div className="col-span-2 flex min-h-[16rem] items-center justify-center rounded-2xl bg-[#f9f4f4] p-2 dark:bg-[#1a202c]">
       <motion.svg
         width="208"
         height="192"
