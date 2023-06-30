@@ -13,7 +13,7 @@ export default function About() {
         <QA
           question="about me?"
           answer="My journey of coding started in 2021 and I have been loving it ever since. I'm still fixing some bugs here and there during free time (so many!!). Right now interested in Three.js and 3D model."
-          cols="col-span-4"
+          cols="sm:col-span-4 col-span-3"
           height="min-h-[13rem]"
         />
 
@@ -39,7 +39,7 @@ export default function About() {
         <QA
           question="outside of coding"
           answer="I am also fascinated with Mathematics and wish to make a career out of it someday. Things I love include: j̶a̶p̶a̶n̶, dark mode, coffee, and cats."
-          cols="col-span-3"
+          cols="col-span-6 sm:col-span-3"
           height="min-h-[13rem]"
         />
 

@@ -11,7 +11,6 @@ import { ThemeToggle } from '@/components/footer/ThemeToggle'
 export default function Footer() {
   return (
     <div
-      // className="z-20" // breh this is ass
       // className={cn(
       //   'bg-gradient-to-b from-slate-300 to-gray-300', // light
       //   'dark:bg-gradient-to-b dark:from-black dark:to-gray-900' // dark

@@ -24,11 +24,11 @@ export default function DiscordStatus(props: DiscordStatusProps) {
       leave="ease-in duration-200"
       leaveFrom="opacity-100 translate-y-0 sm:scale-100"
       leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-[0.98]"
-      className={props.cols ?? ''}
+      className={`col-span-3 sm:col-span-2 `}
     >
       <div
         className={cn(
-          `flex min-h-[13rem] w-full items-center justify-center rounded-2xl ${props.cols ?? ''}`,
+          `flex h-full min-h-[13rem]  w-full flex-col items-center justify-center rounded-2xl`,
           {
             online: 'bg-green-500 font-jetbrains-mono text-white',
             idle: 'bg-orange-400 font-jetbrains-mono text-white',
