@@ -8,7 +8,7 @@ import { Timer } from '@/components/me/Timer'
 export default function About() {
   return (
     <>
-      <div className="mx-auto my-10 grid max-w-3xl grid-cols-6 gap-6 px-6 ">
+      <div className="min-h-screen mx-auto my-10 grid max-w-3xl grid-cols-6 gap-6 px-6 ">
         {/* About me. */}
         <QA
           question="about me?"

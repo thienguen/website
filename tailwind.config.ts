@@ -11,7 +11,7 @@ module.exports = {
         '2xl': '1536px',
         '3xl': '1920px',
         '4xl': '2560px',
-        '5xl': '3840px',
+        '5xl': '3240px',
         '6xl': '4096px',
         'tall': { raw: '(min-height: 800px)' },
         'tall-2xl': { raw: '(min-height: 1000px) and (min-width: 1536px)' },
