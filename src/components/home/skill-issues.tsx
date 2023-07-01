@@ -25,8 +25,8 @@ const SkillIssues = () => {
 
   return (
     <>
-      <div className="m-12">
-        <div className="flex animate-fade-in-2 flex-wrap items-center justify-center text-4xl">
+      <div className="m-4">
+        <div className="flex animate-fade-in-2 flex-wrap items-center justify-center text-3xl">
           {icons.map((icon, index) => (
             <div key={index} className="m-2">
               {icon}
