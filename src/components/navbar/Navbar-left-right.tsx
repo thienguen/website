@@ -36,7 +36,7 @@ export const NavbarLeft = ({ path_name }: { path_name: string }) => (
 
 export const NavbarRight = () => (
   <div className="flex items-center space-x-4">
-    <div className="hidden text-sm sm:flex">
+    <div className="hidden text-base sm:flex">
       {Navlinks.map((link) => (
         <Link
           key={link.title}
@@ -65,7 +65,7 @@ export function NavbarRightSmall({ path_name, isOpen }: NavbarRightProps): React
             path_name === link.href && 'text-gray-200',
             isOpen && 'show'
           )}
-          style={{ animation: isOpen ? `slide-in 0.8s ease ${index * 0.1}s forwards` : 'none' }}
+          style={{ animation: isOpen ? `slide-in 1s ease ${index * 0.1}s forwards` : 'none' }}
         >
           {link.title}
         </Link>

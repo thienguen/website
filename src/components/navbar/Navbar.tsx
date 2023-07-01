@@ -14,7 +14,6 @@ import { NavbarLeft, NavbarRight, NavbarRightSmall } from '@/components/navbar/N
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [height, setHeight] = useState('0px')
-  const [key, setKey] = useState(0) // useless
 
   const path_name = usePathname()
   const isBreakpoint = useMediaQuery('780px')
@@ -69,7 +68,7 @@ const Navbar = () => {
               style={{ maxHeight: height }}
             >
               <div className={`md:block ${isOpen ? 'block' : 'hidden'}`}>
-                <NavbarRightSmall key={key} path_name={path_name} isOpen={isOpen} />
+                <NavbarRightSmall path_name={path_name} isOpen={isOpen} />
               </div>
             </div>
           </div>

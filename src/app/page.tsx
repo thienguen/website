@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <>
       {/* Hero Kinda Section */}
-      <div className=" mb-8 h-full w-full items-center justify-center sm:mt-32 sm:min-h-[700px] ">
+      <div className=" mb-8 h-full w-full items-center justify-center sm:mt-32 sm:min-h-[500px] ">
         {/* Bar */}
         <div className="hidden h-px w-screen animate-fade-left bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0 md:block" />
         {/* ------------------------------------------------------------------------------------------------- */}

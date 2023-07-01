@@ -50,10 +50,11 @@ export default function RootLayout({ children }: RootLayoutProps) {
                 'dark:bg-gradient-to-b dark:from-black dark:to-gray-900' // dark
               )}
             >
-              <Particles className="min-h-screen absolute inset-0 -z-10" quantity={200} />
+              <Particles className="absolute inset-0 -z-10" quantity={200} />
               <Navbar />
               {children}
               {/* BUGS: Can't grow to the footer, or when page is scroollable */}
+              {/* Unless I'm making another layout, but I'm too tired */}
             </div>
             <Footer />
             <Toaster /> {/* useless */}
