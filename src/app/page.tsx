@@ -14,7 +14,7 @@ export default function Home() {
         <div className="m-auto flex w-full max-w-screen-lg flex-col items-center justify-center px-5 sm:flex-row">
           {/* Left side*/}
           <div className="flex flex-col justify-center sm:mr-10">
-            <h2 className="mb-2 text-edge-outline animate-title cursor-default whitespace-nowrap text-center font-display text-3xl font-bold text-slate-800  dark:text-slate-200 lg:text-5xl">
+            <h2 className="text-edge-outline mb-2 animate-title cursor-default whitespace-nowrap text-center font-display text-3xl font-bold text-slate-800  dark:text-slate-200 lg:text-5xl">
               {`Thien Nguyen`}
             </h2>
             <div className=" max-w-md animate-fade-in-2 space-y-3 py-5 text-center text-gray-500 dark:text-gray-500">

@@ -11,6 +11,7 @@ export const useMediaQuery = (width: string) => {
       setTargetReached(false)
     }
   }, [])
+
   useEffect(() => {
     const media = window.matchMedia(`(min-width: ${width})`)
     media.addEventListener('change', (e) => updateTarget(e))
@@ -19,5 +20,6 @@ export const useMediaQuery = (width: string) => {
     }
     return () => media.removeEventListener('change', (e) => updateTarget(e))
   }, [width, updateTarget])
+  
   return targetReached
 }

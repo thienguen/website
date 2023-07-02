@@ -16,16 +16,19 @@ interface NavbarRightProps {
   isOpen: boolean
 }
 
-// mapping for each title to its icon
+// < mapping for each title to its icon > \\
 const IconMapping: { [key: string]: JSX.Element } = {
   '/home': <AiOutlineHome />,
   '/about': <IoPersonCircleOutline />,
   '/projects': <GoProjectSymlink />,
-  '/contact': <AiOutlineMail />,
+  '/guestbook': <AiOutlineMail />,
 }
 
+/**
+ * @return Left side of the navbar
+ */
 export const NavbarLeft = ({ path_name }: { path_name: string }) => (
-  <div className="mb-3 w-full md:mb-0 md:w-auto">
+  <div className="mb-4 w-full md:mb-0 md:w-auto">
     <Link href="/" aria-label={metadata.headerTitle}>
       <div className="flex items-start text-xl font-semibold dark:text-slate-200">
         {`~${path_name}`} <Typewriter options={{ strings: [], autoStart: true, loop: true }} />
@@ -34,9 +37,13 @@ export const NavbarLeft = ({ path_name }: { path_name: string }) => (
   </div>
 )
 
+
+/**
+ * @returns Right side of the navbar
+ */
 export const NavbarRight = () => (
   <div className="flex items-center space-x-4">
-    <div className="hidden text-base sm:flex">
+    <div className="hidden text-sm sm:flex">
       {Navlinks.map((link) => (
         <Link
           key={link.title}
@@ -44,7 +51,7 @@ export const NavbarRight = () => (
           rel="noopener noreferrer"
           className="link-underline rounded text-gray-900 hover:bg-slate-50 dark:text-gray-100 dark:hover:bg-gray-700 sm:px-4 sm:py-2" // dark
         >
-          {IconMapping[link.title]} {/* this line will insert the icon for each link */}
+          {IconMapping[link.title]} {/* this will  insert the icon for each link */}
           {link.title}
         </Link>
       ))}
@@ -52,6 +59,9 @@ export const NavbarRight = () => (
   </div>
 )
 
+/**
+ * @returns Right side of the navbar for small screens, with animation
+ */
 export function NavbarRightSmall({ path_name, isOpen }: NavbarRightProps): ReactNode {
   return (
     <div className="flex-col items-start space-y-4">

@@ -1,7 +1,7 @@
 'use client'
 
 /* Framework */
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { Suspense, useCallback, useEffect, useRef, useState } from 'react'
 import { usePathname } from 'next/navigation'
 
 /* Libraries */
@@ -46,34 +46,39 @@ const Navbar = () => {
 
   return (
     <>
-      {isBreakpoint ? (
-        <>
-          <nav className="m-auto flex w-3/5 flex-wrap items-center justify-between py-5 md:flex-nowrap">
-            {/* Typewriter Effect -- Left */}
-            <div className={`md:block ${isOpen ? 'block' : 'hidden'}`}>
-              <NavbarLeft path_name={path_name} />
-            </div>
-            <NavbarRight />
-            {/* Navlinks Effect -- Right */}
-          </nav>
-        </>
-      ) : (
-        <>
-          <div className="my-6" ref={navRef}>
-            <div className="flex flex-col items-center justify-center text-slate-100">
-              <Hamburger toggled={isOpen} toggle={expand} />
-            </div>
-            <div
-              className="mt-2 flex w-full flex-col items-center justify-center gap-2 space-y-2 overflow-hidden text-center text-slate-200 transition-all duration-200"
-              style={{ maxHeight: height }}
-            >
+      <Suspense fallback={<div>Loading...</div>}> {/* Useless */}
+        {isBreakpoint ? (
+          <>
+            <nav className="m-auto flex w-3/5 flex-wrap items-center justify-between py-5 md:flex-nowrap">
+              {/* Typewriter Effect -- Left */}
               <div className={`md:block ${isOpen ? 'block' : 'hidden'}`}>
-                <NavbarRightSmall path_name={path_name} isOpen={isOpen} />
+                <NavbarLeft path_name={path_name} />
+              </div>
+              {/* ------------------------- */}
+              <div>
+                <NavbarRight />
+              </div>
+              {/* Navlinks Effects -- Right */}
+            </nav>
+          </>
+        ) : (
+          <>
+            <div className="my-6" ref={navRef}>
+              <div className="flex flex-col items-center justify-center text-slate-100">
+                <Hamburger toggled={isOpen} toggle={expand} />
+              </div>
+              <div
+                className="mt-2 flex w-full flex-col items-center justify-center gap-2 space-y-2 overflow-hidden text-center text-slate-200 transition-all duration-200"
+                style={{ maxHeight: height }}
+              >
+                <div className={`md:block ${isOpen ? 'block' : 'hidden'}`}>
+                  <NavbarRightSmall path_name={path_name} isOpen={isOpen} />
+                </div>
               </div>
             </div>
-          </div>
-        </>
-      )}
+          </>
+        )}
+      </Suspense>
     </>
   )
 }
