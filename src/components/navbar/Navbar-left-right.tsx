@@ -2,7 +2,7 @@
 import type { ReactNode } from 'react'
 import Link from 'next/link'
 
-import { metadata } from '@/app/api/metadata'
+import { metadata } from '@/api/metadata'
 
 import { AiOutlineHome, AiOutlineMail } from 'react-icons/ai'
 import { GoProjectSymlink } from 'react-icons/go'
