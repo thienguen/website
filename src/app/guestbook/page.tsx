@@ -12,7 +12,7 @@
  * ------------------------------------------------------------------------
  */
 import { useState } from 'react'
-import { type Metadata } from 'next'
+// import { type Metadata } from 'next'
 import Link from 'next/link'
 
 import { signIn, useSession } from 'next-auth/react'
@@ -27,6 +27,7 @@ import LoadingSpinner from '@/components/ui/loading-spinner'
 export const dynamic = 'force-dynamic'
 
 export default function Contact() {
+
   const { data: session } = useSession()
   const [isLoadingGithub, setIsLoadingGithub] = useState<boolean>()
 
@@ -76,6 +77,9 @@ export default function Contact() {
             </div>
           )}
         </div>
+
+
+        
       </div>
     </>
   )
