@@ -3,6 +3,7 @@
 import { useState } from 'react'
 
 import { motion } from 'framer-motion'
+import { useEffect } from 'react'
 
 const draw = {
   /* When hidden, do this */
@@ -25,9 +26,13 @@ const draw = {
 export default function Motion() {
   const [key, setKey] = useState(0)
 
-  const handleClick = () => {
-    setKey((prevKey) => prevKey + 1) // change key to re-run animation
-  }
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setKey((prevKey) => prevKey + 1) // change key to re-run animation
+    }, 5000); // Rerun every 5 seconds
+
+    return () => clearInterval(intervalId); // Cleanup function to clear the interval on unmount
+  }, []); // Empty dependency array so the effect only runs once on mount
 
   return (
     <div className="col-span-2 flex min-h-[16rem] items-center justify-center rounded-2xl bg-[#f9f4f4] p-2 dark:bg-[#1a202c]">
@@ -38,8 +43,8 @@ export default function Motion() {
         initial="hidden"
         animate="visible"
         key={key}
-        whileFocus={{ scale: 1.1 }}
-        onClick={handleClick}
+        // whileFocus={{ scale: 1.1 }}
+        // onClick={handleClick}
         className={''}
       >
         <circle cx="105" cy="100" r="80" stroke="#333" fill="#fff" stroke-width="10" />
