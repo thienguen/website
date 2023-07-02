@@ -3,6 +3,12 @@ import { QA } from '@/components/ui/qa'
 import DiscordStatus from '@/components/me/DiscordStatus'
 import { Technologies } from '@/components/me/Technologies'
 import { Timer } from '@/components/me/Timer'
+import { type Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: '/about',
+  description: 'metadata is a funny lil concept.',
+};
 
 export default function About() {
   return (

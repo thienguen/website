@@ -6,7 +6,7 @@ export const metadata = {
   headerTitle: 'blank_dreams',
   description: 'Isekai already',
 
-  creator: 'thienguen',
+  creator: '/thienguen',
   name: 'Thienguen',
   url: 'https://github.com/Thienguen',
   linkedin: 'https://www.linkedin.com/in/thien-nguyen-2a4a37234/',
@@ -25,4 +25,7 @@ export const metadata = {
     { media: '(prefers-color-scheme: dark)', color: 'black' },
   ],
   // add icons here soon???
+  icon: [
+    { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon.ico' },
+  ]
 }

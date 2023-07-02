@@ -1,5 +1,5 @@
-import Profile from '@/components/ui/profile'
-import Signature from '@/components/ui/signature'
+import Profile     from '@/components/ui/profile'
+import Signature   from '@/components/ui/signature'
 import SkillIssues from '@/components/home/skill-issues'
 
 export default function Home() {

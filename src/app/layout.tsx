@@ -35,8 +35,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           <meta content={metadata.creator} property="og:title" />
           <meta content={metadata.description} name="description" />
           <meta content={metadata.description} property="og:description" />
-          <meta content="???" property="og:url" />
-          <meta content={`???`} property="og:image" />
+          <link rel="shortcut icon" href="/images/monika-fa.png" /> {/* as if I know how app router works */}
         </head>
 
         <body
