@@ -6,7 +6,7 @@ import { Timer } from '@/components/me/Timer'
 import { type Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: '/about',
+  title: '/',
   description: 'metadata is a funny lil concept.',
 };
 
@@ -18,12 +18,12 @@ export default function About() {
         <QA
           question="about me?"
           answer="My journey of coding started in 2021 and I have been loving it ever since. I'm still fixing some bugs here and there during free time (so many!!). Right now interested in Three.js and 3D model."
-          cols="sm:col-span-4 col-span-3"
+          cols="sm:col-span-4 col-span-3" // small screen
           height="min-h-[13rem]"
         />
 
         {/* Discord is tough 2. */}
-        <DiscordStatus cols="col-span-2" />
+        <DiscordStatus cols="col-span-3 sm:col-span-2" />
 
         {/* 3. Timer. */}
         <Timer />
@@ -32,7 +32,7 @@ export default function About() {
         <QA
           question="currently?"
           answer="I am an undergraduate student at UNLV, majoring in Computer Science. Aside working as a software engineer intern at a local company."
-          cols="sm:col-span-4 col-span-3"
+          cols="sm:col-span-4 col-span-3" // small screen
           height="min-h-[13rem]"
         />
 
@@ -43,7 +43,7 @@ export default function About() {
         <QA
           question="outside of coding"
           answer="I'm also fascinated with Mathematics and wish to make a career out of it someday. Things I love include: j̶a̶p̶a̶n̶, dark mode, coffee, and cats."
-          cols="col-span-6 sm:col-span-3"
+          cols="col-span-6 sm:col-span-3" // small screen
           height="min-h-[13rem]"
         />
 
@@ -57,6 +57,7 @@ export default function About() {
 
         {/* TODO: RPG GAMES LIST HERE */}
         {/* 8. A TODO LIST THAT I THINK I NEED HELP THO IM STUPID */}
+
 
         {/* 9. RECTANGLE, CIRCLE, TRIANGLE GO 9. */}
         <Motion />

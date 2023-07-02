@@ -3,7 +3,7 @@
 // Framework
 import '@/styles/globals.css'
 
-import { metadata } from '@/server/metadata'
+import { metadata } from '@/app/api/metadata'
 
 // Srr
 import { fontMono } from '@/lib/font'

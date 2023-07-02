@@ -24,7 +24,7 @@ export default function DiscordStatus(props: DiscordStatusProps) {
       leave="ease-in duration-200"
       leaveFrom="opacity-100 translate-y-0 sm:scale-100"
       leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-[0.98]"
-      className={`col-span-3 sm:col-span-2 `}
+      className={`${props.cols ?? ''}`}
     >
       <div
         className={cn(

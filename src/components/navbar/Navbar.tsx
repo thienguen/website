@@ -46,7 +46,9 @@ const Navbar = () => {
 
   return (
     <>
-      <Suspense fallback={<div>Loading...</div>}> {/* Useless */}
+      <Suspense fallback={<div>Loading...</div>}>
+        {' '}
+        {/* Useless */}
         {isBreakpoint ? (
           <>
             <nav className="m-auto flex w-3/5 flex-wrap items-center justify-between py-5 md:flex-nowrap">
@@ -64,7 +66,7 @@ const Navbar = () => {
         ) : (
           <>
             <div className="my-6" ref={navRef}>
-              <div className="flex flex-col items-center justify-center text-slate-100">
+              <div className="flex flex-col items-center justify-center text-slate-950 dark:text-slate-100">
                 <Hamburger toggled={isOpen} toggle={expand} />
               </div>
               <div

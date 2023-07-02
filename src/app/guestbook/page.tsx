@@ -20,7 +20,10 @@ export const dynamic = 'force-dynamic'
 export default function Contact() {
   return (
     <>
+      
+      
       <h1>Guestbook</h1>
+
     </>
   )
 }

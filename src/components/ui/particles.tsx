@@ -5,6 +5,7 @@ import React, { useEffect, useRef } from 'react'
 import { useMousePosition } from '@/lib/util/mouse'
 
 /* BUGS: Cant sync light and dark theme */
+/* Theme: how about random generate the color ? */
 
 interface ParticlesProps {
   className?: string
@@ -128,6 +129,8 @@ export default function Particles({
       context.current.beginPath()
       context.current.arc(x, y, size, 0, 2 * Math.PI)
       context.current.fillStyle = `rgba(255, 255, 255, ${alpha})`
+      // context.current.fillStyle = `rgba(0, 0, 128, ${alpha})`;
+      // context.current.fillStyle = `rgba(255, 255, 0, ${alpha})`;
       context.current.fill()
       context.current.setTransform(dpr, 0, 0, dpr, 0, 0)
 

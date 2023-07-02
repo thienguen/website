@@ -2,7 +2,8 @@
 import type { ReactNode } from 'react'
 import Link from 'next/link'
 
-import { metadata } from '@/server/metadata'
+import { metadata } from '@/app/api/metadata'
+
 import { AiOutlineHome, AiOutlineMail } from 'react-icons/ai'
 import { GoProjectSymlink } from 'react-icons/go'
 import { IoPersonCircleOutline } from 'react-icons/io5'
