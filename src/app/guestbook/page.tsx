@@ -1,3 +1,5 @@
+'use client'
+
 /**
  * Plans to make guestbook
  * 1. Set up nextauth, or an authientication system { [nextauth, jwt, bcrypt], [clerk] } -- partially done
@@ -9,7 +11,14 @@
  * 7. Connect db and api [ prisma ]
  * ------------------------------------------------------------------------
  */
+import { useState } from 'react'
 import { type Metadata } from 'next'
+import Link from 'next/link'
+
+import { signIn, useSession } from 'next-auth/react'
+// import { SignIn, SignOut } from '@/app/guestbook/authState'
+
+import LoadingSpinner from '@/components/ui/loading-spinner'
 
 export const metadata: Metadata = {
   title: '/guestbook',
@@ -19,6 +28,9 @@ export const metadata: Metadata = {
 export const dynamic = 'force-dynamic'
 
 export default function Contact() {
+  const { data: session } = useSession()
+  const [isLoadingGithub, setIsLoadingGithub] = useState<boolean>()
+
   return (
     <>
       <div className="mx-auto mb-16 flex max-w-3xl flex-col items-start justify-center">
@@ -33,6 +45,34 @@ export default function Contact() {
         </div>
 
         {/* <Guestbook fallbackData={fallbackData} /> */}
+        {!session && (
+          <div className="flex flex-row">
+            <Link
+              href="/api/auth/signin/"
+              className="mx-2 my-4 flex h-20 w-1/2 items-center justify-center rounded bg-neutral-100 font-light text-gray-900 ring-gray-300 transition-all hover:ring-2 dark:bg-zinc-800 dark:text-gray-100"
+              onClick={(e) => {
+                e.preventDefault();
+                signIn()
+                  .then(() => {
+                    setIsLoadingGithub(true);
+                  })
+                  .catch((error) => {
+                    console.error('Error during sign in:', error);
+                  });
+              }}
+            >
+              {isLoadingGithub ? (
+                <>
+                  Loading <LoadingSpinner />
+                </>
+              ) : (
+                <div className="flex flex-col items-center justify-center">
+                  <div className="mb-2 dark:text-neutral-300">Github</div>
+                </div>
+              )}
+            </Link>
+          </div>
+        )}
       </div>
     </>
   )

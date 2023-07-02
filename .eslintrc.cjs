@@ -12,6 +12,7 @@ const config = {
       },
       rules: {
         '@typescript-eslint/no-unsafe-assignment': 'off', // fk eslint
+        '@typescript-eslint/no-unsafe-call': 'off', // fk eslint
       },
     },
   ],
@@ -38,6 +39,7 @@ const config = {
     '@next/next/no-html-link-for-pages': 'off',
     'react/jsx-key': 'off',
     '@typescript-eslint/no-unsafe-assignment': 'off', // fk eslint
+    '@typescript-eslint/no-unsafe-call': 'off', // fk eslint
   },
   settings: {
     tailwindcss: {

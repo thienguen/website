@@ -3,7 +3,7 @@
 // Framework
 import '@/styles/globals.css'
 
-import { metadata } from '@/api/metadata'
+import { metadata } from '@/app/api/metadata'
 
 import AuthProvider from '@/lib/nextauth/AuthProvider'
 // Srr
@@ -22,7 +22,7 @@ interface RootLayoutProps {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <>
-      <html lang="en" suppressHydrationWarning>
+      <html lang="en" suppressHydrationWarning={true}>
         <head
           className={cn(
             // 'bg-gradient-to-b from-slate-200 to-gray-200', // light
@@ -40,6 +40,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         </head>
 
         <body
+          suppressHydrationWarning={true} 
           className={cn('flex max-h-[100vh] min-h-[100vh] flex-col overflow-x-hidden antialiased', fontMono.variable)}
         >
           <AuthProvider>

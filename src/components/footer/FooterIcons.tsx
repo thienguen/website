@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-import { metadata } from '@/api/metadata'
+import { metadata } from '@/app/api/metadata'
 import { Github, Twitter } from 'lucide-react'
 import { AiOutlineHeart, AiOutlineInstagram, AiOutlineLinkedin } from 'react-icons/ai'
 
