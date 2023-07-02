@@ -16,14 +16,13 @@ import { type Metadata } from 'next'
 import Link from 'next/link'
 
 import { signIn, useSession } from 'next-auth/react'
-// import { SignIn, SignOut } from '@/app/guestbook/authState'
 
 import LoadingSpinner from '@/components/ui/loading-spinner'
 
-export const metadata: Metadata = {
-  title: '/guestbook',
-  description: 'metadata is a funny lil concept.',
-}
+// export const metadata: Metadata = {
+//   title: '/guestbook',
+//   description: 'metadata is a funny lil concept.',
+// }
 
 export const dynamic = 'force-dynamic'
 
@@ -44,35 +43,39 @@ export default function Contact() {
           </p>
         </div>
 
-        {/* <Guestbook fallbackData={fallbackData} /> */}
-        {!session && (
-          <div className="flex flex-row">
-            <Link
-              href="/api/auth/signin/"
-              className="mx-2 my-4 flex h-20 w-1/2 items-center justify-center rounded bg-neutral-100 font-light text-gray-900 ring-gray-300 transition-all hover:ring-2 dark:bg-zinc-800 dark:text-gray-100"
-              onClick={(e) => {
-                e.preventDefault();
-                signIn()
-                  .then(() => {
-                    setIsLoadingGithub(true);
-                  })
-                  .catch((error) => {
-                    console.error('Error during sign in:', error);
-                  });
-              }}
-            >
-              {isLoadingGithub ? (
-                <>
-                  Loading <LoadingSpinner />
-                </>
-              ) : (
-                <div className="flex flex-col items-center justify-center">
-                  <div className="mb-2 dark:text-neutral-300">Github</div>
-                </div>
-              )}
-            </Link>
-          </div>
-        )}
+
+        {/* SEPARATING FROM HERE */}
+        <div className="my-2 w-full rounded-md border border-gray-200 bg-white px-6 py-2 shadow-xl shadow-gray-400 dark:border-zinc-900 dark:bg-zinc-900 dark:shadow-none">
+          {/* <Guestbook fallbackData={fallbackData} /> */}
+          {!session && (
+            <div className="flex flex-row">
+              <Link
+                href="/api/auth/signin/signin?csrf=true"
+                className="mx-2 my-4 flex h-20 w-1/2 items-center justify-center rounded bg-neutral-100 font-light text-gray-900 ring-gray-300 transition-all hover:ring-2 dark:bg-zinc-800 dark:text-gray-100"
+                onClick={(e) => {
+                  e.preventDefault()
+                  signIn('github')
+                    .then(() => {
+                      setIsLoadingGithub(true)
+                    })
+                    .catch((error) => {
+                      console.error('Error during sign in:', error)
+                    })
+                }}
+              >
+                {isLoadingGithub ? (
+                  <>
+                    Loading <LoadingSpinner />
+                  </>
+                ) : (
+                  <div className="flex flex-col items-center justify-center">
+                    <div className="mb-2 dark:text-neutral-300">Github</div>
+                  </div>
+                )}
+              </Link>
+            </div>
+          )}
+        </div>
       </div>
     </>
   )
