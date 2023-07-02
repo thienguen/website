@@ -6,11 +6,14 @@
 const config = {
   reactStrictMode: true,
   images: {
-    domains: [
-      'i.scdn.co',
-      'avatars.githubusercontent.com',
-      'uploadthing.com',
-      'cdn.discordapp.com',
+    domains: ['i.scdn.co', 'avatars.githubusercontent.com', 'uploadthing.com', 'cdn.discordapp.com'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'avatars.githubusercontent.com',
+        port: '',
+        pathname: '/u/**',
+      },
     ],
   },
 }

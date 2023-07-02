@@ -7,10 +7,9 @@ export default function Home() {
   return (
     <>
       {/* Hero Kinda Section */}
-      <div className=" mb-8 h-full w-full items-center justify-center sm:mt-32 sm:min-h-[500px] ">
+      <div className="mb-8 h-full w-full items-center justify-center sm:mt-32 sm:min-h-[500px]">
         {/* Bar */}
         <div className=" hidden h-px w-screen animate-fade-left bg-gradient-to-r from-blue-700/0 via-blue-700/50 to-blue-700/0 dark:bg-gradient-to-r dark:from-zinc-300/0 dark:via-zinc-300/50 dark:to-zinc-300/0 md:block" />
-
         {/* ------------------------------------------------------------------------------------------------- */}
         <div className="m-auto flex w-full max-w-screen-lg flex-col items-center justify-center px-5 sm:flex-row">
           {/* Left side*/}

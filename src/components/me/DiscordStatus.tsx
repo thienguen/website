@@ -11,8 +11,10 @@ interface DiscordStatusProps {
 }
 
 export default function DiscordStatus(props: DiscordStatusProps) {
-  const id: `${bigint}` | undefined = process.env.DISCORD_ID ? `${BigInt(process.env.DISCORD_ID)}` : undefined
-  const data = useLanyardWS(id ? [id] : [])
+  // const id: `${bigint}` | undefined = process.env.DISCORD_ID ? `${BigInt(process.env.DISCORD_ID)}` : undefined
+  // const id: Snowflake | undefined = process.env.DISCORD_ID ? `${BigInt(process.env.DISCORD_ID)}` : undefined
+  // const data = useLanyardWS(id ? [id] : [])
+  const data = useLanyardWS('481754320778428418')
   const status = data?.discord_status ?? 'offline'
 
   return (

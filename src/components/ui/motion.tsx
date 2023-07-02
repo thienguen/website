@@ -35,7 +35,7 @@ export default function Motion() {
   }, []); // Empty dependency array so the effect only runs once on mount
 
   return (
-    <div className="col-span-2 flex min-h-[16rem] items-center justify-center rounded-2xl bg-[#f9f4f4] p-2 dark:bg-[#1a202c]">
+    <div className="col-span-2 flex min-h-[15rem] items-center justify-center rounded-2xl bg-[#f9f4f4] p-2 dark:bg-[#1a202c]">
       <motion.svg
         width="208"
         height="192"
@@ -47,7 +47,7 @@ export default function Motion() {
         // onClick={handleClick}
         className={''}
       >
-        <circle cx="105" cy="100" r="80" stroke="#333" fill="#fff" stroke-width="10" />
+        <circle cx="105" cy="100" r="80" stroke="#333" fill="#fff" strokeWidth="10" />
         <motion.circle cx="105" cy="100" r="80" stroke="#ff0055" variants={draw} custom={1} />
 
         <line x1="225" y1="25" x2="365" y2="165" stroke="#333" strokeWidth="10" />

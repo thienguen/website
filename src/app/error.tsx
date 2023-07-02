@@ -8,7 +8,7 @@ export default function Error({ error, reset }: { error: Error; reset: () => voi
   }, [error])
 
   return (
-    <div>
+    <div className="mx-auto h-full w-full">
       <p>Oh no, something went wrong... maybe refresh? If not, then I`m doomed</p>
     </div>
   )

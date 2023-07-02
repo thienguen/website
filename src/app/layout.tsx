@@ -5,8 +5,9 @@ import '@/styles/globals.css'
 
 import { metadata } from '@/api/metadata'
 
+import AuthProvider from '@/lib/nextauth/AuthProvider'
 // Srr
-import { fontMono } from '@/lib/font'
+import { fontMono } from '@/lib/util/font'
 import { cn } from '@/lib/util/util'
 import Particles from '@/components/ui/particles'
 import { ThemeProvider } from '@/components/ui/theme-provider'
@@ -41,23 +42,25 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <body
           className={cn('flex max-h-[100vh] min-h-[100vh] flex-col overflow-x-hidden antialiased', fontMono.variable)}
         >
-          <ThemeProvider attribute="class" defaultTheme="system" enableSystem themes={['light', 'dark']}>
-            <div
-              className={cn(
-                'z-20 grow',
-                'bg-gradient-to-b from-slate-300 to-gray-300', // light
-                'dark:bg-gradient-to-b dark:from-black dark:to-gray-900' // dark
-              )}
-            >
-              <Particles className="absolute inset-0 -z-10" quantity={200} />
-              <Navbar />
-              {children}
-              {/* BUGS: Can't grow to the footer, or when page is scroollable */}
-              {/* Unless I'm making another layout, but I'm too tired */}
-            </div>
-            <Footer />
-            <Toaster /> {/* useless */}
-          </ThemeProvider>
+          <AuthProvider>
+            <ThemeProvider attribute="class" defaultTheme="system" enableSystem themes={['light', 'dark']}>
+              <div
+                className={cn(
+                  'z-20 grow',
+                  'bg-gradient-to-b from-slate-300 to-gray-300', // light
+                  'dark:bg-gradient-to-b dark:from-black dark:to-gray-900' // dark
+                )}
+              >
+                <Particles className="absolute inset-0 -z-10" quantity={200} />
+                <Navbar />
+                {children}
+                {/* BUGS: Can't grow to the footer, or when page is scroollable */}
+                {/* Unless I'm making another layout, but I'm too tired */}
+              </div>
+              <Footer />
+              <Toaster /> {/* useless */}
+            </ThemeProvider>
+          </AuthProvider>
         </body>
       </html>
     </>

@@ -37,7 +37,7 @@ const config = {
     '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
     '@next/next/no-html-link-for-pages': 'off',
     'react/jsx-key': 'off',
-    '@typescript-eslint/no-unsafe-assignment': 'off', // Add this line
+    '@typescript-eslint/no-unsafe-assignment': 'off', // fk eslint
   },
   settings: {
     tailwindcss: {
