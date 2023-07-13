@@ -3,6 +3,7 @@
 // run 'npx prisma db push' to push schema changes to planetscale
 // run 'npx prisma generate' after a schema change to update the prisma client
 // run 'npx prisma format' to auto format
+// run 'npm run prisma' to run the prisma cli
 
 generator client {
   provider = "prisma-client-js"
@@ -31,7 +32,6 @@ model guestbook {
 
 // NextAuth Schema
 // fk you nextauth
-// NextAuth Schema
 
 model Account {
   id                       String  @id @default(cuid())

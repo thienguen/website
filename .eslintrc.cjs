@@ -14,6 +14,7 @@ const config = {
         '@typescript-eslint/no-unsafe-assignment': 'off', // fk eslint
         '@typescript-eslint/no-unsafe-call': 'off', // fk eslint
         '@typescript-eslint/no-unsafe-argument': 'off', // fk eslint
+        '@typescript-eslint/no-unsafe-return': 'off', // fk eslint
       },
     },
   ],
@@ -42,6 +43,8 @@ const config = {
     '@typescript-eslint/no-unsafe-assignment': 'off', // fk eslint
     '@typescript-eslint/no-unsafe-call': 'off', // fk eslint
     '@typescript-eslint/no-unsafe-argument': 'off', // fk eslint
+    '@typescript-eslint/no-unsafe-return': 'off', // fk eslint
+
   },
   settings: {
     tailwindcss: {

@@ -1,5 +1,6 @@
 import { NextResponse, type NextRequest } from 'next/server'
 import { type guestbook } from '@prisma/client'
+
 import { prisma } from '@/lib/prisma'
 
 export async function GET(req: NextRequest) {
@@ -22,22 +23,30 @@ export async function GET(req: NextRequest) {
   }
 }
 
-
 export async function POST(req: NextRequest) {
   try {
     const data: guestbook = await req.json()
-    console.log('data:', data)
+
     const newGuestbookEntry = await prisma.guestbook.create({
       data: {
+        // id
         email: data.email,
         content: data.content,
         created_by: data.created_by,
-        // Prisma will automatically handle 'created_at' and 'updated_at' fields
+        // created_at
+        // updated_at
+        // Prisma will automatically handle id, created_at, and updated_at
       },
     })
 
     console.log('New Guestbook Entry:', newGuestbookEntry)
-    return NextResponse.json(newGuestbookEntry, { status: 200 })
+
+    // can't serialize BigInts, so we need to convert them to strings
+    const jsonString = JSON.stringify(
+      newGuestbookEntry,
+      (key, value) => (typeof value === 'bigint' ? value.toString() : value) // return everything else unchanged
+    )
+    return NextResponse.json(JSON.parse(jsonString), { status: 200 })
   } catch (error) {
     console.error('Error:', error)
     return NextResponse.json(null, { status: 500 })

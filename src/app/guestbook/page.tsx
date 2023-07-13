@@ -12,10 +12,11 @@
  * ------------------------------------------------------------------------
  */
 import { useState } from 'react'
-// import { type Metadata } from 'next'
-import Link from 'next/link'
 
-import { signIn, useSession } from 'next-auth/react'
+// import { type Metadata } from 'next'
+// import Link from 'next/link'
+
+import { signIn, signOut, useSession } from 'next-auth/react'
 
 import LoadingSpinner from '@/components/ui/loading-spinner'
 
@@ -27,9 +28,34 @@ import LoadingSpinner from '@/components/ui/loading-spinner'
 export const dynamic = 'force-dynamic'
 
 export default function Contact() {
-
-  const { data: session } = useSession()
+  const { data: session, status } = useSession()
   const [isLoadingGithub, setIsLoadingGithub] = useState<boolean>()
+  const isLoading = status === 'loading'
+
+  /* Either using a hook, or directly dew it */
+  async function postGuestbook() {
+    try {
+      const res = await fetch('/api/guestbooks', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email: 'hoho@email.com',
+          content: 'Test messageapi',
+          created_by: 'me',
+        }),
+      })
+
+      const json = await res.json()
+
+      if (!res.ok) throw Error('something happened')
+
+      console.log(json)
+    } catch (error) {
+      console.error('Error:', error)
+    }
+  }
 
   return (
     <>
@@ -44,42 +70,73 @@ export default function Contact() {
           </p>
         </div>
 
-
         {/* SEPARATING FROM HERE */}
         <div className="my-2 w-full rounded-md border border-gray-200 bg-white px-6 py-2 shadow-xl shadow-gray-400 dark:border-zinc-900 dark:bg-zinc-900 dark:shadow-none">
           {/* <Guestbook fallbackData={fallbackData} /> */}
-          {!session && (
+
+          {!isLoading && (
             <div className="flex flex-row">
-              <Link
-                href="/api/auth/signin/signin?csrf=true"
-                className="mx-2 my-4 flex h-20 w-1/2 items-center justify-center rounded bg-neutral-100 font-light text-gray-900 ring-gray-300 transition-all hover:ring-2 dark:bg-zinc-800 dark:text-gray-100"
-                onClick={(e) => {
-                  e.preventDefault()
-                  signIn('github')
-                    .then(() => {
-                      setIsLoadingGithub(true)
+              {/* Sign in */}
+              {!session && (
+                <button
+                  className="mx-2 my-4 flex h-20 w-1/2 items-center justify-center rounded bg-neutral-100 font-light text-gray-900 ring-gray-300 transition-all hover:ring-2 dark:bg-zinc-800 dark:text-gray-100"
+                  onClick={(e) => {
+                    e.preventDefault()
+                    signIn('github')
+                      .then(() => {
+                        setIsLoadingGithub(true)
+                      })
+                      .catch((error) => {
+                        console.error('Error during sign in:', error)
+                      })
+                  }}
+                >
+                  {isLoadingGithub ? (
+                    <>
+                      Loading <LoadingSpinner />
+                    </>
+                  ) : (
+                    <div className="flex flex-col items-center justify-center">
+                      <div className="mb-2 dark:text-neutral-300">Sign in with Github</div>
+                    </div>
+                  )}
+                </button>
+              )}
+
+              {/* Sign out */}
+              {session && (
+                <button
+                  className="mx-2 my-4 flex h-20 w-1/2 items-center justify-center rounded bg-neutral-100 font-light text-gray-900 ring-gray-300 transition-all hover:ring-2 dark:bg-zinc-800 dark:text-gray-100"
+                  onClick={(e) => {
+                    e.preventDefault()
+                    signOut().catch((error) => {
+                      console.error('Error during sign out:', error)
                     })
-                    .catch((error) => {
-                      console.error('Error during sign in:', error)
-                    })
-                }}
-              >
-                {isLoadingGithub ? (
-                  <>
-                    Loading <LoadingSpinner />
-                  </>
-                ) : (
+                  }}
+                >
                   <div className="flex flex-col items-center justify-center">
-                    <div className="mb-2 dark:text-neutral-300">Github</div>
+                    <div className="mb-2 dark:text-neutral-300">Sign out</div>
                   </div>
-                )}
-              </Link>
+                </button>
+              )}
             </div>
           )}
+
+          {/* Testing purposes */}
+          <button
+            className="mx-2 my-4 flex h-20 w-1/2 items-center justify-center rounded bg-neutral-100 font-light text-gray-900 ring-gray-300 transition-all hover:ring-2 dark:bg-zinc-800 dark:text-gray-100"
+            onClick={(e) => {
+              e.preventDefault()
+              postGuestbook().catch((error) => {
+                console.error('Error during post:', error)
+              })
+            }}
+          >
+            <div className="flex flex-col items-center justify-center">
+              <div className="mb-2 dark:text-neutral-300">Test Post</div>
+            </div>
+          </button>
         </div>
-
-
-        
       </div>
     </>
   )

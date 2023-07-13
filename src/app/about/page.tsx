@@ -6,7 +6,7 @@ import { Timer } from '@/components/me/Timer'
 import { type Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: '/',
+  title: '/about',
   description: 'metadata is a funny lil concept.',
 };
 
