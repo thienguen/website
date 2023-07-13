@@ -11,14 +11,19 @@
  * 7. Connect db and api [ prisma ]
  * ------------------------------------------------------------------------
  */
-import { useState } from 'react'
-
 // import { type Metadata } from 'next'
 // import Link from 'next/link'
+import { type FormEvent } from 'react'
 
-import { signIn, signOut, useSession } from 'next-auth/react'
+import { useSession } from 'next-auth/react'
+import { useForm, type FieldValues } from 'react-hook-form' // stupid
 
-import LoadingSpinner from '@/components/ui/loading-spinner'
+import createGuestbookEntry from '@/hooks/useGuestbook'
+import { SignIn, SignOut } from '@/components/ui/auth-buttons'
+
+type formSchema = {
+  content: string
+}
 
 // export const metadata: Metadata = {
 //   title: '/guestbook',
@@ -28,115 +33,89 @@ import LoadingSpinner from '@/components/ui/loading-spinner'
 export const dynamic = 'force-dynamic'
 
 export default function Contact() {
-  const { data: session, status } = useSession()
-  const [isLoadingGithub, setIsLoadingGithub] = useState<boolean>()
-  const isLoading = status === 'loading'
+  const { data: session } = useSession()
 
-  /* Either using a hook, or directly dew it */
-  async function postGuestbook() {
-    try {
-      const res = await fetch('/api/guestbooks', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          email: 'hoho@email.com',
-          content: 'Test messageapi',
-          created_by: 'me',
-        }),
-      })
+  const { register, handleSubmit, reset } = useForm<formSchema>()
 
-      const json = await res.json()
-
-      if (!res.ok) throw Error('something happened')
-
-      console.log(json)
-    } catch (error) {
-      console.error('Error:', error)
+  const customHandleSubmit =
+    (submitFunction: (data: formSchema) => Promise<void>) => (e: FormEvent<HTMLFormElement>) => {
+      e.preventDefault()
+      void handleSubmit((data: FieldValues) => submitFunction(data as formSchema))(e)
     }
+
+  const onSubmit = async (data: formSchema) => {
+    console.log(data)
+    await createGuestbookEntry({
+      email: session?.user?.email ?? 'Anonymous',
+      content: data.content,
+      created_by: session?.user?.name ?? 'Anonymous',
+    })
+    reset()
   }
 
   return (
     <>
-      <div className="mx-auto mb-16 flex max-w-3xl flex-col items-start justify-center">
+      <div className="mx-auto mb-16 flex max-w-2xl flex-col items-start justify-center">
         {/* Header */}
         <div className="space-y-2 p-6 md:space-y-5">
-          <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-5xl">
+          <h1 className="text-xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-2xl sm:leading-10 md:text-3xl">
             {`Guestbook`}
           </h1>
           <p className="text-base leading-7 text-gray-500 dark:text-gray-400">
-            {`Acient technology from the 90's webs. Leave a comment below for my future visitors. !`}
+            {`Acient technology from the 90's webs. Say hi and I know that you were here!`}
           </p>
         </div>
 
         {/* SEPARATING FROM HERE */}
-        <div className="my-2 w-full rounded-md border border-gray-200 bg-white px-6 py-2 shadow-xl shadow-gray-400 dark:border-zinc-900 dark:bg-zinc-900 dark:shadow-none">
-          {/* <Guestbook fallbackData={fallbackData} /> */}
 
-          {!isLoading && (
-            <div className="flex flex-row">
-              {/* Sign in */}
-              {!session && (
-                <button
-                  className="mx-2 my-4 flex h-20 w-1/2 items-center justify-center rounded bg-neutral-100 font-light text-gray-900 ring-gray-300 transition-all hover:ring-2 dark:bg-zinc-800 dark:text-gray-100"
-                  onClick={(e) => {
-                    e.preventDefault()
-                    signIn('github')
-                      .then(() => {
-                        setIsLoadingGithub(true)
-                      })
-                      .catch((error) => {
-                        console.error('Error during sign in:', error)
-                      })
-                  }}
-                >
-                  {isLoadingGithub ? (
-                    <>
-                      Loading <LoadingSpinner />
-                    </>
-                  ) : (
-                    <div className="flex flex-col items-center justify-center">
-                      <div className="mb-2 dark:text-neutral-300">Sign in with Github</div>
-                    </div>
-                  )}
-                </button>
-              )}
+        <h1 className="mr-6 flex w-full flex-col items-center justify-center text-center text-xl font-bold tracking-tighter">
+          sign my guestbook
+        </h1>
 
-              {/* Sign out */}
-              {session && (
-                <button
-                  className="mx-2 my-4 flex h-20 w-1/2 items-center justify-center rounded bg-neutral-100 font-light text-gray-900 ring-gray-300 transition-all hover:ring-2 dark:bg-zinc-800 dark:text-gray-100"
-                  onClick={(e) => {
-                    e.preventDefault()
-                    signOut().catch((error) => {
-                      console.error('Error during sign out:', error)
-                    })
-                  }}
-                >
-                  <div className="flex flex-col items-center justify-center">
-                    <div className="mb-2 dark:text-neutral-300">Sign out</div>
-                  </div>
-                </button>
-              )}
-            </div>
+        {/* {!session && (
+            <>
+              <SignIn />
+            </>
           )}
 
-          {/* Testing purposes */}
-          <button
-            className="mx-2 my-4 flex h-20 w-1/2 items-center justify-center rounded bg-neutral-100 font-light text-gray-900 ring-gray-300 transition-all hover:ring-2 dark:bg-zinc-800 dark:text-gray-100"
-            onClick={(e) => {
-              e.preventDefault()
-              postGuestbook().catch((error) => {
-                console.error('Error during post:', error)
-              })
-            }}
-          >
-            <div className="flex flex-col items-center justify-center">
-              <div className="mb-2 dark:text-neutral-300">Test Post</div>
-            </div>
-          </button>
-        </div>
+          {session && (
+            <>
+              <SignOut />
+            </>
+          )} */}
+
+        {/* {session?.user ? (
+            <>
+              <SignOut />
+            </>
+          ) : (
+            <SignIn />
+          )} */}
+
+        {session?.user ? (
+          <>
+            <form onSubmit={customHandleSubmit(onSubmit)} className="relative max-w-[500px] text-sm">
+              <label htmlFor="content" className="sr-only">
+                Your Message
+              </label>
+              <textarea
+                {...register('content', { required: true })}
+                id="content"
+                className="mt-1 block w-full rounded-md border-neutral-300 bg-gray-100 py-2 pl-4 pr-32 text-neutral-900 focus:border-blue-500 focus:ring-blue-500 dark:bg-neutral-800 dark:text-neutral-100"
+              />
+              <button
+                type="submit"
+                className="absolute right-1 top-1 flex h-7 w-16 items-center justify-center rounded bg-neutral-200 px-2 py-1 font-medium text-neutral-900 dark:bg-neutral-700 dark:text-neutral-100"
+                disabled={!session?.user}
+              >
+                Sign
+              </button>
+              <SignOut />
+            </form>
+          </>
+        ) : (
+          <SignIn />
+        )}
       </div>
     </>
   )

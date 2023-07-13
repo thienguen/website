@@ -1,4 +1,5 @@
 import { NextResponse, type NextRequest } from 'next/server'
+
 import { type guestbook } from '@prisma/client'
 
 import { prisma } from '@/lib/prisma'
@@ -8,15 +9,23 @@ export async function GET(req: NextRequest) {
     guest_id: req.nextUrl.searchParams.get('id'),
   }
 
-  console.log('query:', query)
+  if (query.guest_id) console.log('query', query)
+
   try {
     const guestbook = await prisma.guestbook.findMany({
       orderBy: {
         created_at: 'desc',
       },
     })
+
     console.log('guestbook:', guestbook)
-    return NextResponse.json(guestbook)
+
+    const jsonString = JSON.stringify(
+      guestbook,
+      (key, value) => (typeof value === 'bigint' ? value.toString() : value) // return everything else unchanged
+    )
+
+    return NextResponse.json(JSON.parse(jsonString), { status: 200 })
   } catch (error) {
     console.log('error:', error)
     return NextResponse.json(null, { status: 500 })
