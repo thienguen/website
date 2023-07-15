@@ -3,7 +3,7 @@
 // Framework
 import '@/styles/globals.css'
 
-import { metadata } from '@/app/api/metadata'
+import { Analytics } from '@vercel/analytics/react'
 
 import AuthProvider from '@/lib/nextauth/AuthProvider'
 // Srr
@@ -14,6 +14,7 @@ import { ThemeProvider } from '@/components/ui/theme-provider'
 import { Toaster } from '@/components/ui/toaster'
 import Footer from '@/components/footer/Footer'
 import Navbar from '@/components/navbar/Navbar'
+import { metadata } from '@/app/api/metadata'
 
 interface RootLayoutProps {
   children: React.ReactNode
@@ -40,7 +41,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         </head>
 
         <body
-          suppressHydrationWarning={true} 
+          suppressHydrationWarning={true}
           className={cn('flex max-h-[100vh] min-h-[100vh] flex-col overflow-x-hidden antialiased', fontMono.variable)}
         >
           <AuthProvider>
@@ -60,6 +61,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
               </div>
               <Footer />
               <Toaster /> {/* useless */}
+              <Analytics />
             </ThemeProvider>
           </AuthProvider>
         </body>

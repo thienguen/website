@@ -18,7 +18,7 @@ import { type FormEvent } from 'react'
 import { useSession } from 'next-auth/react'
 import { useForm, type FieldValues } from 'react-hook-form' // stupid
 
-import createGuestbookEntry from '@/hooks/useGuestbook'
+import { createGuestbookEntry, deleteGuestbookEntry } from '@/hooks/useGuestbook'
 import { SignIn, SignOut } from '@/components/ui/auth-buttons'
 
 type formSchema = {
@@ -37,12 +37,6 @@ export default function Contact() {
 
   const { register, handleSubmit, reset } = useForm<formSchema>()
 
-  const customHandleSubmit =
-    (submitFunction: (data: formSchema) => Promise<void>) => (e: FormEvent<HTMLFormElement>) => {
-      e.preventDefault()
-      void handleSubmit((data: FieldValues) => submitFunction(data as formSchema))(e)
-    }
-
   const onSubmit = async (data: formSchema) => {
     console.log(data)
     await createGuestbookEntry({
@@ -52,6 +46,12 @@ export default function Contact() {
     })
     reset()
   }
+
+  const customHandleSubmit =
+    (submitFunction: (data: formSchema) => Promise<void>) => (e: FormEvent<HTMLFormElement>) => {
+      e.preventDefault()
+      void handleSubmit((data: FieldValues) => submitFunction(data as formSchema))(e)
+    }
 
   return (
     <>
@@ -68,55 +68,39 @@ export default function Contact() {
 
         {/* SEPARATING FROM HERE */}
 
-        <h1 className="mr-6 flex w-full flex-col items-center justify-center text-center text-xl font-bold tracking-tighter">
+        <h1 className="mb-10 flex w-full flex-col items-center justify-center text-center text-xl font-bold tracking-tighter">
           sign my guestbook
         </h1>
-
-        {/* {!session && (
-            <>
-              <SignIn />
-            </>
-          )}
-
-          {session && (
-            <>
-              <SignOut />
-            </>
-          )} */}
-
-        {/* {session?.user ? (
-            <>
-              <SignOut />
-            </>
-          ) : (
-            <SignIn />
-          )} */}
-
-        {session?.user ? (
-          <>
-            <form onSubmit={customHandleSubmit(onSubmit)} className="relative max-w-[500px] text-sm">
-              <label htmlFor="content" className="sr-only">
-                Your Message
-              </label>
-              <textarea
-                {...register('content', { required: true })}
-                id="content"
-                className="mt-1 block w-full rounded-md border-neutral-300 bg-gray-100 py-2 pl-4 pr-32 text-neutral-900 focus:border-blue-500 focus:ring-blue-500 dark:bg-neutral-800 dark:text-neutral-100"
-              />
-              <button
-                type="submit"
-                className="absolute right-1 top-1 flex h-7 w-16 items-center justify-center rounded bg-neutral-200 px-2 py-1 font-medium text-neutral-900 dark:bg-neutral-700 dark:text-neutral-100"
-                disabled={!session?.user}
-              >
-                Sign
-              </button>
-              <SignOut />
-            </form>
-          </>
-        ) : (
-          <SignIn />
-        )}
       </div>
+      {session?.user ? (
+        <>
+          <form onSubmit={customHandleSubmit(onSubmit)} className="relative max-w-[500px] text-sm">
+            {/* <label htmlFor="content" className="sr-only"> */}
+            {/* Your Message */}
+            {/* </label> */}
+            <input
+              {...register('content', { required: true })}
+              aria-label="Your message"
+              placeholder="Your message..."
+              id="content"
+              name="entry"
+              type="text"
+              required
+              className="mt-1 block w-full rounded-md border-neutral-300 bg-gray-100 py-2 pl-4 pr-32 text-sm text-neutral-900 focus:border-blue-500 focus:ring-blue-500 dark:bg-neutral-800 dark:text-neutral-100"
+            />
+            <button
+              type="submit" // form onSubmit={onSubmit}
+              className="absolute right-1 top-1 flex h-7 w-16 items-center justify-center rounded bg-neutral-200 px-2 py-1 font-medium text-neutral-900 dark:bg-neutral-700 dark:text-neutral-100"
+              disabled={!session?.user}
+            >
+              Sign
+            </button>
+            <SignOut />
+          </form>
+        </>
+      ) : (
+        <SignIn />
+      )}
     </>
   )
 }

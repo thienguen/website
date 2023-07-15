@@ -61,3 +61,28 @@ export async function POST(req: NextRequest) {
     return NextResponse.json(null, { status: 500 })
   }
 }
+
+export async function DELETE(req: NextRequest) {
+  const query = {
+    guest_id: req.nextUrl.searchParams.get('id'),
+  }
+
+  if (query.guest_id) console.log('query', query)
+
+  try {
+    const data: guestbook = await req.json()
+    console.log('data:', data)
+
+    await prisma.guestbook.delete({
+      where: {
+        id: data.id,
+      }
+    })
+
+  } catch (error) {
+    console.error('Error:', error)
+    return NextResponse.json(null, { status: 500 })
+  }
+
+  return NextResponse.next()
+}
