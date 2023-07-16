@@ -2,6 +2,10 @@ import { NextResponse, type NextRequest } from 'next/server'
 import { type guestbook } from '@prisma/client'
 import { prisma } from '@/lib/prisma'
 
+
+/**
+ * Not working, a very sad day 
+ */
 export async function GET(req: NextRequest) {
   const query = {
     guest_id: req.nextUrl.searchParams.get('id'),

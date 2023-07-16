@@ -20,7 +20,7 @@ export function GuestBookEntry({ entry, user, onEntryDelete }: GuestBookEntryPro
         <div className="mb-2 text-neutral-900 dark:text-neutral-300">{entry.content}</div>
         <div className="line-clamp-1 text-gray-600 text-opacity-80 dark:text-white">
           <div className=" flex">
-            <p className="text-sm text-gray-500">
+            <p className="text-xs text-gray-500">
               {entry.created_by} • {format(new Date(entry.updated_at), "d MMM yyyy 'at' h:mm bb")}
             </p>
           </div>
