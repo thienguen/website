@@ -84,11 +84,24 @@ export default function Particles({
     magnetism: number
   }
 
+  // const resizeCanvas = () => {
+  //   if (canvasContainerRef.current && canvasRef.current && context.current) {
+  //     circles.current.length = 0
+  //     canvasSize.current.w = canvasContainerRef.current.offsetWidth
+  //     canvasSize.current.h = canvasContainerRef.current.offsetHeight
+  //     canvasRef.current.width = canvasSize.current.w * dpr
+  //     canvasRef.current.height = canvasSize.current.h * dpr
+  //     canvasRef.current.style.width = `${canvasSize.current.w}px`
+  //     canvasRef.current.style.height = `${canvasSize.current.h}px`
+  //     context.current.scale(dpr, dpr)
+  //   }
+  // }
+
   const resizeCanvas = () => {
     if (canvasContainerRef.current && canvasRef.current && context.current) {
       circles.current.length = 0
       canvasSize.current.w = canvasContainerRef.current.offsetWidth
-      canvasSize.current.h = canvasContainerRef.current.offsetHeight
+      canvasSize.current.h = document.body.offsetHeight // Use total website height instead of viewport height
       canvasRef.current.width = canvasSize.current.w * dpr
       canvasRef.current.height = canvasSize.current.h * dpr
       canvasRef.current.style.width = `${canvasSize.current.w}px`
@@ -161,6 +174,18 @@ export default function Particles({
   }
 
   const animate = () => {
+    // Update the canvas height to match the document height
+    if (canvasRef.current && canvasContainerRef.current) {
+      const documentHeight = document.body.offsetHeight
+      if (documentHeight !== canvasSize.current.h) {
+        canvasSize.current.h = documentHeight
+        canvasRef.current.height = canvasSize.current.h * dpr
+        canvasRef.current.style.height = `${canvasSize.current.h}px`
+      }
+    }
+
+    
+
     clearContext()
     circles.current.forEach((circle: Circle, i: number) => {
       // Handle the alpha value

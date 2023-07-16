@@ -1,13 +1,14 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-import { metadata } from '@/app/api/metadata'
 import { Github, Twitter } from 'lucide-react'
+import { useSession } from 'next-auth/react'
 import { AiOutlineHeart, AiOutlineInstagram, AiOutlineLinkedin } from 'react-icons/ai'
 
 import { cn } from '@/lib/util/util'
 import { buttonVariants } from '@/components/ui/button'
 import { Tooltip } from '@/components/common/Tooltip'
+import { metadata } from '@/app/api/metadata'
 
 export function FooterLove() {
   return (
@@ -110,9 +111,18 @@ export function FooterTwitter() {
 }
 
 export function FooterProfile() {
+  const { data: session } = useSession()
+  let profileImage = `https://avatars.githubusercontent.com/u/94078395`
+  let profileText = `just monika`
+
+  if (session?.user?.image && session?.user?.name !== 'Thien Nguyen') {
+    profileImage = session.user.image
+    profileText = session?.user?.name ?? `just monika`
+  }
+
   return (
     <>
-      <Tooltip text="just monika">
+      <Tooltip text={profileText}>
         <Link aria-label="Home" href="/" rel="noreferrer" className="m-auto">
           <div
             className={cn(
@@ -120,13 +130,7 @@ export function FooterProfile() {
               'w-9 px-0 hover:bg-slate-50 dark:hover:bg-gray-500'
             )}
           >
-            <Image
-              src="https://avatars.githubusercontent.com/u/94078395"
-              alt="Thien"
-              width={24}
-              height={24}
-              className="rounded-full"
-            />
+            <Image src={profileImage} alt="Thien" width={24} height={24} className="rounded-full" />
           </div>
         </Link>
       </Tooltip>

@@ -57,7 +57,7 @@ const SignIn = () => {
 const SignOut = () => {
   return (
     <button
-      className="mt-8 rounded border border-neutral-200 bg-neutral-50 p-2 px-3 text-xs text-neutral-700 transition-colors duration-200 ease-in-out hover:bg-neutral-200 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-700"
+      className="rounded border border-neutral-200 bg-neutral-50 p-2 px-3 text-xs text-neutral-700 transition-colors duration-200 ease-in-out hover:bg-neutral-200 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-700"
       onClick={(e) => {
         e.preventDefault()
         signOut().catch((error) => {

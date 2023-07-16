@@ -1,5 +1,7 @@
 'use client'
 
+import { NextResponse } from 'next/server'
+
 type createGuestBookSchema = {
   // id
   email: string
@@ -30,14 +32,14 @@ export async function createGuestbookEntry(data: createGuestBookSchema) {
         created_by: data.created_by,
       }),
     })
+
     const json = await res.json()
     if (!res.ok) throw new Error('Error creating new guestbook entry:', json)
     console.log('New Guestbook Entry:', json)
   } catch (error) {
-    console.error('Error:', error)
+    console.error('Error: POST guestbook', error)
   }
 }
-
 
 /**
  * Delete a guestbook entry, whenever a user clicks the delete button.
@@ -53,13 +55,34 @@ export async function deleteGuestbookEntry(data: deleteGuestBookSchema) {
       },
       body: JSON.stringify({
         id: data.id,
-      })
+      }),
     })
 
     const json = await res.json()
     if (!res.ok) throw new Error('Error deleting guestbook entry:', json)
     console.log('Deleted Guestbook Entry:', json)
   } catch (error) {
-    console.error('Error:', error)
+    console.error('Error: DELETE guestbook', error)
   }
 }
+
+export async function getGuestbookEntries() {
+  try {
+    const res = await fetch('/api/guestbooks', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+
+    const json = await res.json()
+
+    if (!res.ok) throw new Error('Error getting guestbook entries:', json)
+    console.log('Guestbook Entries in hook:', json)
+    return { data: json } // return as an object with data property
+  } catch (error) {
+    console.error('Error: GET guestbook', error)
+  }
+}
+
+
