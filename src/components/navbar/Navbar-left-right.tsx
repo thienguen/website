@@ -31,7 +31,7 @@ const IconMapping: { [key: string]: JSX.Element } = {
 export const NavbarLeft = ({ path_name }: { path_name: string }) => (
   <div className="mb-4 w-full md:mb-0 md:w-auto">
     <Link href="/" aria-label={metadata.headerTitle}>
-      <div className="flex items-start text-xl font-semibold dark:text-slate-200">
+      <div className="flex items-start text-lg font-semibold dark:text-slate-200">
         {`~${path_name}`} <Typewriter options={{ strings: [], autoStart: true, loop: true }} />
       </div>
     </Link>

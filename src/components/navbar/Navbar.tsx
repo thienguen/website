@@ -15,17 +15,28 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [height, setHeight] = useState('0px')
 
+  /**
+   * path_name for  typewriter effect
+   * copi copi
+   */
   const path_name = usePathname()
   const isBreakpoint = useMediaQuery('780px')
 
   const navRef = useRef<HTMLDivElement>(null)
 
+  /**
+   * For dynamic, responsive navbar, when smaller 
+   * size is detected, the navbar will XXX
+   */
   const expand = useCallback(() => {
     /* Use functions setter */
     setHeight((prevHeight) => (prevHeight === '0px' ? '15rem' : '0px'))
     setIsOpen((prevIsOpen) => !prevIsOpen)
   }, [])
 
+  /**
+   * Animation effect, tbh, a bit meh
+   */
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
@@ -46,6 +57,7 @@ const Navbar = () => {
 
   return (
     <>
+      {/* Trust, me I don't know suspense */}
       <Suspense fallback={<div>Loading...</div>}>
         {' '}
         {/* Useless */}

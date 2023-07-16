@@ -25,10 +25,10 @@ export default function Guestbook() {
       <div className="mx-auto mb-12 mt-6 flex max-w-2xl flex-col items-center justify-center">
         {/* Header */}
         <div className="space-y-1 p-4 md:space-y-5">
-          <h1 className="text-xl font-extrabold tracking-tight text-gray-900 dark:text-gray-100 sm:text-2xl sm:leading-6 md:text-3xl">
+          <h1 className="text-lg font-extrabold tracking-tight text-gray-900 dark:text-gray-100 sm:text-2xl sm:leading-6 md:text-3xl">
             {`Guestbook`}
           </h1>
-          <p className="text-center text-base leading-6 text-gray-900 dark:text-gray-100">
+          <p className=" text-sm leading-6 text-gray-900 dark:text-gray-100">
             {`Journey back to the 90's tehnologies guestbook! Leave your mark and let me know you were here in this retro digital oasis.`}
           </p>
         </div>
