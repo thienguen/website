@@ -22,7 +22,7 @@ export const dynamic = 'force-dynamic'
 export default function Guestbook() {
   return (
     <>
-      <div className="mx-auto mb-12 mt-6 flex max-w-2xl flex-col items-start justify-center">
+      <div className="mx-auto mb-12 mt-6 flex max-w-2xl flex-col items-center justify-center">
         {/* Header */}
         <div className="space-y-1 p-4 md:space-y-5">
           <h1 className="text-xl font-extrabold tracking-tight text-gray-900 dark:text-gray-100 sm:text-2xl sm:leading-6 md:text-3xl">

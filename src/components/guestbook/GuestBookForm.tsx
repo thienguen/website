@@ -20,21 +20,26 @@ type formSchema = {
  *   - pull data from api, and display it (via planetscale + prisma)
  * form submission: useForm
  *   - customed Form, with a text area and a submit button
+ * 
+ * State: + isLoading, + showSuccessMessage
  */
 
 export default function GuestBookForm() {
-  const [isLoading, setIsLoading] = useState(false)
+  const [isLoading, setIsLoading] = useState(false) 
   const [showSuccessMessage, setShowSuccessMessage] = useState(false)
+
   const { data: session } = useSession()
   const { register, handleSubmit, reset } = useForm<formSchema>()
   const { entries, handleEntryDelete } = useEntries(isLoading)
 
+  // eslint
   const customHandleSubmit =
     (submitFunction: (data: formSchema) => Promise<void>) => (e: FormEvent<HTMLFormElement>) => {
       e.preventDefault()
       void handleSubmit((data: FieldValues) => submitFunction(data as formSchema))(e)
     }
 
+  // eslint
   const onSubmit = async (data: formSchema) => {
     setIsLoading(true) // Set isLoading to true before submitting the form
     try {
@@ -85,7 +90,7 @@ export default function GuestBookForm() {
                     required
                     rows={3}
                     maxLength={500}
-                    className="w-full rounded-md border border-gray-300 p-3 text-xs shadow-sm focus:border-gray-500 focus:ring-gray-500 dark:border-zinc-600 dark:bg-zinc-700 dark:text-white dark:focus:border-gray-700 dark:focus:ring-neutral-600"
+                    className="w-full rounded-md border-2 border-gray-300 p-3 text-xs shadow-sm focus:border-gray-500 focus:ring-gray-500 dark:border-zinc-600 dark:bg-zinc-700 dark:text-white dark:focus:border-gray-700 dark:focus:ring-neutral-600"
                   />
 
                   <button
@@ -93,7 +98,7 @@ export default function GuestBookForm() {
                     className="grid w-full place-items-center rounded bg-slate-300 px-2 py-0.5 text-sm font-medium ring-gray-300 transition-all hover:ring-2 dark:bg-gray-600"
                     disabled={!session?.user || isLoading} // Disable the button when user is not signed in or when loading is in progress
                   >
-                    {isLoading ? <LoadingSpinner /> : 'Sign'}
+                    {isLoading ? (<LoadingSpinner stuff='...Submitting'/>) : 'Sign'}
                   </button>
                   {showSuccessMessage && <SuccessMessage>Thanks for signing my guestbook! 🎉</SuccessMessage>}
                 </form>
