@@ -87,7 +87,6 @@ export async function getGuestbookEntries() {
     const json = await res.json()
 
     if (!res.ok) throw new Error('Error getting guestbook entries:', json)
-    console.log('Guestbook Entries in hook:', json)
     return { data: json } // return as an object with data property
   } catch (error) {
     console.error('Error: GET guestbook', error)

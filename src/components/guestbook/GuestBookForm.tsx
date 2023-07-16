@@ -20,12 +20,12 @@ type formSchema = {
  *   - pull data from api, and display it (via planetscale + prisma)
  * form submission: useForm
  *   - customed Form, with a text area and a submit button
- * 
+ *
  * State: + isLoading, + showSuccessMessage
  */
 
 export default function GuestBookForm() {
-  const [isLoading, setIsLoading] = useState(false) 
+  const [isLoading, setIsLoading] = useState(false)
   const [showSuccessMessage, setShowSuccessMessage] = useState(false)
 
   const { data: session } = useSession()
@@ -95,10 +95,10 @@ export default function GuestBookForm() {
 
                   <button
                     type="submit"
-                    className="grid w-full place-items-center rounded bg-slate-300 px-2 py-0.5 text-sm font-medium ring-gray-300 transition-all hover:ring-2 dark:bg-gray-600"
+                    className="grid w-full place-items-center rounded bg-slate-200 px-2 py-0.5 text-sm font-medium ring-gray-300 transition-all hover:bg-slate-300 hover:ring-2 dark:bg-gray-600"
                     disabled={!session?.user || isLoading} // Disable the button when user is not signed in or when loading is in progress
                   >
-                    {isLoading ? (<LoadingSpinner stuff='...Submitting'/>) : 'Sign'}
+                    {isLoading ? <LoadingSpinner stuff="...Submitting" /> : 'Sign'}
                   </button>
                   {showSuccessMessage && <SuccessMessage>Thanks for signing my guestbook! 🎉</SuccessMessage>}
                 </form>
