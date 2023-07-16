@@ -12,10 +12,8 @@ module.exports = {
     '// Frameworks',
     '^(react/(.*)$)|^(react$)',
     '^(next/(.*)$)|^(next$)',
-    '',
     '// Libraries',
     '<THIRD_PARTY_MODULES>',
-    '',
     '// Src',
     '^types$',
     '^@/types/(.*)$',
@@ -27,7 +25,6 @@ module.exports = {
     '^@/components/(.*)$',
     '^@/styles/(.*)$',
     '^@/app/(.*)$',
-    '',
     '^[./]',
   ],
 

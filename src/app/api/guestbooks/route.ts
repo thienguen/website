@@ -1,7 +1,5 @@
 import { NextResponse, type NextRequest } from 'next/server'
-
 import { type guestbook } from '@prisma/client'
-
 import { prisma } from '@/lib/prisma'
 
 export async function GET(req: NextRequest) {
@@ -9,7 +7,12 @@ export async function GET(req: NextRequest) {
     guest_id: req.nextUrl.searchParams.get('id'),
   }
 
-  if (query.guest_id) console.log('query', query)
+  const id = req.nextUrl
+  console.log('id url', id)
+
+  if (query.guest_id) {
+    console.log('query', query)
+  }
 
   try {
     const guestbook = await prisma.guestbook.findMany({
@@ -17,8 +20,6 @@ export async function GET(req: NextRequest) {
         created_at: 'desc',
       },
     })
-
-    console.log('guestbook:', guestbook)
 
     const jsonString = JSON.stringify(
       guestbook,
@@ -48,8 +49,6 @@ export async function POST(req: NextRequest) {
       },
     })
 
-    console.log('New Guestbook Entry:', newGuestbookEntry)
-
     // can't serialize BigInts, so we need to convert them to strings
     const jsonString = JSON.stringify(
       newGuestbookEntry,
@@ -63,24 +62,19 @@ export async function POST(req: NextRequest) {
 }
 
 export async function DELETE(req: NextRequest) {
-  const query = {
-    guest_id: req.nextUrl.searchParams.get('id'),
-  }
+  const guestId = req.nextUrl.searchParams.get('id')
+  if (guestId) console.log('query', guestId)
 
-  if (query.guest_id) console.log('query', query)
+  console.log('req', req)
 
   try {
-    const data: guestbook = await req.json()
-    console.log('data:', data)
-
     await prisma.guestbook.delete({
       where: {
-        id: data.id,
-      }
+        id: Number(guestId) || 0,
+      },
     })
-
   } catch (error) {
-    console.error('Error:', error)
+    console.error('Error DELETE route:', error)
     return NextResponse.json(null, { status: 500 })
   }
 

@@ -1,5 +1,3 @@
-'use client'
-
 /**
  * Plans to make guestbook
  * 1. Set up nextauth, or an authientication system { [nextauth, jwt, bcrypt], [clerk] } -- partially done
@@ -11,27 +9,17 @@
  * 7. Connect db and api [ prisma ]
  * ------------------------------------------------------------------------
  */
-// import { type Metadata } from 'next'
-// import Link from 'next/link'
-import { useSession } from 'next-auth/react'
-
-import { useEntries } from '@/hooks/useEntries'
-import { SignIn, SignOut } from '@/components/ui/auth-buttons'
-import { GuestBookEntry } from '@/components/guestbook/GuestBookEntry'
+import { type Metadata } from 'next'
 import GuestBookForm from '@/components/guestbook/GuestBookForm'
 
-// export const metadata: Metadata = {
-//   title: '/guestbook',
-//   description: 'metadata is a funny lil concept.',
-// }
+export const metadata: Metadata = {
+  title: '/guestbook',
+  description: 'metadata is a funny lil concept.',
+}
 
 export const dynamic = 'force-dynamic'
 
 export default function Guestbook() {
-  const { data: session } = useSession()
-
-  const { entries, handleEntryDelete } = useEntries()
-
   return (
     <>
       <div className="mx-auto mb-12 mt-6 flex max-w-2xl flex-col items-start justify-center">
@@ -40,34 +28,13 @@ export default function Guestbook() {
           <h1 className="text-xl font-extrabold tracking-tight text-gray-900 dark:text-gray-100 sm:text-2xl sm:leading-6 md:text-3xl">
             {`Guestbook`}
           </h1>
-          <p className="text-base leading-5 text-gray-500 dark:text-gray-400">
-            {`Welcome to the 90's Web Guestbook! Say hi and let I know you were here in this retro digital oasis.`}
+          <p className="text-center text-base leading-6 text-gray-900 dark:text-gray-100">
+            {`Journey back to the 90's tehnologies guestbook! Leave your mark and let me know you were here in this retro digital oasis.`}
           </p>
         </div>
 
-        {session?.user ? (
-          <>
-            <GuestBookForm />
-            <div className="flex w-full justify-center">
-              <SignOut />
-            </div>
-          </>
-        ) : (
-          <div className="flex w-full justify-center">
-            <SignIn />
-          </div>
-        )}
-
-        <div className="w-full">
-          {entries?.map((entry) => (
-            <GuestBookEntry
-              key={entry.id.toString()}
-              entry={entry}
-              user={session?.user}
-              onEntryDelete={() => handleEntryDelete(entry.id.toString())}
-            />
-          ))}
-        </div>
+        {/* Guestbook */}
+        <GuestBookForm />
       </div>
     </>
   )

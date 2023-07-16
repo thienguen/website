@@ -2,9 +2,7 @@
 
 // Framework
 import '@/styles/globals.css'
-
 import { Analytics } from '@vercel/analytics/react'
-
 import AuthProvider from '@/lib/nextauth/AuthProvider'
 // Srr
 import { fontMono } from '@/lib/util/font'

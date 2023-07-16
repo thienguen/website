@@ -1,7 +1,5 @@
 import { useState } from 'react'
-
 import { signIn, signOut } from 'next-auth/react'
-
 import LoadingSpinner from '@/components/ui/loading-spinner'
 
 function GitHubIcon() {
@@ -56,17 +54,20 @@ const SignIn = () => {
 
 const SignOut = () => {
   return (
-    <button
-      className="rounded border border-neutral-200 bg-neutral-50 p-2 px-3 text-xs text-neutral-700 transition-colors duration-200 ease-in-out hover:bg-neutral-200 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-700"
-      onClick={(e) => {
-        e.preventDefault()
-        signOut().catch((error) => {
-          console.error('Error during sign out:', error)
-        })
-      }}
-    >
-      Sign out
-    </button>
+    <div className="flex w-2/12 flex-col items-center justify-center text-center">
+      <h1 className="mb-2 w-full text-sm font-bold tracking-tighter">See ya!</h1>
+      <button
+        className="rounded border-2 font-bold border-neutral-200 bg-slate-300 p-2 px-3 text-xs text-neutral-700 transition-colors duration-200 ease-in-out hover:bg-neutral-200 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-700"
+        onClick={(e) => {
+          e.preventDefault()
+          signOut().catch((error) => {
+            console.error('Error during sign out:', error)
+          })
+        }}
+      >
+        Sign out
+      </button>
+    </div>
   )
 }
 

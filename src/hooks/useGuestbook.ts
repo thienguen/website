@@ -1,7 +1,5 @@
 'use client'
 
-import { NextResponse } from 'next/server'
-
 type createGuestBookSchema = {
   // id
   email: string
@@ -12,7 +10,7 @@ type createGuestBookSchema = {
 }
 
 type deleteGuestBookSchema = {
-  id: string
+  id: bigint
 }
 
 /**
@@ -46,26 +44,37 @@ export async function createGuestbookEntry(data: createGuestBookSchema) {
  * @param data - The data to be sent to the API.
  * @param id - The id of the guestbook entry to be deleted.
  */
-export async function deleteGuestbookEntry(data: deleteGuestBookSchema) {
+export async function deleteGuestbookEntry(id: bigint) {
   try {
-    const res = await fetch('/api/guestbooks', {
+    await fetch(`/api/guestbooks/`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        id: data.id,
-      }),
+        id: id,
+      })
     })
 
-    const json = await res.json()
-    if (!res.ok) throw new Error('Error deleting guestbook entry:', json)
-    console.log('Deleted Guestbook Entry:', json)
+
   } catch (error) {
     console.error('Error: DELETE guestbook', error)
   }
 }
 
+/**
+ * Get all guestbook entries from the API.
+ * -------------------------------------------------------------
+ * @example
+ * const { data } = await getGuestbookEntries();
+ * console.log(data); // [{ id: 1, email: '...', content: '...', created_by: '...' }]
+ * @example
+ * const { data } = await getGuestbookEntries();
+ * console.log(data); // []
+ * @example
+ * const { data } = await getGuestbookEntries();
+ * console.log(data); // undefined
+ */
 export async function getGuestbookEntries() {
   try {
     const res = await fetch('/api/guestbooks', {
@@ -84,5 +93,3 @@ export async function getGuestbookEntries() {
     console.error('Error: GET guestbook', error)
   }
 }
-
-
