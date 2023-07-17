@@ -1,9 +1,7 @@
 'use client'
 
-import { useState } from 'react'
-
+import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
-import { useEffect } from 'react'
 
 const draw = {
   /* When hidden, do this */
@@ -26,16 +24,22 @@ const draw = {
 export default function Motion() {
   const [key, setKey] = useState(0)
 
+  // Handle click event
+  const handleClick = () => {
+    setKey((prevKey) => prevKey + 1) // change key to re-run animation
+  }
+
+
   useEffect(() => {
     const intervalId = setInterval(() => {
       setKey((prevKey) => prevKey + 1) // change key to re-run animation
-    }, 5000); // Rerun every 5 seconds
+    }, 15000) // Rerun every 15 seconds
 
-    return () => clearInterval(intervalId); // Cleanup function to clear the interval on unmount
-  }, []); // Empty dependency array so the effect only runs once on mount
+    return () => clearInterval(intervalId) // Cleanup function to clear the interval on unmount
+  }, []) // Empty dependency array so the effect only runs once on mount
 
   return (
-    <div className="col-span-2 flex min-h-[15rem] items-center justify-center rounded-2xl bg-[#f9f4f4] p-2 dark:bg-[#1a202c]">
+    <div className="col-span-1 flex max-h-[5rem] items-center justify-center rounded-2xl border-gray-300 bg-gray-100 px-3 shadow-sm shadow-gray-400 dark:border-zinc-900 dark:bg-zinc-900 dark:shadow-gray-300 ">
       <motion.svg
         width="208"
         height="192"
@@ -44,7 +48,7 @@ export default function Motion() {
         animate="visible"
         key={key}
         // whileFocus={{ scale: 1.1 }}
-        // onClick={handleClick}
+        onClick={handleClick}
         className={''}
       >
         <circle cx="105" cy="100" r="80" stroke="#333" fill="#fff" strokeWidth="10" />
@@ -86,4 +90,3 @@ export default function Motion() {
     </div>
   )
 }
-

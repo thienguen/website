@@ -1,19 +1,22 @@
+import React from 'react'
+import { type Metadata } from 'next'
 import Motion from '@/components/ui/motion'
 import { QA } from '@/components/ui/qa'
 import DiscordStatus from '@/components/me/DiscordStatus'
 import { Technologies } from '@/components/me/Technologies'
 import { Timer } from '@/components/me/Timer'
-import { type Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: '/about',
   description: 'metadata is a funny lil concept.',
-};
+}
 
 export default function About() {
+  const numComponents = 8 // specify the number of components you want
+  const ComponentList = Array(numComponents).fill(<Motion />)
   return (
     <>
-      <div className="mx-auto my-10 grid min-h-screen max-w-3xl grid-cols-6 gap-6 px-6 ">
+      <div className="mx-auto my-5 grid min-h-screen max-w-3xl grid-cols-6 gap-6 px-6 ">
         {/* About me. */}
         <QA
           question="about me?"
@@ -58,11 +61,20 @@ export default function About() {
         {/* TODO: RPG GAMES LIST HERE */}
         {/* 8. A TODO LIST THAT I THINK I NEED HELP THO IM STUPID */}
 
-
         {/* 9. RECTANGLE, CIRCLE, TRIANGLE GO 9. */}
-        <Motion />
-        <Motion />
-        <Motion />
+      </div>
+      <div>
+        {/* <div className="mx-auto mb-5 grid max-w-3xl grid-cols-8 gap-6 px-6 ">
+          {ComponentList.map((Component, index) => (
+            <React.Fragment key={index}>{Component}</React.Fragment>
+          ))}
+        </div> */}
+
+        <div className="mx-auto mb-10 grid max-w-3xl grid-cols-8 gap-6 px-6 ">
+          {ComponentList.map((Component, index) => (
+            <React.Fragment key={index}>{Component}</React.Fragment>
+          ))}
+        </div>
       </div>
     </>
   )

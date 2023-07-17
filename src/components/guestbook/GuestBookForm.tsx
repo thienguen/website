@@ -69,7 +69,7 @@ export default function GuestBookForm() {
 
   return (
     <>
-      {session?.user ? (
+      {session?.user && (
         <div className="flex w-full justify-end">
           <SignOut />
           <div className="w-10/12">
@@ -106,7 +106,9 @@ export default function GuestBookForm() {
             </div>
           </div>
         </div>
-      ) : (
+      )}
+    
+      {!session?.user && (
         <div className="flex w-full justify-center text-center">
           <SignIn />
         </div>
