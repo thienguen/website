@@ -39,7 +39,7 @@ export default function Projects() {
       .flat()
       .map((item, index) => {
         if ('description' in item && 'icon' in item) {
-          return <FeaturedProject key={index} project={item as ProjectProps} index={index} />
+          return <FeaturedProject project={item as ProjectProps} index={index} />
         }
       })
   }
@@ -65,7 +65,7 @@ export default function Projects() {
       <div className="mx-auto mt-6 flex max-w-3xl flex-col ">
         {/* Header */}
         <div className="space-y-1 px-10 md:space-y-3">
-          <h1 className="text-base font-extrabold tracking-tight text-gray-900 dark:text-gray-100 sm:text-2xl sm:leading-6 md:text-3xl">
+          <h1 className="text-lg font-extrabold tracking-tight text-gray-900 dark:text-gray-100 sm:leading-6">
             {`projects`}
           </h1>
         </div>
