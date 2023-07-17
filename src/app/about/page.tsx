@@ -16,13 +16,25 @@ export default function About() {
   const ComponentList = Array(numComponents).fill(<Motion />)
   return (
     <>
-      <div className="mx-auto my-5 grid max-w-[800px] grid-cols-6 gap-6 px-6 leading-6">
+      <div className="mx-auto mt-6 flex max-w-3xl flex-col ">
+        {/* Header */}
+        <div className="space-y-1 px-10 md:space-y-3">
+          <h1 className="text-base font-extrabold tracking-tight text-gray-900 dark:text-gray-100 sm:text-2xl sm:leading-6 md:text-3xl">
+            {`about`}
+          </h1>
+          <p className="text-center text-sm leading-6 text-gray-900 dark:text-gray-100">
+            {`I don’t know everything. I just know what I know.`}
+          </p>
+        </div>
+      </div>
+
+      <div className="mx-auto my-5 grid max-w-3xl grid-cols-6 gap-6 px-6 leading-6">
         {/* About me. */}
         <QA
-          question="about me?"
-          answer="My journey of coding started in 2021 and I've been loving it ever since. I'm fixing some bugs here and there during free time. Kinda interested in Three.js and 3D model."
+          question="what?"
+          answer="My journey of coding started in 2021 and I've been loving? it ever since. This is a niche introduction about a guy who barely code. Yet ended up making a website about himself."
           cols="sm:col-span-4 col-span-3" // small screen
-          height="min-h-[14rem]"
+          height="min-h-[13rem]"
         />
 
         {/* Discord is tough 2. */}
@@ -36,7 +48,7 @@ export default function About() {
         {/* I'm currently a bitch 4. */}
         <QA
           question="currently?"
-          answer="I'm an undergraduate student at UNLV, majoring in Computer Science. Aside working as a software engineer intern at a local company."
+          answer="Right now i'm an undergraduate student at UNLV, majoring in Computer Science. Aside working as a software engineer intern at a local company."
           cols="sm:col-span-4 col-span-3" // small screen
           height="min-h-[13rem]"
         />
@@ -77,7 +89,7 @@ export default function About() {
           ))}
         </div> */}
 
-        <div className="mx-auto mb-10 grid max-w-[800px] grid-cols-8 gap-6 px-6 ">
+        <div className="mx-auto mb-10 grid max-w-3xl grid-cols-8 gap-6 px-6 ">
           {ComponentList.map((Component, index) => (
             <React.Fragment key={index}>{Component}</React.Fragment>
           ))}

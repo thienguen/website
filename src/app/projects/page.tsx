@@ -1,8 +1,7 @@
 'use client'
 
 import { type Metadata } from 'next'
-import { AnimateSharedLayout } from 'framer-motion'
-
+import items from '@/lib/util/dummy'
 
 export const metadata: Metadata = {
   title: '/projects',
@@ -14,14 +13,16 @@ export default function Projects() {
 
   return (
     <>
-      <div className="flex flex-col items-center justify-center self-center">
-        <h1>Projects</h1>
-        <p>Something Holy</p>
+      <div className="mx-auto mb-12 mt-6 flex max-w-2xl flex-col items-center justify-center">
+        {/* Header */}
+        <div className="space-y-1 p-4 md:space-y-5">
+          <h1 className="text-lg font-extrabold tracking-tight text-gray-900 dark:text-gray-100 sm:text-2xl sm:leading-6 md:text-3xl">
+            {`Projects`}
+          </h1>
+        </div>
       </div>
 
-        <p>
-          {description}
-        </p>
+      <p>{description}</p>
     </>
   )
 }
