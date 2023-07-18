@@ -4,6 +4,7 @@
 import items from '@/lib/util/dummy'
 import FeaturedProject, { type ProjectProps } from '@/components/purojekuto/FeaturedProjects'
 
+        
 // export const metadata: Metadata = {
   // title: '/projects',
   // description: 'metadata is a funny lil concept.',
