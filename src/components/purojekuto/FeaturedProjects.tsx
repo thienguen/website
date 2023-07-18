@@ -50,11 +50,11 @@ export default function FeaturedProject({ project, index }: FeaturedProjectProps
       onMouseEnter={() => iconRef.current?.play()}
       onMouseLeave={() => iconRef.current?.stop()}
     >
-      <motion.div
+      <div
         className="flex w-auto rounded-md border-0 transition-opacity duration-300 ease-in-out hover:opacity-100 lg:w-44"
-        initial={nonHoverEffect}
-        whileHover={hoverEffect}
-        transition={{ duration: 0.5 }}
+        // initial={nonHoverEffect}
+        // whileHover={hoverEffect}
+        // transition={{ duration: 0.5 }}
       >
         <Animation index={index}>
           <Lottie
@@ -74,7 +74,7 @@ export default function FeaturedProject({ project, index }: FeaturedProjectProps
             )}
           </div>
         </Animation>
-      </motion.div>
+      </div>
     </Link>
   )
 }

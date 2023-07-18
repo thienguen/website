@@ -71,10 +71,10 @@ export default function Projects() {
         </div>
 
         <h2 className="mx-auto my-10">Featured Projects</h2>
-{/* 
+
         <div className="mb-0 ml-[-20px] mr-0 mt-[10px] flex flex-row flex-wrap">
           {renderFeatured()}
-        </div> */}
+        </div>
       </div>
     </>
   )
