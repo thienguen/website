@@ -25,6 +25,7 @@ const IconMapping: { [key: string]: JSX.Element } = {
   '/guestbook': <AiOutlineMail />,
 }
 
+
 /**
  * @return Left side of the navbar
  */

@@ -155,7 +155,7 @@ line {
   width: 0;
   height: 2px;
 
-  right: 0; /* go to the right */
+  right: 0;
 
   transition: all 0.3s ease-in-out;
   background: linear-gradient(transparent, transparent), linear-gradient(to right, #52c3ff, #2185d0);
@@ -166,14 +166,16 @@ line {
 
   width: 100%;
 
-  left: 0; /* go to the left */
+  left: 0;
 
   background: linear-gradient(transparent, transparent), linear-gradient(to right, #52c3ff, #2185d0);
 }
 
+
+
 /* They group and ungroup wtf */
 .nav-link {
-  transition: all 0.6s ease-in-out;
+  transition: all 1s ease-in-out;
   opacity: 0;
   transform: translateY(-20px);
 }

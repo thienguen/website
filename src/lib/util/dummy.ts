@@ -62,7 +62,7 @@ const items = [
         description: 'Premium dark color scheme',
         url: 'https://draculatheme.com/pro',
         stats: '$280k+ sales',
-        icon: 'dracula-pro',
+        icon: 'dracula',
         active: true,
       },
     ],
@@ -130,7 +130,7 @@ const items = [
         description: 'Library to copy text to clipboard',
         url: 'http://clipboardjs.com/',
         stats: '33k+ stars',
-        icon: 'clipboard-js',
+        icon: 'clipboard',
         active: true,
       },
       {

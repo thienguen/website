@@ -23,12 +23,14 @@ export default function About() {
             {`about`}
           </h1>
           <p className="text-center text-sm leading-6 text-gray-900 dark:text-gray-100">
-            {`I don’t know everything. I just know what I know.`}
+            {`I don't know everything. I just know what I know.`}
           </p>
         </div>
       </div>
 
       <div className="mx-auto my-5 grid max-w-3xl grid-cols-6 gap-6 px-6 leading-6">
+        {/* -------------------------------------------------- */}
+
         {/* 1. I'm currently a bitch  */}
         <QA
           question="currently?"
@@ -36,12 +38,15 @@ export default function About() {
           cols="sm:col-span-4 col-span-3" // small screen
           height="min-h-[13rem]"
         />
+        
         {/* Timer. 2. */}
         <Timer />
 
         {/* -------------------------------------------------- */}
+        
         {/* 3. Discord is tough  */}
         <DiscordStatus cols="col-span-3 sm:col-span-2" />
+
         {/* About me. 4. */}
         <QA
           question="what?"
@@ -77,8 +82,9 @@ export default function About() {
         {/* 8. A TODO LIST THAT I THINK I NEED HELP THO IM STUPID */}
 
         {/* -------------------------------------------------- */}
-        {/* 9. RECTANGLE, CIRCLE, TRIANGLE GO 9. */}
       </div>
+      
+      {/* 9. RECTANGLE, CIRCLE, TRIANGLE GO 9. */}
       {/* <div>
         <div className="mx-auto mb-10 grid max-w-3xl grid-cols-8 gap-6 px-6 ">
           {ComponentList.map((Component, index) => (
