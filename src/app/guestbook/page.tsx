@@ -10,7 +10,7 @@
  * ------------------------------------------------------------------------
  */
 import { type Metadata } from 'next'
-import GuestBookForm from '@/components/guestbook/GuestbookForm'
+import GuestbookForm from '@/components/guestbook/GuestbookForm'
 
 export const metadata: Metadata = {
   title: '/guestbook',
@@ -34,7 +34,7 @@ export default function Guestbook() {
         </div>
 
         {/* Guestbook */}
-        <GuestBookForm />
+        <GuestbookForm />
       </div>
     </>
   )
