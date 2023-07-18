@@ -22,7 +22,6 @@ export default function GuestbookForm() {
     showSuccessMessage,
     entries,
     register,
-    handleEntryDelete,
     formOnSubmit,
     hanleEntryCreate,
     session,
@@ -84,7 +83,7 @@ export default function GuestbookForm() {
             key={entry.id.toString()}
             entry={entry}
             user={session?.user}
-            onEntryDelete={() => handleEntryDelete(entry.id)}
+            // onEntryDelete={() => handleEntryDelete(entry.id)}
           />
         ))}
       </div>

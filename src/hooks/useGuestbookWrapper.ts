@@ -3,6 +3,7 @@ import { type guestbook } from '@prisma/client'
 import { useSession } from 'next-auth/react'
 import { useForm, type FieldValues } from 'react-hook-form'
 import { createGuestbookEntry, deleteGuestbookEntry, getGuestbookEntries } from '@/hooks/useGuestbook'
+import { guestbookSchema } from './useGuestbook'
 
 type formSchema = {
   content: string
@@ -48,15 +49,30 @@ export function useGuestbookWrapper() {
    * and remove the entry from state, through generated id, its actually bigInt
    * but meh
    */
-  const handleEntryDelete = (id: bigint) => {
-    console.log('Deleting entry:', id)
-    deleteGuestbookEntry(id)
+  const buttonOnClick = (data: guestbook) => {
+    console.log('Deleting entry:', data)
+    deleteGuestbookEntry(data)
       .then(() => {
-        setEntries(entries.filter((entry) => entry.id !== id))
+        setEntries(
+          entries.filter(
+            (entry) =>
+              entry.created_by !== data.created_by && entry.content !== data.content && entry.email !== data.email
+          )
+        )
       })
       .catch((error) => {
-        console.error('Error: DELETE guestbook handler', error)
+        console.error('Error: DELETE buttonOnClick', error)
       })
+  }
+
+  // const handleDeleteClick = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+  //   event.preventDefault()
+  //   buttonOnClick(entry.id)
+  // }
+
+  const handleEntryDelete = (data: guestbook) => () => {
+    console.log('Deleting entry:', data)
+    buttonOnClick(data)
   }
 
   /**
@@ -105,7 +121,7 @@ export function useGuestbookWrapper() {
     session,
     register,
 
-    // buttonOnClick, // delete button
+    buttonOnClick, // delete button
     handleEntryDelete,
 
     formOnSubmit, // form submission

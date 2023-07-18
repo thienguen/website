@@ -34,7 +34,6 @@ export async function GET(req: NextRequest) {
 }
 
 export async function POST(req: NextRequest) {
-
   // const query = {
   //   guest_id: req.nextUrl.searchParams.get('id'),
   // }
@@ -81,11 +80,26 @@ export async function DELETE(req: NextRequest) {
   if (guestId) console.log('query', guestId)
 
   try {
-    await prisma.guestbook.delete({
+    const data: guestbook = await req.json()
+
+    if (!data?.id) throw new Error('No id provided to DELETE route')
+
+    const stuff = await prisma.guestbook.delete({
       where: {
-        id: 1 || 0,
+        id: data.id,
+        email: data.email,
+        content: data.content,
+        created_by: data.created_by,
       },
     })
+
+    const jsonString = JSON.stringify(
+      stuff,
+      (key, value) => (typeof value === 'bigint' ? value.toString() : value) // return everything else unchanged
+    )
+
+    return NextResponse.json(JSON.parse(jsonString), { status: 200 })
+    
   } catch (error) {
     console.error('Error DELETE route:', error)
     return NextResponse.json(null, { status: 500 })
