@@ -13,7 +13,7 @@ type GuestBookEntryProps = {
   onEntryDelete: () => void
 }
 
-export function GuestBookEntry({ entry, user, onEntryDelete }: GuestBookEntryProps) {
+export function GuestbookEntry({ entry, user, onEntryDelete }: GuestBookEntryProps) {
   return (
     <>
       <div className="my-3 w-full rounded-md border border-gray-300 bg-gray-100 p-4 text-sm shadow-sm shadow-gray-300 dark:border-zinc-900 dark:bg-zinc-900 dark:shadow-none">
@@ -24,20 +24,22 @@ export function GuestBookEntry({ entry, user, onEntryDelete }: GuestBookEntryPro
               {entry.created_by} • {format(new Date(entry.updated_at), "d MMM yyyy 'at' h:mm bb")}
             </p>
           </div>
-          <div className="flex items-center">
+
+          {/* <div className="flex items-center">
             {user && entry.created_by === user?.name && (
               <>
-                {/* <button
+                <button
                   aria-label="delete comment"
                   className="text-sm text-red-600 dark:text-red-400"
-                  onClick={onEntryDelete}
+                  onClick={onEntryDelete} // try to call the hanldeDelete function
                   key={entry.id.toString()}
                 >
                   Delete
-                </button> */}
+                </button>
               </>
             )}
-          </div>
+          </div> */}
+          
         </div>
       </div>
     </>

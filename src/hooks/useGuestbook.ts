@@ -1,5 +1,9 @@
 'use client'
 
+/**
+ * This is the api fetch 
+ */
+
 type createGuestBookSchema = {
   // id
   email: string
@@ -9,9 +13,7 @@ type createGuestBookSchema = {
   // updated_at
 }
 
-type deleteGuestBookSchema = {
-  id: bigint
-}
+
 
 /**
  * Create a new guestbook entry, whenever a user submits the form.
@@ -29,6 +31,7 @@ export async function createGuestbookEntry(data: createGuestBookSchema) {
         content: data.content,
         created_by: data.created_by,
       }),
+
     })
 
     const json = await res.json()
@@ -46,7 +49,7 @@ export async function createGuestbookEntry(data: createGuestBookSchema) {
  */
 export async function deleteGuestbookEntry(id: bigint) {
   try {
-    await fetch(`/api/guestbooks/`, {
+    const res = await fetch(`/api/guestbooks/`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
@@ -55,8 +58,9 @@ export async function deleteGuestbookEntry(id: bigint) {
         id: id,
       })
     })
-
-
+    const json = await res.json()
+    if (!res.ok) throw new Error('Error deleting a guestbook entry:', json)
+    console.log('Deleting this Entry:', json)
   } catch (error) {
     console.error('Error: DELETE guestbook', error)
   }
@@ -82,6 +86,9 @@ export async function getGuestbookEntries() {
       headers: {
         'Content-Type': 'application/json',
       },
+      // body: JSON.stringify({
+      //   id: 9876543211002,
+      // }),
     })
 
     const json = await res.json()

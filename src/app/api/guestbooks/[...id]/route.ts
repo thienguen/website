@@ -12,7 +12,7 @@ export async function GET(req: NextRequest) {
   }
 
   const id = req.nextUrl
-  console.log('id url', id)
+  console.log('guestbook/[id] url', id)
 
   if (query.guest_id) {
     console.log('query', query)

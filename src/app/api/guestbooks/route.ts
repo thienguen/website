@@ -7,8 +7,8 @@ export async function GET(req: NextRequest) {
     guest_id: req.nextUrl.searchParams.get('id'),
   }
 
-  const id = req.nextUrl
-  console.log('id url', id)
+  // const id = req.nextUrl
+  // console.log('guestbook GET', id)
 
   if (query.guest_id) {
     console.log('query', query)
@@ -34,6 +34,18 @@ export async function GET(req: NextRequest) {
 }
 
 export async function POST(req: NextRequest) {
+
+  // const query = {
+  //   guest_id: req.nextUrl.searchParams.get('id'),
+  // }
+
+  // const id = req.nextUrl
+  // console.log('guestbook POST', id)
+
+  // if (query.guest_id) {
+  //   console.log('query POST', query)
+  // }
+
   try {
     const data: guestbook = await req.json()
 
@@ -61,22 +73,21 @@ export async function POST(req: NextRequest) {
   }
 }
 
+/**
+ * Failed, fk
+ */
 export async function DELETE(req: NextRequest) {
   const guestId = req.nextUrl.searchParams.get('id')
   if (guestId) console.log('query', guestId)
 
-  console.log('req', req)
-
   try {
     await prisma.guestbook.delete({
       where: {
-        id: Number(guestId) || 0,
+        id: 1 || 0,
       },
     })
   } catch (error) {
     console.error('Error DELETE route:', error)
     return NextResponse.json(null, { status: 500 })
   }
-
-  return NextResponse.next()
 }

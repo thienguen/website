@@ -1,18 +1,11 @@
 'use client'
 
-import { useEffect, useState, type FormEvent } from 'react'
-import { useSession } from 'next-auth/react'
-import { useForm, type FieldValues } from 'react-hook-form'
-import { useEntries } from '@/hooks/useEntries'
-import { createGuestbookEntry } from '@/hooks/useGuestbook'
-import { GuestBookEntry } from '@/components/guestbook/GuestBookEntry'
+import { useGuestbookWrapper } from '@/hooks/useGuestbookWrapper'
+import { GuestbookEntry } from '@/components/guestbook/GuestbookEntry'
 import { SignIn, SignOut } from '../ui/auth-buttons'
 import LoadingSpinner from '../ui/loading-spinner'
 import SuccessMessage from '../ui/success-message'
 
-type formSchema = {
-  content: string
-}
 /**
  * user login: useSession
  *   - sign in and sign out buttons
@@ -23,52 +16,21 @@ type formSchema = {
  *
  * State: + isLoading, + showSuccessMessage
  */
-
-export default function GuestBookForm() {
-  const [isLoading, setIsLoading] = useState(false)
-  const [showSuccessMessage, setShowSuccessMessage] = useState(false)
-
-  const { data: session } = useSession()
-  const { register, handleSubmit, reset } = useForm<formSchema>()
-  const { entries, handleEntryDelete } = useEntries(isLoading)
-
-  // eslint
-  const customHandleSubmit =
-    (submitFunction: (data: formSchema) => Promise<void>) => (e: FormEvent<HTMLFormElement>) => {
-      e.preventDefault()
-      void handleSubmit((data: FieldValues) => submitFunction(data as formSchema))(e)
-    }
-
-  // eslint
-  const onSubmit = async (data: formSchema) => {
-    setIsLoading(true) // Set isLoading to true before submitting the form
-    try {
-      await createGuestbookEntry({
-        email: session?.user?.email ?? 'Anonymous',
-        content: data.content,
-        created_by: session?.user?.name ?? 'Anonymous',
-      })
-      reset()
-      setShowSuccessMessage(true) // Show the success message
-    } catch (error) {
-      console.error('Error during form submission:', error)
-    } finally {
-      setIsLoading(false) // Set isLoading to false after the form submission is complete
-    }
-  }
-
-  useEffect(() => {
-    // Reset the success message after a certain duration
-    if (showSuccessMessage) {
-      const timeout = setTimeout(() => {
-        setShowSuccessMessage(false)
-      }, 8000) // Adjust the duration as needed
-      return () => clearTimeout(timeout)
-    }
-  }, [showSuccessMessage])
+export default function GuestbookForm() {
+  const {
+    isLoading,
+    showSuccessMessage,
+    entries,
+    register,
+    handleEntryDelete,
+    formOnSubmit,
+    hanleEntryCreate,
+    session,
+  } = useGuestbookWrapper()
 
   return (
     <>
+      {/* Form and already sign-in */}
       {session?.user && (
         <div className="flex w-full justify-end">
           <SignOut />
@@ -78,7 +40,7 @@ export default function GuestBookForm() {
             </h1>
             <div className="mx-auto my-2 w-full max-w-xl rounded-xl border border-gray-200 bg-white px-4 py-1 shadow-xl shadow-gray-400 dark:border-zinc-900 dark:bg-zinc-900 dark:shadow-none">
               <div className="flex flex-col">
-                <form onSubmit={customHandleSubmit(onSubmit)} className="mb-2 flex flex-col items-center space-y-3">
+                <form onSubmit={hanleEntryCreate(formOnSubmit)} className="mb-2 flex flex-col items-center space-y-3">
                   <label htmlFor="content" className="sr-only">
                     Your Message
                   </label>
@@ -100,23 +62,25 @@ export default function GuestBookForm() {
                   >
                     {isLoading ? <LoadingSpinner stuff="...Submitting" /> : 'Sign'}
                   </button>
-                  {showSuccessMessage && <SuccessMessage>Thanks for signing my guestbook! 🎉</SuccessMessage>}
+                  {showSuccessMessage && <SuccessMessage>Thanks for signing my guestbook! 💮</SuccessMessage>}
                 </form>
               </div>
             </div>
           </div>
         </div>
       )}
-    
+
+      {/* not sign-in */}
       {!session?.user && (
         <div className="flex w-full justify-center text-center">
           <SignIn />
         </div>
       )}
 
+      {/* All entries there is */}
       <div className="w-full">
         {entries?.map((entry) => (
-          <GuestBookEntry
+          <GuestbookEntry
             key={entry.id.toString()}
             entry={entry}
             user={session?.user}
