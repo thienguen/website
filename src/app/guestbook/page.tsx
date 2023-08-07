@@ -12,10 +12,10 @@
 import { type Metadata } from 'next'
 import GuestbookForm from '@/components/guestbook/GuestbookForm'
 
-export const metadata: Metadata = {
-  title: '/guestbook',
-  description: 'metadata is a funny lil concept.',
-}
+// export const metadata: Metadata = {
+//   title: '/guestbook',
+//   description: 'metadata is a funny lil concept.',
+// }
 
 export const dynamic = 'force-dynamic'
 
