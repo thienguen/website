@@ -112,6 +112,18 @@
   }
 }
 
+/* globals.css or another global stylesheet */
+.light-selection::selection {
+  background-color: #212024;
+  color: white;
+}
+
+.dark-selection::selection {
+  background-color: #24c8e5;
+  color: white;
+}
+
+
 body {
   /* width: 100vw; */
   /* height: 100vh; */

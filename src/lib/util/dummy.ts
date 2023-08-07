@@ -7,17 +7,10 @@ export const projectItems = [
         description: 'Got me an internship ngl',
         url: 'https://github.com/Thienguen/TodoApp',
         active: true,
-        icon: 'clipboard',
+        icon: 'podcasts',
         stats: 'Yet another Todo App ♻️',
       },
-      {
-        title: 'Android Apps',
-        description: 'Simple Android apps',
-        url: 'https://github.com/Thienguen/CodePath-Intermediate-Android-Development',
-        active: true,
-        icon: 'heart',
-        stats: 'From CodePath with luv ♡',
-      },
+
       {
         title: 'CLI Games',
         description: 'Interaction with the command line',
@@ -25,6 +18,14 @@ export const projectItems = [
         active: true,
         icon: 'home',
         stats: 'C++, C#, Python, Js, Java, etc.',
+      },
+      {
+        title: 'Android Apps',
+        description: 'Simple Android apps. Fitbit',
+        url: 'https://github.com/Thienguen/CodePath-Intermediate-Android-Development',
+        active: true,
+        icon: 'projects',
+        stats: 'From CodePath with luv ♡',
       },
       {
         title: 'Gate Keeper',
@@ -38,14 +39,13 @@ export const projectItems = [
   },
 ]
 
-
 export const CareerItems = [
   {
     year: '2023',
     projects: [
       {
         title: 'DecentrePX',
-        description: 'Software Engineer Intern',
+        description: 'Software Engineer Intern focus on Web3, React, Solidity, etc.',
         url: 'Nay Nay',
         active: true,
         icon: 'clipboard',
@@ -58,7 +58,7 @@ export const CareerItems = [
     projects: [
       {
         title: 'CSN TA',
-        description: 'Frehly hired TA',
+        description: 'Helping and grading students with their assignments',
         url: 'Not Available',
         active: true,
         icon: 'clipboard',
@@ -66,7 +66,7 @@ export const CareerItems = [
       },
       {
         title: 'UNLV TA',
-        description: 'Frehly hired TA',
+        description: 'Helping and grading students with their assignments',
         url: 'Not Available',
         active: true,
         icon: 'heart',
@@ -74,7 +74,7 @@ export const CareerItems = [
       },
       {
         title: 'UNLV Tutor',
-        description: 'Most likely hired tutor',
+        description: 'IT Tutor at the Academic Success Center',
         url: 'Not Available',
         active: true,
         icon: 'home',
@@ -87,7 +87,7 @@ export const CareerItems = [
     projects: [
       {
         title: 'Started Coding',
-        description: 'That one time the compile didn\'t yell at me',
+        description: "That one time the compile didn't yell at me",
         url: 'https://github.com/Thienguen/LeetCode-Data-Structure-n-Algorithms',
         active: true,
         icon: 'clipboard',
@@ -96,5 +96,3 @@ export const CareerItems = [
     ],
   },
 ]
-
-

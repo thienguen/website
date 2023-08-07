@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useEffect, useRef } from 'react'
-
+import { useTheme } from 'next-themes'
 import { useMousePosition } from '@/lib/util/mouse'
 
 /* BUGS: Cant sync light and dark theme */
@@ -30,6 +30,8 @@ export default function Particles({
   const mouse = useRef<{ x: number; y: number }>({ x: 0, y: 0 })
   const canvasSize = useRef<{ w: number; h: number }>({ w: 0, h: 0 })
   const dpr = typeof window !== 'undefined' ? window.devicePixelRatio : 1
+
+  const { resolvedTheme } = useTheme()
 
   useEffect(() => {
     if (canvasRef.current) {
@@ -137,22 +139,26 @@ export default function Particles({
 
   const drawCircle = (circle: Circle, update = false) => {
     if (context.current) {
-      const { x, y, translateX, translateY, size, alpha } = circle
-      context.current.translate(translateX, translateY)
-      context.current.beginPath()
-      context.current.arc(x, y, size, 0, 2 * Math.PI)
-      context.current.fillStyle = `rgba(255, 255, 255, ${alpha})`
-      // context.current.fillStyle = `rgba(0, 0, 128, ${alpha})`;
-      // context.current.fillStyle = `rgba(255, 255, 0, ${alpha})`;
-      context.current.fill()
-      context.current.setTransform(dpr, 0, 0, dpr, 0, 0)
-
+      const { x, y, translateX, translateY, size, alpha } = circle;
+      context.current.translate(translateX, translateY);
+      context.current.beginPath();
+      context.current.arc(x, y, size, 0, 2 * Math.PI);
+  
+      if (resolvedTheme === 'dark') {
+        context.current.fillStyle = `rgba(255, 255, 255, ${alpha})`;  // Color for dark theme
+      } else if (resolvedTheme === 'light') {
+        context.current.fillStyle = `rgba(0, 0, 128, ${alpha})`;      // Color for light theme
+      }
+  
+      context.current.fill();
+      context.current.setTransform(dpr, 0, 0, dpr, 0, 0);
+  
       if (!update) {
-        circles.current.push(circle)
+        circles.current.push(circle);
       }
     }
   }
-
+  
   const clearContext = () => {
     if (context.current) {
       context.current.clearRect(0, 0, canvasSize.current.w, canvasSize.current.h)

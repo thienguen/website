@@ -1,17 +1,22 @@
 import { CareerItems, projectItems } from '@/lib/util/dummy'
 import clipboard from '../../../public/icons-json/clipboard.json'
+import podcasts from '../../../public/icons-json/podcasts.json'
 import code from '../../../public/icons-json/code.json'
 import heart from '../../../public/icons-json/heart.json'
 import home from '../../../public/icons-json/home.json'
+import projects from '../../../public/icons-json/projects.json'
+
 /* Generative Project Cards */
 import ACareerItem from './ACareerItem'
 import AFeaturedProject from './AFeaturedProject'
 
 export const ICONS = {
-  clipboard: clipboard,
   home: home,
-  heart: heart,
   code: code,
+  heart: heart,
+  projects: projects,
+  podcasts: podcasts,
+  clipboard: clipboard,
 }
 
 export type ProjectProps = {
@@ -23,7 +28,7 @@ export type ProjectProps = {
   stats?: string
 }
 
-export const renderFeatured = () => {
+export const renderFeaturedProjects = () => {
   const featured = ['Todo? App', 'Android Apps', 'CLI Games', 'Gate Keeper']
 
   // Dummy text mapped

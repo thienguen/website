@@ -41,9 +41,13 @@ export default function AFeaturedProject({ project, index }: FeaturedProjectProp
             />
           </div>
           <div className="grow" dir={`${textDirection}`}>
-            <p className="text-base text-primary">{project.title}</p>
-            <p className="text-sm leading-6 dark:text-slate-400">{project.description}</p>
-            <p className="mt-1 inline-block text-sm font-medium tracking-wide text-primary">
+            <p className="text-sm font-semibold text-black dark:font-normal dark:text-white">
+              {project.title}
+            </p>
+            <p className="text-sm leading-6 text-slate-600 opacity-90 dark:text-slate-400">
+              {project.description}
+            </p>
+            <p className="mt-1 inline-block text-sm font-semibold tracking-wide text-primary dark:font-normal">
               {project.stats}
             </p>
           </div>
@@ -59,7 +63,7 @@ type AnimationProps = {
 
 function Animation({ children }: AnimationProps) {
   return (
-    <motion.div className="relative m-2 p-2 transition-all duration-200 ease-in-out hover:scale-105 hover:rounded-lg hover:bg-gray-50 hover:opacity-100 dark:hover:bg-slate-700">
+    <motion.div className="relative m-2 p-3 transition-all duration-200 ease-in-out hover:scale-105 hover:rounded-lg hover:bg-gray-50 hover:opacity-100  dark:hover:bg-slate-700">
       <div className="relative z-10">{children}</div>
     </motion.div>
   )

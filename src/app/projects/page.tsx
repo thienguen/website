@@ -1,7 +1,7 @@
 'use client'
 
 // import { type Metadata, type NextPage } from 'next'
-import { renderCareer, renderFeatured } from '@/components/purojekuto/RenderProjectsPage'
+import { renderCareer, renderFeaturedProjects } from '@/components/purojekuto/RenderProjectsPage'
 
 // export const metadata: Metadata = {
 // title: '/projects',
@@ -18,12 +18,15 @@ export default function Projects() {
   return (
     <>
       <div className="mx-auto mt-6 flex max-w-3xl flex-col ">
-        <h2 className="mx-auto my-10">Featured Projects</h2>
+        {/* Projecst */}
+        <h2 className="my-5 text-center text-xl">Featured Projects</h2>
+        <div className="">{renderFeaturedProjects()}</div>
+      </div>
 
-        <div>{renderFeatured()}</div>
-
+      {/* Career */}
+      <div className="mx-auto flex max-w-2xl flex-col">
         <h2 className="my-5 text-xl">Career</h2>
-        {renderCareer()}
+        <div className="">{renderCareer()}</div>
       </div>
     </>
   )

@@ -39,7 +39,10 @@ export default function GuestbookForm() {
             </h1>
             <div className="mx-auto my-2 w-full max-w-xl rounded-xl border border-gray-200 bg-white px-4 py-1 shadow-xl shadow-gray-400 dark:border-zinc-900 dark:bg-zinc-900 dark:shadow-none">
               <div className="flex flex-col">
-                <form onSubmit={hanleEntryCreate(formOnSubmit)} className="mb-2 flex flex-col items-center space-y-3">
+                <form
+                  onSubmit={hanleEntryCreate(formOnSubmit)}
+                  className="mb-2 flex flex-col items-center space-y-3"
+                >
                   <label htmlFor="content" className="sr-only">
                     Your Message
                   </label>
@@ -61,7 +64,9 @@ export default function GuestbookForm() {
                   >
                     {isLoading ? <LoadingSpinner stuff="...Submitting" /> : 'Sign'}
                   </button>
-                  {showSuccessMessage && <SuccessMessage>Thanks for signing my guestbook! 💮</SuccessMessage>}
+                  {showSuccessMessage && (
+                    <SuccessMessage>Thanks for signing my guestbook! 💮</SuccessMessage>
+                  )}
                 </form>
               </div>
             </div>
@@ -77,16 +82,22 @@ export default function GuestbookForm() {
       )}
 
       {/* All entries there is */}
-      <div className="w-full">
-        {entries?.map((entry) => (
-          <GuestbookEntry
-            key={entry.id.toString()}
-            entry={entry}
-            user={session?.user}
-            // onEntryDelete={() => handleEntryDelete(entry.id)}
-          />
-        ))}
-      </div>
+      {entries?.length === 0 ? (
+        <>
+          <LoadingSpinner stuff="...Chottomattekudasai" />
+        </>
+      ) : (
+        <div className="w-full">
+          {entries?.map((entry) => (
+            <GuestbookEntry
+              key={entry.id.toString()}
+              entry={entry}
+              user={session?.user}
+              // onEntryDelete={() => handleEntryDelete(entry.id)}
+            />
+          ))}
+        </div>
+      )}
     </>
   )
 }
