@@ -1,5 +1,42 @@
 const items = [
   {
+    year: '2024',
+    projects: [
+      {
+        title: 'Todo? App',
+        description: 'Got me an internship ngl',
+        url: 'https://github.com/Thienguen/TodoApp',
+        active: true,
+        icon: 'clipboard',
+        stats: 'Yet another Todo App ♻️',
+      },
+      {
+        title: 'Android Apps',
+        description: 'Simple Android apps',
+        url: 'https://github.com/Thienguen/CodePath-Intermediate-Android-Development',
+        active: true,
+        icon: 'heart',
+        stats: 'From CodePath with luv ♡',
+      },
+      {
+        title: 'CLI Games',
+        description: '10+ CLI games interaction',
+        url: 'https://github.com/Thienguen/Some-Command-Line-Interaction',
+        active: true,
+        icon: 'home',
+        stats: 'C++, C#, Python, Js, Java, etc.',
+      },
+      {
+        title: 'Gate Keeper',
+        description: 'QR Code based gate keeper',
+        url: 'Under Construction',
+        active: true,
+        icon: 'code',
+        stats: 'Under Construction',
+      },
+    ],
+  },
+  {
     year: '2023',
     projects: [
       {
@@ -45,7 +82,7 @@ const items = [
       },
       {
         title: 'Dracula UI',
-        url: 'https://draculatheme.com/ui'
+        url: 'https://draculatheme.com/ui',
       },
     ],
   },

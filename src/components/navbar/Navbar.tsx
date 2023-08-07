@@ -3,10 +3,8 @@
 /* Framework */
 import { Suspense, useCallback, useEffect, useRef, useState } from 'react'
 import { usePathname } from 'next/navigation'
-
 /* Libraries */
 import { Twirl as Hamburger } from 'hamburger-react'
-
 /* Src */
 import { useMediaQuery } from '@/hooks/useMediaQuery'
 import { NavbarLeft, NavbarRight, NavbarRightSmall } from '@/components/navbar/Navbar-left-right'
@@ -25,7 +23,7 @@ const Navbar = () => {
   const navRef = useRef<HTMLDivElement>(null)
 
   /**
-   * For dynamic, responsive navbar, when smaller 
+   * For dynamic, responsive navbar, when smaller
    * size is detected, the navbar will XXX
    */
   const expand = useCallback(() => {
@@ -63,7 +61,7 @@ const Navbar = () => {
         {/* Useless */}
         {isBreakpoint ? (
           <>
-            <nav className="m-auto flex w-3/5 flex-wrap items-center justify-between py-5 md:flex-nowrap">
+            <nav className="m-auto mt-2 flex w-3/5 flex-wrap items-center justify-between py-5 md:flex-nowrap">
               {/* Typewriter Effect -- Left */}
               <div className={`md:block ${isOpen ? 'block' : 'hidden'}`}>
                 <NavbarLeft path_name={path_name} />
