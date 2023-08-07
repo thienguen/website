@@ -1,12 +1,12 @@
 'use client'
 
-import { type Metadata } from 'next'
+// import { type Metadata } from 'next'
 import * as render from '@/components/purojekuto/RenderProjectsPage'
 
-export const metadata: Metadata = {
-  title: '/projects',
-  description: 'metadata is a funny lil concept.',
-}
+// export const metadata: Metadata = {
+//   title: '/projects',
+//   description: 'metadata is a funny lil concept.',
+// }
 
 export default function Projects() {
   // <div className="space-y-1 px-10 md:space-y-3">
