@@ -28,6 +28,8 @@ export default function ACareerItem({ project }: CareerItemProps) {
     }
   }, [resolvedTheme])
 
+
+  
   return (
     <li>
       <Tooltip text={project.description ?? ''}>

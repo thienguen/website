@@ -73,8 +73,8 @@ export const Career = () => {
 
 type CombinedProjects = {
   year: string
-  career: ProjectProps[]
   all: ProjectProps[]
+  career: ProjectProps[]
 }
 
 export function CareerProjectsAlternating() {
@@ -99,25 +99,20 @@ export function CareerProjectsAlternating() {
         <div key={index} className="mb-10 flex w-full justify-between">
           <div className="w-1/2 pr-4">
             <h3 className="text-lg font-bold">{item.year}</h3>
-            <div className="pl-5 text-base">
-              <div className="pl-5 text-base">
-                <ul>
-                  {item.career.map((project, pIndex) => (
-                    <ACareerItem key={pIndex} project={project} />
-                  ))}
-                </ul>
-              </div>
-            </div>
+            <ul className="list-inside list-disc pl-5 text-base">
+              {item.career.map((project, pIndex) => (
+                <ACareerItem key={pIndex} project={project} />
+              ))}
+            </ul>
           </div>
-          <div className="w-1/2 pl-4">
+          <div className="w-1/2 pl-4" dir="rtl">
+            {' '}
             <h3 className="text-lg font-bold">{item.year}</h3>
-            <div className="pl-5 text-base">
-              <ul>
-                {item.all.map((project, pIndex) => (
-                  <ACareerItem key={pIndex} project={project} />
-                ))}
-              </ul>
-            </div>
+            <ul className="list-inside list-disc pl-5 text-base">
+              {item.all.map((project, pIndex) => (
+                <ACareerItem key={pIndex} project={project} />
+              ))}
+            </ul>
           </div>
         </div>
       ))}
