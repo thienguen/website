@@ -1,6 +1,7 @@
+import { useEffect, useState } from 'react'
+import { useTheme } from 'next-themes'
 import { Tooltip } from '@/components/common/Tooltip'
 import { type ProjectProps } from './RenderProjectsPage'
-import { useTheme } from 'next-themes'
 
 interface CareerItemProps {
   project: ProjectProps
@@ -8,19 +9,25 @@ interface CareerItemProps {
 
 export default function ACareerItem({ project }: CareerItemProps) {
   const { resolvedTheme } = useTheme()
-  
-  // Colors for dark theme
-  const darkPrimaryColor = '#84FFB8' // Light Greenish color
-  const darkSecondaryColor = '#82FFDA' // Light Cyan color
-  
-  // Colors for light theme with a touch of yellowish hue
-  const lightPrimaryColor = '#D87787' // Light Yellow color
-  const lightSecondaryColor = '#861657' // Grayish White color
 
-  // Determine colors based on theme
-  const primaryColor = resolvedTheme === 'dark' ? darkPrimaryColor : lightPrimaryColor;
-  const secondaryColor = resolvedTheme === 'dark' ? darkSecondaryColor : lightSecondaryColor;
-  
+  const darkPrimaryColor = '#84FFB8'
+  const darkSecondaryColor = '#82FFDA'
+  const lightPrimaryColor = '#D87787'
+  const lightSecondaryColor = '#861657'
+
+  const [primaryColor, setPrimaryColor] = useState(darkPrimaryColor)
+  const [secondaryColor, setSecondaryColor] = useState(darkSecondaryColor)
+
+  useEffect(() => {
+    if (resolvedTheme === 'dark') {
+      setPrimaryColor(darkPrimaryColor)
+      setSecondaryColor(darkSecondaryColor)
+    } else {
+      setPrimaryColor(lightPrimaryColor)
+      setSecondaryColor(lightSecondaryColor)
+    }
+  }, [resolvedTheme])
+
   return (
     <li>
       <Tooltip text={project.description ?? ''}>
@@ -28,10 +35,10 @@ export default function ACareerItem({ project }: CareerItemProps) {
           className="cursor-grab hover:opacity-80"
           style={{
             backgroundImage: `linear-gradient(135deg, ${primaryColor} 0%, ${secondaryColor} 100%)`,
-            backgroundSize: '100% 0.075em', // Making it thinner
+            backgroundSize: '100% 0.075em',
             backgroundRepeat: 'no-repeat',
-            backgroundPosition: '0 92%', // Moving it closer to text
-            transition: 'background-size 0.25s ease-in, opacity 0.25s ease-in', // Adding hover transition
+            backgroundPosition: '0 92%',
+            transition: 'background-size 0.25s ease-in, opacity 0.25s ease-in',
           }}
         >
           {project.title}

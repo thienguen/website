@@ -1,4 +1,4 @@
-export const projectItems = [
+export const FeaturedProjectItems = [
   {
     year: '2023',
     projects: [
@@ -10,7 +10,6 @@ export const projectItems = [
         icon: 'podcasts',
         stats: 'Yet another Todo App ♻️',
       },
-
       {
         title: 'CLI Games',
         description: 'Interaction with the command line',
@@ -87,8 +86,90 @@ export const CareerItems = [
     projects: [
       {
         title: 'Started Coding',
-        description: "That one time the compile didn't yell at me",
+        description: "That one time the compiler didn't yell at me",
         url: 'https://github.com/Thienguen/LeetCode-Data-Structure-n-Algorithms',
+        active: true,
+        icon: 'clipboard',
+        stats: 'Tf do I do with this?',
+      },
+    ],
+  },
+]
+
+export const AllProjectsItems = [
+  {
+    year: '2023',
+    projects: [
+      {
+        title: 'Portfolio',
+        description: 'The website you are currently viewing right now~',
+        url: 'https://thien-porfolio.vercel.app/',
+        active: true,
+        icon: 'code',
+        stats: 'Next.js, TypeScript, TailwindCSS, etc.',
+      },
+      {
+        title: 'Gate Keeper',
+        description: 'QR Code based gate keeper',
+        url: 'Nay Nay',
+        active: true,
+        icon: 'home',
+        stats: 'Under 📑 Construction',
+      },
+      {
+        title: 'DSA Courses',
+        description: 'Ah yes...',
+        url: 'https://github.com/Thienguen/Data-Structure-Algorithms-Course',
+        active: true,
+        icon: 'heart',
+        stats: 'That one time my code make no sense to me',
+      },
+    ],
+  },
+  {
+    year: '2022',
+    projects: [
+      {
+        title: 'Computer Animation Project',
+        description: 'Doing animation with SDL2 C++ Library',
+        url: 'https://github.com/Thienguen/Computer-Animations-Projects',
+        active: true,
+        icon: 'download',
+        stats: 'Yet another day Jetbrains sold me their product',
+      },
+      {
+        title: 'DSA & Leetcode',
+        description: 'Via Helping and grading students with their assignments',
+        url: 'https://github.com/Thienguen/LeetCode-Data-Structure-n-Algorithms',
+        active: true,
+        icon: 'projects',
+        stats: 'Yet another day to help students Part 2',
+      },
+      {
+        title: 'Todo? App',
+        description: 'Got me an internship ngl',
+        url: 'https://github.com/Thienguen/TodoApp',
+        active: true,
+        icon: 'podcasts',
+        stats: 'Yet another Todo App ♻️',
+      },
+    ],
+  },
+  {
+    year: '2021',
+    projects: [
+      {
+        title: 'Started Coding',
+        description: "That one time the compiler didn't yell at me",
+        url: 'https://github.com/Thienguen/LeetCode-Data-Structure-n-Algorithms',
+        active: true,
+        icon: 'clipboard',
+        stats: 'Tf do I do with this?',
+      },
+      {
+        title: 'Introductory to C++',
+        description: "That one time the compiler didn't yell at me",
+        url: 'https://github.com/Thienguen/Introductory-to-Computer-Science-Integrated',
         active: true,
         icon: 'clipboard',
         stats: 'Tf do I do with this?',
