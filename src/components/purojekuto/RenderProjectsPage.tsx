@@ -1,10 +1,10 @@
-import home      from '../../../public/icons-json/home.json'
-import code      from '../../../public/icons-json/code.json'
-import heart     from '../../../public/icons-json/heart.json'
+import { CareerItems, projectItems } from '@/lib/util/dummy'
 import clipboard from '../../../public/icons-json/clipboard.json'
-
+import code from '../../../public/icons-json/code.json'
+import heart from '../../../public/icons-json/heart.json'
+import home from '../../../public/icons-json/home.json'
 /* Generative Project Cards */
-import items from '@/lib/util/dummy'
+import ACareerItem from './ACareerItem'
 import AFeaturedProject from './AFeaturedProject'
 
 export const ICONS = {
@@ -27,7 +27,7 @@ export const renderFeatured = () => {
   const featured = ['Todo? App', 'Android Apps', 'CLI Games', 'Gate Keeper']
 
   // Dummy text mapped
-  const projects = items
+  const projects = projectItems
     .map((item) => {
       return item.projects.filter((project) => featured.includes(project.title))
     })
@@ -50,32 +50,16 @@ export const renderFeatured = () => {
   )
 }
 
-// const renderAll = () => {
-//   return items.map((item, index) => {
-//     return (
-//       <div key={index}>
-//         <h3>{item.year}</h3>
-//         <ul>
-//           {(item.projects as ProjectProps[]).map((project, pIndex) => {
-//             // Add type assertion
-//             return <ProjectItem key={pIndex} project={project} />
-//           })}
-//         </ul>
-//       </div>
-//     )
-//   })
-// }
-
-// interface ProjectItemProps {
-//   project: ProjectProps
-// }
-
-// const ProjectItem: NextPage<ProjectItemProps> = ({ project }) => {
-//   return (
-//     <li>
-//       <a href={project.url} target="_blank">
-//         {project.title}
-//       </a>
-//     </li>
-//   )
-// }
+export const renderCareer = () => {
+  const items = CareerItems
+  return items.map((item, index) => (
+    <div key={index} className="mb-5">
+      <h3 className="text-lg font-bold">{item.year}</h3>
+      <ul className="list-inside list-disc pl-5 text-base">
+        {(item.projects as ProjectProps[]).map((project, pIndex) => (
+          <ACareerItem key={pIndex} project={project} />
+        ))}
+      </ul>
+    </div>
+  ))
+}

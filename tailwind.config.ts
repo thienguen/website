@@ -166,5 +166,5 @@ module.exports = {
       'display': ['var(--font-calsans)'],
     },
   },
-  plugins: [require('tailwindcss-animate')],
+  plugins: [require('tailwindcss-animate'), require('@tailwindcss/typography')],
 }

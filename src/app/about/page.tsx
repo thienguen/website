@@ -20,9 +20,9 @@ export default function About() {
         {/* Header */}
         <div className="space-y-1 px-10 md:space-y-3">
           <h1 className="text-base font-extrabold tracking-tight text-gray-900 dark:text-gray-100 sm:text-2xl sm:leading-6 md:text-3xl">
-            {`about`}
+            {`about to put a progress bar here`}
           </h1>
-          <p className="text-center text-sm leading-6 text-gray-900 dark:text-gray-100">
+          <p className="bg-clip-text text-center font-signature text-xl leading-6 text-gray-900 dark:text-gray-100">
             {`I don't know everything. I just know what I know.`}
           </p>
         </div>
@@ -38,12 +38,12 @@ export default function About() {
           cols="sm:col-span-4 col-span-3" // small screen
           height="min-h-[13rem]"
         />
-        
+
         {/* Timer. 2. */}
         <Timer />
 
         {/* -------------------------------------------------- */}
-        
+
         {/* 3. Discord is tough  */}
         <DiscordStatus cols="col-span-3 sm:col-span-2" />
 
@@ -83,7 +83,7 @@ export default function About() {
 
         {/* -------------------------------------------------- */}
       </div>
-      
+
       {/* 9. RECTANGLE, CIRCLE, TRIANGLE GO 9. */}
       {/* <div>
         <div className="mx-auto mb-10 grid max-w-3xl grid-cols-8 gap-6 px-6 ">
