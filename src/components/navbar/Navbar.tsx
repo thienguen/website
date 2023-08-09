@@ -19,7 +19,6 @@ const Navbar = () => {
    */
   const path_name = usePathname()
   const isBreakpoint = useMediaQuery('780px')
-
   const navRef = useRef<HTMLDivElement>(null)
 
   /**
@@ -52,6 +51,25 @@ const Navbar = () => {
       document.removeEventListener('mousedown', handleClickOutside)
     }
   }, [isOpen, expand])
+
+  /* If the user decided to hard refresh, like they always do */
+  if (isBreakpoint === null) {
+    return (
+      <>
+        <div className="m-auto mt-2 flex w-3/5 flex-wrap items-center justify-between py-5 md:flex-nowrap">
+          {/* Typewriter Effect -- Left */}
+          <div className={`md:block ${isOpen ? 'block' : 'hidden'}`}>
+            <NavbarLeft path_name={path_name} />
+          </div>
+          {/* ------------------------- */}
+          <div>
+            <NavbarRight />
+          </div>
+          {/* Navlinks Effects -- Right */}
+        </div>
+      </>
+    )
+  }
 
   return (
     <>

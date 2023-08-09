@@ -159,14 +159,6 @@ export const AllProjectsItems = [
     year: '2021',
     projects: [
       {
-        title: 'Started Coding',
-        description: "That one time the compiler didn't yell at me",
-        url: 'https://github.com/Thienguen/LeetCode-Data-Structure-n-Algorithms',
-        active: true,
-        icon: 'clipboard',
-        stats: 'Tf do I do with this?',
-      },
-      {
         title: 'Introductory to C++',
         description: "That one time the compiler didn't yell at me",
         url: 'https://github.com/Thienguen/Introductory-to-Computer-Science-Integrated',

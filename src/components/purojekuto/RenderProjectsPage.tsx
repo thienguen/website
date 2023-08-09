@@ -73,44 +73,48 @@ export const Career = () => {
 
 type CombinedProjects = {
   year: string
-  all: ProjectProps[]
-  career: ProjectProps[]
+  allProjects: ProjectProps[]
+  careers: ProjectProps[]
 }
 
 export function CareerProjectsAlternating() {
-  // Create an array of combined projects for each year
+    // Create an array of combined projects for each year
   const combinedProjects: CombinedProjects[] = []
 
   const years = ['2023', '2022', '2021']
 
   years.forEach((year) => {
-    const careerYear = CareerItems.find((item) => item.year === year)
-    const allYear = AllProjectsItems.find((item) => item.year === year)
+    const careerYears = CareerItems.find((item) => item.year === year)
+    const allProjects = AllProjectsItems.find((item) => item.year === year)
+
     combinedProjects.push({
-      year: year,
-      career: careerYear ? careerYear.projects : [],
-      all: allYear ? allYear.projects : [],
+      year       : year,
+      allProjects: allProjects ? allProjects.projects: [],
+      careers    : careerYears ? careerYears.projects: [],
     })
   })
 
   return (
-    <div className="mt-10 max-w-2xl flex-wrap justify-between">
+    <div className = "mt-10 max-w-2xl flex-wrap justify-between">
       {combinedProjects.map((item, index) => (
-        <div key={index} className="mb-10 flex w-full justify-between">
-          <div className="w-1/2 pr-4">
-            <h3 className="text-lg font-bold">{item.year}</h3>
-            <ul className="list-inside list-disc pl-5 text-base">
-              {item.career.map((project, pIndex) => (
-                <ACareerItem key={pIndex} project={project} />
+        <div key = {index} className = "mb-10 flex w-full justify-between">
+          {/* Left */}
+          <div className = "w-1/2 pr-4">
+            {' '}
+            <h3 className = "text-lg font-bold">{item.year}</h3>
+            <ul className = "list-inside list-disc pl-5 text-base">
+              {item.allProjects.map((project, pIndex) => (
+                <ACareerItem key = {pIndex} project = {project} />
               ))}
             </ul>
           </div>
-          <div className="w-1/2 pl-4" dir="rtl">
+          {/* Right */}
+          <div className = "w-1/2 pl-4" dir = "rtl">
             {' '}
-            <h3 className="text-lg font-bold">{item.year}</h3>
-            <ul className="list-inside list-disc pl-5 text-base">
-              {item.all.map((project, pIndex) => (
-                <ACareerItem key={pIndex} project={project} />
+            <h3 className = "text-lg font-bold">{item.year}</h3>
+            <ul className = "list-inside list-disc pl-5 text-base">
+              {item.careers.map((project, pIndex) => (
+                <ACareerItem key = {pIndex} project = {project} />
               ))}
             </ul>
           </div>

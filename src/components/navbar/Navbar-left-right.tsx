@@ -14,7 +14,9 @@ interface NavbarRightProps {
   isOpen: boolean
 }
 
-// < mapping for each title to its icon > \\
+/**
+ * <mapping for each title to its icon>
+ */
 const IconMapping: { [key: string]: JSX.Element } = {
   '/home': <AiOutlineHome />,
   '/about': <IoPersonCircleOutline />,
@@ -66,7 +68,7 @@ export function NavbarRightSmall({ path_name, isOpen }: NavbarRightProps): React
     <div className="flex-col items-start space-y-4">
       {Navlinks.map((link, index) => (
         <Link
-          key={link.title}
+          key={index}
           href={link.href}
           rel="noopener noreferrer"
           className={cn(
@@ -74,7 +76,6 @@ export function NavbarRightSmall({ path_name, isOpen }: NavbarRightProps): React
             path_name === link.href && 'text-gray-200',
             isOpen && 'show'
           )}
-          style={{ animation: isOpen ? `slide-in 1s ease ${index * 0.1}s forwards` : 'none' }}
         >
           {link.title}
         </Link>

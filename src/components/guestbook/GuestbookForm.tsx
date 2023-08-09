@@ -56,7 +56,6 @@ export default function GuestbookForm() {
                     maxLength={500}
                     className="w-full rounded-md border-2 border-gray-300 p-3 text-xs shadow-sm focus:border-gray-500 focus:ring-gray-500 dark:border-zinc-600 dark:bg-zinc-700 dark:text-white dark:focus:border-gray-700 dark:focus:ring-neutral-600"
                   />
-
                   <button
                     type="submit"
                     className="grid w-full place-items-center rounded bg-slate-200 px-2 py-0.5 text-sm font-medium ring-gray-300 transition-all hover:bg-slate-300 hover:ring-2 dark:bg-gray-600"
