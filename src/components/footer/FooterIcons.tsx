@@ -132,6 +132,7 @@ export function FooterProfile() {
               src="https://avatars.githubusercontent.com/u/94078395"
               alt="Thien"
               width={24}
+              priority
               height={24}
               className="rounded-full"
             />
