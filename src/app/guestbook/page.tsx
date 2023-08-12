@@ -10,6 +10,7 @@
  * ------------------------------------------------------------------------
  */
 import { type Metadata } from 'next'
+import ProgressBar from '@/components/common/ProgressBar'
 import GuestbookForm from '@/components/guestbook/GuestbookForm'
 
 export const metadata: Metadata = {
@@ -22,6 +23,13 @@ export const dynamic = 'force-dynamic'
 export default function Guestbook() {
   return (
     <>
+      <ProgressBar
+        steps={['/home', '/projects', '/about', '/guestbook']}
+        currentStep={4}
+        isFullWidth={false}
+        key={'/guestbook'}
+      />
+
       <div className="mx-auto mb-12 mt-6 flex max-w-2xl flex-col items-center justify-center">
         {/* Header */}
         <div className="space-y-1 p-4 md:space-y-5">

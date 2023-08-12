@@ -1,11 +1,19 @@
 import Profile from '@/components/ui/profile'
 import Signature from '@/components/ui/signature'
+import ProgressBar from '@/components/common/ProgressBar'
 import SkillIssues from '@/components/home/skill-issues'
 
 export default function Home() {
   /* Could have put stuff in here put anyway */
   return (
     <>
+      <ProgressBar
+        steps={['/home', '/projects', '/about', '/guestbook']}
+        currentStep={1}
+        isFullWidth={false}
+        key={'/home'}
+      />
+
       {/* Hero Kinda Section */}
       <div className="mb-8 h-full w-full items-center justify-center sm:mt-32 sm:min-h-[500px]">
         {/* Bar */}
@@ -14,7 +22,7 @@ export default function Home() {
         <div className="m-auto flex w-full max-w-screen-lg flex-col items-center justify-center px-5 sm:flex-row">
           {/* Left side*/}
           <div className="flex flex-col justify-center sm:mr-10">
-            <div className=''>
+            <div className="">
               <h2 className="shadow-effect mb-2  cursor-default whitespace-nowrap text-center font-display text-3xl font-bold text-slate-800  dark:text-slate-200 lg:text-5xl">
                 {`Thien Nguyen`}
               </h2>

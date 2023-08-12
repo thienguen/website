@@ -1,6 +1,7 @@
 'use client'
 
 // import { type Metadata } from 'next'
+import ProgressBar from '@/components/common/ProgressBar'
 import * as render from '@/components/purojekuto/RenderProjectsPage'
 
 // export const metadata: Metadata = {
@@ -17,17 +18,22 @@ export default function Projects() {
 
   return (
     <>
+      <ProgressBar
+        steps={['/home', '/projects', '/about', '/guestbook']}
+        currentStep={2}
+        isFullWidth={false}
+        key={'/projects'}
+      />
+
       <h2 className="my-6 text-center font-dosis text-xl">Featured Projects</h2>
 
       {/* Featured Projecst */}
       <div className="mx-auto mt-6 flex max-w-3xl flex-col ">
         <div className="">{render.FeaturedProjects()}</div>
       </div>
-      
+
       {/* Career */}
-      <div className="mx-auto flex max-w-2xl flex-col">
-        {render.CareerProjectsAlternating()}
-      </div>
+      <div className="mx-auto flex max-w-2xl flex-col">{render.CareerProjectsAlternating()}</div>
     </>
   )
 }

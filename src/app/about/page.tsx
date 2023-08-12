@@ -2,6 +2,7 @@ import React from 'react'
 import { type Metadata } from 'next'
 // import Motion from '@/components/ui/motion'
 import { QA } from '@/components/ui/qa'
+import ProgressBar from '@/components/common/ProgressBar'
 import DiscordStatus from '@/components/me/DiscordStatus'
 import { Technologies } from '@/components/me/Technologies'
 import { Timer } from '@/components/me/Timer'
@@ -14,8 +15,15 @@ export const metadata: Metadata = {
 export default function About() {
   // const numComponents = 8 // specify the number of components you want
   // const ComponentList = Array(numComponents).fill(<Motion />)
+
   return (
     <>
+      <ProgressBar
+        steps={['/home', '/projects', '/about', '/guestbook']}
+        currentStep={3}
+        isFullWidth={false}
+        key={'/about'}
+      />
       <div className="mx-auto mt-6 flex max-w-3xl flex-col font-dosis">
         {/* Header */}
         <div className="space-y-1 px-10 md:space-y-3">
