@@ -40,14 +40,15 @@ export default function AFeaturedProject({ project, index }: FeaturedProjectProp
               className="mb-2.5 h-6 w-6 invert dark:invert-0"
             />
           </div>
+
           <div className="grow" dir={`${textDirection}`}>
-            <p className="text-sm font-semibold text-black dark:font-normal dark:text-white">
+            <p className="font-dosis text-lg font-semibold text-black dark:font-normal dark:text-white">
               {project.title}
             </p>
-            <p className="text-sm leading-6 text-slate-600 opacity-90 dark:text-slate-400">
+            <p className="font-dosis text-base leading-6 text-slate-600 opacity-90 dark:text-slate-400">
               {project.description}
             </p>
-            <p className="mt-1 inline-block text-sm font-semibold tracking-wide text-primary dark:font-normal">
+            <p className="mt-1 inline-block font-dosis text-base font-semibold tracking-wide text-primary dark:font-normal">
               {project.stats}
             </p>
           </div>

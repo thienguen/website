@@ -55,9 +55,9 @@ const SignIn = () => {
 const SignOut = () => {
   return (
     <div className="flex w-2/12 flex-col items-center justify-center text-center">
-      <h1 className="mb-2 w-full text-sm font-bold tracking-tighter">See ya!</h1>
+      <h1 className="mb-2 w-full font-dosis text-sm font-bold tracking-wider">See ya!</h1>
       <button
-        className="rounded-lg border-2 border-neutral-200 bg-slate-300 p-1.5 px-3 text-xs font-bold text-neutral-700 transition-colors duration-200 ease-in-out hover:bg-neutral-200 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-700"
+        className="rounded-lg border-2 border-neutral-200 bg-slate-300 p-1.5 px-3 font-dosis text-xs font-bold tracking-wider text-neutral-700 transition-colors duration-200 ease-in-out hover:bg-neutral-200 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-700"
         onClick={(e) => {
           e.preventDefault()
           signOut().catch((error) => {

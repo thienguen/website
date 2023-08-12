@@ -18,12 +18,12 @@ type formSchema = {
  * And eslint wise, tbh, as if I know these thing LMAO
  */
 export function useGuestbookWrapper() {
-  const [isLoading, setIsLoading]                   = useState(false)
   const [entries, setEntries]                       = useState<guestbook[]>([])
+  const [isLoading, setIsLoading]                   = useState(false)
   const [showSuccessMessage, setShowSuccessMessage] = useState(false)
 
-  const { register, handleSubmit, reset } = useForm<{ content: string }>()
   const { data: session }                 = useSession()
+  const { register, handleSubmit, reset } = useForm<{ content: string }>()
 
   /**
    * Fetch [ALL] guestbook entries from the API, route.ts
@@ -52,6 +52,8 @@ export function useGuestbookWrapper() {
    * Delete a guestbook entry from the API, route.ts
    * and remove the entry from state, through generated id, its actually bigInt
    * but meh
+   * 
+   * @see handleDeleteClick
    */
   const buttonOnClick = (data: guestbook) => {
     console.log('Deleting entry:', data)
@@ -76,6 +78,7 @@ export function useGuestbookWrapper() {
   //   buttonOnClick(entry.id)
   // }
 
+  // Failed attempt, nahhhhhh
   const handleEntryDelete = (data: guestbook) => () => {
     console.log('Deleting entry:', data)
     buttonOnClick(data)
@@ -84,6 +87,9 @@ export function useGuestbookWrapper() {
   /**
    * Create a guestbook entry from the API, route.ts
    * Eslint having issue and as we have to use the hook corretly
+   * 
+   * @see handleEntryCreate
+   * @see showSuccessMessage
    */
   const formOnSubmit = async (data: formSchema) => {
     setIsLoading(true)  // Set isLoading to true before submitting the form
@@ -109,7 +115,7 @@ export function useGuestbookWrapper() {
     }
 
   /**
-   * State management for a success form submission
+   * State management for a success form submission, creating new entry
    */
   useEffect(() => {
     if (showSuccessMessage) {

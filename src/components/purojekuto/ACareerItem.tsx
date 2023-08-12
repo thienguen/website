@@ -10,12 +10,12 @@ interface CareerItemProps {
 export default function ACareerItem({ project }: CareerItemProps) {
   const { resolvedTheme } = useTheme()
 
-  const darkPrimaryColor = '#84FFB8'
-  const darkSecondaryColor = '#82FFDA'
-  const lightPrimaryColor = '#D87787'
+  const darkPrimaryColor    = '#84FFB8'
+  const darkSecondaryColor  = '#82FFDA'
+  const lightPrimaryColor   = '#D87787'
   const lightSecondaryColor = '#861657'
 
-  const [primaryColor, setPrimaryColor] = useState(darkPrimaryColor)
+  const [primaryColor, setPrimaryColor]     = useState(darkPrimaryColor)
   const [secondaryColor, setSecondaryColor] = useState(darkSecondaryColor)
 
   useEffect(() => {
@@ -30,15 +30,15 @@ export default function ACareerItem({ project }: CareerItemProps) {
 
   return (
     <li>
-      <Tooltip text={project.description ?? ''}>
+      <Tooltip text = {project.description ?? ''}>
         <p
-          className="cursor-grab hover:opacity-80"
-          style={{
-            backgroundImage: `linear-gradient(135deg, ${primaryColor} 0%, ${secondaryColor} 100%)`,
-            backgroundSize: '100% 0.075em',
-            backgroundRepeat: 'no-repeat',
+          className = "cursor-grab font-dosis hover:opacity-80"
+          style     = {{
+            backgroundImage   : `linear-gradient(135deg, ${primaryColor} 0%, ${secondaryColor} 100%)`,
+            backgroundSize    : '100% 0.075em',
+            backgroundRepeat  : 'no-repeat',
             backgroundPosition: '0 92%',
-            transition: 'background-size 0.25s ease-in, opacity 0.25s ease-in',
+            transition        : 'background-size 0.25s ease-in, opacity 0.25s ease-in',
           }}
         >
           {project.title}

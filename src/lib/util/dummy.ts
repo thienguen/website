@@ -20,11 +20,11 @@ export const FeaturedProjectItems = [
       },
       {
         title: 'Android Apps',
-        description: 'Simple Android apps. Fitbit',
+        description: 'Simple Android apps. Fitbit, Movie App, etc.',
         url: 'https://github.com/Thienguen/CodePath-Intermediate-Android-Development',
         active: true,
         icon: 'projects',
-        stats: 'From CodePath with luv ♡',
+        stats: 'Learning from CodePath with luv ♡',
       },
       {
         title: 'Gate Keeper',
@@ -44,7 +44,15 @@ export const CareerItems = [
     projects: [
       {
         title: 'DecentrePX',
-        description: 'Software Engineer Intern focus on Web3, React, Solidity, etc.',
+        description: 'Software Engineer Intern focus on Web3, React, Solidity, etc -- Since Dec 2022',
+        url: 'Nay Nay',
+        active: true,
+        icon: 'clipboard',
+        stats: 'Web3, React, Solidity, etc.',
+      },
+      {
+        title: 'UNLV Tutor',
+        description: 'IT Tutor at the Academic Success Center II -- Since Jan 2023',
         url: 'Nay Nay',
         active: true,
         icon: 'clipboard',
@@ -57,7 +65,7 @@ export const CareerItems = [
     projects: [
       {
         title: 'CSN TA',
-        description: 'Helping and grading students with their assignments',
+        description: 'Helping and grading students with their assignments -- Since Aug 2022',
         url: 'Not Available',
         active: true,
         icon: 'clipboard',
@@ -65,7 +73,7 @@ export const CareerItems = [
       },
       {
         title: 'UNLV TA',
-        description: 'Helping and grading students with their assignments',
+        description: 'Helping and grading students with their assignments II -- Since Aug 2022',
         url: 'Not Available',
         active: true,
         icon: 'heart',
@@ -73,7 +81,7 @@ export const CareerItems = [
       },
       {
         title: 'UNLV Tutor',
-        description: 'IT Tutor at the Academic Success Center',
+        description: 'IT Tutor at the Academic Success Center -- Since Aug 2022',
         url: 'Not Available',
         active: true,
         icon: 'home',
@@ -86,7 +94,7 @@ export const CareerItems = [
     projects: [
       {
         title: 'Started Coding',
-        description: "That one time the compiler didn't yell at me",
+        description: "That one time the compiler didn't yell at me -- Since May 2021",
         url: 'https://github.com/Thienguen/LeetCode-Data-Structure-n-Algorithms',
         active: true,
         icon: 'clipboard',

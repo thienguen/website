@@ -15,24 +15,19 @@ export default function Projects() {
   //   </h1> */}
   // </div>
 
-
   return (
     <>
-    <div className="mx-auto mt-6 flex max-w-3xl flex-col ">
+      <h2 className="my-6 text-center font-dosis text-xl">Featured Projects</h2>
+
       {/* Featured Projecst */}
-      <h2 className="my-5 text-center text-xl">Featured Projects</h2>
-      <div className="">{render.FeaturedProjects()}</div>
-    </div>
-
-    {/* Career */}
-    {/* <div className="mx-auto flex max-w-2xl flex-col">
-      <h2 className="my-5 text-xl">Career</h2>
-      <div className="">{render.Career()}</div>
-    </div> */}
-
-    <div className="mx-auto flex max-w-2xl flex-col">
-      {render.CareerProjectsAlternating()}
-    </div>
+      <div className="mx-auto mt-6 flex max-w-3xl flex-col ">
+        <div className="">{render.FeaturedProjects()}</div>
+      </div>
+      
+      {/* Career */}
+      <div className="mx-auto flex max-w-2xl flex-col">
+        {render.CareerProjectsAlternating()}
+      </div>
     </>
   )
 }

@@ -16,13 +16,13 @@ export default function About() {
   // const ComponentList = Array(numComponents).fill(<Motion />)
   return (
     <>
-      <div className="mx-auto mt-6 flex max-w-3xl flex-col ">
+      <div className="mx-auto mt-6 flex max-w-3xl flex-col font-dosis">
         {/* Header */}
         <div className="space-y-1 px-10 md:space-y-3">
-          <h1 className="text-base font-extrabold tracking-tight text-gray-900 dark:text-gray-100 sm:text-2xl sm:leading-6 md:text-3xl">
+          {/* <h1 className="text-base font-extrabold tracking-tight text-gray-900 dark:text-gray-100 sm:text-2xl sm:leading-6 md:text-3xl">
             {`about to put a progress bar here`}
-          </h1>
-          <p className="bg-clip-text text-center font-signature text-xl leading-6 text-gray-900 dark:text-gray-100">
+          </h1> */}
+          <p className="bg-clip-text text-center font-dosis leading-6 text-gray-900 dark:text-gray-100">
             {`I don't know everything. I just know what I know.`}
           </p>
         </div>

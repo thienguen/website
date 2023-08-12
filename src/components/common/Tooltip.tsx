@@ -25,7 +25,7 @@ export const Tooltip: React.FC<TooltipProps> = ({ text, children }) => {
         {children}
       </div>
       {show && (
-        <div className="absolute bottom-full left-1/2 z-10 mb-2 -translate-x-1/2 whitespace-nowrap rounded-md bg-gray-800 p-2 text-sm text-white">
+        <div className="absolute bottom-full left-1/2 z-10 mb-2 -translate-x-1/2 whitespace-nowrap rounded-md bg-gray-800 p-2 font-dosis text-base text-white">
           {text}
         </div>
       )}

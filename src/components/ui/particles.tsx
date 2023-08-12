@@ -18,7 +18,7 @@ interface ParticlesProps {
 export default function Particles({
   className = '',
   quantity = 30,
-  staticity = 50,
+  staticity = 40,
   ease = 50,
   refresh = true,
 }: ParticlesProps) {
@@ -62,10 +62,12 @@ export default function Particles({
   const onMouseMove = () => {
     if (canvasRef.current) {
       const rect = canvasRef.current.getBoundingClientRect()
+
       const { w, h } = canvasSize.current
       const x = mousePosition.x - rect.left - w / 2
       const y = mousePosition.y - rect.top - h / 2
       const inside = x < w / 2 && x > -w / 2 && y < h / 2 && y > -h / 2
+
       if (inside) {
         mouse.current.x = x
         mouse.current.y = y
@@ -122,7 +124,7 @@ export default function Particles({
     const targetAlpha = parseFloat((Math.random() * 0.6 + 0.1).toFixed(1))
     const dx = (Math.random() - 0.5) * 0.2
     const dy = (Math.random() - 0.5) * 0.2
-    const magnetism = 0.1 + Math.random() * 4
+    const magnetism = 0.1 + Math.random() * 8 // increase to see more magnetism
     return {
       x,
       y,
@@ -139,26 +141,26 @@ export default function Particles({
 
   const drawCircle = (circle: Circle, update = false) => {
     if (context.current) {
-      const { x, y, translateX, translateY, size, alpha } = circle;
-      context.current.translate(translateX, translateY);
-      context.current.beginPath();
-      context.current.arc(x, y, size, 0, 2 * Math.PI);
-  
+      const { x, y, translateX, translateY, size, alpha } = circle
+      context.current.translate(translateX, translateY)
+      context.current.beginPath()
+      context.current.arc(x, y, size, 0, 2 * Math.PI)
+
       if (resolvedTheme === 'dark') {
-        context.current.fillStyle = `rgba(255, 255, 255, ${alpha})`;  // Color for dark theme
+        context.current.fillStyle = `rgba(255, 255, 255, ${alpha})` // Color for dark theme
       } else if (resolvedTheme === 'light') {
-        context.current.fillStyle = `rgba(0, 0, 128, ${alpha})`;      // Color for light theme
+        context.current.fillStyle = `rgba(0, 0, 128, ${alpha})` // Color for light theme
       }
-  
-      context.current.fill();
-      context.current.setTransform(dpr, 0, 0, dpr, 0, 0);
-  
+
+      context.current.fill()
+      context.current.setTransform(dpr, 0, 0, dpr, 0, 0)
+
       if (!update) {
-        circles.current.push(circle);
+        circles.current.push(circle)
       }
     }
   }
-  
+
   const clearContext = () => {
     if (context.current) {
       context.current.clearRect(0, 0, canvasSize.current.w, canvasSize.current.h)
@@ -174,7 +176,13 @@ export default function Particles({
     }
   }
 
-  const remapValue = (value: number, start1: number, end1: number, start2: number, end2: number): number => {
+  const remapValue = (
+    value: number,
+    start1: number,
+    end1: number,
+    start2: number,
+    end2: number
+  ): number => {
     const remapped = ((value - start1) * (end2 - start2)) / (end1 - start1) + start2
     return remapped > 0 ? remapped : 0
   }
@@ -189,8 +197,6 @@ export default function Particles({
         canvasRef.current.style.height = `${canvasSize.current.h}px`
       }
     }
-
-    
 
     clearContext()
     circles.current.forEach((circle: Circle, i: number) => {
@@ -213,8 +219,10 @@ export default function Particles({
       }
       circle.x += circle.dx
       circle.y += circle.dy
-      circle.translateX += (mouse.current.x / (staticity / circle.magnetism) - circle.translateX) / ease
-      circle.translateY += (mouse.current.y / (staticity / circle.magnetism) - circle.translateY) / ease
+      circle.translateX +=
+        (mouse.current.x / (staticity / circle.magnetism) - circle.translateX) / ease
+      circle.translateY +=
+        (mouse.current.y / (staticity / circle.magnetism) - circle.translateY) / ease
       // circle gets out of the canvas
       if (
         circle.x < -circle.size ||

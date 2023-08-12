@@ -58,7 +58,7 @@ export default function GuestbookForm() {
                   />
                   <button
                     type="submit"
-                    className="grid w-full place-items-center rounded bg-slate-200 px-2 py-0.5 text-sm font-medium ring-gray-300 transition-all hover:bg-slate-300 hover:ring-2 dark:bg-gray-600"
+                    className="grid w-full place-items-center rounded bg-slate-200 px-2 py-0.5 font-dosis text-sm font-semibold tracking-wider ring-gray-300 transition-all hover:bg-slate-300 hover:ring-2 dark:bg-gray-600"
                     disabled={!session?.user || isLoading} // Disable the button when user is not signed in or when loading is in progress
                   >
                     {isLoading ? <LoadingSpinner stuff="...Submitting" /> : 'Sign'}
