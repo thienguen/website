@@ -3,14 +3,13 @@
 import { Transition } from '@headlessui/react'
 import { IoLogoDiscord } from 'react-icons/io5'
 import { useLanyardWS } from 'use-lanyard'
-
 import { cn } from '@/lib/util/util'
 
 interface DiscordStatusProps {
   cols?: string
 }
 
-export default function DiscordStatus(props: DiscordStatusProps) {
+function DiscordStatus(props: DiscordStatusProps) {
   // const id: `${bigint}` | undefined = process.env.DISCORD_ID ? `${BigInt(process.env.DISCORD_ID)}` : undefined
   // const id: Snowflake | undefined = process.env.DISCORD_ID ? `${BigInt(process.env.DISCORD_ID)}` : undefined
   // const data = useLanyardWS(id ? [id] : [])
@@ -26,11 +25,11 @@ export default function DiscordStatus(props: DiscordStatusProps) {
       leave="ease-in duration-200"
       leaveFrom="opacity-100 translate-y-0 sm:scale-100"
       leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-[0.98]"
-      className={`${props.cols ?? ''}`}
+      className={`${props.cols ?? ''} `}
     >
       <div
         className={cn(
-          `flex h-full min-h-[13rem]  w-full flex-col items-center justify-center rounded-lg`,
+          `flex h-full min-h-[13rem] w-full flex-col items-center justify-center rounded-md`,
           {
             online: 'bg-green-500 font-jetbrains-mono text-white',
             idle: 'bg-orange-400 font-jetbrains-mono text-white',
@@ -49,3 +48,5 @@ export default function DiscordStatus(props: DiscordStatusProps) {
     </Transition>
   )
 }
+
+export default DiscordStatus
