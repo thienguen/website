@@ -31,7 +31,7 @@ export const NavbarLeft = ({ path_name }: { path_name: string }) => (
   <div className="mb-4 w-full md:mb-0 md:w-auto">
     <Link href="/" aria-label={metadata.headerTitle}>
       <div className="flex items-start font-dosis text-lg font-semibold dark:text-slate-200">
-        {`~${path_name}`} <Typewriter options={{ strings: [], autoStart: true, loop: true }} />
+        {`~${(path_name === '/') ? '/home' : path_name}`} <Typewriter options={{ strings: [], autoStart: true, loop: true }} />
       </div>
     </Link>
   </div>
@@ -48,7 +48,7 @@ export const NavbarRight = () => (
           key={link.title}
           href={link.href}
           rel="noopener noreferrer"
-          className="link-underline rounded text-gray-950 hover:bg-slate-50 dark:text-gray-100 dark:hover:bg-gray-700 sm:px-4 sm:py-2" // dark
+          className="link-underline rounded tracking-wider text-gray-950 hover:bg-slate-50 dark:text-gray-100 dark:hover:bg-gray-700 sm:px-4 sm:py-2" // dark
         >
           <div className="flex flex-row items-center font-dosis text-base">
             {IconMapping[link.title]} {/* this will  insert the icon for each link */}
@@ -73,7 +73,6 @@ export function NavbarRightSmall({ path_name, isOpen }: NavbarRightProps): React
           rel="noopener noreferrer"
           className={cn(
             'nav-link link-underline rounded text-gray-900 hover:bg-slate-50 dark:text-gray-100 dark:hover:bg-gray-700 sm:px-4 sm:py-2',
-            path_name === link.href && 'text-gray-200',
             isOpen && 'show'
           )}
         >

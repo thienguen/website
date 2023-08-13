@@ -20,6 +20,9 @@ interface RootLayoutProps {
 }
 
 export default function RootLayout({ children }: RootLayoutProps) {
+  /**
+   * Did I shutter?, typewriter title is good, but I CANT GET IT TO WORK for dynamic ROUTES
+   */
   // useEffect(() => {
   //   const SITE_NAME = metadata.creator;
   //   const TIME = 0.2 * 1000;

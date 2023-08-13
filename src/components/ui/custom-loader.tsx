@@ -6,7 +6,7 @@ export default function Loader() {
     <>
       <div className="flex flex-col justify-center ">
         <h1 className="mb-8 mt-16 text-center text-xl font-medium text-slate-800/40 dark:text-gray-400/80">
-          ..Loading...
+          ..ちょっと待って下さい...
         </h1>
 
         <svg
