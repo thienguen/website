@@ -33,7 +33,7 @@ export default function Guestbook() {
       {/* Header gesuto bukku*/}
       <HeaderTitleComponent title="guestbook" titleJP="ゲストブック" />
 
-      <div className="mx-auto mb-12 flex max-w-2xl flex-col items-center justify-center">
+      <div className="mx-auto mb-6 flex max-w-2xl flex-col items-center justify-center">
         {/* Guestbook */}
         <GuestbookForm />
       </div>

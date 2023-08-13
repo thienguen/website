@@ -4,15 +4,14 @@ import React, { useEffect, useRef } from 'react'
 import { useTheme } from 'next-themes'
 import { useMousePosition } from '@/lib/util/mouse'
 
-/* BUGS: Cant sync light and dark theme */
-/* Theme: how about random generate the color ? */
-
 interface ParticlesProps {
   className?: string
   quantity?: number
   staticity?: number
   ease?: number
   refresh?: boolean
+
+  path_name?: string
 }
 
 export default function Particles({
@@ -20,7 +19,9 @@ export default function Particles({
   quantity = 30,
   staticity = 40,
   ease = 50,
-  refresh = true,
+  refresh = false,
+
+  path_name,
 }: ParticlesProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const canvasContainerRef = useRef<HTMLDivElement>(null)
@@ -52,7 +53,9 @@ export default function Particles({
 
   useEffect(() => {
     initCanvas()
-  }, [refresh])
+    console.log('path_name: ', path_name)
+    console.log('current height: ', canvasSize.current.h)
+  }, [refresh, path_name])
 
   const initCanvas = () => {
     resizeCanvas()
@@ -105,7 +108,7 @@ export default function Particles({
     if (canvasContainerRef.current && canvasRef.current && context.current) {
       circles.current.length = 0
       canvasSize.current.w = canvasContainerRef.current.offsetWidth
-      canvasSize.current.h = document.body.offsetHeight // Use total website height instead of viewport height
+      canvasSize.current.h = document.body.scrollHeight // Use total website height instead of viewport height
       canvasRef.current.width = canvasSize.current.w * dpr
       canvasRef.current.height = canvasSize.current.h * dpr
       canvasRef.current.style.width = `${canvasSize.current.w}px`
@@ -176,13 +179,7 @@ export default function Particles({
     }
   }
 
-  const remapValue = (
-    value: number,
-    start1: number,
-    end1: number,
-    start2: number,
-    end2: number
-  ): number => {
+  const remapValue = (value: number, start1: number, end1: number, start2: number, end2: number): number => {
     const remapped = ((value - start1) * (end2 - start2)) / (end1 - start1) + start2
     return remapped > 0 ? remapped : 0
   }
@@ -192,7 +189,7 @@ export default function Particles({
     if (canvasRef.current && canvasContainerRef.current) {
       const documentHeight = document.body.offsetHeight
       if (documentHeight !== canvasSize.current.h) {
-        canvasSize.current.h = documentHeight
+        canvasSize.current.h = document.body.scrollHeight
         canvasRef.current.height = canvasSize.current.h * dpr
         canvasRef.current.style.height = `${canvasSize.current.h}px`
       }
@@ -219,10 +216,8 @@ export default function Particles({
       }
       circle.x += circle.dx
       circle.y += circle.dy
-      circle.translateX +=
-        (mouse.current.x / (staticity / circle.magnetism) - circle.translateX) / ease
-      circle.translateY +=
-        (mouse.current.y / (staticity / circle.magnetism) - circle.translateY) / ease
+      circle.translateX += (mouse.current.x / (staticity / circle.magnetism) - circle.translateX) / ease
+      circle.translateY += (mouse.current.y / (staticity / circle.magnetism) - circle.translateY) / ease
       // circle gets out of the canvas
       if (
         circle.x < -circle.size ||

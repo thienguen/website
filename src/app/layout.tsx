@@ -15,6 +15,7 @@ import { Toaster } from '@/components/ui/toaster'
 import Footer from '@/components/footer/Footer'
 import Navbar from '@/components/navbar/Navbar'
 import { metadata } from '@/app/api/metadata'
+import { usePathname } from 'next/navigation'
 
 interface RootLayoutProps {
   children: React.ReactNode
@@ -22,8 +23,10 @@ interface RootLayoutProps {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   /**
-   * Did I shutter?, typewriter title is good, but I CANT GET IT TO WORK for dynamic ROUTES
+   * Did I shutter?, typewriter title is good,
+   * but I CANT GET IT TO WORK for dynamic ROUTES
    */
+
   // useEffect(() => {
   //   const SITE_NAME = metadata.creator;
   //   const TIME = 0.2 * 1000;
@@ -60,6 +63,8 @@ export default function RootLayout({ children }: RootLayoutProps) {
   //   };
   // }, []);
 
+  const path_name = usePathname()
+
   return (
     <>
       <html lang="en" suppressHydrationWarning={true}>
@@ -82,24 +87,15 @@ export default function RootLayout({ children }: RootLayoutProps) {
           <meta content={metadata.creator} property="og:title" />
           <meta content={metadata.description} name="description" />
           <meta content={metadata.description} property="og:description" />
-          <link rel="shortcut icon" href="/images/monika-fa.png" />{' '}
-          {/* as if I know how app router works */}
+          <link rel="shortcut icon" href="/images/monika-fa.png" /> {/* as if I know how app router works */}
         </head>
 
         <body
           suppressHydrationWarning={true}
-          className={cn(
-            'flex max-h-[100vh] min-h-[100vh] flex-col overflow-x-hidden antialiased',
-            fontMono.variable
-          )}
+          className={cn('flex max-h-[100vh] min-h-[100vh] flex-col overflow-x-hidden antialiased', fontMono.variable)}
         >
           <AuthProvider>
-            <ThemeProvider
-              attribute="class"
-              defaultTheme="system"
-              enableSystem
-              themes={['light', 'dark']}
-            >
+            <ThemeProvider attribute="class" defaultTheme="system" enableSystem themes={['light', 'dark']}>
               <div
                 className={cn(
                   'z-20 grow',
@@ -107,7 +103,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
                   'dark:bg-gradient-to-b dark:from-black dark:to-gray-900' // dark
                 )}
               >
-                <Particles className="absolute inset-0 -z-10" quantity={500} />
+                <Particles className="absolute inset-0 -z-10" quantity={500} path_name={path_name}/>
                 <Navbar />
                 {children}
                 {/* BUGS: Can't grow to the footer, or when page is scroollable */}
