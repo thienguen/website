@@ -125,6 +125,17 @@
   }
 }
 
+/* globals.css */
+::selection {
+  @apply bg-gray-500 text-white;
+}
+
+
+/* Dark theme selection */
+.dark ::selection {
+  @apply bg-gray-300 text-black;
+}
+
 body {
   /* width: 100vw; */
   /* height: 100vh; */

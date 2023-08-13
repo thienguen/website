@@ -17,8 +17,19 @@ import SuccessMessage from '../ui/success-message'
  * State: + isLoading, + showSuccessMessage
  */
 export default function GuestbookForm() {
-  const { isLoading, showSuccessMessage, entries, register, formOnSubmit, hanleEntryCreate, session } =
-    useGuestbookWrapper()
+  /* Hooks */
+  const {
+    isLoading,
+    showSuccessMessage,
+
+    register,
+    session,
+    entries,
+    
+    formOnSubmit,
+    hanleEntryCreate,
+    /* Something something */
+  } = useGuestbookWrapper()
 
   return (
     <>
