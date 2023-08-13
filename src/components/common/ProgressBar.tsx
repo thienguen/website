@@ -32,6 +32,7 @@ const ProgressBar = ({ steps, currentStep, isFullWidth }: ProgressBarProps) => {
 
         {/* Intermediate steps with dots */}
         {steps.slice(0, steps.length - 2).map((step, index) => {
+          console.log(step)
           return (
             <div
               key={index}

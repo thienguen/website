@@ -7,6 +7,8 @@ export default function Error({ error, reset }: { error: Error; reset: () => voi
     console.error(error)
   }, [error])
 
+  console.log('reset: ', reset)
+
   return (
     <div className="mx-auto h-full w-full">
       <p>Oh no, something went wrong... maybe refresh? If not, then I`m doomed</p>
