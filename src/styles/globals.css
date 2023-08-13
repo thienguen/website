@@ -100,7 +100,7 @@
   }
 }
 
-/* They dance, too much */
+/* They dance, too much, applied to nav*/
 @keyframes slide-in {
   0% {
     opacity: 0;
@@ -112,17 +112,18 @@
   }
 }
 
-/* globals.css or another global stylesheet */
-.light-selection::selection {
-  background-color: #212024;
-  color: white;
+/* Pulse Animation, applied to vertical timeline */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 116, 217, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(0, 116, 217, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 116, 217, 0);
+  }
 }
-
-.dark-selection::selection {
-  background-color: #24c8e5;
-  color: white;
-}
-
 
 body {
   /* width: 100vw; */
@@ -184,7 +185,6 @@ line {
   background: linear-gradient(transparent, transparent), linear-gradient(to right, #52c3ff, #2185d0);
 }
 
-
 /* They group and ungroup wtf */
 .nav-link {
   transition: all 1s ease-in-out;
@@ -203,4 +203,12 @@ line {
   color: #1a202c;
 }
 
-/* Skill-issues */
+/* Pulsing effect for the year box */
+.rounded-md.bg-blue-600:hover {
+  animation: pulse 1.5s infinite;
+}
+
+.rounded-xl.bg-blue-600:hover {
+  transform: translateY(-3px);
+  transition: transform 0.2s;
+}

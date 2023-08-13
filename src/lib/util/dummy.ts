@@ -64,20 +64,12 @@ export const CareerItems = [
     year: '2022',
     projects: [
       {
-        title: 'CSN TA',
+        title: 'CSN Teacher Assistant',
         description: 'Helping and grading students with their assignments -- Since Aug 2022',
         url: 'Not Available',
         active: true,
         icon: 'clipboard',
         stats: 'Yet another day to help students',
-      },
-      {
-        title: 'UNLV TA',
-        description: 'Helping and grading students with their assignments II -- Since Aug 2022',
-        url: 'Not Available',
-        active: true,
-        icon: 'heart',
-        stats: 'Yet another day to help students Part 2',
       },
       {
         title: 'UNLV Tutor',
@@ -86,6 +78,14 @@ export const CareerItems = [
         active: true,
         icon: 'home',
         stats: 'Yet another day to help students Part 3',
+      },
+      {
+        title: 'UNLV Teacher Assistant',
+        description: 'Helping and grading students with their assignments II -- Since Aug 2022',
+        url: 'Not Available',
+        active: true,
+        icon: 'heart',
+        stats: 'Yet another day to help students Part 2',
       },
     ],
   },

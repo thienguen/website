@@ -26,9 +26,10 @@ export default function About() {
       />
 
       {/* Header */}
+      {/* Nandemo wa shiranai wa yo, shitte ru koto dake. */}
       <PageTitle
         title={`I don't know everything. I just know what I know. - Hanekawa Tsubasa`}
-        titleJP="何でもは知らないわよ、知ってることだけ"
+        titleJP="何でもは知らないわよ、知ってることだけ。"
       />
 
       {/* Body of About page*/}
@@ -103,6 +104,8 @@ export default function About() {
       </div> */}
 
       <div className="flex flex-row justify-center">Stuff here</div>
+
+      
     </>
   )
 }

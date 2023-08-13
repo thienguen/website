@@ -10,8 +10,8 @@ import { Button } from '@/components/ui/button'
 import { Tooltip } from '@/components/common/Tooltip'
 
 export function ThemeToggle() {
-  const { theme, setTheme }     = useTheme()
-  const [disabled, setDisabled] = useState(false)  // <-- State to manage button's disabled status
+  const { theme, setTheme } = useTheme()
+  const [disabled, setDisabled] = useState(false) // <-- State to manage button's disabled status
 
   const handleThemeChange = () => {
     // Set the button to disabled and show the message
@@ -22,17 +22,19 @@ export function ThemeToggle() {
     // Reset the button to active state and hide the message after 1.5 seconds
     setTimeout(() => {
       setDisabled(false)
-    }, 1500)
+    }, 3000)
   }
 
   return (
-    <Tooltip text={'Changing Theme, this took a bit so please be patient!'}>
+    <Tooltip
+      text={`${disabled ? 'Changing theme in background' : 'Changing Theme, this took a bit so please be patient!'}`}
+    >
       <Button
         variant="ghost"
         size="sm"
         className="w-9 px-0 hover:bg-slate-50 dark:hover:bg-gray-500"
         onClick={handleThemeChange} // <-- Updated onClick handler
-        disabled={disabled}         // <-- Add disabled prop
+        disabled={disabled} // <-- Add disabled prop
         rel="noreferrer"
       >
         <HiOutlineSun className="h-6 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />

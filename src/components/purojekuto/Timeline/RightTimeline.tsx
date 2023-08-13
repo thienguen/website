@@ -1,21 +1,32 @@
 import React from 'react'
 
 interface RightTimelineProps {
-  number?: string
-  title: string
-  description: string
+  year?: string
+  title?: string
+  description?: string
 }
 
-const RightTimeline: React.FC<RightTimelineProps> = ({ number, title, description }) => {
+const RightTimeline: React.FC<RightTimelineProps> = ({ year, title, description }) => {
   return (
-    <div className=" mb-8 flex w-full items-center justify-between">
-      <div className="order-1 w-5/12"></div>
-      <div className="z-20 order-1 flex h-8 w-8 items-center rounded-full bg-gray-800 shadow-xl">
-        <h1 className="mx-auto text-lg font-semibold text-white">{number}</h1>
+    <div className="flex md:contents">
+      {/* The vertical thingy */}
+      <div className="relative col-start-5 col-end-6 md:mx-auto">
+        {/* The bar itself */}
+        <div className="flex h-full w-6 items-center justify-center">
+          <div className="pointer-events-none h-full w-1 bg-blue-900"></div>
+        </div>
+        {/* The box of year */}
+        {year && (
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 animate-pulse cursor-pointer items-center justify-center rounded-md bg-blue-600 px-2 py-1 shadow-lg hover:shadow-xl">
+            <div className="text-sm font-medium">{year}</div>
+          </div>
+        )}
       </div>
-      <div className="order-1 w-5/12 rounded-lg bg-gray-400 px-6 py-4 shadow-xl">
-        <h3 className="mb-3 text-xl font-bold text-gray-800">{title}</h3>
-        <p className="text-sm leading-snug tracking-wide text-gray-900 text-opacity-100">{description}</p>
+
+      {/* Container box */}
+      <div className="col-start-6 col-end-10 my-4 mr-4 rounded-xl bg-blue-600 p-4 font-dosis shadow-lg transition-transform hover:translate-y-[3px]">
+        <h3 className="mb-2 text-lg font-semibold">{title}</h3>
+        <p className="text-justify leading-tight">{description}</p>
       </div>
     </div>
   )

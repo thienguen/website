@@ -15,7 +15,7 @@ export default function Home() {
         key={'/home'}
       />
 
-      <PageTitle title="Home" titleJP="ホームページ" />
+      <PageTitle title="Home" titleJP="ホームページ。" />
 
       {/* If we could implement the full usage of landyard api here */}
 

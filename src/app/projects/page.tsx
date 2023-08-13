@@ -12,16 +12,9 @@ export const metadata: Metadata = {
 export default function Projects() {
   return (
     <>
-      <ProgressBar
-        steps={['/home', '/projects', '/about', '/guestbook']}
-        currentStep={2}
-        isFullWidth={false}
-        key={'/projects'}
-      />
-      <PageTitle title="Featured Projects" titleJP="注目プロジェクト" />
+      <ProgressBar steps={['/home', '/projects', '/about', '/guestbook']} currentStep={2} isFullWidth={false} key={'/projects'}/>
+      <PageTitle title="Featured Projects" titleJP="注目プロジェクト。" /> {/* chūmoku purojekuto */}
       <FeaturedProjectPage />
-
-      {/* Focus on this now */}
       <Timeline />
     </>
   )
