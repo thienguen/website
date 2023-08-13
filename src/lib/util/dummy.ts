@@ -125,7 +125,7 @@ export const AllProjectsItems = [
         stats: 'Under 📑 Construction',
       },
       {
-        title: 'DSA Courses',
+        title: 'DSA Course',
         description: 'Ah yes...',
         url: 'https://github.com/Thienguen/Data-Structure-Algorithms-Course',
         active: true,
@@ -138,7 +138,7 @@ export const AllProjectsItems = [
     year: '2022',
     projects: [
       {
-        title: 'Computer Animation Project',
+        title: 'Animation Projects',
         description: 'Doing animation with SDL2 C++ Library',
         url: 'https://github.com/Thienguen/Computer-Animations-Projects',
         active: true,

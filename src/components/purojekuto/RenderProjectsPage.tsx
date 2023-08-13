@@ -1,14 +1,17 @@
-import { AllProjectsItems, CareerItems, FeaturedProjectItems } from '@/lib/util/dummy'
+'use client'
+
 import clipboard from '../../../public/icons-json/clipboard.json'
-import code from '../../../public/icons-json/code.json'
-import download from '../../../public/icons-json/download.json'
-import heart from '../../../public/icons-json/heart.json'
-import home from '../../../public/icons-json/home.json'
-import podcasts from '../../../public/icons-json/podcasts.json'
-import projects from '../../../public/icons-json/projects.json'
+import code      from '../../../public/icons-json/code.json'
+import download  from '../../../public/icons-json/download.json'
+import heart     from '../../../public/icons-json/heart.json'
+import home      from '../../../public/icons-json/home.json'
+import podcasts  from '../../../public/icons-json/podcasts.json'
+import projects  from '../../../public/icons-json/projects.json'
+
 /* Generative Project Cards */
 import ACareerItem from './ACareerItem'
 import AFeaturedProject from './AFeaturedProject'
+import { AllProjectsItems, CareerItems, FeaturedProjectItems } from '@/lib/util/dummy'
 
 export const dynamic = 'force-dynamic'
 
@@ -31,7 +34,7 @@ export type ProjectProps = {
   stats?: string
 }
 
-export const FeaturedProjects = () => {
+const FeaturedProjects = () => {
   const featured = ['Todo? App', 'Android Apps', 'CLI Games', 'Gate Keeper']
 
   // Dummy text mapped
@@ -57,19 +60,19 @@ export const FeaturedProjects = () => {
   )
 }
 
-export const Career = () => {
-  const items = CareerItems
-  return items.map((item, index) => (
-    <div key={index} className="mb-5">
-      <h3 className="text-lg font-bold">{item.year}</h3>
-      <ul className="list-inside list-disc pl-5 text-base">
-        {(item.projects as ProjectProps[]).map((project, pIndex) => (
-          <ACareerItem key={pIndex} project={project} />
-        ))}
-      </ul>
-    </div>
-  ))
-}
+// const Career = () => {
+//   const items = CareerItems
+//   return items.map((item, index) => (
+//     <div key={index} className="mb-5">
+//       <h3 className="text-lg font-bold">{item.year}</h3>
+//       <ul className="list-inside list-disc pl-5 text-base">
+//         {(item.projects as ProjectProps[]).map((project, pIndex) => (
+//           <ACareerItem key={pIndex} project={project} />
+//         ))}
+//       </ul>
+//     </div>
+//   ))
+// }
 
 type CombinedProjects = {
   year: string
@@ -77,7 +80,7 @@ type CombinedProjects = {
   careers: ProjectProps[]
 }
 
-export function CareerProjectsAlternating() {
+function CareerProjectsAlternating() {
   // Create an array of combined projects for each year
   const combinedProjects: CombinedProjects[] = []
 
@@ -99,7 +102,7 @@ export function CareerProjectsAlternating() {
       {combinedProjects.map((item, index) => (
         <div key={index} className="mb-10 flex w-full justify-between">
           {/* Left */}
-          <div className="w-1/2 pr-4" dir='ltr'>
+          <div className="w-1/2 pr-4" dir="ltr">
             {' '}
             <h3 className="font-dosis text-xl font-bold">{item.year}</h3>
             <ul className="list-inside list-disc pl-5 text-base">
@@ -121,5 +124,16 @@ export function CareerProjectsAlternating() {
         </div>
       ))}
     </div>
+  )
+}
+
+export function FeaturedProjectPage() {
+  return (
+    <>
+      <div className="mx-auto mt-6 flex max-w-3xl flex-col ">
+        <div className="">{FeaturedProjects()}</div>
+      </div>
+      <div className="mx-auto flex max-w-2xl flex-col">{CareerProjectsAlternating()}</div>
+    </>
   )
 }

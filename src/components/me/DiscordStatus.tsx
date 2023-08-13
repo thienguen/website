@@ -29,7 +29,7 @@ function DiscordStatus(props: DiscordStatusProps) {
     >
       <div
         className={cn(
-          `flex h-full min-h-[13rem] w-full flex-col items-center justify-center rounded-md`,
+          `flex h-full min-h-[13rem] w-full flex-col items-center justify-center rounded-lg`,
           {
             online: 'bg-green-500 font-jetbrains-mono text-white',
             idle: 'bg-orange-400 font-jetbrains-mono text-white',

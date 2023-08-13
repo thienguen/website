@@ -40,7 +40,7 @@ export const Timer = (props: TimerProps) => {
       >
         <div
           className={cn(
-            'flex h-full min-h-[13rem] w-full flex-col items-center justify-center rounded-md text-white ',
+            'flex h-full min-h-[13rem] w-full flex-col items-center justify-center rounded-lg text-white ',
             pastSix ? 'bg-violet-700 dark:bg-sky-900' : 'bg-fuchsia-400 dark:bg-teal-700'
           )}
         >

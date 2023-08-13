@@ -90,6 +90,10 @@ export default function About() {
           ))}
         </div>
       </div> */}
+
+      <div className='flex flex-row justify-center'>
+        Stuff here
+      </div>
     </>
   )
 }

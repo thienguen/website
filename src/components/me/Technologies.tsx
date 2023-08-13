@@ -14,7 +14,7 @@ export const Technologies = (props: TechnologiesProps) => {
       <div
         className={`${props.cols ?? ''} ${
           props.height ?? ''
-        } flex w-full flex-col items-center justify-center rounded-lg bg-[#fef8f8] text-slate-900 shadow-sm shadow-slate-700 dark:bg-[#1a202c] dark:text-slate-300 dark:shadow-gray-400`}
+        } flex w-full flex-col items-center justify-center rounded-lg bg-[#fef8f8] text-slate-900 opacity-90 shadow-sm shadow-slate-700 dark:bg-[#1a202c] dark:text-slate-300 dark:shadow-gray-400`}
       >
         <div className="xxsm:grid-cols-8 xsm:grid-cols-9 grid h-full w-full grid-cols-7 grid-rows-4 gap-4 p-5 sm:grid-cols-6 sm:grid-rows-5 md:grid-cols-7 md:grid-rows-4">
           <Image src="/icons/typescript.png" alt="ts" sizes="40" width={40} height={40} />
@@ -43,10 +43,10 @@ export const Technologies = (props: TechnologiesProps) => {
           <Image src="/icons/discord.png" alt="discord" sizes="40" width={40} height={40} />
 
           <SiRust size="22" width={22} height={22} />
-          <SiAmazonaws size="22" width={22} height={22}/>
-          <SiNextdotjs size="22" width={22} height={22}/>
-          <SiGithub size="22" width={22} height={22}/>
-          <SiGoland size="22" width={22} height={22}/>
+          <SiAmazonaws size="22" width={22} height={22} />
+          <SiNextdotjs size="22" width={22} height={22} />
+          <SiGithub size="22" width={22} height={22} />
+          <SiGoland size="22" width={22} height={22} />
         </div>
       </div>
     </>
