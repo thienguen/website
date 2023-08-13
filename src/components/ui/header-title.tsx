@@ -5,14 +5,14 @@ type headerTitleProps = {
   titleJP?: string
 }
 
-function HeaderTitleComponent(props: headerTitleProps) {
+function PageTitle(props: headerTitleProps) {
   return (
     <div className="my-3 text-center">
       <Tooltip text={props.title ?? ''}>
-        <h2 className="font-dosis text-xl">{`${props.titleJP ?? ''}`}</h2>
+        <h2 className="text-xl font-semibold">{`${props.titleJP ?? ''}`}</h2>
       </Tooltip>
     </div>
   )
 }
 
-export default HeaderTitleComponent
+export default PageTitle

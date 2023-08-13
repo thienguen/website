@@ -2,7 +2,7 @@ import { type Metadata } from 'next'
 import ProgressBar from '@/components/common/ProgressBar'
 import { FeaturedProjectPage } from '@/components/purojekuto/RenderProjects/RenderProjectsPage'
 import Timeline from '@/components/purojekuto/Timeline/Timeline'
-import HeaderTitleComponent from '@/components/ui/header-title'
+import PageTitle from '@/components/ui/header-title'
 
 export const metadata: Metadata = {
   title: '/projects',
@@ -18,8 +18,10 @@ export default function Projects() {
         isFullWidth={false}
         key={'/projects'}
       />
-      <HeaderTitleComponent title="Featured Projects" titleJP="注目プロジェクト" />
+      <PageTitle title="Featured Projects" titleJP="注目プロジェクト" />
       <FeaturedProjectPage />
+
+      {/* Focus on this now */}
       <Timeline />
     </>
   )

@@ -1,6 +1,6 @@
 interface QAProps {
   question: string
-  answer: string
+  answer?: string
 
   customAnswer?: React.ReactNode
   height?: string
@@ -17,7 +17,7 @@ export const QA = (props: QAProps) => {
       <div className="flex h-full flex-col justify-center p-5 ">
         <h1 className="font-dosis font-semibold text-slate-600 dark:text-white sm:text-xl">{props.question}</h1>
         {props.customAnswer ? (
-          props.customAnswer
+          <p className="mt-2 font-dosis text-base text-gray-500 dark:text-gray-400">{props.customAnswer}</p>
         ) : (
           <p className="mt-2 font-dosis text-base text-gray-500 dark:text-gray-400">{props.answer}</p>
         )}

@@ -10,7 +10,7 @@
  * ------------------------------------------------------------------------
  */
 import { type Metadata } from 'next'
-import HeaderTitleComponent from '@/components/ui/header-title'
+import PageTitle from '@/components/ui/header-title'
 import ProgressBar from '@/components/common/ProgressBar'
 import GuestbookForm from '@/components/guestbook/GuestbookForm'
 
@@ -31,7 +31,7 @@ export default function Guestbook() {
         key={'/guestbook'}
       />
       {/* Header gesuto bukku*/}
-      <HeaderTitleComponent title="guestbook" titleJP="ゲストブック" />
+      <PageTitle title="guestbook" titleJP="ゲストブック" />
 
       <div className="mx-auto mb-6 flex max-w-2xl flex-col items-center justify-center">
         {/* Guestbook */}

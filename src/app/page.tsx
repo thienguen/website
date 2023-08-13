@@ -2,7 +2,7 @@ import Profile from '@/components/ui/profile'
 import Signature from '@/components/ui/signature'
 import ProgressBar from '@/components/common/ProgressBar'
 import SkillIssues from '@/components/home/skill-issues'
-
+import PageTitle from '@/components/ui/header-title'
 
 export default function Home() {
   /* Could have put stuff in here put anyway */
@@ -15,8 +15,12 @@ export default function Home() {
         key={'/home'}
       />
 
+      <PageTitle title="Home" titleJP="ホームページ" />
+
+      {/* If we could implement the full usage of landyard api here */}
+
       {/* Hero Kinda Section */}
-      <div className="mb-8 h-full w-full items-center justify-center sm:mt-28 sm:min-h-[500px]">
+      <div className="mb-8 h-full w-full items-center justify-center sm:mt-20 sm:min-h-[500px]">
         {/* Bar */}
         <div className="hidden h-[3px] w-screen animate-fade-left bg-gradient-to-r from-blue-700/0 via-blue-700/50 to-blue-700/0 dark:bg-gradient-to-r dark:from-zinc-300/0 dark:via-zinc-300/50 dark:to-zinc-300/0 md:block" />
         {/* ------------------------------------------------------------------------------------------------- */}

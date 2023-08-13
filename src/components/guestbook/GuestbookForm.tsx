@@ -26,7 +26,7 @@ export default function GuestbookForm() {
         <div className="font-dosis text-lg leading-6 text-gray-900 dark:text-gray-100">
           {`Journey back to the 90's technologies guestbook! Leave your mark and let me know you were here in this retro digital oasis. `}
         </div>
-        <SignOut />
+        {session?.user ? <SignOut /> : null}
       </div>
 
       {/* Form and already sign-in */}
