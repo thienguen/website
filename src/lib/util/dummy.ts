@@ -4,7 +4,7 @@ export const FeaturedProjectItems = [
     projects: [
       {
         title: 'Todo? App',
-        description: 'Got me an internship ngl',
+        description: 'Got me an internship offer ngl',
         url: 'https://github.com/Thienguen/TodoApp',
         active: true,
         icon: 'podcasts',
@@ -155,7 +155,7 @@ export const AllProjectsItems = [
       },
       {
         title: 'Todo? App',
-        description: 'Got me an internship ngl',
+        description: 'Got me an internship offer ngl',
         url: 'https://github.com/Thienguen/TodoApp',
         active: true,
         icon: 'podcasts',

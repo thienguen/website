@@ -1,6 +1,8 @@
 import { type Metadata } from 'next'
 import ProgressBar from '@/components/common/ProgressBar'
-import { FeaturedProjectPage } from '@/components/purojekuto/RenderProjectsPage'
+import { FeaturedProjectPage } from '@/components/purojekuto/RenderProjects/RenderProjectsPage'
+import Timeline from '@/components/purojekuto/Timeline/Timeline'
+import HeaderTitleComponent from '@/components/ui/header-title'
 
 export const metadata: Metadata = {
   title: '/projects',
@@ -8,12 +10,6 @@ export const metadata: Metadata = {
 }
 
 export default function Projects() {
-  // <div className="space-y-1 px-10 md:space-y-3">
-  //   {/* <h1 className="text-lg font-extrabold tracking-tight text-gray-900 dark:text-gray-100 sm:leading-6">
-  //     {`projects`}
-  //   </h1> */}
-  // </div>
-
   return (
     <>
       <ProgressBar
@@ -22,8 +18,9 @@ export default function Projects() {
         isFullWidth={false}
         key={'/projects'}
       />
-      <h2 className="my-6 text-center font-dosis text-xl">Featured Projects</h2>
+      <HeaderTitleComponent title="Featured Projects" titleJP="注目プロジェクト" />
       <FeaturedProjectPage />
+      <Timeline />
     </>
   )
 }

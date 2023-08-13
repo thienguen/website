@@ -1,17 +1,16 @@
 'use client'
 
-import clipboard from '../../../public/icons-json/clipboard.json'
-import code      from '../../../public/icons-json/code.json'
-import download  from '../../../public/icons-json/download.json'
-import heart     from '../../../public/icons-json/heart.json'
-import home      from '../../../public/icons-json/home.json'
-import podcasts  from '../../../public/icons-json/podcasts.json'
-import projects  from '../../../public/icons-json/projects.json'
-
+import { AllProjectsItems, CareerItems, FeaturedProjectItems } from '@/lib/util/dummy'
+import clipboard from '../../../../public/icons-json/clipboard.json'
+import code from '../../../../public/icons-json/code.json'
+import download from '../../../../public/icons-json/download.json'
+import heart from '../../../../public/icons-json/heart.json'
+import home from '../../../../public/icons-json/home.json'
+import podcasts from '../../../../public/icons-json/podcasts.json'
+import projects from '../../../../public/icons-json/projects.json'
 /* Generative Project Cards */
 import ACareerItem from './ACareerItem'
 import AFeaturedProject from './AFeaturedProject'
-import { AllProjectsItems, CareerItems, FeaturedProjectItems } from '@/lib/util/dummy'
 
 export const dynamic = 'force-dynamic'
 
@@ -130,7 +129,7 @@ function CareerProjectsAlternating() {
 export function FeaturedProjectPage() {
   return (
     <>
-      <div className="mx-auto mt-6 flex max-w-3xl flex-col ">
+      <div className="mx-auto flex max-w-3xl flex-col ">
         <div className="">{FeaturedProjects()}</div>
       </div>
       <div className="mx-auto flex max-w-2xl flex-col">{CareerProjectsAlternating()}</div>

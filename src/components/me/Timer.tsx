@@ -6,6 +6,7 @@ import { cn } from '@/lib/util/util'
 
 interface TimerProps {
   cols?: string
+  height?: string
 }
 
 export const Timer = (props: TimerProps) => {
@@ -40,8 +41,9 @@ export const Timer = (props: TimerProps) => {
       >
         <div
           className={cn(
-            'flex h-full min-h-[13rem] w-full flex-col items-center justify-center rounded-lg text-white ',
-            pastSix ? 'bg-violet-700 dark:bg-sky-900' : 'bg-fuchsia-400 dark:bg-teal-700'
+            'flex h-full w-full flex-col items-center justify-center rounded-lg text-white ',
+            pastSix ? 'bg-violet-700 dark:bg-sky-900' : 'bg-fuchsia-400 dark:bg-teal-700',
+            `${props.height ?? ''}`
           )}
         >
           <h1 className="text-2xl">{timeInLV}</h1>

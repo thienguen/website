@@ -10,6 +10,7 @@
  * ------------------------------------------------------------------------
  */
 import { type Metadata } from 'next'
+import HeaderTitleComponent from '@/components/ui/header-title'
 import ProgressBar from '@/components/common/ProgressBar'
 import GuestbookForm from '@/components/guestbook/GuestbookForm'
 
@@ -29,19 +30,10 @@ export default function Guestbook() {
         isFullWidth={false}
         key={'/guestbook'}
       />
+      {/* Header gesuto bukku*/}
+      <HeaderTitleComponent title="guestbook" titleJP="ゲストブック" />
 
-      <div className="mx-auto mb-12 mt-6 flex max-w-2xl flex-col items-center justify-center">
-        {/* Header */}
-        <div className="space-y-1 p-4 md:space-y-5">
-          <h1 className="font-dosis text-base font-extrabold tracking-tight text-gray-900 dark:text-gray-100 sm:text-2xl sm:leading-6 md:text-3xl">
-            {`guestbook`}
-          </h1>
-
-          <p className=" text-sm leading-6 text-gray-900 dark:text-gray-100">
-            {`Journey back to the 90's tehnologies guestbook! Leave your mark and let me know you were here in this retro digital oasis.`}
-          </p>
-        </div>
-
+      <div className="mx-auto mb-12 flex max-w-2xl flex-col items-center justify-center">
         {/* Guestbook */}
         <GuestbookForm />
       </div>

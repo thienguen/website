@@ -7,6 +7,7 @@ import { cn } from '@/lib/util/util'
 
 interface DiscordStatusProps {
   cols?: string
+  height?: string
 }
 
 function DiscordStatus(props: DiscordStatusProps) {
@@ -29,7 +30,8 @@ function DiscordStatus(props: DiscordStatusProps) {
     >
       <div
         className={cn(
-          `flex h-full min-h-[13rem] w-full flex-col items-center justify-center rounded-lg`,
+          `flex h-full w-full flex-col items-center justify-center rounded-lg`,
+          `${props.height ?? ''}`,
           {
             online: 'bg-green-500 font-jetbrains-mono text-white',
             idle: 'bg-orange-400 font-jetbrains-mono text-white',
