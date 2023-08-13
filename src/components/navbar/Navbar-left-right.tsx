@@ -64,6 +64,7 @@ export const NavbarRight = () => (
  * @returns Right side of the navbar for small screens, with animation
  */
 export function NavbarRightSmall({ path_name, isOpen }: NavbarRightProps): ReactNode {
+  console.log('path_name: ', path_name)
   return (
     <div className="flex-col items-start space-y-4">
       {Navlinks.map((link, index) => (

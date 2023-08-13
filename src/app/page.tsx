@@ -18,7 +18,7 @@ export default function Home() {
       {/* Hero Kinda Section */}
       <div className="mb-8 h-full w-full items-center justify-center sm:mt-28 sm:min-h-[500px]">
         {/* Bar */}
-        <div className="hidden h-[4px] w-screen animate-fade-left bg-gradient-to-r from-blue-700/0 via-blue-700/50 to-blue-700/0 dark:bg-gradient-to-r dark:from-zinc-300/0 dark:via-zinc-300/50 dark:to-zinc-300/0 md:block" />
+        <div className="hidden h-[3px] w-screen animate-fade-left bg-gradient-to-r from-blue-700/0 via-blue-700/50 to-blue-700/0 dark:bg-gradient-to-r dark:from-zinc-300/0 dark:via-zinc-300/50 dark:to-zinc-300/0 md:block" />
         {/* ------------------------------------------------------------------------------------------------- */}
         <div className="m-auto flex w-full max-w-screen-lg flex-col items-center justify-center px-5 sm:flex-row">
           {/* Left side*/}
@@ -46,7 +46,7 @@ export default function Home() {
         <SkillIssues /> {/* useless */}
         {/* TODO: kbar will be here Ctrk+K */}
         {/* Bar */}
-        <div className=" hidden h-[4px] w-screen animate-fade-left bg-gradient-to-r from-blue-700/0 via-blue-700/50 to-blue-700/0 dark:bg-gradient-to-r dark:from-zinc-300/0 dark:via-zinc-300/50 dark:to-zinc-300/0 md:block" />
+        <div className=" hidden h-[3px] w-screen animate-fade-left bg-gradient-to-r from-blue-700/0 via-blue-700/50 to-blue-700/0 dark:bg-gradient-to-r dark:from-zinc-300/0 dark:via-zinc-300/50 dark:to-zinc-300/0 md:block" />
       </div>
     </>
   )

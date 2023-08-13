@@ -1,5 +1,5 @@
 import { NextResponse, type NextRequest } from 'next/server'
-import { type guestbook } from '@prisma/client'
+// import { type guestbook } from '@prisma/client'
 import { prisma } from '@/lib/prisma'
 
 

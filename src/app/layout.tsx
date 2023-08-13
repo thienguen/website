@@ -1,6 +1,7 @@
 'use client'
 
-import React, { useEffect } from 'react'
+import React from 'react'
+// import { useEffect } from 'react'
 // Framework
 import '@/styles/globals.css'
 import { Analytics } from '@vercel/analytics/react'
