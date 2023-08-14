@@ -1,12 +1,5 @@
 import clsx from 'clsx'
-import {
-  FooterGithub,
-  FooterInstagram,
-  FooterLinkedin,
-  FooterLove,
-  FooterProfile,
-  FooterTwitter,
-} from '@/components/footer/FooterIcons'
+import { FooterGithub, FooterInstagram, FooterLinkedin, FooterLove, FooterProfile, FooterTwitter } from '@/components/footer/FooterIcons'
 import { ThemeToggle } from '@/components/footer/ThemeToggle'
 
 type FooterBarProps = {
@@ -15,17 +8,17 @@ type FooterBarProps = {
 
 const FooterBar = ({ isFullWidth }: FooterBarProps) => {
   return (
-    <div className={clsx(isFullWidth ? 'w-full' : 'w-11/12 lg:w-2/3', 'mx-auto')}>
+    <div className={clsx(isFullWidth ? 'w-full' : 'w-11/12 lg:w-2/3', 'z-50 mx-auto')}>
       {/* Footer Bar section */}
-      <div className="flex h-[12px] items-center justify-between">
+      <div className="mt-2 flex h-[15px] items-center justify-between">
         {/* Dot at the beginning */}
-        <div className={`flex h-3 w-3 items-center justify-center rounded-full bg-blue-800  shadow dark:bg-gray-50`} />
+        <div className={`flex h-3 w-3 items-center justify-center rounded-full bg-black  shadow dark:bg-gray-50`} />
 
         {/* Bar in between */}
         <div className={`h-[2px] grow bg-slate-800 dark:bg-slate-50`} />
 
         {/* Dot at the end */}
-        <div className={`flex h-3 w-3 items-center justify-center rounded-full bg-blue-800 shadow dark:bg-gray-50`} />
+        <div className={`flex h-3 w-3 items-center justify-center rounded-full bg-black shadow dark:bg-gray-50`} />
       </div>
     </div>
   )

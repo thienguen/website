@@ -20,14 +20,14 @@ export default function Home() {
       {/* If we could implement the full usage of landyard api here */}
 
       {/* Hero Kinda Section */}
-      <div className="mb-8 h-full w-full items-center justify-center sm:mt-20 sm:min-h-[500px]">
+      <div className="mb-4 h-full w-full items-center justify-center sm:mt-10 sm:min-h-[500px]">
         {/* Bar */}
         <div className="hidden h-[3px] w-screen animate-fade-left bg-gradient-to-r from-blue-700/0 via-blue-700/50 to-blue-700/0 dark:bg-gradient-to-r dark:from-zinc-300/0 dark:via-zinc-300/50 dark:to-zinc-300/0 md:block" />
         {/* ------------------------------------------------------------------------------------------------- */}
         <div className="m-auto flex w-full max-w-screen-lg flex-col items-center justify-center px-5 sm:flex-col">
           {/* Left side*/}
           <div className="flex flex-col justify-center">
-            <div className="">
+            <div className="mt-2">
               <h2 className="shadow-effect mb-2  cursor-default whitespace-nowrap text-center font-display text-2xl font-bold text-slate-800  dark:text-slate-200 lg:text-5xl">
                 {`Thien Nguyen`}
               </h2>
@@ -50,7 +50,7 @@ export default function Home() {
         <SkillIssues /> {/* useless */}
         {/* TODO: kbar will be here Ctrk+K */}
         {/* Bar */}
-        <div className=" hidden h-[3px] w-screen animate-fade-left bg-gradient-to-r from-blue-700/0 via-blue-700/50 to-blue-700/0 dark:bg-gradient-to-r dark:from-zinc-300/0 dark:via-zinc-300/50 dark:to-zinc-300/0 md:block" />
+        <div className="mt-4 hidden h-[3px] w-screen animate-fade-left bg-gradient-to-r from-blue-700/0 via-blue-700/50 to-blue-700/0 dark:bg-gradient-to-r dark:from-zinc-300/0 dark:via-zinc-300/50 dark:to-zinc-300/0 md:block" />
       </div>
     </>
   )

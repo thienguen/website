@@ -24,7 +24,7 @@ const RightTimeline: React.FC<RightTimelineProps> = ({ year, title, description,
             <div className="font-dosis text-sm font-medium">{year}</div>
           </div>
         ) : (
-          <div className="absolute top-1/2 -mt-2 ml-1 h-4 w-4 animate-pulse cursor-pointer rounded-full bg-blue-500 shadow"></div>
+          <div className="absolute top-1/2 -mt-2 ml-1 h-4 w-4 cursor-pointer rounded-full bg-blue-500 shadow"></div>
         )}
       </div>
 

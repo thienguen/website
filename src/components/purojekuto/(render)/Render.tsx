@@ -1,6 +1,7 @@
 'use client'
 
 import { AllProjectItems, CareerItems, FeaturedProjectItems } from '@/lib/util/dummy'
+import { Tooltip } from '@/components/common/Tooltip'
 import clipboard from '../../../../public/icons-json/clipboard.json'
 import code from '../../../../public/icons-json/code.json'
 import download from '../../../../public/icons-json/download.json'
@@ -143,19 +144,21 @@ export function ProjectPageContent() {
       {/* <div className="mx-auto flex max-w-2xl flex-col">{CareerProjectsAlternating()}</div> */}
       <div className="mx-auto mt-2 max-w-4xl px-4">
         {/* Header Section */}
-        <div className="group flex flex-col items-center justify-center font-semibold lg:flex-row">
-          {/*  */}
-          <div className="grid h-12 border-l-2 border-blue-500 pl-2">
-            <kbd className="kbd bg-slate-100 font-dosis text-base text-black">Careers</kbd>
-          </div>
-          {/*  */}
-          <div className="divider lg:divider-horizontal">OR</div>
-          <div className=" grid h-12 border-r-2 border-blue-500 pr-2">
+        <div className="group flex flex-row items-center justify-between font-semibold lg:flex-row">
+          {/* Leftmost Career kbd */}
+          <div className="flex h-8 border-l-2 border-blue-500 pl-2">
             <kbd className="kbd bg-slate-100 font-dosis text-base text-black">Projects</kbd>
           </div>
+
+          <Tooltip text="Timeline">
+            <div className="divider pr-1 font-semibold lg:divider-horizontal text-base">タイムライン</div>
+          </Tooltip>
+
+          {/* Rightmost Projects kbd */}
+          <div className="flex h-8 border-r-2 border-blue-500 pr-2">
+            <kbd className="kbd bg-slate-100 font-dosis text-base text-black">Careers</kbd>
+          </div>
         </div>
-
-
       </div>
 
       <Timeline />
