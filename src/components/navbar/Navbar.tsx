@@ -56,7 +56,7 @@ const Navbar = () => {
   if (isBreakpoint === null) {
     return (
       <>
-        <div className="m-auto mt-2 flex w-3/5 flex-wrap items-center justify-between py-5 font-dosis md:flex-nowrap">
+        <nav className="m-auto mt-1.5 flex w-11/12 flex-wrap items-center justify-between pb-3 pl-6 pt-5 font-dosis md:flex-nowrap lg:w-2/3">
           {/* Typewriter Effect -- Left */}
           <div className={`md:block ${isOpen ? 'block' : 'hidden'}`}>
             <NavbarLeft path_name={path_name} />
@@ -66,7 +66,7 @@ const Navbar = () => {
             <NavbarRight />
           </div>
           {/* Navlinks Effects -- Right */}
-        </div>
+        </nav>
       </>
     )
   }
@@ -79,7 +79,7 @@ const Navbar = () => {
         {/* Useless */}
         {isBreakpoint ? (
           <>
-            <nav className="m-auto mt-2 flex w-3/5 flex-wrap items-center justify-between py-5 font-dosis md:flex-nowrap">
+            <nav className="m-auto mt-1.5 flex w-11/12 flex-wrap items-center justify-between pb-3 pl-6 pt-5 font-dosis md:flex-nowrap lg:w-2/3">
               {/* Typewriter Effect -- Left */}
               <div className={`md:block ${isOpen ? 'block' : 'hidden'}`}>
                 <NavbarLeft path_name={path_name} />

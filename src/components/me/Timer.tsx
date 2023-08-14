@@ -9,8 +9,9 @@ interface TimerProps {
   height?: string
 }
 
-export const Timer = (props: TimerProps) => {
+const Timer = (props: TimerProps) => {
   const [timeInLV, setTimeInLV] = useState('')
+  
   useEffect(() => {
     const interval = setInterval(() => {
       const LVTimeFormatter = new Intl.DateTimeFormat(undefined, {
@@ -26,7 +27,9 @@ export const Timer = (props: TimerProps) => {
 
     return () => clearInterval(interval)
   }, [])
+  
   const pastSix = parseInt(timeInLV.split(':')[0] ?? '') >= 18
+
   return (
     <>
       <Transition
@@ -46,10 +49,12 @@ export const Timer = (props: TimerProps) => {
             `${props.height ?? ''}`
           )}
         >
-          <h1 className="text-2xl">{timeInLV}</h1>
-          <p className="font-metropolis">in Las Vegas, Nevada</p>
+          <h1 className="text-xl">{timeInLV}</h1>
+          <p className="font-metropolis text-sm">in Las Vegas, Nevada</p>
         </div>
       </Transition>
     </>
   )
 }
+
+export default Timer

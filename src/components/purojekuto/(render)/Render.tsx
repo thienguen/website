@@ -141,21 +141,21 @@ export function ProjectPageContent() {
         <div className="">{FeaturedProjects()}</div>
       </div>
       {/* <div className="mx-auto flex max-w-2xl flex-col">{CareerProjectsAlternating()}</div> */}
-      <div className="mx-auto mt-2 max-w-2xl px-4">
+      <div className="mx-auto mt-2 max-w-4xl px-4">
         {/* Header Section */}
-        <div className="mb-4 grid grid-cols-2 items-center">
-          <div className="col-span-4 flex items-center justify-start border-l-2 border-blue-500 pl-2">
-            <kbd className="kbd bg-slate-100 font-dosis text-base text-black dark:bg-black dark:text-white">
-              Careers
-            </kbd>
+        <div className="group flex flex-col items-center justify-center font-semibold lg:flex-row">
+          {/*  */}
+          <div className="grid h-12 border-l-2 border-blue-500 pl-2">
+            <kbd className="kbd bg-slate-100 font-dosis text-base text-black">Careers</kbd>
           </div>
-
-          <div className="col-span-4 flex items-center justify-end border-r-2 border-blue-500 pr-2">
-            <kbd className="kbd rounded-md border-0 bg-slate-100 font-dosis text-base text-black transition-opacity duration-300 ease-in-out hover:opacity-100 dark:bg-black dark:text-white">
-              Projects
-            </kbd>
+          {/*  */}
+          <div className="divider lg:divider-horizontal">OR</div>
+          <div className=" grid h-12 border-r-2 border-blue-500 pr-2">
+            <kbd className="kbd bg-slate-100 font-dosis text-base text-black">Projects</kbd>
           </div>
         </div>
+
+
       </div>
 
       <Timeline />

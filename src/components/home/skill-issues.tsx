@@ -25,7 +25,7 @@ const SkillIssues = () => {
 
   return (
     <>
-      <div className="m-4">
+      <div className="">
         <div className="flex  flex-wrap items-center justify-center text-3xl">
           {icons.map((icon, index) => (
             <div key={index} className="m-2">

@@ -11,14 +11,14 @@ import { metadata } from '@/app/api/metadata'
 export function FooterLove() {
   return (
     <>
-      <span className="mx-2">Made with</span>
+      <span className="mx-2 text-sm">Made with</span>
       <AiOutlineHeart className="h-5 w-5" />
-      <span className="mx-2">by</span>
+      <span className="mx-2 text-sm">by</span>
       <Tooltip text="find me here">
         <Link
           href={metadata.discord}
           target="_blank"
-          className="text-slate-600 underline transition-colors duration-200 ease-in-out hover:text-pink-500 dark:text-white dark:hover:text-pink-500"
+          className="text-sm text-slate-600 underline transition-colors duration-200 ease-in-out hover:text-pink-500 dark:text-white dark:hover:text-pink-500"
         >
           blank_dreams
         </Link>
@@ -36,7 +36,7 @@ export function FooterGithub() {
           <div
             className={cn(
               buttonVariants({ size: 'sm', variant: 'ghost' }),
-              'w-9 px-0 hover:bg-slate-50 dark:hover:bg-gray-500'
+              'w-7 px-0 hover:bg-slate-50 dark:hover:bg-gray-500'
             )}
           >
             <Github className="h-6 w-5" />
@@ -56,7 +56,7 @@ export function FooterInstagram() {
           <div
             className={cn(
               buttonVariants({ size: 'sm', variant: 'ghost' }),
-              'w-9 px-0 hover:bg-slate-50 dark:hover:bg-gray-500'
+              'w-7 px-0 hover:bg-slate-50 dark:hover:bg-gray-500'
             )}
           >
             <AiOutlineInstagram className="h-6 w-5" />
@@ -76,7 +76,7 @@ export function FooterLinkedin() {
           <div
             className={cn(
               buttonVariants({ size: 'sm', variant: 'ghost' }),
-              'w-9 px-0 hover:bg-slate-50 dark:hover:bg-gray-500'
+              'w-7 px-0 hover:bg-slate-50 dark:hover:bg-gray-500'
             )}
           >
             <AiOutlineLinkedin className="h-6 w-5" />
@@ -96,7 +96,7 @@ export function FooterTwitter() {
           <div
             className={cn(
               buttonVariants({ size: 'sm', variant: 'ghost' }),
-              'w-9 px-0 hover:bg-slate-50 dark:hover:bg-gray-500'
+              'w-7 px-0 hover:bg-slate-50 dark:hover:bg-gray-500'
             )}
           >
             <Twitter className="h-6 w-5" />
@@ -125,7 +125,7 @@ export function FooterProfile() {
           <div
             className={cn(
               buttonVariants({ size: 'sm', variant: 'ghost' }),
-              'w-9 px-0 hover:bg-slate-50 dark:hover:bg-gray-500'
+              'w-7 px-0 hover:bg-slate-50 dark:hover:bg-gray-500'
             )}
           >
             <Image

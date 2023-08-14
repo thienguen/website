@@ -11,10 +11,11 @@ const config = {
         project: path.join(__dirname, 'tsconfig.json'),
       },
       rules: {
-        '@typescript-eslint/no-unsafe-assignment': 'off', // fk eslint
-        '@typescript-eslint/no-unsafe-call': 'off', // fk eslint
-        '@typescript-eslint/no-unsafe-argument': 'off', // fk eslint
-        '@typescript-eslint/no-unsafe-return': 'off', // fk eslint
+        '@typescript-eslint/no-unsafe-assignment': 'off',   // fk eslint
+        '@typescript-eslint/no-unsafe-call'      : 'off',   // fk eslint
+        '@typescript-eslint/no-unsafe-argument'  : 'off',   // fk eslint
+        '@typescript-eslint/no-unsafe-return'    : 'off',   // fk eslint
+        "@next/next/no-img-element"              : "off",   // fk next/image
       },
     },
   ],
