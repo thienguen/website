@@ -25,7 +25,7 @@ const SignIn = () => {
 
   return (
     <button
-      className="mt-4 inline-flex items-center rounded border border-neutral-200 bg-neutral-50 p-1 px-3 py-2 text-sm leading-4 text-neutral-900 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-100 dark:hover:bg-neutral-600"
+      className="my-2 inline-flex items-center rounded border border-neutral-200 bg-neutral-50 px-3 py-2 text-sm leading-4 text-neutral-900 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-100 dark:hover:bg-neutral-600"
       onClick={(e) => {
         e.preventDefault()
         signIn('github')

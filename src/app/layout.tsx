@@ -4,6 +4,7 @@ import React from 'react'
 // import { useEffect } from 'react'
 // Framework
 import '@/styles/globals.css'
+import { usePathname } from 'next/navigation'
 import { Analytics } from '@vercel/analytics/react'
 import AuthProvider from '@/lib/nextauth/AuthProvider'
 // Srr
@@ -15,7 +16,6 @@ import { Toaster } from '@/components/ui/toaster'
 import Footer from '@/components/footer/Footer'
 import Navbar from '@/components/navbar/Navbar'
 import { metadata } from '@/app/api/metadata'
-import { usePathname } from 'next/navigation'
 
 interface RootLayoutProps {
   children: React.ReactNode
@@ -74,20 +74,10 @@ export default function RootLayout({ children }: RootLayoutProps) {
             'dark:bg-gradient-to-b dark:from-black dark:to-gray-900' // dark
           )}
         >
-          <style>
-            {`
-              ::selection {
-                  background-color: #898989;
-                  color           : white;
-              }
-            `}
-          </style>
-          {/* TODO: Back here and update href */}
           <title>{metadata.creator}</title>
           <meta content={metadata.creator} property="og:title" />
-          <meta content={metadata.description} name="description" />
           <meta content={metadata.description} property="og:description" />
-          <link rel="shortcut icon" href="/images/monika-fa.png" /> {/* as if I know how app router works */}
+          <link rel="icon" href="/images/monika-fa.png" /> {/* as if I know how app router works */}
         </head>
 
         <body
@@ -96,6 +86,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         >
           <AuthProvider>
             <ThemeProvider attribute="class" defaultTheme="system" enableSystem themes={['light', 'dark']}>
+              {/* Kbar Wrapper */}
               <div
                 className={cn(
                   'z-20 grow',
@@ -103,12 +94,11 @@ export default function RootLayout({ children }: RootLayoutProps) {
                   'dark:bg-gradient-to-b dark:from-black dark:to-gray-900' // dark
                 )}
               >
-                <Particles className="absolute inset-0 -z-10" quantity={500} path_name={path_name}/>
+                <Particles className="absolute inset-0 -z-10" quantity={500} path_name={path_name} />
                 <Navbar />
                 {children}
-                {/* BUGS: Can't grow to the footer, or when page is scroollable */}
-                {/* Unless I'm making another layout, but I'm too tired */}
               </div>
+              {/* Kbar wrapper */}
               <Footer />
               <Toaster /> {/* useless */}
               <Analytics />
