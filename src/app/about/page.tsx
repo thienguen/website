@@ -1,8 +1,8 @@
 import React from 'react'
 import { type Metadata } from 'next'
 import PageTitle from '@/components/ui/header-title'
-import { QA } from '@/components/ui/qa'
-import QAClient from '@/components/ui/qaAge'
+import { QA } from '@/components/ui/(qa)/qa'
+import QAClient from '@/components/ui/(qa)/qaAge'
 import ProgressBar from '@/components/common/ProgressBar'
 import DiscordStatus from '@/components/me/DiscordStatus'
 import { Technologies } from '@/components/me/Technologies'
@@ -104,8 +104,6 @@ export default function About() {
       </div> */}
 
       <div className="flex flex-row justify-center">Stuff here</div>
-
-      
     </>
   )
 }

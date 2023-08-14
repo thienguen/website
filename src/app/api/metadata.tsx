@@ -1,4 +1,3 @@
-
 /**
  * Metadata is a funny lil concept, I was not in the right mind at all
  */
@@ -10,10 +9,9 @@ export const metadata = {
   headerTitle: 'blank_dreams',
   description: 'Isekai already',
 
-  creator: '/thienguen',
   name   : 'Thienguen',
+  creator: '/thienguen',
 
-  url      : 'https://thien-porfolio.vercel.app/',
   github   : 'https://github.com/Thienguen',
   instagram: 'https://www.instagram.com/thienguen_/',
   siteRepo : 'https://github.com/Thienguen/thien-porfolio',

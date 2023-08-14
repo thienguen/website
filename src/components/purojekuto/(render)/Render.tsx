@@ -1,17 +1,17 @@
 'use client'
 
+import { AllProjectItems, CareerItems, FeaturedProjectItems } from '@/lib/util/dummy'
 import clipboard from '../../../../public/icons-json/clipboard.json'
-import code      from '../../../../public/icons-json/code.json'
-import download  from '../../../../public/icons-json/download.json'
-import heart     from '../../../../public/icons-json/heart.json'
-import home      from '../../../../public/icons-json/home.json'
-import podcasts  from '../../../../public/icons-json/podcasts.json'
-import projects  from '../../../../public/icons-json/projects.json'
-
+import code from '../../../../public/icons-json/code.json'
+import download from '../../../../public/icons-json/download.json'
+import heart from '../../../../public/icons-json/heart.json'
+import home from '../../../../public/icons-json/home.json'
+import podcasts from '../../../../public/icons-json/podcasts.json'
+import projects from '../../../../public/icons-json/projects.json'
+import Timeline from '../(timeline)/Timeline'
 /* Generative Project Cards */
 import ACareerItem from './ACareerItem'
 import AFeaturedProject from './AFeaturedProject'
-import { AllProjectsItems, CareerItems, FeaturedProjectItems } from '@/lib/util/dummy'
 
 export const dynamic = 'force-dynamic'
 
@@ -30,22 +30,23 @@ export const dynamic = 'force-dynamic'
 // }
 
 export const ICONS = {
-  home     : home,
-  code     : code,
-  heart    : heart,
-  projects : projects,
-  podcasts : podcasts,
+  home: home,
+  code: code,
+  heart: heart,
+  projects: projects,
+  podcasts: podcasts,
   clipboard: clipboard,
-  download : download,
+  download: download,
 }
 
 export type ProjectProps = {
-  title       : string
-  url         : string
+  title: string
+  url: string
   description?: string
-  active     ?: boolean
-  icon        : string
-  stats      ?: string
+  since?: string
+  active?: boolean
+  icon: string
+  stats?: string
 }
 
 /**
@@ -71,9 +72,7 @@ const FeaturedProjects = () => {
       }
     })
 
-  return (
-    <div className="flex w-auto flex-row flex-wrap justify-between">{projects}</div>
-  )
+  return <div className="flex w-auto flex-row flex-wrap justify-between">{projects}</div>
 }
 
 type CombinedProjects = {
@@ -93,7 +92,7 @@ function CareerProjectsAlternating() {
 
   years.forEach((year) => {
     const careerYears = CareerItems.find((item) => item.year === year)
-    const allProjects = AllProjectsItems.find((item) => item.year === year)
+    const allProjects = AllProjectItems.find((item) => item.year === year)
 
     combinedProjects.push({
       year: year,
@@ -132,17 +131,34 @@ function CareerProjectsAlternating() {
   )
 }
 
-
 /**
  * What we shown in the page, due to 'use client'
  */
-export function FeaturedProjectPage() {
+export function ProjectPageContent() {
   return (
     <>
       <div className="mx-auto flex max-w-3xl flex-col ">
         <div className="">{FeaturedProjects()}</div>
       </div>
-      <div className="mx-auto flex max-w-2xl flex-col">{CareerProjectsAlternating()}</div>
+      {/* <div className="mx-auto flex max-w-2xl flex-col">{CareerProjectsAlternating()}</div> */}
+      <div className="mx-auto mt-2 max-w-2xl px-4">
+        {/* Header Section */}
+        <div className="mb-4 grid grid-cols-2 items-center">
+          <div className="col-span-4 flex items-center justify-start border-l-2 border-blue-500 pl-2">
+            <kbd className="kbd bg-slate-100 font-dosis text-base text-black dark:bg-black dark:text-white">
+              Careers
+            </kbd>
+          </div>
+
+          <div className="col-span-4 flex items-center justify-end border-r-2 border-blue-500 pr-2">
+            <kbd className="kbd rounded-md border-0 bg-slate-100 font-dosis text-base text-black transition-opacity duration-300 ease-in-out hover:opacity-100 dark:bg-black dark:text-white">
+              Projects
+            </kbd>
+          </div>
+        </div>
+      </div>
+
+      <Timeline />
     </>
   )
 }

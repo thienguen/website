@@ -1,7 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Pacifico&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
-
 @font-face {
   font-family: MetropolisRegular;
   src: url('/fonts/MetropolisRegular.ttf');
@@ -9,6 +5,11 @@
 @font-face {
   font-family: MetropolisBold;
   src: url('/fonts/MetropolisBold.ttf');
+}
+
+@font-face {
+  font-family: Sacramento;
+  src: url('/fonts/Sacramento-Regular.ttf');
 }
 
 @tailwind base;

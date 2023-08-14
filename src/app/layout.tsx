@@ -77,7 +77,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           <title>{metadata.creator}</title>
           <meta content={metadata.creator} property="og:title" />
           <meta content={metadata.description} property="og:description" />
-          <link rel="shortcut icon" href="/images/monika-fa.png" /> {/* as if I know how app router works */}
+          <link rel="icon" href="/images/monika-fa.png" /> {/* as if I know how app router works */}
         </head>
 
         <body
@@ -86,6 +86,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         >
           <AuthProvider>
             <ThemeProvider attribute="class" defaultTheme="system" enableSystem themes={['light', 'dark']}>
+              {/* Kbar Wrapper */}
               <div
                 className={cn(
                   'z-20 grow',
@@ -96,9 +97,8 @@ export default function RootLayout({ children }: RootLayoutProps) {
                 <Particles className="absolute inset-0 -z-10" quantity={500} path_name={path_name} />
                 <Navbar />
                 {children}
-                {/* BUGS: Can't grow to the footer, or when page is scroollable */}
-                {/* Unless I'm making another layout, but I'm too tired */}
               </div>
+              {/* Kbar wrapper */}
               <Footer />
               <Toaster /> {/* useless */}
               <Analytics />

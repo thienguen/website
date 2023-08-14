@@ -44,7 +44,8 @@ export const CareerItems = [
     projects: [
       {
         title: 'DecentrePX',
-        description: 'Software Engineer Intern focus on Web3, React, Solidity, etc -- Since Dec 2022',
+        description: 'Software Engineer Intern focus on Web3, React, Solidity, etc.',
+        since: '-- Since Dec 2022',
         url: 'Nay Nay',
         active: true,
         icon: 'clipboard',
@@ -52,36 +53,17 @@ export const CareerItems = [
       },
       {
         title: 'UNLV Tutor',
-        description: 'IT Tutor at the Academic Success Center II -- Since Jan 2023',
+        description: 'IT Tutor at the Academic Success Center II',
+        since: '-- Since Jan 2023',
         url: 'Nay Nay',
         active: true,
         icon: 'clipboard',
         stats: 'Web3, React, Solidity, etc.',
-      },
-    ],
-  },
-  {
-    year: '2022',
-    projects: [
-      {
-        title: 'CSN Teacher Assistant',
-        description: 'Helping and grading students with their assignments -- Since Aug 2022',
-        url: 'Not Available',
-        active: true,
-        icon: 'clipboard',
-        stats: 'Yet another day to help students',
-      },
-      {
-        title: 'UNLV Tutor',
-        description: 'IT Tutor at the Academic Success Center -- Since Aug 2022',
-        url: 'Not Available',
-        active: true,
-        icon: 'home',
-        stats: 'Yet another day to help students Part 3',
       },
       {
         title: 'UNLV Teacher Assistant',
-        description: 'Helping and grading students with their assignments II -- Since Aug 2022',
+        description: 'Helping and grading students with their assignments II',
+        since: 'Since May 2023 -- July 2023',
         url: 'Not Available',
         active: true,
         icon: 'heart',
@@ -90,11 +72,35 @@ export const CareerItems = [
     ],
   },
   {
+    year: '2022',
+    projects: [
+      {
+        title: 'CSN Teacher Assistant',
+        description: 'Helping and grading students with their assignments.',
+        since: 'Since Aug 2022 -- Dec 2022',
+        url: 'Not Available',
+        active: true,
+        icon: 'clipboard',
+        stats: 'Yet another day to help students',
+      },
+      {
+        title: 'UNLV Tutor',
+        description: 'IT Tutor at the Academic Success Center.',
+        since : 'Since Aug 2022 -- Dec 2022',
+        url: 'Not Available',
+        active: true,
+        icon: 'home',
+        stats: 'Yet another day to help students Part 3',
+      },
+    ],
+  },
+  {
     year: '2021',
     projects: [
       {
         title: 'Started Coding',
-        description: "That one time the compiler didn't yell at me -- Since May 2021",
+        description: "That one time the compiler didn't yell at me",
+        since: '-- Since May 2021',
         url: 'https://github.com/Thienguen/LeetCode-Data-Structure-n-Algorithms',
         active: true,
         icon: 'clipboard',
@@ -104,7 +110,7 @@ export const CareerItems = [
   },
 ]
 
-export const AllProjectsItems = [
+export const AllProjectItems = [
   {
     year: '2023',
     projects: [
@@ -126,7 +132,7 @@ export const AllProjectsItems = [
       },
       {
         title: 'DSA Course',
-        description: 'Ah yes...',
+        description: 'Ah yes... A collection of DSA problems and solutions',
         url: 'https://github.com/Thienguen/Data-Structure-Algorithms-Course',
         active: true,
         icon: 'heart',
@@ -147,7 +153,7 @@ export const AllProjectsItems = [
       },
       {
         title: 'DSA & Leetcode',
-        description: 'Via Helping and grading students with their assignments',
+        description: 'A collection of my personal DSA and Leetcode solutions',
         url: 'https://github.com/Thienguen/LeetCode-Data-Structure-n-Algorithms',
         active: true,
         icon: 'projects',
@@ -155,7 +161,7 @@ export const AllProjectsItems = [
       },
       {
         title: 'Todo? App',
-        description: 'Got me an internship offer ngl',
+        description: `Keeping the data in Local Storage, won't lost after refresh, that was cool when I made it`,
         url: 'https://github.com/Thienguen/TodoApp',
         active: true,
         icon: 'podcasts',
@@ -168,7 +174,7 @@ export const AllProjectsItems = [
     projects: [
       {
         title: 'Introductory to C++',
-        description: "That one time the compiler didn't yell at me",
+        description: "C++ is not a bad langauge, but pointer...pointer scared me",
         url: 'https://github.com/Thienguen/Introductory-to-Computer-Science-Integrated',
         active: true,
         icon: 'clipboard',
