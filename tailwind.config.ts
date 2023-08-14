@@ -2,6 +2,9 @@
 module.exports = {
   darkMode: ['class'],
   content : ['./src/**/*.{js,ts,jsx,tsx}'],
+  daisyui: {
+    themes: false,
+  },
   theme   : {
     container: {
       center : true,

@@ -16,6 +16,7 @@ import { Toaster } from '@/components/ui/toaster'
 import Footer from '@/components/footer/Footer'
 import Navbar from '@/components/navbar/Navbar'
 import { metadata } from '@/app/api/metadata'
+import NextTopLoader from 'nextjs-toploader';
 
 interface RootLayoutProps {
   children: React.ReactNode
@@ -87,6 +88,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           <AuthProvider>
             <ThemeProvider attribute="class" defaultTheme="system" enableSystem themes={['light', 'dark']}>
               {/* Kbar Wrapper */}
+              <NextTopLoader />
               <div
                 className={cn(
                   'z-20 grow',

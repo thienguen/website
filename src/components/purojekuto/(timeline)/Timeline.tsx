@@ -39,7 +39,7 @@ const Timeline: React.FC = () => {
   let firstItemOfYear = true
 
   return (
-    <div className="container mx-auto mb-8 max-w-4xl px-4">
+    <div className="container mx-auto mb-5 mt-3 max-w-4xl px-4">
       <div className="flex grid-cols-9 flex-col p-2 text-blue-50 md:grid">
         {combinedTimeline.map((item, index) => (
           <React.Fragment key={index}>

@@ -183,3 +183,18 @@ export const AllProjectItems = [
     ],
   },
 ]
+
+export const imageForGithub = {
+  /* jpg */
+  image1: '/images/arararara.jpg',
+  image2: '/images/bet.jpg',
+  image3: '/images/explosion.jpg',
+  image4: '/images/miku.jpg',
+  image5: '/images/monika3.jpg',
+  image6: '/images/omori.jpg',
+  image7: '/images/ty.jpg',
+  
+  /* gif */
+  image8: '/images/duck-pixel.gif',
+  image9: '/images/kafka.gif',
+}

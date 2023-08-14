@@ -1,12 +1,13 @@
 import React from 'react'
 import { type Metadata } from 'next'
-import PageTitle from '@/components/ui/header-title'
-import { QA } from '@/components/ui/(qa)/qa'
+import QA from '@/components/ui/(qa)/qa'
 import QAClient from '@/components/ui/(qa)/qaAge'
+import PageTitle from '@/components/ui/header-title'
 import ProgressBar from '@/components/common/ProgressBar'
 import DiscordStatus from '@/components/me/DiscordStatus'
-import { Technologies } from '@/components/me/Technologies'
-import { Timer } from '@/components/me/Timer'
+import GithubCard from '@/components/me/GithubCard'
+import Technologies from '@/components/me/Technologies'
+import Timer from '@/components/me/Timer'
 
 export const metadata: Metadata = {
   title: '/about',
@@ -33,13 +34,13 @@ export default function About() {
       />
 
       {/* Body of About page*/}
-      <div className="mx-auto my-5 flex max-w-[80rem]">
+      <div className="mx-auto my-5 flex max-w-6xl">
         {/* Left Side */}
         <div className="grid flex-1 grid-cols-6 gap-4 px-3">
           {/* 1. The first question*/}
-          <QAClient question="currently?" cols="sm:col-span-4 col-span-3" height="min-h-[12rem]" />
+          <QAClient question="currently?" cols="md:col-span-4 col-span-3 sm:col-span-6" height="min-h-[10.5rem]" />
           {/* 2. */}
-          <Timer cols="sm:col-span-2 col-span-3" height="min-h-[12rem]" />
+          <Timer cols="sm:col-span-2 col-span-3" height="min-h-[10.5rem]" />
 
           {/* 3. */}
           <QA
@@ -52,14 +53,14 @@ export default function About() {
               </>
             }
             cols="col-span-6"
-            height="min-h-[12rem]"
+            height="min-h-[10.5rem]"
           />
         </div>
 
         {/* Right Side */}
         <div className="grid flex-1 grid-cols-6 gap-4 px-3">
           {/* 4. */}
-          <Technologies cols="col-span-6 sm:col-span-3" height="min-h-[12rem]" />
+          <Technologies cols="col-span-6 sm:col-span-3" height="min-h-[10.5rem] max-h-[10.5rem]" />
 
           {/* 5. */}
           <QA
@@ -72,11 +73,17 @@ export default function About() {
               </>
             }
             cols="col-span-6 sm:col-span-3"
-            height="min-h-[12rem]"
+            height="min-h-[10.5rem]"
           />
 
           {/* 6. */}
-          <DiscordStatus cols="col-span-3 sm:col-span-2" height="min-h-[12rem]" />
+          {/* <DiscordStatus cols="col-span-3 sm:col-span-2" height="min-h-[10.5rem]" /> */}
+
+          <div className='col-span-2'>
+            <DiscordStatus cols="" height="min-h-[4.9rem]" />
+            <div className='p-1'></div>
+            <GithubCard cols="" height="min-h-[4.9rem]" />
+          </div>
 
           {/* 7. */}
           <QA
@@ -89,7 +96,7 @@ export default function About() {
               </>
             }
             cols="sm:col-span-4 col-span-3"
-            height="min-h-[12rem]"
+            height="min-h-[10.5rem]"
           />
         </div>
       </div>

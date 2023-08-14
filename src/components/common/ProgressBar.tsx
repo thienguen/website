@@ -10,22 +10,22 @@ const ProgressBar = ({ steps, currentStep, isFullWidth }: ProgressBarProps) => {
   return (
     <div className={clsx(isFullWidth ? 'w-full' : 'w-11/12 lg:w-2/3', 'mx-auto')}>
       {/* Progress Bar section */}
-      <div className="flex h-[2.5px] items-center justify-between bg-gradient-to-b from-slate-300 to-gray-300">
+      <div className="flex h-[2px] items-center justify-between bg-gradient-to-b from-slate-300 to-gray-300">
         {/* Dot at the beginning */}
         <div
           className={`flex h-3 w-4 items-center justify-center rounded-full shadow ${
             currentStep > 0
-              ? 'bg-green-700 dark:bg-[#D9DADB]' // Active
+              ? 'bg-blue-800 dark:bg-[#D9DADB]' // Active
               : 'bg-gradient-to-b from-gray-600 to-gray-400 dark:bg-gray-800' // Inactive
           }`}
         />
 
         {/* The current step progress */}
         <div
-          className={`flex h-[2.5px] w-1/3 items-center 
+          className={`flex h-[2px] w-1/3 items-center 
           ${
             currentStep > 0
-              ? 'bg-green-700 dark:bg-[#D9DADB]' // Active
+              ? 'bg-blue-800 dark:bg-[#D9DADB]' // Active
               : 'bg-gradient-to-b from-gray-600 to-gray-400 dark:bg-gray-800' // Inactive
           }`}
         />
@@ -36,9 +36,9 @@ const ProgressBar = ({ steps, currentStep, isFullWidth }: ProgressBarProps) => {
           return (
             <div
               key={index}
-              className={`relative flex h-[2.5px] w-1/3 items-center justify-between ${
+              className={`relative flex h-[2px] w-1/3 items-center justify-between ${
                 currentStep > index + 1
-                  ? 'bg-green-700 dark:bg-[#D9DADB]' // Active
+                  ? 'bg-blue-800 dark:bg-[#D9DADB]' // Active
                   : 'bg-gradient-to-b from-gray-600 to-gray-400 dark:bg-gray-800' // Inactive
               }`}
             >
@@ -46,7 +46,7 @@ const ProgressBar = ({ steps, currentStep, isFullWidth }: ProgressBarProps) => {
               <div
                 className={`${
                   currentStep > index
-                    ? 'bg-green-700 dark:bg-[#D9DADB]' // Active
+                    ? 'bg-blue-800 dark:bg-[#D9DADB]' // Active
                     : 'bg-gradient-to-b from-gray-600 to-gray-400 dark:bg-gray-800' // Inactive
                 } -ml-2 flex h-3 w-3 items-center justify-center rounded-full shadow`}
               />
@@ -56,9 +56,9 @@ const ProgressBar = ({ steps, currentStep, isFullWidth }: ProgressBarProps) => {
 
         {/* The last step */}
         <div
-          className={`relative flex h-[2.5px] w-1/3 items-center ${
+          className={`relative flex h-[2px] w-1/3 items-center ${
             currentStep >= steps.length
-              ? 'bg-green-700 dark:bg-[#D9DADB]' // Active
+              ? 'bg-blue-800 dark:bg-[#D9DADB]' // Active
               : 'justify-between bg-gradient-to-b from-gray-600 to-gray-400 dark:bg-gray-800' // Inactive with space for dot
           }`}
         >
@@ -66,7 +66,7 @@ const ProgressBar = ({ steps, currentStep, isFullWidth }: ProgressBarProps) => {
           <div
             className={`flex h-3 w-3 items-center justify-center rounded-full shadow ${
               currentStep >= steps.length - 1
-                ? 'bg-green-700 dark:bg-[#D9DADB]' // Active
+                ? 'bg-blue-800 dark:bg-[#D9DADB]' // Active
                 : 'bg-gradient-to-b from-gray-600 to-gray-400 dark:bg-gray-800' // Inactive
             }`}
           />
@@ -76,20 +76,20 @@ const ProgressBar = ({ steps, currentStep, isFullWidth }: ProgressBarProps) => {
         <div
           className={`flex h-3 w-4 items-center justify-center rounded-full shadow ${
             currentStep === steps.length
-              ? 'bg-green-700 dark:bg-[#D9DADB]' // Active
+              ? 'bg-blue-800 dark:bg-[#D9DADB]' // Active
               : 'bg-gradient-to-b from-gray-600 to-gray-400 dark:bg-gray-800' // Inactive
           }`}
         />
       </div>
 
       {/* Text labels section */}
-      <div className={`grid auto-cols-fr grid-flow-col font-dosis text-sm `}>
+      <div className={`grid auto-cols-fr grid-flow-col font-dosis text-sm`}>
         {steps.map((step, index) => (
           <p
             key={index}
             className={`pt-1 text-center font-bold ${
               currentStep - 1 >= index
-                ? 'text-green-700 dark:text-[#D9DADB]' // Active
+                ? 'text-blue-800 dark:text-[#D9DADB]' // Active
                 : 'text-gray-600 dark:text-gray-600' // Inactive
             }`}
           >

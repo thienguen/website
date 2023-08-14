@@ -7,7 +7,7 @@ type headerTitleProps = {
 
 function PageTitle(props: headerTitleProps) {
   return (
-    <div className="my-3 text-center">
+    <div className="my-2 text-center">
       <Tooltip text={props.title ?? ''}>
         <h2 className="text-xl font-semibold">{`${props.titleJP ?? ''}`}</h2>
       </Tooltip>
