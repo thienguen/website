@@ -197,4 +197,7 @@ export const imageForGithub = {
   /* gif */
   image8: '/images/duck-pixel.gif',
   image9: '/images/kafka.gif',
+
+  image10: '/images/hanekawa.jpg',
+  image11: '/images/saber.jpg'
 }

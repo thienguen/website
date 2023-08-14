@@ -30,7 +30,7 @@ function DiscordStatus(props: DiscordStatusProps) {
     >
       <div
         className={cn(
-          `flex h-full w-full flex-col items-center justify-center rounded-2xl pt-3`,
+          `flex h-full w-full flex-col items-center justify-center rounded-lg pt-3`,
           `${props.height ?? ''}`,
           {
             online : 'bg-green-500 font-jetbrains-mono text-xs text-white',

@@ -27,7 +27,7 @@ export default function Home() {
         <div className="m-auto flex w-full max-w-screen-lg flex-col items-center justify-center px-5 sm:flex-col">
           {/* Left side*/}
           <div className="flex flex-col justify-center">
-            <div className="">
+            <div className="mt-2">
               <h2 className="shadow-effect mb-2  cursor-default whitespace-nowrap text-center font-display text-2xl font-bold text-slate-800  dark:text-slate-200 lg:text-5xl">
                 {`Thien Nguyen`}
               </h2>

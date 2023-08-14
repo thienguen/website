@@ -15,7 +15,7 @@ const ProgressBar = ({ steps, currentStep, isFullWidth }: ProgressBarProps) => {
         <div
           className={`flex h-3 w-4 items-center justify-center rounded-full shadow ${
             currentStep > 0
-              ? 'bg-blue-800 dark:bg-[#D9DADB]' // Active
+              ? 'animate-pulse2 bg-blue-800 dark:bg-[#D9DADB]' // Active
               : 'bg-gradient-to-b from-gray-600 to-gray-400 dark:bg-gray-800' // Inactive
           }`}
         />
@@ -46,9 +46,9 @@ const ProgressBar = ({ steps, currentStep, isFullWidth }: ProgressBarProps) => {
               <div
                 className={`${
                   currentStep > index
-                    ? 'bg-blue-800 dark:bg-[#D9DADB]' // Active
+                    ? 'animate-pulse2 bg-blue-800 dark:bg-[#D9DADB]' // Active
                     : 'bg-gradient-to-b from-gray-600 to-gray-400 dark:bg-gray-800' // Inactive
-                } -ml-2 flex h-3 w-3 items-center justify-center rounded-full shadow`}
+                } -ml-2 flex h-3 w-3 items-center justify-center rounded-full shadow `}
               />
             </div>
           )
@@ -66,7 +66,7 @@ const ProgressBar = ({ steps, currentStep, isFullWidth }: ProgressBarProps) => {
           <div
             className={`flex h-3 w-3 items-center justify-center rounded-full shadow ${
               currentStep >= steps.length - 1
-                ? 'bg-blue-800 dark:bg-[#D9DADB]' // Active
+                ? 'animate-pulse2 bg-blue-800 dark:bg-[#D9DADB]' // Active
                 : 'bg-gradient-to-b from-gray-600 to-gray-400 dark:bg-gray-800' // Inactive
             }`}
           />
@@ -76,7 +76,7 @@ const ProgressBar = ({ steps, currentStep, isFullWidth }: ProgressBarProps) => {
         <div
           className={`flex h-3 w-4 items-center justify-center rounded-full shadow ${
             currentStep === steps.length
-              ? 'bg-blue-800 dark:bg-[#D9DADB]' // Active
+              ? 'animate-pulse2 bg-blue-800 dark:bg-[#D9DADB]' // Active
               : 'bg-gradient-to-b from-gray-600 to-gray-400 dark:bg-gray-800' // Inactive
           }`}
         />

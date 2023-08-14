@@ -16,7 +16,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer base {
   .text-edge-outline {
     -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
@@ -126,11 +125,34 @@
   }
 }
 
+@keyframes pulse2 {
+  0% {
+    box-shadow: 0 0 0 0 rgba(240, 240, 240, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(240, 240, 240, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(240, 240, 240, 0);
+  }
+}
+
+@keyframes pulse3 {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 116, 217, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(51, 170, 255, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(51, 170, 255, 0);
+  }
+}
+
 /* globals.css */
 ::selection {
   @apply bg-gray-500 text-white;
 }
-
 
 /* Dark theme selection */
 .dark ::selection {
@@ -218,6 +240,14 @@ line {
 /* Pulsing effect for the year box */
 .rounded-md.bg-blue-600:hover {
   animation: pulse 1.5s infinite;
+}
+
+.animate-pulse2 {
+  animation: pulse2 1.5s infinite;
+}
+
+.animate-pulse3 {
+  animation: pulse3 1.5s infinite;
 }
 
 .rounded-xl.bg-blue-600:hover {
