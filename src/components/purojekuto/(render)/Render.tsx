@@ -147,16 +147,16 @@ export function ProjectPageContent() {
         <div className="group flex flex-row items-center justify-between font-semibold lg:flex-row">
           {/* Leftmost Career kbd */}
           <div className="flex h-8 border-l-2 border-blue-500 pl-2">
-            <kbd className="kbd bg-slate-100 font-dosis text-base text-black">Projects</kbd>
+            <kbd className="kbd bg-slate-100 font-dosis text-base dark:bg-zinc-700">Projects</kbd>
           </div>
 
           <Tooltip text="Timeline">
-            <div className="divider lg:divider-horizontal pr-1 text-base font-semibold">タイムライン</div>
+            <div className="divider pr-1 text-base font-semibold lg:divider-horizontal">タイムライン</div>
           </Tooltip>
 
           {/* Rightmost Projects kbd */}
           <div className="flex h-8 border-r-2 border-blue-500 pr-2">
-            <kbd className="kbd bg-slate-100 font-dosis text-base text-black">Careers</kbd>
+            <kbd className="kbd bg-slate-100 font-dosis text-base dark:bg-zinc-700">Careers</kbd>
           </div>
         </div>
       </div>
