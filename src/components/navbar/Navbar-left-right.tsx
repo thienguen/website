@@ -10,7 +10,7 @@ import Navlinks from '@/components/navbar/Navlinks'
 import { metadata } from '@/app/api/metadata'
 
 interface NavbarRightProps {
-  path_name: string
+  path_name?: string
   isOpen: boolean
 }
 
@@ -64,8 +64,7 @@ export const NavbarRight = () => (
 /**
  * @returns Right side of the navbar for small screens, with animation
  */
-export function NavbarRightSmall({ path_name, isOpen }: NavbarRightProps): ReactNode {
-  console.log('path_name: ', path_name)
+export function NavbarRightSmall({ isOpen }: NavbarRightProps): ReactNode {
   return (
     <div className="flex-col items-start space-y-4">
       {Navlinks.map((link, index) => (

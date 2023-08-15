@@ -13,8 +13,6 @@ export type guestbookSchema = {
   // updated_at
 }
 
-
-
 /**
  * Create a new guestbook entry, whenever a user submits the form.
  * @param data - The data to be sent to the API.
@@ -94,7 +92,6 @@ export async function getGuestbookEntries() {
     })
 
     const json = await res.json()
-
     if (!res.ok) throw new Error('Error getting guestbook entries:', json)
     return { data: json } // return as an object with data property
   } catch (error) {
