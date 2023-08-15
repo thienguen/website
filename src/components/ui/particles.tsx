@@ -55,6 +55,7 @@ export default function Particles({
     initCanvas()
     console.log('path_name: ', path_name)
     console.log('current height: ', canvasSize.current.h)
+    console.log('resolvedTheme: ', resolvedTheme)
   }, [refresh, path_name])
 
   const initCanvas = () => {
@@ -152,7 +153,9 @@ export default function Particles({
       if (resolvedTheme === 'dark') {
         context.current.fillStyle = `rgba(255, 255, 255, ${alpha})` // Color for dark theme
       } else if (resolvedTheme === 'light') {
-        context.current.fillStyle = `rgba(0, 0, 128, ${alpha})` // Color for light theme
+        context.current.fillStyle = `rgba(0, 0, 128, ${alpha})`     // Color for light theme
+      } else if (resolvedTheme === undefined) {
+        context.current.fillStyle = `rgba(255, 255, 255, ${alpha})` // Color for dark theme (default)
       }
 
       context.current.fill()
