@@ -125,7 +125,7 @@ export function FooterProfile() {
           <div
             className={cn(
               buttonVariants({ size: 'sm', variant: 'ghost' }),
-              'w-7 px-0 hover:bg-slate-50 dark:hover:bg-gray-500'
+              'w-7 px-0 hover:bg-slate-50 dark:hover:bg-gray-500 '
             )}
           >
             <Image
