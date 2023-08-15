@@ -26,6 +26,7 @@ export async function GET(req: NextRequest) {
       (key, value) => (typeof value === 'bigint' ? value.toString() : value) // return everything else unchanged
     )
 
+    console.log('jsonString', jsonString)
     return NextResponse.json(JSON.parse(jsonString), { status: 200 })
   } catch (error) {
     console.log('error:', error)
