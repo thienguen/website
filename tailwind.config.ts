@@ -2,9 +2,6 @@
 module.exports = {
   darkMode: ['class'],
   content : ['./src/**/*.{js,ts,jsx,tsx}'],
-  daisyui: {
-    themes: false,
-  },
   theme   : {
     container: {
       center : true,
@@ -170,5 +167,5 @@ module.exports = {
       'jetbrains-mono' : ['JetBrains Mono', 'monospace'],
     },
   },
-  plugins: [require('tailwindcss-animate'), require('@tailwindcss/typography'), require('daisyui')],
+  plugins: [require('tailwindcss-animate'), require('@tailwindcss/typography')],
 }

@@ -88,7 +88,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           <AuthProvider>
             <ThemeProvider attribute="class" defaultTheme="system" enableSystem themes={['light', 'dark']}>
               {/* Kbar Wrapper */}
-              {/* <NextTopLoader /> */}
+              <NextTopLoader />
               <div
                 className={cn(
                   'z-20 grow',
