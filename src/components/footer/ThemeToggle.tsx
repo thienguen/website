@@ -32,7 +32,7 @@ export function ThemeToggle() {
       <Button
         variant="ghost"
         size="sm"
-        className="w-9 px-0 hover:bg-slate-50 dark:hover:bg-gray-500"
+        className="w-7 px-0 hover:bg-slate-50 dark:hover:bg-gray-500"
         onClick={handleThemeChange} // <-- Updated onClick handler
         disabled={disabled} // <-- Add disabled prop
         rel="noreferrer"

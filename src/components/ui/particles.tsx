@@ -53,10 +53,10 @@ export default function Particles({
 
   useEffect(() => {
     initCanvas()
-    console.log('path_name: ', path_name)
-    console.log('current height: ', canvasSize.current.h)
-    console.log('resolvedTheme: ', resolvedTheme)
-  }, [refresh, path_name])
+    // console.log('path_name: ', path_name)
+    // console.log('current height: ', canvasSize.current.h)
+    // console.log('resolvedTheme: ', resolvedTheme)
+  }, [refresh, path_name]) // NOTE: DO NOT INCLUDE resolvedTheme, the thing update inistantaneous
 
   const initCanvas = () => {
     resizeCanvas()
@@ -252,7 +252,7 @@ export default function Particles({
   }
 
   return (
-    <div className={className + 'absolute'} ref={canvasContainerRef} aria-hidden="true">
+    <div className={'absolute -z-50 inset-0' + className} ref={canvasContainerRef} aria-hidden="true">
       <canvas ref={canvasRef} />
     </div>
   )

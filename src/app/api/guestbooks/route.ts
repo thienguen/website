@@ -21,12 +21,13 @@ export async function GET(req: NextRequest) {
       },
     })
 
+    console.log('guestbook', guestbook)
+
     const jsonString = JSON.stringify(
       guestbook,
       (key, value) => (typeof value === 'bigint' ? value.toString() : value) // return everything else unchanged
     )
 
-    console.log('jsonString', jsonString)
     return NextResponse.json(JSON.parse(jsonString), { status: 200 })
   } catch (error) {
     console.log('error:', error)
@@ -61,11 +62,14 @@ export async function POST(req: NextRequest) {
       },
     })
 
+    console.log('newGuestbookEntry', newGuestbookEntry)
+
     // can't serialize BigInts, so we need to convert them to strings
     const jsonString = JSON.stringify(
       newGuestbookEntry,
       (key, value) => (typeof value === 'bigint' ? value.toString() : value) // return everything else unchanged
     )
+
     return NextResponse.json(JSON.parse(jsonString), { status: 200 })
   } catch (error) {
     console.error('Error:', error)
@@ -100,7 +104,6 @@ export async function DELETE(req: NextRequest) {
     )
 
     return NextResponse.json(JSON.parse(jsonString), { status: 200 })
-    
   } catch (error) {
     console.error('Error DELETE route:', error)
     return NextResponse.json(null, { status: 500 })

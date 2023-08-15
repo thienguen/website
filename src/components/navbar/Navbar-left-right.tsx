@@ -49,9 +49,9 @@ export const NavbarRight = () => (
           key={link.title}
           href={link.href}
           rel="noopener noreferrer"
-          className="link-underline rounded tracking-wider text-gray-950 hover:bg-slate-50 dark:text-gray-100 dark:hover:bg-gray-700 sm:px-5 sm:py-2" // dark
+          className="link-underline rounded tracking-wider text-black hover:bg-slate-50 dark:text-gray-100 dark:hover:bg-gray-700 sm:px-5 sm:py-2" 
         >
-          <div className="flex flex-row items-center font-dosis text-sm">
+          <div className="flex flex-row items-center font-dosis text-sm font-medium dark:font-normal dark:tracking-wider">
             {IconMapping[link.title]} {/* this will  insert the icon for each link */}
             {link.title}
           </div>
