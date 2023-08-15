@@ -151,7 +151,7 @@ export function ProjectPageContent() {
           </div>
 
           <Tooltip text="Timeline">
-            <div className="divider pr-1 font-semibold lg:divider-horizontal text-base">タイムライン</div>
+            <div className="divider lg:divider-horizontal pr-1 text-base font-semibold">タイムライン</div>
           </Tooltip>
 
           {/* Rightmost Projects kbd */}

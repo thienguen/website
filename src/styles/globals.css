@@ -242,7 +242,7 @@ line {
   animation: pulse 1.5s infinite;
 }
 
-.animate-pulse2 {
+.dark .animate-pulse2 {
   animation: pulse2 1.5s infinite;
 }
 
