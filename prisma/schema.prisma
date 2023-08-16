@@ -1,7 +1,7 @@
 // prisma schema docs: https://pris.ly/d/prisma-schema 
 
-// run 'npx prisma db push' to push schema changes to planetscale
 // run 'npx prisma generate' after a schema change to update the prisma client
+// run 'npx prisma db push' to push schema changes to planetscale
 // run 'npx prisma format' to auto format
 // run 'npm run prisma' to run the prisma cli
 

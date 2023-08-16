@@ -138,7 +138,7 @@ function CareerProjectsAlternating() {
 export function ProjectPageContent() {
   return (
     <>
-      <div className="mx-auto flex max-w-3xl flex-col ">
+      <div className="mx-auto flex max-w-3xl flex-col">
         <div className="">{FeaturedProjects()}</div>
       </div>
       {/* <div className="mx-auto flex max-w-2xl flex-col">{CareerProjectsAlternating()}</div> */}

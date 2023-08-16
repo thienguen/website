@@ -4,31 +4,30 @@ import { useSession } from 'next-auth/react'
 import { useForm, type FieldValues } from 'react-hook-form'
 import {
   createGuestbookEntry,
-  deleteGuestbookEntry,
   getGuestbookEntries,
+  deleteGuestbookEntry,
 } from '@/hooks/useGuestbook'
-
 
 type formSchema = {
   content: string
 }
 
-  /**
+/**
  * @returns all methods wrapper to handle with guestbook, for state management
  * And eslint wise, tbh, as if I know these thing LMAO
  */
 export function useGuestbookWrapper() {
-  const [entries, setEntries]                       = useState<guestbook[]>([])
-  const [isLoading, setIsLoading]                   = useState(false)
+  const [entries, setEntries] = useState<guestbook[]>([])
+  const [isLoading, setIsLoading] = useState(false)
   const [showSuccessMessage, setShowSuccessMessage] = useState(false)
 
-  const { data: session }                 = useSession()
+  const { data: session } = useSession()
   const { register, handleSubmit, reset } = useForm<{ content: string }>()
 
   /**
    * Fetch [ALL] guestbook entries from the API, route.ts
    * and set the state to the response, a very naive: < approach
-   * @returns {void}
+   * @returns {void}, useEffect and useState are bad
    */
   useEffect(() => {
     const fetchEntries = async () => {
@@ -41,6 +40,9 @@ export function useGuestbookWrapper() {
             console.error('Unexpected response:', res)
           }
         }
+
+        console.log('huh huh huh')
+
       } catch (error) {
         console.error('Failed to fetch guestbook entries:', error)
       }
@@ -52,67 +54,64 @@ export function useGuestbookWrapper() {
    * Delete a guestbook entry from the API, route.ts
    * and remove the entry from state, through generated id, its actually bigInt
    * but meh
-   * 
+   *
    * @see handleDeleteClick
    */
-  const buttonOnClick = (data: guestbook) => {
+  // const handleEntryDelete = (data: bigint) => {
+  //   console.log('Deleting entry:', data)
+  //   // await deleteEntry(data)
+  // }
+
+  // const handleDeleteClick = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>, id: bigint) => {
+  //   event.preventDefault()
+  //   buttonOnClick(id)
+  // }
+  
+  const handleEntryDelete = (data: bigint) => {
     console.log('Deleting entry:', data)
     deleteGuestbookEntry(data)
       .then(() => {
         setEntries(
           entries.filter(
             (entry) => 
-              entry.created_by !== data.created_by &&
-              entry.content    !== data.content &&
-              entry.email      !== data.email
+              entry.id !== data
           )
         )
+        console.log('Deleted entry then():', data)
       })
       .catch((error) => {
         console.error('Error: DELETE buttonOnClick', error)
       })
   }
 
-  // const handleDeleteClick = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-  //   event.preventDefault()
-  //   buttonOnClick(entry.id)
-  // }
-
-  // Failed attempt, nahhhhhh
-  const handleEntryDelete = (data: guestbook) => () => {
-    console.log('Deleting entry:', data)
-    buttonOnClick(data)
-  }
-
   /**
    * Create a guestbook entry from the API, route.ts
    * Eslint having issue and as we have to use the hook corretly
-   * 
+   *
    * @see handleEntryCreate
    * @see showSuccessMessage
    */
   const formOnSubmit = async (data: formSchema) => {
-    setIsLoading(true)  // Set isLoading to true before submitting the form
+    setIsLoading(true) // Set isLoading to true before submitting the form
     try {
       await createGuestbookEntry({
-        email     : session?.user?.email ?? 'Anonymous',
-        content   : data.content,
+        email: session?.user?.email ?? 'Anonymous',
+        content: data.content,
         created_by: session?.user?.name ?? 'Anonymous',
       })
       reset()
-      setShowSuccessMessage(true)  // Show the success message
+      setShowSuccessMessage(true) // Show the success message
     } catch (error) {
       console.error('Error during form submission:', error)
     } finally {
-      setIsLoading(false)  // Set isLoading to false after the form submission is complete
+      setIsLoading(false) // Set isLoading to false after the form submission is complete
     }
   }
 
-  const hanleEntryCreate = 
-    (submitFunction: (data: formSchema) => Promise<void>) => (e: FormEvent<HTMLFormElement>) => {
-      e.preventDefault()
-      void handleSubmit((data: FieldValues) => submitFunction(data as formSchema))(e)
-    }
+  const hanleEntryCreate = (submitFunction: (data: formSchema) => Promise<void>) => (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    void handleSubmit((data: FieldValues) => submitFunction(data as formSchema))(e)
+  }
 
   /**
    * State management for a success form submission, creating new entry
@@ -134,10 +133,10 @@ export function useGuestbookWrapper() {
     session,
     register,
 
-    buttonOnClick,  // delete button
+    // handleDeleteClick,
     handleEntryDelete,
 
-    formOnSubmit,  // form submission
+    formOnSubmit, // form submission
     hanleEntryCreate,
   }
 }

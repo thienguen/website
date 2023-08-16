@@ -6,7 +6,7 @@ type SuccessMessageProps = {
 
 export default function SuccessMessage({ children }: SuccessMessageProps) {
   return (
-    <p className="flex items-center text-sm font-bold text-green-700 dark:text-green-400">
+    <p className="flex place-content-center items-center text-sm font-bold text-green-700 dark:text-green-400">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="mr-2 h-4 w-4">
         <path
           fillRule="evenodd"

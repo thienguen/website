@@ -21,7 +21,7 @@ export async function GET(req: NextRequest) {
       },
     })
 
-    console.log('guestbook', guestbook)
+    console.log('guestbook', ' how many time')
 
     const jsonString = JSON.stringify(
       guestbook,
@@ -36,17 +36,6 @@ export async function GET(req: NextRequest) {
 }
 
 export async function POST(req: NextRequest) {
-  // const query = {
-  //   guest_id: req.nextUrl.searchParams.get('id'),
-  // }
-
-  // const id = req.nextUrl
-  // console.log('guestbook POST', id)
-
-  // if (query.guest_id) {
-  //   console.log('query POST', query)
-  // }
-
   try {
     const data: guestbook = await req.json()
 
@@ -79,33 +68,41 @@ export async function POST(req: NextRequest) {
 
 /**
  * Failed, fk
+ * NOT MY FAULT, NEXTJS framework failed on DELETE request
+ * READ MORE AT: https://github.com/vercel/next.js/issues/53882
+ * what a lovely day init
  */
-export async function DELETE(req: NextRequest) {
-  const guestId = req.nextUrl.searchParams.get('id')
-  if (guestId) console.log('query', guestId)
+// export function DELETE(req: any) {
+//   try {
+//     const body = await req.text(); // first, get the raw body text
 
-  try {
-    const data: guestbook = await req.json()
+//     if (!body) {
+//       const res = await req.json()
+//       console.log('res', res)
+//       return NextResponse.json('Empty request body.', { status: 400 });
+//     }
 
-    if (!data?.id) throw new Error('No id provided to DELETE route')
+//     const data: guestbook = await req
+//     console.log('data', req)
+//     if (!data?.id) throw new Error('No id provided to DELETE route')
 
-    const stuff = await prisma.guestbook.delete({
-      where: {
-        id: data.id,
-        email: data.email,
-        content: data.content,
-        created_by: data.created_by,
-      },
-    })
+//     const deletedSoul = await prisma.guestbook.delete({
+//       where: {
+//         id: data.id,
+//       },
+//     })
 
-    const jsonString = JSON.stringify(
-      stuff,
-      (key, value) => (typeof value === 'bigint' ? value.toString() : value) // return everything else unchanged
-    )
+//     console.log('deletedSoul', deletedSoul)
 
-    return NextResponse.json(JSON.parse(jsonString), { status: 200 })
-  } catch (error) {
-    console.error('Error DELETE route:', error)
-    return NextResponse.json(null, { status: 500 })
-  }
-}
+//     const jsonString = JSON.stringify(
+//       stuff,
+//       (key, value) => (typeof value === 'bigint' ? value.toString() : value) // return everything else unchanged
+//     )
+
+//     return NextResponse.json('something something holy', { status: 200 })
+
+//   } catch (error) {
+//     console.error('Error DELETE route:', error)
+//     return NextResponse.json('Everything went downhill from here', { status: 500 })
+//   }
+// }
