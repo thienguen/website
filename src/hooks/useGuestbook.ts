@@ -1,5 +1,3 @@
-'use client'
-
 /**
  * This is the api fetch 
  */
@@ -29,7 +27,6 @@ export async function createGuestbookEntry(data: guestbookSchema) {
         content: data.content,
         created_by: data.created_by,
       }),
-
     })
 
     const json = await res.json()
@@ -44,25 +41,28 @@ export async function createGuestbookEntry(data: guestbookSchema) {
  * Delete a guestbook entry, whenever a user clicks the delete button.
  * @param data - The data to be sent to the API.
  * @param id - The id of the guestbook entry to be deleted.
+ * 
+ * Note: Failed attempt, what a lovely day init
+ * -- Say no more, worked now
  */
-export async function deleteGuestbookEntry(data: guestbookSchema) {
+export async function deleteGuestbookEntry(data: bigint) {
   try {
-    const res = await fetch(`/api/guestbooks/`, {
-      method: 'DELETE',
+    // await fetch(`/api/guestbooks/${data}`, {
+    const res = await fetch(`/api/delete/`, {
+      method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        email: data.email,
-        content: data.content,
-        created_by: data.created_by,
+        id: data,
       })
     })
+
     const json = await res.json()
     if (!res.ok) throw new Error('Error deleting a guestbook entry:', json)
-    console.log('Deleting this Entry:', json)
+    return res
   } catch (error) {
-    console.error('Error: DELETE guestbook', error)
+    console.error('Error: DELETE guestbook useGuestbook', error)
   }
 }
 
@@ -86,9 +86,6 @@ export async function getGuestbookEntries() {
       headers: {
         'Content-Type': 'application/json',
       },
-      // body: JSON.stringify({
-      //   id: 9876543211002,
-      // }),
     })
 
     const json = await res.json()
@@ -98,3 +95,6 @@ export async function getGuestbookEntries() {
     console.error('Error: GET guestbook', error)
   }
 }
+
+
+

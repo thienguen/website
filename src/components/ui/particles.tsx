@@ -52,9 +52,22 @@ export default function Particles({
   }, [mousePosition.x, mousePosition.y])
 
   useEffect(() => {
-    initCanvas()
-    // console.log('path_name: ', path_name)
-    // console.log('current height: ', canvasSize.current.h)
+    let timer: NodeJS.Timeout
+
+    if (path_name === '/guestbook') {
+      timer = setTimeout(() => {
+        initCanvas()
+      }, 1000)
+    } else {
+      initCanvas()
+    }
+
+    console.log('path_name: ', path_name)
+    console.log('current height: ', canvasSize.current.h)
+    
+    return () => {
+      if (timer) clearTimeout(timer)
+    }
     // console.log('resolvedTheme: ', resolvedTheme)
   }, [refresh, path_name]) // NOTE: DO NOT INCLUDE resolvedTheme, the thing update inistantaneous
 
@@ -153,7 +166,7 @@ export default function Particles({
       if (resolvedTheme === 'dark') {
         context.current.fillStyle = `rgba(255, 255, 255, ${alpha})` // Color for dark theme
       } else if (resolvedTheme === 'light') {
-        context.current.fillStyle = `rgba(0, 0, 128, ${alpha})`     // Color for light theme
+        context.current.fillStyle = `rgba(0, 0, 128, ${alpha})` // Color for light theme
       } else if (resolvedTheme === undefined) {
         context.current.fillStyle = `rgba(255, 255, 255, ${alpha})` // Color for dark theme (default)
       }
@@ -222,12 +235,7 @@ export default function Particles({
       circle.translateX += (mouse.current.x / (staticity / circle.magnetism) - circle.translateX) / ease
       circle.translateY += (mouse.current.y / (staticity / circle.magnetism) - circle.translateY) / ease
       // circle gets out of the canvas
-      if (
-        circle.x < -circle.size ||
-        circle.x > canvasSize.current.w + circle.size ||
-        circle.y < -circle.size ||
-        circle.y > canvasSize.current.h + circle.size
-      ) {
+      if (circle.x < -circle.size || circle.x > canvasSize.current.w + circle.size || circle.y < -circle.size || circle.y > canvasSize.current.h + circle.size) {
         // remove the circle from the array
         circles.current.splice(i, 1)
         // create a new circle
@@ -252,7 +260,7 @@ export default function Particles({
   }
 
   return (
-    <div className={'absolute -z-50 inset-0' + className} ref={canvasContainerRef} aria-hidden="true">
+    <div className={'absolute inset-0 -z-50' + className} ref={canvasContainerRef} aria-hidden="true">
       <canvas ref={canvasRef} />
     </div>
   )

@@ -55,7 +55,7 @@ const SignIn = () => {
 const SignOut = () => {
   return (
     <button
-      className="w-2/12 rounded-lg bg-slate-300 p-1.5 px-3 font-dosis text-xs font-bold tracking-wider text-neutral-700 transition-colors duration-200 ease-in-out hover:bg-neutral-200 dark:bg-neutral-800 dark:text-neutral-100 dark:hover:bg-neutral-700"
+      className="w-2/12 rounded-lg bg-slate-300 p-1.5 px-3 font-dosis font-dosis text-xs  tracking-wider text-neutral-700 transition-colors duration-200 ease-in-out hover:bg-neutral-200 dark:bg-neutral-800 dark:text-neutral-100 dark:hover:bg-neutral-700"
       onClick={(e) => {
         e.preventDefault()
         signOut().catch((error) => {

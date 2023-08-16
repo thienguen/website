@@ -1,5 +1,6 @@
 'use client'
 
+import { AiOutlineSend } from 'react-icons/ai'
 import { useGuestbookWrapper } from '@/hooks/useGuestbookWrapper'
 import { GuestbookEntry } from '@/components/guestbook/GuestbookEntry'
 import { SignIn, SignOut } from '../ui/auth-buttons'
@@ -28,6 +29,9 @@ export default function GuestbookForm() {
 
     formOnSubmit,
     hanleEntryCreate,
+
+    handleEntryDelete,
+    // handleDeleteClick,
     /* Something something */
   } = useGuestbookWrapper()
 
@@ -44,9 +48,9 @@ export default function GuestbookForm() {
       {session?.user && (
         <div className="flex w-full items-center justify-end pt-2">
           {/* <SignOut /> */}
-          <div className="mx-auto my-2 w-full rounded-xl border border-gray-200 bg-white px-6 py-2 shadow-xl shadow-gray-400 dark:border-zinc-900 dark:bg-zinc-900 dark:shadow-none">
-            <div className="">
-              <form onSubmit={hanleEntryCreate(formOnSubmit)} className="mb-3 flex flex-row items-center space-y-3.5">
+          <div className="mx-auto my-2 w-full rounded-xl border border-gray-200 bg-slate-200 px-6 py-2 shadow-xl shadow-gray-400 dark:border-zinc-900 dark:bg-zinc-900 dark:shadow-none">
+            <div className="items-center text-center">
+              <form onSubmit={hanleEntryCreate(formOnSubmit)} className="mb-3 flex flex-row items-center space-y-3">
                 <label htmlFor="content" className="sr-only">
                   Your Message
                 </label>
@@ -54,24 +58,28 @@ export default function GuestbookForm() {
                   {...register('content', { required: true })}
                   id="content"
                   aria-label="Your message"
-                  placeholder="Your message..."
+                  placeholder="君の名は。"
                   required
-                  rows={2}
+                  rows={1}
                   maxLength={500}
-                  className="w-5/6 rounded-md border-2 border-gray-300 p-3 text-xs shadow-sm focus:border-gray-500 focus:ring-gray-500 dark:border-zinc-600 dark:bg-zinc-700 dark:text-white dark:focus:border-gray-700 dark:focus:ring-neutral-600"
+                  className="w-11/12 rounded-md border-2 border-gray-300 bg-slate-200 p-3 text-xs shadow-sm focus:border-gray-500 focus:ring-gray-500 dark:border-zinc-600 dark:bg-zinc-700 dark:text-white dark:focus:border-gray-700 dark:focus:ring-neutral-600"
                 />
                 <button
                   type="submit"
-                  className="ml-5 flex w-1/6  flex-row place-items-center justify-center rounded-3xl bg-slate-200 py-2 font-dosis text-sm font-semibold tracking-wider ring-gray-300 transition-all hover:bg-slate-300 hover:ring-2 dark:bg-gray-600"
+                  className="ml-5 flex w-20 flex-row place-items-center justify-center rounded-lg bg-slate-300 pb-2 pt-0.5 font-dosis text-sm font-semibold  tracking-wider ring-gray-300 transition-all hover:bg-slate-300 hover:ring-2 dark:bg-gray-600"
                   disabled={!session?.user || isLoading} // Disable the button when user is not signed in or when loading is in progress
                 >
-                  <svg className="mr-2 h-5 w-5 rotate-90" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
-                  </svg>
-                  {isLoading ? <LoadingSpinner stuff="...Submitting" /> : 'Sign'}
+                  {isLoading ? (
+                    <LoadingSpinner stuff="...Submitting" />
+                  ) : (
+                    <>
+                      <AiOutlineSend className="mr-0.5 mt-0.5 h-4 w-4 -rotate-45" />
+                      <span className=" mt-1">Sign</span>
+                    </>
+                  )}
                 </button>
-                {showSuccessMessage && <SuccessMessage>Thanks for signing my guestbook! 💮</SuccessMessage>}
               </form>
+              {showSuccessMessage && <SuccessMessage>Thanks for signing my guestbook! 💮</SuccessMessage>}
             </div>
           </div>
         </div>
@@ -92,12 +100,7 @@ export default function GuestbookForm() {
       ) : (
         <div className="w-full">
           {entries?.map((entry) => (
-            <GuestbookEntry
-              key={entry.id.toString()}
-              entry={entry}
-              user={session?.user}
-              // onEntryDelete={() => handleEntryDelete(entry.id)}
-            />
+            <GuestbookEntry key={entry.id.toString()} entry={entry} user={session?.user} handleEntryDelete={ handleEntryDelete}/>
           ))}
         </div>
       )}
