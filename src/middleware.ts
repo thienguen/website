@@ -23,7 +23,7 @@ import { NextResponse } from "next/server";
 
 export function middleware(request: Request) {
   const origin = request.headers.get('origin');
-  console.log('originality COLA ', origin);
+  console.log('originality COLA', origin);
 
   const response = NextResponse.next();
 
