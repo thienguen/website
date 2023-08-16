@@ -75,7 +75,7 @@ module.exports = {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
         /* AddedCho */
-        'fade-in': 'fade-in 1.5s ease-in-out forwards',
+        "fade-in": "fade-in 2000ms var(--animation-delay, 0ms) ease forwards",
         'fade-in-2': 'fade-in-2 2.25s ease-in-out forwards',
         'title': 'title 2s ease-out forwards',
         'fade-left': 'fade-left 4s ease-in-out forwards',
@@ -91,15 +91,8 @@ module.exports = {
           to: { height: 0 },
         },
         'fade-in': {
-          '0%': {
-            opacity: '0%',
-          },
-          '75%': {
-            opacity: '0%',
-          },
-          '100%': {
-            opacity: '100%',
-          },
+          from: { opacity: 0, transform: 'translateY(-10px)' },
+          to: { opacity: 1, transform: 'none' },
         },
         'fade-in-2': {
           '0%': {

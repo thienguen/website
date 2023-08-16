@@ -53,11 +53,11 @@ export default function Particles({
 
   useEffect(() => {
     let timer: NodeJS.Timeout
-
-    if (path_name === '/guestbook') {
+    /* These two are scroll able, redo animation is needed */
+    if (path_name === '/guestbook' || path_name === '/projects') {
       timer = setTimeout(() => {
         initCanvas()
-      }, 1000)
+      }, 1500)
     } else {
       initCanvas()
     }

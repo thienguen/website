@@ -28,7 +28,7 @@ export default function AFeaturedProject({ project, index }: FeaturedProjectProp
         onMouseLeave={() => iconRef.current?.stop()}
       >
         <div
-          className={`rounded-md border-0 transition-opacity duration-300 ease-in-out hover:opacity-100 lg:w-36 ${textAlignment}`}
+          className={`max-w-[10rem] rounded-md border-0 transition-opacity duration-300 ease-in-out hover:opacity-100 lg:w-36 ${textAlignment}`}
           key={index}
         >
           <div className={`flex justify-between ${flexDirection}`}>

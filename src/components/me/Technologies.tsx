@@ -17,7 +17,7 @@ const Technologies = (props: TechnologiesProps) => {
           props.height ?? ''
         } flex w-full flex-col items-center justify-center rounded-lg bg-[#fef8f8] text-slate-900 opacity-90 shadow-sm shadow-slate-700 dark:bg-[#1a202c] dark:text-slate-300 dark:shadow-gray-400`}
       >
-        <div         className = "grid h-full w-full grid-cols-7 grid-rows-3 gap-4 p-5">
+        <div         className = "grid h-full w-full grid-cols-7 grid-rows-3 gap-2 p-5">
         <Image       className = "transition-transform duration-300 hover:scale-[1.6]" src              = "/icons/typescript.png" alt = "ts" sizes        = "40" width = {40} height = {40} />
         <Image       className = "transition-transform duration-300 hover:scale-[1.6]" src              = "/icons/javascript.png" alt = "js" sizes        = "40" width = {40} height = {40} />
         <Image       className = "transition-transform duration-300 hover:scale-[1.6]" src              = "/icons/html.png" alt       = "html" sizes      = "40" width = {40} height = {40} />
