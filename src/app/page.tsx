@@ -36,7 +36,7 @@ export default function Home() {
             </div>
 
             {/* Hero Signature */}
-            <div className="h-8 translate-y-[-1rem] animate-fade-in [--animation-delay:1000ms]">
+            <div className="h-8">
               <Signature />
             </div>
           </div>
