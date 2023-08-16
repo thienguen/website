@@ -149,6 +149,19 @@
   }
 }
 
+@keyframes pulse4 {
+  0% {
+    box-shadow: 0 0 0 0 rgba(100, 100, 100, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(100, 100, 100, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(100, 100, 100, 0);
+  }
+}
+
+
 /* globals.css */
 ::selection {
   @apply bg-gray-500 text-white;
@@ -242,12 +255,17 @@ line {
   animation: pulse 1.5s infinite;
 }
 
+/* dark mode */
 .dark .animate-pulse2 {
   animation: pulse2 1.5s infinite;
 }
 
 .animate-pulse3 {
   animation: pulse3 1.5s infinite;
+}
+
+.animate-pulse4 {
+  animation: pulse4 1.5s infinite;
 }
 
 .rounded-xl.bg-blue-600:hover {

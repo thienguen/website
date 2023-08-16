@@ -144,24 +144,26 @@ export function ProjectPageContent() {
       {/* <div className="mx-auto flex max-w-2xl flex-col">{CareerProjectsAlternating()}</div> */}
       <div className="mx-auto mt-2 max-w-4xl px-4">
         {/* Header Section */}
+
         <div className="group flex flex-row items-center justify-between font-semibold lg:flex-row">
           {/* Leftmost Career kbd */}
-          <div className="flex h-8 border-l-2 border-blue-500 pl-2">
-            <kbd className="kbd bg-slate-100 font-dosis text-base dark:bg-zinc-700">Projects</kbd>
+          <div className="flex h-8 border-l-2 border-slate-400 pl-2 dark:border-slate-700">
+            <p className="translate-y-[-1rem] animate-fade-in font-dosis text-xl dark:font-light font-normal opacity-0 [--animation-delay:400ms]">Project</p>
           </div>
 
           <Tooltip text="Timeline">
             <div className="divider pr-1 text-base font-semibold lg:divider-horizontal">タイムライン</div>
           </Tooltip>
 
-          {/* Rightmost Projects kbd */}
-          <div className="flex h-8 border-r-2 border-blue-500 pr-2">
-            <kbd className="kbd bg-slate-100 font-dosis text-base dark:bg-zinc-700">Careers</kbd>
+          {/* Rightmost Project kbd */}
+          <div className="flex h-8 border-r-2 border-slate-400 pr-2  dark:border-slate-700">
+            <p className="translate-y-[-1rem] animate-fade-in font-dosis text-xl dark:font-light font-normal opacity-0 [--animation-delay:400ms]">Career</p>
           </div>
         </div>
       </div>
-
+      {/* ----------------- */}
       <Timeline />
+      {/* ----------------- */}
     </>
   )
 }

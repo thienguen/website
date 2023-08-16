@@ -1,7 +1,11 @@
+'use client'
+
 import React from 'react'
 import { AllProjectItems, CareerItems } from '@/lib/util/dummy'
 import LeftTimeline from './LeftTimeline'
 import RightTimeline from './RightTimeline'
+import { useTheme } from 'next-themes'
+import { useState, useEffect } from 'react'
 
 type ProjectProps = {
   title: string
@@ -38,6 +42,26 @@ const Timeline: React.FC = () => {
 
   let firstItemOfYear = true
 
+  const { resolvedTheme } = useTheme()
+
+  const darkPrimaryColor    = '#84FFB8'
+  const darkSecondaryColor  = '#82FFDA'
+  const lightPrimaryColor   = '#D87787'
+  const lightSecondaryColor = '#861657'
+
+  const [primaryColor, setPrimaryColor]     = useState(darkPrimaryColor)
+  const [secondaryColor, setSecondaryColor] = useState(darkSecondaryColor)
+
+  useEffect(() => {
+    if (resolvedTheme === 'dark') {
+      setPrimaryColor(darkPrimaryColor)
+      setSecondaryColor(darkSecondaryColor)
+    } else {
+      setPrimaryColor(lightPrimaryColor)
+      setSecondaryColor(lightSecondaryColor)
+    }
+  }, [resolvedTheme])
+
   return (
     <div className="container mx-auto mb-5 mt-3 max-w-4xl px-4">
       <div className="flex grid-cols-9 flex-col p-2 text-blue-50 md:grid">
@@ -54,6 +78,8 @@ const Timeline: React.FC = () => {
                   url={project.url}
                   since={project.since}
                   title={project.title}
+                  primaryColor={primaryColor}
+                  secondaryColor={secondaryColor}
                   description={project.description || sampleDescription}
                 />
               )
@@ -73,6 +99,8 @@ const Timeline: React.FC = () => {
                   url={career.url}
                   since={career.since}
                   title={career.title}
+                  primaryColor={primaryColor}
+                  secondaryColor={secondaryColor}
                   description={career.description || sampleDescription}
                 />
               )
