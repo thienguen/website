@@ -6,31 +6,31 @@ import { useMousePosition } from '@/lib/util/mouse'
 
 interface ParticlesProps {
   className?: string
-  quantity?: number
+  quantity ?: number
   staticity?: number
-  ease?: number
-  refresh?: boolean
+  ease     ?: number
+  refresh  ?: boolean
 
   path_name?: string
 }
 
 export default function Particles({
   className = '',
-  quantity = 30,
+  quantity  = 30,
   staticity = 40,
-  ease = 50,
-  refresh = false,
-
+  ease      = 50,
+  refresh   = false,
   path_name,
 }: ParticlesProps) {
-  const canvasRef = useRef<HTMLCanvasElement>(null)
+  const canvasRef          = useRef<HTMLCanvasElement>(null)
   const canvasContainerRef = useRef<HTMLDivElement>(null)
-  const context = useRef<CanvasRenderingContext2D | null>(null)
-  const circles = useRef<any[]>([])
-  const mousePosition = useMousePosition()
-  const mouse = useRef<{ x: number; y: number }>({ x: 0, y: 0 })
-  const canvasSize = useRef<{ w: number; h: number }>({ w: 0, h: 0 })
-  const dpr = typeof window !== 'undefined' ? window.devicePixelRatio : 1
+  const context            = useRef<CanvasRenderingContext2D | null>(null)
+  const circles            = useRef<any[]>([])
+  const mousePosition      = useMousePosition()
+  const quantityRef        = useRef(quantity);
+  const mouse              = useRef<{ x: number; y: number }>({ x: 0, y: 0 })
+  const canvasSize         = useRef<{ w: number; h: number }>({ w: 0, h: 0 })
+  const dpr                = typeof window !== 'undefined' ? window.devicePixelRatio : 1
 
   const { resolvedTheme } = useTheme()
 
@@ -55,6 +55,7 @@ export default function Particles({
     let timer: NodeJS.Timeout
     /* These two are scroll able, redo animation is needed */
     if (path_name === '/guestbook' || path_name === '/projects') {
+      quantityRef.current = 1000;
       timer = setTimeout(() => {
         initCanvas()
       }, 1500)
@@ -120,12 +121,12 @@ export default function Particles({
 
   const resizeCanvas = () => {
     if (canvasContainerRef.current && canvasRef.current && context.current) {
-      circles.current.length = 0
-      canvasSize.current.w = canvasContainerRef.current.offsetWidth
-      canvasSize.current.h = document.body.scrollHeight // Use total website height instead of viewport height
-      canvasRef.current.width = canvasSize.current.w * dpr
-      canvasRef.current.height = canvasSize.current.h * dpr
-      canvasRef.current.style.width = `${canvasSize.current.w}px`
+      circles.current.length         = 0
+      canvasSize.current.w           = canvasContainerRef.current.offsetWidth
+      canvasSize.current.h           = document.body.scrollHeight              // Use total website height instead of viewport height
+      canvasRef.current.width        = canvasSize.current.w * dpr
+      canvasRef.current.height       = canvasSize.current.h * dpr
+      canvasRef.current.style.width  = `${canvasSize.current.w}px`
       canvasRef.current.style.height = `${canvasSize.current.h}px`
       context.current.scale(dpr, dpr)
     }
@@ -141,7 +142,7 @@ export default function Particles({
     const targetAlpha = parseFloat((Math.random() * 0.6 + 0.1).toFixed(1))
     const dx = (Math.random() - 0.5) * 0.2
     const dy = (Math.random() - 0.5) * 0.2
-    const magnetism = 0.1 + Math.random() * 8 // increase to see more magnetism
+    const magnetism = 0.1 + Math.random() * 15 // increase to see more magnetism
     return {
       x,
       y,
@@ -188,7 +189,10 @@ export default function Particles({
 
   const drawParticles = () => {
     clearContext()
-    const particleCount = quantity
+    let particleCount = quantityRef.current
+    if (resolvedTheme === 'light') {
+      particleCount = 1000
+    }
     for (let i = 0; i < particleCount; i++) {
       const circle = circleParams()
       drawCircle(circle)

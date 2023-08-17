@@ -1,49 +1,46 @@
 'use client'
 
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { useTheme } from 'next-themes'
 import { AllProjectItems, CareerItems } from '@/lib/util/dummy'
 import LeftTimeline from './LeftTimeline'
 import RightTimeline from './RightTimeline'
-import { useTheme } from 'next-themes'
-import { useState, useEffect } from 'react'
 
 type ProjectProps = {
-  title: string
-  url: string
+  title       : string
+  url         : string
   description?: string
-  since?: string
-  active?: boolean
-  icon: string
-  stats?: string
+  since      ?: string
+  active     ?: boolean
+  icon        : string
+  stats      ?: string
 }
 
 type CombinedTimeline = {
-  year: string
+  year       : string
   allProjects: ProjectProps[]
-  careers: ProjectProps[]
+  careers    : ProjectProps[]
 }
 
 const Timeline: React.FC = () => {
   const sampleDescription = 'Lorem Ipsum is simply dummy text of the printing. Something something holy'
 
-  const years = ['2023', '2022', '2021']
+  let   firstItemOfYear                      = true
+  const years                                = ['2023', '2022', '2021']
   const combinedTimeline: CombinedTimeline[] = []
 
   years.forEach((year) => {
-    const careerOfThisYear = CareerItems.find((item) => item.year === year)
+    const careerOfThisYear   = CareerItems.find((item) => item.year === year)
     const projectsOfThisYear = AllProjectItems.find((item) => item.year === year)
 
     combinedTimeline.push({
-      year: year,
-      careers: careerOfThisYear ? careerOfThisYear.projects : [],
-      allProjects: projectsOfThisYear ? projectsOfThisYear.projects : [],
+      year       : year,
+      careers    : careerOfThisYear ? careerOfThisYear.projects    : [],
+      allProjects: projectsOfThisYear ? projectsOfThisYear.projects: [],
     })
   })
 
-  let firstItemOfYear = true
-
-  const { resolvedTheme } = useTheme()
-
+  const { resolvedTheme }   = useTheme()
   const darkPrimaryColor    = '#84FFB8'
   const darkSecondaryColor  = '#82FFDA'
   const lightPrimaryColor   = '#D87787'

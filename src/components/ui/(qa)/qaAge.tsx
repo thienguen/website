@@ -5,11 +5,11 @@ import QA from './qa'
 
 interface QAClientProps {
   question: string
-  cols: string
-  height: string
+  cols    : string
+  height  : string
 }
 
-/**
+  /**
  * It could turn into a hook, but ultimately it has to use "useclient".
  */
 const QAClient: React.FC<QAClientProps> = ({ question, cols, height }) => {
@@ -17,7 +17,7 @@ const QAClient: React.FC<QAClientProps> = ({ question, cols, height }) => {
 
   useEffect(() => {
     const updateAge = () => {
-      const bDay = new Date(2002, 5, 31, 12)
+      const bDay            = new Date(2002, 5, 31, 12)
       const ageMilliseconds = Date.now() - bDay.getTime()
       setExactTime((ageMilliseconds / 31536000000).toFixed(8))
     }

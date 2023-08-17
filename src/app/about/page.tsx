@@ -102,7 +102,7 @@ export default function About() {
         </div>
       </div> */}
 
-      <div className="flex flex-row justify-center">Stuff here, about to implement 7 ate 9</div>
+      <div className="flex flex-row justify-center">Stuff here, about to implement 7 ate 9, a carousel maybe?</div>
     </>
   )
 }

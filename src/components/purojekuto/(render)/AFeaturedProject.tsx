@@ -4,7 +4,7 @@ import Lottie, { type LottieRefCurrentProps } from 'lottie-react'
 import { ICONS, type ProjectProps } from './Render'
 
 type FeaturedProjectProps = {
-  index  : number
+  index: number
   project: ProjectProps
 }
 
@@ -64,7 +64,7 @@ type AnimationProps = {
 
 function Animation({ children }: AnimationProps) {
   return (
-    <motion.div className="relative m-2 p-3 transition-all duration-200 ease-in-out hover:scale-105 hover:rounded-lg hover:bg-gray-50 hover:opacity-100  dark:hover:bg-slate-700">
+    <motion.div className="relative m-2 min-w-[10.5rem] p-3 transition-all duration-200 ease-in-out hover:scale-105 hover:rounded-lg hover:bg-gray-50 hover:opacity-100  dark:hover:bg-slate-700">
       <div className="relative z-10">{children}</div>
     </motion.div>
   )

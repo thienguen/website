@@ -7,8 +7,7 @@ import '@/styles/globals.css'
 import { usePathname } from 'next/navigation'
 import { Analytics } from '@vercel/analytics/react'
 import AuthProvider from '@/lib/nextauth/AuthProvider'
-// Srr
-// import { fontMono } from '@/lib/util/font'
+// Src
 import { cn } from '@/lib/util/util'
 import Particles from '@/components/ui/particles'
 import { ThemeProvider } from '@/components/ui/theme-provider'
@@ -23,10 +22,7 @@ interface RootLayoutProps {
 }
 
 export default function RootLayout({ children }: RootLayoutProps) {
-  /**
-   * Did I shutter?, typewriter title is good,
-   * but I CANT GET IT TO WORK for dynamic ROUTES
-   */
+  // > Did I shutter?, typewriter title is good, but i failed
   // useEffect(() => {
   //   const SITE_NAME = metadata.creator;
   //   const TIME = 0.2 * 1000;

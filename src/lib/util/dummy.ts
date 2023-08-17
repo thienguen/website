@@ -32,7 +32,7 @@ export const FeaturedProjectItems = [
         url: 'https://github.com/Thienguen/CodePath-Intermediate-Android-Development',
         active: true,
         icon: 'projects',
-        stats: 'Learning from CodePath with luv ♡',
+        stats: 'From CodePath with luv ♡',
       },
     ],
   },
