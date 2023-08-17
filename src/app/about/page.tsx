@@ -101,15 +101,6 @@ export default function About() {
         </div>
       </div>
 
-      {/* 9. RECTANGLE, CIRCLE, TRIANGLE GO 9. */}
-      {/* <div>
-        <div className="mx-auto mb-10 grid max-w-3xl grid-cols-8 gap-6 px-6 ">
-        {ComponentList.map((Component, index) => (
-            <React.Fragment key={index}>{Component}</React.Fragment>
-          ))}
-        </div>
-      </div> */}
-
       <div className="flex flex-row justify-center">Stuff here, about to implement 7 ate 9, a carousel maybe?</div>
     </>
   )

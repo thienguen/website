@@ -22,7 +22,7 @@ const LeftTimeline: React.FC<LeftTimelineProps> = ({
   return (
     <div className="flex flex-none sm:flex-row-reverse   md:contents">
       {/* Container box */}
-      <div className="col-start-1 col-end-5 my-4 ml-4 min-w-[20.5rem] rounded-xl border p-4 font-dosis shadow-2xl transition-transform hover:translate-y-[3px]">
+      <div className="col-start-1 col-end-5 my-4 ml-4 min-w-[20.5rem] max-w-[20.5rem] rounded-xl border p-4 font-dosis shadow-2xl transition-transform hover:translate-y-[3px]">
         <a className="cursor-pointer" /* href={url} */ rel="noreferrer" target="_blank">
           <div className="mb-1 font-dosis text-lg text-black dark:font-light dark:text-white">
             <span
@@ -51,7 +51,7 @@ const LeftTimeline: React.FC<LeftTimelineProps> = ({
 
         {/* If year is provided, render the box. */}
         {year ? (
-          <div className="animate-pulse2 animate-pulse4 absolute top-1/2 -translate-x-1/2 -translate-y-1/2 sm:left-1/2  cursor-cell items-center justify-center rounded-md border-2 bg-slate-200 px-2 py-1  shadow-lg hover:shadow-xl dark:bg-slate-700 sm:pr-2">
+          <div className="animate-pulse2 animate-pulse4 absolute top-1/2 -translate-x-1/2 -translate-y-1/2 cursor-cell  items-center justify-center rounded-md border-2 bg-slate-200 px-2 py-1 shadow-lg  hover:shadow-xl dark:bg-slate-700 sm:left-1/2 sm:pr-2">
             <div className="font-dosis text-sm font-medium text-black dark:text-white">{year}</div>
           </div>
         ) : (

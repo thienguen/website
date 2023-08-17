@@ -15,14 +15,14 @@ export function ThemeToggle() {
 
   const handleThemeChange = () => {
     // Set the button to disabled and show the message
-    setDisabled(true)
     setTheme(theme === 'dark' ? 'light' : 'dark')
-    location.reload() // this will refresh the page
+    setDisabled(true)
 
     // Reset the button to active state and hide the message after 1.5 seconds
     setTimeout(() => {
       setDisabled(false)
-    }, 3000)
+    }, 5000)
+    location.reload() // this will refresh the page
   }
 
   return (
