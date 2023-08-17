@@ -8,7 +8,7 @@ import { usePathname } from 'next/navigation'
 import { Analytics } from '@vercel/analytics/react'
 import AuthProvider from '@/lib/nextauth/AuthProvider'
 // Srr
-import { fontMono } from '@/lib/util/font'
+// import { fontMono } from '@/lib/util/font'
 import { cn } from '@/lib/util/util'
 import Particles from '@/components/ui/particles'
 import { ThemeProvider } from '@/components/ui/theme-provider'
@@ -82,7 +82,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
 
         <body
           suppressHydrationWarning={true}
-          className={cn('flex max-h-[100vh] min-h-[100vh] flex-col overflow-x-hidden antialiased', fontMono.variable)}
+          className={cn('flex max-h-[100vh] min-h-[100vh] flex-col overflow-x-hidden antialiased')}
         >
           <AuthProvider>
             <ThemeProvider attribute="class" defaultTheme="system" enableSystem themes={['light', 'dark']}>

@@ -155,8 +155,8 @@ module.exports = {
       },
     },
     fontFamily: {
-      'dosis': ['Dosis', 'sans-serif'],
-      'display': ['var(--font-calsans)'],
+      // 'display': ['var(--font-calsans)'],
+      'dosis': ['Dosis', 'sans-serif',],
       'signature': ['Sacramento', 'cursive'],
       'metropolis': ['MetropolisRegular', 'sans-serif'], // copi
       'metropolis-bold': ['MetropolisBold', 'sans-serif'], // copi
