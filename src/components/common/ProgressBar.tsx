@@ -15,7 +15,7 @@ const ProgressBar = ({ steps, currentStep, isFullWidth }: ProgressBarProps) => {
         <div
           className={`flex h-3 w-4 items-center justify-center rounded-full shadow ${
             currentStep > 0
-              ? 'animate-pulse2 animate-pulse3 bg-blue-800 dark:bg-[#D9DADB]' // current step active dot
+              ? 'animate-pulse2 animate-pulse4 bg-black dark:bg-[#D9DADB]' // current step active dot
               : 'bg-gradient-to-b from-gray-600 to-gray-400 dark:bg-gray-800' // Inactive
           }`}
         />
@@ -25,7 +25,7 @@ const ProgressBar = ({ steps, currentStep, isFullWidth }: ProgressBarProps) => {
           className={`flex h-[2px] w-1/3 items-center 
           ${
             currentStep > 0
-              ? 'bg-blue-800 dark:bg-[#D9DADB]' // Active
+              ? 'bg-black dark:bg-[#D9DADB]' // Active
               : 'bg-gradient-to-b from-gray-600 to-gray-400 dark:bg-gray-800' // Inactive
           }`}
         />
@@ -38,7 +38,7 @@ const ProgressBar = ({ steps, currentStep, isFullWidth }: ProgressBarProps) => {
               key={index}
               className={`relative flex h-[2px] w-1/3 items-center justify-between ${
                 currentStep > index + 1
-                  ? 'bg-blue-800 dark:bg-[#D9DADB]' // Active
+                  ? 'bg-black dark:bg-[#D9DADB]' // Active
                   : 'bg-gradient-to-b from-gray-600 to-gray-400 dark:bg-gray-800' // Inactive
               }`}
             >
@@ -46,7 +46,7 @@ const ProgressBar = ({ steps, currentStep, isFullWidth }: ProgressBarProps) => {
               <div
                 className={`${
                   currentStep > index
-                    ? 'animate-pulse2 animate-pulse3 bg-blue-800 dark:bg-[#D9DADB]' // current step active dot
+                    ? 'animate-pulse2 animate-pulse4 bg-black dark:bg-[#D9DADB]' // current step active dot
                     : 'bg-gradient-to-b from-gray-600 to-gray-400 dark:bg-gray-800' // Inactive
                 } -ml-2 flex h-3 w-3 items-center justify-center rounded-full shadow `}
               />
@@ -58,7 +58,7 @@ const ProgressBar = ({ steps, currentStep, isFullWidth }: ProgressBarProps) => {
         <div
           className={`relative flex h-[2px] w-1/3 items-center ${
             currentStep >= steps.length
-              ? 'bg-blue-800 dark:bg-[#D9DADB]' // Active
+              ? 'bg-black dark:bg-[#D9DADB]' // Active
               : 'justify-between bg-gradient-to-b from-gray-600 to-gray-400 dark:bg-gray-800' // Inactive with space for dot
           }`}
         >
@@ -66,7 +66,7 @@ const ProgressBar = ({ steps, currentStep, isFullWidth }: ProgressBarProps) => {
           <div
             className={`flex h-3 w-3 items-center justify-center rounded-full shadow ${
               currentStep >= steps.length - 1
-                ? 'animate-pulse2 animate-pulse3 bg-blue-800 dark:bg-[#D9DADB]' // current step active dot
+                ? 'animate-pulse2 animate-pulse4 bg-black dark:bg-[#D9DADB]' // current step active dot
                 : 'bg-gradient-to-b from-gray-600 to-gray-400 dark:bg-gray-800' // Inactive
             }`}
           />
@@ -76,7 +76,7 @@ const ProgressBar = ({ steps, currentStep, isFullWidth }: ProgressBarProps) => {
         <div
           className={`flex h-3 w-4 items-center justify-center rounded-full shadow ${
             currentStep === steps.length
-              ? 'animate-pulse2 animate-pulse3 bg-blue-800 dark:bg-[#D9DADB]' // current step active dot
+              ? 'animate-pulse2 animate-pulse4 bg-black dark:bg-[#D9DADB]' // current step active dot
               : 'bg-gradient-to-b from-gray-600 to-gray-400 dark:bg-gray-800' // Inactive
           }`}
         />
@@ -89,8 +89,8 @@ const ProgressBar = ({ steps, currentStep, isFullWidth }: ProgressBarProps) => {
             key={index}
             className={`pt-1 text-center font-bold ${
               currentStep - 1 >= index
-                ? 'text-blue-800 dark:text-[#D9DADB]' // Active
-                : 'text-gray-600 dark:text-gray-600' // Inactive
+                ? 'text-black dark:text-[#D9DADB]' // Active
+                : 'text-gray-600 dark:text-gray-600 opacity-70' // Inactive
             }`}
           >
             {step}

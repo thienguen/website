@@ -54,6 +54,7 @@ export default function Particles({
   useEffect(() => {
     let timer: NodeJS.Timeout
     /* These two are scroll able, redo animation is needed */
+    /* My lord, wwhy would u do this to me */
     if (path_name === '/guestbook' || path_name === '/projects') {
       quantityRef.current = 1000;
       timer = setTimeout(() => {

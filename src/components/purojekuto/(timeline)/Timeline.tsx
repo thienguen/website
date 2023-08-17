@@ -41,8 +41,10 @@ const Timeline: React.FC = () => {
   })
 
   const { resolvedTheme }   = useTheme()
-  const darkPrimaryColor    = '#84FFB8'
-  const darkSecondaryColor  = '#82FFDA'
+  // const darkPrimaryColor    = '#568DFF';  // A primary blue shade
+  // const darkSecondaryColor  = '#4A7AED';  // A slightly different secondary blue shade
+  const darkPrimaryColor    = '#6ACDFF';  // A vibrant sky blue
+  const darkSecondaryColor  = '#57BFFF';  // A slightly different shade of sky blue
   const lightPrimaryColor   = '#D87787'
   const lightSecondaryColor = '#861657'
 
@@ -60,8 +62,8 @@ const Timeline: React.FC = () => {
   }, [resolvedTheme])
 
   return (
-    <div className="container mx-auto mb-5 mt-3 max-w-4xl px-4">
-      <div className="flex grid-cols-9 flex-col p-2 text-blue-50 md:grid">
+    <div className="container mx-auto mb-5 mt-3 max-w-4xl">
+      <div className="flex flex-col p-2 text-blue-50 sm:grid-cols-9 md:grid ">
         {combinedTimeline.map((item, index) => (
           <React.Fragment key={index}>
             {/* Left timeline for project of this year */}

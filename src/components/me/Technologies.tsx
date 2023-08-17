@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { SiAmazonaws, SiGithub, SiNextdotjs, SiRust } from 'react-icons/si'
 
 type TechnologiesProps = {
-  cols  ?: string
+  cols?: string
   height?: string
 }
 
@@ -47,7 +47,7 @@ const Technologies = (props: TechnologiesProps) => {
     <div
       className={`${props.cols ?? ''} ${
         props.height ?? ''
-      } flex w-full flex-col items-center justify-center rounded-lg text-slate-900 opacity-90 shadow-sm shadow-slate-700 dark:text-slate-300 dark:shadow-gray-400`}
+      } flex min-h-[200px] w-full flex-col items-center justify-center rounded-lg text-slate-900 opacity-90 shadow-sm shadow-slate-700 dark:text-slate-300 dark:shadow-gray-400`}
     >
       <div className="grid h-full w-full grid-cols-7 grid-rows-3 gap-2 p-5">
         {icons.map((icon, index) => (

@@ -25,7 +25,7 @@ export function middleware(request: Request) {
   console.log(`${green}Middleware!${reset}`);
   console.log(`${blue}Method:${reset} ${request.method}`);
   console.log(`${red}URL:${reset} ${request.url}\n\n`);
-  console.log('-'.repeat(80))
+  console.log('-'.repeat(80) + '\n')
 
   return response;
 }

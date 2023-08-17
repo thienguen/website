@@ -38,7 +38,7 @@ export default function GuestbookForm() {
   return (
     <>
       <div className="flex items-center justify-between">
-        <div className="font-dosis text-lg leading-6 text-gray-900 dark:text-gray-100">
+        <div className="sm:balanced text-center font-dosis text-lg leading-6 text-gray-900 dark:text-gray-100 sm:text-left">
           {`Journey back to the 90's technologies guestbook! Leave your mark and let me know you were here in this retro digital oasis. `}
         </div>
         {session?.user ? <SignOut /> : null}
@@ -100,7 +100,12 @@ export default function GuestbookForm() {
       ) : (
         <div className="w-full">
           {entries?.map((entry) => (
-            <GuestbookEntry key={entry.id.toString()} entry={entry} user={session?.user} handleEntryDelete={ handleEntryDelete}/>
+            <GuestbookEntry
+              key={entry.id.toString()}
+              entry={entry}
+              user={session?.user}
+              handleEntryDelete={handleEntryDelete}
+            />
           ))}
         </div>
       )}
