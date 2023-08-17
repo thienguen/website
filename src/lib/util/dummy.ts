@@ -101,7 +101,7 @@ export const CareerItems = [
         title      : 'Started Coding',
         description: "That one time the compiler didn't yell at me",
         since      : '-- Since May 2021',
-        url        : 'https://github.com/Thienguen/LeetCode-Data-Structure-n-Algorithms',
+        url        : 'https://github.com/Thienguen',
         active     : true,
         icon       : 'clipboard',
         stats      : 'Tf do I do with this?',
