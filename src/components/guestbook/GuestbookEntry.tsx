@@ -17,7 +17,7 @@ export function GuestbookEntry({ entry, user, handleEntryDelete }: GuestBookEntr
 
   return (
     <>
-      <div className="my-3 w-full rounded-md border border-gray-700  p-4 text-sm shadow-sm shadow-gray-300 dark:border-zinc-700  dark:shadow-none">
+      <div className="my-3 sm:w-full w-11/12 mx-auto rounded-md border border-gray-700  p-4 text-sm shadow-sm shadow-gray-300 dark:border-zinc-700  dark:shadow-none">
         <div className="mb-2 text-sm dark:font-extralight">{entry.content}</div>
 
         <div className="line-clamp-1 flex flex-row justify-between">

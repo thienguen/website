@@ -19,27 +19,35 @@ export default function About() {
   // const ComponentList = Array(numComponents).fill(<Motion />)
   return (
     <>
-      <ProgressBar steps={['/home', '/projects', '/about', '/guestbook']} currentStep={3} isFullWidth={false} key={'/about'} />
+      <ProgressBar
+        steps={['/home', '/projects', '/about', '/guestbook']}
+        currentStep={3}
+        isFullWidth={false}
+        key={'/about'}
+      />
 
       {/* Header */}
       {/* Nandemo wa shiranai wa yo, shitte ru koto dake. */}
-      <PageTitle title={`I don't know everything. I just know what I know. - Hanekawa Tsubasa`} titleJP="何でもは知らないわよ、知ってることだけ。" />
+      <PageTitle
+        title={`I don't know everything. I just know what I know. - Hanekawa Tsubasa`}
+        titleJP="何でもは知らないわよ、知ってることだけ。"
+      />
 
       {/* Body of About page*/}
       <div className="mx-auto my-5 flex max-w-6xl">
         {/* Left Side */}
         <div className="grid flex-1 grid-cols-6 gap-4 px-3">
           {/* 1. The first question*/}
-          <QAClient question="currently?" cols="md:col-span-4 col-span-3 sm:col-span-6" height="min-h-[10.5rem]" />
+          <QAClient question="currently?" cols="md:col-span-4 col-span-6" height="min-h-[10.5rem]" />
           {/* 2. */}
-          <GithubCard cols="sm:col-span-6 col-span-3 md:col-span-2 " height="min-h-[10.5rem]" />
+          <GithubCard cols="col-span-6 md:col-span-2 " height="min-h-[10.5rem]" />
 
           {/* 3. */}
           <QA
             question="RPG Maker Games??"
             customAnswer={
               <>
-                {`Words can't describe what a big fan I am of this subculture, which had its heyday in the early 2010s. I'm still actively playing these games and, hopefully, one day, `}
+                {`Words can't describe how big of a fan I am of this subculture, which had its heyday in the early 2010s. I'm still actively playing these games and, hopefully, one day, `}
                 <span className="???">{`I will create one myself`}</span>
                 {` Here are a few of my personal favorites.`}
               </>
@@ -52,7 +60,7 @@ export default function About() {
         {/* Right Side */}
         <div className="grid flex-1 grid-cols-6 gap-4 px-3">
           {/* 4. */}
-          <Technologies cols="col-span-6 lg:col-span-3 " height="min-h-[10.5rem] max-h-[172px]" />
+          <Technologies cols="col-span-6 lg:col-span-3 " height="sm:min-h-[10.5rem] sm:max-h-[172px]" />
 
           {/* 5. */}
           <QA
@@ -71,7 +79,7 @@ export default function About() {
           {/* 6. */}
           {/* <DiscordStatus cols="col-span-3 sm:col-span-2" height="min-h-[10.5rem]" /> */}
 
-          <div className="col-span-2 min-h-[170px] ">
+          <div className="col-span-6 min-h-[170px] sm:col-span-2 md:col-span-6 lg:col-span-2">
             <Timer cols="sm:col-span-3" height="min-h-[5.25rem]" />
             <div className="p-0.5"></div>
             <DiscordStatus cols="sm:col-span-3" height="min-h-[5.25rem]" />
@@ -102,7 +110,7 @@ export default function About() {
         </div>
       </div> */}
 
-      <div className="flex flex-row justify-center">Stuff here, about to implement 7 ate 9</div>
+      <div className="flex flex-row justify-center">Stuff here, about to implement 7 ate 9, a carousel maybe?</div>
     </>
   )
 }

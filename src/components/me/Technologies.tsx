@@ -4,44 +4,57 @@ import Image from 'next/image'
 import { SiAmazonaws, SiGithub, SiNextdotjs, SiRust } from 'react-icons/si'
 
 type TechnologiesProps = {
-  cols  ?: string
+  cols?: string
   height?: string
 }
 
+const icons = [
+  { type: 'img', src: '/icons/typescript.png', alt: 'ts' },
+  { type: 'img', src: '/icons/javascript.png', alt: 'js' },
+  { type: 'img', src: '/icons/html.png', alt: 'html' },
+  { type: 'img', src: '/icons/css.png', alt: 'css' },
+  { type: 'img', src: '/icons/react.png', alt: 'react' },
+  { type: 'img', src: '/icons/c.png', alt: 'c' },
+  { type: 'img', src: '/icons/prisma.png', alt: 'prisma' },
+  { type: 'img', src: '/icons/nodejs.png', alt: 'node' },
+  { type: 'img', src: '/icons/vscode.png', alt: 'vscode' },
+  { type: 'img', src: '/icons/ubuntu.png', alt: 'ubuntu' },
+  { type: 'img', src: '/icons/tailwind.png', alt: 'tailwind' },
+  { type: 'img', src: '/icons/git.png', alt: 'git' },
+  { type: 'img', src: '/icons/kotlin.png', alt: 'kotlin' },
+  { type: 'img', src: '/icons/python.png', alt: 'Python' },
+  { type: 'img', src: '/icons/bootstrap.png', alt: 'bootstrap' },
+  { type: 'img', src: '/icons/mongodb.png', alt: 'mongodb' },
+  { type: 'img', src: '/icons/docker.png', alt: 'docker' },
+  { type: 'icon', component: <SiRust size={22} /> },
+  { type: 'icon', component: <SiGithub size={22} /> },
+  { type: 'icon', component: <SiAmazonaws size={22} /> },
+  { type: 'icon', component: <SiNextdotjs size={22} /> },
+]
+
+const TechnologyIcon = ({ icon }: { icon: (typeof icons)[0] }) => (
+  <div className="flex items-center justify-center transition-transform duration-300 hover:scale-[1.6]">
+    {icon.type === 'img' ? (
+      <Image src={icon.src ?? ''} alt={icon.alt ?? 'an image'} width={40} height={40} />
+    ) : (
+      icon.component
+    )}
+  </div>
+)
+
 const Technologies = (props: TechnologiesProps) => {
   return (
-    <>
-      {/* I can't believe I have to hard code icons */}
-      <div
-        className={`${props.cols ?? ''} ${
-          props.height ?? ''
-        } flex w-full flex-col items-center justify-center rounded-lg bg-[#fef8f8] text-slate-900 opacity-90 shadow-sm shadow-slate-700 dark:bg-[#1a202c] dark:text-slate-300 dark:shadow-gray-400`}
-      >
-        <div         className = "grid h-full w-full grid-cols-7 grid-rows-3 gap-2 p-5">
-        <Image       className = "transition-transform duration-300 hover:scale-[1.6]" src              = "/icons/typescript.png" alt = "ts" sizes        = "40" width = {40} height = {40} />
-        <Image       className = "transition-transform duration-300 hover:scale-[1.6]" src              = "/icons/javascript.png" alt = "js" sizes        = "40" width = {40} height = {40} />
-        <Image       className = "transition-transform duration-300 hover:scale-[1.6]" src              = "/icons/html.png" alt       = "html" sizes      = "40" width = {40} height = {40} />
-        <Image       className = "transition-transform duration-300 hover:scale-[1.6]" src              = "/icons/css.png" alt        = "css" sizes       = "40" width = {40} height = {40} />
-        <Image       className = "transition-transform duration-300 hover:scale-[1.6]" src              = "/icons/react.png" alt      = "react" sizes     = "40" width = {40} height = {40} />
-        <Image       className = "transition-transform duration-300 hover:scale-[1.6]" src              = "/icons/c.png" alt          = "c" sizes         = "40" width = {40} height = {40} />
-        <Image       className = "transition-transform duration-300 hover:scale-[1.6]" src              = "/icons/prisma.png" alt     = "prisma" sizes    = "40" width = {40} height = {40} />
-        <Image       className = "transition-transform duration-300 hover:scale-[1.6]" src              = "/icons/nodejs.png" alt     = "node" sizes      = "40" width = {40} height = {40} />
-        <Image       className = "transition-transform duration-300 hover:scale-[1.6]" src              = "/icons/vscode.png" alt     = "vscode" sizes    = "40" width = {40} height = {40} />
-        <Image       className = "transition-transform duration-300 hover:scale-[1.6]" src              = "/icons/ubuntu.png" alt     = "ubuntu" sizes    = "40" width = {40} height = {40} />
-        <Image       className = "transition-transform duration-300 hover:scale-[1.6]" src              = "/icons/tailwind.png" alt   = "tailwind" sizes  = "40" width = {40} height = {40} />
-        <Image       className = "transition-transform duration-300 hover:scale-[1.6]" src              = "/icons/git.png" alt        = "git" sizes       = "40" width = {40} height = {40} />
-        <Image       className = "transition-transform duration-300 hover:scale-[1.6]" src              = "/icons/kotlin.png" alt     = "kotlin" sizes    = "40" width = {40} height = {40} />
-        <Image       className = "transition-transform duration-300 hover:scale-[1.6]" src              = "/icons/python.png" alt     = "Python" sizes    = "40" width = {40} height = {40} />
-        <Image       className = "transition-transform duration-300 hover:scale-[1.6]" src              = "/icons/bootstrap.png" alt  = "bootstrap" sizes = "40" width = {40} height = {40} />
-        <Image       className = "transition-transform duration-300 hover:scale-[1.6]" src              = "/icons/mongodb.png" alt    = "mongodb" sizes   = "40" width = {40} height = {40} />
-        <Image       className = "transition-transform duration-300 hover:scale-[1.6]" src              = "/icons/docker.png" alt     = "docker" sizes    = "40" width = {40} height = {40} />
-        <SiRust      className = "scale-[0.9] transition-transform duration-300 hover:scale-[1.6]" size = "22" width                  = {22} height       = {22} />
-        <SiGithub    className = "scale-[0.9] transition-transform duration-300 hover:scale-[1.5]" size = "21" width                  = {21} height       = {21} />
-        <SiAmazonaws className = "scale-[0.9] transition-transform duration-300 hover:scale-[1.6]" size = "21" width                  = {21} height       = {21} />
-        <SiNextdotjs className = "scale-[0.9] transition-transform duration-300 hover:scale-[1.5]" size = "21" width                  = {21} height       = {21} />
-        </div>
+    <div
+      className={`${props.cols ?? ''} ${
+        props.height ?? ''
+      } flex min-h-[200px] w-full flex-col items-center justify-center rounded-lg text-slate-900 opacity-90 shadow-sm shadow-slate-700 dark:text-slate-300 dark:shadow-gray-400`}
+    >
+      <div className="grid h-full w-full grid-cols-7 grid-rows-3 gap-2 p-5">
+        {icons.map((icon, index) => (
+          <TechnologyIcon key={index} icon={icon} />
+        ))}
       </div>
-    </>
+    </div>
   )
 }
 

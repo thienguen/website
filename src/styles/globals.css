@@ -12,6 +12,22 @@
   src: url('/fonts/Sacramento-Regular.ttf');
 }
 
+@media (max-width: 640px) {
+  .container {
+    @apply px-4;
+  }
+}
+
+/* globals.css */
+::selection {
+  @apply bg-gray-500 text-white;
+}
+
+/* Dark theme selection */
+.dark ::selection {
+  @apply bg-gray-300 text-black;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -94,10 +110,17 @@
   }
 }
 
-@media (max-width: 640px) {
-  .container {
-    @apply px-4;
-  }
+body {
+  /* width: 100vw; */
+  /* height: 100vh; */
+  margin: 0;
+  padding: 0;
+
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+
+  z-index: 0;
+  font-family: JetBrains Mono, monospace;
 }
 
 /* They dance, too much, applied to nav*/
@@ -113,7 +136,7 @@
 }
 
 /* Pulse Animation, applied to vertical timeline */
-@keyframes pulse {
+@keyframes pulse1 {
   0% {
     box-shadow: 0 0 0 0 rgba(0, 116, 217, 0.7);
   }
@@ -161,51 +184,32 @@
   }
 }
 
-
-/* globals.css */
-::selection {
-  @apply bg-gray-500 text-white;
+/* dark mode */
+.dark .animate-pulse1 {
+  animation: pulse1 1.5s infinite;
 }
 
-/* Dark theme selection */
-.dark ::selection {
-  @apply bg-gray-300 text-black;
+.dark .animate-pulse2 {
+  animation: pulse2 1.5s infinite;
 }
 
-body {
-  /* width: 100vw; */
-  /* height: 100vh; */
-  margin: 0;
-  padding: 0;
-
-  text-rendering: optimizeLegibility;
-  scroll-behavior: smooth;
-
-  z-index: 0;
-  font-family: JetBrains Mono, monospace;
+/* light mode */
+.animate-pulse3 {
+  animation: pulse3 1.5s infinite;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.animate-pulse4 {
+  animation: pulse4 1.5s infinite;
 }
 
-/* f, f.. f- framer */
-circle,
-rect,
-line {
-  stroke-width: 10px;
-  stroke-linecap: round;
-  fill: transparent;
-}
-
-/* Custom css */
+/* Custom css for nav*/
 .link-underline {
   position: relative;
   display: inline-block;
 }
 
-.link-underline::after {
+/* Hover nav for dark */
+.dark .link-underline::after {
   content: '';
 
   display: block;
@@ -219,17 +223,45 @@ line {
   right: 0;
 
   transition: all 0.3s ease-in-out;
-  background: linear-gradient(transparent, transparent), linear-gradient(to right, #52c3ff, #2185d0);
+  background: linear-gradient(transparent, transparent), linear-gradient(to right, #6ACDFF, #57BFFF); /* Sky blue shades */
 }
 
-.link-underline:hover::after {
+.dark .link-underline:hover::after {
   visibility: visible;
 
   width: 100%;
 
   left: 0;
 
-  background: linear-gradient(transparent, transparent), linear-gradient(to right, #52c3ff, #2185d0);
+  background: linear-gradient(transparent, transparent), linear-gradient(to right, #6ACDFF, #57BFFF); /* Sky blue shades */
+}
+
+/* Hover nav for light */
+.link-underline2::after {
+  content: '';
+
+  display: block;
+  position: absolute;
+  visibility: hidden;
+  background: #171923;
+
+  width: 0;
+  height: 2px;
+
+  right: 0;
+
+  transition: all 0.3s ease-in-out;
+  background: linear-gradient(transparent, transparent), linear-gradient(to right, #D87787, #861657); /* New provided colors */
+}
+
+.link-underline2:hover::after {
+  visibility: visible;
+
+  width: 100%;
+
+  left: 0;
+
+  background: linear-gradient(transparent, transparent), linear-gradient(to right, #D87787, #861657); /* New provided colors */
 }
 
 /* They group and ungroup wtf */
@@ -250,25 +282,6 @@ line {
   color: #1a202c;
 }
 
-/* Pulsing effect for the year box */
-.rounded-md.bg-blue-600:hover {
-  animation: pulse 1.5s infinite;
-}
-
-/* dark mode */
-.dark .animate-pulse2 {
-  animation: pulse2 1.5s infinite;
-}
-
-.animate-pulse3 {
-  animation: pulse3 1.5s infinite;
-}
-
-.animate-pulse4 {
-  animation: pulse4 1.5s infinite;
-}
-
-.rounded-xl.bg-blue-600:hover {
-  transform: translateY(-3px);
-  transition: transform 0.2s;
+.balanced {
+  text-wrap: balance;
 }

@@ -93,7 +93,7 @@ const Navbar = () => {
           </>
         ) : (
           <>
-            <div className="mx-auto mt-2 w-3/5 py-5" ref={navRef}>
+            <div className="mx-auto mt-2 w-4/5 py-5" ref={navRef}>
               <div className="m-0 flex flex-col items-center justify-center text-slate-950 dark:text-slate-100">
                 <Hamburger toggled={isOpen} toggle={expand} />
               </div>

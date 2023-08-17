@@ -4,7 +4,7 @@ import Lottie, { type LottieRefCurrentProps } from 'lottie-react'
 import { ICONS, type ProjectProps } from './Render'
 
 type FeaturedProjectProps = {
-  index  : number
+  index: number
   project: ProjectProps
 }
 
@@ -28,7 +28,7 @@ export default function AFeaturedProject({ project, index }: FeaturedProjectProp
         onMouseLeave={() => iconRef.current?.stop()}
       >
         <div
-          className={`max-w-[10rem] rounded-md border-0 transition-opacity duration-300 ease-in-out hover:opacity-100 lg:w-36 ${textAlignment}`}
+          className={`max-w-[9.5rem] rounded-md border-0 transition-opacity duration-300 ease-in-out hover:opacity-100 lg:w-36 ${textAlignment}`}
           key={index}
         >
           <div className={`flex justify-between ${flexDirection}`}>
@@ -41,7 +41,7 @@ export default function AFeaturedProject({ project, index }: FeaturedProjectProp
             />
           </div>
 
-          <div className="grow" dir={`${textDirection}`}>
+          <div className="grow balanced" dir={`${textDirection}`}>
             <p className="font-dosis text-lg font-semibold text-black dark:font-normal dark:text-white">
               {project.title}
             </p>
@@ -64,7 +64,7 @@ type AnimationProps = {
 
 function Animation({ children }: AnimationProps) {
   return (
-    <motion.div className="relative m-2 p-3 transition-all duration-200 ease-in-out hover:scale-105 hover:rounded-lg hover:bg-gray-50 hover:opacity-100  dark:hover:bg-slate-700">
+    <motion.div className="relative m-2 min-w-[10.5rem] p-3 transition-all duration-200 ease-in-out hover:scale-105 hover:rounded-lg hover:bg-gray-50 hover:opacity-100  dark:hover:bg-slate-700">
       <div className="relative z-10">{children}</div>
     </motion.div>
   )

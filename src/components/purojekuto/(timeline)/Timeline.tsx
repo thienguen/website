@@ -1,51 +1,50 @@
 'use client'
 
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { useTheme } from 'next-themes'
 import { AllProjectItems, CareerItems } from '@/lib/util/dummy'
 import LeftTimeline from './LeftTimeline'
 import RightTimeline from './RightTimeline'
-import { useTheme } from 'next-themes'
-import { useState, useEffect } from 'react'
 
 type ProjectProps = {
-  title: string
-  url: string
+  title       : string
+  url         : string
   description?: string
-  since?: string
-  active?: boolean
-  icon: string
-  stats?: string
+  since      ?: string
+  active     ?: boolean
+  icon        : string
+  stats      ?: string
 }
 
 type CombinedTimeline = {
-  year: string
+  year       : string
   allProjects: ProjectProps[]
-  careers: ProjectProps[]
+  careers    : ProjectProps[]
 }
 
 const Timeline: React.FC = () => {
   const sampleDescription = 'Lorem Ipsum is simply dummy text of the printing. Something something holy'
 
-  const years = ['2023', '2022', '2021']
+  let   firstItemOfYear                      = true
+  const years                                = ['2023', '2022', '2021']
   const combinedTimeline: CombinedTimeline[] = []
 
   years.forEach((year) => {
-    const careerOfThisYear = CareerItems.find((item) => item.year === year)
+    const careerOfThisYear   = CareerItems.find((item) => item.year === year)
     const projectsOfThisYear = AllProjectItems.find((item) => item.year === year)
 
     combinedTimeline.push({
-      year: year,
-      careers: careerOfThisYear ? careerOfThisYear.projects : [],
-      allProjects: projectsOfThisYear ? projectsOfThisYear.projects : [],
+      year       : year,
+      careers    : careerOfThisYear ? careerOfThisYear.projects    : [],
+      allProjects: projectsOfThisYear ? projectsOfThisYear.projects: [],
     })
   })
 
-  let firstItemOfYear = true
-
-  const { resolvedTheme } = useTheme()
-
-  const darkPrimaryColor    = '#84FFB8'
-  const darkSecondaryColor  = '#82FFDA'
+  const { resolvedTheme }   = useTheme()
+  // const darkPrimaryColor    = '#568DFF';  // A primary blue shade
+  // const darkSecondaryColor  = '#4A7AED';  // A slightly different secondary blue shade
+  const darkPrimaryColor    = '#6ACDFF';  // A vibrant sky blue
+  const darkSecondaryColor  = '#57BFFF';  // A slightly different shade of sky blue
   const lightPrimaryColor   = '#D87787'
   const lightSecondaryColor = '#861657'
 
@@ -63,8 +62,8 @@ const Timeline: React.FC = () => {
   }, [resolvedTheme])
 
   return (
-    <div className="container mx-auto mb-5 mt-3 max-w-4xl px-4">
-      <div className="flex grid-cols-9 flex-col p-2 text-blue-50 md:grid">
+    <div className="container mx-auto mb-5 mt-3 max-w-4xl">
+      <div className="flex flex-col p-2 text-blue-50 sm:grid-cols-9 md:grid ">
         {combinedTimeline.map((item, index) => (
           <React.Fragment key={index}>
             {/* Left timeline for project of this year */}
