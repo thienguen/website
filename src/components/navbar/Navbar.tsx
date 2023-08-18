@@ -7,7 +7,7 @@ import { usePathname } from 'next/navigation'
 import { Twirl as Hamburger } from 'hamburger-react'
 /* Src */
 import { useMediaQuery } from '@/hooks/useMediaQuery'
-import { NavbarLeft, NavbarRight, NavbarRightSmall } from '@/components/navbar/Navbar-left-right'
+import { NavbarLeft, NavbarRight, NavbarRightSmall } from '@/components/navbar/NavbarLeftRight'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)

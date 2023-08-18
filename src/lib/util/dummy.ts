@@ -1,3 +1,9 @@
+/**
+ * This could be made into a colection of data 
+ * and store it in the db, but it would be harder
+ * to maintain and update. So I decided to just 
+ * hard code it in here.
+ */
 export const FeaturedProjectItems = [
   {
     year    : '2023',

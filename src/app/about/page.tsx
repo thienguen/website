@@ -1,13 +1,13 @@
 import React from 'react'
 import { type Metadata } from 'next'
-import QA from '@/components/ui/(qa)/qa'
-import QAClient from '@/components/ui/(qa)/qaAge'
-import PageTitle from '@/components/ui/header-title'
-import ProgressBar from '@/components/common/ProgressBar'
-import DiscordStatus from '@/components/me/DiscordStatus'
-import GithubCard from '@/components/me/GithubCard'
-import Technologies from '@/components/me/Technologies'
-import Timer from '@/components/me/Timer'
+import QA             from '@/components/about-me/(qa)/qa'
+import QAClient       from '@/components/about-me/(qa)/qaAge'
+import PageTitle      from '@/components/ui/header-title'
+import ProgressBar    from '@/components/common/ProgressBar'
+import DiscordStatus  from '@/components/about-me/DiscordStatus'
+import GithubCard     from '@/components/about-me/GithubCard'
+import Technologies   from '@/components/about-me/Technologies'
+import Timer          from '@/components/about-me/Timer'
 
 export const metadata: Metadata = {
   title: '/about',

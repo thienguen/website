@@ -31,23 +31,23 @@ export const dynamic = 'force-dynamic'
 // }
 
 export const ICONS = {
-  home: home,
-  code: code,
-  heart: heart,
-  projects: projects,
-  podcasts: podcasts,
+  home     : home,
+  code     : code,
+  heart    : heart,
+  projects : projects,
+  podcasts : podcasts,
   clipboard: clipboard,
-  download: download,
+  download : download,
 }
 
 export type ProjectProps = {
-  title: string
-  url: string
+  title       : string
+  url         : string
   description?: string
-  since?: string
-  active?: boolean
-  icon: string
-  stats?: string
+  since      ?: string
+  active     ?: boolean
+  icon        : string
+  stats      ?: string
 }
 
 /**
@@ -77,15 +77,16 @@ const FeaturedProjects = () => {
 }
 
 type CombinedProjects = {
-  year: string
+  year       : string
   allProjects: ProjectProps[]
-  careers: ProjectProps[]
+  careers    : ProjectProps[]
 }
 
 /**
  * Alternating Career Projects list, left and right
+ * * unused *
  */
-function CareerProjectsAlternating() {
+export function CareerProjectsAlternating() {
   // Create an array of combined projects for each year
   const combinedProjects: CombinedProjects[] = []
 

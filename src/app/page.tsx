@@ -1,9 +1,26 @@
 import PageTitle from '@/components/ui/header-title'
-import Profile from '@/components/ui/profile'
-import Signature from '@/components/ui/signature'
+import Profile from '@/components/home/profile'
+import Signature from '@/components/home/signature'
 import ProgressBar from '@/components/common/ProgressBar'
 import SkillIssues from '@/components/home/skill-issues'
 
+
+const BarLeft = () => {
+  return (
+    <div className="hidden h-[3px] w-screen animate-fade-left bg-gradient-to-r from-black via-gray-700/50 to-gray-700/0 dark:bg-gradient-to-r dark:from-white dark:via-zinc-300/50 dark:to-zinc-300/0 md:block" />
+  )
+}
+
+const BarRight = () => {
+  return (
+    <div className="hidden h-[3px] w-screen animate-fade-right bg-gradient-to-r from-gray-700/0 via-gray-700/50 to-black dark:bg-gradient-to-r dark:from-zinc-300/0 dark:via-zinc-300/50 dark:to-white md:block" />
+  )
+}
+
+/**
+ * Landing page, not the prettiest, and 
+ * I wish I have ability to use figma, webflow
+ */
 export default function Home() {
   /* Could have put stuff in here put anyway */
   return (
@@ -22,7 +39,7 @@ export default function Home() {
       {/* Hero Kinda Section */}
       <div className="mb-4 h-full w-full items-center justify-center sm:mt-10 sm:min-h-[500px]">
         {/* Bar */}
-        <div className="hidden h-[3px] w-screen animate-fade-left bg-gradient-to-r from-black via-gray-700/50 to-gray-700/0 dark:bg-gradient-to-r dark:from-white dark:via-zinc-300/50 dark:to-zinc-300/0 md:block" />
+        <BarLeft />
         {/* ------------------------------------------------------------------------------------------------- */}
         <div className="m-auto flex w-full max-w-screen-lg flex-col items-center justify-center px-5 sm:flex-col">
           <div className="flex flex-col justify-center">
@@ -34,7 +51,7 @@ export default function Home() {
             </div>
 
             {/* Hero subtitle */}
-            <div className="balanced max-w-md translate-y-[-1rem] animate-fade-in space-y-3 py-3 text-center text-base text-gray-500 opacity-0 [--animation-delay:400ms] dark:text-gray-500">
+            <div className="balanced  max-w-md translate-y-[-1rem] animate-fade-in space-y-3 py-3 text-center text-base text-gray-500 opacity-0 [--animation-delay:400ms] dark:text-gray-500">
               <p>A person who loves story-rich RPG-Maker games.</p>
               <p>Often time coding. Sometimes drawing.</p>
               <p>✥ And always learning ✥</p>
@@ -47,12 +64,14 @@ export default function Home() {
           </div>
 
           <Profile />
+          <SkillIssues />
         </div>
         {/* ------------------------------------------------------------------------------------------------- */}
-        <SkillIssues /> {/* useless */}
+
         {/* TODO: kbar will be here Ctrk+K */}
+
         {/* Bar */}
-        <div className="hidden h-[3px] w-screen animate-fade-right bg-gradient-to-r from-gray-700/0 via-gray-700/50 to-black dark:bg-gradient-to-r dark:from-zinc-300/0 dark:via-zinc-300/50 dark:to-white md:block" />
+        <BarRight />
       </div>
     </>
   )

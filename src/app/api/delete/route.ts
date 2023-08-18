@@ -2,6 +2,13 @@ import { NextResponse, type NextRequest } from 'next/server'
 import { type guestbook } from '@prisma/client'
 import { prisma } from '@/lib/prisma'
 
+/**
+ * Making a "DELETE" request to this endpoint 
+ * will delete the guestbook entry with the given id.
+ * 
+ * Read more here: https://github.com/vercel/next.js/issues/53882
+ * This is due to a bug on Next.js.
+ */
 export async function POST(req: NextRequest) {
   try {
     const data: guestbook = await req.json()
@@ -17,7 +24,7 @@ export async function POST(req: NextRequest) {
     // can't serialize BigInts, so we need to convert them to strings
     const jsonString = JSON.stringify(
       deletedSoul,
-      (key, value) => (typeof value === 'bigint' ? value.toString() : value) // return everything else unchanged
+      (_, value) => (typeof value === 'bigint' ? value.toString() : value) // return everything else unchanged
     )
 
     return NextResponse.json(JSON.parse(jsonString), { status: 200 })

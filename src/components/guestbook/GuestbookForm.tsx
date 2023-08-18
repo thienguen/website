@@ -3,7 +3,7 @@
 import { AiOutlineSend } from 'react-icons/ai'
 import { useGuestbookWrapper } from '@/hooks/useGuestbookWrapper'
 import { GuestbookEntry } from '@/components/guestbook/GuestbookEntry'
-import { SignIn, SignOut } from '../ui/auth-buttons'
+import { SignIn, SignOut } from './Auth-Buttons'
 import LoadingSpinner from '../ui/loading-spinner'
 import SuccessMessage from '../ui/success-message'
 
