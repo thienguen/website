@@ -32,7 +32,7 @@ const QA: React.FC<QAProps> = (props: QAProps) => {
             strokeWidth={2}
             order={1}
             show={true}
-            animationDelay={1300}
+            animationDelay={2000}
           >
             {props.question} {/* Something Somethinbg */}
           </RoughNotation>

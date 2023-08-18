@@ -1,0 +1,19 @@
+/* HomeHi.css */
+
+.text-hi {
+  background: linear-gradient(to right, #b6b6b6, #b6b6b6) no-repeat;
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-size: 0%;
+  transition: background-size cubic-bezier(.1,.5,.5,1) 0.5s;
+}
+
+span {
+  clip-path: polygon(0 50%, 100% 50%, 100% 50%, 0 50%);
+  transform-origin: center;
+  transition: all cubic-bezier(.1,.5,.5,1) 0.4s;
+}
+
+.text-hi:hover > span {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
