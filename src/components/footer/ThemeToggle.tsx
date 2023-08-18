@@ -18,11 +18,11 @@ export function ThemeToggle() {
     setTheme(theme === 'dark' ? 'light' : 'dark')
     setDisabled(true)
 
+    location.reload() // this will refresh the page
     // Reset the button to active state and hide the message after 1.5 seconds
     setTimeout(() => {
       setDisabled(false)
     }, 5000)
-    location.reload() // this will refresh the page
   }
 
   return (
