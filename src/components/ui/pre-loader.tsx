@@ -11,20 +11,26 @@ type Props = {
 
 const PreLoader: React.FC<Props> = ({ children }) => {
   const loadingRef = useRef(null)
-  const { resolvedTheme } = useTheme()
+  const { theme } = useTheme()
   const [animationPlayed, setAnimationPlayed] = useState(false)
 
   useEffect(() => {
     if (!animationPlayed) {
-      const q = gsap.utils.selector(loadingRef)
+      const animationTimeout = setTimeout(() => {
+        const q = gsap.utils.selector(loadingRef)
+        const tl = gsap.timeline({ defaults: { duration: 0.7 } })
+        tl.fromTo(q('.loading-text'), { y: 120, opacity: 0 }, { y: -10, opacity: 1 })
+        tl.to(q('.white-bg'), { y: '-100%' })
 
-      const tl = gsap.timeline({ defaults: { duration: 0.7 } })
-      tl.fromTo(q('.loading-text'), { y: 120, opacity: 0 }, { y: -10, opacity: 1 }) // Adjusted opacity here
-      tl.to(q('.white-bg'), { y: '-100%' })
+        setAnimationPlayed(true)
+      }, 600)  // Delay for 1 second
 
-      setAnimationPlayed(true)
+      // Cleanup function: clear the timeout
+      return () => {
+        clearTimeout(animationTimeout)
+      }
     }
-  }, [resolvedTheme])
+  }, [animationPlayed])
 
   return (
     <div ref={loadingRef} aria-hidden="true" className=''>
@@ -36,7 +42,7 @@ const PreLoader: React.FC<Props> = ({ children }) => {
           'white-bg fixed left-0 top-0 z-[9999] flex h-screen w-full items-center justify-center'
         )}
         style={{
-          backgroundImage: `${resolvedTheme === 'light' ? 'url(/bg/lightBg.png)' : 'url(/bg/darkBg.png)'}`,
+          backgroundImage: `${theme === 'light' ? 'url(/bg/lightBg.png)' : 'url(/bg/darkBg.png)'}`,
         }}
       >
         <span className={`loading-text inline-block text-4xl tracking-widest opacity-0 sm:text-5xl lg:text-7xl`}>

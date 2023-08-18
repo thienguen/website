@@ -8,7 +8,7 @@ interface CareerItemProps {
 }
 
 export default function ACareerItem({ project }: CareerItemProps) {
-  const { resolvedTheme } = useTheme()
+  const { theme } = useTheme()
 
   const darkPrimaryColor    = '#84FFB8'
   const darkSecondaryColor  = '#82FFDA'
@@ -19,14 +19,14 @@ export default function ACareerItem({ project }: CareerItemProps) {
   const [secondaryColor, setSecondaryColor] = useState(darkSecondaryColor)
 
   useEffect(() => {
-    if (resolvedTheme === 'dark') {
+    if (theme === 'dark') {
       setPrimaryColor(darkPrimaryColor)
       setSecondaryColor(darkSecondaryColor)
     } else {
       setPrimaryColor(lightPrimaryColor)
       setSecondaryColor(lightSecondaryColor)
     }
-  }, [resolvedTheme])
+  }, [theme])
 
   return (
     <li>
