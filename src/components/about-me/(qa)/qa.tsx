@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useRef } from 'react'
+import React from 'react'
 import { useTheme } from 'next-themes'
 import { RoughNotation } from 'react-rough-notation'
 // import useOnScreen from '@/hooks/useOnScreen'
@@ -14,10 +14,10 @@ interface QAProps {
 }
 
 const QA: React.FC<QAProps> = (props: QAProps) => {
-  const sectionRef = useRef<HTMLDivElement>(null)
+  // const + = useRef<HTMLDivElement>(null)
   // const isSecOnScreen = useOnScreen(sectionRef);
 
-  const { resolvedTheme } = useTheme()
+  const { theme } = useTheme()
   return (
     <div
       className={`${props.height ?? ''} ${
@@ -28,7 +28,7 @@ const QA: React.FC<QAProps> = (props: QAProps) => {
         <h1 className="pb-2 font-dosis text-xl font-medium  text-black dark:text-white">
           <RoughNotation
             type="underline"
-            color={`${resolvedTheme !== 'light' ? `#6ACDFF` : '#D87787'}`}
+            color={`${theme !== 'light' ? `#6ACDFF` : '#D87787'}`}
             strokeWidth={2}
             order={1}
             show={true}

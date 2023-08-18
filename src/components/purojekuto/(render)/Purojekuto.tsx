@@ -141,7 +141,7 @@ export function CareerProjectsAlternating() {
  * What we shown in the page, due to 'use client'
  */
 export function ProjectPageContent() {
-  const { resolvedTheme } = useTheme()
+  const { theme } = useTheme()
 
   return (
     <>
@@ -157,7 +157,7 @@ export function ProjectPageContent() {
           <div className="flex h-8 border-l-2 border-slate-400 pl-2 dark:border-slate-700">
             <RoughNotation
               type="underline"
-              color={`${resolvedTheme !== 'light' ? `#6ACDFF` : '#D87787'}`}
+              color={`${theme !== 'light' ? `#6ACDFF` : '#D87787'}`}
               strokeWidth={2}
               order={1}
               show={true}
@@ -179,7 +179,7 @@ export function ProjectPageContent() {
           <div className="flex h-8 border-r-2 border-slate-400 pr-2  dark:border-slate-700">
             <RoughNotation
               type="underline"
-              color={`${resolvedTheme !== 'light' ? `#6ACDFF` : '#D87787'}`}
+              color={`${theme !== 'light' ? `#6ACDFF` : '#D87787'}`}
               strokeWidth={2}
               order={1}
               show={true}

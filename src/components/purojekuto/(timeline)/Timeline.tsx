@@ -40,7 +40,7 @@ const Timeline: React.FC = () => {
     })
   })
 
-  const { resolvedTheme }   = useTheme()
+  const { theme }   = useTheme()
   const darkPrimaryColor    = '#6ACDFF'
   const darkSecondaryColor  = '#57BFFF'
   const lightPrimaryColor   = '#D87787'
@@ -50,14 +50,14 @@ const Timeline: React.FC = () => {
   const [secondaryColor, setSecondaryColor] = useState(darkSecondaryColor)
 
   useEffect(() => {
-    if (resolvedTheme === 'dark') {
+    if (theme === 'dark') {
       setPrimaryColor(darkPrimaryColor)
       setSecondaryColor(darkSecondaryColor)
     } else {
       setPrimaryColor(lightPrimaryColor)
       setSecondaryColor(lightSecondaryColor)
     }
-  }, [resolvedTheme])
+  }, [theme])
 
   return (
     <div className="container mx-auto mb-5 mt-3 max-w-4xl">

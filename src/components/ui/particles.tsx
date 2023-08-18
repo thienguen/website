@@ -32,7 +32,7 @@ export default function Particles({
   const canvasSize         = useRef<{ w: number; h: number }>({ w: 0, h: 0 })
   const dpr                = typeof window !== 'undefined' ? window.devicePixelRatio : 1
 
-  const { resolvedTheme } = useTheme()
+  const { theme } = useTheme()
 
   useEffect(() => {
     if (canvasRef.current) {
@@ -70,8 +70,8 @@ export default function Particles({
     return () => {
       if (timer) clearTimeout(timer)
     }
-    // console.log('resolvedTheme: ', resolvedTheme)
-  }, [refresh, path_name]) // NOTE: DO NOT INCLUDE resolvedTheme, the thing update inistantaneous
+    // console.log('theme: ', theme)
+  }, [refresh, path_name]) // NOTE: DO NOT INCLUDE theme, the thing update inistantaneous
 
   const initCanvas = () => {
     resizeCanvas()
@@ -165,11 +165,11 @@ export default function Particles({
       context.current.beginPath()
       context.current.arc(x, y, size, 0, 2 * Math.PI)
 
-      if (resolvedTheme === 'dark') {
+      if (theme === 'dark') {
         context.current.fillStyle = `rgba(255, 255, 255, ${alpha})` // Color for dark theme
-      } else if (resolvedTheme === 'light') {
+      } else if (theme === 'light') {
         context.current.fillStyle = `rgba(0, 0, 128, ${alpha})` // Color for light theme
-      } else if (resolvedTheme === undefined) {
+      } else if (theme === undefined) {
         context.current.fillStyle = `rgba(255, 255, 255, ${alpha})` // Color for dark theme (default)
       }
 
@@ -191,7 +191,7 @@ export default function Particles({
   const drawParticles = () => {
     clearContext()
     let particleCount = quantityRef.current
-    if (resolvedTheme === 'light') {
+    if (theme === 'light') {
       particleCount = 1000
     }
     for (let i = 0; i < particleCount; i++) {
