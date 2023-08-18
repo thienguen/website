@@ -4,10 +4,11 @@ import React, { useEffect, useRef } from 'react'
 // import { useEffect } from 'react'
 // Framework
 import '@/styles/globals.css'
+import '@/styles/hi.css'
 import { usePathname } from 'next/navigation'
 import { Analytics } from '@vercel/analytics/react'
 import { gsap } from 'gsap'
-import NextTopLoader from 'nextjs-toploader'
+// import NextTopLoader from 'nextjs-toploader'
 import AuthProvider from '@/lib/nextauth/AuthProvider'
 // Src
 import { cn } from '@/lib/util/util'
@@ -82,7 +83,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
                   backgroundPosition: '120% 100%',
                 }}
               />
-              <NextTopLoader />
+              {/* <NextTopLoader /> */}
               <div
                 className={cn(
                   'z-20 grow',

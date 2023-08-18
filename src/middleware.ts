@@ -13,7 +13,7 @@ export function middleware(request: Request) {
   
   const response = NextResponse.next();
   // Allow only specified origins to make requests
-  const allowedOrigins = ['https://thien-portfolio.vercel.app', 'http://localhost:3000'];
+  const allowedOrigins = ['https://thien-portfolio.vercel.app', 'http://localhost:3000', 'vankeythien.dev'];
   if (allowedOrigins.includes(origin ?? '')) {
     response.headers.set("Access-Control-Allow-Origin", origin ?? '*');
   }
