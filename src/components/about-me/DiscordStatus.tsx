@@ -1,6 +1,5 @@
 'use client'
 
-import { Transition } from '@headlessui/react'
 import { IoLogoDiscord } from 'react-icons/io5'
 import { useLanyardWS } from 'use-lanyard'
 import { cn } from '@/lib/util/util'

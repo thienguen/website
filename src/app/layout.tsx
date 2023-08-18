@@ -1,11 +1,13 @@
 'use client'
 
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 // import { useEffect } from 'react'
 // Framework
 import '@/styles/globals.css'
 import { usePathname } from 'next/navigation'
 import { Analytics } from '@vercel/analytics/react'
+import { gsap } from 'gsap'
+import NextTopLoader from 'nextjs-toploader'
 import AuthProvider from '@/lib/nextauth/AuthProvider'
 // Src
 import { cn } from '@/lib/util/util'
@@ -15,49 +17,38 @@ import { Toaster } from '@/components/ui/toaster'
 import Footer from '@/components/footer/Footer'
 import Navbar from '@/components/navbar/Navbar'
 import { metadata } from '@/app/api/metadata'
-import NextTopLoader from 'nextjs-toploader';
 
 interface RootLayoutProps {
   children: React.ReactNode
 }
 
 export default function RootLayout({ children }: RootLayoutProps) {
-  // > Did I shutter?, typewriter title is good, but i failed
-  // useEffect(() => {
-  //   const SITE_NAME = metadata.creator;
-  //   const TIME = 0.2 * 1000;
+  const cursorRef = useRef(null)
 
-  //   const yieldTime = (seconds: number) => new Promise((resolve) => setTimeout(resolve, seconds));
+  useEffect(() => {
+    document.addEventListener('mousemove', (e) => {
+      const mouseX = e.clientX
+      const mouseY = e.clientY
+      gsap.to(cursorRef.current, {
+        x      : mouseX,
+        y      : mouseY,
+        opacity: 1,
+        delay  : 0,
+      })
+    })
 
-  //   async function initTypewriter() {
-  //     await yieldTime(TIME * 4);
-  //     for (let s = SITE_NAME.length; s >= 0; s--) {
-  //       let newTitle = SITE_NAME.substring(0, s);  // Use .substring() here
-  //       if (s === 0) newTitle = '_';
+    const hideCursor = () => {
+      gsap.to(cursorRef.current, { opacity: 0 })
+    }
 
-  //       document.title = newTitle;
-  //       await yieldTime(TIME);
-  //     }
+    const showCursor = () => {
+      gsap.to(cursorRef.current, { opacity: 1 })
+    }
 
-  //     await yieldTime(TIME);
-  //     for (let s = 0; s <= SITE_NAME.length; s++) {
-  //       let newTitle = SITE_NAME.substring(0, s);  // Use .substring() here
-  //       if (s === 0) newTitle = '_';
-
-  //       document.title = newTitle;
-  //       await yieldTime(TIME);
-  //     }
-
-  //     await initTypewriter();  // Call the function without 'await'
-  //   }
-
-  //   void initTypewriter();  // Call the function without 'await'
-
-  //   // Cleanup the effect when component unmounts
-  //   return () => {
-  //     document.title = SITE_NAME;
-  //   };
-  // }, []);
+    document.addEventListener('mouseleave', hideCursor)
+    document.addEventListener('mousedown', hideCursor)
+    document.addEventListener('mouseup', showCursor)
+  }, [])
 
   const path_name = usePathname()
 
@@ -83,13 +74,21 @@ export default function RootLayout({ children }: RootLayoutProps) {
           <AuthProvider>
             <ThemeProvider attribute="class" defaultTheme="system" enableSystem themes={['light', 'dark']}>
               {/* Kbar Wrapper */}
+              <div
+                ref={cursorRef}
+                className="pointer-events-none fixed z-[9999] mt-4 hidden h-24 w-24 -translate-x-1/2 -translate-y-1/2 bg-cover bg-no-repeat lg:block"
+                style={{
+                  backgroundImage: `url(/mouse/walking.gif)`,
+                  backgroundPosition: '120% 100%',
+                }}
+              />
               <NextTopLoader />
               <div
                 className={cn(
                   'z-20 grow',
                   'bg-gradient-to-b from-slate-300 to-gray-300', // light
                   'dark:bg-gradient-to-b dark:from-black dark:to-gray-900' // dark
-                  )}
+                )}
               >
                 <Particles className="absolute inset-0 -z-50" quantity={500} path_name={path_name} />
                 <Navbar />

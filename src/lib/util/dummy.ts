@@ -203,7 +203,15 @@ export const imageForGithub = {
   /* gif */
   image8: '/images/duck-pixel.gif',
   image9: '/images/kafka.gif',
+  image19: '/images/chainsaw-man.gif',
 
   image10: '/images/hanekawa.jpg',
   image11: '/images/saber.jpg',
+  image12: '/images/anhbana.jpg',
+  image13: '/images/anhbana2.jpg',
+  image14: '/images/suynghi.jpg',
+  image15: '/images/tamangoaidao.jpg',
+  image16: '/images/justthe2ofus.jpg',
+  image17: '/images/justthe2ofus2.jpg',
+  image18: '/images/chainsaw.jpg',
 }

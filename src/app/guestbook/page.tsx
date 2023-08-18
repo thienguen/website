@@ -13,6 +13,7 @@ import { type Metadata } from 'next'
 import PageTitle from '@/components/ui/header-title'
 import ProgressBar from '@/components/common/ProgressBar'
 import GuestbookForm from '@/components/guestbook/GuestbookForm'
+import PreLoader from '@/components/ui/pre-loader'
 
 export const metadata: Metadata = {
   title: '/guestbook',
@@ -25,6 +26,7 @@ export default function Guestbook() {
   
   return (
     <>
+      <PreLoader>Guestbook</PreLoader>
       <ProgressBar
         steps={['/home', '/projects', '/about', '/guestbook']}
         currentStep={4}
