@@ -43,7 +43,7 @@ const HomeHi: React.FC = () => {
         </span>
       </h1>
 
-      <div className="text-hi group relative mb-4 max-w-lg bg-gradient-to-r from-gray-600 to-gray-600 bg-clip-text text-center text-lg text-gray-600 dark:text-gray-400">
+      {/* <div className="text-hi group relative mb-4 max-w-lg bg-gradient-to-r from-gray-600 to-gray-600 bg-clip-text text-center text-lg text-gray-600 dark:text-gray-400">
         A person who loves story-rich RPG-Maker games.
         <span className="absolute inset-0 flex scale-x-0 items-center justify-center bg-blue-500 text-black transition-transform group-hover:scale-x-100">
           Sed do eiusmod tempor incididunt
@@ -69,7 +69,7 @@ const HomeHi: React.FC = () => {
         <span className="absolute inset-0 flex scale-x-0 items-center justify-center bg-blue-500 text-black transition-transform group-hover:scale-x-100">
           Quis nostrud exercitation ullamco
         </span>
-      </div>
+      </div> */}
     </div>
   )
 }
