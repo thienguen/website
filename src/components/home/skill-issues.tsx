@@ -6,6 +6,7 @@ import { TbBrandCpp, TbBrandKotlin, TbBrandTypescript } from 'react-icons/tb'
 import { VscTerminalBash } from 'react-icons/vsc'
 
 const SkillIssues = () => {
+  /* I need these no color icons */
   const icons = [
     <BsGit />,
     <FaNpm />,

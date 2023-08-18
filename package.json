@@ -49,6 +49,7 @@
     "react-dom": "18.2.0",
     "react-hook-form": "^7.45.0",
     "react-icons": "^4.10.1",
+    "react-rough-notation": "^1.0.5",
     "sharp": "^0.32.1",
     "sonner": "^0.5.0",
     "tailwind-merge": "^1.13.2",

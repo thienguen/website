@@ -1,17 +1,21 @@
 'use client'
 
-import { AllProjectItems, CareerItems, FeaturedProjectItems } from '@/lib/util/dummy'
+import { useTheme } from 'next-themes'
+import { RoughNotation } from 'react-rough-notation'
 import { Tooltip } from '@/components/common/Tooltip'
-import clipboard from '../../../../public/icons-json/clipboard.json'
-import code from '../../../../public/icons-json/code.json'
-import download from '../../../../public/icons-json/download.json'
-import heart from '../../../../public/icons-json/heart.json'
-import home from '../../../../public/icons-json/home.json'
-import podcasts from '../../../../public/icons-json/podcasts.json'
-import projects from '../../../../public/icons-json/projects.json'
+import { AllProjectItems, CareerItems, FeaturedProjectItems } from '@/lib/util/dummy'
+
+import clipboard  from '../../../../public/icons-json/clipboard.json'
+import code       from '../../../../public/icons-json/code.json'
+import download   from '../../../../public/icons-json/download.json'
+import heart      from '../../../../public/icons-json/heart.json'
+import home       from '../../../../public/icons-json/home.json'
+import podcasts   from '../../../../public/icons-json/podcasts.json'
+import projects   from '../../../../public/icons-json/projects.json'
+
 /* Generative Project Cards */
-import Timeline from '../(timeline)/Timeline'
-import ACareerItem from './ACareerItem'
+import Timeline         from '../(timeline)/Timeline'
+import ACareerItem      from './ACareerItem'
 import AFeaturedProject from './AFeaturedProject'
 
 export const dynamic = 'force-dynamic'
@@ -31,23 +35,23 @@ export const dynamic = 'force-dynamic'
 // }
 
 export const ICONS = {
-  home     : home,
-  code     : code,
-  heart    : heart,
-  projects : projects,
-  podcasts : podcasts,
+  home: home,
+  code: code,
+  heart: heart,
+  projects: projects,
+  podcasts: podcasts,
   clipboard: clipboard,
-  download : download,
+  download: download,
 }
 
 export type ProjectProps = {
-  title       : string
-  url         : string
+  title: string
+  url: string
   description?: string
-  since      ?: string
-  active     ?: boolean
-  icon        : string
-  stats      ?: string
+  since?: string
+  active?: boolean
+  icon: string
+  stats?: string
 }
 
 /**
@@ -77,9 +81,9 @@ const FeaturedProjects = () => {
 }
 
 type CombinedProjects = {
-  year       : string
+  year: string
   allProjects: ProjectProps[]
-  careers    : ProjectProps[]
+  careers: ProjectProps[]
 }
 
 /**
@@ -137,6 +141,8 @@ export function CareerProjectsAlternating() {
  * What we shown in the page, due to 'use client'
  */
 export function ProjectPageContent() {
+  const { resolvedTheme } = useTheme()
+
   return (
     <>
       <div className="mx-auto flex max-w-3xl flex-col">
@@ -149,9 +155,20 @@ export function ProjectPageContent() {
         <div className="group flex flex-row items-center justify-between font-semibold lg:flex-row">
           {/* Leftmost Career kbd */}
           <div className="flex h-8 border-l-2 border-slate-400 pl-2 dark:border-slate-700">
-            <p className="translate-y-[-1rem] animate-fade-in font-dosis text-xl font-normal opacity-0 [--animation-delay:400ms] dark:font-light">
-              Project
-            </p>
+            <RoughNotation
+              type="underline"
+              color={`${resolvedTheme !== 'light' ? `#6ACDFF` : '#D87787'}`}
+              strokeWidth={2}
+              order={1}
+              show={true}
+              animationDelay={2000}
+
+            >
+              <p className="translate-y-[-1rem] animate-fade-in font-dosis text-xl font-normal opacity-0 [--animation-delay:400ms] dark:font-light">
+                Project
+              </p>{' '}
+              {/* Something Somethinbg */}
+            </RoughNotation>
           </div>
 
           <Tooltip text="Timeline">
@@ -160,9 +177,20 @@ export function ProjectPageContent() {
 
           {/* Rightmost Project kbd */}
           <div className="flex h-8 border-r-2 border-slate-400 pr-2  dark:border-slate-700">
-            <p className="translate-y-[-1rem] animate-fade-in font-dosis text-xl font-normal opacity-0 [--animation-delay:400ms] dark:font-light">
-              Career
-            </p>
+            <RoughNotation
+              type="underline"
+              color={`${resolvedTheme !== 'light' ? `#6ACDFF` : '#D87787'}`}
+              strokeWidth={2}
+              order={1}
+              show={true}
+              animationDelay={2000}
+
+            >
+              <p className="translate-y-[-1rem] animate-fade-in font-dosis text-xl font-normal opacity-0 [--animation-delay:400ms] dark:font-light">
+                Career
+              </p>{' '}
+              {/* Something Somethinbg */}
+            </RoughNotation>
           </div>
         </div>
       </div>

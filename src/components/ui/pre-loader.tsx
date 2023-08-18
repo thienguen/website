@@ -2,7 +2,6 @@
 
 import { useEffect, useRef, useState } from 'react'
 import gsap from 'gsap'
-import { useTheme } from 'next-themes'
 import { cn } from '@/lib/util/util'
 
 type Props = {
@@ -11,7 +10,6 @@ type Props = {
 
 const PreLoader: React.FC<Props> = ({ children }) => {
   const loadingRef = useRef(null)
-  const { resolvedTheme } = useTheme()
   const [animationPlayed, setAnimationPlayed] = useState(false)
 
   useEffect(() => {
@@ -20,7 +18,7 @@ const PreLoader: React.FC<Props> = ({ children }) => {
 
       const tl = gsap.timeline({ defaults: { duration: 0.7 } })
       tl.fromTo(q('.loading-text'), { y: 120, opacity: 0 }, { y: -10, opacity: 1 }) // Adjusted opacity here
-      tl.to(q('.white-bg'), { y: '-100%' }).to(q('.dark-bg'), { y: '-100%', duration: 0.3 }, '-=0.3')
+      tl.to(q('.white-bg'), { y: '-100%' }).to(q('.dark-bg'), { y: '-100%', duration: 0.3 }, '-0.3')
 
       setAnimationPlayed(true)
     }
@@ -36,16 +34,12 @@ const PreLoader: React.FC<Props> = ({ children }) => {
         )}
       >
         <div className="overflow-hidden">
-          <span
-            className={`loading-text inline-block text-4xl tracking-widest opacity-0 ${
-              resolvedTheme === 'dark' ? 'text-white' : resolvedTheme === 'light' ? 'text-black' : 'text-gray-500'
-            } sm:text-5xl lg:text-7xl`}
-          >
+          <span className={`loading-text inline-block text-4xl tracking-widest opacity-0 sm:text-5xl lg:text-7xl`}>
             {children}
           </span>
         </div>
       </div>
-     
+      <span className='dark-bg'></span>
     </div>
   )
 }

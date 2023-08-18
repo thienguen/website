@@ -1,14 +1,23 @@
-import React from 'react'
+'use client'
+
+import React, { useRef } from 'react'
+import { useTheme } from 'next-themes'
+import { RoughNotation } from 'react-rough-notation'
+// import useOnScreen from '@/hooks/useOnScreen'
 
 interface QAProps {
-  question : string
-  answer  ?: string
+  question: string
+  answer?: string
   customAnswer?: React.ReactNode
-  height      ?: string
-  cols        ?: string
+  height?: string
+  cols?: string
 }
 
 const QA: React.FC<QAProps> = (props: QAProps) => {
+  const sectionRef = useRef<HTMLDivElement>(null)
+  // const isSecOnScreen = useOnScreen(sectionRef);
+
+  const { resolvedTheme } = useTheme()
   return (
     <div
       className={`${props.height ?? ''} ${
@@ -17,7 +26,16 @@ const QA: React.FC<QAProps> = (props: QAProps) => {
     >
       <div className="flex h-full flex-col justify-center px-5 ">
         <h1 className="pb-2 font-dosis text-xl font-medium  text-black dark:text-white">
-          {props.question} {/* Something Somethinbg */}
+          <RoughNotation
+            type="underline"
+            color={`${resolvedTheme !== 'light' ? `#6ACDFF` : '#D87787'}`}
+            strokeWidth={2}
+            order={1}
+            show={true}
+            animationDelay={1300}
+          >
+            {props.question} {/* Something Somethinbg */}
+          </RoughNotation>
         </h1>
         {props.customAnswer ? (
           <p className="pb-2 font-dosis text-sm  tracking-wide text-black dark:text-slate-100">
