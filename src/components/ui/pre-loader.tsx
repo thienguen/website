@@ -24,7 +24,7 @@ const PreLoader: React.FC<Props> = ({ children }) => {
 
       setAnimationPlayed(true)
     }
-  }, [animationPlayed])
+  }, [resolvedTheme])
 
   return (
     <div ref={loadingRef} aria-hidden="true" className=''>
