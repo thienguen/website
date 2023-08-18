@@ -8,6 +8,7 @@ import DiscordStatus  from '@/components/about-me/DiscordStatus'
 import GithubCard     from '@/components/about-me/GithubCard'
 import Technologies   from '@/components/about-me/Technologies'
 import Timer          from '@/components/about-me/Timer'
+// import { TopSongs } from '@/components/about-me/RPG-Maker'
 
 export const metadata: Metadata = {
   title: '/about',
@@ -102,6 +103,8 @@ export default function About() {
       </div>
 
       <div className="flex flex-row justify-center">Stuff here, about to implement 7 ate 9, a carousel maybe?</div>
+
+      {/* <TopSongs /> */}
     </>
   )
 }

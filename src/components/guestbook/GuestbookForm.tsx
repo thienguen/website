@@ -3,7 +3,7 @@
 import { AiOutlineSend } from 'react-icons/ai'
 import { useGuestbookWrapper } from '@/hooks/useGuestbookWrapper'
 import { GuestbookEntry } from '@/components/guestbook/GuestbookEntry'
-import { SignIn, SignOut } from './Auth-Buttons'
+import { SignInGithub, SignInGoogle, SignOut } from './Auth-Buttons'
 import LoadingSpinner from '../ui/loading-spinner'
 import SuccessMessage from '../ui/success-message'
 
@@ -87,8 +87,9 @@ export default function GuestbookForm() {
 
       {/* not sign-in */}
       {!session?.user && (
-        <div className="flex w-full justify-center text-center">
-          <SignIn />
+        <div className="flex w-full justify-center text-center max-w-xs flex-col">
+          <SignInGithub/>
+          <SignInGoogle/>
         </div>
       )}
 
