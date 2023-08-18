@@ -1,3 +1,9 @@
+/**
+ * This could be made into a colection of data 
+ * and store it in the db, but it would be harder
+ * to maintain and update. So I decided to just 
+ * hard code it in here.
+ */
 export const FeaturedProjectItems = [
   {
     year    : '2023',
@@ -101,7 +107,7 @@ export const CareerItems = [
         title      : 'Started Coding',
         description: "That one time the compiler didn't yell at me",
         since      : '-- Since May 2021',
-        url        : 'https://github.com/Thienguen/LeetCode-Data-Structure-n-Algorithms',
+        url        : 'https://github.com/Thienguen',
         active     : true,
         icon       : 'clipboard',
         stats      : 'Tf do I do with this?',

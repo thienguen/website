@@ -3,9 +3,9 @@ import dayjs from 'dayjs'
 
 type GuestBookEntryProps = {
   entry: guestbook
-  user:
+  user : 
     | {
-        name?: string | null
+        name ?: string | null
         email?: string | null
         image?: string | null
       }
@@ -14,10 +14,9 @@ type GuestBookEntryProps = {
 }
 
 export function GuestbookEntry({ entry, user, handleEntryDelete }: GuestBookEntryProps) {
-
   return (
     <>
-      <div className="my-3 sm:w-full w-11/12 mx-auto rounded-md border border-gray-700  p-4 text-sm shadow-sm shadow-gray-300 dark:border-zinc-700  dark:shadow-none">
+      <div className="mx-auto my-3 w-11/12 rounded-md border border-gray-700 p-4  text-sm shadow-sm shadow-gray-300 dark:border-zinc-700 dark:shadow-none  sm:w-full">
         <div className="mb-2 text-sm dark:font-extralight">{entry.content}</div>
 
         <div className="line-clamp-1 flex flex-row justify-between">

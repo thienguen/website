@@ -1,7 +1,7 @@
 import { useRef } from 'react'
 import { motion } from 'framer-motion'
 import Lottie, { type LottieRefCurrentProps } from 'lottie-react'
-import { ICONS, type ProjectProps } from './Render'
+import { ICONS, type ProjectProps } from './Purojekuto'
 
 type FeaturedProjectProps = {
   index: number

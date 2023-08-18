@@ -6,7 +6,6 @@ import clsx from 'clsx'
 import { HiOutlineExternalLink } from 'react-icons/hi'
 import { SiGithub } from 'react-icons/si'
 import { imageForGithub } from '@/lib/util/dummy'
-import { CardHoverEffect } from '../common/HoverCard'
 
 type GithubCardProps = {
   cols  ?: string
@@ -24,7 +23,7 @@ export default function GithubCard(props: GithubCardProps) {
 
   return (
     <>
-      <CardHoverEffect className={`${props.cols ?? ''} ${props.height ?? ''}`}>
+      <div className={`${props.cols ?? ''} ${props.height ?? ''} group`}>
         <Link
           href="https://github.com/thienguen"
           target="_blank"
@@ -54,7 +53,7 @@ export default function GithubCard(props: GithubCardProps) {
             <span className="block font-metropolis font-bold">github</span>
           </span>
         </Link>
-      </CardHoverEffect>
+      </div>
     </>
   )
 }

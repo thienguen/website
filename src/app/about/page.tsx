@@ -1,13 +1,14 @@
 import React from 'react'
 import { type Metadata } from 'next'
-import QA from '@/components/ui/(qa)/qa'
-import QAClient from '@/components/ui/(qa)/qaAge'
-import PageTitle from '@/components/ui/header-title'
-import ProgressBar from '@/components/common/ProgressBar'
-import DiscordStatus from '@/components/me/DiscordStatus'
-import GithubCard from '@/components/me/GithubCard'
-import Technologies from '@/components/me/Technologies'
-import Timer from '@/components/me/Timer'
+import QA             from '@/components/about-me/(qa)/qa'
+import QAClient       from '@/components/about-me/(qa)/qaAge'
+import PageTitle      from '@/components/ui/header-title'
+import ProgressBar    from '@/components/common/ProgressBar'
+import DiscordStatus  from '@/components/about-me/DiscordStatus'
+import GithubCard     from '@/components/about-me/GithubCard'
+import Technologies   from '@/components/about-me/Technologies'
+import Timer          from '@/components/about-me/Timer'
+// import { TopSongs } from '@/components/about-me/RPG-Maker'
 
 export const metadata: Metadata = {
   title: '/about',
@@ -101,16 +102,9 @@ export default function About() {
         </div>
       </div>
 
-      {/* 9. RECTANGLE, CIRCLE, TRIANGLE GO 9. */}
-      {/* <div>
-        <div className="mx-auto mb-10 grid max-w-3xl grid-cols-8 gap-6 px-6 ">
-        {ComponentList.map((Component, index) => (
-            <React.Fragment key={index}>{Component}</React.Fragment>
-          ))}
-        </div>
-      </div> */}
-
       <div className="flex flex-row justify-center">Stuff here, about to implement 7 ate 9, a carousel maybe?</div>
+
+      {/* <TopSongs /> */}
     </>
   )
 }

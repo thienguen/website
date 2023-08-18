@@ -18,7 +18,7 @@
   }
 }
 
-/* globals.css */
+/* Light theme selection */
 ::selection {
   @apply bg-gray-500 text-white;
 }
@@ -113,13 +113,8 @@
 body {
   /* width: 100vw; */
   /* height: 100vh; */
-  margin: 0;
-  padding: 0;
-
-  text-rendering: optimizeLegibility;
   scroll-behavior: smooth;
-
-  z-index: 0;
+  text-rendering: optimizeLegibility;
   font-family: JetBrains Mono, monospace;
 }
 
@@ -236,6 +231,11 @@ body {
   background: linear-gradient(transparent, transparent), linear-gradient(to right, #6ACDFF, #57BFFF); /* Sky blue shades */
 }
 
+.link-underline2 {
+  position: relative;
+  display: inline-block;
+}
+
 /* Hover nav for light */
 .link-underline2::after {
   content: '';
@@ -264,7 +264,6 @@ body {
   background: linear-gradient(transparent, transparent), linear-gradient(to right, #D87787, #861657); /* New provided colors */
 }
 
-/* They group and ungroup wtf */
 .nav-link {
   transition: all 1s ease-in-out;
   opacity: 0;
@@ -282,6 +281,7 @@ body {
   color: #1a202c;
 }
 
+/* 3.4 tailwind will have this, but we at 3.3, sadge */
 .balanced {
   text-wrap: balance;
 }

@@ -3,7 +3,6 @@ import React from 'react'
 interface QAProps {
   question : string
   answer  ?: string
-
   customAnswer?: React.ReactNode
   height      ?: string
   cols        ?: string
@@ -21,11 +20,11 @@ const QA: React.FC<QAProps> = (props: QAProps) => {
           {props.question} {/* Something Somethinbg */}
         </h1>
         {props.customAnswer ? (
-          <p className="pb-2 text-justify font-dosis text-sm tracking-wide text-black dark:text-slate-100">
+          <p className="pb-2 font-dosis text-sm  tracking-wide text-black dark:text-slate-100">
             {props.customAnswer} {/* Something Somethinbg */}
           </p>
         ) : (
-          <p className="pb-2 font-dosis text-xs text-gray-500 opacity-80 dark:text-gray-300">{props.answer}</p>
+          <p className="pb-2 font-dosis text-sm text-gray-500 opacity-80 dark:text-gray-300">{props.answer}</p>
         )}
       </div>
     </div>

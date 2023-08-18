@@ -3,15 +3,15 @@
 import { AllProjectItems, CareerItems, FeaturedProjectItems } from '@/lib/util/dummy'
 import { Tooltip } from '@/components/common/Tooltip'
 import clipboard from '../../../../public/icons-json/clipboard.json'
-import code      from '../../../../public/icons-json/code.json'
-import download  from '../../../../public/icons-json/download.json'
-import heart     from '../../../../public/icons-json/heart.json'
-import home      from '../../../../public/icons-json/home.json'
-import podcasts  from '../../../../public/icons-json/podcasts.json'
-import projects  from '../../../../public/icons-json/projects.json'
+import code from '../../../../public/icons-json/code.json'
+import download from '../../../../public/icons-json/download.json'
+import heart from '../../../../public/icons-json/heart.json'
+import home from '../../../../public/icons-json/home.json'
+import podcasts from '../../../../public/icons-json/podcasts.json'
+import projects from '../../../../public/icons-json/projects.json'
 /* Generative Project Cards */
-import Timeline         from '../(timeline)/Timeline'
-import ACareerItem      from './ACareerItem'
+import Timeline from '../(timeline)/Timeline'
+import ACareerItem from './ACareerItem'
 import AFeaturedProject from './AFeaturedProject'
 
 export const dynamic = 'force-dynamic'
@@ -31,23 +31,23 @@ export const dynamic = 'force-dynamic'
 // }
 
 export const ICONS = {
-  home: home,
-  code: code,
-  heart: heart,
-  projects: projects,
-  podcasts: podcasts,
+  home     : home,
+  code     : code,
+  heart    : heart,
+  projects : projects,
+  podcasts : podcasts,
   clipboard: clipboard,
-  download: download,
+  download : download,
 }
 
 export type ProjectProps = {
-  title: string
-  url: string
+  title       : string
+  url         : string
   description?: string
-  since?: string
-  active?: boolean
-  icon: string
-  stats?: string
+  since      ?: string
+  active     ?: boolean
+  icon        : string
+  stats      ?: string
 }
 
 /**
@@ -77,15 +77,16 @@ const FeaturedProjects = () => {
 }
 
 type CombinedProjects = {
-  year: string
+  year       : string
   allProjects: ProjectProps[]
-  careers: ProjectProps[]
+  careers    : ProjectProps[]
 }
 
 /**
  * Alternating Career Projects list, left and right
+ * * unused *
  */
-function CareerProjectsAlternating() {
+export function CareerProjectsAlternating() {
   // Create an array of combined projects for each year
   const combinedProjects: CombinedProjects[] = []
 
@@ -148,7 +149,9 @@ export function ProjectPageContent() {
         <div className="group flex flex-row items-center justify-between font-semibold lg:flex-row">
           {/* Leftmost Career kbd */}
           <div className="flex h-8 border-l-2 border-slate-400 pl-2 dark:border-slate-700">
-            <p className="translate-y-[-1rem] animate-fade-in font-dosis text-xl dark:font-light font-normal opacity-0 [--animation-delay:400ms]">Project</p>
+            <p className="translate-y-[-1rem] animate-fade-in font-dosis text-xl font-normal opacity-0 [--animation-delay:400ms] dark:font-light">
+              Project
+            </p>
           </div>
 
           <Tooltip text="Timeline">
@@ -157,7 +160,9 @@ export function ProjectPageContent() {
 
           {/* Rightmost Project kbd */}
           <div className="flex h-8 border-r-2 border-slate-400 pr-2  dark:border-slate-700">
-            <p className="translate-y-[-1rem] animate-fade-in font-dosis text-xl dark:font-light font-normal opacity-0 [--animation-delay:400ms]">Career</p>
+            <p className="translate-y-[-1rem] animate-fade-in font-dosis text-xl font-normal opacity-0 [--animation-delay:400ms] dark:font-light">
+              Career
+            </p>
           </div>
         </div>
       </div>

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useTheme } from 'next-themes'
 import { Tooltip } from '@/components/common/Tooltip'
-import { type ProjectProps } from './Render'
+import { type ProjectProps } from './Purojekuto'
 
 interface CareerItemProps {
   project: ProjectProps
