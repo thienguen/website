@@ -99,6 +99,45 @@
 
     --ring: 240 3.7% 15.9%;
   }
+
+  /* ===== Custom Scrollbar ===== */
+
+  /* width */
+  ::-webkit-scrollbar {
+    @apply w-3;
+  }
+
+  /* Light Theme */
+  /* Track */
+  ::-webkit-scrollbar-track {
+    @apply bg-bglight;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    @apply bg-cardlight;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-[#413f40];
+  }
+
+  /* Dark Theme */
+  /* Track */
+  .dark ::-webkit-scrollbar-track {
+    @apply bg-bgdark;
+  }
+
+  /* Handle */
+  .dark ::-webkit-scrollbar-thumb {
+    @apply bg-carddark;
+  }
+
+  /* Handle on hover */
+  .dark ::-webkit-scrollbar-thumb:hover {
+    @apply bg-[#d2e3ee];
+  }
 }
 
 @layer base {
@@ -218,7 +257,7 @@ body {
   right: 0;
 
   transition: all 0.3s ease-in-out;
-  background: linear-gradient(transparent, transparent), linear-gradient(to right, #6ACDFF, #57BFFF); /* Sky blue shades */
+  background: linear-gradient(transparent, transparent), linear-gradient(to right, #6acdff, #57bfff); /* Sky blue shades */
 }
 
 .dark .link-underline:hover::after {
@@ -228,7 +267,7 @@ body {
 
   left: 0;
 
-  background: linear-gradient(transparent, transparent), linear-gradient(to right, #6ACDFF, #57BFFF); /* Sky blue shades */
+  background: linear-gradient(transparent, transparent), linear-gradient(to right, #6acdff, #57bfff); /* Sky blue shades */
 }
 
 .link-underline2 {
@@ -251,7 +290,7 @@ body {
   right: 0;
 
   transition: all 0.3s ease-in-out;
-  background: linear-gradient(transparent, transparent), linear-gradient(to right, #D87787, #861657); /* New provided colors */
+  background: linear-gradient(transparent, transparent), linear-gradient(to right, #d87787, #861657); /* New provided colors */
 }
 
 .link-underline2:hover::after {
@@ -261,7 +300,7 @@ body {
 
   left: 0;
 
-  background: linear-gradient(transparent, transparent), linear-gradient(to right, #D87787, #861657); /* New provided colors */
+  background: linear-gradient(transparent, transparent), linear-gradient(to right, #d87787, #861657); /* New provided colors */
 }
 
 .nav-link {

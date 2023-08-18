@@ -5,6 +5,8 @@ import Link from 'next/link'
 import clsx from 'clsx'
 import { HiOutlineExternalLink } from 'react-icons/hi'
 import { SiGithub } from 'react-icons/si'
+
+import { Icons } from '@/components/ui/icons'
 import { imageForGithub } from '@/lib/util/dummy'
 
 type GithubCardProps = {
@@ -44,7 +46,7 @@ export default function GithubCard(props: GithubCardProps) {
 
           <span aria-hidden className="px-6 pt-6">
             <span className="flex justify-between">
-              <SiGithub className="text-2xl" />
+              {Icons.github({ size: 'h-6 w-6' })}
               <HiOutlineExternalLink className="text-xl opacity-50 transition duration-500 group-hover:opacity-100" />
             </span>
           </span>

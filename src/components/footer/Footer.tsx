@@ -15,7 +15,7 @@ type FooterBarProps = {
 
 const FooterBar = ({ isFullWidth }: FooterBarProps) => {
   return (
-    <div className={clsx(isFullWidth ? 'w-full' : 'w-11/12 lg:w-2/3', 'z-50 mx-auto')}>
+    <div className={clsx(isFullWidth ? 'w-full' : 'w-11/12 lg:w-2/3', 'mx-auto')}>
       {/* Footer Bar section */}
       <div className="mt-2 flex h-[15px] items-center justify-between">
         {/* Dot at the beginning */}
@@ -44,11 +44,11 @@ export default function Footer() {
           <FooterBar isFullWidth={false} />
         </div>
         <div className="m-auto flex w-11/12 flex-col items-center justify-between px-4 md:h-10 md:flex-row lg:w-2/3 lg:flex-row">
-          <div className="flex items-center justify-center text-sm text-muted-foreground">
+          <div className="z-20 flex items-center justify-center text-sm text-muted-foreground">
             <FooterLove />
           </div>
 
-          <div className="flex items-center space-x-3">
+          <div className="z-20 flex items-center space-x-3">
             <FooterGithub />
             <FooterInstagram />
             <FooterLinkedin />

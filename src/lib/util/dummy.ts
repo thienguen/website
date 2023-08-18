@@ -197,13 +197,21 @@ export const imageForGithub = {
   image3: '/images/explosion.jpg',
   image4: '/images/miku.jpg',
   image5: '/images/monika3.jpg',
-  image6: '/images/omori.jpg',
+  // image6: '/images/omori.jpg',
   image7: '/images/ty.jpg',
 
   /* gif */
   image8: '/images/duck-pixel.gif',
   image9: '/images/kafka.gif',
-
-  image10: '/images/hanekawa.jpg',
+  image10: '/images/chainsaw-man.gif',
+  
   image11: '/images/saber.jpg',
+  image12: '/images/anhbana.jpg',
+  image13: '/images/anhbana2.jpg',
+  image14: '/images/suynghi.jpg',
+  image15: '/images/tamangoaidao.jpg',
+  image16: '/images/justthe2ofus.jpg',
+  image17: '/images/justthe2ofus2.jpg',
+  image18: '/images/chainsaw.jpg',
+  image19: '/images/hanekawa.jpg',
 }

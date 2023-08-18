@@ -27,7 +27,6 @@ module.exports = {
     '^@/app/(.*)$',
     '^[./]',
   ],
-
   importOrderSeparation: false,
   importOrderSortSpecifiers: true,
   importOrderBuiltinModulesToTop: true,

@@ -1,9 +1,8 @@
-import PageTitle from '@/components/ui/header-title'
-import Profile from '@/components/home/profile'
-import Signature from '@/components/home/signature'
-import ProgressBar from '@/components/common/ProgressBar'
-import SkillIssues from '@/components/home/skill-issues'
-
+import PageTitle    from '@/components/ui/header-title'
+import Profile      from '@/components/home/profile'
+import Signature    from '@/components/home/signature'
+import ProgressBar  from '@/components/common/ProgressBar'
+import SkillIssues  from '@/components/home/skill-issues'
 
 const BarLeft = () => {
   return (

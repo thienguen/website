@@ -1,6 +1,5 @@
-import { twMerge } from "tailwind-merge"
-import { clsx, type ClassValue } from "clsx"
-
+import { clsx, type ClassValue } from 'clsx'
+import { twMerge } from 'tailwind-merge'
 
 /**
  * @returns merge tailwind is a godsend of a utility
@@ -8,7 +7,42 @@ import { clsx, type ClassValue } from "clsx"
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
+// // > Did I shutter?, typewriter title is good, but i failed
+// useEffect(() => {
+//   const SITE_NAME = metadata.creator;
+//   const TIME = 0.2 * 1000;
 
+//   const yieldTime = (seconds: number) => new Promise((resolve) => setTimeout(resolve, seconds));
+
+//   async function initTypewriter() {
+//     await yieldTime(TIME * 4);
+//     for (let s = SITE_NAME.length; s >= 0; s--) {
+//       let newTitle = SITE_NAME.substring(0, s);  // Use .substring() here
+//       if (s === 0) newTitle = '_';
+
+//       document.title = newTitle;
+//       await yieldTime(TIME);
+//     }
+
+//     await yieldTime(TIME);
+//     for (let s = 0; s <= SITE_NAME.length; s++) {
+//       let newTitle = SITE_NAME.substring(0, s);  // Use .substring() here
+//       if (s === 0) newTitle = '_';
+
+//       document.title = newTitle;
+//       await yieldTime(TIME);
+//     }
+
+//     await initTypewriter();  // Call the function without 'await'
+//   }
+
+//   void initTypewriter();  // Call the function without 'await'
+
+//   // Cleanup the effect when component unmounts
+//   return () => {
+//     document.title = SITE_NAME;
+//   };
+// }, []);
 
 // // Initialize SVG elements as list items
 // const initialItems = [

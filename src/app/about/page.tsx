@@ -8,6 +8,7 @@ import DiscordStatus  from '@/components/about-me/DiscordStatus'
 import GithubCard     from '@/components/about-me/GithubCard'
 import Technologies   from '@/components/about-me/Technologies'
 import Timer          from '@/components/about-me/Timer'
+import PreLoader      from '@/components/ui/pre-loader'
 // import { TopSongs } from '@/components/about-me/RPG-Maker'
 
 export const metadata: Metadata = {
@@ -20,6 +21,8 @@ export default function About() {
   // const ComponentList = Array(numComponents).fill(<Motion />)
   return (
     <>
+      <PreLoader>About</PreLoader>
+
       <ProgressBar
         steps={['/home', '/projects', '/about', '/guestbook']}
         currentStep={3}

@@ -41,10 +41,8 @@ const Timeline: React.FC = () => {
   })
 
   const { resolvedTheme }   = useTheme()
-  // const darkPrimaryColor    = '#568DFF';  // A primary blue shade
-  // const darkSecondaryColor  = '#4A7AED';  // A slightly different secondary blue shade
-  const darkPrimaryColor    = '#6ACDFF';  // A vibrant sky blue
-  const darkSecondaryColor  = '#57BFFF';  // A slightly different shade of sky blue
+  const darkPrimaryColor    = '#6ACDFF'
+  const darkSecondaryColor  = '#57BFFF'
   const lightPrimaryColor   = '#D87787'
   const lightSecondaryColor = '#861657'
 
