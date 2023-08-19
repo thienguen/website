@@ -1,9 +1,9 @@
 import PageTitle from '@/components/ui/header-title'
 import ProgressBar from '@/components/common/ProgressBar'
+import HomeHi from '@/components/home/hi'
 // import Profile from '@/components/home/profile'
 import Signature from '@/components/home/signature'
 import SkillIssues from '@/components/home/skill-issues'
-import HomeHi from '@/components/home/hi'
 
 const BarLeft = () => {
   return (
@@ -41,37 +41,13 @@ export default function Home() {
         {/* Bar */}
         <BarLeft />
         {/* ------------------------------------------------------------------------------------------------- */}
-        <div className="m-auto flex w-full max-w-screen-xl flex-col items-center justify-center sm:flex-row sm:justify-center">
-          {/* Left section */}
-
-          {/* Right section */}
-          <div className="flex flex-col justify-center px-10 pb-3">
-            {' '}
-            {/* Reduced space-y-3 to space-y-2 */}
-            <p className="mb-2 translate-y-[-1rem] animate-fade-in text-center font-metropolis text-xl font-light text-black opacity-70 [--animation-delay:200ms] dark:text-white">
-              {`Hello, I'm`}
-            </p>
-            {/* Hero Title */}
-            <h2 className="shadow-effect mb-2 translate-y-[-1rem] animate-fade-in cursor-default whitespace-nowrap text-center font-metropolis text-3xl font-bold text-slate-800 opacity-0 [--animation-delay:200ms] dark:text-slate-200 lg:text-6xl">
-              {`Thien Nguyen`}
-            </h2>
-            {/* Hero subtitle */}
-            <div className="balanced max-w-lg translate-y-[-1rem] animate-fade-in space-y-2 py-2 text-center font-metropolis text-lg text-gray-600 opacity-0 [--animation-delay:400ms] dark:text-gray-400">
-              <p>A person who loves story-rich RPG-Maker games.</p>
-              <p>Often time coding. Sometimes drawing.</p>
-              <p>✥ And always learning ✥</p>
-            </div>
-            <div className="text-center">K-bar, a bar that you can play with .</div>
-          </div>
-        </div>
+        <HomeHi />
 
         <div className="h-16 pb-3 pt-5">
           <Signature />
         </div>
         <SkillIssues />
         {/* ------------------------------------------------------------------------------------------------- */}
-
-        <HomeHi />
 
         {/* TODO: kbar will be here Ctrk+K */}
 

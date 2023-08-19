@@ -8,7 +8,7 @@ const SignInGithub = () => {
 
   return (
     <button
-      className="m-2 inline-flex items-center rounded border border-neutral-200 bg-neutral-50 px-3 py-2 text-sm leading-4 text-neutral-900 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-100 dark:hover:bg-neutral-600"
+      className="m-2 inline-flex items-center rounded-lg border border-neutral-200 bg-neutral-50 px-3 py-2 text-sm leading-4 text-neutral-900 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-100 dark:hover:bg-neutral-600"
       onClick={(e) => {
         e.preventDefault()
         signIn('github')
@@ -22,12 +22,17 @@ const SignInGithub = () => {
     >
       {isLoadingGithub ? (
         <>
-          Loading <LoadingSpinner />
+          <div className="m-auto flex items-center justify-center">
+            <p className='pr-2'>
+              Loading 
+            </p> 
+            <LoadingSpinner />
+          </div>
         </>
       ) : (
         <>
           {Icons.github({ size: 20 })}
-          <div className="ml-3">Sign in with Github</div>
+          <div className="ml-3 font-metropolis">Sign in with Github</div>
         </>
       )}
     </button>
@@ -39,7 +44,7 @@ const SignInGoogle = () => {
 
   return (
     <button
-      className="m-2 inline-flex items-center rounded border border-neutral-200 bg-neutral-50 px-3 py-2 text-sm leading-4 text-neutral-900 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-100 dark:hover:bg-neutral-600"
+      className="m-2 inline-flex items-center rounded-lg border border-neutral-200 bg-neutral-50 px-3 py-2 text-sm leading-4 text-neutral-900 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-100 dark:hover:bg-neutral-600"
       onClick={(e) => {
         e.preventDefault()
         signIn('google')
@@ -53,12 +58,17 @@ const SignInGoogle = () => {
     >
       {isLoadingGoogle ? (
         <>
-          Loading <LoadingSpinner />
+          <div className="m-auto flex items-center justify-center">
+            <p className='pr-2'>
+              Loading 
+            </p> 
+            <LoadingSpinner />
+          </div>
         </>
       ) : (
         <>
           {Icons.google({ size: 20 })}
-          <div className="ml-3">Sign in with Google</div>
+          <div className="ml-3 font-metropolis">Sign in with Google</div>
         </>
       )}
     </button>

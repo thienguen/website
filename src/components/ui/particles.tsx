@@ -66,6 +66,7 @@ export default function Particles({
 
     console.log('path_name: ', path_name)
     console.log('current height: ', canvasSize.current.h)
+    console.log('current width: ', canvasSize.current.w)
     console.log('current theme is: ', resolvedTheme)
     
     return () => {
@@ -124,7 +125,7 @@ export default function Particles({
   const resizeCanvas = () => {
     if (canvasContainerRef.current && canvasRef.current && context.current) {
       circles.current.length         = 0
-      canvasSize.current.w           = canvasContainerRef.current.offsetWidth
+      canvasSize.current.w           = document.body.scrollWidth
       canvasSize.current.h           = document.body.scrollHeight              // Use total website height instead of viewport height
       canvasRef.current.width        = canvasSize.current.w * dpr
       canvasRef.current.height       = canvasSize.current.h * dpr

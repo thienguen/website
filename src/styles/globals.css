@@ -14,7 +14,7 @@
 
 @media (max-width: 640px) {
   .container {
-    @apply px-4;
+    @apply px-2;
   }
 }
 
@@ -323,4 +323,12 @@ body {
 /* 3.4 tailwind will have this, but we at 3.3, sadge */
 .balanced {
   text-wrap: balance;
+}
+
+/* truncate text in guestbook entry, tho I could have install mui */
+.truncate-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }

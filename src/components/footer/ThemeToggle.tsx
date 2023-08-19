@@ -44,7 +44,7 @@ export function ThemeToggle() {
     setTimeout(() => {
       setDisabled(false)
     }, 7000)
-
+    
   }
 
   return (

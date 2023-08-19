@@ -161,10 +161,10 @@ export function ProjectPageContent() {
               strokeWidth={2}
               order={1}
               show={true}
-              animationDelay={2000}
+              animationDelay={2750}
 
             >
-              <p className="translate-y-[-1rem] animate-fade-in font-dosis text-xl font-normal opacity-0 [--animation-delay:400ms] dark:font-light">
+              <p className="translate-y-[-1rem] animate-fade-in font-dosis text-xl font-normal opacity-0 [--animation-delay:2750ms] dark:font-light">
                 Project
               </p>{' '}
               {/* Something Somethinbg */}
@@ -183,10 +183,10 @@ export function ProjectPageContent() {
               strokeWidth={2}
               order={1}
               show={true}
-              animationDelay={2000}
+              animationDelay={2750}
 
             >
-              <p className="translate-y-[-1rem] animate-fade-in font-dosis text-xl font-normal opacity-0 [--animation-delay:400ms] dark:font-light">
+              <p className="translate-y-[-1rem] animate-fade-in font-dosis text-xl font-normal opacity-0 [--animation-delay:2750ms] dark:font-light">
                 Career
               </p>{' '}
               {/* Something Somethinbg */}

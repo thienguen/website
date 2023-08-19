@@ -2,11 +2,7 @@ import { useEffect, useState, type FormEvent } from 'react'
 import { type guestbook } from '@prisma/client'
 import { useSession } from 'next-auth/react'
 import { useForm, type FieldValues } from 'react-hook-form'
-import {
-  createGuestbookEntry,
-  getGuestbookEntries,
-  deleteGuestbookEntry,
-} from '@/hooks/useGuestbook'
+import { createGuestbookEntry, deleteGuestbookEntry, getGuestbookEntries } from '@/hooks/useGuestbook'
 
 type formSchema = {
   content: string
@@ -41,8 +37,7 @@ export function useGuestbookWrapper() {
           }
         }
 
-        console.log('huh huh huh')
-
+        console.log('?How comes you render twice?')
       } catch (error) {
         console.error('Failed to fetch guestbook entries:', error)
       }
@@ -57,6 +52,7 @@ export function useGuestbookWrapper() {
    *
    * @see handleDeleteClick
    */
+
   // const handleEntryDelete = (data: bigint) => {
   //   console.log('Deleting entry:', data)
   //   // await deleteEntry(data)
@@ -66,17 +62,12 @@ export function useGuestbookWrapper() {
   //   event.preventDefault()
   //   buttonOnClick(id)
   // }
-  
+
   const handleEntryDelete = (data: bigint) => {
     console.log('Deleting entry:', data)
     deleteGuestbookEntry(data)
       .then(() => {
-        setEntries(
-          entries.filter(
-            (entry) => 
-              entry.id !== data
-          )
-        )
+        setEntries(entries.filter((entry) => entry.id !== data))
         console.log('Deleted entry then():', data)
       })
       .catch((error) => {

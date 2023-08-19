@@ -1,7 +1,6 @@
 /**
  * This is the api fetch 
  */
-
 export type guestbookSchema = {
   // id
   email: string
