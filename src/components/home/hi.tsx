@@ -73,7 +73,7 @@ const HomeHi: React.FC = () => {
         {' '}
         {/* Reduced space-y-3 to space-y-2 */}
         <p className="  text-center font-metropolis text-xl font-light text-black opacity-70  dark:text-white">
-          {`Hello, I'm`}
+          {`Xin chào, I'm`}
         </p>
         {/* Hero Title */}
         <h2 className="text-h2 shadow-effect cursor-default whitespace-nowrap pb-2 text-center font-metropolis text-3xl font-bold text-slate-800   dark:text-slate-200 lg:text-6xl">
