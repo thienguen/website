@@ -1,75 +1,101 @@
 'use client'
 
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { cn } from '@/lib/util/util'
 
 const HomeHi: React.FC = () => {
+  const textRef = useRef<HTMLHeadingElement[] | null>(null)
+
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger)
-
     const textElements = gsap.utils.toArray('.text-hi')
+    textRef.current = textElements as HTMLHeadingElement[]
 
-    textElements.forEach((text) => {
-      gsap.fromTo(text as Element, 
-        { backgroundSize: '0 100%' }, 
+    const autoRunAnimation = (elem: Element) => {
+      return gsap.fromTo(
+        elem,
+        { backgroundSize: '0 0%' },
+        // {
+        //   backgroundSize: '100% 100%',
+        //   ease: 'none',
+        //   scrollTrigger: {
+        //     trigger: text as HTMLElement,
+        //     start: 'top 80%',
+        //     end: 'bottom 20%',
+        //     scrub: true,
+        //   },
+        // }
         {
           backgroundSize: '100% 100%',
           ease: 'none',
-          scrollTrigger: {
-            trigger: text as HTMLElement,
-            start: 'top 80%',
-            end: 'bottom 20%',
-            scrub: true,
-          },
+          duration: 1.5, // Duration of one "forward" animation.
+          yoyo: true, // Play the animation in reverse after playing it forward.
+          // repeat: 1,                  // Infinite repetition -1. but 3 times when moutned.
+          // repeatDelay: 0.5            // A delay before starting the animation again (optional, can be adjusted or removed).
         }
       )
+    }
+    const animations: gsap.core.Tween[] = (textRef.current || []).map(autoRunAnimation)
+
+    const startHoverAnimation = (e: Event) => {
+      const idx = (textRef.current || []).indexOf(e.currentTarget as HTMLHeadingElement)
+      if (idx > -1 && animations[idx]) {
+        animations[idx]?.pause()
+        gsap.to(e.currentTarget, { backgroundSize: '0 0%', duration: 0.5 })
+      }
+    }
+
+    const stopHoverAnimation = (e: Event) => {
+      gsap.to(e.currentTarget, { backgroundSize: '100% 100%', duration: 0.5 })
+    }
+
+    ;(textRef.current || []).forEach((text) => {
+      text.addEventListener('mouseenter', startHoverAnimation)
+      text.addEventListener('mouseleave', stopHoverAnimation)
     })
+
+    return () => {
+      if (textRef.current) {
+        textRef.current.forEach((text) => {
+          text.removeEventListener('mouseenter', startHoverAnimation)
+          text.removeEventListener('mouseleave', stopHoverAnimation)
+        })
+      }
+    }
   }, [])
-  
+
   return (
-    <div className="container flex h-[200vh] w-full max-w-screen-xl flex-col items-center justify-center p-4">
-      <h1 className="text-hi group relative mb-4 bg-gradient-to-r from-gray-600 to-gray-600 bg-clip-text text-center text-xl font-light text-black opacity-70 dark:text-white">
-        {`Hello, I'm`}
-        <span className="absolute inset-0 flex scale-x-0 items-center justify-center bg-blue-500 text-black transition-transform group-hover:scale-x-100">
-          Lorem ipsum dolor sit amet
-        </span>
-      </h1>
+    <div className="m-auto flex w-full max-w-screen-xl flex-col items-center justify-center sm:flex-row sm:justify-center">
+      {/* Left section */}
 
-      <h1 className="text-hi group relative mb-4 bg-gradient-to-r from-gray-600 to-gray-600 bg-clip-text text-center text-3xl font-bold text-slate-800 dark:text-slate-200 lg:text-6xl">
-        Thien Nguyen
-        <span className="absolute inset-0 flex scale-x-0 items-center justify-center bg-blue-500 text-black transition-transform group-hover:scale-x-100">
-          Consectetur adipiscing elit
-        </span>
-      </h1>
-
-      {/* <div className="text-hi group relative mb-4 max-w-lg bg-gradient-to-r from-gray-600 to-gray-600 bg-clip-text text-center text-lg text-gray-600 dark:text-gray-400">
-        A person who loves story-rich RPG-Maker games.
-        <span className="absolute inset-0 flex scale-x-0 items-center justify-center bg-blue-500 text-black transition-transform group-hover:scale-x-100">
-          Sed do eiusmod tempor incididunt
-        </span>
+      {/* Right section */}
+      <div className="flex flex-col justify-center px-10 pb-3">
+        {' '}
+        {/* Reduced space-y-3 to space-y-2 */}
+        <p className="  text-center font-metropolis text-xl font-light text-black opacity-70  dark:text-white">
+          {`Hello, I'm`}
+        </p>
+        {/* Hero Title */}
+        <h2 className="text-h2 shadow-effect  cursor-default whitespace-nowrap py-2 text-center font-metropolis text-3xl font-bold text-slate-800   dark:text-slate-200 lg:text-6xl">
+          {`Thien Nguyen`}
+          {/* <span
+            className={cn(
+              'dark:bg-gradient-to-b dark:from-slate-300 dark:to-gray-300 dark:text-[#0D0D0D]', // light
+              'bg-gradient-to-b from-slate-500 to-gray-900 text-slate-200', // dark
+              'span-h2 absolute flex h-full w-full origin-center flex-col justify-center '
+            )}
+          >
+            Dreams
+          </span> */}
+        </h2>
+        {/* Hero subtitle */}
+        <div className="text-hi balanced relative  max-w-lg  space-y-2 py-2 text-center font-metropolis text-lg text-gray-600 text-opacity-20   dark:text-gray-400">
+          <p>A person who loves story-rich RPG-Maker games.</p>
+          <p>Often time coding. Sometimes drawing.</p>
+          <p>✥ And always learning ✥</p>
+        </div>
+        {/* <div className="text-center">K-bar, a bar that you can play with .</div> */}
       </div>
-
-      <div className="text-hi group relative mb-4 max-w-lg bg-gradient-to-r from-gray-600 to-gray-600 bg-clip-text text-center text-lg text-gray-600 dark:text-gray-400">
-        Often time coding. Sometimes drawing.
-        <span className="absolute inset-0 flex scale-x-0 items-center justify-center bg-blue-500 text-black transition-transform group-hover:scale-x-100">
-          Ut labore et dolore magna aliqua
-        </span>
-      </div>
-
-      <div className="text-hi group relative mb-4 max-w-lg bg-gradient-to-r from-gray-600 to-gray-600 bg-clip-text text-center text-lg text-gray-600 dark:text-gray-400">
-        ✥ And always learning ✥
-        <span className="absolute inset-0 flex scale-x-0 items-center justify-center bg-blue-500 text-black transition-transform group-hover:scale-x-100">
-          Ut enim ad minim veniam
-        </span>
-      </div>
-
-      <div className="text-hi group relative mb-4 max-w-lg bg-gradient-to-r from-gray-600 to-gray-600 bg-clip-text text-center text-lg text-gray-600 dark:text-gray-400">
-        K-bar, a bar that you can play with.
-        <span className="absolute inset-0 flex scale-x-0 items-center justify-center bg-blue-500 text-black transition-transform group-hover:scale-x-100">
-          Quis nostrud exercitation ullamco
-        </span>
-      </div> */}
     </div>
   )
 }

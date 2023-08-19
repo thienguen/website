@@ -32,7 +32,7 @@ const RightTimeline: React.FC<RightTimelineProps> = ({ year, title, description,
       </div>
 
       {/* Container box */}
-      <div className = "col-start-6 col-end-10 my-4 mr-4 rounded-xl border p-4 font-dosis  shadow-2xl transition-transform hover:translate-y-[3px]">
+      <div className = "col-start-6 col-end-10 my-4 mr-8 rounded-xl border p-4 font-dosis  shadow-2xl transition-transform hover:translate-y-[3px]">
       <a   className = "cursor-pointer" /*href={url}*/ rel = "noreferrer">
       <div className = "mb-1 font-dosis text-lg text-black dark:font-light dark:text-white">
             <span

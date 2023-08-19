@@ -1,44 +1,62 @@
 /* HomeHi.css */
 
 .text-hi {
-  font-size: 5rem;
-  letter-spacing: -.01em;
-  line-height: 100%;
-  margin: 0;
-  width: 50%;
-  color: rgb(182, 182, 182, 0.2);
+  color: rgba(75, 85, 99, 0.2); /* Using the color equivalent to text-gray-600 */
+  background: linear-gradient(to right, #000000, #6d6d6d) no-repeat; /* Contrast with the text color by making it a bit brighter */
 
-  background: linear-gradient(to right, #b6b6b6, #b6b6b6) no-repeat;
-  -webkit-background-clip: text;
-  background-clip: text;
   background-size: 0%;
-  transition: background-size cubic-bezier(.1,.5,.5,1) 0.5s;
+  background-clip: text;
+  -webkit-background-clip: text;
+  transition: background-size cubic-bezier(0.1, 0.5, 0.5, 1) 0.5s;
+}
 
-  border-bottom: 1px solid #2F2B28;
+
+/* Dark theme version for .text-hi */
+.dark .text-hi {
+  color: rgba(156, 163, 175, 0.7); /* Using the color equivalent to text-gray-400 */
+  background: linear-gradient(to right, #949494, #d5d5d5) no-repeat; /* A range between the text color and a brighter shade to create visible contrast */
+
+  background-size: 0%;
+  background-clip: text;
+  -webkit-background-clip: text; 
+  transition: background-size cubic-bezier(0.1, 0.5, 0.5, 1) 0.5s;
+}
+
+.text-h2 {
+  background-size: 0%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  transition: background-size cubic-bezier(0.1, 0.5, 0.5, 1) 0.5s;
   
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   position: relative;
 }
 
-.span-hi {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: #4246ce;
-  color: #0D0D0D;
-  
-  clip-path: polygon(0 50%, 100% 50%, 100% 50%, 0 50%);
-  transform-origin: center;
-  transition: all cubic-bezier(.1,.5,.5,1) 0.4s;
-  
+
+/* Dark theme version for .text-hi */
+.dark .text-h2 {
+  background-size: 0%;
+  background-clip: text;
+  -webkit-background-clip: text; 
+  transition: background-size cubic-bezier(0.1, 0.5, 0.5, 1) 0.5s;
+
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
+  position: relative;
 }
 
-.text-hi:hover > .span-hi {
+
+/* Hover effect for .text-hi */
+.span-h2 {
+  clip-path: polygon(0 50%, 100% 50%, 100% 50%, 0 50%);
+  transition: all cubic-bezier(0.1, 0.5, 0.5, 1) 0.4s;
+}
+
+.text-h2:hover > .span-h2 {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }

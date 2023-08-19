@@ -60,8 +60,8 @@ const Timeline: React.FC = () => {
   }, [theme])
 
   return (
-    <div className="container mx-auto mb-5 mt-3 max-w-4xl">
-      <div className="flex flex-col p-2 text-blue-50 sm:grid-cols-9 md:grid ">
+    <div className="mx-auto mb-5 mt-3 sm:max-w-4xl container">
+      <div className="flex flex-col p-2 text-blue-50 sm:grid-cols-9 md:grid">
         {combinedTimeline.map((item, index) => (
           <React.Fragment key={index}>
             {/* Left timeline for project of this year */}

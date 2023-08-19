@@ -22,7 +22,12 @@ const SignInGithub = () => {
     >
       {isLoadingGithub ? (
         <>
-          Loading <LoadingSpinner />
+          <div className="m-auto flex items-center justify-center">
+            <p className='pr-2'>
+              Loading 
+            </p> 
+            <LoadingSpinner />
+          </div>
         </>
       ) : (
         <>
@@ -53,7 +58,12 @@ const SignInGoogle = () => {
     >
       {isLoadingGoogle ? (
         <>
-          Loading <LoadingSpinner />
+          <div className="m-auto flex items-center justify-center">
+            <p className='pr-2'>
+              Loading 
+            </p> 
+            <LoadingSpinner />
+          </div>
         </>
       ) : (
         <>

@@ -14,15 +14,15 @@ const LeftTimeline: React.FC<LeftTimelineProps> = ({
   year,
   title,
   description,
-  url,
+  // url,
   since,
   primaryColor,
   secondaryColor,
 }) => {
   return (
-    <div className="flex flex-none sm:flex-row-reverse   md:contents">
+    <div className="flex flex-none sm:flex-row-reverse  md:contents">
       {/* Container box */}
-      <div className="col-start-1 col-end-5 my-4 ml-4 min-w-[20.5rem] max-w-[20.5rem] rounded-xl border p-4 font-dosis shadow-2xl transition-transform hover:translate-y-[3px]">
+      <div className="col-start-1 col-end-5 my-4 ml-8 min-w-[20.5rem] max-w-[20.5rem] rounded-xl border p-4 font-dosis shadow-2xl transition-transform hover:translate-y-[3px]">
         <a className="cursor-pointer" /* href={url} */ rel="noreferrer" target="_blank">
           <div className="mb-1 font-dosis text-lg text-black dark:font-light dark:text-white">
             <span
@@ -55,7 +55,7 @@ const LeftTimeline: React.FC<LeftTimelineProps> = ({
             <div className="font-dosis text-sm font-medium text-black dark:text-white">{year}</div>
           </div>
         ) : (
-          <div className="absolute top-1/2 -ml-1 -mt-2 h-4 w-4 cursor-cell rounded-full   bg-slate-500 shadow dark:bg-slate-400 sm:ml-1"></div>
+          <div className="absolute top-1/2 -ml-1 -mt-2 h-4 w-4 cursor-cell rounded-full bg-slate-500 font-dosis text-sm  font-medium shadow dark:bg-slate-400 sm:ml-1"></div>
         )}
       </div>
     </div>

@@ -34,7 +34,7 @@ function DiscordStatus(props: DiscordStatusProps) {
           <p className="scale-[1.6]">
             <IoLogoDiscord className="mb-1 w-full justify-end" />
           </p>
-          <span>{status}</span>
+          <span className='tracking-wider'>{status}</span>
         </div>
       </div>
     </div>

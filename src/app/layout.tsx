@@ -1,15 +1,18 @@
 'use client'
 
-import React, { useEffect, useRef } from 'react'
 // import { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
+
 // Framework
 import '@/styles/globals.css'
 import '@/styles/hi.css'
+
 import { usePathname } from 'next/navigation'
 import { Analytics } from '@vercel/analytics/react'
 import { gsap } from 'gsap'
-// import NextTopLoader from 'nextjs-toploader'
 import AuthProvider from '@/lib/nextauth/AuthProvider'
+// import NextTopLoader from 'nextjs-toploader'
+
 // Src
 import { cn } from '@/lib/util/util'
 import Particles from '@/components/ui/particles'
