@@ -63,11 +63,9 @@ const HomeHi: React.FC = () => {
     }
   }, [])
 
+  // <div className="m-auto flex w-full max-w-screen-xl flex-col items-center justify-center sm:flex-row sm:justify-center">
   return (
-    <div className="m-auto flex w-full max-w-screen-xl flex-col items-center justify-center sm:flex-row sm:justify-center">
-      {/* Left section */}
 
-      {/* Right section */}
       <div className="flex flex-col justify-center px-10">
         {' '}
         {/* Reduced space-y-3 to space-y-2 */}
@@ -95,7 +93,7 @@ const HomeHi: React.FC = () => {
         </div>
         {/* <div className="text-center">K-bar, a bar that you can play with .</div> */}
       </div>
-    </div>
+    // </div>
   )
 }
 

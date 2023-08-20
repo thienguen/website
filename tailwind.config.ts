@@ -31,7 +31,7 @@ module.exports = {
     },
     extend: {
       colors: {
-        /* Set up */
+          /* Set up */
         'input'     : 'hsl(var(--input))',
         'ring'      : 'hsl(var(--ring))',
         'border'    : 'hsl(var(--border))',
@@ -107,7 +107,7 @@ module.exports = {
         'fade-right': 'fade-right 4s ease-in-out forwards',
       },
       keyframes: {
-        /* ??? */
+          /* ??? */
         'accordion-down': {
           from: { height: 0 },
           to  : { height: 'var(--radix-accordion-content-height)' },
@@ -120,7 +120,7 @@ module.exports = {
           from: { opacity: 0, transform: 'translateY(-10px)' },
           to  : { opacity: 1, transform: 'none' },
         },
-        /* Deprecated */
+          /* Deprecated */
         'fade-in-2': {
           '0%': {
             opacity: '0%',
@@ -160,7 +160,7 @@ module.exports = {
             opacity: '0%',
           },
         },
-        /* Deprecated */
+          /* Deprecated */
         'title': {
           '0%': {
             'line-height'   : '0%',
@@ -183,10 +183,11 @@ module.exports = {
       },
     },
     fontFamily: {
-      'dosis'          : ['Dosis', 'sans-serif'],
-      'signature'      : ['Sacramento', 'cursive'],
-      'jetbrains-mono' : ['JetBrains Mono', 'monospace'],
-      'metropolis'     : ['MetropolisRegular', 'sans-serif'],
+      'dosis'         : ['Dosis', 'sans-serif'],
+      'signature'     : ['Sacramento', 'cursive'],
+      'jetbrains-mono': ['JetBrains Mono', 'monospace'],
+      'metropolis'    : ['MetropolisRegular', 'sans-serif'],
+      'pixeloidMono'  : ['PixelloidMono', 'monospace'],
     },
   },
   plugins: [require('tailwindcss-animate'), require('@tailwindcss/typography'), require('daisyui')],

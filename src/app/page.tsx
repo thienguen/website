@@ -40,7 +40,7 @@ export default function Home() {
       {/* Bar */}
       {/* ------------------------------------------------------------------------------------------------- */}
       <BarLeft />
-      <div className="flex h-full w-full flex-col items-center justify-center pb-12 sm:min-h-[500px]">
+      <div className="mt-20 flex h-full w-full flex-col items-center justify-center pb-10 sm:mt-0 sm:min-h-[500px]">
         <HomeHi />
         <Signature />
         {/* TODO: kbar will be here Ctrk+K */}

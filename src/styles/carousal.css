@@ -5,11 +5,11 @@ $color-black: #1F2937;
 $card-size: 23rem;
 
 .carousel {
-  position: relative;
-  width: $card-size;
-  height: $card-size;
-  perspective: 500px;
-  transform-style: preserve-3d;
+  /* position: relative; */
+  /* width: $card-size; */
+  /* height: $card-size; */
+  /* perspective: 500px; */
+  /* transform-style: preserve-3d; */
 }
 
 .card-container {

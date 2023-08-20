@@ -2,17 +2,16 @@
 
 // import { useEffect } from 'react'
 import React, { useEffect, useRef } from 'react'
-
 // Framework
 import '@/styles/globals.css'
 import '@/styles/hi.css'
 import '@/styles/carousal.css'
-
 import { usePathname } from 'next/navigation'
 import { Analytics } from '@vercel/analytics/react'
 import { gsap } from 'gsap'
-import { fontMono } from '@/lib/util/font'
+import { useTheme } from 'next-themes'
 import AuthProvider from '@/lib/nextauth/AuthProvider'
+import { fontMono } from '@/lib/util/font'
 // import NextTopLoader from 'nextjs-toploader'
 
 // Src
@@ -36,10 +35,10 @@ export default function RootLayout({ children }: RootLayoutProps) {
       const mouseX = e.clientX
       const mouseY = e.clientY
       gsap.to(cursorRef.current, {
-        x      : mouseX,
-        y      : mouseY,
+        x: mouseX,
+        y: mouseY,
         opacity: 1,
-        delay  : 0,
+        delay: 0,
       })
     })
 
@@ -57,6 +56,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
   }, [])
 
   const path_name = usePathname()
+  const { theme } = useTheme()
 
   return (
     <>
@@ -72,7 +72,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
           <meta content={metadata.description} property="og:description" />
           <link rel="icon" href="/images/monika-fa.png" /> {/* as if I know how app router works */}
         </head>
-
         <body
           suppressHydrationWarning={true}
           className={cn('flex max-h-[100vh] min-h-[100vh] flex-col overflow-x-hidden antialiased', fontMono.variable)}
@@ -89,6 +88,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
                 }}
               />
               {/* <NextTopLoader /> */}
+
               <div
                 className={cn(
                   'z-20 grow',

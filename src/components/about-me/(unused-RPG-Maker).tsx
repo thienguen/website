@@ -1,3 +1,5 @@
+/* THIS IS A MOCK UP, BUT........EEHHHHH */
+
 'use client'
 
 import React, { useState } from 'react'

@@ -21,7 +21,7 @@ export default function About() {
   // const ComponentList = Array(numComponents).fill(<Motion />)
   return (
     <>
-      {/* <PreLoader>About</PreLoader> */}
+      {/* <PreLoader>About me</PreLoader> */}
 
       <ProgressBar
         steps={['/home', '/projects', '/about', '/guestbook']}
@@ -38,7 +38,7 @@ export default function About() {
       />
 
       {/* Body of About page*/}
-      <div className="mx-auto my-5 flex max-w-6xl">
+      <div className="mx-auto my-5 flex max-w-[75rem]">
         {/* Left Side */}
         <div className="grid flex-1 grid-cols-6 gap-4 px-3">
           {/* 1. The first question*/}
@@ -105,8 +105,8 @@ export default function About() {
         </div>
       </div>
       
+      {/* Carousal */}
       <RPGMaker />
-      {/* <TopSongs /> */}
     </>
   )
 }
