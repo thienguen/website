@@ -21,7 +21,7 @@ export default function About() {
   // const ComponentList = Array(numComponents).fill(<Motion />)
   return (
     <>
-      {/* <PreLoader>About me</PreLoader> */}
+      <PreLoader>About me</PreLoader>
 
       <ProgressBar
         steps={['/home', '/projects', '/about', '/guestbook']}

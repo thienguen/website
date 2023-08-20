@@ -9,7 +9,6 @@ import '@/styles/carousal.css'
 import { usePathname } from 'next/navigation'
 import { Analytics } from '@vercel/analytics/react'
 import { gsap } from 'gsap'
-import { useTheme } from 'next-themes'
 import AuthProvider from '@/lib/nextauth/AuthProvider'
 import { fontMono } from '@/lib/util/font'
 // import NextTopLoader from 'nextjs-toploader'
@@ -56,7 +55,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
   }, [])
 
   const path_name = usePathname()
-  const { theme } = useTheme()
 
   return (
     <>

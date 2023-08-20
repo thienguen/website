@@ -5,10 +5,10 @@ import { RPGMakerItems } from '@/lib/util/dummy'
 import { Tooltip } from '../common/Tooltip'
 
 interface Game {
-  title: string
+  title  : string
   authors: string
-  genres: string
-  image: string
+  genres : string
+  image  : string
 }
 
 const RPGMaker: React.FC = () => {
@@ -42,15 +42,12 @@ const RPGMaker: React.FC = () => {
               <span key={index}>{char}</span>
             ))}
           </h3>
-          <Tooltip text="Must be nice">
-            <div className="text-center font-pixeloidMono text-lg font-medium">Maker Games</div>
-          </Tooltip>
         </div>
         {/*  */}
-        <div className="carousel ml-1 mt-10 w-fit sm:mt-3">
-          <div className="mt-2 flex gap-5 overflow-x-scroll sm:max-w-4xl">
+        <div className="carousel mx-1 mt-10 w-fit sm:mt-3">
+          <div className="mt-2 flex  overflow-x-scroll sm:max-w-4xl">
             {randomizedItems.map((game: Game, index) => (
-              <div key={index} className="w-fit">
+              <div key={index} className="mx-3 w-fit">
                 <div className="group relative h-full w-[170px]">
                   <div
                     style={{ width: 170, height: 170 }}
@@ -75,6 +72,13 @@ const RPGMaker: React.FC = () => {
             ))}
           </div>
         </div>
+        {/*  */}
+        <div className="ml-3 mt-10 flex w-16 select-none flex-col items-center justify-center px-3 sm:mt-5">
+          <Tooltip text="Must be nice">
+            <div className="text-center font-pixeloidMono text-lg font-medium">Maker Games</div>
+          </Tooltip>
+        </div>
+        {/*  */}
       </div>
 
       {/* smoll down the scroll bar */}
