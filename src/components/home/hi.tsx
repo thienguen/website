@@ -2,7 +2,6 @@
 
 import React, { useEffect, useRef } from 'react'
 import gsap from 'gsap'
-import { cn } from '@/lib/util/util'
 
 const HomeHi: React.FC = () => {
   const textRef = useRef<HTMLHeadingElement[] | null>(null)
@@ -69,14 +68,14 @@ const HomeHi: React.FC = () => {
       {/* Left section */}
 
       {/* Right section */}
-      <div className="flex flex-col justify-center px-10 pb-3">
+      <div className="flex flex-col justify-center px-10">
         {' '}
         {/* Reduced space-y-3 to space-y-2 */}
-        <p className="  text-center font-metropolis text-xl font-light text-black opacity-70  dark:text-white">
+        <p className="  text-center font-metropolis text-2xl font-light text-black opacity-70  dark:text-white">
           {`Xin chào, I'm`}
         </p>
         {/* Hero Title */}
-        <h2 className="text-h2 shadow-effect cursor-default whitespace-nowrap pb-2 text-center font-metropolis text-3xl font-bold text-slate-800   dark:text-slate-200 lg:text-6xl">
+        <h2 className="text-h2 shadow-effect cursor-default whitespace-nowrap pb-2 text-center font-metropolis text-4xl font-bold text-slate-800   dark:text-slate-200 lg:text-6xl">
           {`Thien Nguyen`}
           {/* <span
             className={cn(
@@ -89,7 +88,7 @@ const HomeHi: React.FC = () => {
           </span> */}
         </h2>
         {/* Hero subtitle */}
-        <div className="text-hi balanced relative  max-w-lg cursor-cell space-y-2 pb-2 text-center font-metropolis text-lg text-gray-600 text-opacity-20   dark:text-gray-400">
+        <div className="text-hi balanced relative  max-w-lg cursor-cell space-y-2 pb-2 text-center font-metropolis text-xl text-gray-600 text-opacity-20   dark:text-gray-400">
           <p>A person who loves story-rich RPG-Maker games.</p>
           <p>Often time coding. Sometimes drawing.</p>
           <p>✥ And always learning ✥</p>

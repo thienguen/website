@@ -1,15 +1,15 @@
 import React from 'react'
 import { type Metadata } from 'next'
-import QA             from '@/components/about-me/(qa)/qa'
-import QAClient       from '@/components/about-me/(qa)/qaAge'
-import PageTitle      from '@/components/ui/header-title'
-import ProgressBar    from '@/components/common/ProgressBar'
-import DiscordStatus  from '@/components/about-me/DiscordStatus'
-import GithubCard     from '@/components/about-me/GithubCard'
-import Technologies   from '@/components/about-me/Technologies'
-import Timer          from '@/components/about-me/Timer'
-import PreLoader      from '@/components/ui/pre-loader'
-// import { TopSongs } from '@/components/about-me/RPG-Maker'
+import PageTitle from '@/components/ui/header-title'
+import PreLoader from '@/components/ui/pre-loader'
+import QA from '@/components/about-me/(qa)/qa'
+import QAClient from '@/components/about-me/(qa)/qaAge'
+import DiscordStatus from '@/components/about-me/DiscordStatus'
+import GithubCard from '@/components/about-me/GithubCard'
+import RPGMaker from '@/components/about-me/RPG-Maker'
+import Technologies from '@/components/about-me/Technologies'
+import Timer from '@/components/about-me/Timer'
+import ProgressBar from '@/components/common/ProgressBar'
 
 export const metadata: Metadata = {
   title: '/about',
@@ -21,7 +21,7 @@ export default function About() {
   // const ComponentList = Array(numComponents).fill(<Motion />)
   return (
     <>
-      <PreLoader>About</PreLoader>
+      {/* <PreLoader>About</PreLoader> */}
 
       <ProgressBar
         steps={['/home', '/projects', '/about', '/guestbook']}
@@ -104,9 +104,8 @@ export default function About() {
           />
         </div>
       </div>
-
-      <div className="flex flex-row justify-center">Stuff here, about to implement 7 ate 9, a carousel maybe?</div>
-
+      
+      <RPGMaker />
       {/* <TopSongs /> */}
     </>
   )

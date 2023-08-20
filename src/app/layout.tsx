@@ -6,10 +6,12 @@ import React, { useEffect, useRef } from 'react'
 // Framework
 import '@/styles/globals.css'
 import '@/styles/hi.css'
+import '@/styles/carousal.css'
 
 import { usePathname } from 'next/navigation'
 import { Analytics } from '@vercel/analytics/react'
 import { gsap } from 'gsap'
+import { fontMono } from '@/lib/util/font'
 import AuthProvider from '@/lib/nextauth/AuthProvider'
 // import NextTopLoader from 'nextjs-toploader'
 
@@ -17,7 +19,7 @@ import AuthProvider from '@/lib/nextauth/AuthProvider'
 import { cn } from '@/lib/util/util'
 import Particles from '@/components/ui/particles'
 import { ThemeProvider } from '@/components/ui/theme-provider'
-import { Toaster } from '@/components/ui/toaster'
+// import { Toaster } from '@/components/ui/toaster'
 import Footer from '@/components/footer/Footer'
 import Navbar from '@/components/navbar/Navbar'
 import { metadata } from '@/app/api/metadata'
@@ -73,7 +75,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
 
         <body
           suppressHydrationWarning={true}
-          className={cn('flex max-h-[100vh] min-h-[100vh] flex-col overflow-x-hidden antialiased')}
+          className={cn('flex max-h-[100vh] min-h-[100vh] flex-col overflow-x-hidden antialiased', fontMono.variable)}
         >
           <AuthProvider>
             <ThemeProvider attribute="class" defaultTheme="system" enableSystem themes={['light', 'dark']}>
@@ -100,7 +102,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
               </div>
               {/* Kbar wrapper */}
               <Footer />
-              <Toaster /> {/* useless */}
               <Analytics />
             </ThemeProvider>
           </AuthProvider>

@@ -41,7 +41,7 @@ export default function AFeaturedProject({ project, index }: FeaturedProjectProp
             />
           </div>
 
-          <div className="grow balanced" dir={`${textDirection}`}>
+          <div className="balanced grow" dir={`${textDirection}`}>
             <p className="font-metropolis text-base font-semibold text-black dark:font-normal dark:text-white">
               {project.title}
             </p>

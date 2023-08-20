@@ -6,7 +6,6 @@ import { TbBrandCpp, TbBrandKotlin, TbBrandTypescript } from 'react-icons/tb'
 import { VscTerminalBash } from 'react-icons/vsc'
 
 const SkillIssues = () => {
-  /* I need these no color icons */
   const icons = [
     <BsGit />,
     <FaNpm />,
@@ -27,7 +26,7 @@ const SkillIssues = () => {
   return (
     <>
       <div className="pt-3">
-        <div className="flex  translate-y-[-1rem] animate-fade-in flex-wrap items-center justify-center text-3xl opacity-0 [--animation-delay:1200ms]">
+        <div className="flex  translate-y-[-1rem] animate-fade-in flex-wrap items-center justify-center text-3xl opacity-0 [--animation-delay:600ms]">
           {icons.map((icon, index) => (
             <div key={index} className="m-2">
               {icon}

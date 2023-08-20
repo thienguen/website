@@ -27,7 +27,7 @@ const GlitchedComponent: React.FC<GlitchedComponentProps> = ({ initialText = 'We
     /* Absolutely geninus from the dev of glitchwriter */
     ;(async () => {
       try {
-        await wait(2000)
+        await wait(3000)
         await Writer.write('my old friend.')
         await wait(1200)
         await Writer.write('This is only the beginning.')

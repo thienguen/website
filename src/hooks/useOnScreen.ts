@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef, RefObject } from "react";
+import { useEffect, useState, useRef, type RefObject } from "react";
 
 export default function useOnScreen(ref: RefObject<HTMLElement>) {
   
@@ -14,7 +14,7 @@ export default function useOnScreen(ref: RefObject<HTMLElement>) {
   useEffect(() => {
     // Check if the ref is valid and if it's current property is also valid
     if (ref && ref.current) {
-      observerRef.current!.observe(ref.current);
+      observerRef.current?.observe(ref.current);
 
       return () => {
         // Cleanup

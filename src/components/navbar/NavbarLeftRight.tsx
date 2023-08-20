@@ -14,7 +14,7 @@ interface NavbarRightProps {
   isOpen    : boolean
 }
 
-  /**
+/**
  * <mapping for each title to its icon>
  */
 const IconMapping: { [key: string]: JSX.Element } = {
@@ -66,7 +66,7 @@ export const NavbarRight = () => (
  */
 export function NavbarRightSmall({ isOpen }: NavbarRightProps): ReactNode {
   return (
-    <div className = "flex-col items-start space-y-2 mb-2">
+    <div className="mb-2 flex-col items-start space-y-2">
       {Navlinks.map((link, index) => (
         <Link
           key       = {index}

@@ -37,23 +37,18 @@ export default function Home() {
       {/* If we could implement the full usage of landyard api here */}
 
       {/* Hero Kinda Section */}
-      <div className="mb-4 mt-12 h-full w-full items-center justify-center sm:mt-20 sm:min-h-[500px]">
-        {/* Bar */}
-        <BarLeft />
-        {/* ------------------------------------------------------------------------------------------------- */}
+      {/* Bar */}
+      {/* ------------------------------------------------------------------------------------------------- */}
+      <BarLeft />
+      <div className="flex h-full w-full flex-col items-center justify-center pb-12 sm:min-h-[500px]">
         <HomeHi />
-
-        <div className="h-16 pb-3 pt-5">
-          <Signature />
-        </div>
-        <SkillIssues />
-        {/* ------------------------------------------------------------------------------------------------- */}
-
+        <Signature />
         {/* TODO: kbar will be here Ctrk+K */}
-
-        {/* Bar */}
-        <BarRight />
+        {/* <SkillIssues /> */}
       </div>
+      {/* Bar */}
+      {/* ------------------------------------------------------------------------------------------------- */}
+      <BarRight />
     </>
   )
 }
