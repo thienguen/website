@@ -34,12 +34,12 @@ export default function Home() {
 
       <PageTitle title="If I could put a picture of an anime girl here, I would. &X-a-vier" titleJP="ホームページ。" />
 
+      <div className="mt-10 md:mt-20"></div>
       {/* If we could implement the full usage of landyard api here */}
 
       {/* Hero Kinda Section */}
       {/* Bar */}
       {/* ------------------------------------------------------------------------------------------------- */}
-      <div className="mt-10 md:mt-20"></div>
       <BarLeft />
       <div className=" flex h-full w-full flex-col items-center justify-center sm:mt-0 sm:min-h-[400px]">
         <HomeHi />

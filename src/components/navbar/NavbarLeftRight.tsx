@@ -1,4 +1,4 @@
-/* Src */
+  /* Src */
 import type { ReactNode } from 'react'
 import Link from 'next/link'
 import { useKBar } from 'kbar'
@@ -9,23 +9,23 @@ import { IoPersonCircleOutline } from 'react-icons/io5'
 import Typewriter from 'typewriter-effect'
 import { cn } from '@/lib/util/util'
 import { metadata } from '@/app/api/metadata'
-// import Navlinks from '@/components/navbar/Navlinks'
-import { Navlinks, NavMiddleLinks, NavRightLink } from './Navlinks'
+  // import Navlinks from '@/components/navbar/Navlinks'
+import { Navlinks, NavMiddleLinks } from './Navlinks'
 
 interface NavbarRightProps {
   path_name?: string
-  isOpen: boolean
+  isOpen    : boolean
 }
 
-/**
+  /**
  * <mapping for each title to its icon>
  */
 const IconMapping: { [key: string]: JSX.Element } = {
-  '/home': <AiOutlineHome />,
-  '/about': <IoPersonCircleOutline />,
-  '/projects': <GoProjectSymlink />,
+  '/home'     : <AiOutlineHome />,
+  '/about'    : <IoPersonCircleOutline />,
+  '/projects' : <GoProjectSymlink />,
   '/guestbook': <AiOutlineMail />,
-  '/kbar': <BsCommand />,
+  '/kbar'     : <BsCommand />,
 }
 
 /**
@@ -43,38 +43,8 @@ export const NavbarLeft = ({ path_name }: { path_name: string }) => (
 )
 
 /**
- * @returns Right side of the navbar
+ * @returns middle of the navbar
  */
-// export const NavbarRight = () => {
-//   const { query } = useKBar()
-//   return (
-//     <div className="flex">
-//       <div className="hidden text-sm sm:flex">
-//         {Navlinks.map((link) => (
-//           <Link
-//             key={link.title}
-//             href={link.href !== '/kbar' ? link.href : '/'} // Check if the href is /kbar and if so, prevent navigation by using a dummy URL.
-//             onClick={(e) => {
-//               if (link.href === '/kbar') {
-//                 e.preventDefault() // Prevent the default behavior.
-//                 query.toggle() // Open the command bar.
-//               }
-//             }}
-//             rel="noopener noreferrer"
-//             className="link-underline link-underline2 rounded tracking-wider text-black hover:bg-slate-50 dark:text-gray-100 dark:hover:bg-gray-700 sm:px-3 sm:py-2"
-//           >
-//             <div className="flex flex-row items-center font-dosis text-sm font-medium dark:font-normal dark:tracking-wider">
-//               {link.href !== '/kbar' && IconMapping[link.title]}
-//               {link.href !== '/kbar' && link.title}
-//               {link.href === '/kbar' && <div className="m-0 p-0">{IconMapping[link.title]}</div>}
-//             </div>
-//           </Link>
-//         ))}
-//       </div>
-//     </div>
-//   )
-// }
-
 export const NavbarMiddle = () => {
   return (
     <div className="flex justify-center space-x-4">
@@ -94,6 +64,9 @@ export const NavbarMiddle = () => {
   )
 }
 
+/**
+ * @returns right side of the navbar
+ */
 export const NavbarRight = () => {
   const { query } = useKBar()
 
@@ -118,6 +91,7 @@ export const NavbarRight = () => {
 
 /**
  * @returns Right side of the navbar for small screens, with animation
+ * hamburgor menu
  */
 export function NavbarRightSmall({ isOpen }: NavbarRightProps): ReactNode {
   return (
