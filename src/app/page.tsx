@@ -1,9 +1,9 @@
 import PageTitle from '@/components/ui/header-title'
-import ProgressBar from '@/components/common/ProgressBar'
+import ProgressBar from '@/components/ui/progress-bar'
 import HomeHi from '@/components/home/hi'
+
 // import Profile from '@/components/home/profile'
-import Signature from '@/components/home/signature'
-import SkillIssues from '@/components/home/skill-issues'
+// import SkillIssues from '@/components/home/skill-issues'
 
 const BarLeft = () => {
   return (
@@ -39,16 +39,14 @@ export default function Home() {
       {/* Hero Kinda Section */}
       {/* Bar */}
       {/* ------------------------------------------------------------------------------------------------- */}
+      <div className="mt-10 md:mt-20"></div>
       <BarLeft />
-      <div className="mt-20 flex h-full w-full flex-col items-center justify-center pb-10 sm:mt-0 sm:min-h-[500px]">
+      <div className=" flex h-full w-full flex-col items-center justify-center sm:mt-0 sm:min-h-[400px]">
         <HomeHi />
-        <Signature />
-        {/* TODO: kbar will be here Ctrk+K */}
-        {/* <SkillIssues /> */}
       </div>
-      {/* Bar */}
-      {/* ------------------------------------------------------------------------------------------------- */}
       <BarRight />
+      {/* ------------------------------------------------------------------------------------------------- */}
+      {/* Bar */}
     </>
   )
 }

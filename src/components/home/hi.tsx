@@ -2,6 +2,8 @@
 
 import React, { useEffect, useRef } from 'react'
 import gsap from 'gsap'
+import Signature from './signature'
+import KBarStart from '@/components/home/kbar-start'
 
 const HomeHi: React.FC = () => {
   const textRef = useRef<HTMLHeadingElement[] | null>(null)
@@ -63,14 +65,13 @@ const HomeHi: React.FC = () => {
     }
   }, [])
 
-  // <div className="m-auto flex w-full max-w-screen-xl flex-col items-center justify-center sm:flex-row sm:justify-center">
   return (
 
       <div className="flex flex-col justify-center px-10">
         {' '}
         {/* Reduced space-y-3 to space-y-2 */}
         <p className="  text-center font-metropolis text-2xl font-light text-black opacity-70  dark:text-white">
-          {`Xin chào, I'm`}
+          {`Chào, I'm`}
         </p>
         {/* Hero Title */}
         <h2 className="text-h2 shadow-effect cursor-default whitespace-nowrap pb-2 text-center font-metropolis text-4xl font-bold text-slate-800   dark:text-slate-200 lg:text-6xl">
@@ -91,9 +92,9 @@ const HomeHi: React.FC = () => {
           <p>Often time coding. Sometimes drawing.</p>
           <p>✥ And always learning ✥</p>
         </div>
-        {/* <div className="text-center">K-bar, a bar that you can play with .</div> */}
+        <Signature />
+        <KBarStart />
       </div>
-    // </div>
   )
 }
 

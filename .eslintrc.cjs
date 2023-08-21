@@ -1,25 +1,26 @@
-// eslint-disable-next-line @typescript-eslint/no-var-requires
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
 const path = require('path')
 
-/** @type {import("eslint").Linter.Config} */
+  /** @type {import("eslint").Linter.Config} */
 const config = {
   overrides: [
     {
-      extends: ['plugin:@typescript-eslint/recommended-requiring-type-checking'],
-      files: ['*.ts', '*.tsx'],
+      extends      : ['plugin:@typescript-eslint/recommended-requiring-type-checking'],
+      files        : ['*.ts', '*.tsx'],
       parserOptions: {
         project: path.join(__dirname, 'tsconfig.json'),
       },
       rules: {
-        '@typescript-eslint/no-unsafe-assignment': 'off',   // fk eslint
-        '@typescript-eslint/no-unsafe-call'      : 'off',   // fk eslint
-        '@typescript-eslint/no-unsafe-argument'  : 'off',   // fk eslint
-        '@typescript-eslint/no-unsafe-return'    : 'off',   // fk eslint
+        '@typescript-eslint/no-unsafe-assignment': 'off',   // haha eslint
+        '@typescript-eslint/no-unsafe-call'      : 'off',   // haha eslint
+        '@typescript-eslint/no-unsafe-argument'  : 'off',   // haha eslint
+        '@typescript-eslint/no-unsafe-return'    : 'off',   // haha eslint
+        '@typescript-eslint/no-explicit-any'     : 'off',   // I hate myself
         "@next/next/no-img-element"              : "off",   // fk next/image
       },
     },
   ],
-  parser: '@typescript-eslint/parser',
+  parser       : '@typescript-eslint/parser',
   parserOptions: {
     project: path.join(__dirname, 'tsconfig.json'),
   },
@@ -34,23 +35,23 @@ const config = {
     '@typescript-eslint/consistent-type-imports': [
       'warn',
       {
-        prefer: 'type-imports',
+        prefer  : 'type-imports',
         fixStyle: 'inline-type-imports',
       },
     ],
-    '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
-    '@next/next/no-html-link-for-pages': 'off',
-    'react/jsx-key': 'off',
-    '@typescript-eslint/no-unsafe-assignment': 'off', // fk eslint
-    '@typescript-eslint/no-unsafe-call': 'off', // fk eslint
-    '@typescript-eslint/no-unsafe-argument': 'off', // fk eslint
-    '@typescript-eslint/no-unsafe-return': 'off', // fk eslint
+    '@typescript-eslint/no-unused-vars'      : ['warn', { argsIgnorePattern: '^_' }],
+    '@next/next/no-html-link-for-pages'      : 'off',
+    'react/jsx-key'                          : 'off',
+    '@typescript-eslint/no-unsafe-assignment': 'off',                                   // haha eslint
+    '@typescript-eslint/no-unsafe-call'      : 'off',                                   // haha eslint
+    '@typescript-eslint/no-unsafe-argument'  : 'off',                                   // haha eslint
+    '@typescript-eslint/no-unsafe-return'    : 'off',                                   // haha eslint
 
   },
   settings: {
     tailwindcss: {
       callees: ['cn'],
-      config: './tailwind.config.ts',
+      config : './tailwind.config.ts',
     },
     next: {
       rootDir: ['./'],

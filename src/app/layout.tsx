@@ -1,23 +1,26 @@
 'use client'
 
-// import { useEffect } from 'react'
-import React, { useEffect, useRef } from 'react'
 // Framework
+import React, { useEffect, useRef } from 'react'
 import '@/styles/globals.css'
-import '@/styles/hi.css'
 import '@/styles/carousal.css'
+import '@/styles/kbar.css'
+import '@/styles/nav.css'
+import '@/styles/hi.css'
 import { usePathname } from 'next/navigation'
 import { Analytics } from '@vercel/analytics/react'
 import { gsap } from 'gsap'
-import AuthProvider from '@/lib/nextauth/AuthProvider'
-import { fontMono } from '@/lib/util/font'
+import { KBarProvider } from 'kbar'
 // import NextTopLoader from 'nextjs-toploader'
 
 // Src
+import AuthProvider from '@/lib/nextauth/AuthProvider'
+import { fontMono } from '@/lib/util/font'
 import { cn } from '@/lib/util/util'
+import useActions from '@/hooks/useActions'
+import KBar from '@/components/ui/(kbar)/kbar'
 import Particles from '@/components/ui/particles'
 import { ThemeProvider } from '@/components/ui/theme-provider'
-// import { Toaster } from '@/components/ui/toaster'
 import Footer from '@/components/footer/Footer'
 import Navbar from '@/components/navbar/Navbar'
 import { metadata } from '@/app/api/metadata'
@@ -55,6 +58,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
   }, [])
 
   const path_name = usePathname()
+  const actions = useActions()
 
   return (
     <>
@@ -74,35 +78,36 @@ export default function RootLayout({ children }: RootLayoutProps) {
           suppressHydrationWarning={true}
           className={cn('flex max-h-[100vh] min-h-[100vh] flex-col overflow-x-hidden antialiased', fontMono.variable)}
         >
-          <AuthProvider>
-            <ThemeProvider attribute="class" defaultTheme="system" enableSystem themes={['light', 'dark']}>
-              {/* Kbar Wrapper */}
-              <div
-                ref={cursorRef}
-                className="pointer-events-none fixed z-[9999] mt-4 hidden h-24 w-24 -translate-x-1/2 -translate-y-1/2 bg-cover bg-no-repeat lg:block"
-                style={{
-                  backgroundImage: `url(/mouse/walking.gif)`,
-                  backgroundPosition: '120% 100%',
-                }}
-              />
-              {/* <NextTopLoader /> */}
+          <KBarProvider actions={actions}>
+            <AuthProvider>
+              <ThemeProvider attribute="class" defaultTheme="system" enableSystem themes={['light', 'dark']}>
+                <div
+                  ref={cursorRef}
+                  className="pointer-events-none fixed z-[9999] mt-4 hidden h-24 w-24 -translate-x-1/2 -translate-y-1/2 bg-cover bg-no-repeat lg:block"
+                  style={{
+                    backgroundImage: `url(/mouse/walking.gif)`,
+                    backgroundPosition: '120% 100%',
+                  }}
+                />
+                {/* <NextTopLoader /> */}
 
-              <div
-                className={cn(
-                  'z-20 grow',
-                  'bg-gradient-to-b from-slate-300 to-gray-300', // light
-                  'dark:bg-gradient-to-b dark:from-black dark:to-gray-900' // dark
-                )}
-              >
-                <Particles className="absolute inset-0 -z-50" quantity={500} path_name={path_name} />
-                <Navbar />
-                {children}
-              </div>
-              {/* Kbar wrapper */}
-              <Footer />
-              <Analytics />
-            </ThemeProvider>
-          </AuthProvider>
+                <div
+                  className={cn(
+                    'z-0 grow',
+                    'bg-gradient-to-b from-slate-300 to-gray-300', // light
+                    'dark:bg-gradient-to-b dark:from-black dark:to-gray-900' // dark
+                  )}
+                >
+                  <Particles className="absolute inset-0 -z-50" quantity={500} path_name={path_name} />
+                  <Navbar />
+                  {children}
+                  <KBar />
+                </div>
+                <Footer />
+                <Analytics />
+              </ThemeProvider>
+            </AuthProvider>
+          </KBarProvider>
         </body>
       </html>
     </>

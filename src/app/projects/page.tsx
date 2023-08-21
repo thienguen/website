@@ -1,7 +1,7 @@
 import { type Metadata } from 'next'
 import PageTitle from '@/components/ui/header-title'
 import PreLoader from '@/components/ui/pre-loader'
-import ProgressBar from '@/components/common/ProgressBar'
+import ProgressBar from '@/components/ui/progress-bar'
 import { ProjectPageContent } from '@/components/purojekuto/(render)/Purojekuto'
 
 export const metadata: Metadata = {

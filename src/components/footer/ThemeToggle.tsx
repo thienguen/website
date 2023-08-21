@@ -13,7 +13,6 @@ export function ThemeToggle() {
   const { theme, setTheme }     = useTheme()
   const [disabled, setDisabled] = useState(false) // <-- State to manage button's disabled status
 
-
   useEffect(() => {
     const changeTime = localStorage.getItem('themeChangeTimestamp')
 

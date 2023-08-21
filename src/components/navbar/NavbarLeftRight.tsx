@@ -1,67 +1,122 @@
-  /* Src */
+/* Src */
 import type { ReactNode } from 'react'
 import Link from 'next/link'
+import { useKBar } from 'kbar'
 import { AiOutlineHome, AiOutlineMail } from 'react-icons/ai'
+import { BsCommand } from 'react-icons/bs'
 import { GoProjectSymlink } from 'react-icons/go'
 import { IoPersonCircleOutline } from 'react-icons/io5'
 import Typewriter from 'typewriter-effect'
 import { cn } from '@/lib/util/util'
-import Navlinks from '@/components/navbar/Navlinks'
 import { metadata } from '@/app/api/metadata'
+// import Navlinks from '@/components/navbar/Navlinks'
+import { Navlinks, NavMiddleLinks, NavRightLink } from './Navlinks'
 
 interface NavbarRightProps {
   path_name?: string
-  isOpen    : boolean
+  isOpen: boolean
 }
 
 /**
  * <mapping for each title to its icon>
  */
 const IconMapping: { [key: string]: JSX.Element } = {
-  '/home'     : <AiOutlineHome />,
-  '/about'    : <IoPersonCircleOutline />,
-  '/projects' : <GoProjectSymlink />,
+  '/home': <AiOutlineHome />,
+  '/about': <IoPersonCircleOutline />,
+  '/projects': <GoProjectSymlink />,
   '/guestbook': <AiOutlineMail />,
+  '/kbar': <BsCommand />,
 }
 
-  /**
+/**
  * @return Left side of the navbar
  */
 export const NavbarLeft = ({ path_name }: { path_name: string }) => (
-  <div  className = "mb-1.5 w-full md:mb-0 md:w-auto">
-  <Link href      = "/" aria-label = {metadata.headerTitle}>
-  <div  className = "flex items-start font-dosis text-base font-semibold dark:text-slate-200">
+  <div className="mb-1.5 w-full md:mb-0">
+    <Link href="/" aria-label={metadata.headerTitle}>
+      <div className="flex items-start font-dosis text-base font-semibold dark:text-slate-200">
         {`~${path_name === '/' ? '/home' : path_name}`}{' '}
-        <Typewriter options = {{ strings: [], autoStart: true, loop: true }} />
+        <Typewriter options={{ strings: [], autoStart: true, loop: true }} />
       </div>
     </Link>
   </div>
 )
 
-  /**
+/**
  * @returns Right side of the navbar
  */
-export const NavbarRight = () => (
-  <div className = "flex">
-  <div className = "hidden text-sm sm:flex">
-      {Navlinks.map((link) => (
+// export const NavbarRight = () => {
+//   const { query } = useKBar()
+//   return (
+//     <div className="flex">
+//       <div className="hidden text-sm sm:flex">
+//         {Navlinks.map((link) => (
+//           <Link
+//             key={link.title}
+//             href={link.href !== '/kbar' ? link.href : '/'} // Check if the href is /kbar and if so, prevent navigation by using a dummy URL.
+//             onClick={(e) => {
+//               if (link.href === '/kbar') {
+//                 e.preventDefault() // Prevent the default behavior.
+//                 query.toggle() // Open the command bar.
+//               }
+//             }}
+//             rel="noopener noreferrer"
+//             className="link-underline link-underline2 rounded tracking-wider text-black hover:bg-slate-50 dark:text-gray-100 dark:hover:bg-gray-700 sm:px-3 sm:py-2"
+//           >
+//             <div className="flex flex-row items-center font-dosis text-sm font-medium dark:font-normal dark:tracking-wider">
+//               {link.href !== '/kbar' && IconMapping[link.title]}
+//               {link.href !== '/kbar' && link.title}
+//               {link.href === '/kbar' && <div className="m-0 p-0">{IconMapping[link.title]}</div>}
+//             </div>
+//           </Link>
+//         ))}
+//       </div>
+//     </div>
+//   )
+// }
+
+export const NavbarMiddle = () => {
+  return (
+    <div className="flex justify-center space-x-4">
+      {NavMiddleLinks.map((link) => (
         <Link
-          key       = {link.title}
-          href      = {link.href}
-          rel       = "noopener noreferrer"
-          className = "link-underline link-underline2 rounded tracking-wider text-black hover:bg-slate-50 dark:text-gray-100 dark:hover:bg-gray-700 sm:px-5 sm:py-2"
+          key={link.title}
+          href={link.href}
+          className="link-underline link-underline2 rounded tracking-wider text-black hover:bg-slate-50 dark:text-gray-100 dark:hover:bg-gray-700 sm:px-3 sm:py-2"
         >
-          <div className = "flex flex-row items-center font-dosis text-sm font-medium dark:font-normal dark:tracking-wider">
-            {IconMapping[link.title]} {/* this will  insert the icon for each link */}
+          <div className="flex flex-row items-center font-dosis text-sm font-medium dark:font-normal dark:tracking-wider">
+            {IconMapping[link.title]}
             {link.title}
           </div>
         </Link>
       ))}
     </div>
-  </div>
-)
+  )
+}
 
-  /**
+export const NavbarRight = () => {
+  const { query } = useKBar()
+
+  return (
+    <div className="flex items-end">
+      <Link
+        href="#"
+        onClick={(e) => {
+          e.preventDefault()
+          query.toggle()
+        }}
+        className="link-underline link-underline2 rounded tracking-wider text-black hover:bg-slate-50 dark:text-gray-100 dark:hover:bg-gray-700 sm:px-3 sm:py-2"
+      >
+        <div className="flex flex-row items-center font-dosis text-sm font-medium dark:font-normal dark:tracking-wider">
+          {IconMapping['/kbar']}
+          {'/kbar'}
+        </div>
+      </Link>
+    </div>
+  )
+}
+
+/**
  * @returns Right side of the navbar for small screens, with animation
  */
 export function NavbarRightSmall({ isOpen }: NavbarRightProps): ReactNode {
@@ -69,10 +124,10 @@ export function NavbarRightSmall({ isOpen }: NavbarRightProps): ReactNode {
     <div className="mb-2 flex-col items-start space-y-2">
       {Navlinks.map((link, index) => (
         <Link
-          key       = {index}
-          href      = {link.href}
-          rel       = "noopener noreferrer"
-          className = {cn(
+          key={index}
+          href={link.href}
+          rel="noopener noreferrer"
+          className={cn(
             'nav-link link-underline rounded text-gray-900 hover:bg-slate-50 dark:text-gray-100 dark:hover:bg-gray-700 sm:px-4 sm:py-2',
             isOpen && 'show'
           )}

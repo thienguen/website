@@ -4,7 +4,7 @@ import Lottie, { type LottieRefCurrentProps } from 'lottie-react'
 import { ICONS, type ProjectProps } from './Purojekuto'
 
 type FeaturedProjectProps = {
-  index: number
+  index  : number
   project: ProjectProps
 }
 

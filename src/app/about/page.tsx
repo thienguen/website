@@ -9,7 +9,7 @@ import GithubCard from '@/components/about-me/GithubCard'
 import RPGMaker from '@/components/about-me/RPG-Maker'
 import Technologies from '@/components/about-me/Technologies'
 import Timer from '@/components/about-me/Timer'
-import ProgressBar from '@/components/common/ProgressBar'
+import ProgressBar from '@/components/ui/progress-bar'
 
 export const metadata: Metadata = {
   title: '/about',

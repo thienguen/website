@@ -10,8 +10,10 @@ import code       from '../../../../public/icons-json/code.json'
 import download   from '../../../../public/icons-json/download.json'
 import heart      from '../../../../public/icons-json/heart.json'
 import home       from '../../../../public/icons-json/home.json'
-import podcasts   from '../../../../public/icons-json/podcasts.json'
 import projects   from '../../../../public/icons-json/projects.json'
+import podcasts   from '../../../../public/icons-json/podcasts.json'
+import email      from '../../../../public/icons-json/email.json'
+import source     from '../../../../public/icons-json/source.json'
 
 /* Generative Project Cards */
 import Timeline         from '../(timeline)/Timeline'
@@ -35,23 +37,25 @@ export const dynamic = 'force-dynamic'
 // }
 
 export const ICONS = {
-  home: home,
-  code: code,
-  heart: heart,
-  projects: projects,
-  podcasts: podcasts,
+  home     : home,
+  code     : code,
+  heart    : heart,
+  projects : projects,
+  podcasts : podcasts,
   clipboard: clipboard,
-  download: download,
+  download : download,
+  email    : email,
+  source   : source,
 }
 
 export type ProjectProps = {
-  title: string
-  url: string
+  title       : string
+  url         : string
   description?: string
-  since?: string
-  active?: boolean
-  icon: string
-  stats?: string
+  since      ?: string
+  active     ?: boolean
+  icon        : string
+  stats      ?: string
 }
 
 /**

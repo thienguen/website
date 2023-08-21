@@ -4,12 +4,14 @@ $color-gray: #9CA3AF;
 $color-black: #1F2937;
 $card-size: 23rem;
 
-.carousel {
-  /* position: relative; */
-  /* width: $card-size; */
-  /* height: $card-size; */
-  /* perspective: 500px; */
-  /* transform-style: preserve-3d; */
+.carousal {
+  /* scroll-snap-type: x mandatory; */
+  user-select: none;
+}
+
+.carousal-item {
+  /* scroll-snap-align: center; */
+  user-select: none;
 }
 
 .card-container {

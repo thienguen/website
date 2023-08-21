@@ -2,9 +2,7 @@
 module.exports = {
   darkMode: ['class'],
   content : ['./src/**/*.{js,ts,jsx,tsx}'],
-  daisyui : {
-    themes: false,
-  },
+  daisyui : { themes: false },
   theme: {
     container: {
       center : true,
@@ -31,7 +29,7 @@ module.exports = {
     },
     extend: {
       colors: {
-          /* Set up */
+        /* Set up */
         'input'     : 'hsl(var(--input))',
         'ring'      : 'hsl(var(--ring))',
         'border'    : 'hsl(var(--border))',
@@ -67,7 +65,7 @@ module.exports = {
           foreground: 'hsl(var(--card-foreground))',
         },
 
-          // Copi Copi
+        // Copi Copi
         'bglight'    : '#F9FAFB',
         'marrslight' : '#1C9A9A',
         'marrsgreen' : '#007A7A',
@@ -81,7 +79,18 @@ module.exports = {
         'textlight'  : '#F9FAFB',
         'pink-accent': '#a385b3',
 
-          // Theme
+        /* Dangerous, don't */
+        // 'yellow'     : '#ffff80',
+        // 'pink'       : '#ff80bf',
+        // 'purple'     : '#9580ff',
+        // 'red'        : '#ff9580',
+        // 'orange'     : '#ffca80',
+        // 'green'      : '#8aff80',
+        // 'cyan'       : '#80ffea',
+        'hover'      : '#212024',
+        'command'    : 'rgba(255, 255, 255, 0.05)',
+
+        // Theme
         'darkPrimaryColor'   : '#6ACDFF',
         'darkSecondaryColor' : '#57BFFF',
         'lightPrimaryColor'  : '#D87787',
@@ -99,15 +108,14 @@ module.exports = {
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up'  : 'accordion-up 0.2s ease-out',
-          /* AddedCho */
-        'fade-in'   : 'fade-in 2000ms var(--animation-delay, 0ms) ease forwards',
-        'fade-in-2' : 'fade-in-2 2.25s ease-in-out forwards',
-        'title'     : 'title 2s ease-out forwards',
-        'fade-left' : 'fade-left 4s ease-in-out forwards',
-        'fade-right': 'fade-right 4s ease-in-out forwards',
+        'fade-in'       : 'fade-in 2000ms var(--animation-delay, 0ms) ease forwards',
+        'fade-in-2'     : 'fade-in-2 2.25s ease-in-out forwards',
+        'title'         : 'title 2s ease-out forwards',
+        'fade-left'     : 'fade-left 4s ease-in-out forwards',
+        'fade-right'    : 'fade-right 4s ease-in-out forwards',
       },
       keyframes: {
-          /* ??? */
+        /* ??? */
         'accordion-down': {
           from: { height: 0 },
           to  : { height: 'var(--radix-accordion-content-height)' },
@@ -120,7 +128,7 @@ module.exports = {
           from: { opacity: 0, transform: 'translateY(-10px)' },
           to  : { opacity: 1, transform: 'none' },
         },
-          /* Deprecated */
+        /* Deprecated */
         'fade-in-2': {
           '0%': {
             opacity: '0%',
