@@ -39,8 +39,8 @@ const Timer = (props: TimerProps) => {
             `${props.height ?? ''} ${props.cols ?? ''}`
           )}
         >
-          <h1 className="font-metropolis sm:text-base md:text-lg lg:text-xl">{timeInLV}</h1>
-          <p className="font-metropolis sm:text-xs lg:text-sm">in Las Vegas, Nevada</p>
+          <h1 className="font-pixeloidMono sm:text-base md:text-lg lg:text-xl">{timeInLV}</h1>
+          <p className="font-pixeloidMono sm:text-xs lg:text-sm">in Las Vegas, Nevada</p>
         </div>
       </div>
     </>

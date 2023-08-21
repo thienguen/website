@@ -8,8 +8,10 @@ export const Navlinks = [
 export const NavMiddleLinks = [
   { href: '/', title: '/home' },
   { href: '/projects', title: '/projects' },
-  { href: '/about', title: '/about' },
-  { href: '/guestbook', title: '/guestbook' },
+
+  { href: '/about', title: 'about/' },
+  { href: '/guestbook', title: 'guestbook/' },
+  // { href: '/contact', title: 'c/' },
 ];
 
 

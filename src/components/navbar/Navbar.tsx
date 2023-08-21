@@ -56,15 +56,13 @@ const Navbar = () => {
   /* If the user decided to hard refresh, like they always do */
   if (isBreakpoint === null) {
     return (
-      <>
-        <nav className="mx-auto mt-1.5 flex w-11/12 flex-wrap items-center justify-between pb-2 pl-6 pt-4 font-dosis md:flex-nowrap lg:w-2/3">
-          <div className={`md:block ${isOpen ? 'block' : 'hidden'}`}>
-            <NavbarLeft path_name={path_name} />
-          </div>
-          <NavbarMiddle />
-          <NavbarRight />
-        </nav>
-      </>
+      <nav className="mx-auto mt-1.5 flex w-11/12 flex-wrap items-center justify-between pb-2 pl-6 pt-4 font-dosis md:flex-nowrap lg:w-2/3">
+        <div className={`md:block ${isOpen ? 'block' : 'hidden'}`}>
+          <NavbarLeft path_name={path_name} />
+        </div>
+        <NavbarMiddle />
+        <NavbarRight />
+      </nav>
     )
   }
 
@@ -74,15 +72,13 @@ const Navbar = () => {
       <Suspense fallback={<div>Loading...</div>}>
         {/* Useless */}
         {isBreakpoint ? (
-          <>
-            <nav className="mx-auto mt-1.5 flex w-11/12 flex-wrap items-center justify-between pb-2 pl-6 pt-4 font-dosis md:flex-nowrap lg:w-2/3">
-              <div className={`md:block ${isOpen ? 'block' : 'hidden'}`}>
-                <NavbarLeft path_name={path_name} />
-              </div>
-              <NavbarMiddle />
-              <NavbarRight />
-            </nav>
-          </>
+          <nav className="mx-auto mt-1.5 flex w-11/12 flex-wrap items-center justify-between pb-2 pl-6 pt-4 font-dosis md:flex-nowrap lg:w-2/3">
+            <div className={`md:block ${isOpen ? 'block' : 'hidden'}`}>
+              <NavbarLeft path_name={path_name} />
+            </div>
+            <NavbarMiddle />
+            <NavbarRight />
+          </nav>
         ) : (
           <>
             <div className="mx-auto mt-2 w-4/5 py-5" ref={navRef}>

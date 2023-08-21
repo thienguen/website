@@ -2,8 +2,8 @@
 
 import React, { useEffect, useRef } from 'react'
 import gsap from 'gsap'
-import Signature from './signature'
 import KBarStart from '@/components/home/kbar-start'
+import Signature from './signature'
 
 const HomeHi: React.FC = () => {
   const textRef = useRef<HTMLHeadingElement[] | null>(null)
@@ -66,17 +66,16 @@ const HomeHi: React.FC = () => {
   }, [])
 
   return (
-
-      <div className="flex flex-col justify-center px-10">
-        {' '}
-        {/* Reduced space-y-3 to space-y-2 */}
-        <p className="  text-center font-metropolis text-2xl font-light text-black opacity-70  dark:text-white">
-          {`Chào, I'm`}
-        </p>
-        {/* Hero Title */}
-        <h2 className="text-h2 shadow-effect cursor-default whitespace-nowrap pb-2 text-center font-metropolis text-4xl font-bold text-slate-800   dark:text-slate-200 lg:text-6xl">
-          {`Thien Nguyen`}
-          {/* <span
+    <div className="flex flex-col justify-center px-10">
+      {' '}
+      {/* Reduced space-y-3 to space-y-2 */}
+      <p className="  text-center font-pixeloidMono text-2xl font-light text-black opacity-70  dark:text-white">
+        {`Chào, I'm`}
+      </p>
+      {/* Hero Title */}
+      <h2 className="text-h2 shadow-effect cursor-default whitespace-nowrap pb-2 text-center font-pixeloidMono text-4xl font-bold text-slate-800   dark:text-slate-200 lg:text-6xl">
+        {`Thien Nguyen`}
+        {/* <span
             className={cn(
               'dark:bg-gradient-to-b dark:from-slate-300 dark:to-gray-300 dark:text-[#0D0D0D]', // light
               'bg-gradient-to-b from-slate-500 to-gray-900 text-slate-200', // dark
@@ -85,16 +84,16 @@ const HomeHi: React.FC = () => {
           >
             Dreams
           </span> */}
-        </h2>
-        {/* Hero subtitle */}
-        <div className="text-hi balanced relative  max-w-lg cursor-cell space-y-2 pb-2 text-center font-metropolis text-xl text-gray-600 text-opacity-20   dark:text-gray-400">
-          <p>A person who loves story-rich RPG-Maker games.</p>
-          <p>Often time coding. Sometimes drawing.</p>
-          <p>✥ And always learning ✥</p>
-        </div>
-        <Signature />
-        <KBarStart />
+      </h2>
+      {/* Hero subtitle */}
+      <div className="text-hi balanced relative  max-w-lg cursor-cell space-y-2 pb-2 text-center font-pixeloidMono text-xl text-gray-600 text-opacity-20   dark:text-gray-400">
+        <p>A person who loves story-rich RPG-Maker games.</p>
+        <p>Often time coding. Sometimes drawing.</p>
+        <p>✥ And always learning ✥</p>
       </div>
+      <Signature />
+      <KBarStart />
+    </div>
   )
 }
 

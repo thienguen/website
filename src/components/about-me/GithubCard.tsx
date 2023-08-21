@@ -52,7 +52,7 @@ export default function GithubCard(props: GithubCardProps) {
           </span>
 
           <span className="space-y-0.5 px-3 pb-3">
-            <span className="block font-metropolis font-bold">github</span>
+            <span className="block font-pixeloidMono text-xl font-bold">github</span>
           </span>
         </Link>
       </div>

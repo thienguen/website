@@ -9,7 +9,7 @@ const KBarStart: React.FC = () => {
   return (
     <>
       <button
-        className=" relative mx-auto mb-4 flex max-w-lg cursor-cell appearance-none flex-row items-center justify-center rounded-lg bg-transparent px-3 py-1 text-center font-metropolis text-xl text-black text-opacity-70 transition-all duration-200 hover:bg-slate-400 hover:text-black dark:text-gray-400 dark:hover:bg-gray-500 dark:hover:text-white"
+        className=" relative mx-auto mb-4 flex max-w-lg cursor-cell appearance-none flex-row items-center justify-center rounded-lg bg-transparent px-3 py-1 text-center font-pixeloidMono text-xl text-black text-opacity-70 transition-all duration-200 hover:bg-slate-400 hover:text-black dark:text-gray-400 dark:hover:bg-gray-500 dark:hover:text-white"
         onClick={query.toggle}
       >
         ← Press Ctrl/Cmd + K to start →

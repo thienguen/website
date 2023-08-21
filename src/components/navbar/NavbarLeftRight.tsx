@@ -1,4 +1,4 @@
-  /* Src */
+/* Src */
 import type { ReactNode } from 'react'
 import Link from 'next/link'
 import { useKBar } from 'kbar'
@@ -9,23 +9,25 @@ import { IoPersonCircleOutline } from 'react-icons/io5'
 import Typewriter from 'typewriter-effect'
 import { cn } from '@/lib/util/util'
 import { metadata } from '@/app/api/metadata'
-  // import Navlinks from '@/components/navbar/Navlinks'
+// import Navlinks from '@/components/navbar/Navlinks'
 import { Navlinks, NavMiddleLinks } from './Navlinks'
 
 interface NavbarRightProps {
   path_name?: string
-  isOpen    : boolean
+  isOpen: boolean
 }
 
-  /**
+/**
  * <mapping for each title to its icon>
  */
 const IconMapping: { [key: string]: JSX.Element } = {
-  '/home'     : <AiOutlineHome />,
-  '/about'    : <IoPersonCircleOutline />,
-  '/projects' : <GoProjectSymlink />,
-  '/guestbook': <AiOutlineMail />,
-  '/kbar'     : <BsCommand />,
+  '/home': <AiOutlineHome />,
+  '/projects': <GoProjectSymlink />,
+
+  'guestbook/': <AiOutlineMail />,
+  'about/': <IoPersonCircleOutline />,
+
+  '/kbar': <BsCommand />,
 }
 
 /**
@@ -48,15 +50,24 @@ export const NavbarLeft = ({ path_name }: { path_name: string }) => (
 export const NavbarMiddle = () => {
   return (
     <div className="flex justify-center space-x-4">
-      {NavMiddleLinks.map((link) => (
+      {NavMiddleLinks.map((link, index) => (
         <Link
           key={link.title}
           href={link.href}
           className="link-underline link-underline2 rounded tracking-wider text-black hover:bg-slate-50 dark:text-gray-100 dark:hover:bg-gray-700 sm:px-3 sm:py-2"
         >
           <div className="flex flex-row items-center font-dosis text-sm font-medium dark:font-normal dark:tracking-wider">
-            {IconMapping[link.title]}
-            {link.title}
+            {index < 2 ? (
+              <>
+                {IconMapping[link.title]}
+                {link.title}
+              </>
+            ) : (
+              <>
+                {link.title}
+                {IconMapping[link.title]}
+              </>
+            )}
           </div>
         </Link>
       ))}
