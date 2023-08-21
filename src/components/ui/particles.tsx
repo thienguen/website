@@ -126,7 +126,14 @@ export default function Particles({
     if (canvasContainerRef.current && canvasRef.current && context.current) {
       circles.current.length         = 0
       canvasSize.current.w           = document.body.scrollWidth
-      canvasSize.current.h           = document.body.scrollHeight              // Use total website height instead of viewport height
+      canvasSize.current.h           = document.body.scrollHeight
+
+      /* Bugs: mobile view, reset too often? */
+      if (canvasSize.current.w < 640) {
+        canvasSize.current.w = canvasContainerRef.current.offsetWidth
+        canvasSize.current.h = canvasContainerRef.current.offsetHeight
+      }
+
       canvasRef.current.width        = canvasSize.current.w * dpr
       canvasRef.current.height       = canvasSize.current.h * dpr
       canvasRef.current.style.width  = `${canvasSize.current.w}px`

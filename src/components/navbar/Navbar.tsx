@@ -4,10 +4,11 @@
 import { Suspense, useCallback, useEffect, useRef, useState } from 'react'
 import { usePathname } from 'next/navigation'
 /* Libraries */
+
 import { Twirl as Hamburger } from 'hamburger-react'
 /* Src */
 import { useMediaQuery } from '@/hooks/useMediaQuery'
-import { NavbarLeft, NavbarRight, NavbarRightSmall } from '@/components/navbar/NavbarLeftRight'
+import { NavbarLeft, NavbarMiddle, NavbarRight, NavbarRightSmall } from '@/components/navbar/NavbarLeftRight'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -56,16 +57,12 @@ const Navbar = () => {
   if (isBreakpoint === null) {
     return (
       <>
-        <nav className="m-auto mt-1.5 flex w-11/12 flex-wrap items-center justify-between pb-3 pl-6 pt-5 font-dosis md:flex-nowrap lg:w-2/3">
-          {/* Typewriter Effect -- Left */}
+        <nav className="mx-auto mt-1.5 flex w-11/12 flex-wrap items-center justify-between pb-2 pl-6 pt-4 font-dosis md:flex-nowrap lg:w-2/3">
           <div className={`md:block ${isOpen ? 'block' : 'hidden'}`}>
             <NavbarLeft path_name={path_name} />
           </div>
-          {/* ------------------------- */}
-          <div>
-            <NavbarRight />
-          </div>
-          {/* Navlinks Effects -- Right */}
+          <NavbarMiddle />
+          <NavbarRight />
         </nav>
       </>
     )
@@ -75,20 +72,15 @@ const Navbar = () => {
     <>
       {/* Trust, me I don't know suspense */}
       <Suspense fallback={<div>Loading...</div>}>
-        {' '}
         {/* Useless */}
         {isBreakpoint ? (
           <>
-            <nav className="m-auto mt-1.5 flex w-11/12 flex-wrap items-center justify-between pb-3 pl-6 pt-5 font-dosis md:flex-nowrap lg:w-2/3">
-              {/* Typewriter Effect -- Left */}
+            <nav className="mx-auto mt-1.5 flex w-11/12 flex-wrap items-center justify-between pb-2 pl-6 pt-4 font-dosis md:flex-nowrap lg:w-2/3">
               <div className={`md:block ${isOpen ? 'block' : 'hidden'}`}>
                 <NavbarLeft path_name={path_name} />
               </div>
-              {/* ------------------------- */}
-              <div>
-                <NavbarRight />
-              </div>
-              {/* Navlinks Effects -- Right */}
+              <NavbarMiddle />
+              <NavbarRight />
             </nav>
           </>
         ) : (

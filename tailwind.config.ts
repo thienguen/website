@@ -2,9 +2,7 @@
 module.exports = {
   darkMode: ['class'],
   content : ['./src/**/*.{js,ts,jsx,tsx}'],
-  daisyui : {
-    themes: false,
-  },
+  daisyui : { themes: false },
   theme: {
     container: {
       center : true,
@@ -32,62 +30,74 @@ module.exports = {
     extend: {
       colors: {
         /* Set up */
-        input     : 'hsl(var(--input))',
-        ring      : 'hsl(var(--ring))',
-        border    : 'hsl(var(--border))',
-        background: 'hsl(var(--background))',
-        foreground: 'hsl(var(--foreground))',
+        'input'     : 'hsl(var(--input))',
+        'ring'      : 'hsl(var(--ring))',
+        'border'    : 'hsl(var(--border))',
+        'background': 'hsl(var(--background))',
+        'foreground': 'hsl(var(--foreground))',
 
-        primary   : {
+        'primary': {
           DEFAULT   : 'hsl(var(--primary))',
           foreground: 'hsl(var(--primary-foreground))',
         },
-        secondary: {
+        'secondary': {
           DEFAULT   : 'hsl(var(--secondary))',
           foreground: 'hsl(var(--secondary-foreground))',
         },
-        destructive: {
+        'destructive': {
           DEFAULT   : 'hsl(var(--destructive))',
           foreground: 'hsl(var(--destructive-foreground))',
         },
-        muted: {
+        'muted': {
           DEFAULT   : 'hsl(var(--muted))',
           foreground: 'hsl(var(--muted-foreground))',
         },
-        accent: {
+        'accent': {
           DEFAULT   : 'hsl(var(--accent))',
           foreground: 'hsl(var(--accent-foreground))',
         },
-        popover: {
+        'popover': {
           DEFAULT   : 'hsl(var(--popover))',
           foreground: 'hsl(var(--popover-foreground))',
         },
-        card: {
+        'card': {
           DEFAULT   : 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))',
         },
 
         // Copi Copi
-        bglight   : "#F9FAFB",
-        marrslight: "#1C9A9A",
-        marrsgreen: "#007A7A",
-        marrsdark : "#004D4D",
-        cardlight : "#EFF3F3",
-        bgdark    : "#1D2A35",
-        carrilight: "#57DCB4",
-        carrigreen: "#05CE91",
-        carridark : "#00835B",
-        carddark  : "#22323F",
-        textlight : "#F9FAFB",
+        'bglight'    : '#F9FAFB',
+        'marrslight' : '#1C9A9A',
+        'marrsgreen' : '#007A7A',
+        'marrsdark'  : '#004D4D',
+        'cardlight'  : '#EFF3F3',
+        'bgdark'     : '#1D2A35',
+        'carrilight' : '#57DCB4',
+        'carrigreen' : '#05CE91',
+        'carridark'  : '#00835B',
+        'carddark'   : '#22323F',
+        'textlight'  : '#F9FAFB',
+        'pink-accent': '#a385b3',
+
+        /* Dangerous, don't */
+        // 'yellow'     : '#ffff80',
+        // 'pink'       : '#ff80bf',
+        // 'purple'     : '#9580ff',
+        // 'red'        : '#ff9580',
+        // 'orange'     : '#ffca80',
+        // 'green'      : '#8aff80',
+        // 'cyan'       : '#80ffea',
+        'hover'      : '#212024',
+        'command'    : 'rgba(255, 255, 255, 0.05)',
 
         // Theme
-        darkPrimaryColor   : '#6ACDFF',
-        darkSecondaryColor : '#57BFFF',
-        lightPrimaryColor  : '#D87787',
-        lightSecondaryColor: '#861657',
+        'darkPrimaryColor'   : '#6ACDFF',
+        'darkSecondaryColor' : '#57BFFF',
+        'lightPrimaryColor'  : '#D87787',
+        'lightSecondaryColor': '#861657',
 
-        lightTheme: 'bg-gradient-to-b from-slate-300 to-gray-300',
-        darkTheme:  'dark:bg-gradient-to-b dark:from-black dark:to-gray-900',
+        'lightTheme': 'bg-gradient-to-b from-slate-300 to-gray-300',
+        'darkTheme' : 'dark:bg-gradient-to-b dark:from-black dark:to-gray-900',
       },
       borderRadius: {
         lg: 'var(--radius)',
@@ -98,14 +108,14 @@ module.exports = {
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up'  : 'accordion-up 0.2s ease-out',
-        /* AddedCho */
-        "fade-in"   : "fade-in 2000ms var(--animation-delay, 0ms) ease forwards",
-        'fade-in-2' : 'fade-in-2 2.25s ease-in-out forwards',
-        'title'     : 'title 2s ease-out forwards',
-        'fade-left' : 'fade-left 4s ease-in-out forwards',
-        'fade-right': 'fade-right 4s ease-in-out forwards',
+        'fade-in'       : 'fade-in 2000ms var(--animation-delay, 0ms) ease forwards',
+        'fade-in-2'     : 'fade-in-2 2.25s ease-in-out forwards',
+        'title'         : 'title 2s ease-out forwards',
+        'fade-left'     : 'fade-left 4s ease-in-out forwards',
+        'fade-right'    : 'fade-right 4s ease-in-out forwards',
       },
       keyframes: {
+        /* ??? */
         'accordion-down': {
           from: { height: 0 },
           to  : { height: 'var(--radix-accordion-content-height)' },
@@ -118,6 +128,7 @@ module.exports = {
           from: { opacity: 0, transform: 'translateY(-10px)' },
           to  : { opacity: 1, transform: 'none' },
         },
+        /* Deprecated */
         'fade-in-2': {
           '0%': {
             opacity: '0%',
@@ -157,6 +168,7 @@ module.exports = {
             opacity: '0%',
           },
         },
+          /* Deprecated */
         'title': {
           '0%': {
             'line-height'   : '0%',
@@ -179,12 +191,11 @@ module.exports = {
       },
     },
     fontFamily: {
-        // 'display': ['var(--font-calsans)'],
-      'dosis'          : ['Dosis', 'sans-serif',],
-      'signature'      : ['Sacramento', 'cursive'],
-      'metropolis'     : ['MetropolisRegular', 'sans-serif'],   // copi
-      'metropolis-bold': ['MetropolisBold', 'sans-serif'],      // copi
-      'jetbrains-mono' : ['JetBrains Mono', 'monospace'],
+      'dosis'         : ['Dosis', 'sans-serif'],
+      'signature'     : ['Sacramento', 'cursive'],
+      'jetbrains-mono': ['JetBrains Mono', 'monospace'],
+      'metropolis'    : ['MetropolisRegular', 'sans-serif'],
+      'pixeloidMono'  : ['PixelloidMono', 'monospace'],
     },
   },
   plugins: [require('tailwindcss-animate'), require('@tailwindcss/typography'), require('daisyui')],

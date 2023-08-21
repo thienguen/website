@@ -1,9 +1,9 @@
 import PageTitle from '@/components/ui/header-title'
-import ProgressBar from '@/components/common/ProgressBar'
+import ProgressBar from '@/components/ui/progress-bar'
 import HomeHi from '@/components/home/hi'
+
 // import Profile from '@/components/home/profile'
-import Signature from '@/components/home/signature'
-import SkillIssues from '@/components/home/skill-issues'
+// import SkillIssues from '@/components/home/skill-issues'
 
 const BarLeft = () => {
   return (
@@ -37,23 +37,16 @@ export default function Home() {
       {/* If we could implement the full usage of landyard api here */}
 
       {/* Hero Kinda Section */}
-      <div className="mb-4 mt-12 h-full w-full items-center justify-center sm:mt-20 sm:min-h-[500px]">
-        {/* Bar */}
-        <BarLeft />
-        {/* ------------------------------------------------------------------------------------------------- */}
+      {/* Bar */}
+      {/* ------------------------------------------------------------------------------------------------- */}
+      <div className="mt-10 md:mt-20"></div>
+      <BarLeft />
+      <div className=" flex h-full w-full flex-col items-center justify-center sm:mt-0 sm:min-h-[400px]">
         <HomeHi />
-
-        <div className="h-16 pb-3 pt-5">
-          <Signature />
-        </div>
-        <SkillIssues />
-        {/* ------------------------------------------------------------------------------------------------- */}
-
-        {/* TODO: kbar will be here Ctrk+K */}
-
-        {/* Bar */}
-        <BarRight />
       </div>
+      <BarRight />
+      {/* ------------------------------------------------------------------------------------------------- */}
+      {/* Bar */}
     </>
   )
 }

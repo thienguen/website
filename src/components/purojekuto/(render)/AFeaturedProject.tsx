@@ -4,7 +4,7 @@ import Lottie, { type LottieRefCurrentProps } from 'lottie-react'
 import { ICONS, type ProjectProps } from './Purojekuto'
 
 type FeaturedProjectProps = {
-  index: number
+  index  : number
   project: ProjectProps
 }
 
@@ -41,14 +41,14 @@ export default function AFeaturedProject({ project, index }: FeaturedProjectProp
             />
           </div>
 
-          <div className="grow balanced" dir={`${textDirection}`}>
-            <p className="font-metropolis text-base font-semibold text-black dark:font-normal dark:text-white">
+          <div className="balanced grow" dir={`${textDirection}`}>
+            <p className="font-pixeloidMono text-base font-semibold text-black dark:font-normal dark:text-white">
               {project.title}
             </p>
-            <p className="font-metropolis text-sm leading-6 text-slate-600 opacity-90 dark:text-slate-400">
+            <p className="font-pixeloidMono text-sm leading-6 text-slate-600 opacity-90 dark:text-slate-400">
               {project.description}
             </p>
-            <p className="mt-1 inline-block font-metropolis text-sm font-semibold tracking-wide text-primary dark:font-normal">
+            <p className="mt-1 inline-block font-pixeloidMono text-sm font-semibold tracking-wide text-primary dark:font-normal">
               {project.stats}
             </p>
           </div>

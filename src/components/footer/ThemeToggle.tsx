@@ -13,7 +13,6 @@ export function ThemeToggle() {
   const { theme, setTheme }     = useTheme()
   const [disabled, setDisabled] = useState(false) // <-- State to manage button's disabled status
 
-
   useEffect(() => {
     const changeTime = localStorage.getItem('themeChangeTimestamp')
 
@@ -34,8 +33,8 @@ export function ThemeToggle() {
 
   const handleThemeChange = () => {
     // Set the button to disabled and show the message
-    setTheme(theme === 'dark' ? 'light' : 'dark')
     setDisabled(true)
+    setTheme(theme === 'dark' ? 'light' : 'dark')
     
     localStorage.setItem('themeChangeTimestamp', Date.now().toString())
     location.reload() // this will refresh the page
@@ -44,12 +43,12 @@ export function ThemeToggle() {
     setTimeout(() => {
       setDisabled(false)
     }, 7000)
-    
   }
 
   return (
     <Tooltip
       text={`${disabled ? 'Changing theme in background' : 'Changing Theme, this took a bit so please be patient!'}`}
+      isThemetoogle
     >
       <Button
         variant="ghost"

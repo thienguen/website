@@ -13,19 +13,19 @@ const PreLoader: React.FC<Props> = ({ children }) => {
   const loadingRef = useRef(null)
   const { theme } = useTheme()
   const [animationPlayed, setAnimationPlayed] = useState(false)
-  let isClient = typeof window !== "undefined";
-  const currentTheme = isClient ? theme : 'dark'; // default to 'dark' for SSR
+  let isClient = typeof window !== 'undefined'
+  // const currentTheme = isClient ? theme : 'dark'; // default to 'dark' for SSR
 
   function useIsClient() {
-    const [isClient, setIsClient] = useState(false);
+    const [isClient, setIsClient] = useState(false)
     useEffect(() => {
-      setIsClient(true);
-    }, []);
-    return isClient;
+      setIsClient(true)
+    }, [])
+    return isClient
   }
 
-  isClient = useIsClient();
-  
+  isClient = useIsClient()
+
   useEffect(() => {
     if (!animationPlayed) {
       const animationTimeout = setTimeout(() => {
@@ -36,7 +36,7 @@ const PreLoader: React.FC<Props> = ({ children }) => {
 
         setAnimationPlayed(true)
       }, 800) // Delay for 1 second
-      
+
       // Cleanup function: clear the timeout
       return () => {
         clearTimeout(animationTimeout)
@@ -44,8 +44,8 @@ const PreLoader: React.FC<Props> = ({ children }) => {
     }
   }, [animationPlayed, theme])
 
-  console.log('theme pre-loader', theme)
-  if (!isClient) return null;
+  // console.log('theme pre-loader', theme)
+  if (!isClient) return null
 
   return (
     <div
@@ -73,7 +73,9 @@ const PreLoader: React.FC<Props> = ({ children }) => {
           }`,
         }}
       >
-        <span className={`loading-text inline-block text-4xl tracking-widest opacity-0 sm:text-5xl lg:text-7xl`}>
+        <span
+          className={`loading-text inline-block font-dosis text-5xl tracking-widest opacity-0 sm:text-5xl lg:text-7xl`}
+        >
           {children}
         </span>
       </div>

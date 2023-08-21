@@ -1,15 +1,20 @@
 @font-face {
   font-family: MetropolisRegular;
-  src: url('/fonts/MetropolisRegular.ttf');
+  src        : url('/fonts/MetropolisRegular.ttf');
 }
 @font-face {
   font-family: MetropolisBold;
-  src: url('/fonts/MetropolisBold.ttf');
+  src        : url('/fonts/MetropolisBold.ttf');
 }
 
 @font-face {
   font-family: Sacramento;
-  src: url('/fonts/Sacramento-Regular.ttf');
+  src        : url('/fonts/Sacramento-Regular.ttf');
+}
+
+@font-face {
+  font-family: PixeloidMono;
+  src        : url('/fonts/PixeloidMono.ttf');
 }
 
 @media (max-width: 640px) {
@@ -41,28 +46,28 @@
     --background: 0 0% 100%;
     --foreground: 240 10% 3.9%;
 
-    --muted: 240 4.8% 95.9%;
+    --muted           : 240 4.8% 95.9%;
     --muted-foreground: 240 3.8% 46.1%;
 
-    --popover: 0 0% 100%;
+    --popover           : 0 0% 100%;
     --popover-foreground: 240 10% 3.9%;
 
-    --card: 0 0% 100%;
+    --card           : 0 0% 100%;
     --card-foreground: 240 10% 3.9%;
 
     --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
+    --input : 240 5.9% 90%;
 
-    --primary: 240 5.9% 10%;
+    --primary           : 240 5.9% 10%;
     --primary-foreground: 0 0% 98%;
 
-    --secondary: 240 4.8% 95.9%;
+    --secondary           : 240 4.8% 95.9%;
     --secondary-foreground: 240 5.9% 10%;
 
-    --accent: 240 4.8% 95.9%;
+    --accent           : 240 4.8% 95.9%;
     --accent-foreground: ;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive           : 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
     --ring: 240 5% 64.9%;
@@ -73,28 +78,28 @@
   .dark {
     --foreground: 0 0% 98%;
 
-    --muted: 240 3.7% 15.9%;
+    --muted           : 240 3.7% 15.9%;
     --muted-foreground: 240 5% 64.9%;
 
-    --popover: 240 10% 3.9%;
+    --popover           : 240 10% 3.9%;
     --popover-foreground: 0 0% 98%;
 
-    --card: 240 10% 3.9%;
+    --card           : 240 10% 3.9%;
     --card-foreground: 0 0% 98%;
 
     --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
+    --input : 240 3.7% 15.9%;
 
-    --primary: 0 0% 98%;
+    --primary           : 0 0% 98%;
     --primary-foreground: 240 5.9% 10%;
 
-    --secondary: 240 3.7% 15.9%;
+    --secondary           : 240 3.7% 15.9%;
     --secondary-foreground: 0 0% 98%;
 
-    --accent: 240 3.7% 15.9%;
+    --accent           : 240 3.7% 15.9%;
     --accent-foreground: ;
 
-    --destructive: 0 62.8% 30.6%;
+    --destructive           : 0 62.8% 30.6%;
     --destructive-foreground: 0 85.7% 97.3%;
 
     --ring: 240 3.7% 15.9%;
@@ -154,22 +159,22 @@ body {
   /* height: 100vh; */
   scroll-behavior: smooth;
   text-rendering: optimizeLegibility;
-  font-family: JetBrains Mono, monospace;
+  font-family   : JetBrains Mono, monospace;
 }
 
 /* They dance, too much, applied to nav*/
 @keyframes slide-in {
   0% {
-    opacity: 0;
+    opacity  : 0;
     transform: translateY(-20px);
   }
   100% {
-    opacity: 1;
+    opacity  : 1;
     transform: translateY(0);
   }
 }
 
-/* Pulse Animation, applied to vertical timeline */
+  /* Pulse Animation, applied to vertical timeline */
 @keyframes pulse1 {
   0% {
     box-shadow: 0 0 0 0 rgba(0, 116, 217, 0.7);
@@ -236,88 +241,10 @@ body {
   animation: pulse4 1.5s infinite;
 }
 
-/* Custom css for nav*/
-.link-underline {
-  position: relative;
-  display: inline-block;
-}
-
-/* Hover nav for dark */
-.dark .link-underline::after {
-  content: '';
-
-  display: block;
-  position: absolute;
-  visibility: hidden;
-  background: #171923;
-
-  width: 0;
-  height: 2px;
-
-  right: 0;
-
-  transition: all 0.3s ease-in-out;
-  background: linear-gradient(transparent, transparent), linear-gradient(to right, #6acdff, #57bfff); /* Sky blue shades */
-}
-
-.dark .link-underline:hover::after {
-  visibility: visible;
-
-  width: 100%;
-
-  left: 0;
-
-  background: linear-gradient(transparent, transparent), linear-gradient(to right, #6acdff, #57bfff); /* Sky blue shades */
-}
-
-.link-underline2 {
-  position: relative;
-  display: inline-block;
-}
-
-/* Hover nav for light */
-.link-underline2::after {
-  content: '';
-
-  display: block;
-  position: absolute;
-  visibility: hidden;
-  background: #171923;
-
-  width: 0;
-  height: 2px;
-
-  right: 0;
-
-  transition: all 0.3s ease-in-out;
-  background: linear-gradient(transparent, transparent), linear-gradient(to right, #d87787, #861657); /* New provided colors */
-}
-
-.link-underline2:hover::after {
-  visibility: visible;
-
-  width: 100%;
-
-  left: 0;
-
-  background: linear-gradient(transparent, transparent), linear-gradient(to right, #d87787, #861657); /* New provided colors */
-}
-
-.nav-link {
-  transition: all 1s ease-in-out;
-  opacity: 0;
-  transform: translateY(-20px);
-}
-
-.nav-link.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 /* They dance, too much */
 .shadow-effect {
   text-shadow: 1px 1px #fff, 2px 2px #fff, 2px 2px #fff;
-  color: #1a202c;
+  color      : #1a202c;
 }
 
 /* 3.4 tailwind will have this, but we at 3.3, sadge */
@@ -325,10 +252,10 @@ body {
   text-wrap: balance;
 }
 
-/* truncate text in guestbook entry, tho I could have install mui */
+/* truncate text in guestbook entry, tho I could have install x */
 .truncate-text {
-  display: -webkit-box;
+  display           : -webkit-box;
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
-  overflow: hidden;
+  overflow          : hidden;
 }
