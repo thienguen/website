@@ -42,9 +42,7 @@ export default function Home() {
       {/* Bar */}
       {/* ------------------------------------------------------------------------------------------------- */}
       <BarLeft />
-      <div className=" flex h-full w-full flex-col items-center justify-center pb-10 sm:mt-0 sm:min-h-[500px]">
-        <HomeHi />
-      </div>
+      <HomeHi />
       <BarRight />
       {/* ------------------------------------------------------------------------------------------------- */}
       {/* Bar */}

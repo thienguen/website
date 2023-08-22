@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef } from 'react'
 import gsap from 'gsap'
+import { useTheme } from 'next-themes'
 import KBarStart from '@/components/home/kbar-start'
 import Profile from './profile'
 
@@ -9,6 +10,12 @@ import Profile from './profile'
 
 const HomeHi: React.FC = () => {
   const textRef = useRef<HTMLHeadingElement[] | null>(null)
+  const { theme, setTheme } = useTheme()
+
+  if (theme === undefined) {
+    console.log('theme is undefined')
+    setTheme('dark')
+  }
 
   useEffect(() => {
     const textElements = gsap.utils.toArray('.text-hi')
@@ -30,9 +37,9 @@ const HomeHi: React.FC = () => {
         // }
         {
           backgroundSize: '100% 100%',
-          ease          : 'none',
-          duration      : 1.5,           // Duration of one "forward" animation.
-          yoyo          : true,          // Play the animation in reverse after playing it forward.
+          ease: 'none',
+          duration: 1.5, // Duration of one "forward" animation.
+          yoyo: true, // Play the animation in reverse after playing it forward.
           // repeat: 1,                  // Infinite repetition -1. but 3 times when moutned.
           // repeatDelay: 0.5            // A delay before starting the animation again (optional, can be adjusted or removed).
         }
@@ -68,17 +75,18 @@ const HomeHi: React.FC = () => {
   }, [])
 
   return (
-    <div className="mb-10 flex flex-col items-center justify-center px-10">
-      {' '}
-      <Profile />
-      {/* Reduced space-y-3 to space-y-2 */}
-      <p className=" text-center font-pixeloidMono text-2xl font-light text-black opacity-70  dark:text-white">
-        {`Chào, I'm`}
-      </p>
-      {/* Hero Title */}
-      <h2 className="text-h2 shadow-effect cursor-default whitespace-nowrap pb-2 text-center font-metropolis text-4xl font-bold text-slate-800   dark:text-slate-200 lg:text-6xl">
-        {`Thien Nguyen`}
-        {/* <span
+    <div className=" flex h-full w-full flex-col items-center justify-center pb-10 sm:mt-0 sm:min-h-[500px]">
+      <div className="mb-10 flex flex-col items-center justify-center px-10">
+        {' '}
+        <Profile />
+        {/* Reduced space-y-3 to space-y-2 */}
+        <p className=" text-center font-pixeloidMono text-2xl font-light text-black opacity-70  dark:text-white">
+          {`Chào, I'm`}
+        </p>
+        {/* Hero Title */}
+        <h2 className="text-h2 shadow-effect cursor-default whitespace-nowrap pb-2 text-center font-metropolis text-4xl font-bold text-slate-800   dark:text-slate-200 lg:text-6xl">
+          {`Thien Nguyen`}
+          {/* <span
             className={cn(
               'dark:bg-gradient-to-b dark:from-slate-300 dark:to-gray-300 dark:text-[#0D0D0D]', // light
               'bg-gradient-to-b from-slate-500 to-gray-900 text-slate-200', // dark
@@ -87,15 +95,16 @@ const HomeHi: React.FC = () => {
           >
             Dreams
         </span> */}
-      </h2>
-      {/* Hero subtitle */}
-      {/* <div className="text-hi balanced relative  max-w-lg cursor-cell space-y-3 pb-2 text-center font-pixeloidMono text-xl text-gray-600 text-opacity-20   dark:text-gray-400">
+        </h2>
+        {/* Hero subtitle */}
+        {/* <div className="text-hi balanced relative  max-w-lg cursor-cell space-y-3 pb-2 text-center font-pixeloidMono text-xl text-gray-600 text-opacity-20   dark:text-gray-400">
         <p>A person who loves story-rich RPG-Maker games.</p>
         <p>Often time coding. Sometimes drawing.</p>
         <p>✥ And always learning ✥</p>
       </div> */}
-      <KBarStart />
-      {/* <Signature /> */}
+        <KBarStart />
+        {/* <Signature /> */}
+      </div>
     </div>
   )
 }

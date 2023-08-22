@@ -9,9 +9,12 @@ import { HiOutlineMoon, HiOutlineSun } from 'react-icons/hi'
 import { Button } from '@/components/ui/button'
 import { Tooltip } from '@/components/common/Tooltip'
 
+import useSound from 'use-sound'
+
 export function ThemeToggle() {
   const { theme, setTheme }     = useTheme()
   const [disabled, setDisabled] = useState(false) // <-- State to manage button's disabled status
+  const [ThemeSound] = useSound('/sounds/game-click.mp3', { volume: 0.5 })
 
   useEffect(() => {
     const changeTime = localStorage.getItem('themeChangeTimestamp')
@@ -54,7 +57,10 @@ export function ThemeToggle() {
         variant="ghost"
         size="sm"
         className="w-7 px-0 hover:bg-slate-50 dark:hover:bg-gray-500"
-        onClick={handleThemeChange} // <-- Updated onClick handler
+        onClick={() => {
+          ThemeSound()
+          handleThemeChange()
+        }}                          // <-- Updated onClick handler
         disabled={disabled}         // <-- Add disabled prop
         rel="noreferrer"
       >

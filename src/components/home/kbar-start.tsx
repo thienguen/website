@@ -3,16 +3,21 @@
 import { useKBar } from 'kbar'
 import { isMac } from '@/lib/util/util'
 import { useMediaQuery } from '@/hooks/useMediaQuery'
+import useSound from 'use-sound'
 
 const KBarStart: React.FC = () => {
   const { query } = useKBar()
   const isBreakingPoint = useMediaQuery('400px', true)
+  const [ThemeSound] = useSound('/sounds/open.mp3', { volume: 0.5 })
 
   return (
     <>
       <p
         className="relative mx-auto flex max-w-2xl cursor-cell appearance-none flex-row items-center justify-center rounded-lg bg-transparent px-3 py-1 text-center font-pixeloidMono text-xl text-black text-opacity-70 transition-all duration-200 hover:bg-slate-400 hover:text-black dark:text-gray-400 dark:hover:bg-gray-500 dark:hover:text-white"
-        onClick={query.toggle}
+        onClick={() => {
+          ThemeSound()
+          query.toggle()
+        }}
       >
         ← Press
         {isMac ? (

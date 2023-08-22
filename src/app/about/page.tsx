@@ -31,6 +31,7 @@ export default function About() {
       <PageTitle
         title={`I don't know everything. I just know what I know. - Hanekawa Tsubasa`}
         titleJP="何でもは知らないわよ、知ってることだけ。"
+        hanekawa={true}
       />
 
       {/* Body of About page*/}
