@@ -1,31 +1,32 @@
-  /* Src */
+/* Src */
 import type { ReactNode } from 'react'
 import Link from 'next/link'
 import { useKBar } from 'kbar'
-import { AiOutlineHome, AiOutlineMail } from 'react-icons/ai'
+import { AiOutlineHome } from 'react-icons/ai'
 import { BsCommand } from 'react-icons/bs'
 import { GoProjectSymlink } from 'react-icons/go'
 import { IoPersonCircleOutline } from 'react-icons/io5'
+import { LuSwords } from 'react-icons/lu'
 import Typewriter from 'typewriter-effect'
+import useSound from 'use-sound'
 import { cn } from '@/lib/util/util'
 import { metadata } from '@/app/api/metadata'
-  // import Navlinks from '@/components/navbar/Navlinks'
 import { Navlinks, NavMiddleLinks } from './Navlinks'
 
 interface NavbarRightProps {
   path_name?: string
-  isOpen    : boolean
+  isOpen: boolean
 }
 
-  /**
+/**
  * <mapping for each title to its icon>
  */
 const IconMapping: { [key: string]: JSX.Element } = {
-  '/home'     : <AiOutlineHome />,
-  '/about'    : <IoPersonCircleOutline />,
-  '/projects' : <GoProjectSymlink />,
-  '/guestbook': <AiOutlineMail />,
-  '/kbar'     : <BsCommand />,
+  '/home': <AiOutlineHome />,
+  '/projects': <GoProjectSymlink />,
+  'guestbook/': <LuSwords />,
+  'about/': <IoPersonCircleOutline />,
+  '/kbar': <BsCommand />,
 }
 
 /**
@@ -46,17 +47,32 @@ export const NavbarLeft = ({ path_name }: { path_name: string }) => (
  * @returns middle of the navbar
  */
 export const NavbarMiddle = () => {
+  const [ThemeSound, { stop }] = useSound('/sounds/page.mp3', { volume: 0.5 })
+
   return (
     <div className="flex justify-center space-x-4">
-      {NavMiddleLinks.map((link) => (
+      {NavMiddleLinks.map((link, index) => (
         <Link
           key={link.title}
           href={link.href}
           className="link-underline link-underline2 rounded tracking-wider text-black hover:bg-slate-50 dark:text-gray-100 dark:hover:bg-gray-700 sm:px-3 sm:py-2"
+          onClick={() => {
+            stop()
+            ThemeSound()
+          }}
         >
           <div className="flex flex-row items-center font-dosis text-sm font-medium dark:font-normal dark:tracking-wider">
-            {IconMapping[link.title]}
-            {link.title}
+            {index < 2 ? (
+              <>
+                {IconMapping[link.title]}
+                {link.title}
+              </>
+            ) : (
+              <>
+                {link.title}
+                {IconMapping[link.title]}
+              </>
+            )}
           </div>
         </Link>
       ))}
@@ -69,6 +85,7 @@ export const NavbarMiddle = () => {
  */
 export const NavbarRight = () => {
   const { query } = useKBar()
+  const [ThemeSound] = useSound('/sounds/open.mp3', { volume: 0.5 })
 
   return (
     <div className="flex items-end">
@@ -76,6 +93,7 @@ export const NavbarRight = () => {
         href="#"
         onClick={(e) => {
           e.preventDefault()
+          ThemeSound()
           query.toggle()
         }}
         className="link-underline link-underline2 rounded tracking-wider text-black hover:bg-slate-50 dark:text-gray-100 dark:hover:bg-gray-700 sm:px-3 sm:py-2"

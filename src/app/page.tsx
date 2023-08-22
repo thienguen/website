@@ -1,7 +1,8 @@
+'use client'
+
 import PageTitle from '@/components/ui/header-title'
 import ProgressBar from '@/components/ui/progress-bar'
-import HomeHi from '@/components/home/hi'
-
+import HomeHero from '@/components/home/home-hero'
 // import Profile from '@/components/home/profile'
 // import SkillIssues from '@/components/home/skill-issues'
 
@@ -34,16 +35,14 @@ export default function Home() {
 
       <PageTitle title="If I could put a picture of an anime girl here, I would. &X-a-vier" titleJP="ホームページ。" />
 
-      <div className="mt-10 md:mt-20"></div>
+      <div className="mt-10 md:mt-16"></div>
       {/* If we could implement the full usage of landyard api here */}
 
       {/* Hero Kinda Section */}
       {/* Bar */}
       {/* ------------------------------------------------------------------------------------------------- */}
       <BarLeft />
-      <div className=" flex h-full w-full flex-col items-center justify-center sm:mt-0 sm:min-h-[400px]">
-        <HomeHi />
-      </div>
+      <HomeHero />
       <BarRight />
       {/* ------------------------------------------------------------------------------------------------- */}
       {/* Bar */}

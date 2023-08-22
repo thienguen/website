@@ -7,7 +7,7 @@
   background-size: 0%;
   background-clip: text;
   -webkit-background-clip: text;
-  transition: background-size cubic-bezier(0.1, 0.5, 0.5, 1) 0.5s;
+  transition: background-size cubic-bezier(0.1, 0.5, 0.5, 1) 0.75s;
 }
 
 
@@ -19,14 +19,14 @@
   background-size: 0%;
   background-clip: text;
   -webkit-background-clip: text; 
-  transition: background-size cubic-bezier(0.1, 0.5, 0.5, 1) 0.5s;
+  transition: background-size cubic-bezier(0.1, 0.5, 0.5, 1) 0.75s;
 }
 
 .text-h2 {
   background-size: 0%;
   background-clip: text;
   -webkit-background-clip: text;
-  transition: background-size cubic-bezier(0.1, 0.5, 0.5, 1) 0.5s;
+  transition: background-size cubic-bezier(0.1, 0.5, 0.5, 1) 0.75s;
   
   display: flex;
   flex-direction: column;
@@ -41,7 +41,7 @@
   background-size: 0%;
   background-clip: text;
   -webkit-background-clip: text; 
-  transition: background-size cubic-bezier(0.1, 0.5, 0.5, 1) 0.5s;
+  transition: background-size cubic-bezier(0.1, 0.5, 0.5, 1) 0.75s;
 
   display: flex;
   flex-direction: column;

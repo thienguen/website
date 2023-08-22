@@ -10,10 +10,7 @@ interface DiscordStatusProps {
 }
 
 function DiscordStatus(props: DiscordStatusProps) {
-  // const id: `${bigint}` | undefined = process.env.DISCORD_ID ? `${BigInt(process.env.DISCORD_ID)}` : undefined
-  // const id: Snowflake | undefined = process.env.DISCORD_ID ? `${BigInt(process.env.DISCORD_ID)}` : undefined
-  // const data = useLanyardWS(id ? [id] : [])
-  const data = useLanyardWS('481754320778428418')
+  const data = useLanyardWS(process.env.NEXT_PUBLIC_DISCORD_ID as `${bigint}`)
   const status = data?.discord_status ?? 'offline'
 
   return (
@@ -34,7 +31,7 @@ function DiscordStatus(props: DiscordStatusProps) {
           <p className="scale-[1.6]">
             <IoLogoDiscord className="mb-1 w-full justify-end" />
           </p>
-          <span className='tracking-wider'>{status}</span>
+          <span className="tracking-wider">{status}</span>
         </div>
       </div>
     </div>

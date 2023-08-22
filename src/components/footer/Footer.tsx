@@ -1,11 +1,10 @@
 import clsx from 'clsx'
 import {
   FooterGithub,
-  FooterInstagram,
   FooterLinkedin,
   FooterLove,
   FooterProfile,
-  FooterTwitter,
+  FooterEmail,
 } from '@/components/footer/FooterIcons'
 import { ThemeToggle } from '@/components/footer/ThemeToggle'
 
@@ -50,10 +49,8 @@ export default function Footer() {
 
           <div className="z-20 flex items-center space-x-3">
             <FooterGithub />
-            <FooterInstagram />
             <FooterLinkedin />
-            <FooterTwitter />
-
+            <FooterEmail />
             {/* This thing is a pain 6-24-2023 */}
             <ThemeToggle />
             <FooterProfile />

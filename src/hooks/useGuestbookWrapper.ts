@@ -13,12 +13,12 @@ type formSchema = {
  * And eslint wise, tbh, as if I know these thing LMAO
  */
 export function useGuestbookWrapper() {
-  const [entries, setEntries] = useState<guestbook[]>([])
-  const [isLoading, setIsLoading] = useState(false)
+  const [entries, setEntries]                       = useState<guestbook[]>([])
+  const [isLoading, setIsLoading]                   = useState(false)
   const [showSuccessMessage, setShowSuccessMessage] = useState(false)
 
-  const { data: session } = useSession()
-  const { register, handleSubmit, reset } = useForm<{ content: string }>()
+  const { data: session }                           = useSession()
+  const { register, handleSubmit, reset }           = useForm<{ content: string }>()
 
   /**
    * Fetch [ALL] guestbook entries from the API, route.ts
@@ -42,6 +42,7 @@ export function useGuestbookWrapper() {
         console.error('Failed to fetch guestbook entries:', error)
       }
     }
+
     fetchEntries().catch((err) => console.error('Error in fetchEntries:', err))
   }, [isLoading])
 
@@ -49,20 +50,9 @@ export function useGuestbookWrapper() {
    * Delete a guestbook entry from the API, route.ts
    * and remove the entry from state, through generated id, its actually bigInt
    * but meh
-   *
-   * @see handleDeleteClick
+   * @yields buttonOnClick
+   * @see handleEntryDelete
    */
-
-  // const handleEntryDelete = (data: bigint) => {
-  //   console.log('Deleting entry:', data)
-  //   // await deleteEntry(data)
-  // }
-
-  // const handleDeleteClick = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>, id: bigint) => {
-  //   event.preventDefault()
-  //   buttonOnClick(id)
-  // }
-
   const handleEntryDelete = (data: bigint) => {
     console.log('Deleting entry:', data)
     deleteGuestbookEntry(data)
@@ -124,10 +114,9 @@ export function useGuestbookWrapper() {
     session,
     register,
 
-    // handleDeleteClick,
+    formOnSubmit, 
+    
     handleEntryDelete,
-
-    formOnSubmit, // form submission
     hanleEntryCreate,
   }
 }

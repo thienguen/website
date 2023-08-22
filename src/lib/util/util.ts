@@ -14,8 +14,7 @@ export const isMac =
     ? navigator.userAgent.toUpperCase().indexOf('MAC') >= 0
     : false
 
-
-// // > Did I shutter?, typewriter title is good, but i failed
+// > Did I shutter?, typewriter title is good, but i failed
 // useEffect(() => {
 //   const SITE_NAME = metadata.creator;
 //   const TIME = 0.2 * 1000;

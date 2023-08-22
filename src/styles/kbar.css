@@ -35,7 +35,7 @@
 }
 
 .kbar-shortcut {
-  @apply appearance-none bg-transparent  relative  max-w-lg cursor-cell space-y-2 pb-2 text-center font-metropolis text-xl text-gray-600 text-opacity-20 dark:text-gray-400 transition-all duration-200;
+  @apply appearance-none bg-transparent  relative  max-w-lg cursor-cell space-y-2 pb-2 text-center text-xl text-gray-600 text-opacity-20 dark:text-gray-400 transition-all duration-200;
 }
 
 .kbar-shortcut:hover {

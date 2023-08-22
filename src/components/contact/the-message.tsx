@@ -2,10 +2,11 @@
 
 import React, { useEffect, useRef } from 'react'
 import gsap from 'gsap'
-import Signature from './signature'
-import KBarStart from '@/components/home/kbar-start'
+import { cn } from '@/lib/util/util'
+import { Tooltip } from '@/components/common/Tooltip'
+import Signature from '@/components/home/signature'
 
-const HomeHi: React.FC = () => {
+function ContactMessage() {
   const textRef = useRef<HTMLHeadingElement[] | null>(null)
 
   useEffect(() => {
@@ -66,36 +67,43 @@ const HomeHi: React.FC = () => {
   }, [])
 
   return (
+    <>
+      <div className=" 4xl:min-h-[900px] flex h-full w-full flex-col items-center justify-center pb-10 sm:mt-0 sm:min-h-[700px]">
+        <div className="mb-10 flex flex-col items-center justify-center px-10">
+          {' '}
+          <h2 className="text-h2 shadow-effect cursor-default whitespace-nowrap pb-2 text-center font-metropolis text-4xl font-bold text-slate-800   dark:text-slate-200 lg:text-6xl">
+            {`Contact me`}
+          </h2>
+          <div className="text-hi balanced relative max-w-xl cursor-cell pb-2 text-center font-pixeloidMono text-lg text-gray-600 text-opacity-20  dark:text-gray-400">
+            <p>A person who loves story-rich RPG-Maker games.</p>
+            <p>Often time coding. Sometimes drawing.</p>
+            <p>✥ And always learning ✥</p>
 
-      <div className="flex flex-col justify-center px-10">
-        {' '}
-        {/* Reduced space-y-3 to space-y-2 */}
-        <p className="  text-center font-metropolis text-2xl font-light text-black opacity-70  dark:text-white">
-          {`Chào, I'm`}
-        </p>
-        {/* Hero Title */}
-        <h2 className="text-h2 shadow-effect cursor-default whitespace-nowrap pb-2 text-center font-metropolis text-4xl font-bold text-slate-800   dark:text-slate-200 lg:text-6xl">
-          {`Thien Nguyen`}
-          {/* <span
-            className={cn(
-              'dark:bg-gradient-to-b dark:from-slate-300 dark:to-gray-300 dark:text-[#0D0D0D]', // light
-              'bg-gradient-to-b from-slate-500 to-gray-900 text-slate-200', // dark
-              'span-h2 absolute flex h-full w-full origin-center flex-col justify-center '
-            )}
-          >
-            Dreams
-          </span> */}
-        </h2>
-        {/* Hero subtitle */}
-        <div className="text-hi balanced relative  max-w-lg cursor-cell space-y-2 pb-2 text-center font-metropolis text-xl text-gray-600 text-opacity-20   dark:text-gray-400">
-          <p>A person who loves story-rich RPG-Maker games.</p>
-          <p>Often time coding. Sometimes drawing.</p>
-          <p>✥ And always learning ✥</p>
+            <Tooltip text="Tbh, I ran out of idea on this page">
+              <div className="mx-auto flex justify-center">
+                <a
+                  className={cn(
+                    'my-5 flex max-w-[170px] items-center justify-center rounded-lg px-5 py-2 font-pixeloidMono',
+                    'text-slate-800 dark:text-slate-200',
+                    'border-gray-300  opacity-90 shadow-sm shadow-slate-800 dark:border-zinc-900  dark:shadow-gray-400',
+                    'hover:bg-slate-200 dark:hover:bg-slate-500'
+                  )}
+                  href={`mailto:${process.env.NEXT_PUBLIC_EMAIL ?? ''}`}
+                  target="_blank"
+                >
+                  Email
+                </a>
+              </div>
+            </Tooltip>
+            <p>{`If you have opportunities`}</p>
+            <p>{`for collaboration or want to build`}</p>
+            <p>{`something amazing, don't hesitate to contact me!`}</p>
+          </div>
+          <Signature />
         </div>
-        <Signature />
-        <KBarStart />
       </div>
+    </>
   )
 }
 
-export default HomeHi
+export default ContactMessage

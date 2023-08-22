@@ -106,13 +106,13 @@ module.exports = {
       },
 
       animation: {
-        'accordion-down': 'accordion-down 0.2s ease-out',
-        'accordion-up'  : 'accordion-up 0.2s ease-out',
-        'fade-in'       : 'fade-in 2000ms var(--animation-delay, 0ms) ease forwards',
-        'fade-in-2'     : 'fade-in-2 2.25s ease-in-out forwards',
-        'title'         : 'title 2s ease-out forwards',
-        'fade-left'     : 'fade-left 4s ease-in-out forwards',
-        'fade-right'    : 'fade-right 4s ease-in-out forwards',
+        'accordion-down'   : 'accordion-down 0.2s ease-out',
+        'accordion-up'     : 'accordion-up 0.2s ease-out',
+        'fade-in'          : 'fade-in 2000ms var(--animation-delay, 0ms) ease forwards',
+        'fade-in-2'        : 'fade-in-2 2.25s ease-in-out forwards',
+        'title'            : 'title 2s ease-out forwards',
+        'fade-left'        : 'fade-left 4s ease-in-out forwards',
+        'fade-right'       : 'fade-right 4s ease-in-out forwards',
       },
       keyframes: {
         /* ??? */

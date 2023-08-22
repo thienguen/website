@@ -1,18 +1,34 @@
 import Image from 'next/image'
+import { useTheme } from 'next-themes'
+import { Tooltip } from '../common/Tooltip'
 
 const Profile = () => {
+  const { theme, setTheme } = useTheme()
+
   return (
     <>
-      <div className=" translate-y-[-1rem] animate-fade-in pb-3 pt-6 opacity-0 [--animation-delay:1200ms]">
-        <Image
-          src="/images/monika.png"
-          alt="Definitely not me!!"
-          width={250}
-          height={250}
-          priority
-          className=" rounded-full border-2 border-slate-800 dark:border-slate-400"
-        />
-      </div>
+      <Tooltip text="Start again!">
+        <div
+          className=" translate-y-[-1rem] animate-fade-in cursor-pointer pb-3 opacity-0 [--animation-delay:200ms]"
+          onClick={() => {
+            if (theme === undefined) {
+              setTheme(theme === undefined ? 'dark' : theme === 'dark' ? 'dark' : 'light')
+            }
+            setTimeout(() => {
+              window.location.reload()
+            })
+          }}
+        >
+          <Image
+            src="/images/monika.png"
+            alt="Definitely not me!!"
+            width={150}
+            height={150}
+            priority
+            className=" rounded-full border-2 border-slate-800 dark:border-slate-400"
+          />
+        </div>
+      </Tooltip>
     </>
   )
 }

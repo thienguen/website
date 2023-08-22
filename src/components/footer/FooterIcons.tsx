@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Github, Twitter } from 'lucide-react'
 // import { useSession } from 'next-auth/react'
-import { AiOutlineHeart, AiOutlineInstagram, AiOutlineLinkedin } from 'react-icons/ai'
+import { AiOutlineHeart, AiOutlineInstagram, AiOutlineLinkedin, AiOutlineMail } from 'react-icons/ai'
 import { cn } from '@/lib/util/util'
 import { buttonVariants } from '@/components/ui/button'
 import { Tooltip } from '@/components/common/Tooltip'
@@ -103,6 +103,26 @@ export function FooterTwitter() {
             <span className="sr-only">Twitter</span>
           </div>
         </Link>
+      </Tooltip>
+    </>
+  )
+}
+
+export function FooterEmail() {
+  return (
+    <>
+      <Tooltip text="Contact me">
+        <a href={`mailto:${process.env.NEXT_PUBLIC_EMAIL ?? ''}`}>
+          <div
+            className={cn(
+              buttonVariants({ size: 'sm', variant: 'ghost' }),
+              'w-7 px-0 hover:bg-slate-50 dark:hover:bg-gray-500'
+            )}
+          >
+            <AiOutlineMail className="h-6 w-5" />
+            <span className="sr-only">Email</span>
+          </div>
+        </a>
       </Tooltip>
     </>
   )

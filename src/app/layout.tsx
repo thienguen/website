@@ -11,6 +11,7 @@ import { usePathname } from 'next/navigation'
 import { Analytics } from '@vercel/analytics/react'
 import { gsap } from 'gsap'
 import { KBarProvider } from 'kbar'
+import { useTheme } from 'next-themes'
 // import NextTopLoader from 'nextjs-toploader'
 
 // Src
@@ -31,6 +32,7 @@ interface RootLayoutProps {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   const cursorRef = useRef(null)
+  const { theme, setTheme } = useTheme()
 
   useEffect(() => {
     document.addEventListener('mousemove', (e) => {
@@ -59,6 +61,11 @@ export default function RootLayout({ children }: RootLayoutProps) {
 
   const path_name = usePathname()
   const actions = useActions()
+
+  if (theme === undefined) {
+    console.log('theme is undefined, default to dark')
+    setTheme('dark')
+  }
 
   return (
     <>

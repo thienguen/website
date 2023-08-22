@@ -14,6 +14,8 @@ import projects   from '../../../../public/icons-json/projects.json'
 import podcasts   from '../../../../public/icons-json/podcasts.json'
 import email      from '../../../../public/icons-json/email.json'
 import source     from '../../../../public/icons-json/source.json'
+import uses       from '../../../../public/icons-json/uses.json'
+import customer   from '../../../../public/icons-json/customer-io.json'
 
 /* Generative Project Cards */
 import Timeline         from '../(timeline)/Timeline'
@@ -46,6 +48,8 @@ export const ICONS = {
   download : download,
   email    : email,
   source   : source,
+  uses     : uses,
+  customer : customer,
 }
 
 export type ProjectProps = {
