@@ -14,7 +14,7 @@ const HomeHero: React.FC = () => {
   }
 
   return (
-    <div className="4xl:min-h-[900px] flex h-full w-full flex-col items-center justify-center pb-10 sm:mt-0 sm:min-h-[500px] sm:pb-16">
+    <div className="5xl:min-h-[900px] flex h-full min-h-[500px] w-full flex-col items-center justify-center pb-10 sm:mt-0 sm:pb-16">
       <div className="mb-10 flex flex-col items-center justify-center px-10">
         {' '}
         <Profile />
