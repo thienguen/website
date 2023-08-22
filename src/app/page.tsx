@@ -2,7 +2,7 @@
 
 import PageTitle from '@/components/ui/header-title'
 import ProgressBar from '@/components/ui/progress-bar'
-import HomeHi from '@/components/home/hi'
+import HomeHero from '@/components/home/home-hero'
 // import Profile from '@/components/home/profile'
 // import SkillIssues from '@/components/home/skill-issues'
 
@@ -42,7 +42,7 @@ export default function Home() {
       {/* Bar */}
       {/* ------------------------------------------------------------------------------------------------- */}
       <BarLeft />
-      <HomeHi />
+      <HomeHero />
       <BarRight />
       {/* ------------------------------------------------------------------------------------------------- */}
       {/* Bar */}

@@ -113,7 +113,6 @@ module.exports = {
         'title'            : 'title 2s ease-out forwards',
         'fade-left'        : 'fade-left 4s ease-in-out forwards',
         'fade-right'       : 'fade-right 4s ease-in-out forwards',
-        'animate-spin-slow': 'spin 6s linear infinite',
       },
       keyframes: {
         /* ??? */

@@ -112,7 +112,7 @@ export function FooterEmail() {
   return (
     <>
       <Tooltip text="Contact me">
-        <a href={`mailto:${metadata.email}`}>
+        <a href={`mailto:${process.env.NEXT_PUBLIC_EMAIL ?? ''}`}>
           <div
             className={cn(
               buttonVariants({ size: 'sm', variant: 'ghost' }),

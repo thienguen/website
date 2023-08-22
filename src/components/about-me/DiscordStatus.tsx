@@ -3,7 +3,6 @@
 import { IoLogoDiscord } from 'react-icons/io5'
 import { useLanyardWS } from 'use-lanyard'
 import { cn } from '@/lib/util/util'
-import { metadata } from '@/app/api/metadata'
 
 interface DiscordStatusProps {
   cols?: string
@@ -11,7 +10,7 @@ interface DiscordStatusProps {
 }
 
 function DiscordStatus(props: DiscordStatusProps) {
-  const data = useLanyardWS(metadata.discord_id as `${bigint}`)
+  const data = useLanyardWS(process.env.NEXT_PUBLIC_DISCORD_ID as `${bigint}`)
   const status = data?.discord_status ?? 'offline'
 
   return (
@@ -32,7 +31,7 @@ function DiscordStatus(props: DiscordStatusProps) {
           <p className="scale-[1.6]">
             <IoLogoDiscord className="mb-1 w-full justify-end" />
           </p>
-          <span className='tracking-wider'>{status}</span>
+          <span className="tracking-wider">{status}</span>
         </div>
       </div>
     </div>

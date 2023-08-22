@@ -14,7 +14,7 @@ import useSound from 'use-sound'
 export function ThemeToggle() {
   const { theme, setTheme }     = useTheme()
   const [disabled, setDisabled] = useState(false) // <-- State to manage button's disabled status
-  const [ThemeSound] = useSound('/sounds/game-click.mp3', { volume: 0.5 })
+  const [ThemeSound] = useSound('/sounds/switch-on.mp3', { volume: 1 })
 
   useEffect(() => {
     const changeTime = localStorage.getItem('themeChangeTimestamp')

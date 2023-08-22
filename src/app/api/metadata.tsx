@@ -17,10 +17,7 @@ export const metadata = {
   siteRepo : 'https://github.com/Thienguen/thien-porfolio',
   discord  : 'https://discordapp.com/users/481754320778428418',
   linkedin : 'https://www.linkedin.com/in/thien-nguyen-2a4a37234/',
-  email    : 'nvktvan@gmail.com',
   
-  discord_id: '481754320778428418',
-
   title: {
     default : '/thienguen',
     template: `%s - thienguen`,
