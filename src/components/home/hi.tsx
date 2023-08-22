@@ -70,10 +70,10 @@ const HomeHi: React.FC = () => {
       {' '}
       {/* Reduced space-y-3 to space-y-2 */}
       <p className="  text-center font-pixeloidMono text-2xl font-light text-black opacity-70  dark:text-white">
-        {`Chào, I'm`}
+        {`Xin chào, I'm`}
       </p>
       {/* Hero Title */}
-      <h2 className="text-h2 shadow-effect cursor-default whitespace-nowrap pb-2 text-center font-pixeloidMono text-4xl font-bold text-slate-800   dark:text-slate-200 lg:text-6xl">
+      <h2 className="text-h2 shadow-effect cursor-default whitespace-nowrap pb-2 text-center font-metropolis text-4xl font-bold text-slate-800   dark:text-slate-200 lg:text-6xl">
         {`Thien Nguyen`}
         {/* <span
             className={cn(
@@ -86,7 +86,7 @@ const HomeHi: React.FC = () => {
           </span> */}
       </h2>
       {/* Hero subtitle */}
-      <div className="text-hi balanced relative  max-w-lg cursor-cell space-y-2 pb-2 text-center font-pixeloidMono text-xl text-gray-600 text-opacity-20   dark:text-gray-400">
+      <div className="text-hi balanced relative  max-w-lg cursor-cell space-y-3 pb-2 text-center font-pixeloidMono text-xl text-gray-600 text-opacity-20   dark:text-gray-400">
         <p>A person who loves story-rich RPG-Maker games.</p>
         <p>Often time coding. Sometimes drawing.</p>
         <p>✥ And always learning ✥</p>

@@ -38,7 +38,7 @@ export default function About() {
       />
 
       {/* Body of About page*/}
-      <div className="mx-auto my-5 flex max-w-[75rem]">
+      <div className="mx-auto my-8 flex max-w-[75rem]">
         {/* Left Side */}
         <div className="grid flex-1 grid-cols-6 gap-4 px-3">
           {/* 1. The first question*/}

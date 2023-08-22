@@ -14,7 +14,7 @@ const KBarStart: React.FC = () => {
       >
         ← Press Ctrl/Cmd + K to start →
       </button>
-      <BsCommand className="mx-auto justify-center text-5xl text-slate-700 opacity-70 dark:text-gray-700" />
+      {/* <BsCommand className="mx-auto justify-center text-5xl text-slate-700 opacity-70 dark:text-gray-700" /> */}
     </>
   )
 }
