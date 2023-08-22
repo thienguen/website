@@ -9,10 +9,7 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
-export const isMac =
-  typeof window !== 'undefined'
-    ? navigator.userAgent.toUpperCase().indexOf('MAC') >= 0
-    : false
+export const isMac = typeof window !== 'undefined' ? navigator.userAgent.toUpperCase().indexOf('MAC') >= 0 : false
 
 // > Did I shutter?, typewriter title is good, but i failed
 // useEffect(() => {
@@ -124,3 +121,16 @@ export const isMac =
 //     </Reorder.Group>
 //   )
 // }
+
+// place to throw stuff in
+{
+  /* <span
+            className={cn(
+              'dark:bg-gradient-to-b dark:from-slate-300 dark:to-gray-300 dark:text-[#0D0D0D]', // light
+              'bg-gradient-to-b from-slate-500 to-gray-900 text-slate-200', // dark
+              'span-h2 absolute flex h-full w-full origin-center flex-col justify-center '
+            )}
+          >
+            Dreams
+        </span> */
+}
