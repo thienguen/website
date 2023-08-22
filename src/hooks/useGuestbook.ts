@@ -1,5 +1,7 @@
 /**
- * This is the api fetch 
+ * @note
+ * This is the api fetch direcly to the route in the api folder
+ * solely in use server
  */
 export type guestbookSchema = {
   // id

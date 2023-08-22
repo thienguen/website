@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react'
 
-export const useMediaQuery = (width: string) => {
+export const useMediaQuery = (width: string, max?: boolean) => {
   // Initialized to null to indicate a "loading" state
   const [targetReached, setTargetReached] = useState<null | boolean>(null)
 
@@ -13,7 +13,10 @@ export const useMediaQuery = (width: string) => {
   }, [])
 
   useEffect(() => {
-    const media = window.matchMedia(`(min-width: ${width})`)
+    let media = window.matchMedia(`(min-width: ${width})`)
+    if (max) {
+      media = window.matchMedia(`(max-width: ${width})`)
+    }
     media.addEventListener('change', (e) => updateTarget(e))
     
     // On component mount, we immediately check the media query's state

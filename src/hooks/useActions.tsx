@@ -4,7 +4,6 @@ import { useRef } from 'react'
 import { useRouter } from 'next/navigation'
 import Lottie, { type LottieRefCurrentProps } from 'lottie-react'
 import { ICONS } from '@/components/purojekuto/(render)/Purojekuto'
-
 // import { useTheme } from 'next-themes'
 
 type LottieRef = React.MutableRefObject<LottieRefCurrentProps | null>

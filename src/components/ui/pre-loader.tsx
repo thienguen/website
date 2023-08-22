@@ -10,11 +10,10 @@ type Props = {
 }
 
 const PreLoader: React.FC<Props> = ({ children }) => {
-  const loadingRef = useRef(null)
-  const { theme } = useTheme()
-  const [animationPlayed, setAnimationPlayed] = useState(false)
   let isClient = typeof window !== 'undefined'
-  // const currentTheme = isClient ? theme : 'dark'; // default to 'dark' for SSR
+  const loadingRef = useRef(null)
+  const [animationPlayed, setAnimationPlayed] = useState(false)
+  const { theme } = useTheme()
 
   function useIsClient() {
     const [isClient, setIsClient] = useState(false)
@@ -31,8 +30,8 @@ const PreLoader: React.FC<Props> = ({ children }) => {
       const animationTimeout = setTimeout(() => {
         const q = gsap.utils.selector(loadingRef)
         const tl = gsap.timeline({ defaults: { duration: 0.7 } })
-        tl.fromTo(q('.loading-text'), { y: 120, opacity: 0 }, { y: -10, opacity: 1 })
-        tl.to(q('.white-bg'), { y: '-100%' })
+        tl.fromTo(q('[data-gsap-target="loading-text"]'), { y: 120, opacity: 0 }, { y: -10, opacity: 1 })
+        tl.to(q('[data-gsap-target="white-bg"]'), { y: '-100%' })
 
         setAnimationPlayed(true)
       }, 800) // Delay for 1 second
@@ -44,7 +43,6 @@ const PreLoader: React.FC<Props> = ({ children }) => {
     }
   }, [animationPlayed, theme])
 
-  // console.log('theme pre-loader', theme)
   if (!isClient) return null
 
   return (
@@ -61,8 +59,9 @@ const PreLoader: React.FC<Props> = ({ children }) => {
         className={cn(
           'bg-gradient-to-b from-slate-300 to-gray-300', // light
           'dark:bg-gradient-to-b dark:from-black dark:to-gray-900', // dark,
-          'white-bg fixed left-0 top-0 z-[9999] flex h-full w-full items-center justify-center'
+          'fixed left-0 top-0 z-[9999] flex h-full w-full items-center justify-center'
         )}
+        data-gsap-target="white-bg"
         style={{
           backgroundImage: `${
             theme === 'light'
@@ -74,7 +73,8 @@ const PreLoader: React.FC<Props> = ({ children }) => {
         }}
       >
         <span
-          className={`loading-text inline-block font-dosis text-5xl tracking-widest opacity-0 sm:text-5xl lg:text-7xl`}
+          className={`inline-block font-dosis text-5xl tracking-widest opacity-0 sm:text-5xl lg:text-7xl`}
+          data-gsap-target="loading-text"
         >
           {children}
         </span>

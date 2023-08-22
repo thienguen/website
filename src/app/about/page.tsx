@@ -1,15 +1,11 @@
 import React from 'react'
 import { type Metadata } from 'next'
+
 import PageTitle from '@/components/ui/header-title'
 import PreLoader from '@/components/ui/pre-loader'
-import QA from '@/components/about-me/(qa)/qa'
-import QAClient from '@/components/about-me/(qa)/qaAge'
-import DiscordStatus from '@/components/about-me/DiscordStatus'
-import GithubCard from '@/components/about-me/GithubCard'
-import RPGMaker from '@/components/about-me/RPG-Maker'
-import Technologies from '@/components/about-me/Technologies'
-import Timer from '@/components/about-me/Timer'
 import ProgressBar from '@/components/ui/progress-bar'
+
+import { DiscordStatus, GithubCard, QA, QAage, RPGMaker, Technologies, Timer } from '@/components/about-me/index'
 
 export const metadata: Metadata = {
   title: '/about',
@@ -42,7 +38,7 @@ export default function About() {
         {/* Left Side */}
         <div className="grid flex-1 grid-cols-6 gap-4 px-3">
           {/* 1. The first question*/}
-          <QAClient question="currently?" cols="md:col-span-4 col-span-6" height="min-h-[10.5rem]" />
+          <QAage question="currently?" cols="md:col-span-4 col-span-6" height="min-h-[10.5rem]" />
           {/* 2. */}
           <GithubCard cols="col-span-6 md:col-span-2 " height="min-h-[10.5rem]" />
 
@@ -104,7 +100,7 @@ export default function About() {
           />
         </div>
       </div>
-      
+
       {/* Carousal */}
       <RPGMaker />
     </>

@@ -6,6 +6,7 @@ import { AiOutlineHome, AiOutlineMail } from 'react-icons/ai'
 import { BsCommand } from 'react-icons/bs'
 import { GoProjectSymlink } from 'react-icons/go'
 import { IoPersonCircleOutline } from 'react-icons/io5'
+import {LuSwords} from 'react-icons/lu'
 import Typewriter from 'typewriter-effect'
 import { cn } from '@/lib/util/util'
 import { metadata } from '@/app/api/metadata'
@@ -14,20 +15,18 @@ import { Navlinks, NavMiddleLinks } from './Navlinks'
 
 interface NavbarRightProps {
   path_name?: string
-  isOpen: boolean
+  isOpen    : boolean
 }
 
 /**
  * <mapping for each title to its icon>
  */
 const IconMapping: { [key: string]: JSX.Element } = {
-  '/home': <AiOutlineHome />,
-  '/projects': <GoProjectSymlink />,
-
-  'guestbook/': <AiOutlineMail />,
-  'about/': <IoPersonCircleOutline />,
-
-  '/kbar': <BsCommand />,
+  '/home'     : <AiOutlineHome />,
+  '/projects' : <GoProjectSymlink />,
+  'guestbook/': <LuSwords />,
+  'about/'    : <IoPersonCircleOutline />,
+  '/kbar'     : <BsCommand />,
 }
 
 /**

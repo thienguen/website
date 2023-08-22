@@ -3,6 +3,7 @@
 import { IoLogoDiscord } from 'react-icons/io5'
 import { useLanyardWS } from 'use-lanyard'
 import { cn } from '@/lib/util/util'
+import { metadata } from '@/app/api/metadata'
 
 interface DiscordStatusProps {
   cols?: string
@@ -10,10 +11,7 @@ interface DiscordStatusProps {
 }
 
 function DiscordStatus(props: DiscordStatusProps) {
-  // const id: `${bigint}` | undefined = process.env.DISCORD_ID ? `${BigInt(process.env.DISCORD_ID)}` : undefined
-  // const id: Snowflake | undefined = process.env.DISCORD_ID ? `${BigInt(process.env.DISCORD_ID)}` : undefined
-  // const data = useLanyardWS(id ? [id] : [])
-  const data = useLanyardWS('481754320778428418')
+  const data = useLanyardWS(metadata.discord_id as `${bigint}`)
   const status = data?.discord_status ?? 'offline'
 
   return (

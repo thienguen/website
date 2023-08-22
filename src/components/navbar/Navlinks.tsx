@@ -11,7 +11,7 @@ export const NavMiddleLinks = [
 
   { href: '/about', title: 'about/' },
   { href: '/guestbook', title: 'guestbook/' },
-  // { href: '/contact', title: 'c/' },
+  // { href: '/contact', title: '/contact' },
 ];
 
 
