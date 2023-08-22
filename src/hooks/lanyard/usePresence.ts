@@ -1,6 +1,13 @@
 import { type Activity, useLanyard } from "use-lanyard";
 
 // 5. name, detail, state, application_id,
+type PartialActivity = {
+  name: string;
+  details: string;
+  state: string;
+  application_id: string;
+}
+
 
 function filterActivities(activities: Activity[]): Partial<Activity>[] {
   return activities.map(activity => ({
