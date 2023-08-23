@@ -88,3 +88,17 @@ const RPGMaker: React.FC = () => {
 }
 
 export default RPGMaker
+
+        {/* <div className="mr-3 mt-10 flex w-16 select-none flex-col items-center justify-center px-3 sm:mt-5">
+          <h3 className="flex flex-col whitespace-nowrap font-pixeloidMono text-xl text-black dark:text-white">
+            {['R', 'P', 'G'].map((char, index) => (
+              <span key={index}>{char}</span>
+            ))}
+          </h3>
+        </div> */}
+
+            {/*  */}
+        {/* <div className="ml-3 mt-10 flex w-16 select-none flex-col items-center justify-center px-3 sm:mt-5">
+          <div className="text-center font-pixeloidMono text-lg font-medium">Maker Games</div>
+        </div> */}
+        {/*  */}

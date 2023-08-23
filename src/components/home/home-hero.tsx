@@ -13,7 +13,7 @@ const HomeHero: React.FC = () => {
   const [showPresence, setShowPresence] = useState(false)
 
   if (theme === undefined) {
-    console.log('theme is undefined')
+    console.log('theme is undefined, default to dark again')
     setTheme('dark')
   }
 
@@ -35,7 +35,7 @@ const HomeHero: React.FC = () => {
         </div>
         <Tooltip text="I'm curently doing">
           <div onClick={() => setShowPresence(!showPresence)}>
-            <TbCodeDots className="h-10 animate-pulse cursor-pointer text-3xl text-white dark:text-black dark:invert" />
+            <TbCodeDots className="h-10 animate-pulse cursor-pointer text-3xl text-white invert dark:text-black" />
           </div>
         </Tooltip>
         {showPresence && <Presence />}

@@ -4,7 +4,7 @@ import Lottie, { type LottieRefCurrentProps } from 'lottie-react'
 import { ICONS, type ProjectProps } from './Purojekuto'
 
 type FeaturedProjectProps = {
-  index  : number
+  index: number
   project: ProjectProps
 }
 
@@ -21,14 +21,14 @@ export default function AFeaturedProject({ project, index }: FeaturedProjectProp
   return (
     <Animation>
       <a
-        // href={project.url}
+        href={project.url}
         rel="noreferrer"
         target="_blank"
         onMouseEnter={() => iconRef.current?.play()}
         onMouseLeave={() => iconRef.current?.stop()}
       >
         <div
-          className={`max-w-[9.5rem] rounded-md border-0 transition-opacity duration-300 ease-in-out hover:opacity-100 lg:w-36 ${textAlignment}`}
+          className={`max-w-[9.5rem] cursor-pointer rounded-md border-0 transition-opacity duration-300 ease-in-out hover:opacity-100 lg:w-36 ${textAlignment}`}
           key={index}
         >
           <div className={`flex justify-between ${flexDirection}`}>

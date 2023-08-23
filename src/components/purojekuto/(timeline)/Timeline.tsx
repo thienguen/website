@@ -3,23 +3,24 @@
 import React, { useEffect, useState } from 'react'
 import { useTheme } from 'next-themes'
 import { AllProjectItems, CareerItems } from '@/lib/util/dummy'
-import LeftTimeline from './LeftTimeline'
-import RightTimeline from './RightTimeline'
+import LeftTimeline from '@/components/purojekuto/(timeline)/LeftTimeline'
+import RightTimeline from '@/components/purojekuto/(timeline)/RightTimeline'
 
-type ProjectProps = {
-  title: string
-  url: string
+type TimelineProps = {
+  title       : string
+  url         : string
   description?: string
-  since?: string
-  active?: boolean
-  icon: string
-  stats?: string
+  since      ?: string
+  active     ?: boolean
+  icon        : string
+  stats      ?: string
+  tech       ?: string[]
 }
 
 type CombinedTimeline = {
-  year: string
-  allProjects: ProjectProps[]
-  careers: ProjectProps[]
+  year       : string
+  allProjects: TimelineProps[]
+  careers    : TimelineProps[]
 }
 
 const Timeline: React.FC = () => {
@@ -40,13 +41,13 @@ const Timeline: React.FC = () => {
     })
   })
 
-  const { theme } = useTheme()
-  const darkPrimaryColor = '#6ACDFF'
-  const darkSecondaryColor = '#57BFFF'
-  const lightPrimaryColor = '#D87787'
+  const { theme }           = useTheme()
+  const darkPrimaryColor    = '#6ACDFF'
+  const darkSecondaryColor  = '#57BFFF'
+  const lightPrimaryColor   = '#D87787'
   const lightSecondaryColor = '#861657'
 
-  const [primaryColor, setPrimaryColor] = useState(darkPrimaryColor)
+  const [primaryColor, setPrimaryColor]     = useState(darkPrimaryColor)
   const [secondaryColor, setSecondaryColor] = useState(darkSecondaryColor)
 
   useEffect(() => {
@@ -74,6 +75,7 @@ const Timeline: React.FC = () => {
                   year={yearForItem}
                   url={project.url}
                   since={project.since}
+                  tech={project.tech}
                   title={project.title}
                   primaryColor={primaryColor}
                   secondaryColor={secondaryColor}
@@ -96,6 +98,7 @@ const Timeline: React.FC = () => {
                   url={career.url}
                   since={career.since}
                   title={career.title}
+                  tech={career.tech}
                   primaryColor={primaryColor}
                   secondaryColor={secondaryColor}
                   description={career.description || sampleDescription}

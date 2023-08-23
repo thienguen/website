@@ -1,8 +1,8 @@
 import { BsGit } from 'react-icons/bs'
 import { FaNpm, FaPython } from 'react-icons/fa'
 import { RiCss3Line, RiHtml5Line, RiJavascriptLine } from 'react-icons/ri'
-import { SiPrisma, SiReact, SiRedux, SiTailwindcss } from 'react-icons/si'
-import { TbBrandCpp, TbBrandKotlin, TbBrandTypescript } from 'react-icons/tb'
+import { SiPrisma, SiReact, SiRedux, SiTailwindcss, SiMongodb } from 'react-icons/si'
+import { TbBrandCpp, TbBrandKotlin, TbBrandTypescript, TbBrandNextjs } from 'react-icons/tb'
 import { VscTerminalBash } from 'react-icons/vsc'
 
 const SkillIssues = () => {
@@ -21,6 +21,8 @@ const SkillIssues = () => {
     <SiReact />,
     <SiRedux />,
     <SiTailwindcss />,
+    <TbBrandNextjs />,
+    <SiMongodb />,
   ]
 
   return (

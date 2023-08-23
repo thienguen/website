@@ -9,6 +9,7 @@ import '@/styles/kbar.css'
 import '@/styles/nav.css'
 import '@/styles/hi.css'
 import '@/styles/activity.css'
+import '@/styles/timeline.css'
 
 import { usePathname } from 'next/navigation'
 import { Analytics } from '@vercel/analytics/react'
@@ -19,7 +20,7 @@ import { useTheme } from 'next-themes'
 
 // Src
 import AuthProvider from '@/lib/nextauth/AuthProvider'
-import { fontMono } from '@/lib/util/font'
+// import { fontMono } from '@/lib/util/font'
 import { cn } from '@/lib/util/util'
 import useActions from '@/hooks/useActions'
 import KBar from '@/components/ui/(kbar)/kbar'
@@ -86,7 +87,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         </head>
         <body
           suppressHydrationWarning={true}
-          className={cn('flex max-h-[100vh] min-h-[100vh] flex-col overflow-x-hidden antialiased', fontMono.variable)}
+          className={cn('flex max-h-[100vh] min-h-[100vh] flex-col overflow-x-hidden antialiased')}
         >
           <KBarProvider actions={actions}>
             <AuthProvider>

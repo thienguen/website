@@ -52,7 +52,7 @@ export function ThemeToggle() {
 
   return (
     <Tooltip
-      text={`${disabled ? 'Changing theme in background' : 'Changing Theme, this took a bit so please be patient!'}`}
+      text={`${disabled ? 'Generating the sky~' : 'Changing Theme, this took a bit so please be patient!'}`}
       isThemetoogle
     >
       <Button

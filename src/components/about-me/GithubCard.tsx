@@ -1,16 +1,14 @@
 'use client'
 
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import clsx from 'clsx'
 import { HiOutlineExternalLink } from 'react-icons/hi'
-import { SiGithub } from 'react-icons/si'
-
-import { Icons } from '@/components/ui/icons'
 import { imageForGithub } from '@/lib/util/dummy'
+import { Icons } from '@/components/ui/icons'
 
 type GithubCardProps = {
-  cols  ?: string
+  cols?: string
   height?: string
 }
 
@@ -32,13 +30,16 @@ export default function GithubCard(props: GithubCardProps) {
           rel="noopener noreferrer"
           className={clsx(
             'group relative flex h-full w-full flex-col justify-between overflow-hidden rounded-2xl text-white',
-            'transform-gpu transition-all will-change-[outline,_transform] duration-600 active:scale-100 group-hover:scale-95'
+            'duration-600 transform-gpu transition-all will-change-[outline,_transform] active:scale-100 group-hover:scale-95'
           )}
         >
-          <span aria-hidden className="pointer-events-none absolute inset-0 -z-20 transition duration-300 group-hover:blur-[3px]">
+          <span
+            aria-hidden
+            className="pointer-events-none absolute inset-0 -z-20 transition duration-300 group-hover:blur-[3px]"
+          >
             <img
               src={randomImage}
-              className="inset-0 h-full w-full object-cover object-center brightness-[1.4] transition-all will-change-[transform,_filter] duration-500 group-hover:scale-[1.15]"
+              className="inset-0 h-full w-full object-cover object-center brightness-[1.4] transition-all duration-500 will-change-[transform,_filter] group-hover:scale-[1.15]"
               alt="github profile picture"
             />
             <span className="absolute inset-0 bg-neutral-900/50 " />
