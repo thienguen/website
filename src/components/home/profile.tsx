@@ -9,7 +9,7 @@ const Profile = () => {
     <>
       <Tooltip text="Start again!">
         <div
-          className=" translate-y-[-1rem] animate-fade-in cursor-pointer pb-3 opacity-0 [--animation-delay:200ms]"
+          className="cursor-pointer pb-3"
           onClick={() => {
             if (theme === undefined) {
               setTheme(theme === undefined ? 'dark' : theme === 'dark' ? 'dark' : 'light')

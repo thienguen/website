@@ -1,56 +1,48 @@
 import {
-  AlarmClock,
-  AlertTriangle,
-  BarChart3,
-  CalendarDays,
-  Check,
-  ChevronDown,
-  ChevronLeft,
-  ChevronRight,
-  ChevronsLeft,
-  ChevronsRight,
-  ChevronsUpDown,
-  ChevronUp,
-  Circle,
-  CreditCard,
-  Crop,
-  DollarSign,
-  Download,
-  Edit,
-  Eye,
-  EyeOff,
-  FileTerminal,
-  Filter,
-  Footprints,
-  HardHat,
-  Image,
-  Loader2,
-  LogOut,
-  Menu,
-  MessageSquare,
+  // AlarmClock,
+  // AlertTriangle,
+  // BarChart3,
+  // CalendarDays,
+  // Check,
+  // ChevronDown,
+  // ChevronLeft,
+  // ChevronRight,
+  // ChevronsLeft,
+  // ChevronsRight,
+  // ChevronsUpDown,
+  // ChevronUp,
+  // Circle,
+  // CreditCard,
+  // Crop,
+  // DollarSign,
+  // Download,
+  // Edit,
+  // Eye,
+  // EyeOff,
+  // FileTerminal,
+  // Filter,
+  // Footprints,
+  // HardHat,
+  // Image,
+  // Loader2,
+  // LogOut,
+  // Menu,
+  // MessageSquare,
+  // MoreHorizontal,
+  // MoreVertical,
+  // Package,
+  // Plus,
+  // PlusCircle,
+  // RefreshCw,
+  // Search,
+  // Settings,
+  // Shirt,
+  // ShoppingBag,
+  // ShoppingCart,
+  // Sliders,
+  // SlidersHorizontal,
   Moon,
-  MoreHorizontal,
-  MoreVertical,
-  Package,
-  Plus,
-  PlusCircle,
-  RefreshCw,
-  Search,
-  Settings,
-  Shirt,
-  ShoppingBag,
-  ShoppingCart,
-  Sliders,
-  SlidersHorizontal,
   SunMedium,
-  Trash,
-  Twitter,
-  UploadCloud,
-  User,
-  Volume2,
-  VolumeX,
-  Wallet,
-  X,
   type Icon as LucideIcon,
   type LucideProps,
 } from 'lucide-react'
@@ -60,57 +52,6 @@ export type Icon = LucideIcon
 export const Icons = {
   sun: SunMedium,
   moon: Moon,
-  twitter: Twitter,
-  close: X,
-  spinner: Loader2,
-  chevronLeft: ChevronLeft,
-  chevronRight: ChevronRight,
-  chevronsLeft: ChevronsLeft,
-  chevronsRight: ChevronsRight,
-  chevronUp: ChevronUp,
-  chevronDown: ChevronDown,
-  chevronUpDown: ChevronsUpDown,
-  menu: Menu,
-  verticalThreeDots: MoreVertical,
-  horizontalThreeDots: MoreHorizontal,
-  verticalSliders: Sliders,
-  horizontalSliders: SlidersHorizontal,
-  circle: Circle,
-  check: Check,
-  add: Plus,
-  addCircle: PlusCircle,
-  view: Eye,
-  hide: EyeOff,
-  trash: Trash,
-  edit: Edit,
-  crop: Crop,
-  reset: RefreshCw,
-  downlaod: Download,
-  warning: AlertTriangle,
-  search: Search,
-  filter: Filter,
-  alarm: AlarmClock,
-  calendar: CalendarDays,
-  user: User,
-  dashboard: FileTerminal,
-  settings: Settings,
-  logout: LogOut,
-  volumne: Volume2,
-  volumneMute: VolumeX,
-  message: MessageSquare,
-  billing: CreditCard,
-  wallet: Wallet,
-  dollarSign: DollarSign,
-  cart: ShoppingCart,
-  product: Package,
-  store: ShoppingBag,
-  chart: BarChart3,
-  upload: UploadCloud,
-  placeholder: Image,
-  clothing: Shirt,
-  shoes: Footprints,
-  accessories: HardHat,
-
   logo: (props: LucideProps) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -181,6 +122,52 @@ export const Icons = {
         fill="currentColor"
         d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"
       />
+    </svg>
+  ),
+
+  vscode: ({ ...props }: LucideProps) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
+      stroke-width="2"
+      stroke="currentColor"
+      fill="none"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      className={`${props.size ?? ''}`}
+    >
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M16 3v18l4 -2.5v-13z" />
+      <path d="M9.165 13.903l-4.165 3.597l-2 -1l4.333 -4.5m1.735 -1.802l6.932 -7.198v5l-4.795 4.141" />
+      <path d="M16 16.5l-11 -10l-2 1l13 13.5" />
+    </svg>
+  ),
+
+  figma: ({ ...props }: LucideProps) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
+      stroke-width="2"
+      stroke="currentColor"
+      fill="none"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      className={`${props.size ?? ''}`}
+    >
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M15 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
+      <path d="M6 3m0 3a3 3 0 0 1 3 -3h6a3 3 0 0 1 3 3v0a3 3 0 0 1 -3 3h-6a3 3 0 0 1 -3 -3z" />
+      <path d="M9 9a3 3 0 0 0 0 6h3m-3 0a3 3 0 1 0 3 3v-15" />
+    </svg>
+  ),
+
+  gitkraken: ({ ...props }: LucideProps) => (
+    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 592 512" className={`${props.size ?? ''}`}>
+      <path d="M565.7 118.1c-2.3-6.1-9.3-9.2-15.3-6.6-5.7 2.4-8.5 8.9-6.3 14.6 10.9 29 16.9 60.5 16.9 93.3 0 134.6-100.3 245.7-230.2 262.7V358.4c7.9-1.5 15.5-3.6 23-6.2v104c106.7-25.9 185.9-122.1 185.9-236.8 0-91.8-50.8-171.8-125.8-213.3-5.7-3.2-13-.9-15.9 5-2.7 5.5-.6 12.2 4.7 15.1 67.9 37.6 113.9 110 113.9 193.2 0 93.3-57.9 173.1-139.8 205.4v-92.2c14.2-4.5 24.9-17.7 24.9-33.5 0-13.1-6.8-24.4-17.3-30.5 8.3-79.5 44.5-58.6 44.5-83.9V170c0-38-87.9-161.8-129-164.7-2.5-.2-5-.2-7.6 0C251.1 8.3 163.2 132 163.2 170v14.8c0 25.3 36.3 4.3 44.5 83.9-10.6 6.1-17.3 17.4-17.3 30.5 0 15.8 10.6 29 24.8 33.5v92.2c-81.9-32.2-139.8-112-139.8-205.4 0-83.1 46-155.5 113.9-193.2 5.4-3 7.4-9.6 4.7-15.1-2.9-5.9-10.1-8.2-15.9-5-75 41.5-125.8 121.5-125.8 213.3 0 114.7 79.2 210.8 185.9 236.8v-104c7.6 2.5 15.1 4.6 23 6.2v123.7C131.4 465.2 31 354.1 31 219.5c0-32.8 6-64.3 16.9-93.3 2.2-5.8-.6-12.2-6.3-14.6-6-2.6-13 .4-15.3 6.6C14.5 149.7 8 183.8 8 219.5c0 155.1 122.6 281.6 276.3 287.8V361.4c6.8.4 15 .5 23.4 0v145.8C461.4 501.1 584 374.6 584 219.5c0-35.7-6.5-69.8-18.3-101.4zM365.9 275.5c13 0 23.7 10.5 23.7 23.7 0 13.1-10.6 23.7-23.7 23.7-13 0-23.7-10.5-23.7-23.7 0-13.1 10.6-23.7 23.7-23.7zm-139.8 47.3c-13.2 0-23.7-10.7-23.7-23.7s10.5-23.7 23.7-23.7c13.1 0 23.7 10.6 23.7 23.7 0 13-10.5 23.7-23.7 23.7z" />
     </svg>
   ),
 }

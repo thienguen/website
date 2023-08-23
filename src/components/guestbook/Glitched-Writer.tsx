@@ -57,7 +57,7 @@ const GlitchedComponent: React.FC<GlitchedComponentProps> = ({ initialText = 'We
     <div className="relative mx-auto flex h-12  max-w-4xl items-center justify-center overflow-hidden">
       <div
         ref={textRef}
-        className="sm:balanced relative text-center font-pixeloidMono text-2xl leading-6 text-lightPrimaryColor dark:text-slate-300 sm:text-left"
+        className="sm:balanced relative text-center font-dosis text-2xl font-light leading-6 text-lightPrimaryColor dark:text-slate-300 sm:text-left"
       >
         {/* {`Journey back to the 90's technologies guestbook! Leave your mark and let me know you were here in this retro digital oasis. `} */}
         {initialText}

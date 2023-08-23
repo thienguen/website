@@ -117,7 +117,7 @@ const useActions = () => {
       subtitle: 'Probably',
       perform: () => routerPushnSound('/guestbook'),
       icon: (
-        <Lottie lottieRef={iconRef} animationData={ICONS['customer']} loop={true} autoplay={true} className="h-5 w-5" />
+        <Lottie lottieRef={iconRef} animationData={ICONS['heart']} loop={true} autoplay={true} className="h-5 w-5" />
       ),
     },
     {
@@ -129,12 +129,12 @@ const useActions = () => {
       subtitle: 'Probably',
       perform: () => routerPushnSound('/contact'),
       icon: (
-        <Lottie lottieRef={iconRef} animationData={ICONS['heart']} loop={true} autoplay={true} className="h-5 w-5" />
+        <Lottie lottieRef={iconRef} animationData={ICONS['customer']} loop={true} autoplay={true} className="h-5 w-5" />
       ),
     },
     {
       id: 'idk',
-      name: 'Short cut is currently broken, esc to close',
+      name: 'Bakemonogatari, esc to close',
       shortcut: ['z'],
       keywords: 'Notice',
       section: 'Isumi Mario',
