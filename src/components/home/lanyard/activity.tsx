@@ -59,7 +59,7 @@ const ActivityDetails: React.FC<ActivityDetailsProps> = ({ activity, activities 
             <GenericActivity
               icon="/icons/vscode.png"
               altText="Visual Studio Code"
-              text={'Idling'}
+              text={'Not coding right now, probably sleep or drinking coffee somewhere'}
               elapsedTime={elapsedTime ?? ''}
             />
           )}
