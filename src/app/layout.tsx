@@ -2,11 +2,14 @@
 
 // Framework
 import React, { useEffect, useRef } from 'react'
+
 import '@/styles/globals.css'
 import '@/styles/carousal.css'
 import '@/styles/kbar.css'
 import '@/styles/nav.css'
 import '@/styles/hi.css'
+import '@/styles/activity.css'
+
 import { usePathname } from 'next/navigation'
 import { Analytics } from '@vercel/analytics/react'
 import { gsap } from 'gsap'

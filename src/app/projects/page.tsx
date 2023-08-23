@@ -14,7 +14,7 @@ export default function Projects() {
     <>
       <PreLoader>Projects</PreLoader>
       <ProgressBar
-        steps={['/home', '/projects', '/about', '/guestbook']}
+        steps={['/home', '/projects', '/about', '/guestbook', '/contact']}
         currentStep={2}
         isFullWidth={false}
         key={'/projects'}
