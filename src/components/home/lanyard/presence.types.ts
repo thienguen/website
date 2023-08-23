@@ -1,3 +1,4 @@
+/* unused, but good for visuzlizer */
 export type Presence = {
   data: {
     spotify             ?: boolean;

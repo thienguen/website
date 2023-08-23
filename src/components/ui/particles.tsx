@@ -59,7 +59,7 @@ export default function Particles({
       quantityRef.current = 1000;
       timer = setTimeout(() => {
         initCanvas()
-      }, 1500)
+      }, 1500) // This is like, erm, e.preventDefault() in a way
     } else {
       initCanvas()
     }

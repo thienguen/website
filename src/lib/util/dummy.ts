@@ -15,6 +15,7 @@ export const FeaturedProjectItems = [
         active     : true,
         icon       : 'podcasts',
         stats      : 'Yet another Todo App ♻️',
+        tech       : ['', ''],
       },
       {
         title      : 'Gate Keeper',
@@ -23,6 +24,7 @@ export const FeaturedProjectItems = [
         active     : true,
         icon       : 'code',
         stats      : 'Under 📑 Construction',
+        tech       : ['', ''],
       },
       {
         title      : 'CLI Games',
@@ -31,6 +33,7 @@ export const FeaturedProjectItems = [
         active     : true,
         icon       : 'home',
         stats      : 'C++, C#, Python, Js, Java, etc.',
+        tech       : ['', ''],
       },
       {
         title      : 'Android Apps',
@@ -39,6 +42,7 @@ export const FeaturedProjectItems = [
         active     : true,
         icon       : 'projects',
         stats      : 'From CodePath with luv ♡',
+        tech       : ['', ''],
       },
     ],
   },
@@ -56,6 +60,7 @@ export const CareerItems = [
         active     : true,
         icon       : 'clipboard',
         stats      : 'Web3, React, Solidity, etc.',
+        tech       : ['Prisma', 'Nextjs', 'TypeScript', 'TailwindCSS', 'MongoDB.'],
       },
       {
         title      : 'UNLV Tutor',
@@ -64,7 +69,8 @@ export const CareerItems = [
         url        : 'Nay Nay',
         active     : true,
         icon       : 'clipboard',
-        stats      : 'Web3, React, Solidity, etc.',
+        stats      : '??',
+        tech       : ['Python', 'C++', 'C#'],
       },
       {
         title      : 'UNLV Teacher Assistant',
@@ -74,6 +80,7 @@ export const CareerItems = [
         active     : true,
         icon       : 'heart',
         stats      : 'Yet another day to help students Part 2',
+        tech       : ['C++'],
       },
     ],
   },
@@ -88,6 +95,7 @@ export const CareerItems = [
         active     : true,
         icon       : 'clipboard',
         stats      : 'Yet another day to help students',
+        tech       : ['C++'],
       },
       {
         title      : 'UNLV Tutor',
@@ -97,6 +105,7 @@ export const CareerItems = [
         active     : true,
         icon       : 'home',
         stats      : 'Yet another day to help students Part 3',
+        tech       : ['Python', 'C++', 'C#'],
       },
     ],
   },
@@ -111,6 +120,7 @@ export const CareerItems = [
         active     : true,
         icon       : 'clipboard',
         stats      : 'Tf do I do with this?',
+        tech       : ['C++', 'Bash'],
       },
     ],
   },
@@ -123,10 +133,11 @@ export const AllProjectItems = [
       {
         title      : 'Portfolio',
         description: 'The website you are currently viewing right now~',
-        url        : 'https://thien-porfolio.vercel.app/',
+        url        : 'https://github.com/Thienguen/thien-personal-website',
         active     : true,
         icon       : 'code',
         stats      : 'Next.js, TypeScript, TailwindCSS, etc.',
+        tech       : ['Nextjs', 'TypeScript', 'TailwindCSS', 'Prisma', 'etc.'],
       },
       {
         title      : 'Gate Keeper',
@@ -135,6 +146,7 @@ export const AllProjectItems = [
         active     : true,
         icon       : 'home',
         stats      : 'Under 📑 Construction',
+        tech       : ['Nextjs', 'TailwindCSS', 'Prisma', 'TypeScript', 'etc.'],
       },
       {
         title      : 'DSA Course',
@@ -143,6 +155,7 @@ export const AllProjectItems = [
         active     : true,
         icon       : 'heart',
         stats      : 'That one time my code make no sense to me',
+        tech       : ['C++', 'Python', 'Java', 'etc.'],
       },
     ],
   },
@@ -150,12 +163,22 @@ export const AllProjectItems = [
     year    : '2022',
     projects: [
       {
+        title      : 'Simple Android Apps',
+        description: 'Including: Fitbit, Movie App, etc.',
+        url        : 'https://github.com/Thienguen/Computer-Animations-Projects',
+        active     : true,
+        icon       : 'download',
+        stats      : 'Yet another day Jetbrains sold me their product',
+        tech       : ['HTTP', 'Kotlin', 'etc.'],
+      },
+      {
         title      : 'Animation Projects',
         description: 'Doing animation with SDL2 C++ Library',
         url        : 'https://github.com/Thienguen/Computer-Animations-Projects',
         active     : true,
         icon       : 'download',
         stats      : 'Yet another day Jetbrains sold me their product',
+        tech       : ['C++', 'SDL2', 'etc.'],
       },
       {
         title      : 'DSA & Leetcode',
@@ -164,6 +187,7 @@ export const AllProjectItems = [
         active     : true,
         icon       : 'projects',
         stats      : 'Yet another day to help students Part 2',
+        tech       : ['C++', 'Java', 'Python', 'etc.'],
       },
       {
         title      : 'Todo? App',
@@ -172,6 +196,7 @@ export const AllProjectItems = [
         active     : true,
         icon       : 'podcasts',
         stats      : 'Yet another Todo App ♻️',
+        tech       : ['React'],
       },
     ],
   },
@@ -185,6 +210,7 @@ export const AllProjectItems = [
         active     : true,
         icon       : 'clipboard',
         stats      : 'Tf do I do with this?',
+        tech       : ['C++'],
       },
     ],
   },
@@ -327,7 +353,7 @@ export const RPGMakerItems = [
     image  : '/rpg/omori.gif',
   },
   {
-    title  : 'There\'s more...',
+    title  : "There's more...",
     authors: 'TBD',
     genres : 'A lot more',
     image  : '/images/anhbana.jpg',

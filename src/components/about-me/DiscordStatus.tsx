@@ -22,10 +22,10 @@ function DiscordStatus(props: DiscordStatusProps) {
           `flex h-full w-full flex-col items-center justify-center rounded-lg pt-3`,
           `${props.height ?? ''} ${props.cols ?? ''}`,
           {
-            online: 'bg-green-500 font-jetbrains-mono text-xs text-white',
-            idle: 'bg-orange-400 font-jetbrains-mono text-xs text-white',
-            dnd: 'bg-red-500 font-jetbrains-mono text-xs text-white',
-            offline: 'bg-[#5865F2] font-jetbrains-mono text-xs text-white',
+            online: 'bg-green-500 font-pixeloidMono text-xs text-white',
+            idle: 'bg-orange-400 font-pixeloidMono text-xs text-white',
+            dnd: 'bg-red-500 font-pixeloidMono text-xs text-white',
+            offline: 'bg-[#5865F2] font-pixeloidMono text-xs text-white',
           }[status]
         )}
       >

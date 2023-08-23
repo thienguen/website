@@ -29,9 +29,9 @@ function ContactMessage() {
         // }
         {
           backgroundSize: '100% 100%',
-          ease: 'none',
-          duration: 1.5, // Duration of one "forward" animation.
-          yoyo: true, // Play the animation in reverse after playing it forward.
+          ease          : 'none',
+          duration      : 1.5,           // Duration of one "forward" animation.
+          yoyo          : true,          // Play the animation in reverse after playing it forward.
           // repeat: 1,                  // Infinite repetition -1. but 3 times when moutned.
           // repeatDelay: 0.5            // A delay before starting the animation again (optional, can be adjusted or removed).
         }
@@ -79,7 +79,7 @@ function ContactMessage() {
             <p>Often time coding. Sometimes drawing.</p>
             <p>✥ And always learning ✥</p>
 
-            <Tooltip text="Tbh, I ran out of idea on this page">
+            <Tooltip text="Tbh, I ran out of idea on this page, and this is rather a personal site than a `portfolio`, version 1.0 it is">
               <div className="mx-auto flex justify-center">
                 <a
                   className={cn(

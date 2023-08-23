@@ -1,9 +1,11 @@
 import React from 'react'
+import { techToIcon } from '@/components/ui/icons'
 
 interface LeftTimelineProps {
   year?: string
   title?: string
   description?: string
+  tech?: string[]
   url?: string
   since?: string
   primaryColor?: string
@@ -14,7 +16,8 @@ const LeftTimeline: React.FC<LeftTimelineProps> = ({
   year,
   title,
   description,
-  // url,
+  url,
+  tech = [],
   since,
   primaryColor,
   secondaryColor,
@@ -23,8 +26,9 @@ const LeftTimeline: React.FC<LeftTimelineProps> = ({
     <div className="flex flex-none sm:flex-row-reverse  md:contents">
       {/* Container box */}
       <div className="col-start-1 col-end-5 my-4 ml-0 min-w-[20.5rem] max-w-[20.5rem] rounded-xl border p-4 font-dosis shadow-2xl transition-transform hover:translate-y-[3px] sm:ml-8">
-        <a className="cursor-pointer" /* href={url} */ rel="noreferrer" target="_blank">
-          <div className="mb-1 font-dosis text-lg text-black dark:font-light dark:text-white">
+        <a className="cursor-pointer" href={url} rel="noreferrer" target="_blank">
+          <div className="mb-1 flex justify-between font-dosis text-lg text-black dark:font-light dark:text-white">
+            {' '}
             <span
               style={{
                 backgroundImage: `linear-gradient(135deg, ${primaryColor ?? ''} 0%, ${secondaryColor ?? ''} 100%)`,
@@ -36,6 +40,7 @@ const LeftTimeline: React.FC<LeftTimelineProps> = ({
             >
               {title}
             </span>
+            <div className="flex cursor-cell items-center gap-2">{tech.map((t, index) => <React.Fragment key={index}>{techToIcon[t] || null}</React.Fragment>)}</div>
           </div>
         </a>
         <p className="text-justify text-sm leading-tight text-black dark:text-white">{description}</p>

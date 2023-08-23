@@ -12,7 +12,7 @@ type headerTitleProps = {
 
 function PageTitle(props: headerTitleProps) {
   const [isPlaying, setIsPlaying] = useState(false)
-  const [ThemeSound, { stop }] = useSound('/sounds/bakemonogatari.mp3', { volume: 0.25 })
+  const [ThemeSound, { stop }]    = useSound('/sounds/bakemonogatari.mp3', { volume: 0.25 })
 
   const toggleSound = () => {
     if (!props.hanekawa) return

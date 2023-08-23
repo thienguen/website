@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import Link from 'next/link'
 import { Github, Twitter } from 'lucide-react'
 import { AiOutlineHeart, AiOutlineInstagram, AiOutlineLinkedin, AiOutlineMail } from 'react-icons/ai'
@@ -159,7 +158,7 @@ export function FooterEmail() {
           <div
             className={cn(
               buttonVariants({ size: 'sm', variant: 'ghost' }),
-              'w-7 px-0 hover:animate-bounce hover:bg-slate-50 dark:hover:bg-gray-500'
+              'w-7 px-0 hover:rotate-12 hover:bg-slate-50 dark:hover:bg-gray-500'
             )}
           >
             <AiOutlineMail className="h-6 w-5" />
@@ -199,11 +198,11 @@ export function FooterProfile() {
               'w-7 px-0 hover:bg-slate-50 dark:hover:bg-gray-500'
             )}
           >
-            <Image
+            <img
               src="https://avatars.githubusercontent.com/u/94078395"
               alt="Thien"
               width={24}
-              priority
+              // priority
               height={24}
               className="rounded-full"
             />

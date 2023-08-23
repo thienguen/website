@@ -89,8 +89,8 @@ const ProgressBar = ({ steps, currentStep, isFullWidth }: ProgressBarProps) => {
             key={index}
             className={`pt-1 text-center font-bold ${
               currentStep - 1 >= index
-                ? 'text-black-900 dark:text-[#D9DADB]' // Active
-                : 'text-gray-600 dark:text-gray-600 opacity-70' // Inactive
+                ? 'text-slate-900 dark:text-[#D9DADB]' // Active
+                : 'text-gray-600 opacity-70 dark:text-gray-600' // Inactive
             }`}
           >
             {step}

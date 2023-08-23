@@ -7,9 +7,14 @@ function filterActivities(activities: Activity[]): Partial<Activity>[] {
     name: activity.name,
     details: activity.details,
     state: activity.state,
+    timestamps: activity.timestamps,
   }))
 }
 
+/**
+ * This thing fetch continueosly, might be heavy
+ * @returns Activities in the user's presence
+ */
 export default function usePresence() {
   const { data } = useLanyard(process.env.NEXT_PUBLIC_DISCORD_ID as `${bigint}`)
   const activities: Activity[] = data?.activities || []

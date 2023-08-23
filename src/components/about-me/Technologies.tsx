@@ -1,6 +1,5 @@
 'use client'
 
-import Image from 'next/image'
 import { SiAmazonaws, SiGithub, SiNextdotjs, SiRust } from 'react-icons/si'
 
 type TechnologiesProps = {
@@ -35,7 +34,7 @@ const icons = [
 const TechnologyIcon = ({ icon }: { icon: (typeof icons)[0] }) => (
   <div className="flex items-center justify-center transition-transform duration-300 hover:scale-[1.6]">
     {icon.type === 'img' ? (
-      <Image src={icon.src ?? ''} alt={icon.alt ?? 'an image'} width={40} height={40} />
+      <img src={icon.src ?? ''} alt={icon.alt ?? 'an image'} width={40} height={40} />
     ) : (
       icon.component
     )}

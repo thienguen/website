@@ -1,0 +1,66 @@
+/* Pulse Animation, applied to vertical timeline */
+@keyframes pulse1 {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 116, 217, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(0, 116, 217, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 116, 217, 0);
+  }
+}
+
+@keyframes pulse2 {
+  0% {
+    box-shadow: 0 0 0 0 rgba(240, 240, 240, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(240, 240, 240, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(240, 240, 240, 0);
+  }
+}
+
+@keyframes pulse3 {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 116, 217, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(51, 170, 255, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(51, 170, 255, 0);
+  }
+}
+
+@keyframes pulse4 {
+  0% {
+    box-shadow: 0 0 0 0 rgba(100, 100, 100, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(100, 100, 100, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(100, 100, 100, 0);
+  }
+}
+
+/* dark mode */
+.dark .animate-pulse1 {
+  animation: pulse1 1.5s infinite;
+}
+
+.dark .animate-pulse2 {
+  animation: pulse2 1.5s infinite;
+}
+
+/* light mode */
+.animate-pulse3 {
+  animation: pulse3 1.5s infinite;
+}
+
+.animate-pulse4 {
+  animation: pulse4 1.5s infinite;
+}

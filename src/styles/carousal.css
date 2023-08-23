@@ -6,7 +6,8 @@ $card-size: 23rem;
 
 .carousal {
   /* scroll-snap-type: x mandatory; */
-  user-select: none;
+  user-select     : none;
+  scroll-behavior : smooth;
 }
 
 .carousal-item {

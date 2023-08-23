@@ -3,6 +3,7 @@ import { NextResponse } from "next/server";
 export function middleware(request: Request) {
   const origin = request.headers.get('origin');
   // Beautified logs using ANSI escape codes
+  // K was the goat
   const green = '\x1b[32m';
   const blue  = '\x1b[34m';
   const red   = '\x1b[31m';
@@ -12,8 +13,9 @@ export function middleware(request: Request) {
   console.log(`${green}\n\nOriginality Cola!${reset}`, origin);
   
   const response = NextResponse.next();
+
   // Allow only specified origins to make requests
-  const allowedOrigins = ['https://thien-portfolio.vercel.app', 'http://localhost:3000', 'vankeythien.dev'];
+  const allowedOrigins = ['https://thienguen.vercel.app', 'http://localhost:3000', 'vankeythien.dev'];
   if (allowedOrigins.includes(origin ?? '')) {
     response.headers.set("Access-Control-Allow-Origin", origin ?? '*');
   }
@@ -30,6 +32,7 @@ export function middleware(request: Request) {
   return response;
 }
 
+/* Why do I need a db again */
 export const config = {
   matcher: '/api/:path*',
 };
