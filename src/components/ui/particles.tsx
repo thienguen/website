@@ -10,10 +10,14 @@ interface ParticlesProps {
   staticity?: number
   ease     ?: number
   refresh  ?: boolean
-
   path_name?: string
 }
 
+/**
+ * A canvas background that pew pew particles across 
+ * the screen. There is resize depends on the screen size
+ * HOWEVER, it works really bad on mobile.
+ */
 export default function Particles({
   className = '',
   quantity  = 30,
@@ -22,6 +26,7 @@ export default function Particles({
   refresh   = false,
   path_name,
 }: ParticlesProps) {
+  // useEffect hell <3
   const canvasRef          = useRef<HTMLCanvasElement>(null)
   const canvasContainerRef = useRef<HTMLDivElement>(null)
   const context            = useRef<CanvasRenderingContext2D | null>(null)
@@ -31,8 +36,7 @@ export default function Particles({
   const mouse              = useRef<{ x: number; y: number }>({ x: 0, y: 0 })
   const canvasSize         = useRef<{ w: number; h: number }>({ w: 0, h: 0 })
   const dpr                = typeof window !== 'undefined' ? window.devicePixelRatio : 1
-
-  const { resolvedTheme } = useTheme()
+  const { resolvedTheme }  = useTheme()
 
   useEffect(() => {
     if (canvasRef.current) {
@@ -46,10 +50,6 @@ export default function Particles({
       window.removeEventListener('resize', initCanvas)
     }
   }, [])
-
-  useEffect(() => {
-    onMouseMove()
-  }, [mousePosition.x, mousePosition.y])
 
   useEffect(() => {
     let timer: NodeJS.Timeout
@@ -73,8 +73,13 @@ export default function Particles({
       if (timer) clearTimeout(timer)
     }
     // console.log('theme: ', theme)
-  }, [refresh, path_name]) // NOTE: DO NOT INCLUDE theme, the thing update inistantaneous
+  }, [refresh, path_name]) // NOTE: DO NOT INCLUDE theme or resolvedTheme, the thing update inistantaneous
 
+  useEffect(() => {
+    onMouseMove()
+  }, [mousePosition.x, mousePosition.y])
+  
+  
   const initCanvas = () => {
     resizeCanvas()
     drawParticles()

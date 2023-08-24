@@ -79,26 +79,28 @@ function ContactMessage() {
             <p>Often time coding. Sometimes drawing.</p>
             <p>✥ And always learning ✥</p>
 
-            <Tooltip text="Tbh, I ran out of idea on this page, and this is rather a personal site than a `portfolio`, version 1.0 it is">
-              <div className="mx-auto flex justify-center">
-                <a
-                  className={cn(
-                    'my-5 flex max-w-[170px] items-center justify-center rounded-lg px-5 py-2 font-pixeloidMono',
-                    'text-slate-800 dark:text-slate-200',
-                    'border-gray-300  opacity-90 shadow-sm shadow-slate-800 dark:border-zinc-900  dark:shadow-gray-400',
-                    'hover:bg-slate-200 dark:hover:bg-slate-500'
-                  )}
-                  href={`mailto:${process.env.NEXT_PUBLIC_EMAIL ?? ''}`}
-                  target="_blank"
-                >
-                  Email
-                </a>
-              </div>
-            </Tooltip>
+            <p>---------------------------------------------</p>
+
             <p>{`If you have opportunities`}</p>
             <p>{`for collaboration or want to build`}</p>
             <p>{`something amazing, don't hesitate to contact me!`}</p>
           </div>
+          <Tooltip text="Tbh, I ran out of idea on this page, and this is rather a personal site than a `portfolio`, version 1.0 it is">
+            <div className="mx-auto flex justify-center">
+              <a
+                className={cn(
+                  'my-5 flex max-w-[170px] items-center justify-center rounded-lg px-5 py-2 font-pixeloidMono',
+                  'text-slate-800 dark:text-slate-200',
+                  'border-gray-300  opacity-90 shadow-sm shadow-slate-800 dark:border-zinc-900  dark:shadow-gray-400',
+                  'hover:bg-slate-200 dark:hover:bg-slate-500'
+                )}
+                href={`mailto:${process.env.NEXT_PUBLIC_EMAIL ?? ''}`}
+                target="_blank"
+              >
+                Get in touch!
+              </a>
+            </div>
+          </Tooltip>
           <Signature />
         </div>
       </div>

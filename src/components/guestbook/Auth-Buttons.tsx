@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { signIn, signOut } from 'next-auth/react'
 import LoadingSpinner from '@/components/ui/loading-spinner'
-import { Icons } from '../ui/icons'
+import { LucideIcons } from '@/components/ui/icons'
 
 const SignInGithub = () => {
   const [isLoadingGithub, setIsLoadingGithub] = useState<boolean>()
@@ -31,7 +31,7 @@ const SignInGithub = () => {
         </>
       ) : (
         <>
-          {Icons.github({ size: 20 })}
+          {LucideIcons.github({ size: 20 })}
           <div className="ml-3 font-metropolis">Sign in with Github</div>
         </>
       )}
@@ -67,7 +67,7 @@ const SignInGoogle = () => {
         </>
       ) : (
         <>
-          {Icons.google({ size: 20 })}
+          {LucideIcons.google({ size: 20 })}
           <div className="ml-3 font-metropolis">Sign in with Google</div>
         </>
       )}

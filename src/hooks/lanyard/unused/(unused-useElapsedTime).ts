@@ -2,6 +2,13 @@
 
 import { useEffect, useState } from 'react'
 
+/**
+ * Rescrapt as it rerun too many time?/
+ * i haven't test but I doubt this can drag the system way slower
+ * but the particles already ...did that so breh
+ * 
+ * @see Particles.tsx
+ */
 function useElapsedTime(startTimestamp?: number): string | null {
   const [elapsedTime, setElapsedTime] = useState<string | null>(null)
 

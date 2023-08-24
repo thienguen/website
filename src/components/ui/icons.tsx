@@ -43,27 +43,16 @@ import {
   // SlidersHorizontal,
   Moon,
   SunMedium,
-  type Icon as LucideIcon,
   type LucideProps,
 } from 'lucide-react'
-import { BsGit } from 'react-icons/bs'
-import { FaNpm, FaPython } from 'react-icons/fa'
-import { MdHttp } from 'react-icons/md'
-import { RiCss3Line, RiHtml5Line, RiJavascriptLine } from 'react-icons/ri'
-import { SiMongodb, SiPrisma, SiReact, SiRedux, SiTailwindcss } from 'react-icons/si'
-import { TbBrandCpp, TbBrandKotlin, TbBrandNextjs, TbBrandTypescript } from 'react-icons/tb'
-import { VscTerminalBash } from 'react-icons/vsc'
 
-export type Icon = LucideIcon
-
-export const Icons = {
+export const LucideIcons = {
   sun: SunMedium,
   moon: Moon,
   logo: (props: LucideProps) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
-      // strokeWidth="1.5"
       stroke="currentColor"
       fill="none"
       strokeLinecap="round"
@@ -179,10 +168,19 @@ export const Icons = {
   ),
 }
 
+import { BsGit } from 'react-icons/bs'
+import { MdHttp } from 'react-icons/md'
+import { FaNpm, FaPython } from 'react-icons/fa'
+import { VscTerminalBash }  from 'react-icons/vsc'
+import { RiCss3Line, RiHtml5Line, RiJavascriptLine } from 'react-icons/ri'
+import { SiMongodb, SiPrisma, SiReact, SiRedux, SiTailwindcss } from 'react-icons/si'
+import { TbBrandCpp, TbBrandKotlin, TbBrandNextjs, TbBrandTypescript } from 'react-icons/tb'
+
 type TechToIconType = {
   [key: string]: React.ReactNode
 }
 
+/* Usage: timeline, project page */
 export const techToIcon: TechToIconType = {
   'Git'        : <BsGit size={20}/>,
   'Npm'        : <FaNpm size={20}/>,
@@ -201,4 +199,30 @@ export const techToIcon: TechToIconType = {
   'Nextjs'     : <TbBrandNextjs size={20}/>,
   'MongoDB'    : <SiMongodb size={20}/>,
   'HTTP'       : <MdHttp size={30}/>,
+}
+
+import clipboard from '../../../public/icons-json/clipboard.json'
+import code      from '../../../public/icons-json/code.json'
+import customer  from '../../../public/icons-json/customer-io.json'
+import download  from '../../../public/icons-json/download.json'
+import email     from '../../../public/icons-json/email.json'
+import heart     from '../../../public/icons-json/heart.json'
+import home      from '../../../public/icons-json/home.json'
+import podcasts  from '../../../public/icons-json/podcasts.json'
+import projects  from '../../../public/icons-json/projects.json'
+import source    from '../../../public/icons-json/source.json'
+import uses      from '../../../public/icons-json/uses.json'
+
+export const ICONS = {
+  home     : home,
+  code     : code,
+  heart    : heart,
+  projects : projects,
+  podcasts : podcasts,
+  clipboard: clipboard,
+  download : download,
+  email    : email,
+  source   : source,
+  uses     : uses,
+  customer : customer,
 }

@@ -18,7 +18,7 @@ import { SignInGithub, SignInGoogle, SignOut } from './Auth-Buttons'
  * State: + isLoading, + showSuccessMessage
  */
 export default function GuestbookForm() {
-  /* Hooks */
+  /* Hooks, reduce to only call hook ONCE */
   const {
     isLoading,
     showSuccessMessage,

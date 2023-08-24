@@ -3,6 +3,7 @@
 import PageTitle from '@/components/ui/header-title'
 import ProgressBar from '@/components/ui/progress-bar'
 import HomeHero from '@/components/home/home-hero'
+
 // import Profile from '@/components/home/profile'
 // import SkillIssues from '@/components/home/skill-issues'
 
@@ -33,12 +34,16 @@ export default function Home() {
         key={'/home'}
       />
 
-      <PageTitle title="If I could put a picture of an anime girl here, I would. &X-a-vier" titleJP="ホームページ。" />
+      <PageTitle
+        title="If I could put a picture of an anime girl here, I would. &X-a-vier"
+        titleJP="ホームページ。"
+        hanekawa={true}
+      />
 
       <div className="mt-10 md:mt-16"></div>
-      {/* If we could implement the full usage of landyard api here */}
+      {/* If we could implement the full usage of landyard api here <-- we did 8/22/2023 */}
 
-      {/* Hero Kinda Section */}
+      {/* Hero? Section */}
       {/* Bar */}
       {/* ------------------------------------------------------------------------------------------------- */}
       <BarLeft />

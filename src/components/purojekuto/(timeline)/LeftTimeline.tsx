@@ -1,18 +1,8 @@
 import React from 'react'
 import { techToIcon } from '@/components/ui/icons'
+import { type SubTimelineProps } from '@/components/purojekuto/(timeline)/timeline.type'
 
-interface LeftTimelineProps {
-  year?: string
-  title?: string
-  description?: string
-  tech?: string[]
-  url?: string
-  since?: string
-  primaryColor?: string
-  secondaryColor?: string
-}
-
-const LeftTimeline: React.FC<LeftTimelineProps> = ({
+const LeftTimeline: React.FC<SubTimelineProps> = ({
   year,
   title,
   description,

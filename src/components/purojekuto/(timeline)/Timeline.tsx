@@ -1,28 +1,18 @@
 'use client'
 
-import React, { useEffect, useState } from 'react'
+/* Stuff */
 import { useTheme } from 'next-themes'
-import { AllProjectItems, CareerItems } from '@/lib/util/dummy'
-import LeftTimeline from '@/components/purojekuto/(timeline)/LeftTimeline'
-import RightTimeline from '@/components/purojekuto/(timeline)/RightTimeline'
+import React, { useEffect, useState }   from 'react'
 
-type TimelineProps = {
-  title       : string
-  url         : string
-  description?: string
-  since      ?: string
-  active     ?: boolean
-  icon        : string
-  stats      ?: string
-  tech       ?: string[]
-}
+/* Components */
+import { ProjectItems, CareerItems }    from '@/lib/util/dummy'
+import { LeftTimeline, RightTimeline }  from '@/components/purojekuto/(timeline)/index'
+import { type CombinedTimeline }        from '@/components/purojekuto/(timeline)/timeline.type'
 
-type CombinedTimeline = {
-  year       : string
-  allProjects: TimelineProps[]
-  careers    : TimelineProps[]
-}
-
+/**
+ * This could be way simplify if try
+ * Usage: project page
+ */
 const Timeline: React.FC = () => {
   const sampleDescription = 'Lorem Ipsum is simply dummy text of the printing. Something something holy'
 
@@ -31,16 +21,17 @@ const Timeline: React.FC = () => {
   const combinedTimeline: CombinedTimeline[] = []
 
   years.forEach((year) => {
-    const careerOfThisYear = CareerItems.find((item) => item.year === year)
-    const projectsOfThisYear = AllProjectItems.find((item) => item.year === year)
+    const careerOfThisYear   = CareerItems.find((item) => item.year === year)
+    const projectsOfThisYear = ProjectItems.find((item) => item.year === year)
 
     combinedTimeline.push({
-      year: year,
-      careers: careerOfThisYear ? careerOfThisYear.projects : [],
-      allProjects: projectsOfThisYear ? projectsOfThisYear.projects : [],
+      year       : year,
+      careers    : careerOfThisYear ? careerOfThisYear.projects    : [],
+      allProjects: projectsOfThisYear ? projectsOfThisYear.projects: [],
     })
   })
 
+  /* Could have put these in the tailwind config?? */
   const { theme }           = useTheme()
   const darkPrimaryColor    = '#6ACDFF'
   const darkSecondaryColor  = '#57BFFF'

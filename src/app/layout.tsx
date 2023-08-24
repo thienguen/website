@@ -11,24 +11,27 @@ import '@/styles/hi.css'
 import '@/styles/activity.css'
 import '@/styles/timeline.css'
 
+import { gsap }        from 'gsap'
+import { useTheme }    from 'next-themes'
 import { usePathname } from 'next/navigation'
-import { Analytics } from '@vercel/analytics/react'
-import { gsap } from 'gsap'
-import { KBarProvider } from 'kbar'
-import { useTheme } from 'next-themes'
+import { Analytics }   from '@vercel/analytics/react'
+import { metadata }    from '@/app/api/metadata'
 // import NextTopLoader from 'nextjs-toploader'
 
-// Src
-import AuthProvider from '@/lib/nextauth/AuthProvider'
-// import { fontMono } from '@/lib/util/font'
-import { cn } from '@/lib/util/util'
-import useActions from '@/hooks/useActions'
-import KBar from '@/components/ui/(kbar)/kbar'
-import Particles from '@/components/ui/particles'
+/* Providers Wrapper */
+import { KBarProvider }  from 'kbar'
+import { AuthProvider }  from '@/lib/nextauth/AuthProvider'
 import { ThemeProvider } from '@/components/ui/theme-provider'
-import Footer from '@/components/footer/Footer'
-import Navbar from '@/components/navbar/Navbar'
-import { metadata } from '@/app/api/metadata'
+
+/* Util */
+import { cn }     from '@/lib/util/util'
+import useActions from '@/hooks/useActions'
+
+/* Components */
+import { KBar }   from '@/components/ui/(kbar)/index'
+import Particles  from '@/components/ui/particles'
+import Navbar     from '@/components/navbar/Navbar'
+import Footer     from '@/components/footer/Footer'
 
 interface RootLayoutProps {
   children: React.ReactNode

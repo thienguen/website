@@ -4,7 +4,7 @@ export type Presence = {
     spotify             ?: boolean;
     listening_to_spotify?: boolean;
 
-    kv?: { [key: string]: string };
+    kv?: { [key: string]: string }; // unused for nao 
 
     discord_user?: {
       username         : string;

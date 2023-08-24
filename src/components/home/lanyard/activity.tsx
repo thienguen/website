@@ -3,7 +3,7 @@ import useElapsedTime from '@/hooks/lanyard/useElapsedTime'
 import GenericActivity from '@/components/home/lanyard/generic'
 
 type ActivityDetailsProps = {
-  activity: Partial<Activity>
+  activity  : Partial<Activity>
   activities: Partial<Activity>[]
 }
 

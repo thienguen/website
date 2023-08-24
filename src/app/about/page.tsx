@@ -11,9 +11,10 @@ export const metadata: Metadata = {
   description: 'metadata is a funny lil concept.',
 }
 
+/**
+ * @returns Under re-work...idk when tho, 8/24/2023
+ */
 export default function About() {
-  // const numComponents = 8 // specify the number of components you want
-  // const ComponentList = Array(numComponents).fill(<Motion />)
   return (
     <>
       {/* <PreLoader>About me</PreLoader> */}
@@ -101,8 +102,10 @@ export default function About() {
         </div>
       </div>
 
-      {/* Carousal */}
+      {/* 8. Carousal */}
       <RPGMaker />
+
+      <div className="mt-5 flex w-full justify-center text-4xl">Under construction again, version 1.0</div>
     </>
   )
 }
