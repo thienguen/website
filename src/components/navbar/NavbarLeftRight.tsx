@@ -10,7 +10,7 @@ import Typewriter from 'typewriter-effect'
 import useSound from 'use-sound'
 import { cn } from '@/lib/util/util'
 import { metadata } from '@/app/api/metadata'
-import { Navlinks, NavMiddleLinks } from '@/components/navbar/Navlinks'
+import { NavMiddleSmalllinks, NavMiddleLinks } from '@/components/navbar/Navlinks'
 
 
 interface NavbarRightProps {
@@ -117,7 +117,7 @@ export const NavbarRight = () => {
 export function NavbarRightSmall({ isOpen }: NavbarRightProps): ReactNode {
   return (
     <div className="mb-2 min-w-[20rem] flex-col items-start space-y-2">
-      {Navlinks.map((link, index) => (
+      {NavMiddleSmalllinks.map((link, index) => (
         <Link
           key={index}
           href={link.href}

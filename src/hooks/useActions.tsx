@@ -131,7 +131,7 @@ const useActions = () => {
     },
     {
       id: 'idk',
-      name: 'esc to close',
+      name: 'Esc to close',
       shortcut: ['z'],
       keywords: 'Notice',
       section: 'Isumi Mario',
