@@ -53,7 +53,7 @@ export default function GuestbookForm() {
                   aria-label="Your message"
                   placeholder="君の名は。"
                   required
-                  rows={2}
+                  rows={1}
                   maxLength={10000}
                   className="w-11/12 rounded-md border-2 border-gray-300 bg-slate-200 p-3 font-metropolis text-sm shadow-sm focus:border-gray-500 focus:ring-gray-500 dark:border-zinc-600 dark:bg-zinc-700 dark:text-white dark:focus:border-gray-700 dark:focus:ring-neutral-600"
                 />

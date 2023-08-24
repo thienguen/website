@@ -212,8 +212,8 @@
 body {
   /* width: 100vw; */
   /* height: 100vh; */
-  scroll-behavior: smooth;
-  text-rendering: optimizeLegibility;
+  /* scroll-behavior: smooth; */
+  /* text-rendering: optimizeLegibility; */
   font-family   : JetBrains Mono, monospace;
 }
 

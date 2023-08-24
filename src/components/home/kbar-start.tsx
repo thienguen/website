@@ -19,25 +19,19 @@ const KBarStart: React.FC = () => {
           query.toggle()
         }}
       >
-        ← Press
+        Press
         {isMac ? (
           isBreakingPoint ? (
             ' Cmd '
           ) : (
-            <img
-              src="/icons/command.png"
-              alt="command-button"
-              width={40}
-              height={40}
-              className="mx-2 opacity-70 dark:invert"
-            />
+            <img src="/icons/command.png" alt="cmd-button" width={40} height={40} className="mx-2 opacity-70 dark:invert" />
           )
         ) : isBreakingPoint ? (
           ' Ctrl '
         ) : (
           <img src="/icons/ctrl.png" alt="ctrl-button" width={40} height={40} className="mx-2 opacity-70 dark:invert" />
         )}
-        + K to start the <img src="/icons/cmd.png" alt="command-key" width={35} height={35} className='mx-2 dark:invert'/> →
+        + K to start 
       </p>
     </>
   )

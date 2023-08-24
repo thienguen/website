@@ -23,7 +23,7 @@ const RightTimeline: React.FC<RightTimelineProps> = ({
   secondaryColor,
 }) => {
   return (
-    <div className="flex md:contents ">
+    <div className="flex md:contents">
       {/* The vertical thingy */}
       <div className="relative col-start-5 col-end-6 md:mx-auto">
         {/* The bar itself */}

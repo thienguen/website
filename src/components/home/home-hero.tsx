@@ -5,8 +5,10 @@ import { useTheme } from 'next-themes'
 import { TbCodeDots } from 'react-icons/tb'
 import KBarStart from '@/components/home/kbar-start'
 import Profile from '@/components/home/profile'
-import { Tooltip } from '../common/Tooltip'
-import Presence from './lanyard/presence'
+import { Tooltip } from '@/components/common/Tooltip'
+import Presence from '@/components/home/lanyard/presence'
+import { useMediaHeight } from '@/hooks/useMediaHeight'
+import { cn } from '@/lib/util/util'
 
 const HomeHero: React.FC = () => {
   const { theme, setTheme } = useTheme()
@@ -17,9 +19,15 @@ const HomeHero: React.FC = () => {
     setTheme('dark')
   }
 
+  const isTallScreen = useMediaHeight('1000px');
+  const isEvenTallerScreen = useMediaHeight('1100px');
+
   return (
     <>
-      <div className=" flex h-full w-full flex-col items-center justify-center pb-10 pt-6 sm:pb-16">
+      <div className={cn(
+        isEvenTallerScreen ? 'py-44' : isTallScreen ? 'py-20' : 'py-16',
+        'flex h-full w-full flex-col items-center justify-center  sm:pb-16',
+      )}>
         <div className="flex flex-col items-center justify-center px-10">
           {' '}
           <Profile />

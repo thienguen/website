@@ -1,9 +1,8 @@
 import React from 'react'
 import { type Metadata } from 'next'
-
 import PageTitle from '@/components/ui/header-title'
-import PreLoader from '@/components/ui/pre-loader'
 import ProgressBar from '@/components/ui/progress-bar'
+// import PreLoader from '@/components/ui/pre-loader'
 
 import { DiscordStatus, GithubCard, QA, QAage, RPGMaker, Technologies, Timer } from '@/components/about-me/index'
 
@@ -17,7 +16,7 @@ export default function About() {
   // const ComponentList = Array(numComponents).fill(<Motion />)
   return (
     <>
-      <PreLoader>About me</PreLoader>
+      {/* <PreLoader>About me</PreLoader> */}
 
       <ProgressBar
         steps={['/home', '/projects', '/about', '/guestbook']}
@@ -35,7 +34,7 @@ export default function About() {
       />
 
       {/* Body of About page*/}
-      <div className="mx-auto my-6 flex max-w-[75rem]">
+      <div className="mx-auto mb-6 mt-8 flex max-w-[75rem]">
         {/* Left Side */}
         <div className="grid flex-1 grid-cols-6 gap-4 px-3">
           {/* 1. The first question*/}

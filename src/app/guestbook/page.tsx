@@ -11,10 +11,10 @@
  */
 import { type Metadata }  from 'next'
 import PageTitle          from '@/components/ui/header-title'
-import PreLoader          from '@/components/ui/pre-loader'
 import ProgressBar        from '@/components/ui/progress-bar'
 import GlitchedComponent  from '@/components/guestbook/Glitched-Writer'
 import GuestbookForm      from '@/components/guestbook/GuestbookForm'
+// import PreLoader          from '@/components/ui/pre-loader'
 
 export const metadata: Metadata = {
   title: '/guestbook',
@@ -26,7 +26,7 @@ export const dynamic = 'force-dynamic'
 export default function Guestbook() {
   return (
     <>
-      <PreLoader>Guestbook</PreLoader>
+      {/* <PreLoader>Guestbook</PreLoader> */}
 
       <ProgressBar
         steps={['/home', '/projects', '/about', '/guestbook']}
