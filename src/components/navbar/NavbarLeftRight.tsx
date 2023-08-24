@@ -113,7 +113,7 @@ export const NavbarRight = () => {
  */
 export function NavbarRightSmall({ isOpen }: NavbarRightProps): ReactNode {
   return (
-    <div className="mb-2 flex-col items-start space-y-2">
+    <div className="mb-2 min-w-[20rem] flex-col items-start space-y-2">
       {Navlinks.map((link, index) => (
         <Link
           key={index}

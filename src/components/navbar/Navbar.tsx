@@ -16,11 +16,10 @@ const Navbar = () => {
 
   /**
    * path_name for  typewriter effect
-   * copi copi
    */
-  const path_name = usePathname()
+  const path_name    = usePathname()
   const isBreakpoint = useMediaQuery('780px')
-  const navRef = useRef<HTMLDivElement>(null)
+  const navRef       = useRef<HTMLDivElement>(null)
 
   /**
    * For dynamic, responsive navbar, when smaller

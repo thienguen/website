@@ -1,8 +1,8 @@
 import { type Metadata } from 'next'
 import PageTitle from '@/components/ui/header-title'
-import PreLoader from '@/components/ui/pre-loader'
 import ProgressBar from '@/components/ui/progress-bar'
 import { ProjectPageContent } from '@/components/purojekuto/(render)/Purojekuto'
+// import PreLoader from '@/components/ui/pre-loader'
 
 export const metadata: Metadata = {
   title: '/projects',
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function Projects() {
   return (
     <>
-      <PreLoader>Projects</PreLoader>
+      {/* <PreLoader>Projects</PreLoader> */}
       <ProgressBar
         steps={['/home', '/projects', '/about', '/guestbook', '/contact']}
         currentStep={2}

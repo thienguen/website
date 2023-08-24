@@ -23,9 +23,9 @@ const LeftTimeline: React.FC<LeftTimelineProps> = ({
   secondaryColor,
 }) => {
   return (
-    <div className="flex flex-none sm:flex-row-reverse  md:contents">
+    <div className="flex flex-none sm:flex-row-reverse md:contents ">
       {/* Container box */}
-      <div className="col-start-1 col-end-5 my-4 ml-0 min-w-[20.5rem] max-w-[20.5rem] rounded-xl border p-4 font-dosis shadow-2xl transition-transform hover:translate-y-[3px] sm:ml-8">
+      <div className="col-start-1 col-end-5 my-4 ml-0 min-w-[20.5rem] max-w-[20.5rem] rounded-xl border p-4 font-dosis shadow-2xl transition-transform hover:translate-y-[3px] sm:ml-14">
         <a className="cursor-pointer" href={url} rel="noreferrer" target="_blank">
           <div className="mb-1 flex justify-between font-dosis text-lg text-black dark:font-light dark:text-white">
             {' '}

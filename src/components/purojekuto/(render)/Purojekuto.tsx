@@ -2,24 +2,22 @@
 
 import { useTheme } from 'next-themes'
 import { RoughNotation } from 'react-rough-notation'
-import { Tooltip } from '@/components/common/Tooltip'
 import { AllProjectItems, CareerItems, FeaturedProjectItems } from '@/lib/util/dummy'
-
-import clipboard  from '../../../../public/icons-json/clipboard.json'
-import code       from '../../../../public/icons-json/code.json'
-import download   from '../../../../public/icons-json/download.json'
-import heart      from '../../../../public/icons-json/heart.json'
-import home       from '../../../../public/icons-json/home.json'
-import projects   from '../../../../public/icons-json/projects.json'
-import podcasts   from '../../../../public/icons-json/podcasts.json'
-import email      from '../../../../public/icons-json/email.json'
-import source     from '../../../../public/icons-json/source.json'
-import uses       from '../../../../public/icons-json/uses.json'
-import customer   from '../../../../public/icons-json/customer-io.json'
-
+import { Tooltip } from '@/components/common/Tooltip'
+import clipboard from '../../../../public/icons-json/clipboard.json'
+import code from '../../../../public/icons-json/code.json'
+import customer from '../../../../public/icons-json/customer-io.json'
+import download from '../../../../public/icons-json/download.json'
+import email from '../../../../public/icons-json/email.json'
+import heart from '../../../../public/icons-json/heart.json'
+import home from '../../../../public/icons-json/home.json'
+import podcasts from '../../../../public/icons-json/podcasts.json'
+import projects from '../../../../public/icons-json/projects.json'
+import source from '../../../../public/icons-json/source.json'
+import uses from '../../../../public/icons-json/uses.json'
 /* Generative Project Cards */
-import Timeline         from '../(timeline)/Timeline'
-import ACareerItem      from './ACareerItem'
+import Timeline from '../(timeline)/Timeline'
+import ACareerItem from './ACareerItem'
 import AFeaturedProject from './AFeaturedProject'
 
 export const dynamic = 'force-dynamic'
@@ -169,10 +167,9 @@ export function ProjectPageContent() {
               strokeWidth={2}
               order={1}
               show={true}
-              animationDelay={2750}
-
+              animationDelay={1000}
             >
-              <p className="translate-y-[-1rem] animate-fade-in font-dosis text-xl font-normal opacity-0 [--animation-delay:2750ms] dark:font-light">
+              <p className="translate-y-[-1rem] animate-fade-in font-dosis text-xl font-normal opacity-0 [--animation-delay:1000ms] dark:font-light">
                 Project
               </p>{' '}
               {/* Something Somethinbg */}
@@ -191,10 +188,9 @@ export function ProjectPageContent() {
               strokeWidth={2}
               order={1}
               show={true}
-              animationDelay={2750}
-
+              animationDelay={1000}
             >
-              <p className="translate-y-[-1rem] animate-fade-in font-dosis text-xl font-normal opacity-0 [--animation-delay:2750ms] dark:font-light">
+              <p className="translate-y-[-1rem] animate-fade-in font-dosis text-xl font-normal opacity-0 [--animation-delay:1000ms] dark:font-light">
                 Career
               </p>{' '}
               {/* Something Somethinbg */}
