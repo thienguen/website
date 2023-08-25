@@ -5,21 +5,13 @@
 
 # Preview
 
-![Something](http://g.recordit.co/C5V1kC86St.gif)
+<!-- ![Something](http://g.recordit.co/C5V1kC86St.gif) -->
+![Something](/public/bg/Preview-website.gif)
+
 
 ## Getting Started
 
 Set up the environment variables file with the following variables.
-
-- Get `GITHUB_ID` and `GITHUB_SECRET` from [Github OAuth](https://docs.github.com/en/developers/apps/building-oauth-apps/creating-an-oauth-app)
-
-- Get `GOOGLE_CLIENT_ID` and `GOOGLE_CLIENT_SECRET` from [Google OAuth](https://console.cloud.google.com/apis/credentials)
-
-- GET `NEXTAUTH_SECRET` from [NextAuth](https://next-auth.js.org/getting-started/example)
-- OR runt the command `openssl rand -base64 32` in the CLI
-- OR access to this website [NextAuth](https://generate-secret.vercel.app/32) 
-
-### .env 
 
 ```bash
 # https://api.lanyard.rest/v1/users/user_id
@@ -40,6 +32,14 @@ NEXTAUTH_URL_INTERNAL=http://10.240.8.16
 NEXTAUTH_URL=http://localhost:3000
 NEXTAUTH_SECRET=
 ```
+
+- Get `GITHUB_ID` and `GITHUB_SECRET` from [Github OAuth](https://docs.github.com/en/developers/apps/building-oauth-apps/creating-an-oauth-app)
+
+- Get `GOOGLE_CLIENT_ID` and `GOOGLE_CLIENT_SECRET` from [Google OAuth](https://console.cloud.google.com/apis/credentials)
+
+- GET `NEXTAUTH_SECRET` from [NextAuth](https://next-auth.js.org/getting-started/example)
+  - OR runt the command `openssl rand -base64 32` in the CLI
+  - OR access to this website [NextAuth](https://generate-secret.vercel.app/32) 
 
 Next, run in the CLI (root folder)
 
