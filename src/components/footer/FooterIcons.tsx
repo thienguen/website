@@ -3,7 +3,7 @@ import { Github, Twitter } from 'lucide-react'
 import { AiOutlineHeart, AiOutlineInstagram, AiOutlineLinkedin, AiOutlineMail } from 'react-icons/ai'
 import useSound from 'use-sound'
 import { cn } from '@/lib/util/util'
-import { buttonVariants } from '@/components/ui/button'
+import { buttonVariants } from '@/components/ui/custom-button'
 import { Tooltip } from '@/components/common/Tooltip'
 import { metadata } from '@/app/api/metadata'
 

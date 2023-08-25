@@ -3,7 +3,7 @@ import useElapsedTime from '@/hooks/lanyard/useElapsedTime'
 import GenericActivity from '@/components/home/lanyard/generic'
 
 type ActivityDetailsProps = {
-  activity: Partial<Activity>
+  activity  : Partial<Activity>
   activities: Partial<Activity>[]
 }
 
@@ -59,7 +59,7 @@ const ActivityDetails: React.FC<ActivityDetailsProps> = ({ activity, activities 
             <GenericActivity
               icon="/icons/vscode.png"
               altText="Visual Studio Code"
-              text={'Not coding right now, probably sleep or drinking coffee somewhere'}
+              text={'Not coding right now'}
               elapsedTime={elapsedTime ?? ''}
             />
           )}

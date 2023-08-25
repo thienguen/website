@@ -1,13 +1,15 @@
+'use client'
+
 import { useEffect, useState } from 'react'
 import { useTheme } from 'next-themes'
 import { Tooltip } from '@/components/common/Tooltip'
-import { type ProjectProps } from './Purojekuto'
+import { type ProjectCareerProps } from '@/components/purojekuto/(render)/one/one.type'
 
-interface CareerItemProps {
-  project: ProjectProps
+type OneCareerItemProps = {
+  career: ProjectCareerProps
 }
 
-export default function ACareerItem({ project }: CareerItemProps) {
+function OneCareerItem({ career }: OneCareerItemProps) {
   const { theme } = useTheme()
 
   const darkPrimaryColor    = '#84FFB8'
@@ -30,20 +32,22 @@ export default function ACareerItem({ project }: CareerItemProps) {
 
   return (
     <li>
-      <Tooltip text = {project.description ?? ''}>
+      <Tooltip text={career.description ?? ''}>
         <p
-          className = "cursor-grab font-dosis hover:opacity-80"
-          style     = {{
-            backgroundImage   : `linear-gradient(135deg, ${primaryColor} 0%, ${secondaryColor} 100%)`,
-            backgroundSize    : '100% 0.075em',
-            backgroundRepeat  : 'no-repeat',
+          className="cursor-grab font-dosis hover:opacity-80"
+          style={{
+            backgroundImage: `linear-gradient(135deg, ${primaryColor} 0%, ${secondaryColor} 100%)`,
+            backgroundSize: '100% 0.075em',
+            backgroundRepeat: 'no-repeat',
             backgroundPosition: '0 92%',
-            transition        : 'background-size 0.25s ease-in, opacity 0.25s ease-in',
+            transition: 'background-size 0.25s ease-in, opacity 0.25s ease-in',
           }}
         >
-          {project.title}
+          {career.title}
         </p>
       </Tooltip>
     </li>
   )
 }
+
+export default OneCareerItem

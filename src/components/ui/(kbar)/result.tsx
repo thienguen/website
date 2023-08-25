@@ -1,6 +1,10 @@
-import { KBarResults, useMatches} from 'kbar'
-import ResultItem from '@/components/ui/(kbar)/result-item'
+import { KBarResults, useMatches } from 'kbar'
+import { ResultItem } from '@/components/ui/(kbar)/index'
 
+/**
+ * When you search on the Kbar, this will be the result of your input
+ * @see documentation on Kbar https://github.com/timc1/kbar
+ */
 const Results = () => {
   // const groups = useMatches()
   // console.log(groups)
@@ -41,7 +45,7 @@ const Results = () => {
       items={results}
       onRender={({ item, active }) =>
         typeof item === 'string' ? (
-          /* Navigation, Nani, stuff */
+          /* What section the result is from */
           <div className="px-5 py-2 font-pixeloidMono text-xs uppercase tracking-wide opacity-80">{item}</div>
         ) : (
           <ResultItem action={item} active={active} />

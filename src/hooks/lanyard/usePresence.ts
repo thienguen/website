@@ -1,13 +1,16 @@
 import { useLanyard, type Activity } from 'use-lanyard'
 
-// 5. name, detail, state, application_id,
+/**
+ * @see presence.types.ts simple info filter
+ * 5. name, detail, state, application_id, <-- this should be what we care abot
+ */
 function filterActivities(activities: Activity[]): Partial<Activity>[] {
   return activities.map((activity) => ({
     application_id: activity.application_id,
-    name: activity.name,
-    details: activity.details,
-    state: activity.state,
-    timestamps: activity.timestamps,
+    name          : activity.name,
+    details       : activity.details,
+    state         : activity.state,
+    timestamps    : activity.timestamps,
   }))
 }
 

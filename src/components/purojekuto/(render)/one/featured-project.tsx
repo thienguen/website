@@ -1,11 +1,14 @@
+'use client'
+
 import { useRef } from 'react'
 import { motion } from 'framer-motion'
 import Lottie, { type LottieRefCurrentProps } from 'lottie-react'
-import { ICONS, type ProjectProps } from './Purojekuto'
+import { ICONS } from '@/components/ui/icons'
+import { type ProjectCareerProps } from '@/components/purojekuto/(render)/one/one.type'
 
 type FeaturedProjectProps = {
-  index: number
-  project: ProjectProps
+  index  : number
+  project: ProjectCareerProps
 }
 
 type LottieRef = React.MutableRefObject<LottieRefCurrentProps | null>

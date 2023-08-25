@@ -3,15 +3,15 @@ import type { ReactNode } from 'react'
 import Link from 'next/link'
 import { useKBar } from 'kbar'
 import { AiOutlineHome } from 'react-icons/ai'
-import { BsCommand } from 'react-icons/bs'
+import { BsCommand, BsMailbox } from 'react-icons/bs'
 import { GoProjectSymlink } from 'react-icons/go'
-import { IoPersonCircleOutline } from 'react-icons/io5'
 import { LuSwords } from 'react-icons/lu'
 import Typewriter from 'typewriter-effect'
 import useSound from 'use-sound'
 import { cn } from '@/lib/util/util'
 import { metadata } from '@/app/api/metadata'
-import { Navlinks, NavMiddleLinks } from './Navlinks'
+import { NavMiddleSmalllinks, NavMiddleLinks } from '@/components/navbar/Navlinks'
+
 
 interface NavbarRightProps {
   path_name?: string
@@ -24,9 +24,12 @@ interface NavbarRightProps {
 const IconMapping: { [key: string]: JSX.Element } = {
   '/home': <AiOutlineHome />,
   '/projects': <GoProjectSymlink />,
+
   'guestbook/': <LuSwords />,
-  'about/': <IoPersonCircleOutline />,
+  'contact/': <BsMailbox />,
+
   '/kbar': <BsCommand />,
+  // 'about/'    : <IoPersonCircleOutline />,
 }
 
 /**
@@ -114,7 +117,7 @@ export const NavbarRight = () => {
 export function NavbarRightSmall({ isOpen }: NavbarRightProps): ReactNode {
   return (
     <div className="mb-2 min-w-[20rem] flex-col items-start space-y-2">
-      {Navlinks.map((link, index) => (
+      {NavMiddleSmalllinks.map((link, index) => (
         <Link
           key={index}
           href={link.href}

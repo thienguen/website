@@ -22,7 +22,7 @@ const ResultItem = forwardRef(({ action, active }: Props, ref: React.Ref<HTMLDiv
         {action.icon && <span className="mr-4">{action.icon}</span>}
         <div className="flex flex-col">
           <span className=" dark:text-gray-200">{action.name}</span>
-          {/* {action.subtitle && <span className="text-xs text-gray-600">{action.subtitle}</span>} */}
+          {action.subtitle && <span className="text-xs dark:text-gray-200">{action.subtitle}</span>}
         </div>
       </div>
 

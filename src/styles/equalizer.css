@@ -1,0 +1,51 @@
+@keyframes pulse5 {
+  0% {
+    height: 24px;
+  }
+  50% {
+    height: 12px;
+  }
+  100% {
+    height: 24px;
+  }
+}
+@keyframes reversePulse {
+  0% {
+    height: 12px;
+  }
+  50% {
+    height: 24px;
+  }
+  100% {
+    height: 12px;
+  }
+}
+
+.equalizer {
+  display: flex;
+  gap: 8px;
+  width: max-content;
+  height: 40px;
+  align-items: center;
+}
+
+.equalizer span {
+  width: 8px;
+  background-color: white;
+  border-radius: 4px;
+}
+
+.left {
+  height: 24px;
+  animation: pulse5 1s infinite;
+}
+
+.middle {
+  height: 12px;
+  animation: reversePulse 1s infinite;
+}
+
+.right {
+  height: 24px;
+  animation: pulse5 1s infinite;
+}

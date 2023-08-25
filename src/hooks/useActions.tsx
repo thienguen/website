@@ -3,30 +3,27 @@
 import { useRef } from 'react'
 import { useRouter } from 'next/navigation'
 import Lottie, { type LottieRefCurrentProps } from 'lottie-react'
-import { ICONS } from '@/components/purojekuto/(render)/Purojekuto'
+import { ICONS } from '@/components/ui/icons'
 import { metadata } from '@/app/api/metadata'
 
 // import { useTheme } from 'next-themes'
+
 type LottieRef = React.MutableRefObject<LottieRefCurrentProps | null>
 
 const useActions = () => {
   const router = useRouter()
   const iconRef: LottieRef = useRef<LottieRefCurrentProps | null>(null)
-  // const { theme, setTheme, resolvedTheme } = useTheme()
 
+  // const { theme, setTheme, resolvedTheme } = useTheme()
   // function toggleTheme(currentTheme: string | undefined, setThemeFunc: (theme: 'dark' | 'light') => void) {
   // console.log('toggleTheme', currentTheme, setThemeFunc)
   // console.log('resolvedTheme', resolvedTheme)
   // if (!currentTheme) setThemeFunc('dark');
-
   // const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-
   // // Store the timestamp in local storage.
   // localStorage.setItem('themeChangeTimestamp', Date.now().toString());
-
   // // Toggle the theme.
   // setThemeFunc(newTheme);
-
   // // Add a slight delay before reloading the page to give setTheme time to finish.
   // setTimeout(() => {
   //   location.reload();
@@ -44,7 +41,7 @@ const useActions = () => {
       shortcut: ['d', 'c'],
       keywords: 'd c',
       section: 'Important',
-      subtitle: 'Its me, Mario!',
+      // subtitle: 'Its me, Mario!',
       perform: () => {
         window.open(`https://discord.com/users/${metadata.discord}`, '_blank')
       },
@@ -58,7 +55,7 @@ const useActions = () => {
       shortcut: ['e', 'm'],
       keywords: 'e m',
       section: 'Important',
-      subtitle: 'Its me, Mario!',
+      // subtitle: 'Its me, Mario!',
       perform: () => {
         window.open(`mailto:${process.env.NEXT_PUBLIC_EMAIL ?? ''}`, '_blank')
       },
@@ -72,10 +69,46 @@ const useActions = () => {
       shortcut: ['g', 'h'],
       keywords: 'g h',
       section: 'Navigation',
-      subtitle: 'Probably',
+      // subtitle: 'Probably',
       perform: () => routerPushnSound('/'),
       icon: (
         <Lottie lottieRef={iconRef} animationData={ICONS['home']} loop={true} autoplay={true} className="h-5 w-5 " />
+      ),
+    },
+    {
+      id: 'projects',
+      name: 'Projects',
+      shortcut: ['g', 'p'],
+      keywords: 'g p',
+      section: 'Navigation',
+      // subtitle: 'Probably',
+      perform: () => routerPushnSound('/projects'),
+      icon: (
+        <Lottie lottieRef={iconRef} animationData={ICONS['source']} loop={true} autoplay={true} className="h-5 w-5 " />
+      ),
+    },
+    {
+      id: 'guestbook',
+      name: 'Guestbook',
+      shortcut: ['g', 'b'],
+      keywords: 'g b',
+      section: 'Navigation',
+      // subtitle: 'Probably',
+      perform: () => routerPushnSound('/guestbook'),
+      icon: (
+        <Lottie lottieRef={iconRef} animationData={ICONS['heart']} loop={true} autoplay={true} className="h-5 w-5" />
+      ),
+    },
+    {
+      id: 'contact',
+      name: 'Contact',
+      shortcut: ['g', 'c'],
+      keywords: 'g c',
+      section: 'Navigation',
+      // subtitle: 'Probably',
+      perform: () => routerPushnSound('/contact'),
+      icon: (
+        <Lottie lottieRef={iconRef} animationData={ICONS['customer']} loop={true} autoplay={true} className="h-5 w-5" />
       ),
     },
     {
@@ -84,7 +117,7 @@ const useActions = () => {
       shortcut: ['g', 'a'],
       keywords: 'g a',
       section: 'Navigation',
-      subtitle: 'Probably',
+      subtitle: 'Reconstruction-ing, scratch ver 1.0',
       perform: () => routerPushnSound('/about'),
       icon: (
         <Lottie
@@ -97,48 +130,12 @@ const useActions = () => {
       ),
     },
     {
-      id: 'projects',
-      name: 'Projects',
-      shortcut: ['g', 'p'],
-      keywords: 'g p',
-      section: 'Navigation',
-      subtitle: 'Probably',
-      perform: () => routerPushnSound('/projects'),
-      icon: (
-        <Lottie lottieRef={iconRef} animationData={ICONS['source']} loop={true} autoplay={true} className="h-5 w-5 " />
-      ),
-    },
-    {
-      id: 'guestbook',
-      name: 'Guestbook',
-      shortcut: ['g', 'b'],
-      keywords: 'g b',
-      section: 'Navigation',
-      subtitle: 'Probably',
-      perform: () => routerPushnSound('/guestbook'),
-      icon: (
-        <Lottie lottieRef={iconRef} animationData={ICONS['heart']} loop={true} autoplay={true} className="h-5 w-5" />
-      ),
-    },
-    {
-      id: 'contact',
-      name: 'Contact',
-      shortcut: ['g', 'c'],
-      keywords: 'g c',
-      section: 'Navigation',
-      subtitle: 'Probably',
-      perform: () => routerPushnSound('/contact'),
-      icon: (
-        <Lottie lottieRef={iconRef} animationData={ICONS['customer']} loop={true} autoplay={true} className="h-5 w-5" />
-      ),
-    },
-    {
       id: 'idk',
-      name: 'Bakemonogatari, esc to close',
+      name: 'Esc to close',
       shortcut: ['z'],
       keywords: 'Notice',
       section: 'Isumi Mario',
-      subtitle: 'Its me, Mario!',
+      subtitle: 'Nan',
       icon: (
         <Lottie
           lottieRef={iconRef}
@@ -149,6 +146,7 @@ const useActions = () => {
         />
       ),
     },
+
     // {
     //   id: 'theme',
     //   name: 'Change Theme',

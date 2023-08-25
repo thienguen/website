@@ -8,12 +8,12 @@ import { useTheme } from 'next-themes'
 import { HiOutlineMoon, HiOutlineSun } from 'react-icons/hi'
 
 // Src
-import { Button } from '@/components/ui/button'
+import { Button } from '@/components/ui/custom-button'
 import { Tooltip } from '@/components/common/Tooltip'
 
 import useSound from 'use-sound'
 
-export function ThemeToggle() {
+function ThemeToggle() {
   const { theme, setTheme }     = useTheme()
   const [disabled, setDisabled] = useState(false) // <-- State to manage button's disabled status
   const [ThemeSound] = useSound('/sounds/switch-on.mp3', { volume: 1 })
@@ -72,3 +72,5 @@ export function ThemeToggle() {
     </Tooltip>
   )
 }
+
+export default ThemeToggle

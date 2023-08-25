@@ -126,7 +126,7 @@ export const CareerItems = [
   },
 ]
 
-export const AllProjectItems = [
+export const ProjectItems = [
   {
     year    : '2023',
     projects: [
@@ -360,3 +360,5 @@ export const RPGMakerItems = [
   },
     // etc. 12:29:36
 ]
+
+

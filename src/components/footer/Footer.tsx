@@ -6,7 +6,7 @@ import {
   FooterProfile,
   FooterEmail,
 } from '@/components/footer/FooterIcons'
-import { ThemeToggle } from '@/components/footer/ThemeToggle'
+import ThemeToggle  from '@/components/footer/ThemeToggle'
 
 type FooterBarProps = {
   isFullWidth?: boolean

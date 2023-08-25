@@ -1,5 +1,5 @@
 import { KBarAnimator, KBarPortal, KBarPositioner, KBarSearch } from 'kbar'
-import Results from '@/components/ui/(kbar)/result'
+import { Results } from '@/components/ui/(kbar)/index'
 
 const KBar = () => {
   return (

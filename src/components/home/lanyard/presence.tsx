@@ -10,7 +10,6 @@ import ActivityDetails from '@/components/home/lanyard/activity'
 // 6. figma, kraken, vscode, notepad at max its showing 2 ALL TIME
 // 7. if the user is not playing anything, activty is none
 // 8. if the user is playing something, display them, this should be easy
-
 function Presence(): ReactElement {
   const activities = usePresence()
 

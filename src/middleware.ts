@@ -11,7 +11,7 @@ export function middleware(request: Request) {
 
   console.log('-'.repeat(80))
   console.log(`${green}\n\nOriginality Cola!${reset}`, origin);
-  
+
   const response = NextResponse.next();
 
   // Allow only specified origins to make requests
@@ -35,4 +35,5 @@ export function middleware(request: Request) {
 /* Why do I need a db again */
 export const config = {
   matcher: '/api/:path*',
+  // runtime: 'edge', // This specifies the runtime environment that the middleware function will be executed in.
 };
