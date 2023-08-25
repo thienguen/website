@@ -10,6 +10,7 @@ import '@/styles/nav.css'
 import '@/styles/hi.css'
 import '@/styles/activity.css'
 import '@/styles/timeline.css'
+import '@/styles/equalizer.css'
 
 import { gsap }        from 'gsap'
 import { useTheme }    from 'next-themes'

@@ -46,11 +46,18 @@ const HomeHero: React.FC = () => {
           </h2>
           <KBarStart />
         </div>
+        
         <Tooltip text="I'm curently doing">
           <div onClick={() => setShowPresence(!showPresence)}>
             <TbCodeDots className="h-10 animate-pulse cursor-pointer text-3xl text-white invert dark:text-black" />
           </div>
+          {/* <div className="equalizer" onClick={() => setShowPresence(!showPresence)}>
+            <span className="left"></span>
+            <span className="middle"></span>
+            <span className="right"></span>
+          </div> */}
         </Tooltip>
+
         {showPresence && <Presence />}
       </div>
     </>
