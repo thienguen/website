@@ -29,7 +29,7 @@ export default function Guestbook() {
       {/* <PreLoader>Guestbook</PreLoader> */}
 
       <ProgressBar
-        steps={['/home', '/projects', '/about', '/guestbook']}
+        steps={['/home', '/projects', '/about', '/guestbook', '/contact']}
         currentStep={4}
         isFullWidth={false}
         key={'/guestbook'}
