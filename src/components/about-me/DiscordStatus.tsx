@@ -1,19 +1,19 @@
 'use client'
 
-import { IoLogoDiscord } from 'react-icons/io5'
+import { IoLogoDiscord } from 'react-icons/io5/'
 import { useLanyardWS } from 'use-lanyard'
 import { cn } from '@/lib/util/util'
 import { Tooltip } from '../common/Tooltip'
 
 interface DiscordStatusProps {
-  cols?: string
+  cols  ?: string
   height?: string
 }
 
 function DiscordStatus(props: DiscordStatusProps) {
-  const data = useLanyardWS(process.env.NEXT_PUBLIC_DISCORD_ID as `${bigint}`)
+  const data   = useLanyardWS(process.env.NEXT_PUBLIC_DISCORD_ID as `${bigint}`)
   const status = data?.discord_status ?? 'offline'
-  const state = data?.activities[0]?.state ?? 'offline'
+  const state  = data?.activities[0]?.state ?? 'offline'
 
   return (
     <div>
