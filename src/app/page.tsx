@@ -28,7 +28,7 @@ export default function Home() {
   return (
     <>
       <ProgressBar
-        steps={['/home', '/projects', '/about', '/guestbook']}
+        steps={['/home', '/projects', '/about', '/guestbook', '/contact']}
         currentStep={1}
         isFullWidth={false}
         key={'/home'}
