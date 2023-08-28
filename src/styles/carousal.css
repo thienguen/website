@@ -15,6 +15,7 @@ $card-size   : 23rem;
   user-select: none;
 }
 
+/* 
 .card-container {
   position: absolute;
   width: 100%;
@@ -32,7 +33,6 @@ $card-size   : 23rem;
   width: 20rem;
   height: 20rem;
   padding: 2rem;
-  /* background-color: hsl(280deg, 40%, calc(100% - var(--abs-offset) * 50%)); */
   border-radius: 1rem;
   color: $color-gray;
   text-align: justify;
@@ -51,3 +51,5 @@ $card-size   : 23rem;
     opacity: var(--active);
   }
 }
+
+*/

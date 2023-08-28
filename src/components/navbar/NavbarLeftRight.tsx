@@ -22,14 +22,14 @@ interface NavbarRightProps {
  * <mapping for each title to its icon>
  */
 const IconMapping: { [key: string]: JSX.Element } = {
-  '/home': <AiOutlineHome />,
+  '/home'    : <AiOutlineHome />,
   '/projects': <GoProjectSymlink />,
 
   'guestbook/': <LuSwords />,
-  'contact/': <BsMailbox />,
+  'contact/'  : <BsMailbox />,
 
   '/kbar': <BsCommand />,
-  // 'about/'    : <IoPersonCircleOutline />,
+    // 'about/'    : <IoPersonCircleOutline />,
 }
 
 /**
@@ -93,7 +93,7 @@ export const NavbarRight = () => {
   return (
     <div className="flex items-end">
       <Link
-        href="#"
+        href=""
         onClick={(e) => {
           e.preventDefault()
           ThemeSound()

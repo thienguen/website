@@ -1,29 +1,23 @@
-
 .kbar-animator {
   @supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
-      background-color: var(--command);
-      /* -webkit-backdrop-filter: saturate(300%) blur(25px); */
-      /* backdrop-filter: saturate(300%) blur(5px); */
-      backdrop-filter: blur(8px);
-      overflow: hidden;
+    background-color: var(--command);
+    backdrop-filter: blur(8px);
+    overflow: hidden;
   }
+}
 
-  /* Hide scrollbar for Chrome, Safari and Opera */
-  & > div > div::-webkit-scrollbar {
-      display: none;
-  }
+.kbar-animator > div > div::-webkit-scrollbar {
+  display: none;
+}
 
-  /* Hide scrollbar for IE, Edge and Firefox */
-  & > div > div {
-      -ms-overflow-style: none;
-      scrollbar-width: none;
-  }
+.kbar-animator > div > div {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 .kbar-search {
   box-sizing: border-box;
-  background-color: var(--command); 
-  /* background-color: transparent; */
+  background-color: var(--command);
 }
 
 .kbar-positioner {
@@ -35,17 +29,17 @@
 }
 
 .kbar-shortcut {
-  @apply appearance-none bg-transparent  relative  max-w-lg cursor-cell space-y-2 pb-2 text-center text-xl text-gray-600 text-opacity-20 dark:text-gray-400 transition-all duration-200;
+  @apply appearance-none bg-transparent relative max-w-lg cursor-cell space-y-2 pb-2 text-center text-xl text-gray-600 text-opacity-20 dark:text-gray-400 transition-all duration-200;
 }
 
 .kbar-shortcut:hover {
-  @apply bg-gray-200 text-black; 
+  @apply bg-gray-200 text-black;
 }
 
 .dark .kbar-shortcut kbd:hover {
-  @apply bg-slate-900 text-white rounded-lg; 
+  @apply bg-slate-900 text-white rounded-lg;
 }
 
 .kbar-shortcut kbd:hover {
-  @apply bg-slate-600 text-black rounded-lg; 
+  @apply bg-slate-600 text-black rounded-lg;
 }

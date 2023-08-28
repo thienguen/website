@@ -4,7 +4,7 @@ import React, { useEffect, useRef } from 'react'
 import { useTheme } from 'next-themes'
 import { useMousePosition } from '@/lib/util/mouse'
 
-interface ParticlesProps {
+type ParticlesProps = {
   className?: string
   quantity ?: number
   staticity?: number
@@ -18,7 +18,7 @@ interface ParticlesProps {
  * the screen. There is resize depends on the screen size
  * HOWEVER, it works really bad on mobile.
  */
-export default function Particles({
+export function Particles({
   className = '',
   quantity  = 30,
   staticity = 40,
@@ -284,3 +284,5 @@ export default function Particles({
     </div>
   )
 }
+
+export default Particles
