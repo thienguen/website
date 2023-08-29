@@ -5,4 +5,8 @@
   "json.trace.server": "messages",
   "prisma.trace.server": "messages",
   "discord.removeRemoteRepository": true,
+  "editor.fontFamily": "JetBrains Mono",
+  "editor.inlayHints.fontFamily": "JetBrains Mono",
+  "editor.fontSize": 16,
+  "editor.guides.bracketPairs": "active",
 }

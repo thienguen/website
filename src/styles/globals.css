@@ -1,7 +1,8 @@
 @font-face {
-  font-family: MetropolisRegular;
-  src        : url('/fonts/MetropolisRegular.ttf');
+  font-family: Metropolis;
+  src        : url('/fonts/Metropolis.ttf');
 }
+
 @font-face {
   font-family: MetropolisBold;
   src        : url('/fonts/MetropolisBold.ttf');
@@ -9,12 +10,17 @@
 
 @font-face {
   font-family: Sacramento;
-  src        : url('/fonts/Sacramento-Regular.ttf');
+  src        : url('/fonts/Sacramento.ttf');
 }
 
 @font-face {
   font-family: PixeloidMono;
   src        : url('/fonts/PixeloidMono.ttf');
+}
+
+@font-face {
+  font-family: Dosis;
+  src        : url('/fonts/Dosis-Regular.ttf');
 }
 
 /* cyrillic-ext */

@@ -194,7 +194,7 @@ module.exports = {
       'dosis'         : ['Dosis', 'sans-serif'],
       'signature'     : ['Sacramento', 'cursive'],
       'jetbrains-mono': ['JetBrains Mono', 'monospace'],
-      'metropolis'    : ['MetropolisRegular', 'sans-serif'],
+      'metropolis'    : ['Metropolis', 'sans-serif'],
       'pixeloidMono'  : ['PixelloidMono', 'monospace'],
     },
   },

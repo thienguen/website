@@ -1,6 +1,5 @@
 'use client'
 
-// Framework
 import React, { useEffect, useRef } from 'react'
 
 import '@/styles/globals.css'
@@ -33,6 +32,7 @@ import { KBar }   from '@/components/ui/(kbar)/index'
 import Particles  from '@/components/ui/particles'
 import Navbar     from '@/components/navbar/Navbar'
 import Footer     from '@/components/footer/Footer'
+
 
 interface RootLayoutProps {
   children: React.ReactNode
@@ -91,7 +91,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         </head>
         <body
           suppressHydrationWarning={true}
-          className={cn('flex max-h-[100vh] min-h-[100vh] flex-col overflow-x-hidden antialiased')}
+          className={cn('flex max-h-[100vh] min-h-[100vh] flex-col overflow-x-hidden font-pixeloidMono antialiased')}
         >
           <KBarProvider actions={actions}>
             <AuthProvider>
