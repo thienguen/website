@@ -191,7 +191,7 @@ module.exports = {
       },
     },
     fontFamily: {
-      'dosis'         : ['Dosis', 'sans-serif'],
+      'dosis'         : ['Dosis', 'Dosis'],
       'signature'     : ['Sacramento', 'cursive'],
       'jetbrains-mono': ['JetBrains Mono', 'monospace'],
       'metropolis'    : ['Metropolis', 'sans-serif'],

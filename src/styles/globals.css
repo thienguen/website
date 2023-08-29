@@ -4,11 +4,6 @@
 }
 
 @font-face {
-  font-family: MetropolisBold;
-  src        : url('/fonts/MetropolisBold.ttf');
-}
-
-@font-face {
   font-family: Sacramento;
   src        : url('/fonts/Sacramento.ttf');
 }
