@@ -50,8 +50,8 @@ const RightTimeline: React.FC<SubTimelineProps> = ({
             <div className="flex cursor-cell items-center gap-2">{tech.map((t, index) => <React.Fragment key={index}>{techToIcon[t] || null}</React.Fragment>)}</div>
           </div>
         </a>
-        <p className="text-justify text-sm leading-tight text-black dark:text-white">{description}</p>
-        <p className="mt-1 text-justify font-dosis  text-xs leading-tight text-black dark:text-white">{since}</p>
+        <p className="text-sm leading-tight text-black dark:text-white">{description}</p>
+        <p className="mt-1 font-dosis  text-xs leading-tight text-black dark:text-white">{since}</p>
       </div>
     </div>
   )
