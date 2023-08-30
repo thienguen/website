@@ -2,7 +2,12 @@
 
 @font-face {
   font-family: Metropolis;
-  src        : url('/fonts/Metropolis.ttf');
+  src        : url('/fonts/MetropolisRegular.ttf');
+}
+
+@font-face {
+  font-family: PixeloidMono;
+  src        : url('/fonts/PixeloidMono.ttf');
 }
 
 /* @font-face {
@@ -14,12 +19,6 @@
   font-family: Dosis;
   src        : url('/fonts/Dosis-Regular.ttf');
 } */
-
-@font-face {
-  font-family: PixeloidMono;
-  src        : url('/fonts/PixeloidMono.ttf');
-}
-
 
 /* cyrillic-ext */
 @font-face {

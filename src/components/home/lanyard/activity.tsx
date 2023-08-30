@@ -3,20 +3,22 @@ import useElapsedTime from '@/hooks/lanyard/useElapsedTime'
 import GenericActivity from '@/components/home/lanyard/generic'
 
 type ActivityDetailsProps = {
-  activity  : Partial<Activity>
+  activity: Partial<Activity>
   activities: Partial<Activity>[]
 }
 
 const ActivityDetails: React.FC<ActivityDetailsProps> = ({ activity, activities }) => {
   const elapsedTime = useElapsedTime(activity.timestamps?.start)
 
+  let defaultStatus = 'VS Code: idling'
+
+  const statusText =
+    activity.state && activity.details
+      ? `${activity.state}, ${activity.details.replace('Editing', 'editing:')}`
+      : defaultStatus
+
   switch (activity.name) {
     case 'Visual Studio Code':
-      const defaultStatus = 'VS Code: idling'
-      const statusText =
-        activity.state && activity.details
-          ? `${activity.state}, ${activity.details.replace('Editing', 'editing:')}`
-          : defaultStatus
       return (
         <GenericActivity
           icon="/icons/vscode.png"
@@ -49,6 +51,16 @@ const ActivityDetails: React.FC<ActivityDetailsProps> = ({ activity, activities 
           icon="/icons/notepad.png"
           altText="Notepad"
           text="Notepad: taking note for no reason~"
+          elapsedTime={elapsedTime ?? ''}
+        />
+      )
+    case 'IntelliJ IDEA Ultimate':
+      defaultStatus = 'Intellij IDEA: idling'
+      return (
+        <GenericActivity
+          icon="/icons/intellij.png"
+          altText="Intellij IDEA Ultimate"
+          text={statusText}
           elapsedTime={elapsedTime ?? ''}
         />
       )
