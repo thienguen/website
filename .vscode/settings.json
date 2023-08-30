@@ -7,6 +7,6 @@
   "discord.removeRemoteRepository": true,
   "editor.fontFamily": "JetBrains Mono",
   "editor.inlayHints.fontFamily": "JetBrains Mono",
-  "editor.fontSize": 16,
+  "editor.fontSize": 15,
   "editor.guides.bracketPairs": "active",
 }
