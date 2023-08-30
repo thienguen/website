@@ -30,7 +30,7 @@ const HomeHero: React.FC = () => {
       <div
         className={cn(
           isEvenTallerScreen ? 'py-44' : isTallScreen ? 'py-20' : 'py-12',
-          'flex h-full w-full flex-col items-center justify-center  sm:pb-16'
+          'flex h-full w-full flex-col items-center justify-center'
         )}
       >
         <div className="flex flex-col items-center justify-center px-10">
