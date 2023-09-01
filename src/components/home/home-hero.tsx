@@ -22,14 +22,14 @@ const HomeHero: React.FC = () => {
     setTheme('dark')
   }
 
-  const isTallScreen = useMediaHeight('1000px')
+  const isTallScreen       = useMediaHeight('1000px')
   const isEvenTallerScreen = useMediaHeight('1100px')
 
   return (
     <>
       <div
         className={cn(
-          isEvenTallerScreen ? 'py-44' : isTallScreen ? 'py-20' : 'py-12',
+          isEvenTallerScreen ? 'py-44' : isTallScreen ? 'py-20' : 'py-8',
           'flex h-full w-full flex-col items-center justify-center'
         )}
       >

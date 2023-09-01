@@ -36,6 +36,19 @@ const useActions = () => {
 
   return [
     {
+      id: 'linkedin',
+      name: 'LinkedIn',
+      shortcut: ['l', 'i'],
+      keywords: 'l i',
+      section: 'Important',
+      perform: () => {
+        window.open(`${metadata.linkedin}`, '_blank')
+      },
+      icon: (
+        <Lottie lottieRef={iconRef} animationData={ICONS['fig']} loop={true} autoplay={true} className="h-5 w-5 " />
+      ),
+    },
+    {
       id: 'discord',
       name: 'Discord',
       shortcut: ['d', 'c'],

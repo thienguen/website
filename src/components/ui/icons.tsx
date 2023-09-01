@@ -212,7 +212,9 @@ import podcasts  from '../../../public/icons-json/podcasts.json'
 import projects  from '../../../public/icons-json/projects.json'
 import source    from '../../../public/icons-json/source.json'
 import uses      from '../../../public/icons-json/uses.json'
+import fig       from '../../../public/icons-json/fig.json'
 
+/* Make to a map */
 export const ICONS = {
   home     : home,
   code     : code,
@@ -225,4 +227,5 @@ export const ICONS = {
   source   : source,
   uses     : uses,
   customer : customer,
+  fig      : fig,
 }
