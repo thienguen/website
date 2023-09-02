@@ -47,7 +47,7 @@ function ThemeToggle() {
     // and hide the message after 1.5 seconds
     setTimeout(() => {
       setDisabled(false)
-    }, 7000)
+    }, 1500)
   }
 
   return (

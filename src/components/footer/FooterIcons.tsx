@@ -1,34 +1,57 @@
+/* Trash */
 import Link from 'next/link'
-import { Github, Twitter } from 'lucide-react'
-import { AiOutlineHeart, AiOutlineInstagram, AiOutlineLinkedin, AiOutlineMail } from 'react-icons/ai'
-import useSound from 'use-sound'
 import { cn } from '@/lib/util/util'
+import { metadata } from '@/app/api/metadata'
+
+/* Hooks */
+import { useKBar } from 'kbar'
+import useSound from 'use-sound'
+
+/* UI, sup */
 import { buttonVariants } from '@/components/ui/custom-button'
 import { Tooltip } from '@/components/common/Tooltip'
-import { metadata } from '@/app/api/metadata'
+
+/* Icons */
+import { Github, Twitter } from 'lucide-react'
+import { /*  AiOutlineHeart, */ AiOutlineInstagram, AiOutlineLinkedin, AiOutlineMail } from 'react-icons/ai'
+import { BsCommand } from 'react-icons/bs'
+
+/**
+ * All the right hand side of the footer functionality, recommended fold it
+ * To see the full view
+ * Include:
+ *   - FooterLove
+ *   - FooterGithub
+ *   - FooterInstagram
+ *   - FooterLinkedin
+ *   - FooterTwitter
+ *   - FooterEmail
+ *   - FooterProfile
+ * - FooterKbar
+ * @returns
+ * @version 2.0
+ */
 
 export function FooterLove() {
   const [ThemeSound] = useSound('/sounds/switch-on.mp3', { volume: 1 })
   return (
     <>
-      <span className="mx-2 text-sm">Made with</span>
-      <AiOutlineHeart
-        className="h-5 w-5 cursor-pointer"
-        onClick={() => {
-          ThemeSound()
-        }}
-      />
-      <span className="mx-2 text-sm">by</span>
-      <Tooltip text="find me here">
-        <Link
-          href={metadata.discord}
-          target="_blank"
-          className="text-sm text-slate-600 underline transition-colors duration-200 ease-in-out hover:text-pink-500 dark:text-white dark:hover:text-pink-500"
-        >
-          blank_dreams
-        </Link>
-        .
-      </Tooltip>
+      <span className="mx-2 text-sm">
+        {`© 2023 `}
+        <Tooltip text="find me here">
+          <Link
+            onClick={() => {
+              ThemeSound()
+            }}
+            href={metadata.discord}
+            target="_blank"
+            className="text-sm text-slate-600 underline transition-colors duration-200 ease-in-out hover:text-pink-500 dark:text-white dark:hover:text-pink-500"
+          >
+            Thien Nguyen
+          </Link>
+          {` • from a boy who was never enough.`}
+        </Tooltip>
+      </span>
     </>
   )
 }
@@ -208,6 +231,36 @@ export function FooterProfile() {
             />
           </div>
         </Link>
+      </Tooltip>
+    </>
+  )
+}
+
+export function FooterKbar() {
+  const [ThemeSound] = useSound('/sounds/open.mp3', { volume: 1 })
+  const { query } = useKBar()
+  return (
+    <>
+      <Tooltip text="Kbar">
+        <button
+          aria-label="Kbar"
+          rel="noreferrer"
+          className="m-auto"
+          onClick={(e) => {
+            e.preventDefault()
+            ThemeSound()
+            query.toggle()
+          }}
+        >
+          <div
+            className={cn(
+              buttonVariants({ size: 'sm', variant: 'ghost' }),
+              'w-7 px-0 hover:-rotate-12 hover:bg-slate-50 dark:hover:bg-gray-500'
+            )}
+          >
+            <BsCommand className="h-6 w-5" />
+          </div>
+        </button>
       </Tooltip>
     </>
   )

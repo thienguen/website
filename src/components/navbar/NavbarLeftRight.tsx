@@ -1,35 +1,47 @@
+'use client'
+
 /* Src */
-import type { ReactNode } from 'react'
+import { useState, type ReactNode } from 'react'
 import Link from 'next/link'
+
+/* hooks */
 import { useKBar } from 'kbar'
-import { AiOutlineHome } from 'react-icons/ai'
-import { BsCommand, BsMailbox } from 'react-icons/bs'
+import useSound from 'use-sound'
+import { usePathname } from 'next/navigation'
+
+/* Support */
+import Typewriter from 'typewriter-effect'
+import { motion } from 'framer-motion'
+
+/* Util */
+import { cn } from '@/lib/util/util'
+import { NavMiddleLinks, NavMiddleSmalllinks } from '@/components/navbar/Navlinks'
+import { metadata } from '@/app/api/metadata'
+
+/* Icons */
+import { IoPersonCircleOutline } from 'react-icons/io5'
 import { GoProjectSymlink } from 'react-icons/go'
 import { LuSwords } from 'react-icons/lu'
-import Typewriter from 'typewriter-effect'
-import useSound from 'use-sound'
-import { cn } from '@/lib/util/util'
-import { metadata } from '@/app/api/metadata'
-import { NavMiddleSmalllinks, NavMiddleLinks } from '@/components/navbar/Navlinks'
-
+import { BsMailbox } from 'react-icons/bs'
+// import { AiOutlineHome } from 'react-icons/ai'
 
 interface NavbarRightProps {
   path_name?: string
-  isOpen: boolean
+  isOpen    : boolean
 }
 
 /**
  * <mapping for each title to its icon>
  */
 const IconMapping: { [key: string]: JSX.Element } = {
-  '/home'    : <AiOutlineHome />,
   '/projects': <GoProjectSymlink />,
+  '/guestbook': <LuSwords />,
+  '/dashboard': <BsMailbox />,
+  '/about': <IoPersonCircleOutline />,
 
-  'guestbook/': <LuSwords />,
-  'contact/'  : <BsMailbox />,
-
-  '/kbar': <BsCommand />,
-    // 'about/'    : <IoPersonCircleOutline />,
+  /* about to be move to footer */
+  // '/kbar' : <BsCommand />,
+  // '/home'    : <AiOutlineHome />,
 }
 
 /**
@@ -50,33 +62,47 @@ export const NavbarLeft = ({ path_name }: { path_name: string }) => (
  * @returns middle of the navbar
  */
 export const NavbarMiddle = () => {
-  const [ThemeSound, { stop }] = useSound('/sounds/page.mp3', { volume: 0.5 })
+  const pathname                      = usePathname() || '/'
+  const [ThemeSound, { stop }]        = useSound('/sounds/page.mp3', { volume: 0.5 })
+  const [hoveredPath, setHoveredPath] = useState(pathname)
 
   return (
-    <div className="flex justify-center space-x-4">
-      {NavMiddleLinks.map((link, index) => (
+    <div className="sticky z-[100] flex justify-center space-x-4  backdrop-blur-md">
+      {NavMiddleLinks.map((link, _) => (
         <Link
           key={link.title}
           href={link.href}
-          className="link-underline link-underline2 rounded tracking-wider text-black hover:bg-slate-50 dark:text-gray-100 dark:hover:bg-gray-700 sm:px-3 sm:py-2"
+          className="relative flex flex-row items-center rounded text-sm tracking-wider  text-black no-underline duration-300 ease-in hover:bg-slate-50 dark:text-gray-100 dark:hover:bg-gray-700 sm:px-3 sm:py-2"
           onClick={() => {
             stop()
             ThemeSound()
           }}
+          onMouseOver={() => setHoveredPath(link.href)}
+          onMouseLeave={() => setHoveredPath(pathname)}
         >
-          <div className="flex flex-row items-center font-dosis text-sm font-medium dark:font-normal dark:tracking-wider">
-            {index < 2 ? (
-              <>
-                {IconMapping[link.title]}
-                {link.title}
-              </>
-            ) : (
-              <>
-                {link.title}
-                {IconMapping[link.title]}
-              </>
-            )}
-          </div>
+          {/* <div className="flex flex-row items-center font-dosis text-sm font-medium dark:font-normal dark:tracking-wider">
+            {IconMapping[link.title]}
+            {link.title}
+          </div> */}
+          {IconMapping[link.title]}
+          <span>{link.title}</span>
+          {link.href === hoveredPath && (
+            <motion.div
+              className="absolute bottom-0 left-0 -z-10 h-full rounded-md bg-slate-50 text-sm tracking-wider dark:bg-gray-700"
+              layoutId="navbar"
+              aria-hidden="true"
+              style={{
+                width: '100%',
+              }}
+              transition={{
+                type: 'spring',
+                bounce: 0.1,
+                stiffness: 130,
+                damping: 9,
+                duration: 0.7,
+              }}
+            />
+          )}
         </Link>
       ))}
     </div>
@@ -114,7 +140,7 @@ export const NavbarRight = () => {
  * @returns Right side of the navbar for small screens, with animation
  * hamburgor menu
  */
-export function NavbarRightSmall({ isOpen }: NavbarRightProps): ReactNode {
+export function NavMiddleSmall({ isOpen }: NavbarRightProps): ReactNode {
   return (
     <div className="mb-2 min-w-[20rem] flex-col items-start space-y-2">
       {NavMiddleSmalllinks.map((link, index) => (

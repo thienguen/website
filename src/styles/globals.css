@@ -237,3 +237,8 @@ body {
   -webkit-box-orient: vertical;
   overflow          : hidden;
 }
+
+.bg-overlay {
+  --tw-bg-opacity: 1;
+  background-color: rgb(var(--color-overlay) / var(--tw-bg-opacity));
+}

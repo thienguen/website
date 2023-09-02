@@ -12,7 +12,7 @@
 import { type Metadata }  from 'next'
 import PageTitle          from '@/components/ui/header-title'
 import ProgressBar        from '@/components/ui/progress-bar'
-import GlitchedComponent  from '@/components/guestbook/Glitched-Writer'
+// import GlitchedComponent  from '@/components/guestbook/Glitched-Writer'
 import GuestbookForm      from '@/components/guestbook/GuestbookForm'
 // import PreLoader          from '@/components/ui/pre-loader'
 
@@ -29,8 +29,8 @@ export default function Guestbook() {
       {/* <PreLoader>Guestbook</PreLoader> */}
 
       <ProgressBar
-        steps={['/home', '/projects', '/about', '/guestbook', '/contact']}
-        currentStep={4}
+        steps={['home', '/about', '/dashboard', '/projects', '/guestbook']}
+        currentStep={5}
         isFullWidth={false}
         key={'/guestbook'}
       />
@@ -38,7 +38,7 @@ export default function Guestbook() {
       {/* Header gesuto bukku*/}
       <PageTitle title="guestbook" titleJP="ゲストブック。" />
 
-      <GlitchedComponent initialText="Welcome" />
+      {/* <GlitchedComponent initialText="Welcome" /> */}
 
       {/* Guestbook */}
       <div className="mx-auto mb-6 flex max-w-2xl flex-col items-center justify-center">

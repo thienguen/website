@@ -32,6 +32,7 @@ import { KBar }   from '@/components/ui/(kbar)/index'
 import Particles  from '@/components/ui/particles'
 import Navbar     from '@/components/navbar/Navbar'
 import Footer     from '@/components/footer/Footer'
+import NavBarTest from '@/components/navbar/navtest'
 
 
 interface RootLayoutProps {
@@ -113,8 +114,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
                     'dark:bg-gradient-to-b dark:from-black dark:to-gray-900' // dark
                   )}
                 >
-                  <Particles className="absolute inset-0 -z-50" quantity={500} path_name={path_name} />
+                  {/* <Particles className="absolute inset-0 -z-50" quantity={500} path_name={path_name} /> */}
                   <Navbar />
+                  {/* <NavBarTest /> */}
                   {children}
                   <KBar />
                 </div>

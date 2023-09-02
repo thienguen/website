@@ -8,7 +8,7 @@ type ProgressBarProps = {
 
 const ProgressBar = ({ steps, currentStep, isFullWidth }: ProgressBarProps) => {
   return (
-    <div className={clsx(isFullWidth ? 'w-full' : 'w-11/12 lg:w-2/3', 'mx-auto')}>
+    <div className={clsx(isFullWidth ? 'w-full' : 'max-w-4xl', 'mx-auto')}>
       {/* Progress Bar section */}
       <div className="flex h-[2px] items-center justify-between bg-gradient-to-b from-slate-300 to-gray-300">
         {/* Dot at the beginning */}

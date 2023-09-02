@@ -1,12 +1,13 @@
 import clsx from 'clsx'
 import {
+  FooterEmail,
   FooterGithub,
+  FooterKbar,
   FooterLinkedin,
   FooterLove,
   FooterProfile,
-  FooterEmail,
 } from '@/components/footer/FooterIcons'
-import ThemeToggle  from '@/components/footer/ThemeToggle'
+import ThemeToggle from './ThemeToggle'
 
 type FooterBarProps = {
   isFullWidth?: boolean
@@ -34,26 +35,35 @@ const FooterBar = ({ isFullWidth }: FooterBarProps) => {
   )
 }
 
+/**
+ * @version 1.0 this thing is a pain 6-24-2023
+ * @version 2.0 indeed it is
+ */
 export default function Footer() {
   return (
     <>
       {/* <div className="mx-auto flex w-11/12 max-w-7xl dark:border-white border-t border-gray-300 lg:w-2/3" /> */}
       <footer className="bg-gray-300 shadow-md dark:bg-gray-900">
-        <div className="">
-          <FooterBar isFullWidth={false} />
-        </div>
-        <div className="m-auto flex w-11/12 flex-col items-center justify-between px-4 md:h-10 md:flex-row lg:w-2/3 lg:flex-row">
-          <div className="z-20 flex items-center justify-center text-sm text-muted-foreground">
-            <FooterLove />
+        <div className="mx-auto max-w-4xl">
+          {/* Bar */}
+          <div>
+            <FooterBar isFullWidth={true} />
           </div>
 
-          <div className="z-20 flex items-center space-x-3">
-            <FooterGithub />
-            <FooterLinkedin />
-            <FooterEmail />
-            {/* This thing is a pain 6-24-2023 */}
-            <ThemeToggle />
-            <FooterProfile />
+          {/* Content */}
+          <div className="m-auto flex flex-col items-center justify-between px-4 md:h-10 md:flex-row lg:flex-row">
+            <div className="z-20 flex items-center justify-center text-sm text-muted-foreground">
+              <FooterLove />
+            </div>
+
+            <div className="z-20 flex items-center space-x-3">
+              <FooterGithub />
+              <FooterLinkedin />
+              <FooterEmail />
+              <FooterKbar />
+              <FooterProfile />
+              <ThemeToggle />
+            </div>
           </div>
         </div>
       </footer>

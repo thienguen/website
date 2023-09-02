@@ -1,18 +1,18 @@
 export const NavMiddleSmalllinks = [
-  { href: '/',          title: '/home' },
+  // { href: '/',          title: '/home' },
+  { href: '/about',     title: '/about' },
   { href: '/projects',  title: '/projects' },
+  { href: '/dashboard', title: '/dashboard' },
   { href: '/guestbook', title: '/guestbook' },
-  { href: '/contact',   title: '/contact' },
-  // { href: '/about', title: '/about' },
 ]
 
 export const NavMiddleLinks = [
-  { href: '/',          title: '/home' },
+  // { href: '/',          title: '/home' },
+
+  { href: '/about',     title: '/about' },
+  { href: '/dashboard', title: '/dashboard' },
   { href: '/projects',  title: '/projects' },
-  /* Alternating */
-  { href: '/guestbook', title: 'guestbook/' },
-  { href: '/contact',   title: 'contact/' },
-  // { href: '/about', title: 'about/' },
+  { href: '/guestbook', title: '/guestbook' },
 ];
 
 

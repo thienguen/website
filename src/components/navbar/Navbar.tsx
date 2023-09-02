@@ -8,7 +8,7 @@ import { usePathname } from 'next/navigation'
 import { Twirl as Hamburger } from 'hamburger-react'
 /* Src */
 import { useMediaQuery } from '@/hooks/useMediaQuery'
-import { NavbarLeft, NavbarMiddle, NavbarRight, NavbarRightSmall } from '@/components/navbar/NavbarLeftRight'
+import { NavbarLeft, NavbarMiddle, /* NavbarRight, */ NavMiddleSmall } from '@/components/navbar/NavbarLeftRight'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -17,9 +17,9 @@ const Navbar = () => {
   /**
    * path_name for  typewriter effect
    */
-  const path_name    = usePathname()
+  const path_name = usePathname()
   const isBreakpoint = useMediaQuery('780px')
-  const navRef       = useRef<HTMLDivElement>(null)
+  const navRef = useRef<HTMLDivElement>(null)
 
   /**
    * For dynamic, responsive navbar, when smaller
@@ -55,12 +55,10 @@ const Navbar = () => {
   /* If the user decided to hard refresh, like they always do */
   if (isBreakpoint === null) {
     return (
-      <nav className="mx-auto mt-1.5 flex w-11/12 flex-wrap items-center justify-between pb-2 pl-6 pt-4 font-dosis md:flex-nowrap lg:w-2/3">
-        <div className={`md:block ${isOpen ? 'block' : 'hidden'}`}>
-          <NavbarLeft path_name={path_name} />
-        </div>
+      <nav className="mx-auto mt-5 flex max-w-4xl flex-wrap items-center justify-between pb-2 pl-6 pt-4 font-dosis md:flex-nowrap">
+        <NavbarLeft path_name={path_name} />
         <NavbarMiddle />
-        <NavbarRight />
+        {/* <NavbarRight /> */}
       </nav>
     )
   }
@@ -71,12 +69,10 @@ const Navbar = () => {
       <Suspense fallback={<div>Loading...</div>}>
         {/* Useless */}
         {isBreakpoint ? (
-          <nav className="mx-auto mt-1.5 flex w-11/12 flex-wrap items-center justify-between pb-2 pl-6 pt-4 font-dosis md:flex-nowrap lg:w-2/3">
-            <div className={`md:block ${isOpen ? 'block' : 'hidden'}`}>
-              <NavbarLeft path_name={path_name} />
-            </div>
+          <nav className="mx-auto mt-5 flex max-w-4xl flex-wrap items-center justify-between pb-2 pl-6 pt-4 font-dosis md:flex-nowrap">
+            <NavbarLeft path_name={path_name} />
             <NavbarMiddle />
-            <NavbarRight />
+            {/* <NavbarRight /> */}
           </nav>
         ) : (
           <>
@@ -89,7 +85,7 @@ const Navbar = () => {
                 style={{ maxHeight: height }}
               >
                 <div className={`md:block ${isOpen ? 'block' : 'hidden'}`}>
-                  <NavbarRightSmall path_name={path_name} isOpen={isOpen} />
+                  <NavMiddleSmall path_name={path_name} isOpen={isOpen} />
                 </div>
               </div>
             </div>
