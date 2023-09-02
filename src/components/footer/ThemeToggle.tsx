@@ -41,8 +41,8 @@ function ThemeToggle() {
     setDisabled(true)
     setTheme(theme === 'dark' ? 'light' : 'dark')
     
-    localStorage.setItem('themeChangeTimestamp', Date.now().toString())
     location.reload() // this will refresh the page
+    localStorage.setItem('themeChangeTimestamp', Date.now().toString())
     // Reset the button to active state
     // and hide the message after 1.5 seconds
     setTimeout(() => {
