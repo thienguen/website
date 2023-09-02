@@ -32,7 +32,7 @@ import { KBar }   from '@/components/ui/(kbar)/index'
 import Particles  from '@/components/ui/particles'
 import Navbar     from '@/components/navbar/Navbar'
 import Footer     from '@/components/footer/Footer'
-import NavBarTest from '@/components/navbar/navtest'
+import NavBarTest from '@/components/navbar/unused/navtest'
 
 
 interface RootLayoutProps {

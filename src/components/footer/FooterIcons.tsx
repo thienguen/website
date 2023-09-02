@@ -1,3 +1,5 @@
+'use client'
+
 /* Trash */
 import Link from 'next/link'
 import { cn } from '@/lib/util/util'
@@ -15,6 +17,7 @@ import { Tooltip } from '@/components/common/Tooltip'
 import { Github, Twitter } from 'lucide-react'
 import { /*  AiOutlineHeart, */ AiOutlineInstagram, AiOutlineLinkedin, AiOutlineMail } from 'react-icons/ai'
 import { BsCommand } from 'react-icons/bs'
+import { useState } from 'react'
 
 /**
  * All the right hand side of the footer functionality, recommended fold it
@@ -239,6 +242,21 @@ export function FooterProfile() {
 export function FooterKbar() {
   const [ThemeSound] = useSound('/sounds/open.mp3', { volume: 1 })
   const { query } = useKBar()
+  const [isToggled, setIsToggled] = useState(false); // State to track toggle
+
+  const handleButtonClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    ThemeSound();
+
+    if (isToggled) {
+      query.disable; // Notice there was an error here as well. You missed the function invocation `()`.
+    } else {
+      query.toggle();
+    }
+
+    setIsToggled(!isToggled); // Flip the state for next click
+}; 
+
   return (
     <>
       <Tooltip text="Kbar">
@@ -246,11 +264,7 @@ export function FooterKbar() {
           aria-label="Kbar"
           rel="noreferrer"
           className="m-auto"
-          onClick={(e) => {
-            e.preventDefault()
-            ThemeSound()
-            query.toggle()
-          }}
+          onClick={handleButtonClick}
         >
           <div
             className={cn(

@@ -67,16 +67,17 @@ export const NavbarMiddle = () => {
   const [hoveredPath, setHoveredPath] = useState(pathname)
 
   return (
-    <div className="sticky z-[100] flex justify-center space-x-4  backdrop-blur-md">
+    <div className=" flex justify-center space-x-4  backdrop-blur-md">
       {NavMiddleLinks.map((link, _) => (
         <Link
           key={link.title}
           href={link.href}
           className="relative flex flex-row items-center rounded text-sm tracking-wider  text-black no-underline duration-300 ease-in hover:bg-slate-50 dark:text-gray-100 dark:hover:bg-gray-700 sm:px-3 sm:py-2"
           onClick={() => {
-            stop()
-            ThemeSound()
-          }}
+            stop();
+            ThemeSound();
+            setHoveredPath(link.href); 
+        }}
           onMouseOver={() => setHoveredPath(link.href)}
           onMouseLeave={() => setHoveredPath(pathname)}
         >
@@ -97,7 +98,7 @@ export const NavbarMiddle = () => {
               transition={{
                 type: 'spring',
                 bounce: 0.1,
-                stiffness: 130,
+                stiffness: 80,
                 damping: 9,
                 duration: 0.7,
               }}
