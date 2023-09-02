@@ -8,7 +8,7 @@ import { usePathname } from 'next/navigation'
 import { Twirl as Hamburger } from 'hamburger-react'
 /* Src */
 import { useMediaQuery } from '@/hooks/useMediaQuery'
-import { NavbarLeft, NavbarMiddle, /* NavbarRight, */ NavMiddleSmall } from '@/components/navbar/NavbarLeftRight'
+import { NavbarLeft /* NavbarRight, */, NavbarMiddle, NavMiddleSmall } from '@/components/navbar/NavbarLeftRight'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -55,7 +55,7 @@ const Navbar = () => {
   /* If the user decided to hard refresh, like they always do */
   if (isBreakpoint === null) {
     return (
-      <nav className="mx-auto mt-5 flex max-w-4xl flex-wrap items-center justify-between pb-2 pl-6 pt-4 font-dosis md:flex-nowrap">
+      <nav className="mx-auto mt-2 flex max-w-4xl flex-wrap items-center justify-between pb-2 pl-6 pt-4 font-dosis md:flex-nowrap">
         <NavbarLeft path_name={path_name} />
         <NavbarMiddle />
         {/* <NavbarRight /> */}
@@ -69,7 +69,7 @@ const Navbar = () => {
       <Suspense fallback={<div>Loading...</div>}>
         {/* Useless */}
         {isBreakpoint ? (
-          <nav className="mx-auto mt-5 flex max-w-4xl flex-wrap items-center justify-between pb-2 pl-6 pt-4 font-dosis md:flex-nowrap">
+          <nav className="mx-auto mt-2 flex max-w-4xl flex-wrap items-center justify-between pb-2 pl-6 pt-4 font-dosis md:flex-nowrap">
             <NavbarLeft path_name={path_name} />
             <NavbarMiddle />
             {/* <NavbarRight /> */}

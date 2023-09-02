@@ -116,7 +116,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
                 >
                   {/* <Particles className="absolute inset-0 -z-50" quantity={500} path_name={path_name} /> */}
                   <Navbar />
-                  {/* <NavBarTest /> */}
                   {children}
                   <KBar />
                 </div>
