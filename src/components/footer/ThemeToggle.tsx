@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react'
 // Libraries
 import { useTheme } from 'next-themes'
 import { HiOutlineSun } from 'react-icons/hi'
+import { BsSun } from 'react-icons/bs'
 import { WiMoonAltWaningCrescent2 } from 'react-icons/wi'
 import useSound from 'use-sound'
 // Src
@@ -23,10 +24,10 @@ function ThemeToggle() {
     // This prevent user intentionally spamming the button
     if (changeTime) {
       const elapsedTime = Date.now() - Number(changeTime)
-      if (elapsedTime < 7000) {
+      if (elapsedTime < 3000) {
         // less than 7 seconds
         setDisabled(true)
-        const remainingTime = 7000 - elapsedTime
+        const remainingTime = 3000 - elapsedTime
         setTimeout(() => {
           setDisabled(false)
         }, remainingTime)
@@ -38,11 +39,12 @@ function ThemeToggle() {
     // Set the button to disabled and show the message
     setDisabled(true)
     setTheme(theme === 'dark' ? 'light' : 'dark')
-
+    
     location.reload() // this will refresh the page
-    localStorage.setItem('themeChangeTimestamp', Date.now().toString())
     // Reset the button to active state
     // and hide the message after 1.5 seconds
+    localStorage.setItem('themeChangeTimestamp', Date.now().toString())
+    
     setTimeout(() => {
       setDisabled(false)
     }, 3000)
@@ -52,7 +54,7 @@ function ThemeToggle() {
     <Button
       variant="ghost"
       size="sm"
-      className="h-9 w-10 hover:bg-slate-50 dark:hover:bg-gray-500"
+      className="mr-3 h-9 hover:bg-slate-50 dark:hover:bg-gray-500"
       onClick={() => {
         ThemeSound()
         handleThemeChange()
@@ -60,8 +62,10 @@ function ThemeToggle() {
       disabled={disabled}
       rel="noreferrer"
     >
-      <WiMoonAltWaningCrescent2 className="absolute h-5 w-4 rotate-0 scale-100 transition-all dark:rotate-0 dark:scale-100" />
-      <HiOutlineSun className="absolute h-5 w-4 rotate-0 scale-0 transition-all dark:-rotate-90 dark:scale-100" />
+      <div className="flex w-8 items-center justify-center">
+        <WiMoonAltWaningCrescent2 className=" h-5 w-4 rotate-0 scale-100 transition-all dark:rotate-0 dark:scale-0" />
+        <BsSun className="absolute h-5 w-4 rotate-0 scale-0 transition-all dark:-rotate-90 dark:scale-100" />
+      </div>
     </Button>
   )
 }

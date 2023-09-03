@@ -56,13 +56,9 @@ const Navbar = () => {
   /* If the user decided to hard refresh, like they always do */
   if (isBreakpoint === null) {
     return (
-      <nav className="mx-auto mt-2 flex max-w-4xl flex-wrap items-center justify-between pb-2 pl-6 pt-4 font-dosis md:flex-nowrap">
-        <div>
-          <NavbarLeft path_name={path_name} />
-        </div>
-
+      <nav className="mx-auto mt-2 flex max-w-4xl cursor-pointer flex-wrap items-center justify-between space-x-2 pb-2 pl-6 pt-4 font-dosis md:flex-nowrap">
+        <NavbarLeft path_name={path_name} />
         <NavbarMiddle />
-
         <ThemeToggle />
       </nav>
     )
@@ -74,12 +70,10 @@ const Navbar = () => {
       <Suspense fallback={<div>Loading...</div>}>
         {/* Useless */}
         {isBreakpoint ? (
-          <nav className="mx-auto mt-2 flex max-w-4xl flex-wrap items-center justify-between pb-2 pl-6 pt-4 font-dosis md:flex-nowrap">
+          <nav className="mx-auto mt-2 flex max-w-4xl cursor-pointer flex-wrap items-center justify-between space-x-2 pb-2 pl-6 pt-4 font-dosis md:flex-nowrap">
             <NavbarLeft path_name={path_name} />
-            <div className="mr-4 flex flex-row space-x-1">
-              <NavbarMiddle />
-              <ThemeToggle />
-            </div>
+            <NavbarMiddle />
+            <ThemeToggle />
           </nav>
         ) : (
           <>
