@@ -13,7 +13,7 @@ import { type Metadata } from 'next'
 import PageTitle from '@/components/ui/header-title'
 import ProgressBar from '@/components/ui/progress-bar'
 // import GlitchedComponent  from '@/components/guestbook/Glitched-Writer'
-import GuestbookForm from '@/components/guestbook/GuestbookForm'
+import GuestbookForm from '@/components/guestbook/guestbook-form'
 
 // import PreLoader          from '@/components/ui/pre-loader'
 
@@ -38,12 +38,9 @@ export default function Guestbook() {
       />
 
       {/* Header gesuto bukku*/}
-      <PageTitle title="guestbook" titleJP="ゲストブック。" />
+      <PageTitle title="guestbook" titleJP="ゲストブック。" subTitle='Leave a comment below for my other visitors here.'/>
 
       {/* <GlitchedComponent initialText="Welcome" /> */}
-      <div className="mb-4 flex flex-row justify-center font-dosis">
-        {`Leave a comment below for my other visitors here.`}
-      </div>
 
       {/* Guestbook */}
       <div className="mx-auto mb-6 flex max-w-2xl flex-col items-center justify-center">

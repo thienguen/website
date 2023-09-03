@@ -4,7 +4,7 @@ import PageTitle from '@/components/ui/header-title'
 import ProgressBar from '@/components/ui/progress-bar'
 // import PreLoader from '@/components/ui/pre-loader'
 
-import { DiscordStatus, GithubCard, QA, QAage, RPGMaker, Technologies, Timer } from '@/components/about-me/index'
+import { DiscordStatus, GithubCard, QA, QAage, RPGMaker, Technologies, Timer } from '@/components/about-me/unused/index'
 
 export const metadata: Metadata = {
   title: '/about',

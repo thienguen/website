@@ -8,8 +8,8 @@ import { usePathname } from 'next/navigation'
 import { Twirl as Hamburger } from 'hamburger-react'
 /* Src */
 import { useMediaQuery } from '@/hooks/useMediaQuery'
-import ThemeToggle from '@/components/footer/ThemeToggle'
-import { NavbarLeft /* NavbarRight, */, NavbarMiddle, NavMiddleSmall } from '@/components/navbar/NavbarLeftRight'
+import ThemeToggle from '@/components/navbar/ThemeToggle'
+import { NavbarLeft /* NavbarRight, */, NavbarMiddle, NavMiddleSmall } from '@/components/navbar/NavbarParts'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -56,7 +56,7 @@ const Navbar = () => {
   /* If the user decided to hard refresh, like they always do */
   if (isBreakpoint === null) {
     return (
-      <nav className="mx-auto mt-2 flex max-w-4xl cursor-pointer flex-wrap items-center justify-between space-x-2 pb-2 pl-6 pt-4 font-dosis md:flex-nowrap">
+      <nav className="mx-auto mt-2 flex max-w-4xl cursor-pointer flex-wrap items-center justify-between  pb-2 pl-6 pt-4 font-dosis md:flex-nowrap">
         <NavbarLeft path_name={path_name} />
         <NavbarMiddle />
         <ThemeToggle />
@@ -70,7 +70,7 @@ const Navbar = () => {
       <Suspense fallback={<div>Loading...</div>}>
         {/* Useless */}
         {isBreakpoint ? (
-          <nav className="mx-auto mt-2 flex max-w-4xl cursor-pointer flex-wrap items-center justify-between space-x-2 pb-2 pl-6 pt-4 font-dosis md:flex-nowrap">
+          <nav className="mx-auto mt-2 flex max-w-4xl cursor-pointer flex-wrap items-center justify-between  pb-2 pl-6 pt-4 font-dosis md:flex-nowrap">
             <NavbarLeft path_name={path_name} />
             <NavbarMiddle />
             <ThemeToggle />

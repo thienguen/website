@@ -1,26 +1,27 @@
 'use client'
 
 /* Trash */
+import { useState } from 'react'
 import Link from 'next/link'
-import { cn } from '@/lib/util/util'
-import { metadata } from '@/app/api/metadata'
 
 /* Hooks */
-import { useKBar } from 'kbar'
 import useSound from 'use-sound'
-
-/* UI, sup */
-import { buttonVariants } from '@/components/ui/custom-button'
-import { Tooltip } from '@/components/common/Tooltip'
+import { useKBar } from 'kbar'
 
 /* Icons */
 import { Github, Twitter } from 'lucide-react'
-import { /*  AiOutlineHeart, */ AiOutlineInstagram, AiOutlineLinkedin, AiOutlineMail } from 'react-icons/ai'
 import { BsCommand } from 'react-icons/bs'
-import { useState } from 'react'
+import { /*  AiOutlineHeart, */ AiOutlineInstagram, AiOutlineLinkedin, AiOutlineMail } from 'react-icons/ai'
+
+/* UI, sup */
+import { cn } from '@/lib/util/util'
+import { buttonVariants } from '@/components/ui/custom-button'
+import { Tooltip } from '@/components/common/Tooltip'
+import { metadata } from '@/app/api/metadata'
 
 /**
- * All the right hand side of the footer functionality, recommended fold it
+ * All the right hand side of the footer functionality, 
+ * @recommended fold code 
  * To see the full view
  * Include:
  *   - FooterLove
@@ -30,7 +31,7 @@ import { useState } from 'react'
  *   - FooterTwitter
  *   - FooterEmail
  *   - FooterProfile
- * - FooterKbar
+ *   - FooterKbar
  * @returns
  * @version 2.0
  */
@@ -39,21 +40,22 @@ export function FooterLove() {
   const [ThemeSound] = useSound('/sounds/switch-on.mp3', { volume: 1 })
   return (
     <>
-      <span className="mx-2 text-sm text-slate-900 dark:text-white">
+      <span className="mx-2 text-sm text-slate-700 dark:text-slate-300">
         {`© 2023 `}
-          <Link
-            onClick={() => {
-              ThemeSound()
-            }}
-            href={metadata.discord}
-            target="_blank"
-            className="text-sm underline transition-colors duration-200 ease-in-out hover:text-pink-500 dark:hover:text-pink-500"
-          >
-            <Tooltip text="find me here">
+        <Link
+          onClick={() => {
+            ThemeSound()
+          }}
+          href={metadata.discord}
+          target="_blank"
+        >
+          <Tooltip text="find me here">
+            <span className="text-slate-950 transition-colors duration-200 ease-in-out hover:text-pink-500 dark:text-white dark:hover:text-pink-500">
               Thien Nguyen
-            </Tooltip>
-          </Link>
-          {` • from a boy who was never enough.`}
+            </span>
+          </Tooltip>
+        </Link>
+        {` • from a boy who was never enough.`}
       </span>
     </>
   )
@@ -242,30 +244,25 @@ export function FooterProfile() {
 export function FooterKbar() {
   const [ThemeSound] = useSound('/sounds/open.mp3', { volume: 1 })
   const { query } = useKBar()
-  const [isToggled, setIsToggled] = useState(false); // State to track toggle
+  const [isToggled, setIsToggled] = useState(false) // State to track toggle
 
   const handleButtonClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();
-    ThemeSound();
+    e.preventDefault()
+    ThemeSound()
 
     if (isToggled) {
-      query.disable; // Notice there was an error here as well. You missed the function invocation `()`.
+      query.disable // Notice there was an error here as well. You missed the function invocation `()`.
     } else {
-      query.toggle();
+      query.toggle()
     }
 
-    setIsToggled(!isToggled); // Flip the state for next click
-}; 
+    setIsToggled(!isToggled) // Flip the state for next click
+  }
 
   return (
     <>
       <Tooltip text="Kbar">
-        <button
-          aria-label="Kbar"
-          rel="noreferrer"
-          className="m-auto"
-          onClick={handleButtonClick}
-        >
+        <button aria-label="Kbar" rel="noreferrer" className="m-auto" onClick={handleButtonClick}>
           <div
             className={cn(
               buttonVariants({ size: 'sm', variant: 'ghost' }),

@@ -7,25 +7,30 @@ type GenericActivityProps = {
   text        : string
   elapsedTime?: string
   statusText ?: string
+  text_color ?: string
 }
 
-const GenericActivity: React.FC<GenericActivityProps> = ({ icon, altText, text, elapsedTime, statusText }) => {
+const GenericActivity: React.FC<GenericActivityProps> = ({ icon, altText, text, elapsedTime, statusText, text_color }) => {
   const isGitKraken = altText === 'GitKraken'
 
   return (
     <>
-      <Tooltip text={statusText ?? ''}>
-        <img
-          src={icon}
-          alt={altText}
-          width={24}
-          height={24}
-          className={cn('heartbeat', `${isGitKraken ? 'dark:invert' : ''}`)}
-        />
-      </Tooltip>
+      <img
+        src={icon}
+        alt={altText}
+        width={24}
+        height={24}
+        className={cn('heartbeat', `${isGitKraken ? 'dark:invert' : ''}`)}
+      />
 
       <code className="relative mx-auto mt-1 cursor-cell appearance-none rounded-lg bg-transparent text-center font-pixeloidMono text-sm text-black/90 dark:text-gray-400">
-        {text} {elapsedTime && <span>{elapsedTime}</span>}
+        <Tooltip text={statusText ?? ''}>
+          <span className={`link-underline link-underline2 font-semibold ${text_color ?? ''}`}>{text}</span>
+        </Tooltip>
+        <span>
+          {": "}
+        </span>
+        {elapsedTime && <span>{elapsedTime}</span>}
       </code>
     </>
   )

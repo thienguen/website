@@ -20,13 +20,14 @@ const ActivityDetails: React.FC<ActivityDetailsProps> = ({ activity, activities 
   switch (activity.name) {
     case 'Visual Studio Code':
       return (
-          <GenericActivity
-            statusText={statusText}
-            icon="/icons/vscode.png"
-            altText="Visual Studio Code"
-            text={`VS Code: `}
-            elapsedTime={elapsedTime ?? ''}
-          />
+        <GenericActivity
+          statusText={statusText}
+          icon="/icons/vscode.png"
+          altText="Visual Studio Code"
+          text={`VS Code`}
+          elapsedTime={elapsedTime ?? ''}
+          text_color="text-[#3AAAF2]"
+        />
       )
     case 'GitKraken':
       return (
@@ -34,8 +35,9 @@ const ActivityDetails: React.FC<ActivityDetailsProps> = ({ activity, activities 
           statusText={'committing something to the cloud'}
           icon="/icons/gitkraken.png"
           altText="GitKraken"
-          text="GitKraken: "
+          text="GitKraken"
           elapsedTime={elapsedTime ?? ''}
+          text_color="text-[#118379]"
         />
       )
     case 'Figma':
@@ -44,7 +46,7 @@ const ActivityDetails: React.FC<ActivityDetailsProps> = ({ activity, activities 
           statusText={'making a coffee shop or something, idk'}
           icon="/icons/figma.png"
           altText="Figma"
-          text="Figma: "
+          text="Figma "
           elapsedTime={elapsedTime ?? ''}
         />
       )
@@ -54,8 +56,9 @@ const ActivityDetails: React.FC<ActivityDetailsProps> = ({ activity, activities 
           statusText={`taking note for no reason~`}
           icon="/icons/notepad.png"
           altText="Notepad"
-          text="Notepad: "
+          text="Notepad"
           elapsedTime={elapsedTime ?? ''}
+          text_color="text-slate-900 dark:text-slate-2000"
         />
       )
     case 'IntelliJ IDEA Ultimate':
@@ -65,8 +68,9 @@ const ActivityDetails: React.FC<ActivityDetailsProps> = ({ activity, activities 
           statusText={statusText}
           icon="/icons/intellij.png"
           altText="Intellij IDEA Ultimate"
-          text={statusText}
+          text={'Intellij IDEA'}
           elapsedTime={elapsedTime ?? ''}
+          text_color='text-[#FE315D]'
         />
       )
     case 'Custom Status':
@@ -79,6 +83,7 @@ const ActivityDetails: React.FC<ActivityDetailsProps> = ({ activity, activities 
               altText="Visual Studio Code"
               text={'Not coding right now'}
               elapsedTime={elapsedTime ?? ''}
+              text_color='text-[#3AAAF2]'
             />
           )}
         </>

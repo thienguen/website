@@ -2,14 +2,14 @@
 
 /* Framework */
 import { useEffect, useState } from 'react'
+
 // Libraries
-import { useTheme } from 'next-themes'
-import { HiOutlineSun } from 'react-icons/hi'
 import { BsSun } from 'react-icons/bs'
 import { WiMoonAltWaningCrescent2 } from 'react-icons/wi'
-import useSound from 'use-sound'
-// Src
 import { Button } from '@/components/ui/custom-button'
+
+import { useTheme } from 'next-themes'
+import useSound from 'use-sound'
 
 function ThemeToggle() {
   const { theme, setTheme } = useTheme()
@@ -63,8 +63,8 @@ function ThemeToggle() {
       rel="noreferrer"
     >
       <div className="flex w-8 items-center justify-center">
-        <WiMoonAltWaningCrescent2 className=" h-5 w-4 rotate-0 scale-100 transition-all dark:rotate-0 dark:scale-0" />
-        <BsSun className="absolute h-5 w-4 rotate-0 scale-0 transition-all dark:-rotate-90 dark:scale-100" />
+        <WiMoonAltWaningCrescent2 className=" h-6 w-5 rotate-0 scale-100 transition-all dark:rotate-0 dark:scale-0" />
+        <BsSun className="absolute h-6 w-5 rotate-0 scale-0 transition-all dark:-rotate-90 dark:scale-100" />
       </div>
     </Button>
   )

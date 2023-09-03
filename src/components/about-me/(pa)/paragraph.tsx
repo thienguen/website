@@ -5,7 +5,7 @@ import { useTheme } from 'next-themes'
 import { RoughNotation } from 'react-rough-notation'
 
 interface PAProps {
-  question     : string
+  tag          : string
   answer      ?: string
   customAnswer?: React.ReactNode
 }
@@ -23,7 +23,7 @@ const Paragraph: React.FC<PAProps> = (props: PAProps) => {
           show={true}
           animationDelay={2000}
         >
-          {props.question} {/* Something Somethinbg */}
+          {props.tag} {/* Something Somethinbg */}
         </RoughNotation>
       </p>
       {props.customAnswer ? (

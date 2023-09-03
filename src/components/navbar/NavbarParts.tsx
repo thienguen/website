@@ -27,18 +27,18 @@ import { metadata } from '@/app/api/metadata'
 
 interface NavbarRightProps {
   path_name?: string
-  isOpen: boolean
+  isOpen    : boolean
 }
 
 /**
  * <mapping for each title to its icon>
  */
 const IconMapping: { [key: string]: JSX.Element } = {
-  '/projects': <GoProjectSymlink />,
+  '/projects' : <GoProjectSymlink />,
   '/guestbook': <TbBrandAmongUs />,
   '/dashboard': <BsMailbox />,
-  '/about': <IoPersonCircleOutline />,
-  '/home': <AiOutlineHome />,
+  '/about'    : <IoPersonCircleOutline />,
+  '/home'     : <AiOutlineHome />,
 
   /* about to be move to footer */
   // '/kbar' : <BsCommand />,
@@ -82,7 +82,6 @@ export const NavbarMiddle = () => {
       {NavMiddleLinks.map((link, _) => (
         <a
           key={link.title}
-          // href={link.href}
           className="relative flex flex-row items-center rounded text-sm tracking-wider  text-black no-underline duration-300 ease-in hover:bg-slate-50 dark:text-gray-100 dark:hover:bg-gray-700 sm:px-3 sm:py-2"
           onClick={() => handleLinkClick(link.href)}
           onMouseOver={() => setHoveredPath(link.href)}
@@ -120,6 +119,7 @@ export const NavbarMiddle = () => {
 
 /**
  * @returns right side of the navbar
+ * @unsued version 2.0
  */
 export const NavbarRight = () => {
   const { query } = useKBar()

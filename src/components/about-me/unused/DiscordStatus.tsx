@@ -3,7 +3,7 @@
 import { IoLogoDiscord } from 'react-icons/io5/'
 import { useLanyardWS } from 'use-lanyard'
 import { cn } from '@/lib/util/util'
-import { Tooltip } from '../common/Tooltip'
+import { Tooltip } from '../../common/Tooltip'
 
 interface DiscordStatusProps {
   cols  ?: string

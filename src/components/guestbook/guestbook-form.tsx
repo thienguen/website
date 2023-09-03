@@ -1,11 +1,13 @@
 'use client'
 
-import { AiOutlineSend } from 'react-icons/ai'
 import { useGuestbookWrapper } from '@/hooks/useGuestbookWrapper'
-import { GuestbookEntry } from '@/components/guestbook/GuestbookEntry'
-import LoadingSpinner from '../ui/loading-spinner'
-import SuccessMessage from '../ui/success-message'
-import { SignInGithub, SignInGoogle, SignOut } from './Auth-Buttons'
+import { GuestbookEntry } from '@/components/guestbook/guestbook-entry'
+
+import LoadingSpinner from '@/components/ui/loading-spinner'
+import SuccessMessage from '@/components/ui/success-message'
+import { SignInGithub, SignInGoogle, SignOut } from '@/components/guestbook/auth-buttons'
+
+import { AiOutlineSend } from 'react-icons/ai'
 
 /**
  * user login: useSession
