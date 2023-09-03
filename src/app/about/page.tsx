@@ -2,9 +2,11 @@ import React from 'react'
 import { type Metadata } from 'next'
 import PageTitle from '@/components/ui/header-title'
 import ProgressBar from '@/components/ui/progress-bar'
+import { Timer } from '@/components/about-me'
+import Paragraph from '@/components/about-me/(pa)/paragraph'
 
 export const metadata: Metadata = {
-  title      : '/about',
+  title: '/about',
   description: 'metadata is a funny lil concept.',
 }
 
@@ -31,9 +33,16 @@ export default function About() {
         hanekawa={true}
       />
 
-      {/* Body of About page*/}
-      
+      <div className="mb-8 flex flex-row justify-center font-dosis">{`Self introductory.`}</div>
 
+      {/* Body of About page*/}
+      <div className="mb-12 flex justify-center">
+        <Timer height="h-24" />
+      </div>
+
+      <div className="flex flex-row justify-center max-w-3xl mx-auto">
+        <Paragraph question="Something" />
+      </div>
     </>
   )
 }

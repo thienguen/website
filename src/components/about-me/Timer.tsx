@@ -31,7 +31,7 @@ const Timer = (props: TimerProps) => {
 
   return (
     <>
-      <div className={`${props.cols ?? ''}`}>
+      <div className={`${props.cols ?? ''} w-full max-w-3xl`}>
         <div
           className={cn(
             'flex h-full w-full flex-col items-center justify-center rounded-lg text-center text-white',

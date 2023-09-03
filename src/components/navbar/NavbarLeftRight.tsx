@@ -3,18 +3,23 @@
 /* Src */
 import { useState, type ReactNode } from 'react'
 import Link from 'next/link'
-import { usePathname, useRouter } from 'next/navigation'
-import { motion } from 'framer-motion'
+
 /* hooks */
 import { useKBar } from 'kbar'
-import { AiOutlineHome } from 'react-icons/ai'
-import { BsMailbox, BsVectorPen } from 'react-icons/bs'
-import { GoProjectSymlink } from 'react-icons/go'
+import useSound from 'use-sound'
+import { usePathname, useRouter } from 'next/navigation'
+
 /* Icons */
 import { IoPersonCircleOutline } from 'react-icons/io5'
+import { AiOutlineHome } from 'react-icons/ai'
+import { GoProjectSymlink } from 'react-icons/go'
+import { TbBrandAmongUs } from 'react-icons/tb'
+import { BsMailbox } from 'react-icons/bs'
+
 /* Support */
 import Typewriter from 'typewriter-effect'
-import useSound from 'use-sound'
+import { motion } from 'framer-motion'
+
 /* Util */
 import { cn } from '@/lib/util/util'
 import { NavMiddleLinks, NavMiddleSmalllinks } from '@/components/navbar/Navlinks'
@@ -30,7 +35,7 @@ interface NavbarRightProps {
  */
 const IconMapping: { [key: string]: JSX.Element } = {
   '/projects': <GoProjectSymlink />,
-  '/guestbook': <BsVectorPen />,
+  '/guestbook': <TbBrandAmongUs />,
   '/dashboard': <BsMailbox />,
   '/about': <IoPersonCircleOutline />,
   '/home': <AiOutlineHome />,
