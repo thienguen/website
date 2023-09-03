@@ -9,5 +9,5 @@
   "editor.inlayHints.fontFamily": "JetBrains Mono",
   "editor.fontSize": 15,
   "editor.guides.bracketPairs": "active",
-  "discord.enabled": false,
+  "discord.enabled": true,
 }

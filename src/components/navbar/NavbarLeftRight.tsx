@@ -21,9 +21,8 @@ import { metadata } from '@/app/api/metadata'
 /* Icons */
 import { IoPersonCircleOutline } from 'react-icons/io5'
 import { GoProjectSymlink } from 'react-icons/go'
-import { LuSwords } from 'react-icons/lu'
-import { BsMailbox } from 'react-icons/bs'
-// import { AiOutlineHome } from 'react-icons/ai'
+import { BsMailbox, BsVectorPen } from 'react-icons/bs'
+import { AiOutlineHome } from 'react-icons/ai'
 
 interface NavbarRightProps {
   path_name?: string
@@ -34,14 +33,14 @@ interface NavbarRightProps {
  * <mapping for each title to its icon>
  */
 const IconMapping: { [key: string]: JSX.Element } = {
-  '/projects': <GoProjectSymlink />,
-  '/guestbook': <LuSwords />,
+  '/projects' : <GoProjectSymlink />,
+  '/guestbook': <BsVectorPen />,
   '/dashboard': <BsMailbox />,
-  '/about': <IoPersonCircleOutline />,
+  '/about'    : <IoPersonCircleOutline />,
+  '/home'     : <AiOutlineHome />,
 
   /* about to be move to footer */
   // '/kbar' : <BsCommand />,
-  // '/home'    : <AiOutlineHome />,
 }
 
 /**

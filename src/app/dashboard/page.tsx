@@ -12,8 +12,9 @@ export default function Projects() {
     <>
       {/* <PreLoader>Projects</PreLoader> */}
       <ProgressBar
-        steps={['home', '/about', '/dashboard', '/projects', '/guestbook']}
-        currentStep={3}
+        // steps={['home', '/about', '/dashboard', '/projects', '/guestbook']}
+        steps={['/dashboard', '/projects', '/guestbook', '/about']}
+        currentStep={1}
         isFullWidth={false}
         key={'/dashboard'}
       />

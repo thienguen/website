@@ -20,8 +20,9 @@ export default function About() {
       {/* <PreLoader>About me</PreLoader> */}
 
       <ProgressBar
-        steps={['home', '/about', '/dashboard', '/projects', '/guestbook']}
-        currentStep={2}
+        // steps={['home', '/about', '/dashboard', '/projects', '/guestbook']}
+        steps={['/dashboard', '/projects', '/guestbook', '/about']}
+        currentStep={4}
         isFullWidth={false}
         key={'/about'}
       />

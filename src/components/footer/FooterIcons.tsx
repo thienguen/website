@@ -41,7 +41,6 @@ export function FooterLove() {
     <>
       <span className="mx-2 text-sm">
         {`© 2023 `}
-        <Tooltip text="find me here">
           <Link
             onClick={() => {
               ThemeSound()
@@ -50,10 +49,11 @@ export function FooterLove() {
             target="_blank"
             className="text-sm text-slate-600 underline transition-colors duration-200 ease-in-out hover:text-pink-500 dark:text-white dark:hover:text-pink-500"
           >
-            Thien Nguyen
+            <Tooltip text="find me here">
+              Thien Nguyen
+            </Tooltip>
           </Link>
           {` • from a boy who was never enough.`}
-        </Tooltip>
       </span>
     </>
   )

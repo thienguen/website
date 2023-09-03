@@ -61,8 +61,8 @@ export default function Footer() {
               <FooterLinkedin />
               <FooterEmail />
               <FooterKbar />
-              <FooterProfile />
               <ThemeToggle />
+              <FooterProfile />
             </div>
           </div>
         </div>

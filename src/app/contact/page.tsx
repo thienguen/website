@@ -13,8 +13,9 @@ export default function Contact() {
   return (
     <>
       <ProgressBar
-        steps={['home', '/about', '/dashboard', '/projects', '/guestbook']}
-        currentStep={2}
+        // steps={['home', '/about', '/dashboard', '/projects', '/guestbook']}
+        steps={['/dashboard', '/projects', '/guestbook', '/about']}
+        currentStep={3}
         isFullWidth={false}
         key={'/projects'}
       />
