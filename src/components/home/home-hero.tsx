@@ -1,28 +1,19 @@
-'use client'
-
-import React, { useState } from 'react'
-
-import { cn } from '@/lib/util/util'
 import { useTheme } from 'next-themes'
+// import { TbCodeDots } from 'react-icons/tb'
+import { cn } from '@/lib/util/util'
 import { useMediaHeight } from '@/hooks/useMediaHeight'
-
-import { KBarStart }  from '@/components/ui/(kbar)/index'
-import { Tooltip }    from '@/components/common/Tooltip'
-import { TbCodeDots } from 'react-icons/tb'
-
-import Presence    from '@/components/home/lanyard/presence'
-import Profile     from '@/components/home/profile'
+import { KBarStart } from '@/components/ui/(kbar)/index'
+import Profile from '@/components/home/profile'
 
 const HomeHero: React.FC = () => {
   const { theme, setTheme } = useTheme()
-  const [showPresence, setShowPresence] = useState(false)
 
   if (theme === undefined) {
     console.log('theme is undefined, default to dark again')
     setTheme('dark')
   }
 
-  const isTallScreen       = useMediaHeight('1000px')
+  const isTallScreen = useMediaHeight('1000px')
   const isEvenTallerScreen = useMediaHeight('1100px')
 
   return (
@@ -46,19 +37,15 @@ const HomeHero: React.FC = () => {
           </h2>
           <KBarStart />
         </div>
-        
-        <Tooltip text="I'm curently doing">
-          <div onClick={() => setShowPresence(!showPresence)}>
-            <TbCodeDots className="h-10 animate-pulse cursor-pointer text-3xl text-white invert dark:text-black" />
-          </div>
-          {/* <div className="equalizer" onClick={() => setShowPresence(!showPresence)}>
-            <span className="left"></span>
-            <span className="middle"></span>
-            <span className="right"></span>
-          </div> */}
-        </Tooltip>
 
-        {showPresence && <Presence />}
+        {/* <div>
+            <TbCodeDots className="h-10 animate-pulse cursor-pointer text-3xl text-white invert dark:text-black" />
+          </div> */}
+        <div className="equalizer">
+          <span className="left"></span>
+          <span className="middle"></span>
+          <span className="right"></span>
+        </div>
       </div>
     </>
   )

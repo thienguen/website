@@ -14,7 +14,7 @@ function Presence(): ReactElement {
   const activities = usePresence()
 
   return (
-    <div className="mx-auto w-5/6 translate-y-[-1rem] animate-fade-in py-1 text-center font-pixeloidMono opacity-0 [--animation-delay:200ms] lg:w-2/4">
+    <div className="ml-4 py-1 text-center font-pixeloidMono ">
       <ul className="flex  flex-col items-center justify-center gap-2">
         {activities.map((activity, index) => (
           <li key={index} className="flex flex-row items-center gap-2">

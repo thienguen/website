@@ -7,7 +7,7 @@ import { ICONS } from '@/components/ui/icons'
 import { type ProjectCareerProps } from '@/components/purojekuto/(render)/one/one.type'
 
 type FeaturedProjectProps = {
-  index  : number
+  index: number
   project: ProjectCareerProps
 }
 

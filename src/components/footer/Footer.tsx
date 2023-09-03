@@ -7,6 +7,7 @@ import {
   FooterLove,
   FooterProfile,
 } from '@/components/footer/FooterIcons'
+import Presence from '@/components/home/lanyard/presence'
 import ThemeToggle from './ThemeToggle'
 
 type FooterBarProps = {
@@ -17,7 +18,7 @@ const FooterBar = ({ isFullWidth }: FooterBarProps) => {
   return (
     <div className={clsx(isFullWidth ? 'w-full' : 'w-11/12 lg:w-2/3', 'mx-auto')}>
       {/* Footer Bar section */}
-      <div className="mt-2 flex h-[15px] items-center justify-between">
+      <div className="flex h-[15px] items-center justify-between">
         {/* Dot at the beginning */}
         <div
           className={`flex h-3 w-3 items-center justify-center rounded-full bg-gradient-to-b from-gray-600 to-gray-400   shadow dark:bg-gradient-to-b dark:from-gray-50 dark:to-gray-100`}
@@ -45,11 +46,13 @@ export default function Footer() {
       {/* <div className="mx-auto flex w-11/12 max-w-7xl dark:border-white border-t border-gray-300 lg:w-2/3" /> */}
       <footer className="bg-gray-300 shadow-md dark:bg-gray-900">
         <div className="mx-auto max-w-4xl">
-
           {/* CAN IT BE OVER HERE */}
 
-          
           {/* Bar */}
+          <div className="flex w-full flex-row justify-start">
+            <Presence />
+          </div>
+
           <div>
             <FooterBar isFullWidth={true} />
           </div>
