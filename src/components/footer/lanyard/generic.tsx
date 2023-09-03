@@ -24,7 +24,7 @@ const GenericActivity: React.FC<GenericActivityProps> = ({ icon, altText, text, 
         />
       </Tooltip>
 
-      <code className="relative mx-auto cursor-cell appearance-none rounded-lg bg-transparent text-center font-pixeloidMono text-base text-black/90 dark:text-gray-400">
+      <code className="relative mx-auto mt-1 cursor-cell appearance-none rounded-lg bg-transparent text-center font-pixeloidMono text-sm text-black/90 dark:text-gray-400">
         {text} {elapsedTime && <span>{elapsedTime}</span>}
       </code>
     </>

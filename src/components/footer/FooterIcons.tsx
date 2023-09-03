@@ -39,7 +39,7 @@ export function FooterLove() {
   const [ThemeSound] = useSound('/sounds/switch-on.mp3', { volume: 1 })
   return (
     <>
-      <span className="mx-2 text-sm">
+      <span className="mx-2 text-sm text-slate-900 dark:text-white">
         {`© 2023 `}
           <Link
             onClick={() => {
@@ -47,7 +47,7 @@ export function FooterLove() {
             }}
             href={metadata.discord}
             target="_blank"
-            className="text-sm text-slate-600 underline transition-colors duration-200 ease-in-out hover:text-pink-500 dark:text-white dark:hover:text-pink-500"
+            className="text-sm underline transition-colors duration-200 ease-in-out hover:text-pink-500 dark:hover:text-pink-500"
           >
             <Tooltip text="find me here">
               Thien Nguyen

@@ -22,6 +22,8 @@ export const Tooltip: React.FC<TooltipProps> = ({ text, isThemetoogle, children,
     setShow(false)
   }
 
+  const tooltipPosition = isThemetoogle ? 'top-full mt-2' : 'bottom-full mb-2'
+
   return (
     <div className="relative inline-block">
       <div onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
@@ -30,7 +32,7 @@ export const Tooltip: React.FC<TooltipProps> = ({ text, isThemetoogle, children,
       {show && (
         <div
           className={cn(
-            'absolute bottom-full left-1/2 z-10 mb-2 -translate-x-1/2 whitespace-nowrap rounded-md p-2 font-dosis text-base',
+            `absolute left-1/2 ${tooltipPosition} z-10 -translate-x-1/2 whitespace-nowrap rounded-md p-2 font-dosis text-base`,
             `${isThemetoogle ? 'bg-red-600 text-slate-200' : 'bg-gray-800 text-white'}`,
             `${style ?? ''}`
           )}

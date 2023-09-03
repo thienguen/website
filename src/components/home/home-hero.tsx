@@ -1,9 +1,11 @@
 import { useTheme } from 'next-themes'
-// import { TbCodeDots } from 'react-icons/tb'
-import { cn } from '@/lib/util/util'
 import { useMediaHeight } from '@/hooks/useMediaHeight'
+
+import { cn } from '@/lib/util/util'
 import { KBarStart } from '@/components/ui/(kbar)/index'
+
 import Profile from '@/components/home/profile'
+// import { TbCodeDots } from 'react-icons/tb'
 
 const HomeHero: React.FC = () => {
   const { theme, setTheme } = useTheme()
@@ -41,7 +43,9 @@ const HomeHero: React.FC = () => {
         {/* <div>
             <TbCodeDots className="h-10 animate-pulse cursor-pointer text-3xl text-white invert dark:text-black" />
           </div> */}
-        <div className="equalizer">
+
+        {/* For chiito w luv */}
+        <div className="equalizer opacity-40 invert dark:opacity-100 dark:invert-0">
           <span className="left"></span>
           <span className="middle"></span>
           <span className="right"></span>

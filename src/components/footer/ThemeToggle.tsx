@@ -2,19 +2,16 @@
 
 /* Framework */
 import { useEffect, useState } from 'react'
-
 // Libraries
 import { useTheme } from 'next-themes'
-import { HiOutlineMoon, HiOutlineSun } from 'react-icons/hi'
-
+import { HiOutlineSun } from 'react-icons/hi'
+import { WiMoonAltWaningCrescent2 } from 'react-icons/wi'
+import useSound from 'use-sound'
 // Src
 import { Button } from '@/components/ui/custom-button'
-import { Tooltip } from '@/components/common/Tooltip'
-
-import useSound from 'use-sound'
 
 function ThemeToggle() {
-  const { theme, setTheme }     = useTheme()
+  const { theme, setTheme } = useTheme()
   const [disabled, setDisabled] = useState(false) // <-- State to manage button's disabled status
   const [ThemeSound] = useSound('/sounds/switch-on.mp3', { volume: 1 })
 
@@ -26,7 +23,8 @@ function ThemeToggle() {
     // This prevent user intentionally spamming the button
     if (changeTime) {
       const elapsedTime = Date.now() - Number(changeTime)
-      if (elapsedTime < 7000) { // less than 7 seconds
+      if (elapsedTime < 7000) {
+        // less than 7 seconds
         setDisabled(true)
         const remainingTime = 7000 - elapsedTime
         setTimeout(() => {
@@ -40,36 +38,31 @@ function ThemeToggle() {
     // Set the button to disabled and show the message
     setDisabled(true)
     setTheme(theme === 'dark' ? 'light' : 'dark')
-    
+
     location.reload() // this will refresh the page
     localStorage.setItem('themeChangeTimestamp', Date.now().toString())
     // Reset the button to active state
     // and hide the message after 1.5 seconds
     setTimeout(() => {
       setDisabled(false)
-    }, 1500)
+    }, 3000)
   }
 
   return (
-    <Tooltip
-      text={`${disabled ? 'Generating the sky~' : 'Changing Theme, this took a bit so please be patient!'}`}
-      isThemetoogle
+    <Button
+      variant="ghost"
+      size="sm"
+      className="h-9 w-10 hover:bg-slate-50 dark:hover:bg-gray-500"
+      onClick={() => {
+        ThemeSound()
+        handleThemeChange()
+      }} // <-- Updated onClick handler
+      disabled={disabled}
+      rel="noreferrer"
     >
-      <Button
-        variant="ghost"
-        size="sm"
-        className="w-7 px-0 hover:bg-slate-50 dark:hover:bg-gray-500"
-        onClick={() => {
-          ThemeSound()
-          handleThemeChange()
-        }}                          // <-- Updated onClick handler
-        disabled={disabled}         // <-- Add disabled prop
-        rel="noreferrer"
-      >
-        <HiOutlineSun className="h-6 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-        <HiOutlineMoon className="absolute h-6 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-      </Button>
-    </Tooltip>
+      <WiMoonAltWaningCrescent2 className="absolute h-5 w-4 rotate-0 scale-100 transition-all dark:rotate-0 dark:scale-100" />
+      <HiOutlineSun className="absolute h-5 w-4 rotate-0 scale-0 transition-all dark:-rotate-90 dark:scale-100" />
+    </Button>
   )
 }
 

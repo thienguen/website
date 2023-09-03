@@ -1,6 +1,6 @@
 import { type Activity } from 'use-lanyard'
 import useElapsedTime from '@/hooks/lanyard/useElapsedTime'
-import GenericActivity from '@/components/home/lanyard/generic'
+import GenericActivity from '@/components/footer/lanyard/generic'
 
 type ActivityDetailsProps = {
   activity: Partial<Activity>

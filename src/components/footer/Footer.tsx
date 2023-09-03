@@ -7,8 +7,8 @@ import {
   FooterLove,
   FooterProfile,
 } from '@/components/footer/FooterIcons'
-import Presence from '@/components/home/lanyard/presence'
-import ThemeToggle from './ThemeToggle'
+
+import Presence from '@/components/footer/lanyard/presence'
 
 type FooterBarProps = {
   isFullWidth?: boolean
@@ -68,7 +68,6 @@ export default function Footer() {
               <FooterLinkedin />
               <FooterEmail />
               <FooterKbar />
-              <ThemeToggle />
               <FooterProfile />
             </div>
           </div>
