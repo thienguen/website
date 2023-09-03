@@ -72,7 +72,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
   if (theme === undefined) {
     console.log('theme is undefined, default to dark')
     setTheme('dark')
-  }
+  } 
 
   return (
     <>

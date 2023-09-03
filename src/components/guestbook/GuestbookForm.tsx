@@ -60,7 +60,7 @@ export default function GuestbookForm() {
           </div>
 
           {/* Second row */}
-          <div className="flex w-full justify-end space-x-3 pb-4">
+          <div className="flex w-full justify-end space-x-1 pb-4">
             <SignOut />
             <button
               type="submit"
@@ -73,7 +73,7 @@ export default function GuestbookForm() {
                 <>
                   <div className="flex flex-row items-center justify-between">
                     <span className="">Send</span>
-                    <AiOutlineSend className="ml-2  h-4 w-4" />
+                    <AiOutlineSend className="ml-2 h-4 w-4" />
                   </div>
                 </>
               )}

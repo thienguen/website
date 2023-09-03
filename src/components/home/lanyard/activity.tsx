@@ -23,7 +23,7 @@ const ActivityDetails: React.FC<ActivityDetailsProps> = ({ activity, activities 
         <GenericActivity
           icon="/icons/vscode.png"
           altText="Visual Studio Code"
-          text={statusText}
+          text={`VS Code: `}
           elapsedTime={elapsedTime ?? ''}
         />
       )
@@ -32,7 +32,8 @@ const ActivityDetails: React.FC<ActivityDetailsProps> = ({ activity, activities 
         <GenericActivity
           icon="/icons/gitkraken.png"
           altText="GitKraken"
-          text="GitKraken: is committing something to the cloud"
+          // text="GitKraken: is committing something to the cloud"
+          text="GitKraken: "
           elapsedTime={elapsedTime ?? ''}
         />
       )
@@ -41,7 +42,8 @@ const ActivityDetails: React.FC<ActivityDetailsProps> = ({ activity, activities 
         <GenericActivity
           icon="/icons/figma.png"
           altText="Figma"
-          text="Figma: making a coffee shop or something, idk"
+          // text="Figma: making a coffee shop or something, idk"
+          text="Figma: "
           elapsedTime={elapsedTime ?? ''}
         />
       )

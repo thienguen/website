@@ -45,6 +45,10 @@ export default function Footer() {
       {/* <div className="mx-auto flex w-11/12 max-w-7xl dark:border-white border-t border-gray-300 lg:w-2/3" /> */}
       <footer className="bg-gray-300 shadow-md dark:bg-gray-900">
         <div className="mx-auto max-w-4xl">
+
+          {/* CAN IT BE OVER HERE */}
+
+          
           {/* Bar */}
           <div>
             <FooterBar isFullWidth={true} />

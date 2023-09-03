@@ -3,41 +3,37 @@
 /* Src */
 import { useState, type ReactNode } from 'react'
 import Link from 'next/link'
-
+import { usePathname, useRouter } from 'next/navigation'
+import { motion } from 'framer-motion'
 /* hooks */
 import { useKBar } from 'kbar'
-import useSound from 'use-sound'
-import { usePathname } from 'next/navigation'
-
+import { AiOutlineHome } from 'react-icons/ai'
+import { BsMailbox, BsVectorPen } from 'react-icons/bs'
+import { GoProjectSymlink } from 'react-icons/go'
+/* Icons */
+import { IoPersonCircleOutline } from 'react-icons/io5'
 /* Support */
 import Typewriter from 'typewriter-effect'
-import { motion } from 'framer-motion'
-
+import useSound from 'use-sound'
 /* Util */
 import { cn } from '@/lib/util/util'
 import { NavMiddleLinks, NavMiddleSmalllinks } from '@/components/navbar/Navlinks'
 import { metadata } from '@/app/api/metadata'
 
-/* Icons */
-import { IoPersonCircleOutline } from 'react-icons/io5'
-import { GoProjectSymlink } from 'react-icons/go'
-import { BsMailbox, BsVectorPen } from 'react-icons/bs'
-import { AiOutlineHome } from 'react-icons/ai'
-
 interface NavbarRightProps {
   path_name?: string
-  isOpen    : boolean
+  isOpen: boolean
 }
 
 /**
  * <mapping for each title to its icon>
  */
 const IconMapping: { [key: string]: JSX.Element } = {
-  '/projects' : <GoProjectSymlink />,
+  '/projects': <GoProjectSymlink />,
   '/guestbook': <BsVectorPen />,
   '/dashboard': <BsMailbox />,
-  '/about'    : <IoPersonCircleOutline />,
-  '/home'     : <AiOutlineHome />,
+  '/about': <IoPersonCircleOutline />,
+  '/home': <AiOutlineHome />,
 
   /* about to be move to footer */
   // '/kbar' : <BsCommand />,
@@ -61,22 +57,29 @@ export const NavbarLeft = ({ path_name }: { path_name: string }) => (
  * @returns middle of the navbar
  */
 export const NavbarMiddle = () => {
-  const pathname                      = usePathname() || '/'
+  const pathname = usePathname() || '/'
+  const router   = useRouter()
+
   const [ThemeSound, { stop }]        = useSound('/sounds/page.mp3', { volume: 0.5 })
   const [hoveredPath, setHoveredPath] = useState(pathname)
+
+  const handleLinkClick = (href: string) => {
+    stop()
+    ThemeSound()
+    setTimeout(() => {
+      router.push(href)
+      setHoveredPath(href)
+    }, 150) // delay of 150ms, due to the weird bug of framer
+  }
 
   return (
     <div className=" flex justify-center space-x-4  backdrop-blur-md">
       {NavMiddleLinks.map((link, _) => (
-        <Link
+        <a
           key={link.title}
-          href={link.href}
+          // href={link.href}
           className="relative flex flex-row items-center rounded text-sm tracking-wider  text-black no-underline duration-300 ease-in hover:bg-slate-50 dark:text-gray-100 dark:hover:bg-gray-700 sm:px-3 sm:py-2"
-          onClick={() => {
-            stop();
-            ThemeSound();
-            setHoveredPath(link.href); 
-        }}
+          onClick={() => handleLinkClick(link.href)}
           onMouseOver={() => setHoveredPath(link.href)}
           onMouseLeave={() => setHoveredPath(pathname)}
         >
@@ -86,6 +89,7 @@ export const NavbarMiddle = () => {
           </div> */}
           {IconMapping[link.title]}
           <span>{link.title}</span>
+
           {link.href === hoveredPath && (
             <motion.div
               className="absolute bottom-0 left-0 -z-10 h-full rounded-md bg-slate-50 text-sm tracking-wider dark:bg-gray-700"
@@ -103,7 +107,7 @@ export const NavbarMiddle = () => {
               }}
             />
           )}
-        </Link>
+        </a>
       ))}
     </div>
   )
