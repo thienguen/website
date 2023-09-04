@@ -78,6 +78,7 @@ module.exports = {
         'carddark'   : '#22323F',
         'textlight'  : '#F9FAFB',
         'pink-accent': '#a385b3',
+        'gold'       : '#F6C177',
 
         /* Dangerous, don't */
         // 'yellow'     : '#ffff80',

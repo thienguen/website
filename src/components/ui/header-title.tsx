@@ -30,18 +30,14 @@ function PageTitle(props: headerTitleProps) {
   return (
     <>
       <div
-        className={`my-3 text-center ${props.hanekawa ? 'cursor-pointer' : 'cursor-cell'}`}
+        className={`mb-1 mt-3 text-center ${props.hanekawa ? 'cursor-pointer' : 'cursor-cell'}`}
         onClick={toggleSound}
       >
         <Tooltip text={props.title ?? ''}>
           <h2 className="text-xl font-semibold">{`${props.titleJP ?? ''}`}</h2>
         </Tooltip>
       </div>
-      {props.subTitle && (
-        <div className="mb-3 flex flex-row justify-center font-dosis">
-          {props.subTitle}
-        </div>
-      )}
+      {props.subTitle && <div className="mb-3 flex flex-row justify-center font-dosis">{props.subTitle}</div>}
     </>
   )
 }

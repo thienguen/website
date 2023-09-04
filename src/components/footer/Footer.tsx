@@ -7,7 +7,6 @@ import {
   FooterLove,
   FooterProfile,
 } from '@/components/footer/FooterIcons'
-
 import Presence from '@/components/footer/lanyard/presence'
 
 type FooterBarProps = {
@@ -21,7 +20,7 @@ const FooterBar = ({ isFullWidth }: FooterBarProps) => {
       <div className="flex h-[15px] items-center justify-between">
         {/* Dot at the beginning */}
         <div
-          className={`flex h-3 w-3 items-center justify-center rounded-full bg-gradient-to-b from-gray-600 to-gray-400   shadow dark:bg-gradient-to-b dark:from-gray-50 dark:to-gray-100`}
+          className={`flex h-3 w-3 items-center justify-center rounded-full bg-gradient-to-b from-gray-600 to-gray-400  shadow dark:bg-gradient-to-b dark:from-gray-50 dark:to-gray-100`}
         />
 
         {/* Bar in between */}
@@ -44,7 +43,7 @@ export default function Footer() {
   return (
     <>
       {/* <div className="mx-auto flex w-11/12 max-w-7xl dark:border-white border-t border-gray-300 lg:w-2/3" /> */}
-      <footer className="bg-gray-300 shadow-md dark:bg-gray-900">
+      <footer className="bg-[#c8c0b7] shadow-md dark:bg-gray-900">
         <div className="mx-auto max-w-4xl">
           {/* CAN IT BE OVER HERE */}
 

@@ -79,8 +79,8 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <html lang="en" suppressHydrationWarning={true}>
         <head
           className={cn(
-            'bg-gradient-to-b from-slate-300 to-gray-300', // light
-            'dark:bg-gradient-to-b dark:from-black dark:to-gray-900' // dark
+            'bg-gradient-to-b from-[#c8c0b7] to-[#c8c0b7]', // light
+            'dark:bg-gradient-to-b dark:from-[#05030d] dark:to-gray-900' // dark
           )}
         >
           <title>{metadata.creator}</title>
@@ -109,8 +109,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
                 <div
                   className={cn(
                     'z-0 grow',
-                    'bg-gradient-to-b from-slate-300 to-gray-300', // light
-                    'dark:bg-gradient-to-b dark:from-black dark:to-gray-900' // dark
+                    // 'bg-gradient-to-b from-[#FAF4ED] to-gray-300', // light
+                    'bg-gradient-to-b from-[#c8c0b7] to-[#c8c0b7]', // light
+                    'dark:bg-gradient-to-b dark:from-[#05030d] dark:to-gray-900' // dark
                   )}
                 >
                   {/* <Particles className="absolute inset-0 -z-50" quantity={500} path_name={path_name} /> */}

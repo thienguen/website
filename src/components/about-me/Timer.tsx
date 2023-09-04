@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import { cn } from '@/lib/util/util'
 
 interface TimerProps {
-  cols?: string
+  cols  ?: string
   height?: string
 }
 
@@ -40,32 +40,34 @@ const Timer = (props: TimerProps) => {
 
   return (
     <>
-      <div
-        className={cn(
-          `${
-            props.cols ?? ''
-          } relative flex h-40  w-full max-w-3xl translate-y-[-1rem] animate-fade-in flex-row items-center justify-center rounded-lg opacity-0 [--animation-delay:500ms]`,
-          `object-center`
-        )}
-        style={{
-          backgroundImage: `url('${bgImage}')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          imageResolution: 'from-image',
-        }}
-      >
-        {/* Overlay to make the background darker */}
-        <div className="absolute inset-0 bg-black opacity-40"></div>
-
-        {/* Timer Content */}
+      <div className="my-4 flex justify-center">
         <div
           className={cn(
-            'relative z-10 flex h-full w-full flex-col items-center justify-center rounded-lg text-center text-white',
-            `${props.height ?? ''} ${props.cols ?? ''}`
+            `${
+              props.cols ?? ''
+            } relative flex h-40  w-full max-w-3xl translate-y-[-1rem] animate-fade-in flex-row items-center justify-center rounded-lg opacity-0 [--animation-delay:500ms]`,
+            `object-center`
           )}
+          style={{
+            backgroundImage: `url('${bgImage}')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            imageResolution: 'from-image',
+          }}
         >
-          <h1 className="font-dosis font-bold shadow-lg sm:text-lg md:text-xl lg:text-4xl">{timeInLV}</h1>
-          <p className="font-dosis shadow-lg sm:text-xs lg:text-lg">in Las Vegas, Nevada</p>
+          {/* Overlay to make the background darker */}
+          <div className="absolute inset-0 bg-black opacity-40"></div>
+
+          {/* Timer Content */}
+          <div
+            className={cn(
+              'relative z-10 flex h-full w-full flex-col items-center justify-center rounded-lg text-center text-white',
+              `${props.height ?? ''} ${props.cols ?? ''}`
+            )}
+          >
+            <h1 className="font-dosis font-bold shadow-lg sm:text-lg md:text-xl lg:text-4xl">{timeInLV}</h1>
+            <p className="font-dosis shadow-lg sm:text-xs lg:text-lg">in Las Vegas, Nevada</p>
+          </div>
         </div>
       </div>
     </>

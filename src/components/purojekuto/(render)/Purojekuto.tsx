@@ -32,7 +32,7 @@ function Purojekuto() {
           <div className="flex h-8 border-l-2 border-slate-400 pl-2 dark:border-slate-700">
             <RoughNotation
               type="underline"
-              color={`${theme !== 'light' ? `#6ACDFF` : '#D87787'}`}
+              color={`${theme !== 'light' ? '#b620e0' : '#D87787'}`}
               strokeWidth={2}
               order={1}
               show={true}
@@ -53,7 +53,7 @@ function Purojekuto() {
           <div className="flex h-8 border-r-2 border-slate-400 pr-2  dark:border-slate-700">
             <RoughNotation
               type="underline"
-              color={`${theme !== 'light' ? `#6ACDFF` : '#D87787'}`}
+              color={`${theme !== 'light' ? '#b620e0' : '#D87787'}`}
               strokeWidth={2}
               order={1}
               show={true}

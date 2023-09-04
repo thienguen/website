@@ -33,8 +33,8 @@ const Timeline: React.FC = () => {
 
   /* Could have put these in the tailwind config?? */
   const { theme }           = useTheme()
-  const darkPrimaryColor    = '#6ACDFF'
-  const darkSecondaryColor  = '#57BFFF'
+  const darkPrimaryColor    = '#6200ea'
+  const darkSecondaryColor  = '#b620e0'
   const lightPrimaryColor   = '#D87787'
   const lightSecondaryColor = '#861657'
 

@@ -39,11 +39,20 @@ export default function GuestbookForm() {
 
   return (
     <>
+      {/* not sign-in */}
+      {!session?.user && (
+        <div className="my-2 flex w-full flex-row justify-center text-center">
+          <SignInGithub />
+          <SignInGoogle />
+          {/* Discord, if do */}
+        </div>
+      )}
+
       {/* Form and already sign-in */}
       {session?.user && (
         <>
           {/* First row */}
-          <div className="flex w-full items-center justify-end space-x-3 pb-2">
+          <div className="flex w-full items-center justify-end space-x-3 py-2">
             <img src={`${session?.user.image ?? ''}`} alt="profile" width={35} height={35} />
             <form onSubmit={hanleEntryCreate(formOnSubmit)} className="mx-auto w-full rounded-md text-sm">
               <label htmlFor="content" className="sr-only">
@@ -89,14 +98,6 @@ export default function GuestbookForm() {
         </>
       )}
 
-      {/* not sign-in */}
-      {!session?.user && (
-        <div className="my-2 flex w-full flex-row justify-center text-center">
-          <SignInGithub />
-          <SignInGoogle />
-          {/* Discord, if do */}
-        </div>
-      )}
 
       {/* All entries there is */}
       {entries?.length === 0 ? (

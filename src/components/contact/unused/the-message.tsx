@@ -4,7 +4,7 @@ import React, { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { cn } from '@/lib/util/util'
 import { Tooltip } from '@/components/common/Tooltip'
-import Signature from '@/components/home/signature'
+import Signature from '@/components/contact/signature'
 
 function ContactMessage() {
   const textRef = useRef<HTMLHeadingElement[] | null>(null)
@@ -29,9 +29,9 @@ function ContactMessage() {
         // }
         {
           backgroundSize: '100% 100%',
-          ease          : 'none',
-          duration      : 1.5,           // Duration of one "forward" animation.
-          yoyo          : true,          // Play the animation in reverse after playing it forward.
+          ease: 'none',
+          duration: 1.5, // Duration of one "forward" animation.
+          yoyo: true, // Play the animation in reverse after playing it forward.
           // repeat: 1,                  // Infinite repetition -1. but 3 times when moutned.
           // repeatDelay: 0.5            // A delay before starting the animation again (optional, can be adjusted or removed).
         }
