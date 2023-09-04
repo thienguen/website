@@ -9,10 +9,9 @@ import Paragraph from '@/components/about-me/(pa)/paragraph'
 import { Timer } from '@/components/about-me/index'
 import { Tooltip } from '@/components/common/Tooltip'
 import ContactMessage from '@/components/contact/contact-message'
-import { metadata as stuff } from '@/app/api/metadata'
 
 export const metadata: Metadata = {
-  title: '/about',
+  title      : '/about',
   description: 'metadata is a funny lil concept.',
 }
 
@@ -102,7 +101,7 @@ export default function About() {
             <a
               target="_blank"
               className="link-underline3 link-underline2 font-semibold  text-pink-800 dark:text-gold"
-              href={`${stuff.siteRepo}`}
+              href={`https://github.com/Thienguen/thien-porfolio`}
             >{`@thienguen/website`}</a>
           </>
         }
