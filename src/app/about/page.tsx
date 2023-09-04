@@ -1,14 +1,10 @@
-'use client'
 
 import React from 'react'
 import { type Metadata } from 'next'
-import { TbMilkshake } from 'react-icons/tb'
 import PageTitle from '@/components/ui/header-title'
 import ProgressBar from '@/components/ui/progress-bar'
 import Paragraph from '@/components/about-me/(pa)/paragraph'
-import { Timer } from '@/components/about-me/index'
-import { Tooltip } from '@/components/common/Tooltip'
-import ContactMessage from '@/components/contact/contact-message'
+import { Timer, ContactMessage } from '@/components/about-me/index'
 
 export const metadata: Metadata = {
   title      : '/about',
@@ -20,8 +16,6 @@ export const metadata: Metadata = {
  * @see re-work: 9/3/2023
  */
 export default function About() {
-  const [showContact, setShowContact] = React.useState(false)
-
   return (
     <>
       <ProgressBar
@@ -108,18 +102,7 @@ export default function About() {
         dir="ltr"
       />
 
-      <div className="mb-2 mt-5 flex cursor-pointer flex-row justify-center">
-        <Tooltip text="Click me">
-          <TbMilkshake
-            className="heartbeat h-6 w-6 animate-pulse"
-            onClick={() => {
-              setShowContact(!showContact)
-            }}
-          />
-        </Tooltip>
-      </div>
-
-      {showContact && <ContactMessage />}
+      <ContactMessage />
     </>
   )
 }
