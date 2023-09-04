@@ -22,8 +22,7 @@ export function GuestbookEntry({ entry, user, handleEntryDelete }: GuestBookEntr
 
   return (
     <>
-      <div className="mx-auto my-3 w-11/12 rounded-md border border-gray-700 p-4  text-sm shadow-sm shadow-gray-300 dark:border-zinc-700 dark:shadow-none  sm:w-full">
-        {/* <div className="mb-1.5 font-dosis text-lg font-normal dark:font-light">{entry.content}</div> */}
+      <div className="mx-auto my-3 w-11/12 rounded-md border border-gray-700 p-4 shadow-sm shadow-gray-300 dark:border-zinc-700 dark:shadow-none  sm:w-full">
         <div
           className={`mb-2 font-dosis text-lg font-normal dark:font-light ${isExpanded ? '' : 'truncate-text'}`}
           onClick={() => setIsExpanded(!isExpanded)}

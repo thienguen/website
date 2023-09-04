@@ -60,7 +60,7 @@ function ContactMessage() {
 
   return (
     <>
-      <div className="mb-2 mt-5 flex cursor-pointer flex-row justify-center">
+      <div className={`${showContact ? 'mb-2' : 'mb-4'} mt-5 flex cursor-pointer flex-row justify-center`}>
         <Tooltip text="Click me">
           <TbMilkshake className="heartbeat h-6 w-6 animate-pulse" onClick={() => setShowContact(!showContact)} />
         </Tooltip>

@@ -31,7 +31,7 @@ const SignInGithub = () => {
       ) : (
         <>
           {LucideIcons.github({ size: 20 })}
-          <div className="ml-3 font-pixeloidMono">Sign in with Github</div>
+          <div className="ml-3 font-dosis">Sign in with Github</div>
         </>
       )}
     </button>
@@ -65,7 +65,7 @@ const SignInGoogle = () => {
       ) : (
         <>
           {LucideIcons.google({ size: 20 })}
-          <div className="ml-3 font-pixeloidMono">Sign in with Google</div>
+          <div className="ml-3 font-dosis">Sign in with Google</div>
         </>
       )}
     </button>

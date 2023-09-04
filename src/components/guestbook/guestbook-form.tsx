@@ -8,6 +8,7 @@ import SuccessMessage from '@/components/ui/success-message'
 import { SignInGithub, SignInGoogle, SignOut } from '@/components/guestbook/auth-button'
 
 import { AiOutlineSend } from 'react-icons/ai'
+import { GlitchedEntry } from './glitched-entry'
 
 /**
  * user login: useSession
@@ -98,7 +99,6 @@ export default function GuestbookForm() {
         </>
       )}
 
-
       {/* All entries there is */}
       {entries?.length === 0 ? (
         <>
@@ -106,6 +106,7 @@ export default function GuestbookForm() {
         </>
       ) : (
         <div className="w-full">
+          <GlitchedEntry />
           {entries?.map((entry) => (
             <GuestbookEntry
               key={entry.id.toString()}
