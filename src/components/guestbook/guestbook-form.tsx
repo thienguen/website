@@ -5,7 +5,7 @@ import { GuestbookEntry } from '@/components/guestbook/guestbook-entry'
 
 import LoadingSpinner from '@/components/ui/loading-spinner'
 import SuccessMessage from '@/components/ui/success-message'
-import { SignInGithub, SignInGoogle, SignOut } from '@/components/guestbook/auth-buttons'
+import { SignInGithub, SignInGoogle, SignOut } from '@/components/guestbook/auth-button'
 
 import { AiOutlineSend } from 'react-icons/ai'
 
