@@ -5,7 +5,7 @@
 }
 
 .container_solar {
-  @apply relative h-20 w-20 text-xs -mt-12 -ml-12; /* -mt-4 moves it 4 units up, -ml-4 moves it 4 units left */
+  @apply relative h-[70px] w-[70px] text-xs -mt-14 -ml-12; /* -mt-4 moves it 4 units up, -ml-4 moves it 4 units left */
 }
 
 .dark .sun {

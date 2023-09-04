@@ -33,7 +33,7 @@ const RightTimeline: React.FC<SubTimelineProps> = ({
       </div>
 
       {/* Container box */}
-      <div className="col-start-6 col-end-10 my-4 mr-0 min-w-[20.5rem]  rounded-xl border border-[#c8c0b7] p-4  font-dosis shadow-2xl  transition-transform hover:translate-y-[3px] dark:border-slate-600 sm:mr-8">
+      <div className="col-start-6 col-end-10 my-4 mr-0 min-w-[20.5rem]  rounded-xl border border-[#c8c0b7] p-4  font-dosis shadow-2xl  transition-transform hover:translate-y-[3px] dark:border-slate-900 sm:mr-8">
         <a className="cursor-pointer" href={url} rel="noreferrer">
           <div className="mb-1 flex justify-between font-dosis text-lg text-black dark:font-light dark:text-white">
             <span

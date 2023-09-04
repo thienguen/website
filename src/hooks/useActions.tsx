@@ -113,15 +113,15 @@ const useActions = () => {
       ),
     },
     {
-      id: 'contact',
-      name: 'Contact',
-      shortcut: ['g', 'c'],
+      id: 'dashboard',
+      name: 'Dashboard',
+      shortcut: ['g', 'd'],
       keywords: 'g c',
       section: 'Navigation',
       // subtitle: 'Probably',
-      perform: () => routerPushnSound('/contact'),
+      perform: () => routerPushnSound('/dashboard'),
       icon: (
-        <Lottie lottieRef={iconRef} animationData={ICONS['customer']} loop={true} autoplay={true} className="h-5 w-5" />
+        <Lottie lottieRef={iconRef} animationData={ICONS['download']} loop={true} autoplay={true} className="h-5 w-5" />
       ),
     },
     {
@@ -130,7 +130,7 @@ const useActions = () => {
       shortcut: ['g', 'a'],
       keywords: 'g a',
       section: 'Navigation',
-      subtitle: 'Reconstruction-ing, scratch ver 1.0',
+      // subtitle: 'Reconstruction-ing, scratch ver 1.0',
       perform: () => routerPushnSound('/about'),
       icon: (
         <Lottie

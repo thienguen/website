@@ -52,14 +52,14 @@ const Technologies = () => {
   return (
     <div className="mt-4 flex cursor-cell select-none flex-col rounded-sm text-slate-900 opacity-90 shadow-sm shadow-slate-700 dark:text-slate-300 dark:shadow-gray-400 md:mt-0 lg:mt-0">
       <div className="grid grid-cols-5 gap-x-2 gap-y-3 p-3">
-        {techno_icons.map((icon, index) => (
-          <TechnologyIcon key={index} icon={icon} />
-        ))}
         <div className="flex flex-row items-center justify-center self-center text-center">
           <p className="link-underline3 link-underline2 m-0 font-dosis text-base font-semibold text-lightSecondaryColor dark:text-gold">
             tech stack
           </p>
         </div>
+        {techno_icons.map((icon, index) => (
+          <TechnologyIcon key={index} icon={icon} />
+        ))}
       </div>
     </div>
   )
