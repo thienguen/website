@@ -54,7 +54,8 @@ const Technologies = () => {
       <div className="grid grid-cols-5 gap-x-2 gap-y-3 p-3">
         <div className="flex flex-row items-center justify-center self-center text-center">
           <p className="link-underline3 link-underline2 m-0 font-dosis text-base font-semibold text-lightSecondaryColor dark:text-gold">
-            tech stack
+            STACK
+            
           </p>
         </div>
         {techno_icons.map((icon, index) => (

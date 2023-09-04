@@ -45,7 +45,7 @@ const Timer = (props: TimerProps) => {
           className={cn(
             `${
               props.cols ?? ''
-            } relative flex h-40  w-full max-w-3xl translate-y-[-1rem] animate-fade-in flex-row items-center justify-center rounded-lg opacity-0 [--animation-delay:500ms]`,
+            } relative flex h-40  w-full max-w-3xl translate-y-[-1rem] animate-fade-in flex-row items-center justify-center rounded-lg opacity-0 [--animation-delay:1000ms]`,
             `object-center`
           )}
           style={{

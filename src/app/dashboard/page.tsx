@@ -1,10 +1,11 @@
 import { type Metadata } from 'next'
 import PageTitle from '@/components/ui/header-title'
 import ProgressBar from '@/components/ui/progress-bar'
-import { DiscordStatus, GithubCard, StatAgeCard, StatCard, Technologies, RPGMaker } from '@/components/dashboard'
+import { DiscordStatus, GithubCard, StatAgeCard, StatCard, Technologies, GithubCal } from '@/components/dashboard'
+
 
 export const metadata: Metadata = {
-  title: '/projects',
+  title      : '/projects',
   description: 'metadata is a funny lil concept.',
 }
 
@@ -32,13 +33,13 @@ export default function Projects() {
           <Technologies />
 
           {/* 2nd Left */}
-          <StatCard href="ss" title="I ran out of idea" value={'?'} />
+          <StatCard href="https://bento.me/dreams" title="I ran out of idea" value={'So I put my bento here'} />
 
           {/* 2nd Right */}
           <StatAgeCard />
 
           {/* 3rd Full */}
-          <RPGMaker />
+          <GithubCal />
         </div>
 
         {/* Techno */}
