@@ -39,167 +39,155 @@ import { metadata } from '@/app/api/metadata'
 export function FooterLove() {
   const [ThemeSound] = useSound('/sounds/switch-on.mp3', { volume: 1 })
   return (
-    <>
-      <span className="mx-2 text-sm text-slate-700 dark:text-slate-300">
-        <span className='opacity-95 dark:opacity-70'>
-          {`© 2023 `}
-        </span>
-
-        <Link
-          onClick={() => {
-            ThemeSound()
-          }}
-          href={metadata.discord}
-          target="_blank"
-        >
-          <Tooltip text="find me here">
-            <span className="text-slate-950 opacity-100 transition-colors duration-200 ease-in-out hover:text-pink-500 dark:text-white dark:hover:text-pink-500">
-              Thien Nguyen
-            </span>
-          </Tooltip>
-        </Link>
-        <span className='opacity-95 dark:opacity-70'>
-          {` • from a boy who was never enough.`}
-        </span>
+    <span className="sm:balanced mx-2 text-sm text-slate-700 dark:text-slate-300">
+      <span className='opacity-95 dark:opacity-70'>
+        {`© 2023 `}
       </span>
-    </>
+
+      <Link
+        onClick={() => {
+          ThemeSound()
+        }}
+        href={metadata.discord}
+        target="_blank"
+      >
+        <Tooltip text="find me here">
+          <span className="text-slate-950 opacity-100 transition-colors duration-200 ease-in-out hover:text-pink-500 dark:text-white dark:hover:text-pink-500">
+            Thien Nguyen
+          </span>
+        </Tooltip>
+      </Link>
+      <span className='opacity-95 dark:opacity-70'>
+        {` • from a boy who was never enough.`}
+      </span>
+    </span>
   )
 }
 
 export function FooterGithub() {
   const [ThemeSound] = useSound('/sounds/open.mp3', { volume: 1 })
   return (
-    <>
-      <Tooltip text="GitHub">
-        <Link
-          href={metadata.github}
-          target="_blank"
-          rel="noreferrer"
-          onClick={() => {
-            ThemeSound()
-          }}
+    <Tooltip text="GitHub">
+      <Link
+        href={metadata.github}
+        target="_blank"
+        rel="noreferrer"
+        onClick={() => {
+          ThemeSound()
+        }}
+      >
+        <div
+          className={cn(
+            buttonVariants({ size: 'sm', variant: 'ghost' }),
+            'w-7 px-0 hover:rotate-12 hover:bg-slate-50 dark:hover:bg-gray-500'
+          )}
         >
-          <div
-            className={cn(
-              buttonVariants({ size: 'sm', variant: 'ghost' }),
-              'w-7 px-0 hover:rotate-12 hover:bg-slate-50 dark:hover:bg-gray-500'
-            )}
-          >
-            <Github className="h-6 w-5" />
-            <span className="sr-only">GitHub</span>
-          </div>
-        </Link>
-      </Tooltip>
-    </>
+          <Github className="h-6 w-5" />
+          <span className="sr-only">GitHub</span>
+        </div>
+      </Link>
+    </Tooltip>
   )
 }
 
 export function FooterInstagram() {
   const [ThemeSound] = useSound('/sounds/open.mp3', { volume: 1 })
   return (
-    <>
-      <Tooltip text="Instagram">
-        <Link
-          href={metadata.instagram}
-          target="_blank"
-          rel="noreferrer"
-          onClick={() => {
-            ThemeSound()
-          }}
+    <Tooltip text="Instagram">
+      <Link
+        href={metadata.instagram}
+        target="_blank"
+        rel="noreferrer"
+        onClick={() => {
+          ThemeSound()
+        }}
+      >
+        <div
+          className={cn(
+            buttonVariants({ size: 'sm', variant: 'ghost' }),
+            'w-7 px-0 hover:-rotate-12 hover:bg-slate-50 dark:hover:bg-gray-500'
+          )}
         >
-          <div
-            className={cn(
-              buttonVariants({ size: 'sm', variant: 'ghost' }),
-              'w-7 px-0 hover:-rotate-12 hover:bg-slate-50 dark:hover:bg-gray-500'
-            )}
-          >
-            <AiOutlineInstagram className="h-6 w-5" />
-            <span className="sr-only">Instagram</span>
-          </div>
-        </Link>
-      </Tooltip>
-    </>
+          <AiOutlineInstagram className="h-6 w-5" />
+          <span className="sr-only">Instagram</span>
+        </div>
+      </Link>
+    </Tooltip>
   )
 }
 
 export function FooterLinkedin() {
   const [ThemeSound] = useSound('/sounds/open.mp3', { volume: 1 })
   return (
-    <>
-      <Tooltip text="Linkedin">
-        <Link
-          href={metadata.linkedin}
-          target="_blank"
-          rel="noreferrer"
-          onClick={() => {
-            ThemeSound()
-          }}
+    <Tooltip text="Linkedin">
+      <Link
+        href={metadata.linkedin}
+        target="_blank"
+        rel="noreferrer"
+        onClick={() => {
+          ThemeSound()
+        }}
+      >
+        <div
+          className={cn(
+            buttonVariants({ size: 'sm', variant: 'ghost' }),
+            'w-7 px-0 hover:-rotate-12 hover:bg-slate-50 dark:hover:bg-gray-500'
+          )}
         >
-          <div
-            className={cn(
-              buttonVariants({ size: 'sm', variant: 'ghost' }),
-              'w-7 px-0 hover:-rotate-12 hover:bg-slate-50 dark:hover:bg-gray-500'
-            )}
-          >
-            <AiOutlineLinkedin className="h-6 w-5" />
-            <span className="sr-only">Linkedin</span>
-          </div>
-        </Link>
-      </Tooltip>
-    </>
+          <AiOutlineLinkedin className="h-6 w-5" />
+          <span className="sr-only">Linkedin</span>
+        </div>
+      </Link>
+    </Tooltip>
   )
 }
 
 export function FooterTwitter() {
   const [ThemeSound] = useSound('/sounds/open.mp3', { volume: 1 })
   return (
-    <>
-      <Tooltip text="I don't use Twitter, mb">
-        <Link
-          href="/"
-          rel="noreferrer"
-          onClick={() => {
-            ThemeSound()
-          }}
+    <Tooltip text="I don't use Twitter, mb">
+      <Link
+        href="/"
+        rel="noreferrer"
+        onClick={() => {
+          ThemeSound()
+        }}
+      >
+        <div
+          className={cn(
+            buttonVariants({ size: 'sm', variant: 'ghost' }),
+            'w-7 px-0 hover:bg-slate-50 dark:hover:bg-gray-500'
+          )}
         >
-          <div
-            className={cn(
-              buttonVariants({ size: 'sm', variant: 'ghost' }),
-              'w-7 px-0 hover:bg-slate-50 dark:hover:bg-gray-500'
-            )}
-          >
-            <Twitter className="h-6 w-5" />
-            <span className="sr-only">Twitter</span>
-          </div>
-        </Link>
-      </Tooltip>
-    </>
+          <Twitter className="h-6 w-5" />
+          <span className="sr-only">Twitter</span>
+        </div>
+      </Link>
+    </Tooltip>
   )
 }
 
 export function FooterEmail() {
   const [ThemeSound] = useSound('/sounds/open.mp3', { volume: 1 })
   return (
-    <>
-      <Tooltip text="Contact me">
-        <a
-          href={`mailto:${process.env.NEXT_PUBLIC_EMAIL ?? ''}`}
-          onClick={() => {
-            ThemeSound()
-          }}
+    <Tooltip text="Contact me">
+      <a
+        href={`mailto:${process.env.NEXT_PUBLIC_EMAIL ?? ''}`}
+        onClick={() => {
+          ThemeSound()
+        }}
+      >
+        <div
+          className={cn(
+            buttonVariants({ size: 'sm', variant: 'ghost' }),
+            'w-7 px-0 hover:rotate-12 hover:bg-slate-50 dark:hover:bg-gray-500'
+          )}
         >
-          <div
-            className={cn(
-              buttonVariants({ size: 'sm', variant: 'ghost' }),
-              'w-7 px-0 hover:rotate-12 hover:bg-slate-50 dark:hover:bg-gray-500'
-            )}
-          >
-            <AiOutlineMail className="h-6 w-5" />
-            <span className="sr-only">Email</span>
-          </div>
-        </a>
-      </Tooltip>
-    </>
+          <AiOutlineMail className="h-6 w-5" />
+          <span className="sr-only">Email</span>
+        </div>
+      </a>
+    </Tooltip>
   )
 }
 
@@ -214,35 +202,33 @@ export function FooterProfile() {
   // }
   const [ThemeSound] = useSound('/sounds/open.mp3', { volume: 1 })
   return (
-    <>
-      <Tooltip text="just monika">
-        <Link
-          aria-label="Home"
-          href="/"
-          rel="noreferrer"
-          className="m-auto"
-          onClick={() => {
-            ThemeSound()
-          }}
+    <Tooltip text="just monika">
+      <Link
+        aria-label="Home"
+        href="/"
+        rel="noreferrer"
+        className="m-auto"
+        onClick={() => {
+          ThemeSound()
+        }}
+      >
+        <div
+          className={cn(
+            buttonVariants({ size: 'sm', variant: 'ghost' }),
+            'w-7 px-0 hover:bg-slate-50 dark:hover:bg-gray-500'
+          )}
         >
-          <div
-            className={cn(
-              buttonVariants({ size: 'sm', variant: 'ghost' }),
-              'w-7 px-0 hover:bg-slate-50 dark:hover:bg-gray-500'
-            )}
-          >
-            <img
-              src="https://avatars.githubusercontent.com/u/94078395"
-              alt="Thien"
-              width={24}
-              // priority
-              height={24}
-              className="rounded-full"
-            />
-          </div>
-        </Link>
-      </Tooltip>
-    </>
+          <img
+            src="https://avatars.githubusercontent.com/u/94078395"
+            alt="Thien"
+            width={24}
+            // priority
+            height={24}
+            className="rounded-full"
+          />
+        </div>
+      </Link>
+    </Tooltip>
   )
 }
 
@@ -265,19 +251,17 @@ export function FooterKbar() {
   }
 
   return (
-    <>
-      <Tooltip text="Kbar">
-        <button aria-label="Kbar" rel="noreferrer" className="m-auto" onClick={handleButtonClick}>
-          <div
-            className={cn(
-              buttonVariants({ size: 'sm', variant: 'ghost' }),
-              'w-7 px-0 hover:-rotate-12 hover:bg-slate-50 dark:hover:bg-gray-500'
-            )}
-          >
-            <BsCommand className="h-6 w-5" />
-          </div>
-        </button>
-      </Tooltip>
-    </>
+    <Tooltip text="Kbar">
+      <button aria-label="Kbar" rel="noreferrer" className="m-auto" onClick={handleButtonClick}>
+        <div
+          className={cn(
+            buttonVariants({ size: 'sm', variant: 'ghost' }),
+            'w-7 px-0 hover:-rotate-12 hover:bg-slate-50 dark:hover:bg-gray-500'
+          )}
+        >
+          <BsCommand className="h-6 w-5" />
+        </div>
+      </button>
+    </Tooltip>
   )
 }

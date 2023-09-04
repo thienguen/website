@@ -84,7 +84,7 @@
   display : inline-block;
 }
 
-.link-underline3::after {
+.dark .link-underline3::after {
   content: '';
 
   display   : block;
@@ -101,7 +101,7 @@
   background: linear-gradient(transparent, transparent), linear-gradient(to right, #F6C177, #F6C177);  /* New provided colors */
 }
 
-.link-underline3:hover::after {
+.dark .link-underline3:hover::after {
   visibility: visible;
 
   width: 100%;

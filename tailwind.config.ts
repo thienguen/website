@@ -1,8 +1,9 @@
+
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ['class'],
   content : ['./src/**/*.{js,ts,jsx,tsx}'],
-  daisyui : { themes: false },
   theme: {
     container: {
       center : true,
@@ -100,6 +101,12 @@ module.exports = {
         'lightTheme': 'bg-gradient-to-b from-slate-300 to-gray-300',
         'darkTheme' : 'dark:bg-gradient-to-b dark:from-black dark:to-gray-900',
       },
+
+      backgroundColor: {
+        'aqua'  : '#00FFFF',
+        'silver': '#C0C0C0',
+      },
+
       borderRadius: {
         lg: 'var(--radius)',
         md: 'calc(var(--radius) - 2px)',
@@ -115,6 +122,7 @@ module.exports = {
         'fade-left'        : 'fade-left 4s ease-in-out forwards',
         'fade-right'       : 'fade-right 4s ease-in-out forwards',
       },
+
       keyframes: {
         /* ??? */
         'accordion-down': {
@@ -169,7 +177,7 @@ module.exports = {
             opacity: '0%',
           },
         },
-          /* Deprecated */
+        /* Deprecated, by me */
         'title': {
           '0%': {
             'line-height'   : '0%',
@@ -190,14 +198,30 @@ module.exports = {
           },
         },
       },
+
+      width: {
+        '120': '30rem',
+        '160': '40rem',
+        '30' : '7.5rem',
+      },
+      
+      height: {
+        '120': '30rem',
+        '160': '40rem',
+        '30' : '7.5rem',
+      },
+
+      spacing: {
+        '15': '3.75rem', // this corresponds to 60px; adjust if needed
+      },
     },
     fontFamily: {
-      'dosis'         : ['Dosis', 'sans-serif'],
-      'signature'     : ['Sacramento', 'cursive'],
+      'dosis'         : ['Dosis',         'sans-serif'],
+      'signature'     : ['Sacramento',       'cursive'],
       'jetbrains-mono': ['JetBrains Mono', 'monospace'],
-      'metropolis'    : ['Metropolis', 'sans-serif'],
-      'pixeloidMono'  : ['PixelloidMono', 'monospace'],
+      'metropolis'    : ['Metropolis',    'sans-serif'],
+      'pixeloidMono'  : ['PixelloidMono',  'monospace'],
     },
   },
-  plugins: [require('tailwindcss-animate'), require('@tailwindcss/typography'), require('daisyui')],
+  plugins: [require('tailwindcss-animate'), require('@tailwindcss/typography')],
 }

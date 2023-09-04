@@ -10,6 +10,7 @@ import '@/styles/hi.css'
 import '@/styles/activity.css'
 import '@/styles/timeline.css'
 import '@/styles/equalizer.css'
+import '@/styles/solar.css'
 
 // import { gsap }        from 'gsap'
 import { useTheme }    from 'next-themes'
@@ -114,7 +115,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
                     'dark:bg-gradient-to-b dark:from-[#05030d] dark:to-gray-900' // dark
                   )}
                 >
-                  {/* <Particles className="absolute inset-0 -z-50" quantity={500} path_name={path_name} /> */}
+                  <Particles className="absolute inset-0 -z-50" quantity={500} path_name={path_name} />
                   <Navbar />
                   {children}
                   <KBar />

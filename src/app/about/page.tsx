@@ -17,25 +17,24 @@ export const metadata: Metadata = {
 export default function About() {
   return (
     <>
+      <ProgressBar
+        // steps={['home', '/about', '/dashboard', '/projects', '/guestbook']}
+        steps={['/dashboard', '/projects', '/guestbook', '/about']}
+        currentStep={4}
+        isFullWidth={false}
+        key={'/about'}
+      />
+      {/* Header */}
+      {/* Nandemo wa shiranai wa yo, shitte ru koto dake. */}
+      <PageTitle
+        title={`I don't know everything. I just know what I know. - Hanekawa Tsubasa`}
+        titleJP="何でもは知らないわよ、知ってることだけ。"
+        hanekawa={true}
+        subTitle="I often soliloquize to myself."
+      />
+      
+      {/* Body of About page*/}
       <div className="mx-auto max-w-3xl px-6 sm:px-8 md:px-12 lg:px-0">
-        <ProgressBar
-          // steps={['home', '/about', '/dashboard', '/projects', '/guestbook']}
-          steps={['/dashboard', '/projects', '/guestbook', '/about']}
-          currentStep={4}
-          isFullWidth={false}
-          key={'/about'}
-        />
-
-        {/* Header */}
-        {/* Nandemo wa shiranai wa yo, shitte ru koto dake. */}
-        <PageTitle
-          title={`I don't know everything. I just know what I know. - Hanekawa Tsubasa`}
-          titleJP="何でもは知らないわよ、知ってることだけ。"
-          hanekawa={true}
-          subTitle="I often soliloquize to myself."
-        />
-
-        {/* Body of About page*/}
         <Timer height="h-24" />
 
         <Paragraph
@@ -96,7 +95,7 @@ export default function About() {
               {`I hope you enjoy your stay. The source code for this website is available at `}
               <a
                 target="_blank"
-                className="link-underline3 link-underline2 font-semibold  text-pink-800 dark:text-gold"
+                className="link-underline3 link-underline2 font-semibold text-pink-800 dark:text-gold"
                 href={`https://github.com/Thienguen/thien-porfolio`}
               >{`@thienguen/website`}</a>
             </>

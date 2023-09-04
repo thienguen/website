@@ -3,7 +3,6 @@
 import { useTheme } from 'next-themes'
 import { RoughNotation } from 'react-rough-notation'
 import { Tooltip } from '@/components/common/Tooltip'
-
 /* Generative Project Cards */
 import { FeaturedProjects } from '@/components/purojekuto/(render)/index'
 import { Timeline } from '@/components/purojekuto/(timeline)/index'
@@ -46,7 +45,7 @@ function Purojekuto() {
           </div>
 
           <Tooltip text="Timeline">
-            <div className="divider pr-1 text-base font-semibold lg:divider-horizontal">タイムライン</div>
+            <div className="pr-1 text-base font-semibold">タイムライン</div>
           </Tooltip>
 
           {/* Rightmost Project kbd */}

@@ -1,18 +1,16 @@
 'use client'
 
 import React, { useEffect, useRef } from 'react'
-import { cn } from '@/lib/util/util'
 import gsap from 'gsap'
-
-import Signature from '@/components/contact/signature'
+import { cn } from '@/lib/util/util'
 import { Tooltip } from '@/components/common/Tooltip'
-
+import Signature from '@/components/contact/signature'
 import { TbMilkshake } from 'react-icons/tb'
 
 function ContactMessage() {
   const textRef = useRef<HTMLHeadingElement[] | null>(null)
   const [showContact, setShowContact] = React.useState(false)
-
+  
   useEffect(() => {
     const textElements = gsap.utils.toArray('.text-hi')
     textRef.current = textElements as HTMLHeadingElement[]
@@ -24,7 +22,7 @@ function ContactMessage() {
         {
           backgroundSize: '100% 100%',
           ease          : 'none',
-          duration      : 3.5,           // Duration of one "forward" animation.
+          duration      : 2.5,           // Duration of one "forward" animation.
           yoyo          : true,          // Play the animation in reverse after playing it forward.
         }
       )
@@ -35,12 +33,12 @@ function ContactMessage() {
       const idx = (textRef.current || []).indexOf(e.currentTarget as HTMLHeadingElement)
       if (idx > -1 && animations[idx]) {
         animations[idx]?.pause()
-        gsap.to(e.currentTarget, { backgroundSize: '0 0%', duration: 0.5 })
+        gsap.to(e.currentTarget, { backgroundSize: '0 0%', duration: 1 })
       }
     }
 
     const stopHoverAnimation = (e: Event) => {
-      gsap.to(e.currentTarget, { backgroundSize: '100% 100%', duration: 0.5 })
+      gsap.to(e.currentTarget, { backgroundSize: '100% 100%', duration: 1 })
     }
 
     ;(textRef.current || []).forEach((text) => {
@@ -56,7 +54,7 @@ function ContactMessage() {
         })
       }
     }
-  }, [])
+  }, [showContact])
 
   return (
     <>
@@ -80,15 +78,18 @@ function ContactMessage() {
                 {`Contact`}
               </p>
             </a>
+            
             <div className="text-hi balanced relative max-w-xl cursor-cell pb-2 text-center font-dosis text-lg text-gray-600 text-opacity-20  dark:text-gray-400">
               <p>
                 {`If you have opportunities for collaboration or want to build something amazing, don't hesitate to contact me!`}
               </p>
             </div>
+
             <Signature />
           </div>
         </div>
       )}
+      
     </>
   )
 }

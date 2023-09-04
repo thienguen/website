@@ -58,7 +58,7 @@ const ActivityDetails: React.FC<ActivityDetailsProps> = ({ activity, activities 
           altText="Notepad"
           text="Notepad"
           elapsedTime={elapsedTime ?? ''}
-          text_color="text-slate-900 dark:text-slate-2000"
+          text_color="text-slate-900 dark:text-slate-200"
         />
       )
     case 'IntelliJ IDEA Ultimate':

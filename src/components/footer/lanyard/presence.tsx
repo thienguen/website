@@ -16,7 +16,7 @@ function Presence(): ReactElement {
 
   return (
     <>
-      {activityAtIndex1 && (
+      {activityAtIndex1 ? (
         <div className="ml-4 py-1 text-center font-pixeloidMono">
           <ul className="flex translate-y-[-1rem] animate-fade-in  flex-col items-center justify-center gap-2 opacity-0 [--animation-delay:100ms]">
             <li className="flex flex-row items-center gap-2">
@@ -24,6 +24,8 @@ function Presence(): ReactElement {
             </li>
           </ul>
         </div>
+      ): (
+        <div className='h-8'> </div>
       )}
     </>
   )
