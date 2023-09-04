@@ -19,7 +19,7 @@ export default function Projects() {
         isFullWidth={false}
         key={'/projects'}
       />
-      <PageTitle title="Featured Projects" titleJP="注目プロジェクト。" /> {/* chūmoku purojekuto */}
+      <PageTitle title="Featured Projects" titleJP="注目プロジェクト。" subTitle='Project, hobby, open source? maybe'/> {/* chūmoku purojekuto */}
       <Purojekuto />
     </>
   )

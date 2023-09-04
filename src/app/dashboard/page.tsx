@@ -18,7 +18,8 @@ export default function Projects() {
         isFullWidth={false}
         key={'/dashboard'}
       />
-      <PageTitle title="Dashboard" titleJP="ダッシュボード。" /> {/* Dasshubōdo */}
+
+      <PageTitle title="Dashboard" titleJP="ダッシュボード。" subTitle='A good track of info'/> {/* Dasshubōdo */}
     </>
   )
 }

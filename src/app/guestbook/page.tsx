@@ -38,7 +38,7 @@ export default function Guestbook() {
       />
 
       {/* Header gesuto bukku*/}
-      <PageTitle title="guestbook" titleJP="ゲストブック。" subTitle='Leave a comment below for my other visitors here.'/>
+      <PageTitle title="guestbook" titleJP="ゲストブック。" subTitle='Leave a comment below for my other visitors here.' />
 
       {/* <GlitchedComponent initialText="Welcome" /> */}
 
