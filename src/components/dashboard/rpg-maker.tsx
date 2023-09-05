@@ -1,9 +1,8 @@
 'use client'
 
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { RPGMakerItems } from '@/lib/util/dummy'
 import { cn } from '@/lib/util/util'
-import { useMediaQuery } from '@/hooks/useMediaQuery'
 
 interface Game {
   title: string
@@ -37,13 +36,13 @@ const RPGMaker: React.FC = () => {
     <>
       <div
         className={cn(
-          'col-span-1 h-full  overflow-x-auto rounded-sm md:col-span-2 lg:col-span-2',
-          'bg-overlay mt-4 flex flex-col justify-between gap-2 px-4 pt-4 text-slate-900 opacity-90 shadow-sm shadow-slate-700 dark:text-slate-300 dark:shadow-gray-400'
+          'col-span-2 mb-4 mt-2 h-full  overflow-x-auto rounded-sm lg:col-span-1 lg:my-0',
+          'bg-overlay flex flex-col justify-between gap-2 px-4 pt-2 text-slate-900 opacity-90 shadow-sm shadow-slate-700 dark:text-slate-300 dark:shadow-gray-400'
         )}
       >
         <div className="w-fit">
-          <div className="">
-            <h1 className="mx-auto w-auto font-pixeloidMono text-lg">Personal favorites </h1>
+          <div className="text-left">
+            <h1 className="mx-auto w-auto font-dosis text-lg">Personal favorites </h1>
           </div>
           <div className="mt-2 flex w-fit gap-4">
             {randomizedItems.map((game: Game, index) => (

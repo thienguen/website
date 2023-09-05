@@ -1,12 +1,15 @@
 import React from 'react'
 import { type Metadata } from 'next'
+
 import PageTitle from '@/components/ui/header-title'
 import ProgressBar from '@/components/ui/progress-bar'
+
 import Paragraph from '@/components/about-me/(pa)/paragraph'
 import { ContactMessage, Timer } from '@/components/about-me/index'
+import { PiGameControllerThin } from 'react-icons/pi'
 
 export const metadata: Metadata = {
-  title: '/about',
+  title      : '/about',
   description: 'metadata is a funny lil concept.',
 }
 

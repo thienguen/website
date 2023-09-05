@@ -10,11 +10,14 @@
  * ------------------------------------------------------------------------
  */
 import { type Metadata } from 'next'
+import { GoGitCompare } from 'react-icons/go'
+
 import PageTitle from '@/components/ui/header-title'
 import ProgressBar from '@/components/ui/progress-bar'
-// import GlitchedComponent  from '@/components/guestbook/Glitched-Writer'
-import GuestbookForm from '@/components/guestbook/guestbook-form'
 
+import { Tooltip } from '@/components/common/Tooltip'
+import GuestbookForm from '@/components/guestbook/guestbook-form'
+// import GlitchedComponent  from '@/components/guestbook/Glitched-Writer'
 // import PreLoader          from '@/components/ui/pre-loader'
 
 export const metadata: Metadata = {
@@ -38,13 +41,23 @@ export default function Guestbook() {
       />
 
       {/* Header gesuto bukku*/}
-      <PageTitle title="guestbook" titleJP="ゲストブック。" subTitle='Leave a comment below for my other visitors here.' />
+      <PageTitle
+        title="guestbook"
+        titleJP="ゲストブック。"
+        subTitle="Leave a comment below for my other visitors here."
+      />
 
       {/* <GlitchedComponent initialText="Welcome" /> */}
 
       {/* Guestbook */}
-      <div className="mx-auto mb-6 flex max-w-2xl flex-col items-center justify-center">
+      <div className="mx-auto flex max-w-2xl flex-col items-center justify-center">
         <GuestbookForm />
+      </div>
+
+      <div className={`flex  flex-row justify-center`}>
+        <Tooltip text="Say hi">
+          <GoGitCompare className="heartbeat h-6 w-6 animate-pulse" />
+        </Tooltip>
       </div>
     </>
   )

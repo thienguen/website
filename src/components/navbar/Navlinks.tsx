@@ -1,16 +1,16 @@
 export const NavMiddleSmalllinks = [
   { href: '/',          title: '/home' },
   { href: '/projects',  title: '/projects' },
-  { href: '/dashboard', title: '/dashboard' },
   { href: '/guestbook', title: '/guestbook' },
+  { href: '/dashboard', title: '/dashboard' },
   { href: '/about',     title: '/about' },
 ]
 
 export const NavMiddleLinks = [
   { href: '/',          title: '/home' },
-  { href: '/dashboard', title: '/dashboard' },
   { href: '/projects',  title: '/projects' },
   { href: '/guestbook', title: '/guestbook' },
+  { href: '/dashboard', title: '/dashboard' },
   { href: '/about',     title: '/about' },
 ];
 

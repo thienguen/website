@@ -54,9 +54,9 @@ function DiscordStatus() {
         </div>
       </div>
 
-      <div className="mr-10 flex flex-row items-center justify-center">
+      {/* <div className="mr-10 flex flex-row items-center justify-center">
         <Solar />
-      </div>
+      </div> */}
 
       {/* image rhs */}
       <div className="flex h-20 w-20 items-center justify-center md:h-20 md:w-20 lg:h-20 lg:w-20">

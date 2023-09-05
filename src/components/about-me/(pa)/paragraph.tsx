@@ -2,6 +2,7 @@
 
 import React from 'react'
 import { useTheme } from 'next-themes'
+import { PiGameControllerThin } from 'react-icons/pi'
 import { RoughNotation } from 'react-rough-notation'
 
 interface PAProps {
@@ -22,6 +23,13 @@ const Paragraph: React.FC<PAProps> = (props: PAProps) => {
       <div className="flex w-full max-w-3xl flex-col border-b border-slate-700 pb-2 pt-1 dark:border-slate-400">
         {/* Tag */}
         <p className={`pb-2 font-dosis text-lg font-medium text-black dark:text-white ${tagAlignment} font-medium`}>
+          {props.tag === 'rpg maker games' && (
+            <>
+              <PiGameControllerThin
+                className="mr-1.5 mt-1 inline-block h-6 w-6 animate-pulse"
+              />
+            </>
+          )}
           <RoughNotation
             type="underline"
             color={`${theme !== 'light' ? '#b620e0' : '#D87787'}`}
