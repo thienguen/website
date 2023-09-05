@@ -3,16 +3,13 @@
 /* Trash */
 import { useState } from 'react'
 import Link from 'next/link'
-
-/* Hooks */
-import useSound from 'use-sound'
 import { useKBar } from 'kbar'
-
 /* Icons */
 import { Github, Twitter } from 'lucide-react'
-import { BsCommand } from 'react-icons/bs'
 import { /*  AiOutlineHeart, */ AiOutlineInstagram, AiOutlineLinkedin, AiOutlineMail } from 'react-icons/ai'
-
+import { BsCommand } from 'react-icons/bs'
+/* Hooks */
+import useSound from 'use-sound'
 /* UI, sup */
 import { cn } from '@/lib/util/util'
 import { buttonVariants } from '@/components/ui/custom-button'
@@ -20,8 +17,8 @@ import { Tooltip } from '@/components/common/Tooltip'
 import { metadata } from '@/app/api/metadata'
 
 /**
- * All the right hand side of the footer functionality, 
- * @recommended fold code 
+ * All the right hand side of the footer functionality,
+ * @recommended fold code
  * To see the full view
  * Include:
  *   - FooterLove
@@ -39,10 +36,8 @@ import { metadata } from '@/app/api/metadata'
 export function FooterLove() {
   const [ThemeSound] = useSound('/sounds/switch-on.mp3', { volume: 1 })
   return (
-    <span className="sm:balanced mx-2 text-base text-slate-700 dark:text-slate-300">
-      <span className='opacity-95 dark:opacity-70'>
-        {`© 2023 `}
-      </span>
+    <span className="sm:balanced mx-2 text-sm text-slate-700 dark:text-slate-300">
+      <span className="opacity-95 dark:opacity-70">{`© 2023 `}</span>
 
       <Link
         onClick={() => {
@@ -52,14 +47,12 @@ export function FooterLove() {
         target="_blank"
       >
         <Tooltip text="find me here">
-          <span className="text-slate-950 opacity-100 transition-colors duration-200 ease-in-out hover:text-pink-500 dark:text-white dark:hover:text-pink-500">
+          <span className="font-medium text-slate-950 opacity-100 transition-colors duration-200 ease-in-out hover:text-pink-500 dark:text-white dark:hover:text-pink-500">
             Thien Nguyen
           </span>
         </Tooltip>
       </Link>
-      <span className='opacity-95 dark:opacity-70'>
-        {` • from a boy who was never enough.`}
-      </span>
+      <span className="opacity-95 dark:opacity-70">{` • from a boy who was never enough.`}</span>
     </span>
   )
 }

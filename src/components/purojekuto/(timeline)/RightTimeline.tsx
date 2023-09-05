@@ -34,15 +34,15 @@ const RightTimeline: React.FC<SubTimelineProps> = ({
 
       {/* Container box */}
       <div className="col-start-6 col-end-10 my-4 mr-0 min-w-[20.5rem]  rounded-xl border border-[#c8c0b7] p-4  font-dosis shadow-2xl  transition-transform hover:translate-y-[3px] dark:border-slate-900 sm:mr-8">
-        <a className="cursor-pointer" href={url} rel="noreferrer">
-          <div className="mb-1 flex justify-between font-dosis text-lg text-black dark:font-light dark:text-white">
+        <a className="cursor-pointer" href={url} rel="noreferrer" target='_blank'>
+          <div className="mb-1 flex justify-between font-dosis text-lg text-black dark:text-white">
             <span
               style={{
-                backgroundImage   : `linear-gradient(135deg, ${primaryColor ?? ''} 0%, ${secondaryColor ?? ''} 100%)`,
-                backgroundSize    : '100% 0.075em',
-                backgroundRepeat  : 'no-repeat',
+                backgroundImage: `linear-gradient(135deg, ${primaryColor ?? ''} 0%, ${secondaryColor ?? ''} 100%)`,
+                backgroundSize: '100% 0.075em',
+                backgroundRepeat: 'no-repeat',
                 backgroundPosition: '0 92%',
-                transition        : 'background-size 0.25s ease-in, opacity 0.25s ease-in',
+                transition: 'background-size 0.25s ease-in, opacity 0.25s ease-in',
               }}
             >
               {title}
@@ -54,7 +54,7 @@ const RightTimeline: React.FC<SubTimelineProps> = ({
             </div>
           </div>
         </a>
-        <p className="text-sm leading-tight text-black dark:text-white">{description}</p>
+        <p className="text-sm font-light leading-tight text-black dark:text-white">{description}</p>
         <p className="mt-1 font-dosis  text-xs leading-tight text-black dark:text-white">{since}</p>
       </div>
     </div>

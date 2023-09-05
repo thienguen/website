@@ -42,7 +42,7 @@ const RPGMaker: React.FC = () => {
       >
         <div className="w-fit">
           <div className="text-left">
-            <h1 className="mx-auto w-auto font-dosis text-lg">Personal favorites </h1>
+            <h1 className="mx-auto w-auto font-dosis text-lg font-medium dark:font-normal">Personal favorites </h1>
           </div>
           <div className="mt-2 flex w-fit gap-4">
             {randomizedItems.map((game: Game, index) => (
@@ -52,8 +52,8 @@ const RPGMaker: React.FC = () => {
                   className="carousal-item absolute z-10 flex cursor-cell flex-col rounded-lg bg-transparent duration-200 group-hover:bg-white/70 dark:group-hover:bg-black/60"
                 >
                   <div className="absolute bottom-3 px-2 text-transparent transition-all duration-200 group-hover:text-black dark:group-hover:text-white">
-                    <h5 className="font-pixeloidMono text-sm leading-5">{game.title}</h5>
-                    <p className="w-[7.5rem] font-pixeloidMono text-xs">{game.genres}</p>
+                    <h5 className="font-dosis text-base font-medium leading-5">{game.title}</h5>
+                    <p className="w-[7.5rem] font-dosis text-sm font-normal">{game.genres}</p>
                   </div>
                 </div>
                 <div className="h-[130px] w-[130px] rounded-lg border-gray-300 shadow-sm shadow-slate-800 transition-transform dark:border-zinc-900 dark:shadow-gray-400 sm:h-[130px] sm:w-[130px]">

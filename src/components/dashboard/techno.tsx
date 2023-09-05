@@ -44,7 +44,7 @@ const techno_icons = [
 const TechnologyIcon = ({ icon }: { icon: (typeof techno_icons)[0] }) => (
   <div className="flex flex-col items-center gap-2">
     {icon.component}
-    <span className="text-center text-sm">{icon.description}</span>
+    <span className="text-center text-sm font-medium">{icon.description}</span>
   </div>
 )
 

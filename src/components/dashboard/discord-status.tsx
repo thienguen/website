@@ -15,9 +15,9 @@ function DiscordStatus() {
   const [isBlurred, setIsBlurred] = useState(true)
 
   const statusTextColor = {
-    online: 'text-green-500 font-pixeloidMono',
-    idle: 'text-orange-400 font-pixeloidMono',
-    dnd: 'text-red-500 font-pixeloidMono',
+    online : 'text-green-500 font-pixeloidMono',
+    idle   : 'text-orange-400 font-pixeloidMono',
+    dnd    : 'text-red-500 font-pixeloidMono',
     offline: 'text-[#5865F2] font-pixeloidMono',
   }[status]
 
@@ -47,7 +47,7 @@ function DiscordStatus() {
         {/* user name */}
         <div className="flex w-full gap-1 text-sm md:text-base lg:text-base">
           {/* <p className="link-underline3 link-underline2 m-0 text-sm text-lightSecondaryColor dark:text-gold">{`@blank_dreams`}</p> */}
-          <p>{`@blank_dreams`}</p>
+          <p className='font-medium'>{`@blank_dreams`}</p>
           <a href={`${metadata.discord}`} target="_blank" rel="noreferrer">
             <HiOutlineExternalLink className="text-xl opacity-50 transition duration-500 hover:opacity-100" />
           </a>

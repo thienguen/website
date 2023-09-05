@@ -22,7 +22,7 @@ const Paragraph: React.FC<PAProps> = (props: PAProps) => {
     <div className="flex h-full w-full flex-col items-center justify-center ">
       <div className="flex w-full max-w-3xl flex-col border-b border-slate-700 pb-2 pt-1 dark:border-slate-400">
         {/* Tag */}
-        <p className={`pb-2 font-dosis text-lg font-medium text-black dark:text-white ${tagAlignment} font-medium`}>
+        <p className={`pb-2 font-dosis text-lg text-black dark:text-white ${tagAlignment}`}>
           {props.tag === 'rpg maker games' && (
             <>
               <PiGameControllerThin
@@ -44,7 +44,7 @@ const Paragraph: React.FC<PAProps> = (props: PAProps) => {
 
         {props.customAnswer ? (
           <p
-            className={`pb-2 font-dosis text-[15px] font-normal tracking-wide text-black dark:font-medium  dark:text-slate-50 ${tagAlignment}`}
+            className={`pb-2 font-dosis text-[15px] font-medium tracking-wide text-black dark:font-light  dark:text-slate-50 ${tagAlignment}`}
           >
             {props.customAnswer}
           </p>
