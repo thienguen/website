@@ -39,7 +39,7 @@ import { metadata } from '@/app/api/metadata'
 export function FooterLove() {
   const [ThemeSound] = useSound('/sounds/switch-on.mp3', { volume: 1 })
   return (
-    <span className="sm:balanced mx-2 text-sm text-slate-700 dark:text-slate-300">
+    <span className="sm:balanced mx-2 text-base text-slate-700 dark:text-slate-300">
       <span className='opacity-95 dark:opacity-70'>
         {`© 2023 `}
       </span>

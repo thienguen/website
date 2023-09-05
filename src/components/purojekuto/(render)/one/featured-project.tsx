@@ -45,13 +45,13 @@ export default function AFeaturedProject({ project, index }: FeaturedProjectProp
           </div>
 
           <div className="balanced grow" dir={`${textDirection}`}>
-            <p className="font-pixeloidMono text-base font-semibold text-black dark:font-normal dark:text-white">
+            <p className="font-dosis text-base font-semibold text-black dark:font-normal dark:text-white">
               {project.title}
             </p>
-            <p className="font-pixeloidMono text-sm leading-6 text-slate-600 opacity-90 dark:text-slate-400">
+            <p className="font-dosis text-sm leading-6 text-slate-600 opacity-90 dark:text-slate-400">
               {project.description}
             </p>
-            <p className="mt-1 inline-block font-pixeloidMono text-sm font-semibold tracking-wide text-primary dark:font-normal">
+            <p className="mt-1 inline-block font-dosis text-sm font-semibold tracking-wide text-primary dark:font-normal">
               {project.stats}
             </p>
           </div>

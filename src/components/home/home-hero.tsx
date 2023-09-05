@@ -30,7 +30,7 @@ const HomeHero: React.FC = () => {
           {' '}
           <Profile />
           {/* Reduced space-y-3 to space-y-2 */}
-          <p className="text-center font-pixeloidMono text-2xl font-light text-black opacity-75 dark:text-white">
+          <p className="text-center font-dosis text-[26px] font-light text-black opacity-75 dark:text-white">
             {`Chào, I'm`}
           </p>
           {/* Hero Title */}

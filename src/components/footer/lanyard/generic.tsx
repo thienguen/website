@@ -23,7 +23,7 @@ const GenericActivity: React.FC<GenericActivityProps> = ({ icon, altText, text, 
         className={cn('heartbeat', `${isGitKraken ? 'dark:invert' : ''}`)}
       />
 
-      <code className="relative mx-auto mt-1 cursor-cell appearance-none rounded-lg bg-transparent text-center font-pixeloidMono text-sm text-black/90 dark:text-gray-400">
+      <code className="relative mx-auto mt-1 cursor-cell appearance-none rounded-lg bg-transparent text-center font-dosis text-base text-black/90 dark:text-gray-400">
         <Tooltip text={statusText ?? ''}>
           <span className={`link-underline2 link-underline font-bold ${text_color ?? ''}`}>{text}</span>
         </Tooltip>

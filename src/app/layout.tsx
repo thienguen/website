@@ -12,7 +12,7 @@ import '@/styles/timeline.css'
 import '@/styles/equalizer.css'
 import '@/styles/solar.css'
 
-// import { gsap }        from 'gsap'
+import { gsap }        from 'gsap'
 import { useTheme }    from 'next-themes'
 import { usePathname } from 'next/navigation'
 import { Analytics }   from '@vercel/analytics/react'
@@ -42,30 +42,30 @@ export default function RootLayout({ children }: RootLayoutProps) {
   const cursorRef = useRef(null)
   const { theme, setTheme } = useTheme()
 
-  // useEffect(() => {
-  //   document.addEventListener('mousemove', (e) => {
-  //     const mouseX = e.clientX
-  //     const mouseY = e.clientY
-  //     gsap.to(cursorRef.current, {
-  //       x: mouseX,
-  //       y: mouseY,
-  //       opacity: 1,
-  //       delay: 0,
-  //     })
-  //   })
+  useEffect(() => {
+    document.addEventListener('mousemove', (e) => {
+      const mouseX = e.clientX
+      const mouseY = e.clientY
+      gsap.to(cursorRef.current, {
+        x: mouseX,
+        y: mouseY,
+        opacity: 1,
+        delay: 0,
+      })
+    })
 
-  //   const hideCursor = () => {
-  //     gsap.to(cursorRef.current, { opacity: 0 })
-  //   }
+    const hideCursor = () => {
+      gsap.to(cursorRef.current, { opacity: 0 })
+    }
 
-  //   const showCursor = () => {
-  //     gsap.to(cursorRef.current, { opacity: 1 })
-  //   }
+    const showCursor = () => {
+      gsap.to(cursorRef.current, { opacity: 1 })
+    }
 
-  //   document.addEventListener('mouseleave', hideCursor)
-  //   document.addEventListener('mousedown', hideCursor)
-  //   document.addEventListener('mouseup', showCursor)
-  // }, [])
+    document.addEventListener('mouseleave', hideCursor)
+    document.addEventListener('mousedown', hideCursor)
+    document.addEventListener('mouseup', showCursor)
+  }, [])
 
   const path_name = usePathname()
   const actions = useActions()
@@ -91,20 +91,21 @@ export default function RootLayout({ children }: RootLayoutProps) {
         </head>
         <body
           suppressHydrationWarning={true}
-          className={cn('flex max-h-[100vh] min-h-[100vh] flex-col overflow-x-hidden font-pixeloidMono antialiased')}
+          className={cn('flex max-h-[100vh] min-h-[100vh] flex-col overflow-x-hidden font-dosis antialiased')}
         >
           <KBarProvider actions={actions}>
             <AuthProvider>
               <ThemeProvider attribute="class" defaultTheme="system" enableSystem themes={['light', 'dark']}>
 
-                {/* <div
+                <div
                   ref={cursorRef}
                   className="pointer-events-none fixed z-[9999] mt-4 hidden h-24 w-24 -translate-x-1/2 -translate-y-1/2 bg-cover bg-no-repeat lg:block"
                   style={{
                     backgroundImage: `url(/mouse/walking.gif)`,
                     backgroundPosition: '120% 100%',
                   }}
-                /> */}
+                />
+                
                 {/* <NextTopLoader /> */}
 
                 <div
