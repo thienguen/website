@@ -47,8 +47,8 @@ export default function About() {
               {`Started coding in `}
               <span className="font-semibold text-pink-600 dark:text-yellow-500">{`2021`}</span>
               {` and I've been kinda like? it. While I may not be deeply curious about how "computer" works
-                but I do want to see how they come together and literally create dark magic, and
-                I ended up making a website about myself. 🐧`}
+                but I do want to see how they come together and literally create dark magic, 
+                and that's how this website was made. 🐧`}
             </>
           }
           dir="ltr"
