@@ -46,7 +46,7 @@ const Results = () => {
       onRender={({ item, active }) =>
         typeof item === 'string' ? (
           /* What section the result is from */
-          <div className="px-5 py-2 font-pixeloidMono text-xs uppercase tracking-wide opacity-80">{item}</div>
+          <div className="px-5 py-2 font-dosis text-xs uppercase tracking-wide opacity-80">{item}</div>
         ) : (
           <ResultItem action={item} active={active} />
         )

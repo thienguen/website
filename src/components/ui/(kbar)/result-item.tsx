@@ -12,7 +12,7 @@ const ResultItem = forwardRef(({ action, active }: Props, ref: React.Ref<HTMLDiv
   return (
     <div
       ref={ref}
-      className={cn('flex cursor-pointer items-center justify-between border-l-2 px-4 py-5 font-pixeloidMono text-sm', {
+      className={cn('flex cursor-pointer items-center justify-between border-l-2 px-4 py-5 font-dosis text-sm', {
         'bg-white/10 text-cardlight dark:text-primary': active,
         'bg-command text-cardlight/80 dark:text-secondary': !active,
       })}
