@@ -59,7 +59,7 @@ export default function About() {
           customAnswer={
             <>
               {`I'm also fascinated with `}
-              <span className="font-semibold text-[#2AAAF3]">{`mathematics`}</span>
+              <span className="font-semibold text-blue-700 dark:text-[#3AAAF2]">{`mathematics`}</span>
               {` and wish to make a career out of it someday. Things I love include: j̶a̶p̶a̶n̶, coffee, dark mode, and cats.`}
             </>
           }

@@ -28,7 +28,7 @@ const GithubCal = () => {
 
   return (
     <>
-      <div className="col-span-2 mt-4 translate-y-[-1rem] animate-fade-in font-dosis opacity-0 [--animation-delay:1000ms]">
+      <div className="col-span-2 mt-4 translate-y-[-1rem] animate-fade-in font-dosis font-medium opacity-0 [--animation-delay:1000ms]">
         <GitHubCalendar
           username="thienguen"
           colorScheme={theme === 'dark' ? 'dark' : 'light'}

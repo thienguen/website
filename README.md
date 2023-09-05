@@ -94,6 +94,7 @@ Welcome to the project's folder structure! Below is an organized representation 
 ├── 📁 app
 │   ├── 📁 about
 │   ├── 📁 api
+│   ├── 📁 dashboard
 │   ├── 📁 contact
 │   ├── 📁 guestbook
 │   └── 📁 projects
@@ -101,9 +102,14 @@ Welcome to the project's folder structure! Below is an organized representation 
 │   ├── 📁 about-me
 │   │   └── 📁 qa
 │   ├── 📁 common
-│   ├── 📁 contact
+│   ├── 📁 dashboard
+│   │   └── 📁 ...
+│   ├── 📁 about-me
+│   │   └── 📁 ...
 │   ├── 📁 footer
+│   │   └── 📁 ...
 │   ├── 📁 guestbook
+│   │   └── 📁 ...
 │   ├── 📁 home
 │   │   └── 📁 lanyard
 │   ├── 📁 navbar
@@ -113,6 +119,7 @@ Welcome to the project's folder structure! Below is an organized representation 
 │       │   └── 📁 one
 │       └── 📁 (timeline)
 ├── 📁 ui
+│   └── 📁 ...
 ├── 📁 hooks
 │   └── 📁 lanyard
 └── 📁 lib
@@ -128,6 +135,8 @@ Welcome to the project's folder structure! Below is an organized representation 
 │   ├── 📄 hi.css
 │   ├── 📄 timeline.css
 │   └── 📄 activity.css
+│   └── 📄 solar.css
+│   └── 📄 equalizer.css
 ```
 
 # Tech Stack
