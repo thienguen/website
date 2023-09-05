@@ -12,7 +12,7 @@ import '@/styles/timeline.css'
 import '@/styles/equalizer.css'
 import '@/styles/solar.css'
 
-// import { gsap }        from 'gsap'
+import { gsap }        from 'gsap'
 import { useTheme }    from 'next-themes'
 import { usePathname } from 'next/navigation'
 import { Analytics }   from '@vercel/analytics/react'
