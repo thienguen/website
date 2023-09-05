@@ -1,15 +1,14 @@
-# Thienguen personal website version 1.0
+# Website 🐧
 
-- Web dev surely is something, now i wonder how backend looks like, will update this lata
-- 8/25/2023, this is still in development (maybe)
+- Thienguen website, probably not the only one
+- At least I think at some point it was an intended portfolio, until it doens't
+- it turns out, aight.
 
-# Preview
+# Preview ☁️
 
-<!-- ![Something](http://g.recordit.co/C5V1kC86St.gif) -->
-![Something](/public/bg/Preview-website.gif)
+![Something](/public/bg/Preview-website2.gif)
 
-
-## Getting Started
+## Getting Started 🎲
 
 Set up the environment variables file with the following variables.
 
@@ -60,7 +59,7 @@ pnpm dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-# Features
+# Features ✒️
 
 - [x] Discord Presence
 - [x] Google OAuth
@@ -72,12 +71,12 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - [x] Blog (TBD)
 - [ ] Reponsive (breh)
 
-# Project Folder Structure
+# Project Folder Structure 💀
 
 Welcome to the project's folder structure! Below is an organized representation of the directories and subdirectories:
 
 ```bash
-## prisma
+## prisma 
 ├── 📄 schema.prisma
 
 ## public
@@ -149,7 +148,7 @@ Welcome to the project's folder structure! Below is an organized representation 
 - [PlanetScale](https://planetscale.com/)
 
 
-# Issues
+# Issues 🧻
 
 The repo currently facing two known bugs from Next.js 
 
