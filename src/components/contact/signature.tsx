@@ -9,7 +9,7 @@ export default function Signature() {
 
   return (
     <div className="mt-2 h-10">
-      <div className=" text-center font-signature text-2xl font-light text-black opacity-70  dark:text-white">
+      <div className=" text-center font-signature text-lg font-light text-black opacity-70  dark:text-white">
         <Typewriter
           options={{
             strings: alternatingStrings,

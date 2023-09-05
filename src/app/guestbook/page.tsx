@@ -1,19 +1,23 @@
 /**
  * Plans to make guestbook
  * 1. Set up nextauth, or an authientication system { [nextauth, jwt, bcrypt], [clerk] } -- partially done
- * 2. Set up a database, storing the messages [ planetscale ] -- done 
+ * 2. Set up a database, storing the messages [ planetscale ] -- done
  * 3. Set up a form, to send the messages to the database [ react-hook-form ] -- done
  * ------------------------------------------------------------------------
- * 4. Set up api to display the messages [ react-query ]  -- done  
+ * 4. Set up api to display the messages [ react-query ]  -- done
  * 6. Set up prisma to call the api [ prisma ] -- done
  * 7. Connect db and api [ prisma ] -- done
  * ------------------------------------------------------------------------
  */
-import { type Metadata }  from 'next'
-import PageTitle          from '@/components/ui/header-title'
-import ProgressBar        from '@/components/ui/progress-bar'
-import GlitchedComponent  from '@/components/guestbook/Glitched-Writer'
-import GuestbookForm      from '@/components/guestbook/GuestbookForm'
+import { type Metadata } from 'next'
+import { GoGitCompare } from 'react-icons/go'
+
+import PageTitle from '@/components/ui/header-title'
+import ProgressBar from '@/components/ui/progress-bar'
+
+import { Tooltip } from '@/components/common/Tooltip'
+import GuestbookForm from '@/components/guestbook/guestbook-form'
+// import GlitchedComponent  from '@/components/guestbook/Glitched-Writer'
 // import PreLoader          from '@/components/ui/pre-loader'
 
 export const metadata: Metadata = {
@@ -29,20 +33,31 @@ export default function Guestbook() {
       {/* <PreLoader>Guestbook</PreLoader> */}
 
       <ProgressBar
-        steps={['/home', '/projects', '/about', '/guestbook', '/contact']}
-        currentStep={4}
+        // steps={['home', '/about', '/dashboard', '/projects', '/guestbook']}
+        steps={['/dashboard', '/projects', '/guestbook', '/about']}
+        currentStep={3}
         isFullWidth={false}
         key={'/guestbook'}
       />
 
       {/* Header gesuto bukku*/}
-      <PageTitle title="guestbook" titleJP="ゲストブック。" />
+      <PageTitle
+        title="guestbook"
+        titleJP="ゲストブック。"
+        subTitle="Leave a comment below for my other visitors here."
+      />
 
-      <GlitchedComponent initialText="Welcome" />
+      {/* <GlitchedComponent initialText="Welcome" /> */}
 
       {/* Guestbook */}
-      <div className="mx-auto mb-6 flex max-w-2xl flex-col items-center justify-center">
+      <div className="mx-auto flex max-w-2xl flex-col items-center justify-center">
         <GuestbookForm />
+      </div>
+
+      <div className={`flex  flex-row justify-center`}>
+        <Tooltip text="Say hi">
+          <GoGitCompare className="heartbeat h-6 w-6 animate-pulse" />
+        </Tooltip>
       </div>
     </>
   )

@@ -25,6 +25,7 @@ const icons = [
   { type: 'img', src: '/icons/bootstrap.png', alt: 'bootstrap' },
   { type: 'img', src: '/icons/mongodb.png', alt: 'mongodb' },
   { type: 'img', src: '/icons/docker.png', alt: 'docker' },
+
   { type: 'icon', component: <SiRust size={22} /> },
   { type: 'icon', component: <SiGithub size={22} /> },
   { type: 'icon', component: <SiAmazonaws size={22} /> },
@@ -42,16 +43,17 @@ const TechnologyIcon = ({ icon }: { icon: (typeof icons)[0] }) => (
 )
 
 const Technologies = (props: TechnologiesProps) => {
+  // indicator
   return (
     <>
       <div
         className={`${props.cols ?? ''} ${
           props.height ?? ''
-        } indicator flex min-h-[200px] w-full flex-col rounded-lg text-slate-900 opacity-90 shadow-sm shadow-slate-700 dark:text-slate-300 dark:shadow-gray-400`}
+        } flex min-h-[200px] w-full flex-col rounded-lg text-slate-900 opacity-90 shadow-sm shadow-slate-700 dark:text-slate-300 dark:shadow-gray-400`}
       >
-        <span className={` badge badge-secondary badge-outline indicator-start font-dosis text-black dark:text-white`}>
+        {/* <span className={` badge badge-secondary badge-outline indicator-start font-dosis text-black dark:text-white`}>
           Technologies
-        </span>
+        </span> */}
         <div className="grid h-full w-full grid-cols-7 grid-rows-3 gap-2 px-5 pb-5 pt-1">
           {icons.map((icon, index) => (
             <TechnologyIcon key={index} icon={icon} />

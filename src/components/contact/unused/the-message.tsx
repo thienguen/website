@@ -4,7 +4,7 @@ import React, { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { cn } from '@/lib/util/util'
 import { Tooltip } from '@/components/common/Tooltip'
-import Signature from '@/components/home/signature'
+import Signature from '@/components/contact/signature'
 
 function ContactMessage() {
   const textRef = useRef<HTMLHeadingElement[] | null>(null)
@@ -29,9 +29,9 @@ function ContactMessage() {
         // }
         {
           backgroundSize: '100% 100%',
-          ease          : 'none',
-          duration      : 1.5,           // Duration of one "forward" animation.
-          yoyo          : true,          // Play the animation in reverse after playing it forward.
+          ease: 'none',
+          duration: 1.5, // Duration of one "forward" animation.
+          yoyo: true, // Play the animation in reverse after playing it forward.
           // repeat: 1,                  // Infinite repetition -1. but 3 times when moutned.
           // repeatDelay: 0.5            // A delay before starting the animation again (optional, can be adjusted or removed).
         }
@@ -71,9 +71,11 @@ function ContactMessage() {
       <div className=" 4xl:min-h-[1000px] flex h-full w-full flex-col items-center justify-center pb-10 pt-32 sm:mt-0 sm:min-h-[600px]">
         <div className="mb-10 flex flex-col items-center justify-center px-10">
           {' '}
-          <h2 className="text-h2 shadow-effect cursor-default whitespace-nowrap pb-2 text-center font-metropolis text-4xl font-bold text-slate-800   dark:text-slate-200 lg:text-6xl">
+          {/* <h2 className="text-h2 shadow-effect cursor-default whitespace-nowrap pb-2 text-center font-metropolis text-4xl font-bold text-slate-800   dark:text-slate-200 lg:text-6xl"> */}
+          <h2 className="shadow-effect cursor-default whitespace-nowrap pb-2 text-center font-metropolis text-4xl font-bold text-slate-800   dark:text-slate-200 lg:text-6xl">
             {`Contact me`}
           </h2>
+
           <div className="text-hi balanced relative max-w-xl cursor-cell pb-2 text-center font-pixeloidMono text-lg text-gray-600 text-opacity-20  dark:text-gray-400">
             {/* <p>{`A person who loves story-rich RPG-Maker games.`}</p>
             <p>{'Often time coding. Sometimes drawing.'}</p>
@@ -83,6 +85,8 @@ function ContactMessage() {
             <p>{`for collaboration or want to build`}</p>
             <p>{`something amazing, don't hesitate to contact me!`}</p>
           </div>
+
+
           <Tooltip text="Tbh, I ran out of idea on this page, and this is rather a personal site than a `portfolio`, version 1.0 it is">
             <div className="mx-auto flex justify-center">
               <a

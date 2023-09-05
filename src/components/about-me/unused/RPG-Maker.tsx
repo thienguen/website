@@ -72,17 +72,17 @@ const RPGMaker: React.FC = () => {
     <>
       <div
         className={cn(
-          'relative z-0 mx-auto flex items-center justify-center rounded-md border-gray-300 px-5 pt-2 opacity-90 shadow-sm shadow-slate-800 transition-transform dark:border-zinc-900 dark:shadow-gray-400 sm:max-w-[73.5rem]',
+          'relative z-0 col-span-2 mx-auto flex items-center justify-center overflow-hidden rounded-md border-gray-300 px-5 pt-2 opacity-90 shadow-sm shadow-slate-800 transition-transform dark:border-zinc-900 dark:shadow-gray-400 sm:max-w-[73.5rem]',
           isMobileView ? 'mb-10 w-full' : isWideView ? 'flex-col' : 'flex-col sm:max-w-[73.5rem] sm:pb-4 md:h-full'
         )}
       >
         <div
-          className="carousel mx-1 w-fit flex-wrap sm:mt-3 "
-          ref          = {carouselRef}
-          onMouseDown  = {handleMouseDown}
-          onMouseLeave = {handleMouseLeave}
-          onMouseUp    = {handleMouseUp}
-          onMouseMove  = {handleMouseMove}
+          className="mx-1 w-fit flex-wrap sm:mt-3 "
+          ref={carouselRef}
+          onMouseDown={handleMouseDown}
+          onMouseLeave={handleMouseLeave}
+          onMouseUp={handleMouseUp}
+          onMouseMove={handleMouseMove}
         >
           <div className="mt-2 flex overflow-x-scroll sm:max-w-[69rem]">
             {randomizedItems.map((game: Game, index) => (

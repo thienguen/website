@@ -1,3 +1,5 @@
+/* Place to throw stuff in */
+
 // > Did I shutter?, typewriter title is good, but i failed
 // useEffect(() => {
 //   const SITE_NAME = metadata.creator;
@@ -109,7 +111,7 @@
 //   )
 // }
 
-// place to throw stuff in
+// This used to be the effect of close and open
 {
   /* <span
             className={cn(
@@ -121,3 +123,37 @@
             Dreams
         </span> */
 }
+
+/* This was the version 1.0 footer left */
+    {/* <span className="mx-2 text-sm">Made with</span>
+    <AiOutlineHeart
+      className="h-5 w-5 cursor-pointer"
+      onClick={() => {
+        ThemeSound()
+      }}
+    />
+    <span className="mx-2 text-sm">by</span>
+    <Tooltip text="find me here">
+      <Link
+        href={metadata.discord}
+        target="_blank"
+        className="text-sm text-slate-600 underline transition-colors duration-200 ease-in-out hover:text-pink-500 dark:text-white dark:hover:text-pink-500"
+      >
+        blank_dreams
+      </Link>
+      .
+    </Tooltip> */}
+
+
+/* This was in the navbar version 1.0 */
+     {/* {index < 2 ? (
+              <>
+                {IconMapping[link.title]}
+                {link.title}
+              </>
+            ) : (
+              <>
+                {link.title}
+                {IconMapping[link.title]}
+              </>
+            )} */}

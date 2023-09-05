@@ -1,5 +1,8 @@
 /* HomeHi.css */
 
+
+
+
 .text-hi {
   color: rgba(75, 85, 99, 0.2); /* Using the color equivalent to text-gray-600 */
   background: linear-gradient(to right, #000000, #6d6d6d) no-repeat; /* Contrast with the text color by making it a bit brighter */
@@ -9,6 +12,7 @@
   -webkit-background-clip: text;
   transition: background-size cubic-bezier(0.1, 0.5, 0.5, 1) 0.75s;
 }
+
 
 
 /* Dark theme version for .text-hi */
@@ -22,8 +26,9 @@
   transition: background-size cubic-bezier(0.1, 0.5, 0.5, 1) 0.75s;
 }
 
-/* css for home-hero h2 */
-.text-h2 {
+
+/* css for home-hero p */
+.text-p {
   background-size: 0%;
   background-clip: text;
   -webkit-background-clip: text;
@@ -38,7 +43,7 @@
 
 
 /* Dark theme version for .text-hi */
-.dark .text-h2 {
+.dark .text-p {
   background-size: 0%;
   background-clip: text;
   -webkit-background-clip: text; 
@@ -52,12 +57,27 @@
 }
 
 
-/* Hover effect for .text-hi */
-.span-h2 {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Hover effect for .text-p, unused */
+.span-p {
   clip-path: polygon(0 50%, 100% 50%, 100% 50%, 0 50%);
   transition: all cubic-bezier(0.1, 0.5, 0.5, 1) 0.4s;
 }
 
-.text-h2:hover > .span-h2 {
+.text-p:hover > .span-p {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }

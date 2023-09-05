@@ -8,11 +8,12 @@ type headerTitleProps = {
   title   ?: string
   titleJP ?: string
   hanekawa?: boolean
+  subTitle?: string
 }
 
 function PageTitle(props: headerTitleProps) {
   const [isPlaying, setIsPlaying] = useState(false)
-  const [ThemeSound, { stop }]    = useSound('/sounds/bakemonogatari.mp3', { volume: 0.25 })
+  const [ThemeSound, { stop }] = useSound('/sounds/bakemonogatari.mp3', { volume: 0.25 })
 
   const toggleSound = () => {
     if (!props.hanekawa) return
@@ -27,11 +28,17 @@ function PageTitle(props: headerTitleProps) {
   }
 
   return (
-    <div className={`my-2 text-center ${props.hanekawa ? 'cursor-pointer' : 'cursor-cell'}`} onClick={toggleSound}>
-      <Tooltip text={props.title ?? ''}>
-        <h2 className="text-xl font-semibold">{`${props.titleJP ?? ''}`}</h2>
-      </Tooltip>
-    </div>
+    <>
+      <div
+        className={`mb-1 mt-3 text-center ${props.hanekawa ? 'cursor-pointer' : 'cursor-cell'}`}
+        onClick={toggleSound}
+      >
+        <Tooltip text={props.title ?? ''}>
+          <h2 className="text-xl font-semibold">{`${props.titleJP ?? ''}`}</h2>
+        </Tooltip>
+      </div>
+      {props.subTitle && <div className="mb-3 flex flex-row justify-center font-dosis">{props.subTitle}</div>}
+    </>
   )
 }
 

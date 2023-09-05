@@ -3,7 +3,6 @@
 import { useTheme } from 'next-themes'
 import { RoughNotation } from 'react-rough-notation'
 import { Tooltip } from '@/components/common/Tooltip'
-
 /* Generative Project Cards */
 import { FeaturedProjects } from '@/components/purojekuto/(render)/index'
 import { Timeline } from '@/components/purojekuto/(timeline)/index'
@@ -32,7 +31,7 @@ function Purojekuto() {
           <div className="flex h-8 border-l-2 border-slate-400 pl-2 dark:border-slate-700">
             <RoughNotation
               type="underline"
-              color={`${theme !== 'light' ? `#6ACDFF` : '#D87787'}`}
+              color={`${theme !== 'light' ? '#b620e0' : '#D87787'}`}
               strokeWidth={2}
               order={1}
               show={true}
@@ -46,14 +45,14 @@ function Purojekuto() {
           </div>
 
           <Tooltip text="Timeline">
-            <div className="divider pr-1 text-base font-semibold lg:divider-horizontal">タイムライン</div>
+            <div className="pr-1 text-base font-semibold">タイムライン</div>
           </Tooltip>
 
           {/* Rightmost Project kbd */}
           <div className="flex h-8 border-r-2 border-slate-400 pr-2  dark:border-slate-700">
             <RoughNotation
               type="underline"
-              color={`${theme !== 'light' ? `#6ACDFF` : '#D87787'}`}
+              color={`${theme !== 'light' ? '#b620e0' : '#D87787'}`}
               strokeWidth={2}
               order={1}
               show={true}

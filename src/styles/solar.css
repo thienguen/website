@@ -1,0 +1,56 @@
+@keyframes orbit {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.container_solar {
+  @apply relative h-[70px] w-[70px] text-xs -mt-14 -ml-12; /* -mt-4 moves it 4 units up, -ml-4 moves it 4 units left */
+}
+
+.dark .sun {
+  @apply top-12 left-12 absolute h-8 w-8 rounded-full bg-yellow-500 shadow-white; /* Adjusted positions and size */
+  box-shadow: 0 0 3em white;
+}
+
+.sun {
+  @apply top-12 left-12 absolute h-8 w-8 rounded-full bg-yellow-500 shadow-black; /* Adjusted positions and size */
+  box-shadow: 0 0 3em black;
+}
+
+.dark .earth,
+.dark .moon {
+  @apply absolute rounded-full border border-r-0 border-t-0 border-white;
+}
+
+.earth, .moon {
+  @apply absolute rounded-full border border-r-0 border-t-0 border-gray-800;
+}
+
+.earth {
+  @apply w-24 h-24 left-4 top-4; /* Adjusted positions and size */
+  animation: orbit 36.5s linear infinite;
+}
+
+.moon {
+  @apply right-0 top-0 h-8 w-8; /* Adjusted size */
+  animation: orbit 2.7s linear infinite;
+}
+
+.earth::before,
+.moon::before {
+  @apply absolute block rounded-full;
+  content: '';
+}
+
+.earth::before {
+  @apply top-2 right-2 h-3 w-3 bg-aqua; /* Adjusted positions and size */
+}
+
+.dark .moon::before {
+  @apply top-1 right-0.5 w-1 h-1 bg-silver; /* Adjusted positions */
+}
+
+.moon::before {
+  @apply bg-gray-800; /* Adjusted positions */
+}

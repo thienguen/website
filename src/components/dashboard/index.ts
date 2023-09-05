@@ -1,0 +1,8 @@
+export { default as DiscordStatus } from '@/components/dashboard/discord-status'
+export { default as GithubCard }    from '@/components/dashboard/github-card'
+export { default as Solar }         from '@/components/dashboard/solar'
+export { default as StatAgeCard }   from '@/components/dashboard/stat-age-card'
+export { default as StatCard }      from '@/components/dashboard/stat-card'
+export { default as Technologies }  from '@/components/dashboard/techno'
+export { default as RPGMaker }      from '@/components/dashboard/rpg-maker'
+export { default as GithubCal }     from '@/components/dashboard/github-calendar'

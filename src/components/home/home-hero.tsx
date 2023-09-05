@@ -1,28 +1,21 @@
-'use client'
-
-import React, { useState } from 'react'
-
-import { cn } from '@/lib/util/util'
 import { useTheme } from 'next-themes'
 import { useMediaHeight } from '@/hooks/useMediaHeight'
 
-import { KBarStart }  from '@/components/ui/(kbar)/index'
-import { Tooltip }    from '@/components/common/Tooltip'
-import { TbCodeDots } from 'react-icons/tb'
+import { cn } from '@/lib/util/util'
+import { KBarStart } from '@/components/ui/(kbar)/index'
 
-import Presence    from '@/components/home/lanyard/presence'
-import Profile     from '@/components/home/profile'
+import Profile from '@/components/home/profile'
+// import { TbCodeDots } from 'react-icons/tb'
 
 const HomeHero: React.FC = () => {
   const { theme, setTheme } = useTheme()
-  const [showPresence, setShowPresence] = useState(false)
 
   if (theme === undefined) {
     console.log('theme is undefined, default to dark again')
     setTheme('dark')
   }
 
-  const isTallScreen       = useMediaHeight('1000px')
+  const isTallScreen = useMediaHeight('1000px')
   const isEvenTallerScreen = useMediaHeight('1100px')
 
   return (
@@ -30,7 +23,7 @@ const HomeHero: React.FC = () => {
       <div
         className={cn(
           isEvenTallerScreen ? 'py-44' : isTallScreen ? 'py-20' : 'py-8',
-          'flex h-full w-full flex-col items-center justify-center'
+          'flex h-full w-full flex-col items-center justify-center pb-12'
         )}
       >
         <div className="flex flex-col items-center justify-center px-10">
@@ -46,19 +39,17 @@ const HomeHero: React.FC = () => {
           </h2>
           <KBarStart />
         </div>
-        
-        <Tooltip text="I'm curently doing">
-          <div onClick={() => setShowPresence(!showPresence)}>
-            <TbCodeDots className="h-10 animate-pulse cursor-pointer text-3xl text-white invert dark:text-black" />
-          </div>
-          {/* <div className="equalizer" onClick={() => setShowPresence(!showPresence)}>
-            <span className="left"></span>
-            <span className="middle"></span>
-            <span className="right"></span>
-          </div> */}
-        </Tooltip>
 
-        {showPresence && <Presence />}
+        {/* <div>
+            <TbCodeDots className="h-10 animate-pulse cursor-pointer text-3xl text-white invert dark:text-black" />
+          </div> */}
+
+        {/* For chiito w luv */}
+        <div className="equalizer opacity-40 invert dark:opacity-100 dark:invert-0">
+          <span className="left"></span>
+          <span className="middle"></span>
+          <span className="right"></span>
+        </div>
       </div>
     </>
   )

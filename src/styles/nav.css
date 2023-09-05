@@ -16,7 +16,8 @@
   display : inline-block;
 }
 
-/* Hover nav for dark */
+
+/* Hover nav for dark ------------------------------------------------- */
 .dark .link-underline::after {
   content: '';
 
@@ -49,7 +50,7 @@
   display : inline-block;
 }
 
-/* Hover nav for light */
+/* Hover nav for light -------------------------------------------------  */
 .link-underline2::after {
   content: '';
 
@@ -76,6 +77,83 @@
 
   background: linear-gradient(transparent, transparent), linear-gradient(to right, #d87787, #861657);  /* New provided colors */
 }
+
+/* Hover for about page -------------------------------------------------  */
+.link-underline3 {
+  position: relative;
+  display : inline-block;
+}
+
+.dark .link-underline3::after {
+  content: '';
+
+  display   : block;
+  position  : absolute;
+  visibility: hidden;
+  background: #171923;
+
+  width : 0;
+  height: 2px;
+
+  right: 0;
+
+  transition: all 0.3s ease-in-out;
+  background: linear-gradient(transparent, transparent), linear-gradient(to right, #F6C177, #F6C177);  /* New provided colors */
+}
+
+.dark .link-underline3:hover::after {
+  visibility: visible;
+
+  width: 100%;
+
+  left: 0;
+
+  background: linear-gradient(transparent, transparent), linear-gradient(to right, #F6C177, #F6C177);  /* New provided colors */
+}
+
+/* Custom css for nav */
+.link-underline4 {
+  position: relative;
+  display: inline-block;
+}
+
+
+/* Hover purple for new theme ------------------------------------------------- */
+.dark .link-underline4::after {
+  content: '';
+
+  display   : block;
+  position  : absolute;
+  visibility: hidden;
+  background: #171923;
+
+  width : 0;
+  height: 2px;
+
+  right: 0;
+
+  transition: all 0.3s ease-in-out;
+  background: linear-gradient(transparent, transparent), linear-gradient(to right, #6200ea, #b620e0);  /* Bright purple shades */
+}
+
+.dark .link-underline4:hover::after {
+  visibility: visible;
+
+  width: 100%;
+
+  left: 0;
+
+  background: linear-gradient(transparent, transparent), linear-gradient(to right, #6200ea, #b620e0);  /* Bright purple shades */
+}
+
+
+
+
+
+
+
+
+
 
 .nav-link {
   transition: all 1s ease-in-out;
