@@ -1,4 +1,5 @@
 import clsx from 'clsx'
+import { useMediaQuery } from '@/hooks/useMediaQuery'
 import {
   FooterEmail,
   FooterGithub,
@@ -8,6 +9,7 @@ import {
   FooterProfile,
 } from '@/components/footer/FooterIcons'
 import Presence from '@/components/footer/lanyard/presence'
+import ThemeToggle from '@/components/navbar/ThemeToggle'
 
 type FooterBarProps = {
   isFullWidth?: boolean
@@ -40,6 +42,8 @@ const FooterBar = ({ isFullWidth }: FooterBarProps) => {
  * @version 2.0 indeed it is
  */
 export default function Footer() {
+  const isMobile = useMediaQuery('640px', true)
+
   return (
     <>
       {/* <div className="mx-auto flex w-11/12 max-w-7xl dark:border-white border-t border-gray-300 lg:w-2/3" /> */}
@@ -67,8 +71,15 @@ export default function Footer() {
               <FooterLinkedin />
               <FooterEmail />
               <FooterKbar />
+
               <FooterProfile />
             </div>
+
+            {isMobile && (
+              <div className="z-20 flex items-center space-x-3">
+                <ThemeToggle />
+              </div>
+            )}
           </div>
         </div>
       </footer>
