@@ -1,12 +1,24 @@
-# Website 🐧
+<div align="center">
 
-- Thienguen website, probably not the only one
-- At least I think at some point it was an intended portfolio, until it doens't
-- it turns out, aight.
+
+<img src="public/images/monika.png" alt="Banner" style="width: 150px; border-radius: 50%;">
+
+
+[vankythien.dev](https://vankythien.dev/), an attempt at web dev, and realized I sucks. <br>
+Using Next.js 13, enhanced with Tailwind, powered by TypeScript, and seamlessly deployed via Vercel.
+
+[![CodeFactor](https://www.codefactor.io/repository/github/thienguen/website/badge)](https://www.codefactor.io/repository/github/thienguen/website)
+
+</div>
+
 
 # Preview ☁️
 
-![Something](/public/bg/Preview-website2.gif)
+<div align="center">
+
+<img src="public/bg/Preview-website2.gif" alt="Banner" style="height: 350px;">
+
+</div>
 
 ## Getting Started 🎲
 
@@ -40,7 +52,7 @@ Set up the environment variables file with the following variables.
   - OR runt the command `openssl rand -base64 32` in the CLI
   - OR access to this website [NextAuth](https://generate-secret.vercel.app/32) 
 
-Next, run in the CLI (root folder)
+### Next, run in the CLI (root folder) ☢️
 
 ```bash
   # install dependencies
@@ -164,6 +176,12 @@ The repo currently facing two known bugs from Next.js
 - [ ] [Server run out of memory](https://github.com/vercel/next.js/issues/46756)
 - [ ] [Non Post Server Error](https://github.com/vercel/next.js/issues/53882)
 
+# Aight 🐧
+
+- Probably not the only one
+- At least I think at some point it was an intended portfolio, until it doens't
+- it turns out, aight.
+
 # 📝 License & Forking/Cloning
 
-All code in this repository is licensed under the GNU Affero General Public License v3—see the LICENSE file for more information. Please remove all of my personal information and work (blog posts, assets, _config.yml) if you want to utilize my custom theme.
+All code in this repository is licensed under the GNU Affero General Public License v3—see the LICENSE file for more information. Please remove all of my personal information and related stuff. If you want to use this repo. This is source-available. Feels free to do so and give it a star.
