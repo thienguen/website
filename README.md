@@ -13,23 +13,23 @@
 Set up the environment variables file with the following variables.
 
 ```bash
-# https://api.lanyard.rest/v1/users/user_id
-BASE_URL=http://localhost:3000
+  # https://api.lanyard.rest/v1/users/user_id
+  BASE_URL=http://localhost:3000
 
-NEXT_PUBLIC_DISCORD_ID=
-NEXT_PUBLIC_EMAIL=
+  NEXT_PUBLIC_DISCORD_ID=
+  NEXT_PUBLIC_EMAIL=
 
-GITHUB_ID=Iv1.
-GITHUB_SECRET=
+  GITHUB_ID=Iv1.
+  GITHUB_SECRET=
 
-GOOGLE_CLIENT_ID=
-GOOGLE_CLIENT_SECRET=
+  GOOGLE_CLIENT_ID=
+  GOOGLE_CLIENT_SECRET=
 
-DATABASE_URL=
+  DATABASE_URL=
 
-NEXTAUTH_URL_INTERNAL=http://10.240.8.16
-NEXTAUTH_URL=http://localhost:3000
-NEXTAUTH_SECRET=
+  NEXTAUTH_URL_INTERNAL=http://10.240.8.16
+  NEXTAUTH_URL=http://localhost:3000
+  NEXTAUTH_SECRET=
 ```
 
 - Get `GITHUB_ID` and `GITHUB_SECRET` from [Github OAuth](https://docs.github.com/en/developers/apps/building-oauth-apps/creating-an-oauth-app)
@@ -43,18 +43,19 @@ NEXTAUTH_SECRET=
 Next, run in the CLI (root folder)
 
 ```bash
-# install dependencies
-npm install
+  # install dependencies
+  npm install
 
-# run prisma CLI
-npm prisma run
+  # run prisma CLI
+  npm prisma run
 
-# run the development server
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+  # run the development server
+  npm run dev
+  # or
+  yarn dev
+  # or
+  pnpm dev
+
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
@@ -148,9 +149,21 @@ Welcome to the project's folder structure! Below is an organized representation 
 - [PlanetScale](https://planetscale.com/)
 
 
+# 📈 Statistic
+
+<div align="center">
+
+![Alt](https://repobeats.axiom.co/api/embed/2c807fd151ce226b3643cb0b6036d94a319c2783.svg "Repobeats analytics image")
+
+</div>
+
 # Issues 🧻
 
 The repo currently facing two known bugs from Next.js 
 
 - [ ] [Server run out of memory](https://github.com/vercel/next.js/issues/46756)
 - [ ] [Non Post Server Error](https://github.com/vercel/next.js/issues/53882)
+
+# 📝 License & Forking/Cloning
+
+All code in this repository is licensed under the GNU Affero General Public License v3—see the LICENSE file for more information. Please remove all of my personal information and work (blog posts, assets, _config.yml) if you want to utilize my custom theme.
