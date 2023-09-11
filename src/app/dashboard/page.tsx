@@ -54,7 +54,7 @@ export default function Projects() {
           <GithubCal />
         </div>
 
-        <div className={` flex flex-row justify-center`}>
+        <div className={`mt-5 flex flex-row justify-center`}>
           <Tooltip text="I can't code">
             <CiCoffeeCup className="heartbeat h-6 w-6 animate-pulse" />
           </Tooltip>

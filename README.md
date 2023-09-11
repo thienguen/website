@@ -1,35 +1,47 @@
-# Website 🐧
+<div align="center">
 
-- Thienguen website, probably not the only one
-- At least I think at some point it was an intended portfolio, until it doens't
-- it turns out, aight.
+
+<img src="public/images/monika.png" alt="Banner" style="width: 150px; border-radius: 50%;">
+
+
+[vankythien.dev](https://vankythien.dev/), an attempt at web dev, and realized I sucks. <br>
+Using Next.js 13, enhanced with Tailwind, powered by TypeScript, and seamlessly deployed via Vercel.
+
+[![CodeFactor](https://www.codefactor.io/repository/github/thienguen/website/badge)](https://www.codefactor.io/repository/github/thienguen/website)
+
+</div>
+
 
 # Preview ☁️
 
-![Something](/public/bg/Preview-website2.gif)
+<div align="center">
+
+<img src="public/bg/Preview-website2.gif" alt="Banner" style="height: 350px;">
+
+</div>
 
 ## Getting Started 🎲
 
 Set up the environment variables file with the following variables.
 
 ```bash
-# https://api.lanyard.rest/v1/users/user_id
-BASE_URL=http://localhost:3000
+  # https://api.lanyard.rest/v1/users/user_id
+  BASE_URL=http://localhost:3000
 
-NEXT_PUBLIC_DISCORD_ID=
-NEXT_PUBLIC_EMAIL=
+  NEXT_PUBLIC_DISCORD_ID=
+  NEXT_PUBLIC_EMAIL=
 
-GITHUB_ID=Iv1.
-GITHUB_SECRET=
+  GITHUB_ID=Iv1.
+  GITHUB_SECRET=
 
-GOOGLE_CLIENT_ID=
-GOOGLE_CLIENT_SECRET=
+  GOOGLE_CLIENT_ID=
+  GOOGLE_CLIENT_SECRET=
 
-DATABASE_URL=
+  DATABASE_URL=
 
-NEXTAUTH_URL_INTERNAL=http://10.240.8.16
-NEXTAUTH_URL=http://localhost:3000
-NEXTAUTH_SECRET=
+  NEXTAUTH_URL_INTERNAL=http://10.240.8.16
+  NEXTAUTH_URL=http://localhost:3000
+  NEXTAUTH_SECRET=
 ```
 
 - Get `GITHUB_ID` and `GITHUB_SECRET` from [Github OAuth](https://docs.github.com/en/developers/apps/building-oauth-apps/creating-an-oauth-app)
@@ -40,21 +52,22 @@ NEXTAUTH_SECRET=
   - OR runt the command `openssl rand -base64 32` in the CLI
   - OR access to this website [NextAuth](https://generate-secret.vercel.app/32) 
 
-Next, run in the CLI (root folder)
+### Next, run in the CLI (root folder) ☢️
 
 ```bash
-# install dependencies
-npm install
+  # install dependencies
+  npm install
 
-# run prisma CLI
-npm prisma run
+  # run prisma CLI
+  npm prisma run
 
-# run the development server
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+  # run the development server
+  npm run dev
+  # or
+  yarn dev
+  # or
+  pnpm dev
+
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
@@ -148,9 +161,27 @@ Welcome to the project's folder structure! Below is an organized representation 
 - [PlanetScale](https://planetscale.com/)
 
 
+# 📈 Statistic
+
+<div align="center">
+
+![Alt](https://repobeats.axiom.co/api/embed/2c807fd151ce226b3643cb0b6036d94a319c2783.svg "Repobeats analytics image")
+
+</div>
+
 # Issues 🧻
 
 The repo currently facing two known bugs from Next.js 
 
 - [ ] [Server run out of memory](https://github.com/vercel/next.js/issues/46756)
 - [ ] [Non Post Server Error](https://github.com/vercel/next.js/issues/53882)
+
+# Aight 🐧
+
+- Probably not the only one
+- At least I think at some point it was an intended portfolio, until it doens't
+- it turns out, aight.
+
+# 📝 License & Forking/Cloning
+
+All code in this repository is licensed under the GNU Affero General Public License v3—see the LICENSE file for more information. Please remove all of my personal information and related stuff. If you want to use this repo. This is source-available. Feels free to do so and give it a star.
