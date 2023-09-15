@@ -73,7 +73,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
   if (theme === undefined) {
     console.log('theme is undefined, default to dark')
     setTheme('dark')
-  } 
+  }
 
   return (
     <>
@@ -96,7 +96,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
           <KBarProvider actions={actions}>
             <AuthProvider>
               <ThemeProvider attribute="class" defaultTheme="system" enableSystem themes={['light', 'dark']}>
-
                 <div
                   ref={cursorRef}
                   className="pointer-events-none fixed z-[9999] mt-4 hidden h-24 w-24 -translate-x-1/2 -translate-y-1/2 bg-cover bg-no-repeat lg:block"
@@ -105,13 +104,12 @@ export default function RootLayout({ children }: RootLayoutProps) {
                     backgroundPosition: '120% 100%',
                   }}
                 />
-                
+
                 {/* <NextTopLoader /> */}
 
                 <div
                   className={cn(
                     'z-0 grow',
-                    // 'bg-gradient-to-b from-[#FAF4ED] to-gray-300', // light
                     'bg-gradient-to-b from-[#c8c0b7] to-[#c8c0b7]', // light
                     'dark:bg-gradient-to-b dark:from-[#05030d] dark:to-gray-900' // dark
                   )}

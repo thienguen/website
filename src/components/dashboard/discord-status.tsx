@@ -5,7 +5,6 @@ import { HiOutlineExternalLink } from 'react-icons/hi'
 import { IoLogoDiscord } from 'react-icons/io5/'
 import { useLanyardWS } from 'use-lanyard'
 import { cn } from '@/lib/util/util'
-import Solar from './solar'
 import { metadata } from '@/app/api/metadata'
 
 function DiscordStatus() {
