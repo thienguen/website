@@ -26,6 +26,7 @@ module.exports = {
         'lg'      : '1024px',
       },
     },
+    
     extend: {
       colors: {
         /* Set up */
