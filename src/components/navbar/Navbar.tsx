@@ -8,8 +8,8 @@ import { usePathname } from 'next/navigation'
 import { Twirl as Hamburger } from 'hamburger-react'
 /* Src */
 import { useMediaQuery } from '@/hooks/useMediaQuery'
-import ThemeToggle from '@/components/navbar/ThemeToggle'
 import { NavbarLeft /* NavbarRight, */, NavbarMiddle, NavMiddleSmall } from '@/components/navbar/NavbarParts'
+import ThemeToggle from '@/components/navbar/ThemeToggle'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -57,7 +57,9 @@ const Navbar = () => {
   if (isBreakpoint === null) {
     return (
       <nav className="mx-auto mt-2 flex max-w-4xl cursor-pointer flex-wrap items-center justify-between  pb-2 pl-6 pt-4 font-dosis md:flex-nowrap">
-        <NavbarLeft path_name={path_name} />
+        <div>
+          <NavbarLeft path_name={path_name} />
+        </div>
         <NavbarMiddle />
         <ThemeToggle />
       </nav>
@@ -71,7 +73,9 @@ const Navbar = () => {
         {/* Useless */}
         {isBreakpoint ? (
           <nav className="mx-auto mt-2 flex max-w-4xl cursor-pointer flex-wrap items-center justify-between  pb-2 pl-6 pt-4 font-dosis md:flex-nowrap">
-            <NavbarLeft path_name={path_name} />
+            <div>
+              <NavbarLeft path_name={path_name} />
+            </div>
             <NavbarMiddle />
             <ThemeToggle />
           </nav>

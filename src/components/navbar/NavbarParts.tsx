@@ -78,7 +78,7 @@ export const NavbarMiddle = () => {
   }
 
   return (
-    <div className=" flex justify-center space-x-4  backdrop-blur-md">
+    <div className="ml-6 flex justify-center space-x-4  backdrop-blur-md">
       {NavMiddleLinks.map((link, _) => (
         <a
           key={link.title}
