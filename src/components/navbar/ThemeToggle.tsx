@@ -2,14 +2,12 @@
 
 /* Framework */
 import { useEffect, useState } from 'react'
-
+import { useTheme } from 'next-themes'
 // Libraries
 import { BsSun } from 'react-icons/bs'
 import { WiMoonAltWaningCrescent2 } from 'react-icons/wi'
-import { Button } from '@/components/ui/custom-button'
-
-import { useTheme } from 'next-themes'
 import useSound from 'use-sound'
+import { Button } from '@/components/ui/custom-button'
 
 function ThemeToggle() {
   const { theme, setTheme } = useTheme()
@@ -39,12 +37,12 @@ function ThemeToggle() {
     // Set the button to disabled and show the message
     setDisabled(true)
     setTheme(theme === 'dark' ? 'light' : 'dark')
-    
+
     // Reset the button to active state
     // and hide the message after 1.5 seconds
     localStorage.setItem('themeChangeTimestamp', Date.now().toString())
     location.reload() // this will refresh the page
-    
+
     setTimeout(() => {
       setDisabled(false)
     }, 3000)
@@ -54,7 +52,7 @@ function ThemeToggle() {
     <Button
       variant="ghost"
       size="sm"
-      className="mr-3 h-9 hover:bg-slate-50 dark:hover:bg-gray-500"
+      className="mr-6 mt-1 h-8 hover:bg-slate-50 dark:hover:bg-gray-500"
       onClick={() => {
         ThemeSound()
         handleThemeChange()
@@ -62,7 +60,7 @@ function ThemeToggle() {
       disabled={disabled}
       rel="noreferrer"
     >
-      <div className="flex w-8 items-center justify-center">
+      <div className="flex  items-center justify-center">
         <WiMoonAltWaningCrescent2 className=" h-6 w-5 rotate-0 scale-100 transition-all dark:rotate-0 dark:scale-0" />
         <BsSun className="absolute h-6 w-5 rotate-0 scale-0 transition-all dark:-rotate-90 dark:scale-100" />
       </div>

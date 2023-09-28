@@ -9,12 +9,12 @@ export const FeaturedProjectItems = [
     year    : '2023',
     projects: [
       {
-        title      : 'Todo? App',
-        description: 'Got me an internship offer ngl',
-        url        : 'https://github.com/Thienguen/TodoApp',
+        title      : 'Pomodoro-re',
+        description: 'Reimagine Pomodoro technique in my own way',
+        url        : 'https://pomodoro-re.vercel.app/',
         active     : true,
         icon       : 'podcasts',
-        stats      : 'Yet another Todo App ♻️',
+        stats      : 'Yet another Pomodoro app ♻️',
         tech       : ['', ''],
       },
       {
@@ -130,6 +130,15 @@ export const ProjectItems = [
   {
     year    : '2023',
     projects: [
+      {
+        title      : 'Pomodoro-re',
+        description: 'Reimagine Pomodoro technique in my own way',
+        url        : 'https://pomodoro-re.vercel.app/',
+        active     : true,
+        icon       : 'podcasts',
+        stats      : 'Yet another Pomodoro app ♻️',
+        tech       : ['Nextjs', 'TypeScript', 'TailwindCSS', 'etc.'],
+      },
       {
         title      : 'Portfolio',
         description: 'The website you are currently viewing right now~',
