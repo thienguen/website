@@ -26,7 +26,7 @@ function Purojekuto() {
       <div className="mx-auto mt-2 max-w-4xl px-4">
         {/* Header Section */}
 
-        <div className="group flex flex-row items-center justify-between font-semibold lg:flex-row">
+        <div className="group flex flex-row items-center justify-between  lg:flex-row">
           {/* Leftmost Career kbd */}
           <div className="flex h-8 border-l-2 border-slate-400 pl-2 dark:border-slate-700">
             <RoughNotation

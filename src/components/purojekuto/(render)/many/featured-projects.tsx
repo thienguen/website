@@ -7,7 +7,7 @@ import { type ProjectCareerProps } from "../one/one.type"
  */
 const FeaturedProjects = () => {
   /* We featuring these shitty stuff */
-  const featured = ['Todo? App', 'Android Apps', 'CLI Games', 'Gate Keeper']
+  const featured = ['Pomodoro-re', 'Android Apps', 'CLI Games', 'Gate Keeper']
 
   // Dummy text mapped
   const projects = FeaturedProjectItems.map((item) => {
