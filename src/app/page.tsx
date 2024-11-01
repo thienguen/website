@@ -1,8 +1,10 @@
 'use client'
 
+import { useState } from 'react'
 import PageTitle from '@/components/ui/header-title'
 import ProgressBar from '@/components/ui/progress-bar'
 import HomeHero from '@/components/home/home-hero'
+import NotificationModal from '@/components/home/notif'
 
 // import Profile from '@/components/home/profile'
 // import SkillIssues from '@/components/home/skill-issues'
@@ -24,6 +26,11 @@ const BarRight = () => {
  * I wish I have skills of figma, webflow
  */
 export default function Home() {
+  const [showModal, setShowModal] = useState(true)
+  const handleModalClose = () => {
+    setShowModal(false)
+  }
+
   /* Could have put stuff in here put anyway */
   return (
     <>
@@ -34,6 +41,9 @@ export default function Home() {
         isFullWidth={false}
         key={'/home'}
       />
+
+      {/* Notification Modal */}
+      {showModal && <NotificationModal onClose={handleModalClose} />}
 
       <PageTitle
         title="If I could put a picture of an anime girl here, I would. &X-a-vier"

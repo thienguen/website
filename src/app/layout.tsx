@@ -91,7 +91,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         </head>
         <body
           suppressHydrationWarning={true}
-          className={cn('flex max-h-[100vh] min-h-[100vh] flex-col overflow-x-hidden font-dosis antialiased')}
+          className={ cn('flex max-h-[100vh] min-h-[100vh] flex-col overflow-x-hidden font-dosis antialiased')}
         >
           <KBarProvider actions={actions}>
             <AuthProvider>

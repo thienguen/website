@@ -6,7 +6,13 @@
 const config = {
   reactStrictMode: true,
   images: {
-    domains: ['i.scdn.co', 'avatars.githubusercontent.com', 'uploadthing.com', 'cdn.discordapp.com', 'api.lanyard.rest'],
+    domains: [
+      'i.scdn.co',
+      'avatars.githubusercontent.com',
+      'uploadthing.com',
+      'cdn.discordapp.com',
+      'api.lanyard.rest',
+    ],
     remotePatterns: [
       {
         protocol: 'https',
