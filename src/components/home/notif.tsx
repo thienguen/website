@@ -12,12 +12,10 @@ export default function NotificationModal({ onClose }: NotificationModalProps) {
 
         {/* Modal Content */}
         <div className="relative z-10">
-          <h2 className="mb-4 text-xl font-bold uppercase text-white">
-            New Version in Development
-          </h2>
+          <h2 className="mb-4 text-xl font-bold uppercase text-white">New Version in Development</h2>
           <p className="mb-4 text-gray-800 dark:text-gray-300">
-            {`This website is running on an old code base that hasn't been updated for 2 years. A new version is currently
-            in development with improved features and security.`}
+            {`This website is running on an old code base that hasn't been updated for 2 years. A new website (version 3) is currently
+            in development (ETA: Spring-Summer 2025, it depends).`}
           </p>
           <button
             className="mt-4 rounded bg-blue-600 px-4 py-2 text-white shadow-md hover:bg-blue-700"
