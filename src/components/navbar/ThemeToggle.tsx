@@ -61,8 +61,8 @@ function ThemeToggle() {
       rel="noreferrer"
     >
       <div className="flex  items-center justify-center">
-        <WiMoonAltWaningCrescent2 className=" h-6 w-5 rotate-0 scale-100 transition-all dark:rotate-0 dark:scale-0" />
-        <BsSun className="absolute h-6 w-5 rotate-0 scale-0 transition-all dark:-rotate-90 dark:scale-100" />
+        <WiMoonAltWaningCrescent2 className="h-8 w-8 rotate-0 scale-100 transition-all dark:rotate-0 dark:scale-0" />
+        <BsSun className="absolute h-8 w-8 rotate-0 scale-0 transition-all dark:-rotate-90 dark:scale-100" />
       </div>
     </Button>
   )

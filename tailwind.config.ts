@@ -26,7 +26,7 @@ module.exports = {
         'lg'      : '1024px',
       },
     },
-    
+
     extend: {
       colors: {
         /* Set up */
@@ -66,7 +66,9 @@ module.exports = {
         },
 
         // Copi Copi
+        'light'      : '#fff7f0',
         'bglight'    : '#F9FAFB',
+
         'marrslight' : '#1C9A9A',
         'marrsgreen' : '#007A7A',
         'marrsdark'  : '#004D4D',
@@ -203,7 +205,7 @@ module.exports = {
         '160': '40rem',
         '30' : '7.5rem',
       },
-      
+
       height: {
         '120': '30rem',
         '160': '40rem',

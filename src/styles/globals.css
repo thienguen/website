@@ -173,7 +173,7 @@
   /* Light Theme */
   /* Track */
   ::-webkit-scrollbar-track {
-    @apply bg-bglight;
+  @apply bg-bglight;
   }
 
   /* Handle */

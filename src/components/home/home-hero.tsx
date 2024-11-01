@@ -5,7 +5,6 @@ import { cn } from '@/lib/util/util'
 import { KBarStart } from '@/components/ui/(kbar)/index'
 
 import Profile from '@/components/home/profile'
-// import { TbCodeDots } from 'react-icons/tb'
 
 const HomeHero: React.FC = () => {
   const { theme, setTheme } = useTheme()
@@ -55,4 +54,4 @@ const HomeHero: React.FC = () => {
   )
 }
 
-export default HomeHero
+  export default HomeHero
