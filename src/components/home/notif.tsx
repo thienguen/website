@@ -15,7 +15,7 @@ export default function NotificationModal({ onClose }: NotificationModalProps) {
           <h2 className="mb-4 text-xl font-bold uppercase text-white">New Version in Development</h2>
           <p className="mb-4 text-gray-800 dark:text-gray-300">
             {`This website is running on an old code base that hasn't been updated for 3.5 years. A new website (version 3) is currently
-            in development (ETA: Spring-Summer 2025, it depends).`}
+            in development (ETA: Fall 2025, I hope, Summer was a ehm, idk...).`}
           </p>
           <button
             className="mt-4 rounded bg-blue-600 px-4 py-2 text-white shadow-md hover:bg-blue-700"
